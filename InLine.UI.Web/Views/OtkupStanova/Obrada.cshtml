@@ -1,0 +1,272 @@
+﻿@model InLine.UI.Web.Models.ViewModelCustom.ObrociGradObrada
+
+
+@{
+    int Zavrseno = Model.FormiranjeZavrseno;
+    int Status = Model.Status;
+}
+
+<style type="text/css">
+    
+ #ObradaContainer 
+ {
+     width:auto;
+     height:330px;
+     border: 1px #5C87B2 solid;
+     padding: 0px 5px 0px 5px;
+     border-radius: 7px 7px 7px 7px;
+  }
+  
+  .prviRedTablice
+  {
+     background-color: #f2f2f2;
+        padding: 0px 0px 0px 0px;
+        text-align:center;
+  }
+  
+   .redRezultat
+  {
+    height:25px;
+    text-align:center;
+  }
+  
+  .prviStupacTablice
+  {
+    width: 0px;
+  }
+  
+.table1 td 
+{
+   width:25%;
+   height:23px;
+}
+  
+.table3 td 
+{
+  width:25%
+}
+
+.table4 td 
+{
+  width:16%
+}
+
+.boldItalic
+{
+  font-weight:bold;
+  font-style:italic;
+}
+
+.bold
+{
+  font-weight:bold;
+}
+
+.obrada
+{
+  font-weight:bold;
+  font-size:1.2em;
+  padding-left:5px;
+  padding-top:2px;
+  padding-bottom:2px;
+}
+
+ #progressbar
+  {
+      height:23px;
+  }
+  
+  #progressProcentDiv
+  {
+    text-align:center;
+  }
+  
+ .ui-progressbar {
+        position: relative;
+    }
+    
+    
+.progress-label {
+        position: absolute;
+        left: 50%;
+        top: 1px;
+        font-weight: bold;
+        color:#5C87B2;
+        text-shadow: 1px 1px 0 #fff;
+}
+
+#ObradaPoruka
+{
+ font-size:1.2em;
+ color: #2EB688;
+}
+  
+</style>
+
+<div id="ObradaContainer">
+<div class="obrada">OBRADA <label  id=ObradaPoruka class="bold"></label></div>
+
+
+<table style="width:100%;">
+    <tbody>
+        <tr>
+            <td style="width:100%;">				
+                <table width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+		            <tbody>
+                        <tr>
+                            <td>
+                                <div id="progressbar"><div class="progress-label"></div></div>
+                          
+                            </td>          
+                        </tr>
+                          <tr>
+                            <td>
+         
+                          
+                            </td>          
+                        </tr>
+                        <tr>
+	                 		<td>
+                                <table class ="table1" width="100%">
+                                    <tr>
+                                         <td>Ugovor koji se obrađuje:</td><td class ="boldItalic">@Html.Label("Ugovor", @Model.Ugovor.ToString().PadLeft(7, '0'))</td>
+                                          <td>Obrok ugovora:</td><td class ="boldItalic">@Html.DisplayFor(model => model.ObrokUgovora)</td>
+                                    </tr>
+                                     <tr>
+                                         <td>Formirano obroka:</td><td  class ="boldItalic">@Html.DisplayFor(model => model.FormiranoObroka)</td>
+                                         <td>Tečaj valute revalorizacije:</td><td class ="boldItalic">@Html.DisplayFor(model => model.TecajValutaRevalorizacije) EUR -  @Html.DisplayFor(model => model.TecajValutaRevalorizacijeDEM) DEM</td>
+                                    </tr>
+                                </table>
+                            </td> 			                
+                        </tr>
+
+                        <tr>
+	                 		<td>
+                                <table class ="table3" width="100%">
+                                     <tr class = "prviRedTablice">
+                                            <td class = "prviStupacTablice"></td>
+                                            <td>Početak</td>
+                                            <td>Trenutno</td>
+                                            <td>Kraj (procjena)</td>
+                                     </tr>
+                                    <tr class="redRezultat">
+                                         <td>Vrijeme:</td> <td  class ="boldItalic">@Html.DisplayFor(model => model.VrijemePocetak)</td> <td class ="boldItalic">@Html.DisplayFor(model => model.VrijemeTrenutno)</td> <td class ="boldItalic">@Html.DisplayFor(model => model.VrijemeKraj)</td> 
+                                    </tr>
+                                </table>
+                            </td> 			                
+                        </tr>
+
+                         <tr>
+	                 		<td>
+                                <table class ="table3" width="100%">
+                                     <tr class = "prviRedTablice">
+                                            <td class = "prviStupacTablice"></td>
+                                            <td>Do sada</td>
+                                            <td>Do kraja (procjena)</td>
+                                            <td>Ukupno(procjena)</td>
+                                     </tr>
+                                    <tr class="redRezultat">
+                                         <td>Trajanje:</td> <td class ="boldItalic">@Html.DisplayFor(model => model.TrajanjeDoSada)</td> <td class ="boldItalic">@Html.DisplayFor(model => model.TrajanjeDoKraja)</td> <td class ="boldItalic">@Html.DisplayFor(model => model.TrajanjeUkupno)</td> 
+                                    </tr>
+                                
+                                </table>
+                            </td> 			                
+                        </tr>
+
+                        <tr>
+	                 		<td>
+                                <table class ="table3" width="100%">
+                                     <tr class = "prviRedTablice">
+                                            <td class = "prviStupacTablice"></td>
+                                            <td>Obrađeno</td>
+                                            <td>Još za obradu</td>
+                                            <td>Ukupno za obradu</td>
+                                     </tr>
+                                    <tr class="redRezultat">
+                                       <td >Ugovori:</td> <td class ="boldItalic">@Html.DisplayFor(model => model.UgovoriObradjeni)</td> <td class ="boldItalic">@Html.DisplayFor(model => model.UgovoriZaObradu)</td> <td class ="boldItalic">@Html.DisplayFor(model => model.UgovoriUkupno)</td>
+                                    </tr>
+                                
+                                </table>
+                            </td> 			                
+                        </tr>
+
+                         <tr>
+	                 		<td>
+                                <table class ="table4" width="100%">
+                                     <tr class = "prviRedTablice">
+                                            <td class = ""></td>
+                                            <td>Obročni otvoreni</td>
+                                            <td>Obročni zatvoreni</td>
+                                            <td>Obročni ukupno</td>
+                                            <td>Jednokratni</td>
+                                            <td>Ukupno</td>
+                                     </tr>
+                                    <tr class="redRezultat">
+                                       <td>Vrsta:</td> <td class ="boldItalic">@Html.DisplayFor(model => model.VrstaObrocniOtvoreni)</td> <td class ="boldItalic">@Html.DisplayFor(model => model.VrstaObrocniZatvoreni)</td> <td class ="boldItalic">@Html.DisplayFor(model => model.VrstaObrocniUkupno)</td> <td class ="boldItalic">@Html.DisplayFor(model => model.VrstaJednokratno)</td> <td class ="boldItalic">@Html.DisplayFor(model => model.VrstaUkupno)</td>
+                                    </tr>
+                                
+                                </table>
+                            </td> 			                
+                        </tr>
+
+                                <tr>
+	                 		<td>
+             
+                            </td> 			                
+                        </tr>
+                    
+		            </tbody>
+                </table>
+		    </td>		 
+        </tr>
+	</tbody>
+</table>	
+
+</div>
+
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+        var modelvaluta = 'DEM';
+        Dialozi.DropDownValuta(modelvaluta);
+
+       // alert(@Zavrseno);
+
+        if(@Zavrseno == 1)
+        {
+           clearInterval(interv);
+            $("#ObradaPoruka").html("FORMIRANJE OBROKA JE ZAVRŠENO!");
+        }
+
+
+        var sta = @Status;
+         $(function()
+         {
+            $("#progressbar").progressbar({
+            value: sta
+            });
+
+//            if(sta == "100")
+//            {
+//                   $(".progress-label").html("KRAJ");
+//            }
+
+//            else{
+//                 $(".progress-label").html(sta + "  %");
+//             
+//            }
+
+               $(".progress-label").html(sta + "  %");
+        });
+
+    });
+
+
+
+
+    </script>
+
+
+    <script type="text/javascript">
+
+</script>

@@ -1,0 +1,854 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9FAE6E45-E207-413B-8238-0CDF03560434}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InLine.Model.Admin</RootNamespace>
+    <AssemblyName>InLine.Model.Admin</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HelperClasses\InLineConnectionStringKonstruktor.cs" />
+    <Compile Include="HelperClasses\KorisnikData.cs" />
+    <Compile Include="HelperClasses\StatusPoruka.cs" />
+    <Compile Include="InLineAdmin.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InLineAdmin.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Akcija.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Akcija.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\AkcijaGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\AkcijaGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\AkcijaGrAkcija.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\AkcijaGrAkcija.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\AkcijaGrAkcijaGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\AkcijaGrAkcijaGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\AkcijaGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\AkcijaGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\AkcijaGrXAkcija.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\AkcijaGrXAkcija.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\AkcijaGrXAkcijaGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\AkcijaGrXAkcijaGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\AkcijaVr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\AkcijaVr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\AkcijaVrAkcija.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\AkcijaVrAkcija.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\AkcijaVrAkcijaVr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\AkcijaVrAkcijaVr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Audit.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Audit.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Baza.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Baza.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\BazaKorisnik.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\BazaKorisnik.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Brojevi.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Brojevi.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T4\Drzava.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Drzava.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Entity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Forma.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Forma.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaGrForma.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaGrForma.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaGrFormaGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaGrFormaGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaGrXForma.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaGrXForma.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaGrXFormaGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaGrXFormaGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaSt.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaSt.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaStGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaStGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaStGrFormaSt.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaStGrFormaSt.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaStGrFormaStGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaStGrFormaStGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaStGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaStGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaStGrXFormaSt.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaStGrXFormaSt.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaStGrXFormaStGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaStGrXFormaStGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaVr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FormaVr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Item.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Kalendar.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Kalendar.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarGodina.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarGodina.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarGodinaDan.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarGodinaDan.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarGodinaMjesec.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarGodinaMjesec.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarGodinaTjedan.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarGodinaTjedan.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarMjesec.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarMjesec.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarMjesecDan.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarMjesecDan.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarMjesecTjedan.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarMjesecTjedan.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarTjedanDan.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarTjedanDan.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Korisnik.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Korisnik.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikFilter.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikFilter.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikFilterParametar.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikFilterParametar.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrAkcijaGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrAkcijaGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrFormaGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrFormaGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrFormaStGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrFormaStGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrID.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrID.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrKorisnik.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrKorisnik.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrKorisnikGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrKorisnikGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrReportGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrReportGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrReportStGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrReportStGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrSP.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrSP.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrSPParam.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrSPParam.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrTablicaGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrTablicaGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrTablicaPoljeGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrTablicaPoljeGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrXAkcijaGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrXAkcijaGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrXFormaGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrXFormaGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrXFormaStGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrXFormaStGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrXKorisnik.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrXKorisnik.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrXKorisnikGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrXKorisnikGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrXReportGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrXReportGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrXReportStGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrXReportStGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrXTablicaGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrXTablicaGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrXTablicaPoljeGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikGrXTablicaPoljeGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikSession.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KorisnikSession.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Licenca.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Licenca.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\LicencaAkcijaGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\LicencaAkcijaGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\LicencaFormaGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\LicencaFormaGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\LicencaFormaStGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\LicencaFormaStGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\LicencaReportGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\LicencaReportGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\LicencaReportStGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\LicencaReportStGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\LicencaTablicaGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\LicencaTablicaGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\LicencaTablicaPoljeGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\LicencaTablicaPoljeGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Log.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Log.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OperatorAritmeticki.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OperatorAritmeticki.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OperatorLogicki.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OperatorLogicki.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OperatorVremenski.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OperatorVremenski.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Poruka.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Poruka.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PorukaConstraint.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PorukaConstraint.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PorukaStatus.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PorukaStatus.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Provjera.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Provjera.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Report.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Report.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportGrReport.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportGrReport.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportGrReportGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportGrReportGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportGrXReport.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportGrXReport.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportGrXReportGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportGrXReportGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportSt.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportSt.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportStGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportStGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportStGrReportSt.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportStGrReportSt.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportStGrReportStGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportStGrReportStGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportStGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportStGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportStGrXReportSt.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportStGrXReportSt.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportStGrXReportStGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportStGrXReportStGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportVr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ReportVr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\sysdiagrams.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\sysdiagrams.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Tablica.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Tablica.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaGrTablica.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaGrTablica.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaGrTablicaGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaGrTablicaGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaGrXTablica.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaGrXTablica.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaGrXTablicaGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaGrXTablicaGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaPolje.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaPolje.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaPoljeGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaPoljeGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaPoljeGrTablicaPolje.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaPoljeGrTablicaPolje.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaPoljeGrTablicaPoljeGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaPoljeGrTablicaPoljeGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaPoljeGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaPoljeGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaPoljeGrXTablicaPolje.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaPoljeGrXTablicaPolje.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaPoljeGrXTablicaPoljeGrX.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaPoljeGrXTablicaPoljeGrX.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.BazaKorisnikKorisnik.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.BazaKorisnikKorisnik.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.BazaKorisnikKorisnikBaza.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.BazaKorisnikKorisnikBaza.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Vijest.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Vijest.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\VijestGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\VijestGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\VijestGrVijest.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\VijestGrVijest.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\VijestGrVijestKorisnikGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\VijestGrVijestKorisnikGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\VijestKorisnikGr.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\VijestKorisnikGr.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\VijestKorisnikGrKorisnik.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\VijestKorisnikGrKorisnik.Item.cs">
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="T4\Entities\" />
+    <Folder Include="T4\Items\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="InLineAdmin.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>InLineAdmin.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="T4\Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Context.cs</LastGenOutput>
+    </None>
+    <None Include="T4\Entity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Entity.cs</LastGenOutput>
+    </None>
+    <None Include="T4\Item.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Item.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InLine.Common\InLine.Common.csproj">
+      <Project>{10170356-9DCC-42D1-A404-883E52F5B8EA}</Project>
+      <Name>InLine.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

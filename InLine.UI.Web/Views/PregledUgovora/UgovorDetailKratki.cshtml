@@ -1,0 +1,110 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.UgovorStanOtkupDetaljFormFormatted
+
+ <style type="text/css">
+.text-box[type=text], .text-box[type=number], .text-box[type=date] { width:100px; border:"0";}
+#ugovor-detail #BrojUgovor, #ugovor-detail #Datum { font-weight:bold;}
+#ugovor-forma{ margin-top:5px; margin-bottom:5px; font-size:13px;}
+
+</style>
+
+ @{
+    string prefixLabela = "labela_ugovor_detalj_mali_";
+ }
+
+<table class ="UgovorKratkiDetail" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+   <tbody>
+
+         <tr id="tr1">
+ 	    <td>@Html.LabelFor(model => model.TecajDM, new { id = @prefixLabela + @Html.NameFor(model => model.TecajDM) })</td>
+       <td>@Html.DisplayFor(model => model.TecajDM)</td> 
+     <td>@Html.LabelFor(model => model.Datum, new { id = @prefixLabela + @Html.NameFor(model => model.Datum) })</td>
+       <td>@Html.DisplayFor(model => model.Datum)</td>              
+    </tr>
+       
+     <tr id="tr2">
+ 	    <td id="tdUgovorTuzenLabel">@Html.LabelFor(model => model.UgovorTuzen, new { id = @prefixLabela + @Html.NameFor(model => model.UgovorTuzen) })</td>
+       <td id="tdUgovorTuzen"> 
+       @if(@Model.UgovorTuzen == false)
+       {
+            @Html.CheckBoxFor(model => model.UgovorTuzen.Value)  
+       }
+            else
+            {
+              @Html.CheckBoxFor(model => model.UgovorTuzen.Value)  
+            }
+       </td> 
+     <td>@Html.LabelFor(model => model.NadstojnickiAdaptiran, new { id = @prefixLabela + @Html.NameFor(model => model.NadstojnickiAdaptiran) })</td>
+       <td>
+            @Html.CheckBoxFor(model => model.NadstojnickiAdaptiran)  
+
+           </td>              
+    </tr>
+
+           <tr id="tr3">
+ 	    <td>@Html.LabelFor(model => model.DokumentGrupa, new { id = @prefixLabela + @Html.NameFor(model => model.DokumentGrupa) })</td>
+       <td>@Html.DisplayFor(model => model.DokumentGrupa)</td> 
+     <td>@Html.LabelFor(model => model.DokumentVrsta, new { id = @prefixLabela + @Html.NameFor(model => model.DokumentVrsta) })</td>
+       <td>@Html.DisplayFor(model => model.DokumentVrsta)</td>              
+    </tr>
+
+  <tr id="tr4">
+       <td>@Html.LabelFor(model => model.IznosKredit, new { id = @prefixLabela + @Html.NameFor(model => model.IznosKredit) })</td>
+       <td>@Html.DisplayFor(model => model.IznosKredit)</td>
+ 	    <td>@Html.LabelFor(model => model.IznosUcesce, new { id = @prefixLabela + @Html.NameFor(model => model.IznosUcesce) })</td>
+       <td>@Html.DisplayFor(model => model.IznosUcesce)</td>    
+    </tr>
+
+      <tr id="tr5">
+ 	    <td>@Html.LabelFor(model => model.IznosKamata, new { id = @prefixLabela + @Html.NameFor(model => model.IznosKamata) })</td>
+       <td>@Html.DisplayFor(model => model.IznosKamata)</td> 
+
+            <td> @Html.LabelFor(model => model.NeZateznaKamata, new { id = @prefixLabela + @Html.NameFor(model => model.NeZateznaKamata) }) </td>
+       <td>   @Html.CheckBoxFor(model => model.NeZateznaKamata.Value)  </td>           
+    </tr>
+          <tr id="tr6">
+        <td>@Html.LabelFor(model => model.IznosUkupnoObrok, new { id = @prefixLabela + @Html.NameFor(model => model.IznosUkupnoObrok) })</td>
+       <td>@Html.DisplayFor(model => model.IznosUkupnoObrok)</td>
+ 	    <td>@Html.LabelFor(model => model.BrojObrok, new { id = @prefixLabela + @Html.NameFor(model => model.BrojObrok) })</td>
+       <td>@Html.DisplayFor(model => model.BrojObrok)</td>    
+    </tr>
+
+
+
+
+	
+  </tbody>
+</table>
+
+ <script type="text/javascript">
+        $(function () {
+            $("#labela_ugovor_detalj_mali_UgovorTuzen").text("Utužen");
+            $("#labela_ugovor_detalj_mali_NadstojnickiAdaptiran").text("N/A");
+            $("#labela_ugovor_detalj_mali_DokumentGrupa").text("Gr");
+            $("#labela_ugovor_detalj_mali_DokumentVrsta").text("Vr");
+            $("#labela_ugovor_detalj_mali_TecajDM").text("Tečaj");
+            $("#labela_ugovor_detalj_mali_IznosUcesce").text("1. obrok");
+            $("#labela_ugovor_detalj_mali_IznosKredit").text("Kredit");
+            $("#labela_ugovor_detalj_mali_IznosKamata").text("Kamata");
+            $("#labela_ugovor_detalj_mali_IznosUkupnoObrok").text("Obrok");
+            $("#labela_ugovor_detalj_mali_BrojObrok").text("Broj obroka");
+            $("#labela_ugovor_detalj_mali_NeZateznaKamata").text("Ne zatezna kamata");
+
+
+        });
+     
+
+</script>
+
+
+ <script type="text/javascript">
+
+     $(document).ready(function () {
+
+         if ($("#UgovorTuzen_Value").is(":checked")) {
+             $("#tdUgovorTuzen").css('background-color', '#FACFCF')
+             $("#tdUgovorTuzenLabel").css('background-color', '#FACFCF')
+         }
+
+     });
+
+</script>

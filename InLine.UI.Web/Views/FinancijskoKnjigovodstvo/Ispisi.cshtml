@@ -1,0 +1,875 @@
+﻿@model InLine.UI.Web.T4.GridFormattedTemplate.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjektComboFormatted
+@{
+
+    int kojaGodina = @Model.Godina;
+    string kojiNaziv = @Model.Naziv;
+    long kojiKontniPlan = @Model.ID_KontniPlan;
+    long kojaGlavnaKnjiga = @Model.ID_GlavnaKnjiga;
+    string datumod = @ViewBag.DatumOd.ToString("dd.MM.yyyy");
+    string datumdo = @ViewBag.DatumDo.ToString("dd.MM.yyyy");
+    long kojiKontniPlanPromjena = 0;
+    long kojaGlavnaKnjigaPromjena = 0;
+    string Autocomplete = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Autocomplete;
+  
+}
+<link href="../../Content/jquery.multiselect.css" rel="stylesheet" type="text/css" />
+<link href="../../Content/menu/menu_style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+    #GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjektPager
+    {
+        display: none;
+    }
+    #combo
+    {
+        background-color: #F5F5F5;
+        font-size: 13px;
+        font-weight: bold;
+    }
+    .rowColorRED
+    {
+        background-color: #F65556;
+        color: White;
+    }
+    #Godina
+    {
+        width: 350px;
+    }
+    #Naziv
+    {
+        width: 350px;
+    }
+    
+    .btnDropDownSymbol
+    {
+        background: #ffffff url('../Content/images/dropdown_arrow.png') no-repeat 100%;
+    }
+    
+    .ui-autocomplete
+    {
+        /* DESNI SCROLLBAR */
+        max-height: 200px;
+        overflow-y: auto;
+    }
+    
+    .tree-wrap-ltr
+    {
+        /* TREEVIEW GRID STAVKE POMAKNUTE ULIJEVO */
+        margin-left: -110px;
+    }
+    
+    .ui-jqgrid tr.jqgrow td
+    {
+        white-space: pre-wrap;
+        height: 20px !important;
+        padding: 0 2px 0 2px;
+    }
+</style>
+<div class="PrviRed">
+    @Html.Partial(ViewList.FinancijskoKnjigovodstvo.ViewFinancijskoMenu)
+</div>
+<div style="margin: auto; width: 100%;">
+    <div style="width: 100%; float: left; border-bottom: 1px solid black;">
+        <div style="float: left; width: 30%">
+            <h1>
+                I S P I S I</h1>
+        </div>
+        <div style="float: right; width: 70%; text-align: right;">
+            <br />
+            <input id="Ispis_BTN_ID" type="button" value="ISPIS" />
+        </div>
+    </div>
+    <div style="float: left; width: 30%; text-align: center;">
+        <br />
+        <div style="width: 300px; height: auto; margin: 0 auto; position: relative;">
+            <h2>
+                Ispisi:</h2>
+            <div id="DIVIzbor1">
+                @{Html.RenderAction("ListaDatoteka", "FinancijskoKnjigovodstvo");} 
+            </div>
+            <br />
+            <div id="DIVIzbor2">
+            </div>
+            <br />
+            <div id="DIVIzbor3">
+            </div>
+        </div>
+    </div>
+    <div style="float: right; width: 70%">
+        <div id="DIVNaslov" style="float: left; width: 100%">
+            <br />
+            GLAVNA KNJIGA:
+            <input id="Godina" class="btnDropDownSymbol autocomplete ui-autocomplete-input" type="text"
+                value="" name="Konto" autocomplete="off">
+        </div>
+        <div id="DIVPartial">
+            @{Html.RenderAction("IspisiPartial", "FinancijskoKnjigovodstvo", new { Kontni = kojiKontniPlan, Glavna = kojaGlavnaKnjiga, GodinaOd = datumod });}
+        </div>
+    </div>
+</div>
+@section JavaScript {
+    <script type="text/javascript">
+ 
+        $(document).ready(function () {
+
+        $.HideSve = function () { // Hide-a sve comboboxeve i textboxeve koji se nalaze u IspisPartial.cshtml
+            $("#DIVNaslov h2").text("Ispisi");
+
+            $("#DIVBrojUgovora").hide();
+            $("#DIVBrojNaloga").hide();
+            $("#DIVGodinaNaloga").hide();
+
+            $("#DIVKlase").hide(); 
+            $("#DIVDatumTemeljnice").hide(); 
+            $("#PKarticaPoslovnogPartnera").hide();            
+            $("#DIVDatumDospijeca").hide();         
+            $("#DIVDatumDospijecaObroka").hide();
+            $("#DIVKonto").hide();
+            $("#DIVZapisVr").hide();
+            $("#DIVVrstaTemeljnice").hide();
+            $("#DIVSubjekt").hide();
+            $("#btn_zatvoriPoslovnogPartnera").click();
+            $("#DIVBrojTemeljnice").hide();
+            $(".CLASSKriteriji").hide();
+            $("#DIVDatumPoslovnePromjene").hide();
+
+            $("#DIVOstaliParametri").hide();
+            $("#DIVOstaliParametriOTKUP").hide();
+
+            $("#DIVPoredakPo").hide();
+            $("#DIVPoredakPo option[value=0]").hide();
+            $("#DIVPoredakPo option[value=1]").hide();
+            $("#DIVPoredakPo option[value=2]").hide();
+            $("#DIVPoredakPo option[value=3]").hide();
+            $("#DIVPoredakPo option[value=4]").hide();
+            $("#DIVPoredakPo option[value=5]").hide();
+            $("#DIVPoredakPo option[value=6]").hide();
+            $("#DIVPoredakPo option[value=7]").hide();
+            $("#DIVPoredakPo option[value=8]").hide();
+            $("#DIVPoredakPo option[value=9]").hide();
+            $("#DIVPoredakPo option[value=10]").hide();
+
+            $("#DIVDnevnikPo").hide();
+            $("#DIVSuma").hide();
+            $("#DIVIspis").hide();
+        };
+
+        $.ShowIzabrano = function () { // Prikazuje potrebne comboboxeve i textboxeve ovisno o odabranom ispisu
+            var izabrano = $("#DIVIzbor3 #IzborCOMBO").val();
+
+            if(izabrano == "1.1.1. Konto kartica poduzeća - analitički" || izabrano == "1.1.2. Konto kartica poduzeća - analitički-saldirani")
+                {
+                    $("#DIVNaslov h2").text(izabrano);
+
+                    $("#DIVDatumTemeljnice").show();                      
+                    $("#DIVKonto").show();
+                    $("#DIVVrstaTemeljnice").show();
+                    $("#DIVSubjekt").show();
+                    $(".CLASSKriteriji").show();
+                    $("#DIVDatumPoslovnePromjene").show();
+
+                    $("#DIVOstaliParametri").show();
+                    $('#CHECKNovaStrana, label[for="CHECKNovaStrana"]').show();
+
+                    $("#DIVPoredakPo").show();
+                    $("#DIVPoredakPo option[value=0]").show();
+                    $("#DIVPoredakPo option[value=6]").show();
+                    $("#DIVPoredakPo option[value=7]").show();
+                    $("#DIVPoredakPo option[value=1]").show();
+                    $("#DIVPoredakPo option[value=8]").show();
+                    $("#DIVPoredakPo option[value=9]").show();
+                    $("#DIVPoredakPo option[value=2]").show();
+                    $("#PoredakPo1_SLCT_ID").val("0");
+                    $("#PoredakPo2_SLCT_ID").val("6");
+                    $("#PoredakPo3_SLCT_ID").val("7");
+
+                    $("#DIVIspis").show();
+                }
+            else if(izabrano == "1.1.3. Konto kartica poduzeća - sintetički")
+                {
+                    $("#DIVNaslov h2").text(izabrano);
+
+                    $("#DIVDatumTemeljnice").show();                   
+                    $("#DIVKonto").show();
+                    $("#DIVVrstaTemeljnice").show();
+                    $("#DIVSubjekt").show();
+                    $(".CLASSKriteriji").show();
+                    $("#DIVIspis").show();
+                }
+            else if(izabrano == "1.2.1. Popis temeljnica")
+                {
+                    $("#DIVNaslov h2").text(izabrano);
+
+                    $("#DIVDatumTemeljnice").show();                   
+                    $("#DIVVrstaTemeljnice").show();
+                               
+                    $("#DIVPoredakPo").show();
+                    $("#DIVPoredakPo option[value=7]").show();
+                    $("#DIVPoredakPo option[value=9]").show();
+                    $("#DIVPoredakPo option[value=1]").show();
+                    $("#DIVPoredakPo option[value=6]").show();
+                    $("#DIVPoredakPo option[value=10]").show();
+                    $("#PoredakPo1_SLCT_ID").val("7");
+                    $("#PoredakPo2_SLCT_ID").val("9");
+                    $("#PoredakPo3_SLCT_ID").val("1");
+
+                    $("#DIVIspis").show();
+                }
+            else if(izabrano == "1.2.2. Dnevnik knjiženja - analitika")
+                {
+                    $("#DIVNaslov h2").text(izabrano);
+
+                    $("#DIVDatumTemeljnice").show();                   
+                    $("#DIVVrstaTemeljnice").show();
+                    $("#DIVDnevnikPo").show();
+
+                    $("#DIVPoredakPo").show();
+                    $("#DIVPoredakPo option[value=7]").show();
+                    $("#DIVPoredakPo option[value=9]").show();
+                    $("#DIVPoredakPo option[value=0]").show();
+                    $("#DIVPoredakPo option[value=1]").show();
+                    $("#DIVPoredakPo option[value=6]").show();
+                    $("#DIVPoredakPo option[value=10]").show();
+                    $("#DIVPoredakPo option[value=2]").show();
+                    $("#PoredakPo1_SLCT_ID").val("7");
+                    $("#PoredakPo2_SLCT_ID").val("9");
+                    $("#PoredakPo3_SLCT_ID").val("0");
+
+                    $("#DIVIspis").show();
+                }
+            else if(izabrano == "1.3.1. Bilanca" || izabrano == "1.3.2. Bilanca sa početnim stanjem" || izabrano == "1.3.3. Zaključni list")
+                {
+                    $("#DIVNaslov h2").text(izabrano);
+
+                    $("#DIVDatumTemeljnice").show();                   
+                    $("#DIVKonto").show();
+                    $("#DIVVrstaTemeljnice").show();    
+                    $("#DIVSubjekt").show();                         
+                    $(".CLASSKriteriji").show();
+                    $("#DIVDatumPoslovnePromjene").show();
+                    $("#DIVSuma").show();
+                    $("#DIVIspis").show();
+                }
+            else if(izabrano == "1.4.1. Ispis temeljnica")
+                {
+                    $("#DIVNaslov h2").text(izabrano);
+
+                    $("#DIVDatumTemeljnice").show();                   
+                    $("#DIVVrstaTemeljnice").show();
+                    $("#DIVBrojTemeljnice").show(); 
+                                                             
+                    $("#DIVPoredakPo").show();
+                    $("#DIVPoredakPo option[value=0]").show();
+                    $("#DIVPoredakPo option[value=1]").show();
+                    $("#DIVPoredakPo option[value=2]").show();
+                    $("#DIVPoredakPo option[value=3]").show();
+                    $("#DIVPoredakPo option[value=4]").show();
+                    $("#DIVPoredakPo option[value=5]").show();
+                    $("#PoredakPo1_SLCT_ID").val("0");
+                    $("#PoredakPo2_SLCT_ID").val("1");
+                    $("#PoredakPo3_SLCT_ID").val("2");
+
+                    $("#DIVOstaliParametri").show();
+                    $('#CHECKNeuskladeneTemeljnice, label[for="CHECKNeuskladeneTemeljnice"]').show();
+                }
+            else if(izabrano == "1.4.2. Troškovi i prihodi")
+                {
+                    $("#DIVNaslov h2").text(izabrano);
+ 
+                    $("#DIVDatumTemeljnice").show(); 
+                    $("#DIVKlase").show();                  
+                    $("#DIVVrstaTemeljnice").show();
+                    $("#DIVSubjekt").show();
+                    $(".CLASSKriteriji").show();
+                    $("#DIVIspis").show();
+                }
+
+            else if(izabrano == "2.1.1. Analitika" || izabrano == "2.1.2. Sintetika" || izabrano == "2.1.3. Sintetika - početno stanje" || izabrano == "2.1.5. Kartica poslovnog partnera" || izabrano == "2.1.7. Najveća dugovanja i potraživanja" || izabrano == "2.2.1. Analitika po partnerima" || izabrano == "2.2.2. Sintetika po partnerima" || izabrano == "2.5.1. Sintetika po vrsti temeljnice i analitikama")
+                {
+                    $("#DIVNaslov h2").text(izabrano);
+ 
+                    $("#DIVDatumTemeljnice").show();                
+                    $("#DIVKonto").show();
+                    $("#DIVZapisVr").show();
+                    $("#DIVVrstaTemeljnice").show();
+                    $("#DIVSubjekt").show();
+                    $(".CLASSKriteriji").show();
+
+                    $("#DIVOstaliParametri").show();
+                    $('#CHECKSvaKonta, label[for="CHECKSvaKonta"]').show();
+
+                    $("#DIVPoredakPo").show();
+                    $("#DIVPoredakPo option[value=6]").show();
+                    $("#DIVPoredakPo option[value=8]").show();
+                    $("#DIVPoredakPo option[value=11]").show();
+                    $("#DIVPoredakPo option[value=12]").show();
+
+                    $("#DIVIspis").show();
+                    
+                }
+            else if(izabrano == "2.1.6. Kartica poslovnog partnera - po godinama")
+                {
+                    $("#DIVNaslov h2").text(izabrano);
+ 
+                    $("#DIVDatumTemeljnice").show();       
+                    $("#PKarticaPoslovnogPartnera").show();         
+                    $("#DIVKonto").show();
+                    $("#DIVVrstaTemeljnice").show();
+                    $("#DIVSubjekt").show();
+                    $(".CLASSKriteriji").show();
+
+                    $("#DIVOstaliParametri").show();
+                    $('#CHECKSvaKonta, label[for="CHECKSvaKonta"]').show();
+
+                    $("#DIVPoredakPo").show();
+                    $("#DIVPoredakPo option[value=6]").show();
+                    $("#DIVPoredakPo option[value=8]").show();
+                    $("#DIVPoredakPo option[value=11]").show();
+                    $("#DIVPoredakPo option[value=12]").show();
+
+                    $("#DIVIspis").show();
+                    
+                }
+            else if(izabrano == "2.3.1. Dokumenti po dospijeću" || izabrano == "2.3.2. Dokumenti po dospijeću sa saldom" || izabrano == "2.3.3. Dokumenti po partneru" || izabrano == "2.3.4. Dokumenti po partneru sa saldom")
+                {
+                    $("#DIVNaslov h2").text(izabrano);
+ 
+                    $("#DIVDatumTemeljnice").show(); 
+                    $("#DIVDatumDospijeca").show();                
+                    $("#DIVKonto").show();
+                    $("#DIVZapisVr").show();
+                    $("#DIVVrstaTemeljnice").show();
+                    $("#DIVSubjekt").show();
+                    $(".CLASSKriteriji").show();
+
+                    $("#DIVOstaliParametri").show();
+
+                    $("#DIVPoredakPo").show();
+                    $("#DIVPoredakPo option[value=6]").show();
+                    $("#DIVPoredakPo option[value=8]").show();
+                    $("#DIVPoredakPo option[value=11]").show();
+                    $("#DIVPoredakPo option[value=12]").show();
+
+                    $("#DIVIspis").show();
+                    
+                }
+            else if(izabrano == "3.1.1. Kartica ugovora" || izabrano == "3.1.2. Ugovori s preplatom" || izabrano == "3.1.3. Ispis ugovora" || izabrano == "3.1.4. Ugovori" || izabrano == "3.1.5. Kupci po dokumentu" || izabrano == "3.1.6. Dokumenti po kupcu" || izabrano == "3.1.7. Utuženi ugovori" || izabrano == "3.1.8. Knjigovodstvena kartica" || izabrano == "3.1.9. Ugovori detaljno" || izabrano == "3.2.2. Nalog" || izabrano == "3.2.4. Opomene" || izabrano == "3.2.5. Knjigovodstvena kartica ovrhe" || izabrano == "3.2.6. Preplate")
+                {
+                    $("#DIVNaslov h2").text(izabrano);
+ 
+                    $("#DIVBrojUgovora").show();
+
+                    $("#DIVOstaliParametriOTKUP").show();
+                    $('#CHECKSamoNositelji, label[for="CHECKSamoNositelji"]').show();
+                    
+                }
+            else if(izabrano == "3.2.1. Neplaćeni dospjeli dug")
+                {
+                    $("#DIVNaslov h2").text(izabrano);
+ 
+                    $("#DIVBrojUgovora").show();
+
+                    $("#DIVDatumDospijecaObroka").show();
+
+                    $("#DIVOstaliParametriOTKUP").show();
+                    $('#CHECKSamoNositelji, label[for="CHECKSamoNositelji"]').show();
+                    
+                }
+            else if(izabrano == "3.2.3. Lista naloga")
+                {
+                    $("#DIVNaslov h2").text(izabrano);
+ 
+                    $("#DIVBrojNaloga").show();
+                    $("#DIVGodinaNaloga").show();
+
+                    $("#DIVOstaliParametriOTKUP").show();
+                    $('#CHECKSamoNositelji, label[for="CHECKSamoNositelji"]').show();
+                    
+                }
+        };
+
+        $.UpitZaKriterije = function () { // Pomoćna funkcija koja pomaže za prikupljanje parametara kriterija 
+            var upit = ";Kr:"; 
+            var radno_STRs = [];
+
+            if($("#listaKriterija1COMBO").val() != null && $("#listaKriterija1COMBO option").length != $("#listaKriterija1COMBO").val().length){
+                var privremeno_STRs = $("#listaKriterija1COMBO").val();
+                for(a = 0; a < privremeno_STRs.length; a++){
+                    radno_STRs.push(privremeno_STRs[a]);
+                }
+            }
+
+            if($("#listaKriterija2COMBO").val() != null && $("#listaKriterija2COMBO option").length != $("#listaKriterija2COMBO").val().length){
+                var privremeno_STRs = $("#listaKriterija2COMBO").val();
+                for(a = 0; a < privremeno_STRs.length; a++){
+                    radno_STRs.push(privremeno_STRs[a]);
+                }
+            }
+
+            if($("#listaKriterija3COMBO").val() != null && $("#listaKriterija3COMBO option").length != $("#listaKriterija3COMBO").val().length){
+                var privremeno_STRs = $("#listaKriterija3COMBO").val();
+                for(a = 0; a < privremeno_STRs.length; a++){
+                    radno_STRs.push(privremeno_STRs[a]);
+                }
+            }
+
+            if($("#listaKriterija4COMBO").val() != null && $("#listaKriterija4COMBO option").length != $("#listaKriterija4COMBO").val().length){
+                var privremeno_STRs = $("#listaKriterija4COMBO").val();
+                for(a = 0; a < privremeno_STRs.length; a++){
+                    radno_STRs.push(privremeno_STRs[a]);
+                }
+            }
+
+            if($("#listaKriterija5COMBO").val() != null && $("#listaKriterija5COMBO option").length != $("#listaKriterija5COMBO").val().length){
+                var privremeno_STRs = $("#listaKriterija5COMBO").val();
+                for(a = 0; a < privremeno_STRs.length; a++){
+                    radno_STRs.push(privremeno_STRs[a]);
+                }
+            }
+
+            if($("#listaKriterija6COMBO").val() != null && $("#listaKriterija6COMBO option").length != $("#listaKriterija6COMBO").val().length){
+                var privremeno_STRs = $("#listaKriterija6COMBO").val();
+                for(a = 0; a < privremeno_STRs.length; a++){
+                    radno_STRs.push(privremeno_STRs[a]);
+                }
+            }
+
+            upit += $.UrediText(radno_STRs).replace(/ /g,'');
+
+            if(upit.substr(upit.length - 4) == ";Kr:")
+                upit = upit.slice(0,-4);
+            return upit;
+        };
+        
+        $("#Ispis_BTN_ID").click(function() { // Na osnovi odabranog ispisa se parametri spremaju u varijablu "upit"
+
+            $("#btn_zatvoriPoslovnogPartnera").click();
+
+            var izabraniIspis_STR = $("#DIVIzbor3 #IzborCOMBO").val();
+            var upit = "P:" + izabraniIspis_STR.substring(0, izabraniIspis_STR.indexOf(' '));
+
+            if(izabraniIspis_STR == "1.1.1. Konto kartica poduzeća - analitički" || izabraniIspis_STR == "1.1.2. Konto kartica poduzeća - analitički-saldirani")
+            {                     
+                upit += ";datOD:" + $("#DatumOdPomoc").val() + ";datDO:" + $("#DatumDoPomoc").val();
+
+                if($("#KontniPlanStCOMBO").val() != null && $("#KontniPlanStCOMBO option").length != $("#KontniPlanStCOMBO").val().length)
+                    upit += ";Kon:" + $("#KontniPlanStCOMBO").val();
+
+                if($("#VrstaTemeljniceCOMBO").val() != null && $("#VrstaTemeljniceCOMBO option").length != $("#VrstaTemeljniceCOMBO").val().length)
+                    upit += ";VrTm:" + $("#VrstaTemeljniceTEXT").val().replace(/ /g,'');
+
+                if($("#PoslovniPartnerTEXT").val() != "")
+                    upit += ";PoslP:" + $("#PoslovniPartnerTEXT").val().replace(/ /g,'');
+            
+                upit += $.UpitZaKriterije();
+
+                if($("#DatumPoslovnePromjeneOdPomoc").val() != "")
+                    upit += ";DatPPOd:" + $("#DatumPoslovnePromjeneOdPomoc").val();
+
+                if($("#DatumPoslovnePromjeneDoPomoc").val() != "")
+                    upit += ";DatPPDo:" + $("#DatumPoslovnePromjeneDoPomoc").val();
+
+                upit += ";Pp:" + $( "#PoredakPo1_SLCT_ID option:selected" ).val() + "," + $( "#PoredakPo2_SLCT_ID option:selected" ).val() + "," + $( "#PoredakPo3_SLCT_ID option:selected" ).val();
+
+                upit += ";Is:" + $("input[type='radio'][name='RadioGrupa']:checked").val();
+            }
+
+            else if(izabraniIspis_STR == "1.1.3. Konto kartica poduzeća - sintetički")
+            {                     
+                upit += ";datOD:" + $("#DatumOdPomoc").val() + ";datDO:" + $("#DatumDoPomoc").val();
+
+                if($("#KontniPlanStCOMBO").val() != null && $("#KontniPlanStCOMBO option").length != $("#KontniPlanStCOMBO").val().length)
+                    upit += ";Kon:" + $("#KontniPlanStCOMBO").val();
+
+                if($("#VrstaTemeljniceCOMBO").val() != null && $("#VrstaTemeljniceCOMBO option").length != $("#VrstaTemeljniceCOMBO").val().length)
+                    upit += ";VrTm:" + $("#VrstaTemeljniceCOMBO").val();
+
+                if($("#PoslovniPartnerTEXT").val() != "")
+                    upit += ";PoslP:" + $("#PoslovniPartnerTEXT").val().replace(/ /g,'');
+            
+                upit += $.UpitZaKriterije();
+
+                upit += ";Is:" + $("input[type='radio'][name='RadioGrupa']:checked").val();
+            }
+
+            else if(izabraniIspis_STR == "1.2.1. Popis temeljnica")
+            {                            
+                upit += ";datOD:" + $("#DatumOdPomoc").val() + ";datDO:" + $("#DatumDoPomoc").val();
+
+                if($("#VrstaTemeljniceCOMBO").val() != null && $("#VrstaTemeljniceCOMBO option").length != $("#VrstaTemeljniceCOMBO").val().length)
+                    upit += ";VrTm:" + $("#VrstaTemeljniceCOMBO").val();
+
+                upit += ";Pp:" + $("#PoredakPo1_SLCT_ID option:selected" ).val() + "," + $("#PoredakPo2_SLCT_ID option:selected" ).val() + "," + $("#PoredakPo3_SLCT_ID option:selected" ).val();
+                
+                upit += ";Is:" + $("input[type='radio'][name='RadioGrupa']:checked").val();
+            }
+
+           else if(izabraniIspis_STR == "1.2.2. Dnevnik knjiženja - analitika")
+            {                            
+                upit += ";datOD:" + $("#DatumOdPomoc").val() + ";datDO:" + $("#DatumDoPomoc").val();
+
+                if($("#VrstaTemeljniceCOMBO").val() != null && $("#VrstaTemeljniceCOMBO option").length != $("#VrstaTemeljniceCOMBO").val().length)
+                    upit += ";VrTm:" + $("#VrstaTemeljniceCOMBO").val();
+
+                upit += ";DnePo:" + $("#DnevnikPo_SLCT_ID option:selected" ).val();
+
+                upit += ";Pp:" + $("#PoredakPo1_SLCT_ID option:selected" ).val() + "," + $("#PoredakPo2_SLCT_ID option:selected" ).val() + "," + $("#PoredakPo3_SLCT_ID option:selected" ).val();
+                
+                upit += ";Is:" + $("input[type='radio'][name='RadioGrupa']:checked").val();
+            }
+
+            else if(izabraniIspis_STR == "1.3.1. Bilanca" || izabraniIspis_STR == "1.3.2. Bilanca sa početnim stanjem" || izabraniIspis_STR == "1.3.3. Zaključni list")
+            {                     
+                upit += ";datOD:" + $("#DatumOdPomoc").val() + ";datDO:" + $("#DatumDoPomoc").val();
+
+                if($("#KontniPlanStCOMBO").val() != null && $("#KontniPlanStCOMBO option").length != $("#KontniPlanStCOMBO").val().length)
+                    upit += ";Kon:" + $("#KontniPlanStCOMBO").val();
+
+                if($("#VrstaTemeljniceCOMBO").val() != null && $("#VrstaTemeljniceCOMBO option").length != $("#VrstaTemeljniceCOMBO").val().length)
+                    upit += ";VrTm:" + $("#VrstaTemeljniceCOMBO").val();
+
+                if($("#PoslovniPartnerTEXT").val() != "")
+                    upit += ";PoslP:" + $("#PoslovniPartnerTEXT").val().replace(/ /g,'');
+            
+                upit += $.UpitZaKriterije();
+
+                if($("#DatumPoslovnePromjeneOdPomoc").val() != "")
+                    upit += ";DatPPOd:" + $("#DatumPoslovnePromjeneOdPomoc").val();
+
+                if($("#DatumPoslovnePromjeneDoPomoc").val() != "")
+                    upit += ";DatPPDo:" + $("#DatumPoslovnePromjeneDoPomoc").val();
+
+                    var sumIzabrano = [];
+                    $("input[type='checkbox'][name='CHECKSuma']:checked").each(function(){
+                    sumIzabrano.push($(this).val());
+                    });
+                upit += ";Sum:" + sumIzabrano;
+
+                upit += ";Is:" + $("input[type='radio'][name='RadioGrupa']:checked").val();
+            }
+
+           else if(izabraniIspis_STR == "1.4.1. Ispis temeljnica")
+            {                            
+                upit += ";datOD:" + $("#DatumOdPomoc").val() + ";datDO:" + $("#DatumDoPomoc").val();
+
+                if($("#VrstaTemeljniceCOMBO").val() != null && $("#VrstaTemeljniceCOMBO option").length != $("#VrstaTemeljniceCOMBO").val().length)
+                    upit += ";VrTm:" + $("#VrstaTemeljniceCOMBO").val();
+            
+                if($("#TEXTBrojTemeljniceOd").val() != "")
+                    upit += ";BrTmOD:" + $("#TEXTBrojTemeljniceOd").val();
+
+                if($("#TEXTBrojTemeljniceDo").val() != "")
+                    upit += ";BrTmDO:" + $("#TEXTBrojTemeljniceDo").val();
+
+                upit += ";Pp:" + $("#PoredakPo1_SLCT_ID option:selected" ).val() + "," + $("#PoredakPo2_SLCT_ID option:selected" ).val() + "," + $("#PoredakPo3_SLCT_ID option:selected" ).val();
+
+                if($("input[type='checkbox'][name='CHECKOstaliParametri']:checked").val() != null)
+                    upit += ";Op:" + $("input[type='checkbox'][name='CHECKOstaliParametri']:checked").val();
+            }
+
+           else if(izabraniIspis_STR == "1.4.2. Troškovi i prihodi")
+            {                     
+                upit += ";datOD:" + $("#DatumOdPomoc").val() + ";datDO:" + $("#DatumDoPomoc").val();
+
+                if($("#TEXTKlase").val() != "")
+                    upit += ";Kla:" + $("#TEXTKlase").val();
+
+                if($("#VrstaTemeljniceCOMBO").val() != null && $("#VrstaTemeljniceCOMBO option").length != $("#VrstaTemeljniceCOMBO").val().length)
+                    upit += ";VrTm:" + $("#VrstaTemeljniceCOMBO").val();
+
+                if($("#PoslovniPartnerTEXT").val() != "")
+                    upit += ";PoslP:" + $("#PoslovniPartnerTEXT").val().replace(/ /g,'');
+            
+                upit += $.UpitZaKriterije();
+
+                upit += ";Is:" + $("input[type='radio'][name='RadioGrupa']:checked").val();
+            }
+
+            else if(izabraniIspis_STR == "2.1.1. Analitika" || izabraniIspis_STR == "2.1.2. Sintetika" || izabraniIspis_STR == "2.1.3. Sintetika - početno stanje" ||izabraniIspis_STR == "2.1.5. Kartica poslovnog partnera" || izabraniIspis_STR == "2.1.7. Najveća dugovanja i potraživanja" || izabraniIspis_STR == "2.2.1. Analitika po partnerima" || izabraniIspis_STR == "2.2.2. Sintetika po partnerima" || izabraniIspis_STR == "2.5.1. Sintetika po vrsti temeljnice i analitikama")
+            {                     
+                upit += ";datOD:" + $("#DatumOdPomoc").val() + ";datDO:" + $("#DatumDoPomoc").val();
+
+                if($("#VrstaTemeljniceCOMBO").val() != null && $("#VrstaTemeljniceCOMBO option").length != $("#VrstaTemeljniceCOMBO").val().length)
+                    upit += ";VrTm:" + $("#VrstaTemeljniceCOMBO").val();
+
+                if($("#KontniPlanStCOMBO").val() != null && $("#KontniPlanStCOMBO option").length != $("#KontniPlanStCOMBO").val().length)
+                    upit += ";Kon:" + $("#KontniPlanStCOMBO").val();
+
+                if($("#PoslovniPartnerTEXT").val() != "")
+                    upit += ";PoslP:" + $("#PoslovniPartnerTEXT").val().replace(/ /g,'');
+            
+                upit += $.UpitZaKriterije();
+
+                if($("#ZapisVrCombo").val() != null && $("#ZapisVrCombo option").length != $("#ZapisVrCombo").val().length)
+                    upit += ";VrDok:" + $("#ZapisVrCombo").val();
+
+                if($("input[type='checkbox'][name='CHECKOstaliParametri']:checked").val() != null)
+                    upit += ";Op:" + $("input[type='checkbox'][name='CHECKOstaliParametri']:checked").val();
+
+                upit += ";Pp:" + $("#PoredakPo1_SLCT_ID option:selected" ).val() + "," + $("#PoredakPo2_SLCT_ID option:selected" ).val() + "," + $("#PoredakPo3_SLCT_ID option:selected" ).val();
+
+                upit += ";Is:" + $("input[type='radio'][name='RadioGrupa']:checked").val();
+            }
+
+            else if(izabraniIspis_STR == "2.1.6. Kartica poslovnog partnera - po godinama")
+            {                     
+                upit += ";datOD:" + $("#DatumOdPomoc").val() + ";datDO:" + $("#DatumDoPomoc").val();
+
+                if($("#VrstaTemeljniceCOMBO").val() != null && $("#VrstaTemeljniceCOMBO option").length != $("#VrstaTemeljniceCOMBO").val().length)
+                    upit += ";VrTm:" + $("#VrstaTemeljniceCOMBO").val();
+
+                if($("#KontniPlanStCOMBO").val() != null && $("#KontniPlanStCOMBO option").length != $("#KontniPlanStCOMBO").val().length)
+                    upit += ";Kon:" + $("#KontniPlanStCOMBO").val();
+
+                if($("#PoslovniPartnerTEXT").val() != "")
+                    upit += ";PoslP:" + $("#PoslovniPartnerTEXT").val().replace(/ /g,'');
+            
+                upit += $.UpitZaKriterije();
+
+                if($("input[type='checkbox'][name='CHECKOstaliParametri']:checked").val() != null)
+                    upit += ";Op:" + $("input[type='checkbox'][name='CHECKOstaliParametri']:checked").val();
+
+                upit += ";Pp:" + $("#PoredakPo1_SLCT_ID option:selected" ).val() + "," + $("#PoredakPo2_SLCT_ID option:selected" ).val() + "," + $("#PoredakPo3_SLCT_ID option:selected" ).val();
+
+                upit += ";Is:" + $("input[type='radio'][name='RadioGrupa']:checked").val();
+            }
+
+            else if(izabraniIspis_STR == "2.3.1. Dokumenti po dospijeću" || izabraniIspis_STR == "2.3.2. Dokumenti po dospijeću sa saldom" || izabraniIspis_STR == "2.3.3. Dokumenti po partneru" || izabraniIspis_STR == "2.3.4. Dokumenti po partneru sa saldom")
+            {                     
+                upit += ";datOD:" + $("#DatumOdPomoc").val() + ";datDO:" + $("#DatumDoPomoc").val();
+
+                if($("#DatumDospijecaOdPomoc").val() != "")
+                    upit += ";DatDosOd:" + $("#DatumDospijecaOdPomoc").val();
+
+                if($("#DatumDospijecaDoPomoc").val() != "")
+                    upit += ";DatDosDo:" + $("#DatumDospijecaDoPomoc").val();
+
+                if($("#VrstaTemeljniceCOMBO").val() != null && $("#VrstaTemeljniceCOMBO option").length != $("#VrstaTemeljniceCOMBO").val().length)
+                    upit += ";VrTm:" + $("#VrstaTemeljniceCOMBO").val();
+
+                if($("#KontniPlanStCOMBO").val() != null && $("#KontniPlanStCOMBO option").length != $("#KontniPlanStCOMBO").val().length)
+                    upit += ";Kon:" + $("#KontniPlanStCOMBO").val();
+
+                if($("#PoslovniPartnerTEXT").val() != "")
+                    upit += ";PoslP:" + $("#PoslovniPartnerTEXT").val().replace(/ /g,'');
+            
+                upit += $.UpitZaKriterije();
+
+                if($("#ZapisVrCombo").val() != null && $("#ZapisVrCombo option").length != $("#ZapisVrCombo").val().length)
+                    upit += ";VrDok:" + $("#ZapisVrCombo").val();
+
+                if($("input[type='checkbox'][name='CHECKOstaliParametri']:checked").val() != null)
+                    upit += ";Op:" + $("input[type='checkbox'][name='CHECKOstaliParametri']:checked").val();
+
+                upit += ";Pp:" + $("#PoredakPo1_SLCT_ID option:selected" ).val() + "," + $("#PoredakPo2_SLCT_ID option:selected" ).val() + "," + $("#PoredakPo3_SLCT_ID option:selected" ).val();
+
+                upit += ";Is:" + $("input[type='radio'][name='RadioGrupa']:checked").val();
+            }
+
+            else if(izabraniIspis_STR == "3.1.1. Kartica ugovora" || izabraniIspis_STR == "3.1.2. Ugovori s preplatom" || izabraniIspis_STR == "3.1.3. Ispis ugovora" || izabraniIspis_STR == "3.1.4. Ugovori" || izabraniIspis_STR == "3.1.5. Kupci po dokumentu" || izabraniIspis_STR == "3.1.6. Dokumenti po kupcu" || izabraniIspis_STR == "3.1.8. Knjigovodstvena kartica" || izabraniIspis_STR == "3.1.9. Ugovori detaljno" || izabraniIspis_STR == "3.2.2. Nalog" || izabraniIspis_STR == "3.2.4. Opomene" || izabraniIspis_STR == "3.2.5. Knjigovodstvena kartica ovrhe" || izabraniIspis_STR == "3.2.6. Preplate")
+            {                     
+                if($("#TEXTBrojUgovoraOd").val() != "")
+                    upit += ";BrUgOD:" + $("#TEXTBrojUgovoraOd").val();
+
+                if($("#TEXTBrojUgovoraDo").val() != "")
+                    upit += ";BrUgDO:" + $("#TEXTBrojUgovoraDo").val();
+
+                if($("input[type='checkbox'][name='CHECKOstaliParametriOTKUP']:checked").val() != null)
+                    upit += ";Op:" + $("input[type='checkbox'][name='CHECKOstaliParametriOTKUP']:checked").val();
+            }
+
+            else if(izabraniIspis_STR == "3.1.7. Utuženi ugovori")
+            {                     
+                if($("#TEXTBrojUgovoraOd").val() != "")
+                    upit += ";BrUgOD:" + $("#TEXTBrojUgovoraOd").val();
+
+                if($("#TEXTBrojUgovoraDo").val() != "")
+                    upit += ";BrUgDO:" + $("#TEXTBrojUgovoraDo").val();
+
+                if($("input[type='checkbox'][name='CHECKOstaliParametriOTKUP']:checked").val() != null)
+                    upit += ";Op:" + $("input[type='checkbox'][name='CHECKOstaliParametriOTKUP']:checked").val();
+
+                upit += ";Ut:1";
+            }
+
+            else if(izabraniIspis_STR == "3.2.1. Neplaćeni dospjeli dug")
+            {                     
+                if($("#TEXTBrojUgovoraOd").val() != "")
+                    upit += ";BrUgOD:" + $("#TEXTBrojUgovoraOd").val();
+
+                if($("#TEXTBrojUgovoraDo").val() != "")
+                    upit += ";BrUgDO:" + $("#TEXTBrojUgovoraDo").val();
+
+                if($("#DatumDospijecaObrokaOdPomoc").val() != "")
+                    upit += ";DatDosObrOd:" + $("#DatumDospijecaObrokaOdPomoc").val();
+
+                if($("#DatumDospijecaObrokaDoPomoc").val() != "")
+                    upit += ";DatDosObrDo:" + $("#DatumDospijecaObrokaDoPomoc").val();
+
+                if($("input[type='checkbox'][name='CHECKOstaliParametriOTKUP']:checked").val() != null)
+                    upit += ";Op:" + $("input[type='checkbox'][name='CHECKOstaliParametriOTKUP']:checked").val();
+            }
+
+            else if(izabraniIspis_STR == "3.2.3. Lista naloga")
+            {                     
+                if($("#TEXTBrojNalogaOd").val() != "")
+                    upit += ";BrNaOD:" + $("#TEXTBrojNalogaOd").val();
+
+                if($("#TEXTBrojNalogaDo").val() != "")
+                    upit += ";BrNaDO:" + $("#TEXTBrojNalogaDo").val();
+
+                if($("#TEXTGodinaNalogaOd").val() != "")
+                    upit += ";GodNaOD:" + $("#TEXTGodinaNalogaOd").val();
+
+                if($("#TEXTGodinaNalogaDo").val() != "")
+                    upit += ";GodNaDO:" + $("#TEXTGodinaNalogaDo").val();
+
+                if($("input[type='checkbox'][name='CHECKOstaliParametriOTKUP']:checked").val() != null)
+                    upit += ";Op:" + $("input[type='checkbox'][name='CHECKOstaliParametriOTKUP']:checked").val();
+            }
+
+            window.open('@Url.Action("IspisReport", "FinancijskoKnjigovodstvo")' + "?S=" + upit);
+        });
+
+
+        // COMBOBOX-EVI ZA ODABIR ISPISA
+        $("#DIVIzbor1 #IzborCOMBO").change(function () {
+        var izabrano1 = "/" + $("#DIVIzbor1 #IzborCOMBO").val();
+        var url = '@Url.Action("ListaDatoteka", @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo)';
+        var divizbor2 = $("#DIVIzbor2");
+              $.ajax({
+                 cache: false,
+                 type: "GET",
+                 url: url,
+                data: { "path": izabrano1 },
+                success: function (data)
+                {
+                    divizbor2.html('');
+                    divizbor2.html(data);
+                    $("#DIVIzbor2 #IzborCOMBO").change();
+                },
+                error: function (xhr, ajaxOptions, thrownError)
+                {
+                    alert('Greška');                    
+                }
+            });
+          });
+
+                  $("#DIVIzbor2").on('change', '#IzborCOMBO', function () {
+        var izabrano2 = "/" + $("#DIVIzbor1 #IzborCOMBO").val() + "/" + $("#DIVIzbor2 #IzborCOMBO").val();
+        var url = '@Url.Action("ListaDatoteka", @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo)';
+        var divizbor3 = $("#DIVIzbor3");
+              $.ajax({
+                 cache: false,
+                 type: "GET",
+                 url: url,
+                data: { "path": izabrano2 },
+                success: function (data)
+                {
+                    divizbor3.html('');
+                    divizbor3.html(data);
+                    $("#DIVIzbor3 #IzborCOMBO").change();
+                },
+                error: function (xhr, ajaxOptions, thrownError)
+                {
+                    alert('Greška');                    
+                }
+            });
+          });
+
+                  $("#DIVIzbor3").on('change', '#IzborCOMBO', function () {
+                    $('#BTNPonistiParametre').click();
+                   });
+
+                  $("#DIVIzbor1 #IzborCOMBO").change();
+
+        ReloadPartial(@kojiKontniPlan, @kojaGlavnaKnjiga, '@datumod', '@datumdo');
+
+        $(".btnDropDownSymbol").click(function () {
+            Dialozi.ComboAll();
+        });
+
+        var grid = "#" + '@InLine.Model.Data.FieldString.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjektEntity';
+ 
+             $('#Godina').val(@kojaGodina + "   " + '@kojiNaziv.ToUpper()' );
+              kojaGlavnaKnjigaPromjena = @Model.ID_GlavnaKnjiga;
+
+        $("." + '@Autocomplete').each(function () {
+
+            var widgetAutoComplete = $(this).autocomplete({
+
+            showHeader: true,
+
+            source: function (request, response) {
+
+            var kojiKriterij = 3;
+            var url = '@Url.Action("GetGlavnaKnjiga", @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo)';
+
+                $.ajax({
+                    url: url,
+                    data: { query: request.term, kriterij: kojiKriterij, start: 0, count: 1000 },
+                    dataType: 'json',
+                    type: 'GET',
+                    success: function (data) {
+                        response($.map(data,
+                        function (item) {
+                            return {
+                                label: item.ID_GlavnaKnjiga,
+                                label2: item.ID_KontniPlan,
+                                label3: item.DatumOd,
+                                label4: item.DatumDo,
+                                value1: item.Godina,
+                                value2: item.Naziv,
+                                value3: item.IDValuta
+                            }
+                        }));
+                    }
+                })
+            },
+            select:
+                function (event, ui) {
+                    kojaGlavnaKnjigaPromjena = ui.item.label;
+                    $("@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + "@InLine.Model.Data.FieldString.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt.Godina").val(ui.item.value1 + "   " + ui.item.value2.toUpperCase());
+                    ReloadPartial(ui.item.label2, ui.item.label, ui.item.label3.to_date(), ui.item.label4.to_date());
+                    return false;
+                },
+
+            minLength: 0
+        }).data("autocomplete");
+
+        widgetAutoComplete._renderItem = function (ul, item) {
+        return $("<li class='tblAutocompleteLi'><table class='tblAutocomplete'></table></li>").data("item.autocomplete-item", item).append("<a><table width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><td width='100px'>" + item.value1 + "</td><td width='350px'>" + item.value2 + "</td><td width='90px'>" + item.value3 + "</td></tr></table></a>").appendTo(ul);
+        }
+
+        widgetAutoComplete._renderMenu = function (ul, item) {
+            var self = this;
+            $.each(item, function (index, items) {
+                if (index == 0)
+                    ul.append("<li><table width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><th width='100px'>" + '@InLine.Model.Data.FieldString.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt.Godina' + "</th><th width='350px'>" + '@InLine.Model.Data.FieldString.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt.Naziv' + "</th><th width='90px'>" + 'Valuta GK' + "</th></tr></table></li>");
+                self._renderItemData(ul, items);
+            });
+        }
+    });
+
+    function ReloadPartial(kontni, glavna, godinaod, godinado) {
+     $.ajax({
+            url: "@Url.Action("IspisiPartial", "FinancijskoKnjigovodstvo")",
+            cache: false,
+            async: true,
+            type: "POST",
+            data: { Kontni: kontni, Glavna: glavna, DatumOd: godinaod, Datumdo: godinado},
+            error: function (request) { alert(request.statusText); }, //something goes wrong...
+            success: function (data) {
+            $("#DIVPartial").html(data); //replace our form content
+            $("#DIVIzbor3 #IzborCOMBO").change();
+            }
+        });
+    };
+
+    String.prototype.to_date = function() {
+    var date_as_integer = eval(this.substr(6, 13));
+    var date = new Date(date_as_integer);
+    return date.getDate() + '.' + (date.getMonth() + 1) + '.' +  date.getFullYear();
+};
+});
+    </script>
+}

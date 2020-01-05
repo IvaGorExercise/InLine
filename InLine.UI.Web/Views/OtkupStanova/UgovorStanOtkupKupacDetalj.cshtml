@@ -1,0 +1,495 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.UgovorStanOtkupKupacDetaljFormFormatted
+
+ <style type="text/css">
+.text-box[type=text], .text-box[type=number], .text-box[type=date] { width:100%; border:"0";}
+#trosak-detail #BrojUgovor, #trosak-detail #Datum{ font-weight:bold;}
+
+</style>
+
+ @{
+    string prefixLabela = "labela_UgovorStanOtkupKupac_Detalj_";
+ }
+
+ @{
+     string Akcija = @InLine.Model.Data.FieldString.UgovorStanOtkupKupac.UgovorStanOtkupKupacEntity + InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert;
+     string IDForma = @InLine.Model.Data.FieldString.UgovorStanOtkupKupac.UgovorStanOtkupKupacEntity + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Forma;
+     string Autocomplete = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Autocomplete + @InLine.Model.Data.FieldString.View.UgovorStanOtkupKupac.UgovorStanOtkupKupacEntity;
+
+}
+
+
+ @using (Html.BeginForm(Akcija, @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo, FormMethod.Post, new { id = IDForma, @class = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormClass }))
+ {
+    @Html.HiddenFor(model => model.ID_UgovorStanOtkupKupac)
+    @Html.HiddenFor(model => model.ID_Kupac)
+    @Html.HiddenFor(model => model.ID_UgovorStanOtkup)
+    @Html.HiddenFor(model => model.ID_Posta)
+    @Html.HiddenFor(model => model.Naziv)
+
+    @Html.ValidationSummary(true)
+
+     
+<div class="PostojeciKupci">
+      <div id="divPoslovniPartner">
+          @{ Html.RenderPartial("~/Views/OtkupStanova/Kupac.cshtml");  }
+               </div>
+ </div>
+     
+<div id="KupacPodaci">  
+<table class ="UgovorStanOtkupKupacDetail form_background" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+   <tbody>
+
+     <tr id="trPromjenaPodatakaKupaca" style="display: none;">
+	    <td colspan='4'>Promijeni podatke kupca
+            <input id="editKupac" class="UrediClass" type="button" value="" name="editKupac" title="Promijeni podatke kupca"/>
+       </td>									                
+    </tr>
+
+     <tr>
+	    <td>@Html.LabelFor(model => model.Oznaka, new { id = @prefixLabela + @Html.NameFor(model => model.Oznaka) })</td>
+        <td colspan='3' >@Html.TextBoxFor(model => model.Oznaka, new { @disabled = "true" })
+    
+         </td>								                
+    </tr>
+
+    <tr>
+	    <td>@Html.LabelFor(model => model.PrezimeUgovorStanOtkupKupac, new { id = @prefixLabela + @Html.NameFor(model => model.PrezimeUgovorStanOtkupKupac) })</td>
+        <td colspan='3'>@Html.TextBoxFor(model => model.PrezimeUgovorStanOtkupKupac, new { @disabled = "true" })
+         @Html.ValidationMessageFor(model => model.PrezimeUgovorStanOtkupKupac)</td>									                
+    </tr>
+
+     <tr>
+	    <td>@Html.LabelFor(model => model.ImeUgovorStanOtkupKupac, new { id = @prefixLabela + @Html.NameFor(model => model.ImeUgovorStanOtkupKupac) })</td>
+        <td colspan='3'>@Html.TextBoxFor(model => model.ImeUgovorStanOtkupKupac, new { @disabled = "true" })
+         @Html.ValidationMessageFor(model => model.ImeUgovorStanOtkupKupac)</td>									                
+    </tr>
+
+
+     <tr>
+	    <td>@Html.LabelFor(model => model.JMBG, new { id = @prefixLabela + @Html.NameFor(model => model.JMBG) })</td>
+        <td>@Html.TextBoxFor(model => model.JMBG, new { @disabled = "true" })
+         @Html.ValidationMessageFor(model => model.JMBG)</td>	
+         <td>@Html.LabelFor(model => model.OIB, new { id = @prefixLabela + @Html.NameFor(model => model.OIB) })</td>
+        <td>@Html.TextBoxFor(model => model.OIB, new { @disabled = "true" })
+         @Html.ValidationMessageFor(model => model.OIB)</td>								                
+    </tr>
+
+   <tr>
+	    <td>@Html.LabelFor(model => model.Ulica, new { id = @prefixLabela + @Html.NameFor(model => model.Ulica) })</td>
+        <td colspan='3'>@Html.TextBoxFor(model => model.Ulica, new { @disabled = "true" })
+         @Html.ValidationMessageFor(model => model.Ulica)</td>								                
+    </tr>
+
+    
+   <tr>
+	    <td>@Html.LabelFor(model => model.KucniBroj, new { id = @prefixLabela + @Html.NameFor(model => model.KucniBroj) })</td>
+        <td>@Html.TextBoxFor(model => model.KucniBroj, new { @disabled = "true" })
+         @Html.ValidationMessageFor(model => model.KucniBroj)</td>	
+       	<td>@Html.LabelFor(model => model.KucniBrojDodatak, new { id = @prefixLabela + @Html.NameFor(model => model.KucniBrojDodatak) })</td>
+        <td>@Html.TextBoxFor(model => model.KucniBrojDodatak, new { @disabled = "true" })
+         @Html.ValidationMessageFor(model => model.KucniBrojDodatak)</td>								                
+    </tr>
+
+        <tr>
+ 	    <td>@Html.LabelFor(model => model.PostanskiBroj, new { id = @prefixLabela + @Html.NameFor(model => model.PostanskiBroj) })</td>
+        <td>@Html.TextBoxFor(model => model.PostanskiBroj, new { @class = Autocomplete, @disabled = "true" })
+         @Html.ValidationMessageFor(model => model.PostanskiBroj)</td>
+         <td>@Html.LabelFor(model => model.Posta, new { id = @prefixLabela + @Html.NameFor(model => model.Posta) })</td>
+        <td>@Html.TextBoxFor(model => model.Posta, new { @class = Autocomplete, @disabled = "true" })
+         @Html.ValidationMessageFor(model => model.Posta)</td>
+      </tr>
+
+       <tr>
+	    <td style="background-color:#FFF2C2; font-weight:bold">@Html.LabelFor(model => model.Nositelj, new { id = @prefixLabela + @Html.NameFor(model => model.Nositelj) })</td>
+        <td colspan='3' style="background-color:#FFF2C2; font-weight:bold">
+        @Html.CheckBox("Nositelj", Model.Nositelj.HasValue ? Model.Nositelj : false)
+            <label id="NositeljStatusTekst">N</label>
+         @Html.ValidationMessageFor(model => model.Nositelj)</td>								                
+    </tr>
+
+  </tbody>
+</table>
+</div>   
+ <div id="poruka_UgovorStanOtkupKupac">
+ </div>
+     
+
+ }
+
+<script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+
+
+  <script type="text/javascript">
+
+      $(function () {
+          $("#labela_UgovorStanOtkupKupac_Detalj_KucniBroj").text("Kućni broj");
+          $("#labela_UgovorStanOtkupKupac_Detalj_KucniBrojDodatak").text("Kućni broj dodatak");
+          $("#labela_UgovorStanOtkupKupac_Detalj_PostanskiBroj").text("Poštanski broj");
+          $("#labela_UgovorStanOtkupKupac_Detalj_Posta").text("Mjesto");
+          $("#labela_UgovorStanOtkupKupac_Detalj_PrezimeUgovorStanOtkupKupac").text("Prezime");
+          $("#labela_UgovorStanOtkupKupac_Detalj_ImeUgovorStanOtkupKupac").text("Ime");
+      });
+   
+   </script>
+
+ 
+     <script>
+
+         $(document).ready(function () {
+
+             $('#' + '@InLine.Model.Data.FieldString.View.UgovorStanOtkupKupac.UgovorStanOtkupKupacEntity' + 'DialogSpremiKopiraj').hide();
+             $('#' + '@InLine.Model.Data.FieldString.View.UgovorStanOtkupKupac.UgovorStanOtkupKupacEntity' + 'DialogSpremiDodaj').hide();
+
+             Dialozi.DatePicker();
+
+             var unos= @Model.ID_UgovorStanOtkupKupac;
+             if(unos == -1)
+             {
+                $("#trPromjenaPodatakaKupaca").hide();
+                $("#divPoslovniPartner").show();
+                
+             }
+              else
+              {
+                $("#trPromjenaPodatakaKupaca").show();
+                $("#divPoslovniPartner").hide();
+             }
+
+         });
+
+
+
+      jQuery(document).ready(function () {
+
+
+
+       $("#Nositelj").click(function () {
+
+           if(this.checked) 
+           {
+              $("#NositeljStatusTekst").text("D");
+           }
+
+           else
+           {
+              $("#NositeljStatusTekst").text("N"); 
+           }
+
+          });
+
+     })
+
+    </script>
+
+
+<script type="text/javascript">
+
+    var url = '@Url.Action("GetPosta", "PregledUgovora")';
+
+    $('.' + '@Autocomplete').autocomplete({
+
+        source: function (request, response) {
+
+            var kojePolje = $(this.element).prop("id");
+            var kojiKriterij = 0;
+
+            if (kojePolje == "@InLine.Model.Data.FieldString.Kupac.PostanskiBroj") {
+                kojiKriterij = 1;
+            }
+            else if (kojePolje == "@InLine.Model.Data.FieldString.Kupac.Posta") {
+                kojiKriterij = 2;
+            }
+
+            $.ajax({
+                url: url,
+                data: { query: request.term, kriterij: kojiKriterij },
+                dataType: 'json',
+                type: 'GET',
+                success: function (data) {
+                    response($.map(data,
+                        function (item) {
+                            return {
+                                label: item.ID_Posta + " " + item.Naziv.toUpperCase(),
+                                value1: item.ID_Posta,
+                                value2: item.Oznaka,
+                                value3: item.Naziv
+                            }
+
+                        }));
+                }
+            })
+        },
+        select:
+        function (event, ui) {
+            $("@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + "@InLine.Model.Data.FieldString.Kupac.ID_Posta").val(ui.item.value1);
+            $("@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + "@InLine.Model.Data.FieldString.Kupac.PostanskiBroj").val(ui.item.value2);
+            $("@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + "@InLine.Model.Data.FieldString.Kupac.Posta").val(ui.item.value3.toUpperCase());
+            return false;
+        },
+        minLength: 2
+    });
+
+ </script>
+
+
+   <script type="text/javascript">
+       $.PostaviKupcanaFormu = function (item) {
+
+           var url = '@Url.Action("GetKupacDetalj", @InLine.UI.Web.T4.ControllerName.ControllerName.OtkupStanova)';
+           $.ajax({
+               url: url,
+               data: { idKupac: item },
+               dataType: 'json',
+               type: 'GET',
+               success: function (data) {
+                   if (data != null) {
+                       $('#Oznaka').val($.trim(data.Oznaka));
+                       $('#Naziv').val($.trim(data.Naziv));
+
+                       if (data.Naziv.length > 0) {
+
+                           var ZaSplit = data.Naziv;
+                           var arr = ZaSplit.split(' ', 1);
+
+                           var prezime = ZaSplit.substr(0, ZaSplit.indexOf(' '));
+                           var ime = ZaSplit.substr(ZaSplit.indexOf(' ') + 1);
+
+                           $('#PrezimeUgovorStanOtkupKupac').val($.trim(prezime));
+                           $('#ImeUgovorStanOtkupKupac').val($.trim(ime));
+                       }
+
+                       $('#JMBG').val($.trim(data.JMBG));
+                       $('#OIB').val($.trim(data.OIB));
+                       $('#Ulica').val($.trim(data.Ulica));
+                       $('#KucniBroj').val($.trim(data.KucniBroj));
+                       $('#KucniBrojDodatak').val($.trim(data.KucniBrojDodatak));
+                       $('#PostanskiBroj').val($.trim(data.PostanskiBroj));
+                       $('#Posta').val($.trim(data.Posta));
+                       $('#ID_Kupac').val($.trim(data.ID_Kupac));
+                   }
+                   else {
+                       //  $('#SubjektRacun').val("");
+                   }
+
+               }
+
+           });
+
+       };
+
+     </script>
+
+
+      <script>
+
+
+          $("#editKupac").click(function () {
+              $.editKupac();
+          });
+
+
+          $.editKupac = function () {
+
+              var kojidialog = "#" + "Kupac" + "Dialog";
+              var kojidialogButton = "Kupac" + "Dialog";
+              var kojikontroler = "../" + "@InLine.UI.Web.T4.ControllerName.ControllerName.OtkupStanova" + "/";
+              var kojigrid = "#" + "Kupac";
+              var loader = kojikontroler + "Kupac" + "Detalj/";
+              var kojasirina = 650;
+              var kojavisina = 350;
+              var kojaforma = "#" + "Kupac" + "Form";
+              var kojaakcija = "Kupac" + "Insert";
+              var kontrolerakcija = kojikontroler + kojaakcija;
+              var kojitip = "Edit";
+              var kojititle = "KUPAC";
+              var kojaakcijaDelete = "Kupac" + "Delete";
+              var kontrolerakcijaDelete = kojikontroler + kojaakcijaDelete;
+              var kojaPorukaDiv = "Kupac";
+
+              if (kojitip == "Edit") {
+                  kojititle = kojititle + " DETALJ "
+              }
+
+              var slaveId = $("#ID_Kupac").val();
+
+
+              // Iniciranje Dialoga
+              $(function () {
+                  $(kojidialog).dialog({
+                      autoOpen: false,
+                      show: {
+                          effect: "none",
+                          duration: 0
+                      },
+                      hide: {
+                          effect: "none",
+                          duration: 0
+                      },
+                      width: kojasirina,
+                      height: kojavisina,
+                      modal: true,
+                      resizable: true,
+                      position: 'top',
+                      draggable: true,
+                      title: kojititle,
+                      buttons: {
+
+                          Spremi: {
+                              text: "",
+                              title: "Spremi",
+                              id: kojidialogButton + "Spremi",
+                              class: 'SpremiClass',
+                              value: "Spremi",
+                              click: function () {
+                                  var frm = kojaforma;
+                                  var disabled = $(kojaforma).find(':input:disabled').removeAttr('disabled');
+
+                                  var serializeData = $(kojaforma).serialize();
+
+                                  var provjera = ProvjeraKodUnosa();
+
+                                  if (provjera == false) {
+                                      return false;
+                                  }
+                                  else {
+
+                                      if ($(frm).validate().form()) {
+                                          $.ajax({
+                                              url: kontrolerakcija,
+                                              data: serializeData,
+                                              type: 'POST',
+                                              success: function (data) {
+                                                  if (data.length > 0) {
+                                                      porukeIzSkripte.VratiPorukuStatus(data, kojaPorukaDiv);
+                                                      InsertEditError();
+                                                  }
+                                                  else {
+                                                      jQuery(kojigrid).trigger('reloadGrid');
+                                                      InsertEditSucces();
+                                                      $(kojidialog).dialog("close");
+                                                      $(kojidialog).empty();
+                                                  }
+
+                                              }
+                                          });
+                                      }
+                                  }
+
+                              }
+
+                          },
+
+                          Obrisi: {
+                              text: "",
+                              title: "Obriši",
+                              id: kojidialogButton + "Obrisi",
+                              class: 'ObrisiClass',
+                              value: "Obrisi",
+
+                              click: function () {
+                                  if (slaveId == null)
+                                  { alert('Nije odabrana stavka'); }
+
+                                  else {
+                                      if (confirm('Da li sigurno želite obrisati stavku?')) {
+                                          var frm = kojaforma;
+                                          var serializeData = $(kojaforma).serialize();
+                                          $.ajax({
+                                              url: kontrolerakcijaDelete,
+                                              data: serializeData,
+                                              type: 'POST',
+                                              success: function (data) {
+
+                                                  if (data.length > 0) {
+                                                      porukeIzSkripte.VratiPorukuStatus(data, kojaPorukaDiv);
+                                                      DeleteError();
+                                                  }
+                                                  else {
+                                                      jQuery(kojigrid).trigger('reloadGrid');
+                                                      DeleteSucces();
+                                                      $(kojidialog).dialog("close");
+                                                      $(kojidialog).empty();
+                                                  }
+
+                                              }
+                                          });
+                                      }
+
+                                  }
+
+                              }
+
+                          },
+
+
+                          Zatvori:
+                    {
+                        text: "",
+                        title: "Zatvori",
+                        class: 'ZatvoriClass',
+                        click: function () {
+                            $(this).dialog("close");
+                            $(this).empty();
+                        }
+                    }
+                      }
+                  });
+              });
+
+
+
+              if (kojitip == "Edit") {
+
+                  if (slaveId == null) {
+                      $.jgrid.viewModal("#alertmod", { gbox: "#gbox_" + kojigrid, jqm: true });
+                      $("#jqg_alrt").focus();
+                  }
+                  else {
+                      $(kojidialog).dialog("open").load(loader, { Id: slaveId, IdMaster: null })
+
+                  }
+
+              }
+
+
+          };
+ 
+ 
+ </script>
+
+
+      <script type="text/javascript">
+
+
+          function InsertEditSucces() {
+
+          }
+
+          function InsertEditError() {
+
+          }
+
+
+          function DeleteSucces() {
+
+          }
+
+
+          function DeleteError() {
+
+          }
+
+          function ProvjeraKodUnosa() {
+              return true;
+          }
+
+//          $.ProvjeraKodUnosa = function () {
+//              return true;
+//          };
+
+
+
+    </script>
+

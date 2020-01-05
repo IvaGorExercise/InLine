@@ -1,0 +1,182 @@
+﻿@model  InLine.UI.Web.T4.FormFormattedTemplate.View.KontniPlanDetaljFormFormatted
+
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+   <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+
+
+ @{
+     string Akcija = @InLine.Model.Data.FieldString.KontniPlan.KontniPlanEntity + InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert;
+     string IDForma = @InLine.Model.Data.FieldString.KontniPlan.KontniPlanEntity + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Forma;
+ }
+
+  @{
+    string prefixLabela = "labela_KontniPlan_Detalj_";
+ }
+
+@{
+
+    var gridPoslovnaGodina = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.PoslovnaGodinaPoslovniSubjektGridFormatted>(InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.PoslovnaGodinaPoslovniSubjektEntity,
+    dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+    hiddenEnabled: true,
+    footerEnabled: false,
+    userDataOnFooter: false,
+    dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+    methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+    pager: false,
+    caption: "POSLOVNA GODINA",
+    parametersNames: new Lib.Web.Mvc.JQuery.JqGrid.JqGridParametersNames() { PagesCount = "npage" },
+    width:850,
+    rowsNumber: 10,
+    height: 240,
+    url: "../MaticniPodaci/PoslovnaGodinaPoslovniSubjektGrid",
+    onSelectRow: "$.PoslovnaGodinaPoslovniSubjektOnSelectRow",
+    sortingName: @InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.Godina,
+    sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Desc,
+    viewRecords: false).FilterToolbar(new Lib.Web.Mvc.JQuery.JqGrid.JqGridFilterToolbarOptions() { StringResult = true })
+    .Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions() { Search = false, Add = false, Delete = false, Edit = false, Refresh = true }); 
+ }
+
+  @using (Html.BeginForm(Akcija, @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo, FormMethod.Post, new { id = IDForma, @class = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormClass }))
+  {
+    @Html.HiddenFor(model => model.ID_KontniPlan)
+    @Html.HiddenFor(model => model.ID_PoslovnaGodina)  @Html.ValidationMessageFor(model => model.ID_PoslovnaGodina)
+
+    @Html.ValidationSummary(true)
+
+    <table class="@InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormBackground" style="width:100%;">
+    <tbody>
+       <tr>
+    	<td id="kontniPlanZa" style="display:none;">Poslovni subjekt</td>
+        <td>
+        <label id="kontniPlanZaLabela"></label>
+        </td>	
+    </tr>
+    <tr>
+    <td>Odbrana poslovna godina</td>
+    <td id="tdPoslovnaGodina"></td>
+    </tr>
+    <tr>
+    <td id="grid" colspan="2" style="width:100%; vertical-align:top;">
+    @gridPoslovnaGodina.GetHtml()
+    </td>
+    </tr>
+      <tr>
+	    <td >@Html.LabelFor(model => model.AnalitikaOd, new { id = @prefixLabela + @Html.NameFor(model => model.AnalitikaOd) })</td>
+        <td >@Html.EditorFor(model => model.AnalitikaOd)
+           @Html.ValidationMessageFor(model => model.AnalitikaOd) </td>				                
+    </tr>
+ 
+    </tbody>
+    </table>
+     <div id="poruka_Master">
+    </div>
+  }  
+  
+@*  <div id="poruka_Master" ></div>*@
+
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+           @gridPoslovnaGodina.GetJavaScript()
+             jQuery('@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.PoslovnaGodinaPoslovniSubjektEntity').hideCol('@InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.ID_PoslovnaGodina');
+
+             $('#KontniPlanDialogSpremiKopiraj').hide();
+             $('#KontniPlanDialogSpremiDodaj').hide();
+        });
+  </script>
+
+
+   <script type="text/javascript">
+
+    $(document).ready(function () {
+
+    });
+
+  </script>
+
+  <script type="text/javascript">
+      var kojaforma = "#" + '@IDForma';
+      var validator = $(kojaforma).data('validator');
+      validator.settings.ignore = "";
+
+
+      $(function ()
+        {
+            var opcija = @Model.ID_PoslovnaGodina;
+            if (opcija != -1)
+            {
+                setTimeout(function(){
+                jQuery("#PoslovnaGodinaPoslovniSubjekt").setSelection(opcija, true);
+
+                var selectedRowId = $('#PoslovnaGodinaPoslovniSubjekt').jqGrid('getGridParam', 'selrow');
+                var Naziv = $('#PoslovnaGodinaPoslovniSubjekt').jqGrid('getCell', selectedRowId, 'Naziv');
+                var CijiKontniPlan = Naziv;
+
+                $("#grid").hide();
+                $("#kontniPlanZa").show();
+                $("#kontniPlanZaLabela").text(CijiKontniPlan);
+                $('#KontniPlanDialog').dialog("option", "height", 220)
+
+                },500);
+
+             
+
+           }
+
+    });
+
+  </script>
+
+   <script type="text/javascript">
+
+        $(function () {
+            $("#labela_KontniPlan_Detalj_AnalitikaOd").text("Analitika od");
+        });
+   
+    </script>
+
+
+   <script type="text/javascript">
+    function InsertEditSucces() {
+
+       $("#KontniPlanDialog").dialog("close");
+       $("#KontniPlanDialog").empty();
+       $("#Godina").val(" ");
+       $("#Godina").trigger('keydown');
+
+    }
+
+    function InsertEditError() {
+
+    }
+
+
+    function DeleteSucces() {
+      $("#KontniPlanDialog").dialog("close");
+      $("#KontniPlanDialog").empty();
+      $("#Godina").val(" ");
+      $("#Godina").trigger('keydown');
+
+    }
+
+
+    function DeleteError() {
+
+    }
+
+    function ProvjeraKodUnosa() {
+        return false;
+    }
+
+
+    </script>
+
+
+
+
+
+
+
+    
+    	
+ 		

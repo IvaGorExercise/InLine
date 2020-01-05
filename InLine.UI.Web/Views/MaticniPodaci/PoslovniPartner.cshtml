@@ -1,0 +1,96 @@
+﻿
+@{
+    string Autocomplete = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Autocomplete + "PoslovniPartner";
+}
+
+<table width="100%">
+<tr>
+<td width="10%">Poslovni partner</td>
+    <td>
+   <input id="PoslovniPartnerInput" class="btnDropDownSymbol autocompletePoslovniPartner ui-autocomplete-input" type="text" value="" name="poslovniPartner" autocomplete="off">
+</td>
+</tr>
+</table>
+
+
+<script type="text/javascript">
+
+    $("." + '@Autocomplete').each(function () {
+
+        var widgetAutoComplete = $(this).autocomplete({
+
+            showHeader: true,
+
+            source: function (request, response) {
+
+                var url = '@Url.Action("GetPoslovniPartner", @InLine.UI.Web.T4.ControllerName.ControllerName.MaticniPodaci)';
+
+                $.ajax({
+                    url: url,
+                    data: { query: request.term },
+                    dataType: 'json',
+                    type: 'GET',
+                    success: function (data) {
+                        response($.map(data,
+                        function (item) {
+
+                            return {
+                                id: item.ID_Subjekt,
+                                value1: item.Naziv,
+                                value2: item.SubjektVrNaziv
+                            }
+
+                        }));
+                    }
+                })
+            },
+            select:
+                function (event, ui) {
+                    alert(ui.item.value1);
+                    $("#ID_Subjekt").val(ui.item.id);
+                    $("#PoslovniPartnerInput").val(ui.item.value1.toUpperCase());
+
+                    // test za brisanje pp
+                    $("#ID_Zapis").val("");
+                    $("#DokumentInput").val("");
+                    return false;
+                },
+
+            minLength: 0
+
+        }).data("autocomplete");
+
+        widgetAutoComplete._renderItem = function (ul, item) {
+
+            return $("<li class='tblAutocompleteLi'><table class='tblAutocomplete'></table></li>").data("item.autocomplete-item", item).append("<a><table width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><td width='170px'>" + item.value1 + "</td><td width='100px'>" + item.value2 + "</td></tr></table></a>").appendTo(ul);
+        }
+
+        widgetAutoComplete._renderMenu = function (ul, item) {
+
+            var self = this;
+            $.each(item, function (index, items) {
+                if (index == 0)
+                    ul.append("<li><table class='autocompleteHeader' width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><th width='170px'>" + '@InLine.Model.Data.FieldString.View.PoslovniSubjektSubjekt.Naziv' + "</th><th width='100px'> Vrsta  </th></tr></table></li>");
+                self._renderItemData(ul, items);
+            });
+        }
+
+    });
+
+
+  $(".btnDropDownSymbol").click(function () {
+       Dialozi.ComboAll();
+  });
+
+
+  $('#PoslovniPartnerInput').change(function () {
+      poslovnipartnerodabran = $('#PoslovniPartnerInput').val();
+
+      if (poslovnipartnerodabran == "") {
+          $("#ID_Subjekt").val("");
+      }
+
+
+  });
+
+ </script>

@@ -1,0 +1,98 @@
+﻿
+@model InLine.UI.Web.Controllers.KriterijFolder
+
+ <style type="text/css">
+ #radioGumbi 
+ {
+    padding-bottom:10px;
+}
+
+</style>
+
+
+@{
+    var treeviewId = @Model.KojiKriterij;
+}
+
+
+
+	
+@if (@Model.Folderi.Any())
+{
+
+@helper DropCombo(IEnumerable<InLine.UI.Web.Controllers.Folder> folders)
+    {
+    string rbName = "rb_" + @folders.ElementAt(0).ID_Kriterij;
+    bool obavezan = false;
+    bool obavezanDa = false;
+    bool obavezanNe = false;
+    string rbNameBezRb = @folders.ElementAt(0).ID_Kriterij.ToString();
+    
+  
+    <div>
+    @foreach (var folder in folders)
+    {
+        
+        if (folder.ID_Kriterij.ToString() == rbNameBezRb && folder.IsKriterijObavezanFolder == true)
+        {
+            obavezan = true;
+        }
+
+        if (obavezan)
+        {
+            obavezanDa = true;
+            obavezanNe = false;
+        }
+
+        else
+        {
+            obavezanDa = false;
+            obavezanNe = true;
+        }
+
+    }
+    
+        <div id ="radioGumbi">
+           kriterij obavezan:
+                <input type="radio" name="@rbName" value="1" checked="@obavezanDa" />da
+                <input type="radio" name="@rbName" value="0" checked="@obavezanNe"/>ne
+            </div> 
+
+        </div>
+  
+        <select id="@folders.ElementAt(0).ID_Kriterij" class="combochosen" >
+        <option value='-1'>--Odaberite--</option>
+
+        @foreach (var folder in folders)
+        {
+            <option value='@folder.ID_KriterijSt' selected="@folder.IsChecked" >@folder.KriterijStNaziv </option> 
+                   
+        }
+
+       </select>
+       
+  }
+   
+    <br />
+ 
+<div id="dropcombo"  >
+	@DropCombo(Model.Folderi)
+</div>
+
+
+}
+
+ else
+ {
+    <br />
+    <br />
+    
+    <div>Za ovaj kriterij nema stavaka</div>
+     
+  }
+
+
+
+
+
+

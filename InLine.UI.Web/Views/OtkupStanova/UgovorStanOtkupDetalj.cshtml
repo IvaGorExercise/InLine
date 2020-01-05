@@ -1,0 +1,295 @@
+﻿
+@model InLine.UI.Web.T4.FormFormattedTemplate.View.UgovorStanOtkupDetaljFormFormatted
+
+<style type="text/css">
+
+#ugovor-detail #BrojUgovor, #ugovor-detail #Datum { font-weight:bold;}
+#Ulica { width:100%;}
+#Opis { width:100%;}
+
+</style>
+
+ @{
+    string prefixLabela = "labela_UgovorStanOtkup_Detalj_";
+ }
+
+<table class ="UgovorDetail @InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormBackground" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+   <tbody>
+
+      <tr id="tr1">
+	    <td style="background-color:#FFF2C2; font-weight:bold">@Html.LabelFor(model => model.BrojUgovor, new { id = @prefixLabela + @Html.NameFor(model => model.BrojUgovor) })</td>
+        <td >@Html.EditorFor(model => model.BrojUgovor)</td>
+        <td style="background-color:#FFF2C2; font-weight:bold">@Html.LabelFor(model => model.Datum, new { id = @prefixLabela + @Html.NameFor(model => model.Datum) })</td>
+        <td>@Html.EditorFor(model => model.Datum)</td>								                
+    </tr>
+
+       
+     <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+
+
+      <tr id="tr4">
+          <td>@Html.LabelFor(model => model.UgovorTuzen, new { id = @prefixLabela + @Html.NameFor(model => model.UgovorTuzen) })</td>
+       <td>
+        @if (@Model.UgovorTuzen.HasValue)
+        {
+            @Html.CheckBoxFor(model => model.UgovorTuzen.Value)  
+        }
+       
+        </td> 
+        <td>@Html.LabelFor(model => model.DatumDospijeceTrosakSud, new { id = @prefixLabela + @Html.NameFor(model => model.DatumDospijeceTrosakSud) })</td>
+        <td>@Html.EditorFor(model => model.DatumDospijeceTrosakSud)</td>	
+        </tr>
+
+
+    <tr id="tr5">
+        <td>@Html.LabelFor(model => model.NadstojnickiAdaptiran, new { id = @prefixLabela + @Html.NameFor(model => model.NadstojnickiAdaptiran) })</td>
+       <td>@Html.CheckBoxFor(model => model.NadstojnickiAdaptiran)
+
+       </td>
+        <td>@Html.LabelFor(model => model.NeZateznaKamata, new { id = @prefixLabela + @Html.NameFor(model => model.NeZateznaKamata) })</td>
+       <td>
+        @if (@Model.NeZateznaKamata.HasValue)
+        {
+            @Html.CheckBoxFor(model => model.NeZateznaKamata.Value)  
+        }  </td>  
+           							                
+    </tr>
+        <tr id="tr6">
+        <td>@Html.LabelFor(model => model.DokumentGrupa, new { id = @prefixLabela + @Html.NameFor(model => model.DokumentGrupa) })</td>
+        <td>@Html.DisplayFor(model => model.DokumentGrupa)</td>	
+        <td>@Html.LabelFor(model => model.DokumentVrsta, new { id = @prefixLabela + @Html.NameFor(model => model.DokumentVrsta) })</td>
+       <td>@Html.DisplayFor(model => model.DokumentVrsta)</td>							                
+    </tr>
+
+   @*  <tr id="tr7">
+ 	    <td>@Html.LabelFor(model => model.TemeljnicaBroj, new { id = @prefixLabela + @Html.NameFor(model => model.TemeljnicaBroj) })</td>
+       <td>@Html.EditorFor(model => model.TemeljnicaBroj)</td>    
+    </tr>*@
+
+    <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+    
+      <tr id="tr24">
+     <td>@Html.LabelFor(model => model.Ulica, new { id = @prefixLabela + @Html.NameFor(model => model.Ulica) })</td>
+       <td colspan ="3">@Html.EditorFor(model => model.Ulica)</td>
+       
+    </tr>
+
+    <tr>
+         <td>@Html.LabelFor(model => model.KucniBroj, new { id = @prefixLabela + @Html.NameFor(model => model.KucniBroj) })</td>
+       <td>@Html.EditorFor(model => model.KucniBroj)</td>
+        	    <td>@Html.LabelFor(model => model.KucniBrojDodatak, new { id = @prefixLabela + @Html.NameFor(model => model.KucniBrojDodatak) })</td>
+       <td>@Html.EditorFor(model => model.KucniBrojDodatak)</td>      
+    </tr>
+
+     <tr id="tr25">
+
+         <td>@Html.LabelFor(model => model.Kat, new { id = @prefixLabela + @Html.NameFor(model => model.Kat) })</td>
+       <td>@Html.EditorFor(model => model.Kat)</td>
+           <td>@Html.LabelFor(model => model.BrojSoba, new { id = @prefixLabela + @Html.NameFor(model => model.BrojSoba) })</td>
+        <td>@Html.EditorFor(model => model.BrojSoba)</td>	  
+    </tr>
+
+     <tr id="tr26">
+     <td>@Html.LabelFor(model => model.KatastarskaCestica, new { id = @prefixLabela + @Html.NameFor(model => model.KatastarskaCestica) })</td>
+       <td>@Html.EditorFor(model => model.KatastarskaCestica)</td>    
+       	    <td>@Html.LabelFor(model => model.KatastarskaCesticaOpcina, new { id = @prefixLabela + @Html.NameFor(model => model.KatastarskaCesticaOpcina) })</td>
+       <td>@Html.EditorFor(model => model.KatastarskaCesticaOpcina)</td>           
+    </tr>
+
+
+      <tr id="tr27">
+ 	    <td>@Html.LabelFor(model => model.Naziv, new { id = @prefixLabela + @Html.NameFor(model => model.Naziv) })</td>
+       <td>@Html.EditorFor(model => model.Naziv)</td>
+       <td>@Html.LabelFor(model => model.ZgradaNaziv, new { id = @prefixLabela + @Html.NameFor(model => model.ZgradaNaziv) })</td>
+       <td>@Html.EditorFor(model => model.ZgradaNaziv)</td>
+    </tr>
+
+     <tr id="tr28">
+ 	    <td>@Html.LabelFor(model => model.Opis, new { id = @prefixLabela + @Html.NameFor(model => model.Opis) })</td>
+       <td colspan ="3">@Html.EditorFor(model => model.Opis)</td> 
+             
+    </tr>
+
+
+     <tr id="tr29">
+ 	    <td>@Html.LabelFor(model => model.Povrsina, new { id = @prefixLabela + @Html.NameFor(model => model.Povrsina) })</td>
+       <td>@Html.EditorFor(model => model.Povrsina)</td>
+              <td>@Html.LabelFor(model => model.Pretvorba, new { id = @prefixLabela + @Html.NameFor(model => model.Pretvorba) })</td>
+       <td>@Html.CheckBoxFor(model => model.Pretvorba) </td> 
+     	   
+    </tr>
+
+
+     <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+
+     <tr id="tr23">
+ 	    <td>@Html.LabelFor(model => model.TecajDM, new { id = @prefixLabela + @Html.NameFor(model => model.TecajDM) })</td>
+       <td>@Html.EditorFor(model => model.TecajDM)</td> 
+       <td>@Html.LabelFor(model => model.IDValuta, new { id = @prefixLabela + @Html.NameFor(model => model.IDValuta) })</td>
+       <td>@Html.EditorFor(model => model.IDValuta)</td>           
+    </tr>
+
+    <tr id="tr8">
+        <td>@Html.LabelFor(model => model.IznosKredit, new { id = @prefixLabela + @Html.NameFor(model => model.IznosKredit) })</td>
+       <td>@Html.EditorFor(model => model.IznosKredit)</td> 
+       <td>@Html.LabelFor(model => model.IznosKamata, new { id = @prefixLabela + @Html.NameFor(model => model.IznosKamata) })</td>
+       <td>@Html.EditorFor(model => model.IznosKamata)</td>   
+    </tr>
+
+    <tr id="tr19">
+ 	   <td>@Html.LabelFor(model => model.IznosUcesce, new { id = @prefixLabela + @Html.NameFor(model => model.IznosUcesce) })</td>
+       <td>@Html.EditorFor(model => model.IznosUcesce)</td>
+       <td>@Html.LabelFor(model => model.DatumDospijeceUcesce, new { id = @prefixLabela + @Html.NameFor(model => model.DatumDospijeceUcesce) })</td>
+       <td>@Html.EditorFor(model => model.DatumDospijeceUcesce)</td>	
+             
+    </tr>
+
+    <tr id="tr15">
+        <td>@Html.LabelFor(model => model.IznosKreditObrok, new { id = @prefixLabela + @Html.NameFor(model => model.IznosKreditObrok) })</td>
+       <td>@Html.EditorFor(model => model.IznosKreditObrok)</td>
+       	<td>@Html.LabelFor(model => model.IznosKamataObrok, new { id = @prefixLabela + @Html.NameFor(model => model.IznosKamataObrok) })</td>
+       <td>@Html.EditorFor(model => model.IznosKamataObrok)</td>               
+    </tr>
+
+       <tr id="tr3">
+	    <td>@Html.LabelFor(model => model.BrojObrok, new { id = @prefixLabela + @Html.NameFor(model => model.BrojObrok) })</td>
+        <td>@Html.EditorFor(model => model.BrojObrok)</td>	
+        <td>@Html.LabelFor(model => model.IznosUkupnoObrok, new { id = @prefixLabela + @Html.NameFor(model => model.IznosUkupnoObrok) })</td>
+       <td>@Html.EditorFor(model => model.IznosUkupnoObrok)</td> 								                
+    </tr>
+
+      <tr>
+        <td>@Html.LabelFor(model => model.BrojObrokDospjelo, new { id = @prefixLabela + @Html.NameFor(model => model.BrojObrokDospjelo) })</td>
+        <td>@Html.EditorFor(model => model.BrojObrokDospjelo)</td>
+        <td>@Html.LabelFor(model => model.DatumDospijeceObrok, new { id = @prefixLabela + @Html.NameFor(model => model.DatumDospijeceObrok) })</td>
+        <td>@Html.EditorFor(model => model.DatumDospijeceObrok)</td>								                
+    </tr>
+
+    <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+
+    <tr id="tr22">
+ 	    <td>@Html.LabelFor(model => model.TemeljnicaGodina, new { id = @prefixLabela + @Html.NameFor(model => model.TemeljnicaGodina) })</td>
+       <td>@Html.EditorFor(model => model.TemeljnicaGodina)</td> 
+     <td>@Html.LabelFor(model => model.TemeljnicaVrsta, new { id = @prefixLabela + @Html.NameFor(model => model.TemeljnicaVrsta) })</td>
+       <td>@Html.EditorFor(model => model.TemeljnicaVrsta)</td>         
+    </tr>
+
+      <tr id="tr2">
+	    <td>@Html.LabelFor(model => model.BrojStorno, new { id = @prefixLabela + @Html.NameFor(model => model.BrojStorno) })</td>
+        <td>@Html.EditorFor(model => model.BrojStorno)</td>	
+        <td>@Html.LabelFor(model => model.BrojAneks, new { id = @prefixLabela + @Html.NameFor(model => model.BrojAneks) })</td>
+        <td>@Html.EditorFor(model => model.BrojAneks)</td>								                
+    </tr>
+
+    <tr id="tr20">
+ 	   <td>@Html.LabelFor(model => model.IznosUcescePlaceno, new { id = @prefixLabela + @Html.NameFor(model => model.IznosUcescePlaceno) })</td>
+       <td>@Html.EditorFor(model => model.IznosUcescePlaceno)</td>
+      <td>@Html.LabelFor(model => model.IznosUcesceNeplaceno, new { id = @prefixLabela + @Html.NameFor(model => model.IznosUcesceNeplaceno) })</td>
+       <td>@Html.EditorFor(model => model.IznosUcesceNeplaceno)</td>      
+    </tr>
+
+      <tr id="tr9">
+	    <td>@Html.LabelFor(model => model.IznosJednokratno, new { id = @prefixLabela + @Html.NameFor(model => model.IznosJednokratno) })</td>
+       <td>@Html.EditorFor(model => model.IznosJednokratno)</td>	 
+       <td>@Html.LabelFor(model => model.DatumDospijeceJednokratno, new { id = @prefixLabela + @Html.NameFor(model => model.DatumDospijeceJednokratno) })</td>
+        <td>@Html.EditorFor(model => model.DatumDospijeceJednokratno)</td>	              
+    </tr>
+    
+
+      <tr id="tr10">
+ 	    <td>@Html.LabelFor(model => model.IznosJednokratnoPlaceno, new { id = @prefixLabela + @Html.NameFor(model => model.IznosJednokratnoPlaceno) })</td>
+       <td>@Html.EditorFor(model => model.IznosJednokratnoPlaceno)</td>
+        <td>@Html.LabelFor(model => model.IznosJednokratnoNeplaceno, new { id = @prefixLabela + @Html.NameFor(model => model.IznosJednokratnoNeplaceno) })</td>
+       <td>@Html.EditorFor(model => model.IznosJednokratnoNeplaceno)</td>                  
+    </tr>
+
+     <tr>
+        <td>@Html.LabelFor(model => model.IznosJednokratnoValuta, new { id = @prefixLabela + @Html.NameFor(model => model.IznosJednokratnoValuta) })</td>
+       <td>@Html.EditorFor(model => model.IznosJednokratnoValuta)</td>
+        <td></td>
+        <td></td>        
+    </tr>
+
+      <tr id="tr11">
+        <td>@Html.LabelFor(model => model.IznosJednokratnoValutaPlaceno, new { id = @prefixLabela + @Html.NameFor(model => model.IznosJednokratnoValutaPlaceno) })</td>
+       <td>@Html.EditorFor(model => model.IznosJednokratnoValutaPlaceno)</td>
+        <td>@Html.LabelFor(model => model.IznosJednokratnoValutaNeplaceno, new { id = @prefixLabela + @Html.NameFor(model => model.IznosJednokratnoValutaNeplaceno) })</td>
+       <td>@Html.EditorFor(model => model.IznosJednokratnoValutaNeplaceno)</td>                  
+    </tr>
+
+    <tr id="tr16">
+ 	    <td>@Html.LabelFor(model => model.IznosKreditPlaceno, new { id = @prefixLabela + @Html.NameFor(model => model.IznosKreditPlaceno) })</td>
+       <td>@Html.EditorFor(model => model.IznosKreditPlaceno)</td>
+       <td>@Html.LabelFor(model => model.IznosKreditNeplaceno, new { id = @prefixLabela + @Html.NameFor(model => model.IznosKreditNeplaceno) })</td>
+       <td>@Html.EditorFor(model => model.IznosKreditNeplaceno)</td>
+     </tr>
+       
+    <tr id="tr13">
+        <td>@Html.LabelFor(model => model.IznosKamataPlaceno, new { id = @prefixLabela + @Html.NameFor(model => model.IznosKamataPlaceno) })</td>
+       <td>@Html.EditorFor(model => model.IznosKamataPlaceno)</td> 
+       <td>@Html.LabelFor(model => model.IznosKamataNeplaceno, new { id = @prefixLabela + @Html.NameFor(model => model.IznosKamataNeplaceno) })</td>
+       <td>@Html.EditorFor(model => model.IznosKamataNeplaceno)</td>             
+    </tr>
+
+     <tr id="tr14">
+        <td>@Html.LabelFor(model => model.IznosKreditRevalorizacija, new { id = @prefixLabela + @Html.NameFor(model => model.IznosKreditRevalorizacija) })</td>
+       <td>@Html.EditorFor(model => model.IznosKreditRevalorizacija)</td> 
+ 	    <td>@Html.LabelFor(model => model.IznosKamataRevalorizacija, new { id = @prefixLabela + @Html.NameFor(model => model.IznosKamataRevalorizacija) })</td>
+       <td>@Html.EditorFor(model => model.IznosKamataRevalorizacija)</td>     
+    </tr>
+
+             
+     <tr id="tr17">
+        <td>@Html.LabelFor(model => model.IznosKreditRevalorizacijaPlaceno, new { id = @prefixLabela + @Html.NameFor(model => model.IznosKreditRevalorizacijaPlaceno) })</td>
+       <td>@Html.EditorFor(model => model.IznosKreditRevalorizacijaPlaceno)</td>
+        <td>@Html.LabelFor(model => model.IznosKreditRevalorizacijaNeplaceno, new { id = @prefixLabela + @Html.NameFor(model => model.IznosKreditRevalorizacijaNeplaceno) })</td>
+       <td>@Html.EditorFor(model => model.IznosKreditRevalorizacijaNeplaceno)</td>            
+    </tr>
+
+     <tr id="tr12">
+ 	  	<td>@Html.LabelFor(model => model.IznosKamataRevalorizacijaPlaceno, new { id = @prefixLabela + @Html.NameFor(model => model.IznosKamataRevalorizacijaPlaceno) })</td>
+       <td>@Html.EditorFor(model => model.IznosKamataRevalorizacijaPlaceno)</td> 
+        <td>@Html.LabelFor(model => model.IznosKamataRevalorizacijaNeplaceno, new { id = @prefixLabela + @Html.NameFor(model => model.IznosKamataRevalorizacijaNeplaceno) })</td>
+       <td>@Html.EditorFor(model => model.IznosKamataRevalorizacijaNeplaceno)</td>        
+    </tr>
+
+
+
+       <tr id="tr18">
+ 	    <td>@Html.LabelFor(model => model.IznosPovrat, new { id = @prefixLabela + @Html.NameFor(model => model.IznosPovrat) })</td>
+       <td>@Html.EditorFor(model => model.IznosPovrat)</td> 
+     <td>@Html.LabelFor(model => model.IznosTrosakSud, new { id = @prefixLabela + @Html.NameFor(model => model.IznosTrosakSud) })</td>
+       <td>@Html.EditorFor(model => model.IznosTrosakSud)</td>              
+    </tr>
+
+     <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+
+       <tr id="tr31">
+     <td>@Html.LabelFor(model => model.OsobaInsert, new { id = @prefixLabela + @Html.NameFor(model => model.OsobaInsert) })</td>
+       <td>@Html.EditorFor(model => model.OsobaInsert)</td>
+          <td>@Html.LabelFor(model => model.OsobaUpdate, new { id = @prefixLabela + @Html.NameFor(model => model.OsobaUpdate) })</td>
+       <td>@Html.EditorFor(model => model.OsobaUpdate)</td> 	
+    </tr>
+
+
+     <tr id="tr32">
+	     <td>@Html.LabelFor(model => model.DatumInsert, new { id = @prefixLabela + @Html.NameFor(model => model.DatumInsert) })</td>
+        <td>@Html.EditorFor(model => model.DatumInsert)</td> 	
+        <td>@Html.LabelFor(model => model.DatumUpdate, new { id = @prefixLabela + @Html.NameFor(model => model.DatumUpdate) })</td>
+        <td>@Html.EditorFor(model => model.DatumUpdate)</td>								                
+    </tr>
+
+	
+  </tbody>
+</table>
+
+    <script type="text/javascript">
+
+        $(function () {
+            $("#labela_labela_UgovorStanOtkup_Detalj_BrojUgovor").text("Broj ugovora");
+        
+
+
+        });
+
+    </script>

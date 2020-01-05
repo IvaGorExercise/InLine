@@ -1,0 +1,1514 @@
+﻿@{
+
+    Layout = "~/Views/Shared/_LayoutFinancijsko.cshtml";
+}
+
+
+<style type="text/css">
+ 
+#sg_BrojUgovor { width:80px;}
+#sg_UlicaStan { width:120px;}
+#sg_Naziv { width:120px;}
+#sg_UlicaKupac { width:120px;}
+.filtertable tr td label { display:none;}
+.kupacugovorSearch { font-size:12px;}
+#napomenaHolder {overflow-y:auto;}
+#gview_kupac .ui-jqgrid-title { height:10px;}
+.ui-jqgrid-htable ui-jqgrid-labels tr{ height:3px; background-color:Aqua;}
+#kupacugovorPager {display:none;}
+#kupacPager {display:none;}
+
+.ui-jqgrid-ftable {font-size:11px;}
+
+#tr-ugovor {background-color:#FFCD73; font-size: 13px; font-weight: bold;}
+#ugovor-broj-sadrzaj {color:#324768;}
+
+
+</style>
+
+
+@{
+
+    var grid1 = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.UgovorStanOtkupKupacNositeljGridFormatted>("kupacugovor",
+        dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+        methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+        dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+        caption:"UGOVOR",
+        onSelectRow: "$.masterclick",
+        onDoubleClickRow: "$.ugovordetail",
+        pager: false,
+        width:1890,
+        shrinkToFit: true,
+        height:230,
+        rowsNumber: 15,
+        sortingName: "BrojUgovor",
+        sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Asc,
+        url: Url.Action("KupacUgovorGrid"),
+        viewRecords: true
+     ).FilterGrid(options: new Lib.Web.Mvc.JQuery.JqGrid.JqGridFilterGridOptions()
+    {
+        AutoSearch = false,
+        SearchText = "Traži",
+        ClearText="Poništi",
+        MarkSearched=true,
+        ClearEnabled = true,
+        SearchEnabled = true,
+        Type = Lib.Web.Mvc.JQuery.JqGrid.JqGridFilterGridTypes.Horizontal,
+        FormClass="filter-grid1",
+        
+
+    });
+
+
+
+    var grid2 = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.UgovorStanOtkupKupacGridFormatted>("kupac",
+    dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+    hiddenEnabled: true,
+    dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+    methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+    onDoubleClickRow: "$.kupacdetail",
+    pager: false,
+    caption: "1. KUPCI",
+    parametersNames: new Lib.Web.Mvc.JQuery.JqGrid.JqGridParametersNames() { PagesCount = "npage" },
+    width: 945,
+    rowsNumber: 5,
+    height: 53,
+    sortingName: "BrojUgovor",
+    sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Asc,
+    viewRecords: false).Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions() { Search = false, Add = false, Delete = false, Edit = false, Refresh = true });
+
+
+    var grid3 = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.UgovorStanOtkupObrokGridFormatted>("obrok",
+    dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+    caption:"3. OBROK - zaduženje",
+    hiddenEnabled: true,
+    dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+    methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+    gridComplete: "$.obrokmoratorijformater",
+    onSelectRow: "$.obrokuplata",
+    onDoubleClickRow: "$.obrokdetail",
+    footerEnabled: true,
+    userDataOnFooter: true,
+    pager: true,
+    parametersNames: new Lib.Web.Mvc.JQuery.JqGrid.JqGridParametersNames() { PagesCount = "npage" },
+    width: 600,
+    autoWidth: false,
+    shrinkToFit: true,
+    rowsNumber: 100,
+    height: 230,
+    sortingName: "BrojObrok",
+    sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Desc,
+    viewRecords: false).Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions() { Search = false, Add = false, Delete = false, Edit = false, Refresh = true })
+    .FilterToolbar(new Lib.Web.Mvc.JQuery.JqGrid.JqGridFilterToolbarOptions() { StringResult = true });
+   
+
+
+   var grid4 = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.UgovorStanOtkupObrokUplataGridFormatted>("uplata",
+    dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+    hiddenEnabled: true,
+    dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+    methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+    onSelectRow: "$.uplatadetail",
+    footerEnabled: true,
+    userDataOnFooter: true,
+    pager: true,
+    caption: "4. UPLATA po obroku",
+    parametersNames: new Lib.Web.Mvc.JQuery.JqGrid.JqGridParametersNames() { PagesCount = "npage" },
+    autoWidth: false,
+    shrinkToFit: true,
+    rowsNumber: 100,
+    height: 100,
+    sortingName: "BrojUgovor",
+    sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Asc,
+    viewRecords: false).Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions() { Search = false, Add = false, Delete = false, Edit = false, Refresh = true });
+    
+    
+
+   var grid5 = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.UgovorStanOtkupObrokPreplataGridFormatted>("preplata",
+dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+hiddenEnabled: true,
+dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+onDoubleClickRow: "$.preplatadetail",
+footerEnabled: true,
+userDataOnFooter: true,
+pager: true,
+caption: "6. PREPLATA po ugovoru",
+parametersNames: new Lib.Web.Mvc.JQuery.JqGrid.JqGridParametersNames() { PagesCount = "npage" },
+autoWidth: false,
+shrinkToFit: true,
+rowsNumber: 100,
+height: 70,
+sortingName: "Datum",
+sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Desc,
+viewRecords: false).Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions() { Search = false, Add = false, Delete = false, Edit = false, Refresh = true });
+
+
+
+   var grid6 = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.UgovorStanOtkupOpomenaGridFormatted>("opomena",
+ dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+ hiddenEnabled: true,
+ dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+ onDoubleClickRow: "$.opomenadetail",
+ footerEnabled: true,
+ userDataOnFooter: true,
+ methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+ pager: true,
+ caption: "7. OPOMENA po ugovoru",
+ parametersNames: new Lib.Web.Mvc.JQuery.JqGrid.JqGridParametersNames() { PagesCount = "npage" },
+ autoWidth: false,
+ shrinkToFit: true,
+ rowsNumber: 10,
+ height: 70,
+ sortingName: "Datum",
+ sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Desc,
+ viewRecords: false).Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions() { Search = false, Add = false, Delete = false, Edit = false, Refresh = true });
+ 
+ 
+
+var grid7 = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.UgovorStanOtkupNalogGridFormatted>("nalog",
+dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+hiddenEnabled: true,
+dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+onDoubleClickRow: "$.nalogdetail",
+footerEnabled: true,
+userDataOnFooter: true,
+pager: true,
+caption: "5. NALOG po ugovoru",
+parametersNames: new Lib.Web.Mvc.JQuery.JqGrid.JqGridParametersNames() { PagesCount = "npage" },
+autoWidth:false,
+shrinkToFit:true,
+rowsNumber: 10,
+height: 70,
+sortingName: "DatumPlacanje",
+sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Desc,
+viewRecords: false).Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions() { Search = false, Add = false, Delete = false, Edit = false, Refresh = true });
+
+
+
+   var grid8 = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.UgovorStanOtkupTrosakGridFormatted>("trosak",
+ dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+ hiddenEnabled: true,
+ dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+ methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+ onDoubleClickRow: "$.trosakdetail",
+ footerEnabled: true,
+ userDataOnFooter: true,
+ pager: true,
+ caption: "8. TROŠAK po ugovoru",
+ parametersNames: new Lib.Web.Mvc.JQuery.JqGrid.JqGridParametersNames() { PagesCount = "npage" },
+ width:430,
+ autoWidth: false,
+ shrinkToFit: true,
+ rowsNumber: 10,
+ height: 70,
+ sortingName: "Datum",
+ sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Desc,
+ viewRecords: false).Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions() { Search = false, Add = false, Delete = false, Edit = false, Refresh = true });
+
+
+
+var grid9 = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.UgovorStanOtkupAneksGridFormatted>("aneks",
+dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+hiddenEnabled: true,
+dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+pager: false,
+caption: "2. ANEKSI",
+parametersNames: new Lib.Web.Mvc.JQuery.JqGrid.JqGridParametersNames() { PagesCount = "npage" },
+width: 510,
+autoWidth: false,
+shrinkToFit: true,
+rowsNumber: 10,
+height: 50,
+sortingName: "Datum",
+sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Desc,
+viewRecords: false).Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions() { Search = false, Add = false, Delete = false, Edit = false, Refresh = true });
+
+
+
+   //var grid10 = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.UgovorStanOtkupMoratorijGridFormatted>("moratorij",
+   //      dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+   //      methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+   //      pager: true,
+   //      rowsNumber: 10,
+   //      sortingName: "BrojMoratorij",
+   //       width: 250,
+   //      sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Asc,
+   //      subgridEnabled: true,
+   //      subgridHelper: new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.UgovorStanOtkupMoratorijMjesecGridFormatted>("moratorijMjesec",
+   //          dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+   //          methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+   //          pager: true,
+   //          onDoubleClickRow: "$.moratorijmjesecdetail",
+   //          rowsNumber: 10,
+   //          width: 100,
+   //          sortingName: "Godina",
+   //          sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Asc,
+   //          url: Url.Action("MoratorijMjesecSubGrid"),
+   //          viewRecords: true
+   //      ).Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions() { Add = false, Delete = false, Edit = false, View = false, Search = false }),
+   //      viewRecords: true
+   //  );
+
+
+   var grid11 = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.UgovorStanOtkupMoratorijGridFormatted>("moratorij",
+dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+hiddenEnabled: true,
+dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+onSelectRow: "$.moratorijmjesec",
+pager: false,
+caption: "9. MORATORIJ rješenje",
+parametersNames: new Lib.Web.Mvc.JQuery.JqGrid.JqGridParametersNames() { PagesCount = "npage" },
+width: 715,
+autoWidth: false,
+   shrinkToFit: true,
+rowsNumber: 10,
+height: 70,
+sortingName: "BrojMoratorij",
+sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Desc,
+viewRecords: false).Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions() { Search = false, Add = false, Delete = false, Edit = false, Refresh = true });
+
+
+
+   var grid12 = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.UgovorStanOtkupMoratorijMjesecGridFormatted>("moratorijMjesec",
+  dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+  hiddenEnabled: true,
+  dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+  methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+  onSelectRow: "$.moratorijmjesecdetail",
+  pager: true,
+  caption: "10. MORATORIJ po mjesecu i godini",
+  parametersNames: new Lib.Web.Mvc.JQuery.JqGrid.JqGridParametersNames() { PagesCount = "npage" },
+  width: 365,
+  autoWidth: false,
+  shrinkToFit: true,
+  rowsNumber: 10,
+  height: 70,
+  sortingName: "Godina",
+  sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Desc,
+  viewRecords: false).Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions() { Search = false, Add = false, Delete = false, Edit = false, Refresh = true });
+
+
+}
+
+ <div class="PrviRed">
+          @Html.Partial(ViewList.PregledUgovora.ViewPregledUgovoraMenu)
+ </div>
+
+ <table style="width:100%;">
+<tbody>
+<tr>
+			             <td style="width:100%;">				
+				                <table width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+                                    <tr>
+                                   <td style="text-align:left;" colspan="2">
+							                <div id="stanje-ugovora" style="margin: 0px 0px 0px 0px; padding: 1px 0px 1px 2px;  display: block; font-weight: bold; color:#ffffff; background:#405c86" >STANJE UGOVORA: XXX; 1.Dospjelo neplaćeno: ###.###,## 2.Zatezna kamata: ###.###,## 3.Nedospjeli dug: ###.###,## 4.SVEUKUPNO: ###.###,## </div>
+						                </td>
+                                    </tr>
+					                <tr>
+						                <td style="width:60%;min-width:60%;vertical-align:top;">
+							                <table width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+								                <tbody><tr>
+									                <td style="vertical-align:top;height:auto;">
+		
+										               <table  cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+											                <tbody>
+                                                            <tr>
+												                <td style="vertical-align:top;">
+												                    @grid1.GetHtml()
+												                </td>
+												                
+											                </tr>											
+										                </tbody>
+                                                        </table>
+                                                        <div id="ugovor-broj" style="display:none;">
+                                                        <table cellspacing="2" cellpadding="3" border="0" style="width:100%;">
+                                                        <tr id="tr-ugovor">
+                                                        <td id ="ugovor-broj-sadrzaj">
+                                                        </td>
+                                                         <td id ="ugovor-broj-id" style="display:none;">
+                                                        </td>
+                                                        </tr>
+                                                        </table>
+                                                        </div>
+                                                             <div id="ugovor-forma">
+                                                    
+                                                         </div>
+
+                                                        <div id="ugovor-div" style="display:none;">						
+										               <table  cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+											                <tbody>
+                                                            <tr>
+												                <td colspan="3" style="vertical-align:top;">
+                                                         @grid2.GetHtml()
+                                                               </td>
+                                                                 <td colspan="3" style="vertical-align:top;">
+                                                         @grid9.GetHtml()
+                                                               </td>
+                                                        </tr>
+                                                      <tr>
+                                                 
+                                          									
+										                </tbody>
+                                                        </table>
+                                                         <div id="otvoriNapomena">
+                                                           <button id="btn-otvoriNapomena"  name="Napomena" value="Napomena">Dodaj napomenu</button> 
+                                                        </div>
+                                                        <div id="loadNapomenaHOLDER" style="opacity: 1; visibility: visible;">
+                                                        <div style="margin-right:0;margin-top:10px;margin-bottom:5px;" class="dodPodHolder">	<label>NAPOMENA uz ugovor</label>
+                                                        	<textarea id="napomenaHolder" style="width:99%;height:135px;" cols="" rows=""> </textarea> 
+                                                        </div>
+                                                        <div id="spremiNapomena">
+                                                           <button id="btn-spremiNapomena"  name="Napomena" value="Napomena">Spremi napomenu</button> <label id="lblPrazno"></label>
+                                                        </div>
+                                                        </div>
+                                                     
+
+                                                        </div>
+
+                                                
+                                                        										
+									                </td>
+								                </tr>
+								                <tr>
+									                <td style="vertical-align:top;border-top:solid 1px #A9BCFE;padding-top:10px;">
+										                <table width="100%" cellspacing="0" cellpadding="0" sytle="width:100%;">
+											                <tbody>
+                                                            <tr>
+												                <td style="padding-right:0px;vertical-align:top;" >
+            
+                                                                     @grid7.GetHtml()
+			
+												              </td>
+												                <td style="padding-right:0px; vertical-align:top;">
+
+																    @grid5.GetHtml()   
+	
+												                </td>
+												                
+											                </tr>
+
+                                                            <tr>
+                                                                <td style="padding-right:0px;vertical-align:top;">
+																  @grid6.GetHtml()
+                                                               
+
+                                                                </td>
+       
+                                                                <td style="padding-right:0px;vertical-align:top;">
+																  @grid8.GetHtml()
+                                                               
+
+                                                                </td>
+                                                                
+                                                            </tr>
+                                                        											                
+										                </tbody>
+                                                        </table>
+									                </td>
+								                </tr>
+							                </tbody></table>
+						                </td>
+						                <td style="border-left:solid 1px #A9BCFE;vertical-align:top;">
+							                <table width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+								
+                                                <tr>
+												      <td style="vertical-align:top;">
+             
+														              @grid3.GetHtml()
+												                </td>												                
+											       </tr>
+                                                    <tr>
+												                <td style=" margin-top:20px;">
+            
+														                    @grid4.GetHtml()
+                                                                            </td>
+                                                         </tr>
+                                                             <tr>
+												                <td style=" margin-top:20px;">
+            
+														                    @grid11.GetHtml()
+                                                                            </td>
+                                                         </tr>
+                                                             <tr>
+												                <td style=" margin-top:20px;">
+            
+														                    @grid12.GetHtml()
+                                                                            </td>
+                                                         </tr>
+                                                </table>
+                                                                   							
+									                </td>
+                                                   </tr>
+                                                  </table>
+									              </td>
+								                </tr>
+							                </tbody>						
+</table>
+    					           
+<div id="ugovor-detail" class="hidden"></div>
+<div id="kupac-detail" class="hidden"></div>				             
+<div id="obrok-detail" class="hidden"></div>
+<div id="obrok-uplata-detail" class="hidden"></div>
+<div id="nalog-detail" class="hidden"></div>
+<div id="preplata-detail" class="hidden"></div>
+<div id="opomena-detail" class="hidden"></div>
+<div id="opomena-detail-container" class="hidden"></div>
+<div id="trosak-detail" class="hidden"></div>
+<div id="moratorijmjesec-detail" class="hidden"></div>
+
+
+
+
+ 
+
+
+
+
+@section JavaScript {
+
+    <script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+           @grid1.GetJavaScript()
+         
+           jQuery("#kupacugovor").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupKupacNositelj.ID_UgovorStanOtkupKupac');
+           jQuery("#kupacugovor").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupKupacNositelj.ID_Kupac');
+           //jQuery("#kupacugovor").hideCol("Datum");
+           jQuery("#kupacugovor").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupKupacNositelj.ID_UgovorStanOtkup');
+           jQuery("#kupacugovor").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupKupacNositelj.Napomena');
+           jQuery("#kupacugovor").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupKupacNositelj.JMBG');
+           jQuery("#kupacugovor").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupKupacNositelj.OIB');
+           jQuery("#kupacugovor").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupKupacNositelj.Nositelj');
+           jQuery("#kupacugovor").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupKupacNositelj.KontrolniBroj');
+           jQuery("#kupacugovor").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupKupacNositelj.PostanskiBroj');
+
+           $("#sg_BrojUgovor").attr("placeholder", "Br. ugovora");
+           $("#sg_UlicaStan").attr("placeholder", "Adresa na ugovoru");
+           $("#sg_Naziv").attr("placeholder", "Naziv kupca");
+            $("#sg_UlicaKupac").attr("placeholder", "Adresa kupca");
+
+
+            //grid2
+             @grid2.GetJavaScript()
+              jQuery("#kupac").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupKupac.ID_UgovorStanOtkup');
+               jQuery("#kupac").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupKupac.ID_UgovorStanOtkupKupac');
+               jQuery("#kupac").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupKupac.ID_Kupac');
+               jQuery("#kupac").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupKupac.BrojUgovor');
+         
+  
+
+
+           //grid3
+             @grid3.GetJavaScript()
+             jQuery("#obrok").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupObrok.ID_UgovorStanOtkupObrok');
+             jQuery("#obrok").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupObrok.ID_UgovorStanOtkup');
+             jQuery("#obrok").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupObrok.BrojUgovor');
+             jQuery("#obrok").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupObrok.TecajUgovor');
+             jQuery("#obrok").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupObrok.ID_UgovorStanOtkupMoratorij');
+   
+
+           //grid4
+             @grid4.GetJavaScript()
+               jQuery("#uplata").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupObrokUplata.ID_UgovorStanOtkupObrokUplata');
+                jQuery("#uplata").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupObrokUplata.ID_UgovorStanOtkupObrok');
+                jQuery("#uplata").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupObrokUplata.BrojUgovor');
+                jQuery("#uplata").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupObrokUplata.BrojObrok');
+         
+            
+           //grid5
+             @grid5.GetJavaScript()
+              jQuery("#preplata").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupObrokPreplata.ID_UgovorStanOtkupObrokPreplata');
+              jQuery("#preplata").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupObrokPreplata.ID_UgovorStanOtkupObrok');
+              jQuery("#preplata").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupObrokPreplata.Aktivno');
+              jQuery("#preplata").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupObrokPreplata.ID_UgovorStanOtkup');
+               jQuery("#preplata").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupObrokPreplata.Broj');
+                jQuery("#preplata").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupObrokPreplata.BrojUgovor');
+                 jQuery("#preplata").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupObrokPreplata.BrojObrok');
+
+               //grid6
+             @grid6.GetJavaScript()
+              jQuery("#opomena").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupOpomena.ID_UgovorStanOtkupOpomena');
+                jQuery("#opomena").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupOpomena.ID_UgovorStanOtkup');
+                 jQuery("#opomena").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupOpomena.ID_Opomena');
+                 jQuery("#opomena").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupOpomena.ID_UgovorStanOtkupOpomena');
+                 jQuery("#opomena").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupOpomena.BrojUgovor');
+                    jQuery("#opomena").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupOpomena.BrojOpomena');
+                 jQuery("#opomena").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupOpomena.IznosZateznaKamataDugOstatak');
+                 jQuery("#opomena").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupOpomena.Ispis');
+                 jQuery("#opomena").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupOpomena.SumaIznosDugZateznaKamata');
+
+
+             //grid7
+             @grid7.GetJavaScript()
+              jQuery("#nalog").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupNalog.ID_UgovorStanOtkup');
+               jQuery("#nalog").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupNalog.BrojUgovor');
+                 jQuery("#nalog").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupNalog.GodinaNalog');
+                   jQuery("#nalog").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupNalog.BrojNalog');
+
+
+            //grid8
+             @grid8.GetJavaScript()
+              jQuery("#trosak").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupTrosak.ID_UgovorStanOtkupTrosak');
+                     jQuery("#trosak").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupTrosak.ID_UgovorStanOtkup');
+                            jQuery("#trosak").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupTrosak.BrojUgovor');
+
+
+             //grid9
+             @grid9.GetJavaScript()
+              jQuery("#aneks").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupAneks.ID_UgovorStanOtkupAneks');
+              jQuery("#aneks").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupAneks.ID_UgovorStanOtkup');
+              jQuery("#aneks").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupAneks.BrojUgovor');
+              jQuery("#aneks").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupAneks.BrojStorno');
+              jQuery("#aneks").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupAneks.TecajDM');
+              jQuery("#aneks").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupAneks.TemeljnicaGodina');
+              jQuery("#aneks").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupAneks.TemeljnicaVrsta');
+              jQuery("#aneks").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupAneks.TemeljnicaBroj');
+              jQuery("#aneks").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupAneks.DokumentGrupa');
+              jQuery("#aneks").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupAneks.DokumentVrsta');
+              jQuery("#aneks").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupAneks.BrojObrokOd');
+              jQuery("#aneks").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupAneks.ID_DokumentVr');
+
+
+               @grid11.GetJavaScript()
+                 jQuery("#moratorij").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupMoratorij.ID_UgovorStanOtkup');
+                      jQuery("#moratorij").hideCol('@InLine.Model.Data.Field.View.UgovorStanOtkupMoratorij.BrojUgovor');
+
+              @grid12.GetJavaScript()
+   
+        });
+
+
+         $(document).ready(function () {
+
+        var grid = "#obrok";
+        var grid2 = "#uplata";
+               var grid3 = "#moratorij";
+                      var grid4 = "#moratorijMjesec";
+                      var grid5 = "#nalog";
+                      var grid6 = "#opomena";
+                        var grid7 = "#preplata";
+                          var grid8 = "#trosak";
+                           var grid9 = "#kupacugovor";
+                            var grid10 = "#kupac";
+                             var grid11 = "#aneks";
+                          
+  
+                    
+
+           $(window).bind('resize', function () {
+               $(grid).setGridWidth($(window).width()/3.6);
+               $(grid2).setGridWidth($(window).width()/3.6);
+                  $(grid3).setGridWidth($(window).width()/3.6);
+                     $(grid4).setGridWidth($(window).width()/3.6);
+                     $(grid5).setGridWidth($(window).width()/2.8);
+                      $(grid6).setGridWidth($(window).width()/2.8);
+                      $(grid7).setGridWidth($(window).width()/2.8);
+                      $(grid8).setGridWidth($(window).width()/2.8);
+                      $(grid9).setGridWidth($(window).width()/1.47);
+                      $(grid10).setGridWidth($(window).width()/2.8);
+                      $(grid11).setGridWidth($(window).width()/2.8);
+
+           }).trigger('resize');
+
+      });
+
+
+    </script>
+
+
+  
+
+    <script type="text/javascript">
+        $.masterclick = function () {
+
+            var selectedRowId = $('#kupacugovor').jqGrid('getGridParam', 'selrow');
+            var selectedRowIdUgovorStanOtkup = $('#kupacugovor').jqGrid('getCell', selectedRowId, 'ID_UgovorStanOtkup');
+            var polje = 'ID_UgovorStanOtkup';
+            var napomena = $('#kupacugovor').jqGrid('getCell', selectedRowId, 'Napomena');
+            var filterDefault = "Placen = 0";
+            var brojugovor = $('#kupacugovor').jqGrid('getCell', selectedRowId, 'BrojUgovor');
+            var kupac = $('#kupacugovor').jqGrid('getCell', selectedRowId, 'Naziv');
+            var adresakupac = $('#kupacugovor').jqGrid('getCell', selectedRowId, 'UlicaKupac');
+            var adresaugovor = $('#kupacugovor').jqGrid('getCell', selectedRowId, 'UlicaStan');
+            var kontrolniBroj = $('#kupacugovor').jqGrid('getCell', selectedRowId, 'KontrolniBroj');
+            var postanskiBroj = $('#kupacugovor').jqGrid('getCell', selectedRowId, 'PostanskiBroj');
+
+            var grid_id = '#kupacugovor';
+
+            if (selectedRowId == null) {
+
+                $.jgrid.viewModal("#alertmod", { gbox: "#gbox_" + grid_id, jqm: true });
+                $("#jqg_alrt").focus();
+            }
+            else {
+
+                if ($.trim(napomena) != "") {
+                    $('#loadNapomenaHOLDER').show();
+                    $('#napomenaHolder').val(napomena);
+                    $('#btn-otvoriNapomena').hide();
+                }
+                else {
+                    $('#loadNapomenaHOLDER').hide();
+                    $('#btn-otvoriNapomena').show();
+                }
+
+                jQuery("#obrok").jqGrid('setGridParam', { url: "../PregledUgovora/ObrokGrid", postData: { filter: filterDefault, key: polje, value: selectedRowIdUgovorStanOtkup} });
+                jQuery("#obrok").trigger('reloadGrid');
+
+                jQuery("#kupac").jqGrid('setGridParam', { url: "../PregledUgovora/UgovorKupci", postData: { key: polje, value: selectedRowIdUgovorStanOtkup} });
+                jQuery("#kupac").trigger('reloadGrid');
+
+                jQuery("#preplata").jqGrid('setGridParam', { url: "../PregledUgovora/PreplataGrid", postData: { key: polje, value: selectedRowIdUgovorStanOtkup} });
+                jQuery("#preplata").trigger('reloadGrid');
+
+                jQuery("#opomena").jqGrid('setGridParam', { url: "../PregledUgovora/OpomenaGrid", postData: { key: polje, value: selectedRowIdUgovorStanOtkup} });
+                jQuery("#opomena").trigger('reloadGrid');
+
+                jQuery("#trosak").jqGrid('setGridParam', { url: "../PregledUgovora/TrosakGrid", postData: { key: polje, value: selectedRowIdUgovorStanOtkup} });
+                jQuery("#trosak").trigger('reloadGrid');
+
+                jQuery("#aneks").jqGrid('setGridParam', { url: "../PregledUgovora/AneksGrid", postData: { key: polje, value: selectedRowIdUgovorStanOtkup} });
+                jQuery("#aneks").trigger('reloadGrid');
+
+                jQuery("#nalog").jqGrid('setGridParam', { url: "../PregledUgovora/NalogGrid", postData: { key: polje, value: selectedRowIdUgovorStanOtkup} });
+                jQuery("#nalog").trigger('reloadGrid');
+
+                jQuery("#moratorij").jqGrid('setGridParam', { url: "../PregledUgovora/MoratorijGrid", postData: { key: polje, value: selectedRowIdUgovorStanOtkup} });
+                jQuery("#moratorij").trigger('reloadGrid');
+
+                $("#moratorijMjesec").jqGrid("clearGridData", true);
+
+                $("#uplata").jqGrid("clearGridData", true);
+                $("#gbox_kupacugovor").hide();
+                $("#ugovor-div").show();
+                $('#ugovor-broj').show();
+                $('#ugovor-broj-sadrzaj').html("Ugovor: " + brojugovor + "-" + kontrolniBroj + " Kupac: " + kupac + " Adresa: " + adresaugovor + " " + postanskiBroj);
+                $('#ugovor-broj-id').html(selectedRowIdUgovorStanOtkup);
+
+                $("#ugovor-forma").load("/PregledUgovora/UgovorDetailKratki?id=" + selectedRowIdUgovorStanOtkup);
+
+            }
+
+        };
+
+
+
+        $.idSubgrid = function () {
+
+            var selectedRowId = $('#orders').jqGrid('getGridParam', 'selrow');
+            var selectedRowIdUgovorStanOtkup = $('#orders').jqGrid('getCell', selectedRowId, 'ID_UgovorStanOtkup');
+            var polje = 'ID_UgovorStanOtkup';
+
+            var grid_id = '#orders';
+
+            if (selectedRowId == null) {
+
+                $.jgrid.viewModal("#alertmod", { gbox: "#gbox_" + grid_id, jqm: true });
+                $("#jqg_alrt").focus();
+            }
+            else {
+
+                jQuery("#kupac").jqGrid('setGridParam', { url: "../PregledUgovora/UgovorKupci", postData: { key: polje, value: selectedRowIdUgovorStanOtkup} });
+                jQuery("#kupac").trigger('reloadGrid');
+
+
+
+            }
+
+        };
+
+   </script>
+   
+    <script type="text/javascript">
+
+        $(function () {
+            $('form').each(function () {
+                $('input').keypress(function (e) {
+                    // Enter pressed?
+                    if (e.which == 10 || e.which == 13) {
+                        $("#sButton").click();
+                    }
+                });
+
+                $('input[type=submit]').hide();
+            });
+        });
+
+
+</script>
+
+ <script type="text/javascript">
+     jQuery(document).ready(function () {
+         jQuery("#breadCrumb3").jBreadCrumb();
+
+     })
+        </script>
+
+        
+    <script type="text/javascript">
+        $.obrokuplata = function () {
+            var selectedRowId = $('#obrok').jqGrid('getGridParam', 'selrow');
+            var polje = 'ID_UgovorStanOtkupObrok';
+            var grid_id = '#obrok';
+
+            if (selectedRowId == null) {
+
+                $.jgrid.viewModal("#alertmod", { gbox: "#gbox_" + grid_id, jqm: true });
+                $("#jqg_alrt").focus();
+            }
+            else {
+
+                jQuery("#uplata").jqGrid('setGridParam', { url: "../PregledUgovora/UplataGrid", postData: { key: polje, value: selectedRowId} });
+                jQuery("#uplata").trigger('reloadGrid');
+
+            }
+
+        };
+
+   </script>
+
+       <script type="text/javascript">
+           $.moratorijmjesec = function () {
+               var selectedRowId = $('#moratorij').jqGrid('getGridParam', 'selrow');
+               var polje = 'ID_UgovorStanOtkupMoratorij';
+               var grid_id = '#moratorij';
+
+               if (selectedRowId == null) {
+
+                   $.jgrid.viewModal("#alertmod", { gbox: "#gbox_" + grid_id, jqm: true });
+                   $("#jqg_alrt").focus();
+               }
+               else {
+
+                   jQuery("#moratorijMjesec").jqGrid('setGridParam', { url: "../PregledUgovora/MoratorijMjesecGrid", postData: { key: polje, value: selectedRowId} });
+                   jQuery("#moratorijMjesec").trigger('reloadGrid');
+
+               }
+
+           };
+
+   </script>
+
+
+       <script type="text/javascript">
+
+           $.ugovordetail = function () {
+               var selectedRowId = $('#kupacugovor').jqGrid('getGridParam', 'selrow');
+               var selectedRowIdField = $('#kupacugovor').jqGrid('getCell', selectedRowId, 'ID_UgovorStanOtkup');
+
+               var grid_id = '#kupacugovor';
+
+               if (selectedRowId == null) {
+
+                   $.jgrid.viewModal("#alertmod", { gbox: "#gbox_" + grid_id, jqm: true });
+                   $("#jqg_alrt").focus();
+               }
+               else {
+                   $("#ugovor-detail").dialog("open").load("/PregledUgovora/UgovorDetail?id=" + selectedRowIdField);
+
+               }
+
+           };
+
+           $.kupacdetail = function () {
+               var selectedRowId = $('#kupac').jqGrid('getGridParam', 'selrow');
+               var selectedRowIdField = $('#kupac').jqGrid('getCell', selectedRowId, 'ID_Kupac');
+               var selectedRowIdOtkupStanKupac = $('#kupac').jqGrid('getCell', selectedRowId, 'ID_UgovorStanOtkupKupac');
+               var grid_id = '#kupac';
+
+               if (selectedRowId == null) {
+
+                   $.jgrid.viewModal("#alertmod", { gbox: "#gbox_" + grid_id, jqm: true });
+                   $("#jqg_alrt").focus();
+               }
+               else {
+                   $("#kupac-detail").dialog("open").load("/PregledUgovora/KupacDetail?id=" + selectedRowIdField + "&idUgovorKupac=" + selectedRowIdOtkupStanKupac);
+
+               }
+           };
+
+
+           $.obrokdetail = function () {
+               var selectedRowId = $('#obrok').jqGrid('getGridParam', 'selrow');
+               var grid_id = '#obrok';
+
+               if (selectedRowId == null) {
+
+                   $.jgrid.viewModal("#alertmod", { gbox: "#gbox_" + grid_id, jqm: true });
+                   $("#jqg_alrt").focus();
+               }
+               else {
+                   $("#obrok-detail").dialog("open").load("/PregledUgovora/ObrokDetail?id=" + selectedRowId);
+
+               }
+           };
+
+
+           $.uplatadetail = function () {
+               var selectedRowId = $('#uplata').jqGrid('getGridParam', 'selrow');
+               var grid_id = '#uplata';
+
+               if (selectedRowId == null) {
+
+                   $.jgrid.viewModal("#alertmod", { gbox: "#gbox_" + grid_id, jqm: true });
+                   $("#jqg_alrt").focus();
+               }
+               else {
+                   $("#obrok-uplata-detail").dialog("open").load("/PregledUgovora/ObrokUplataDetail?id=" + selectedRowId);
+
+               }
+
+           };
+
+
+           $.nalogdetail = function () {
+               var selectedRowId = $('#nalog').jqGrid('getGridParam', 'selrow');
+               var selectedRowIdField = $('#nalog').jqGrid('getCell', selectedRowId, 'ID_UgovorStanOtkup');
+               var grid_id = '#nalog';
+
+
+
+               if (selectedRowId == null) {
+
+                   $.jgrid.viewModal("#alertmod", { gbox: "#gbox_" + grid_id, jqm: true });
+                   $("#jqg_alrt").focus();
+               }
+               else {
+                   $("#nalog-detail").dialog("open").load("/PregledUgovora/NalogDetail?id=" + selectedRowId);
+
+               }
+           };
+
+           $.opomenadetail = function () {
+               var selectedRowId = $('#opomena').jqGrid('getGridParam', 'selrow');
+               var selectedRowIdField = $('#opomena').jqGrid('getCell', selectedRowId, 'ID_UgovorStanOtkup');
+               var grid_id = '#opomena';
+
+
+
+               if (selectedRowId == null) {
+
+                   $.jgrid.viewModal("#alertmod", { gbox: "#gbox_" + grid_id, jqm: true });
+                   $("#jqg_alrt").focus();
+               }
+               else {
+                   $("#opomena-detail").dialog("open").load("/PregledUgovora/OpomenaUgovorDetail?id=" + selectedRowId);
+//                   $("#opomena-detail-container").dialog("open").load("/PregledUgovora/OpomenaDetailTest?id=" + selectedRowId);
+
+               }
+           };
+
+
+           $.trosakdetail = function () {
+               var selectedRowId = $('#trosak').jqGrid('getGridParam', 'selrow');
+               var selectedRowIdField = $('#trosak').jqGrid('getCell', selectedRowId, 'ID_UgovorStanOtkup');
+               var grid_id = '#trosak';
+
+               if (selectedRowId == null) {
+
+                   $.jgrid.viewModal("#alertmod", { gbox: "#gbox_" + grid_id, jqm: true });
+                   $("#jqg_alrt").focus();
+               }
+               else {
+                   $("#trosak-detail").dialog("open").load("/PregledUgovora/TrosakDetail?id=" + selectedRowId);
+
+               }
+           };
+
+
+           $.preplatadetail = function () {
+               var selectedRowId = $('#preplata').jqGrid('getGridParam', 'selrow');
+               var selectedRowIdField = $('#preplata').jqGrid('getCell', selectedRowId, 'ID_UgovorStanOtkup');
+               var grid_id = '#preplata';
+
+               if (selectedRowId == null) {
+
+                   $.jgrid.viewModal("#alertmod", { gbox: "#gbox_" + grid_id, jqm: true });
+                   $("#jqg_alrt").focus();
+               }
+               else {
+                   $("#preplata-detail").dialog("open").load("/PregledUgovora/ObrokPreplataDetail?id=" + selectedRowId);
+
+               }
+           };
+
+
+           $.moratorijmjesecdetail = function () {
+               var selectedRowId = $('#moratorijMjesec').jqGrid('getGridParam', 'selrow');
+               var grid_id = '#moratorijMjesec';
+
+               if (selectedRowId == null) {
+
+                   $.jgrid.viewModal("#alertmod", { gbox: "#gbox_" + grid_id, jqm: true });
+                   $("#jqg_alrt").focus();
+               }
+               else {
+                   $("#moratorijmjesec-detail").dialog("open").load("/PregledUgovora/MoratorijMjesecDetail?id=" + selectedRowId);
+
+               }
+           };
+
+
+
+   </script>
+
+     <script>
+
+         $(function () {
+             $("#ugovor-detail").dialog({
+                 autoOpen: false,
+                 show: {
+                     effect: "none",
+                     duration: 0
+                 },
+                 hide: {
+                     effect: "none",
+                     duration: 0
+                 },
+                 width: 800,
+                 height: 970,
+                 modal: true,
+                 resizable: true,
+                 position: 'top',
+                 draggable: true,
+                 title: 'UGOVOR DETALJ',
+                 buttons: {
+                     Zatvori: function () {
+                         $(this).dialog("close");
+                     }
+                 }
+             });
+         });
+
+         $(function () {
+             $("#kupac-detail").dialog({
+                 autoOpen: false,
+                 show: {
+                     effect: "none",
+                     duration: 0
+                 },
+                 hide: {
+                     effect: "none",
+                     duration: 0
+                 },
+                 width: 800,
+                 height: 320,
+                 modal: true,
+                 resizable: true,
+                 position: 'top',
+                 draggable: true,
+                 title: 'KUPAC DETALJ',
+                 buttons: 
+                 {
+                    Spremi:
+                    {
+                        text: "Spremi",
+                        id: "#KupacDialogSpremi",
+                        value: "Spremi",
+                        click: function () {
+                            var frm = "#KupacForm";
+                            var serializeData = $("#KupacForm").serialize();
+
+                            if ($(frm).validate().form()) {
+                                $.ajax({
+                                    url: "../PregledUgovora/KupacInsert",
+                                    data: serializeData,
+                                    type: 'POST',
+                                    success: function (data) {
+                                        if (data.length > 0) {
+                                            porukeIzSkripte.VratiPorukuStatus(data, kojaPorukaDiv);
+                                        }
+
+                                        jQuery("#kupac").trigger('reloadGrid');
+
+                                    }
+                                });
+                            }
+
+                        }
+
+                    },
+
+                     Zatvori: function () {
+                         $(this).dialog("close");
+                         $(this).empty();
+                     } 
+                  }   
+             });
+         });
+
+         $(function () {
+             $("#obrok-detail").dialog({
+                 autoOpen: false,
+                 show: {
+                     effect: "none",
+                     duration: 0
+                 },
+                 hide: {
+                     effect: "none",
+                     duration: 0
+                 },
+                 width: 700,
+                 height: 500,
+                 modal: true,
+                 resizable: false,
+                 position: 'top',
+                 draggable: true,
+                 title: 'OBROK  DETALJ',
+                 buttons: {
+                     Zatvori: function () {
+                         $(this).dialog("close");
+                     }
+                 }
+
+             });
+         });
+
+         $(function () {
+             $("#obrok-uplata-detail").dialog({
+                 autoOpen: false,
+                 show: {
+                     effect: "none",
+                     duration: 0
+                 },
+                 hide: {
+                     effect: "none",
+                     duration: 0
+                 },
+                 width: 700,
+                 height: 700,
+                 modal: true,
+                 resizable: true,
+                 position: 'top',
+                 draggable: true,
+                 title: 'OBROK UPLATA DETALJ',
+                 buttons: {
+                     Zatvori: function () {
+                         $(this).dialog("close");
+                     }
+                 }
+
+             });
+         });
+
+
+         $(function () {
+             $("#nalog-detail").dialog({
+                 autoOpen: false,
+                 show: {
+                     effect: "none",
+                     duration: 0
+                 },
+                 hide: {
+                     effect: "none",
+                     duration: 0
+                 },
+                 width: 800,
+                 height: 600,
+                 modal: true,
+                 resizable: true,
+                 position: 'top',
+                 draggable: true,
+                 title: 'Nalog detalj',
+                 buttons: {
+                     Zatvori: function () {
+                         $(this).dialog("close");
+                     }
+                 }
+             });
+         });
+
+         $(function () {
+             $("#opomena-detail").dialog({
+                 autoOpen: false,
+                 show: {
+                     effect: "none",
+                     duration: 0
+                 },
+                 hide: {
+                     effect: "none",
+                     duration: 0
+                 },
+                 width: 800,
+                 height:320,
+                 modal: true,
+                 resizable: true,
+                 position: 'top',
+                 draggable: true,
+                 title: 'OPOMENA PO UGOVORU DETALJ',
+                 buttons: {
+                     Zatvori: function () {
+                         $(this).dialog("close");
+                     }
+                 }
+             });
+         });
+
+         $(function () {
+             $("#opomena-detail-container").dialog({
+                 autoOpen: false,
+                 show: {
+                     effect: "none",
+                     duration: 0
+                 },
+                 hide: {
+                     effect: "none",
+                     duration: 0
+                 },
+                 width: 800,
+                 height: 520,
+                 modal: true,
+                 resizable: true,
+                 position: 'top',
+                 draggable: true,
+                 title: 'Opomena detalj',
+                 buttons: {
+                     Zatvori: function () {
+                         $(this).dialog("close");
+                     }
+                 }
+             });
+         });
+
+         $(function () {
+             $("#trosak-detail").dialog({
+                 autoOpen: false,
+                 show: {
+                     effect: "none",
+                     duration: 0
+                 },
+                 hide: {
+                     effect: "none",
+                     duration: 0
+                 },
+                 width: 800,
+                 height: 270,
+                 modal: true,
+                 resizable: true,
+                 position: 'top',
+                 draggable: true,
+                 title: 'TROŠAK DETALJ',
+                 buttons: {
+                     Zatvori: function () {
+                         $(this).dialog("close");
+                     }
+                 }
+             });
+         });
+
+
+         $(function () {
+             $("#preplata-detail").dialog({
+                 autoOpen: false,
+                 show: {
+                     effect: "none",
+                     duration: 0
+                 },
+                 hide: {
+                     effect: "none",
+                     duration: 0
+                 },
+                 width: 800,
+                 height: 370,
+                 modal: true,
+                 resizable: true,
+                 position: 'top',
+                 draggable: true,
+                 title: 'PREPLATA DETALJ',
+                 buttons: {
+                     Zatvori: function () {
+                         $(this).dialog("close");
+                     }
+                 }
+             });
+         });
+
+
+         $(function () {
+             $("#moratorijmjesec-detail").dialog({
+                 autoOpen: false,
+                 show: {
+                     effect: "none",
+                     duration: 0
+                 },
+                 hide: {
+                     effect: "none",
+                     duration: 0
+                 },
+                 width: 800,
+                 height: 270,
+                 modal: true,
+                 resizable: true,
+                 position: 'top',
+                 draggable: true,
+                 title: 'MORATORIJ MJESEC DETALJ',
+                 buttons: {
+                     Zatvori: function () {
+                         $(this).dialog("close");
+                     }
+                 }
+             });
+         });
+
+</script>
+
+
+   <script type="text/javascript">
+       $.PlacenFormatter = function (cellvalue, options, rowObject) {
+           if (cellvalue == true)
+               return "P";
+           else
+               return "N";
+       };
+   </script>
+
+      <script type="text/javascript">
+          $.NositeljFormatter = function (cellvalue, options, rowObject) {
+              if (cellvalue == true)
+                  return "D";
+              else
+                  return "N";
+          };
+   </script>
+
+        <script type="text/javascript">
+
+            $.obrokmoratorijformater = function () {
+                var rows = $("#obrok").getDataIDs();
+                for (var i = 0; i < rows.length; i++) {
+                    var status = $("#obrok").getCell(rows[i], "ID_UgovorStanOtkupMoratorij");
+                    if (status > 0) {
+                        $("#obrok").jqGrid('setRowData', rows[i], false, { color: 'white', weightfont: 'bold', background: '#DCECFA' });
+                    }
+                }
+
+            };
+
+
+   </script>
+
+
+
+       <script type="text/javascript">
+
+           $(function () {
+
+               // Imena kolona za grid kupac
+               $("#jqgh_kupacugovor_BrojUgovor").text("Br. ugovora");
+               $("#jqgh_kupacugovor_Naziv").text("Kupac");
+               $("#jqgh_kupacugovor_UlicaKupac").text("Adresa kupca");
+               $("#jqgh_kupacugovor_UlicaStan").text("Adresa na ugovoru");
+               $("#jqgh_kupacugovor_UlicaKupac").text("Adresa kupca");
+           });
+
+           $(function () {
+
+               // Imena kolona za grid obrok
+               $("#jqgh_obrok_BrojObrok").text("Broj");
+               $("#jqgh_obrok_SumaObrok").text("Rata");
+               $("#jqgh_obrok_Placen").text("Status");
+               $("#jqgh_obrok_IznosZateznaKamata").text("Zat. kam");
+               $("#jqgh_obrok_TecajObrok").text("Tečaj");
+
+
+           });
+
+           $(function () {
+
+               // Imena kolona za grid preplata
+               $("#jqgh_uplata_SumaUplata").text("Rata");
+               $("#jqgh_uplata_SumaZateznaKamata").text("Zat. kam");
+               $("#jqgh_uplata_IznosZateznaKamataDugOstatak").text("OD zat. kam.");
+               $("#jqgh_uplata_IznosObrokDugOstatak").text("OD rate");
+           });
+
+           $(function () {
+
+               // Imena kolona za grid preplata
+               $("#jqgh_preplata_IznosPreplata").text("Iznos");
+           });
+
+           $(function () {
+
+               // Imena kolona za grid preplata
+               $("#jqgh_nalog_DatumPlacanje").text("Datum");
+           });
+
+
+           $(function () {
+
+               // Imena kolona za grid preplata
+               $("#jqgh_opomena_IznosDug").text("Rata");
+               $("#jqgh_opomena_IznosZateznaKamata").text("Zat.kam.");
+           });
+
+           $(function () {
+
+               // Imena kolona za grid preplata
+               $("#jqgh_aneks_BrojAneks").text("Br. aneksa");
+           });
+
+           $(function () {
+
+               // Imena kolona za grid moratorij 
+               $("#jqgh_moratorij_BrojMoratorij").text("Broj moratorija");
+           });
+
+
+    </script>
+
+   <script type="text/javascript">
+
+
+//       $.obroksuma = function () {
+//           var gridobrok = $("#obrok");
+//           sumObrok = gridobrok.jqGrid('getCol', '@InLine.UI.Web.T4.GridFormattedTemplate.View.AtributClass.UgovorStanOtkupObrok.SumaObrok.DisplayName', false, 'sum');
+//           sumZK = gridobrok.jqGrid('getCol', '@InLine.UI.Web.T4.GridFormattedTemplate.View.AtributClass.UgovorStanOtkupObrok.IznosZateznaKamata.DisplayName', false, 'sum');
+//           var ukupnoObrok = sumObrok + sumZK;
+//           gridobrok.footerData('set', { BrojObrok: 'S=' + ukupnoObrok.toFixed(2), SumaObrok: sumObrok.toFixed(2), IznosKamataZatezna: sumZK.toFixed(2) });
+
+//       };
+
+
+//       function NoData() {
+
+//           var recsNalog = $("#nalog").getGridParam("records");
+//           var recsTrosak = $("#trosak").getGridParam("records");
+//           var recsOpomena = $("#opomena").getGridParam("records");
+//           var recsPreplata = $("#preplata").getGridParam("records");
+
+//           if (recsNalog == 0)
+//               $('#gview_nalog .ui-jqgrid-ftable').hide();
+//           else
+//               ('#gview_nalog .ui-jqgrid-ftable').show();
+
+
+
+//           if (recsTrosak == 0)
+//               $('#gview_trosak .ui-jqgrid-ftable').hide();
+//           else
+//               $('#gview_trosak .ui-jqgrid-ftable').show();
+
+
+//           if
+//          (recsOpomena == 0)
+//               $('#gview_opomena .ui-jqgrid-ftable').hide();
+//           else
+//               $('#gview_opomena .ui-jqgrid-ftable').show();
+
+
+//           if (recsPreplata == 0)
+//               $('#gview_preplata .ui-jqgrid-ftable').hide();
+//           else
+//               $('#gview_preplata .ui-jqgrid-ftable').show();
+
+//       };
+
+    </script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $("#gbox_kupacugovor").hide();
+
+            $("#cButton").click(function () {
+                $("#kupac").jqGrid("clearGridData", true);
+                $("#aneks").jqGrid("clearGridData", true);
+                $("#obrok").jqGrid("clearGridData", true);
+                $("#nalog").jqGrid("clearGridData", true);
+                $("#trosak").jqGrid("clearGridData", true);
+                $("#opomena").jqGrid("clearGridData", true);
+                $("#ovrha").jqGrid("clearGridData", true);
+                $("#preplata").jqGrid("clearGridData", true);
+                $("#uplata").jqGrid("clearGridData", true);
+                $("#moratorij").jqGrid("clearGridData", true);
+                $("#moratorijMjesec").jqGrid("clearGridData", true);
+                $('#napomenaHolder').val('');
+                $("#ugovor-div").hide();
+                $("#ugovor-forma").empty();
+                $('#ugovor-broj-sadrzaj').html("");
+
+
+            });
+
+        });
+
+
+        $(document).ready(function () {
+
+            $("#sButton").click(function () {
+                $("#gbox_kupacugovor").show();
+                $("#ugovor-div").hide();
+                $('#ugovor-broj-sadrzaj').html("");
+                $("#ugovor-forma").empty();
+               $('#napomenaHolder').val("");
+            });
+
+        });
+
+
+
+        $("#ugovor-broj-sadrzaj").click(function () {
+            var selectedRowIdField = $('#ugovor-broj-id').text();
+            $("#ugovor-detail").dialog("open").load("/PregledUgovora/UgovorDetail?id=" + selectedRowIdField);
+        });
+
+
+
+        $("#btn-spremiNapomena").click(function () {
+            var selectedRowIdField = $('#ugovor-broj-id').text();
+            var napomenaText =  $('#napomenaHolder').val();
+            
+            if (napomenaText != "")
+             {
+               if (confirm('Da li želite spremiti napomenu?'))
+                {
+               $.ajax({
+                type: "POST",
+                url: "@Url.Action("NapomenaSpremi", "PregledUgovora")",
+                data: {id: selectedRowIdField, napomena: napomenaText},
+                success: function (data) {
+                if (data != false)
+                    {
+                    $('#napomenaHolder').val(data);
+                    $("#lblPrazno").show();
+                     $("#lblPrazno").text("Spremljeno").css('background-color', '#99FFCC').delay().fadeOut(5000);
+                    }
+
+                    else{
+                          $("#lblPrazno").show();
+                        $("#lblPrazno").text("Nije spremljeno").css('background-color', '#FACFCF').delay().fadeOut(5000);
+                    }
+
+                }
+                });
+            }
+            }
+            else{
+                { alert('Tekst napomene je prazan!'); }
+                $("#lblPrazno").show();
+                $("#lblPrazno").text("Napomena je prazna").css('background-color', '#FFF2C2').delay().fadeOut(5000);
+                }
+             
+
+            return false; 
+        });
+
+    </script>
+
+      <script>
+
+            $("#btn-otvoriNapomena").click(function () {
+            $('#loadNapomenaHOLDER').show();
+            $('#btn-otvoriNapomena').hide();
+            });
+
+        </script>
+
+}

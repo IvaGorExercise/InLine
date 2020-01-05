@@ -1,0 +1,161 @@
+﻿@using InLine.Repository.Data.Helper;
+
+@{
+    string Autocomplete = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Autocomplete + "Subjekt";
+    string Start = CommonFunctions.PagingVrijednostiDefault.Start;
+    string Count = CommonFunctions.PagingVrijednostiDefault.Count;
+    string ulSubjektSelector = "#ulSubjekt";
+}
+
+
+
+<table width="100%">
+<tr>
+<td width="10%">Poslovni partner</td>
+    <td>
+   <input id="PoslovniPartnerInput" class="btnDropDownSymbol autocompleteSubjekt ui-autocomplete-input" type="text" value="" name="poslovniPartner" autocomplete="off">
+</td>
+</tr>
+</table>
+
+
+<script type="text/javascript">
+
+    $("." + '@Autocomplete').each(function () {
+
+        var widgetAutoComplete = $(this).autocomplete({
+
+            showHeader: true,
+
+            source: function (request, response) {
+
+                var url = '@Url.Action("GetPoslovniSubjekt", @InLine.UI.Web.T4.ControllerName.ControllerName.SubjektSvi)';
+                var kojalista = "@ulSubjektSelector";
+
+                $.AutocompleteSubjekt(request, response, kojalista, url, @Start, @Count);
+            },
+
+            select:
+                function (event, ui) {
+                    $("#ID_Subjekt").val(ui.item.id);
+                    alert(ui.item.value2.toUpperCase());
+                    $("#PoslovniPartnerInput").val(ui.item.value1.toUpperCase() + " " + ui.item.value2.toUpperCase());
+
+                    // test za brisanje pp
+                    $("#ID_Zapis").val("");
+                    $("#DokumentInput").val("");
+                    return false;
+                },
+
+            minLength: 0
+
+        }).data("autocomplete");
+
+        widgetAutoComplete._renderItem = function (ul, item) {
+
+            ul.attr('id', 'ulSubjekt');
+            return $("<li class='tblAutocompleteLi'><table class='tblAutocomplete'></table></li>").data("item.autocomplete-item", item).append("<a><table width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><td width='70px'>" + item.value1 + "</td><td width='300px'>" + item.value2 + "</td><td width='70px'>" + item.value3 + "</td></tr></table></a>").appendTo("#ulSubjekt");
+        }
+
+        widgetAutoComplete._renderMenu = function (ul, item) {
+
+            var self = this;
+            $.each(item, function (index, items) {
+                if (index == 0)
+                    ul.append("<li><table class='autocompleteHeader' width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><th width='70px'>" + '@InLine.Model.Data.FieldString.View.PoslovniSubjektSubjekt.Oznaka' + "</th><th width='300px'>" + '@InLine.Model.Data.FieldString.View.PoslovniSubjektSubjekt.Naziv' + "</th><th width='70px'> Vrsta  </th></tr></table></li>");
+                self._renderItemData(ul, items);
+            });
+        }
+
+    });
+
+
+    $(".btnDropDownSymbol").click(function () {
+        Dialozi.ComboAll();
+    });
+
+
+    $('#PoslovniPartnerInput').change(function () {
+        poslovnipartnerodabran = $('#PoslovniPartnerInput').val();
+
+        if (poslovnipartnerodabran == "") {
+            $("#ID_Subjekt").val("");
+        }
+    });
+
+      $.AutocompleteSubjekt = function (request, response, kojalista, url, Start, Count ) {
+
+                console.log('ajax prvi');
+                $.ajax({
+                    url: url,
+                    data: { query: request.term, start: Start, count: Count },
+                    dataType: 'json',
+                    type: 'GET',
+                    success: function (data) {
+                        response($.map(data,
+                        function (item) {
+                            return {
+                                id: item.ID_Subjekt,
+                                value1: item.Oznaka,
+                                value2: item.Naziv,
+                                value3: item.SubjektVrNaziv
+                            }
+
+                        }));
+
+                        var previousScroll = 0;
+                        var page = 1;
+
+                        $(kojalista).scroll(function () {
+
+                            var currentScroll = $(this).scrollTop();
+
+                            var x = $(kojalista).prop('scrollHeight');
+                            var y = $(kojalista).prop('offsetHeight');
+
+                            if (currentScroll > previousScroll) {
+
+                                if(page >=0)
+                                {
+                                    if (currentScroll >= x - y)
+                                        {
+                                           page += 1;
+
+                                            var countPage = page * Count
+                                            console.log('ajax ostali');
+                                            $.ajax({
+                                                url: url,
+                                                data: { query: request.term, start: Start, count: countPage },
+                                                dataType: 'json',
+                                                type: 'GET',
+                                                success: function (data) {
+                                                    response($.map(data,
+                                                        function (item) {
+
+                                                                return {
+                                                                            id: item.ID_Subjekt,
+                                                                            value1: item.Oznaka,
+                                                                            value2: item.Naziv,
+                                                                            value3: item.SubjektVrNaziv
+ 
+                                                                        }
+                                                                }));
+                                                            }
+                                                        })
+                                            }
+                                }
+                                    
+
+                            }
+                            else {
+                                page -= 1;
+                            }
+
+                            previousScroll = currentScroll;
+
+                        });
+                    }
+                })
+    };
+
+ </script>

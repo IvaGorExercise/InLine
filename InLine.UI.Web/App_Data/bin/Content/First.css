@@ -1,0 +1,481 @@
+/*----------------------------------------------------------
+The base color for this template is #5c87b2. If you'd like
+to use a different color start by replacing all instances of
+#5c87b2 with your new color.
+----------------------------------------------------------*/
+body
+{
+    background-color: #EFEEEE;
+    font-size: .75em;
+    font-family: Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+    color: #696969;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+p, ul
+{
+    margin-bottom: 20px;
+    line-height: 1.6em;
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1
+{
+    font-size: 2em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+h2
+{
+    padding: 0 0 10px 0;
+}
+h3
+{
+    font-size: 1.2em;
+}
+h4
+{
+    font-size: 1.1em;
+}
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+
+#page
+{
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    height:auto;
+}
+
+#header
+{
+    background-color: #fbfbfb;
+    color:White;
+    height:40px;
+    text-align:center;
+    width:956px;
+    background: url(../Content/images/header_blue_1x40.png);
+    background-repeat:repeat-x;
+    -moz-box-shadow: -0 0 5px 5px #ccc;
+-webkit-box-shadow: -0 0 5px 5px #ccc;
+box-shadow: -0 0 5px 5px #ccc;
+}
+
+#header h1
+{
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 0;
+    color: #fff;
+    border: none;
+    line-height: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px !important;
+}
+
+
+
+#leftsidebar 
+{
+    /*background-color: #fbfbfb;*/
+    width:250px;
+    float:left;
+    height:900px;
+    /*background: url(../Content/images/menu_left_background_250x1.png);
+    background-repeat:repeat-y;*/
+     -moz-box-shadow: -5px 5px 5px #ccc;
+  -webkit-box-shadow: -5px 5px 5px #ccc;
+  box-shadow: -5px 5px 5px #ccc;
+    
+}
+
+#content
+{
+    background-color: #fbfbfb;
+    float:left;
+    width:475px;
+    height:900px;
+    z-index: -1;
+    background: url(../Content/images/menu_left_background_sivi_250x1.png);
+    background-repeat:repeat-y;
+    
+
+}
+
+#content-copy
+{
+    background-color: #fbfbfb;
+    float:left;
+    width:956px;
+    height:900px;
+    z-index: -1;
+    /*background: url(../Content/images/menu_left_background_sivi_250x1.png);
+    background-repeat:repeat-y;*/
+
+}
+
+
+#rightsidebar
+{
+    float: left;
+    height:900px;
+    width:230px;
+     -moz-box-shadow: 5px 5px 5px #ccc;
+  -webkit-box-shadow: 5px 5px 5px #ccc;
+  box-shadow: 5px 5px 5px #ccc;
+ 
+
+}
+
+#footer
+{
+    background-color: #EFEEEE;
+    float:left;
+    text-align: center;
+    font-size: .9em;
+    width:955px;
+    padding-top:0;
+ -moz-box-shadow: 0 0 5px 5px #ccc;
+-webkit-box-shadow: 0 0 5px 5px #ccc;
+box-shadow: 0 0 5px 5px #ccc;
+
+    
+    
+}
+
+
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset 
+{
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid #CCC;
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input[type="text"] 
+{
+    width: 200px;
+    border: 1px solid #CCC;
+}
+
+input[type="password"] 
+{
+    width: 200px;
+    border: 1px solid #CCC;
+}
+
+/* TABLE
+----------------------------------------------------------*/
+
+table 
+{
+  border: solid 1px #e8eef4;
+  border-collapse: collapse;
+}
+
+table td 
+{
+  padding: 5px;   
+  border: solid 1px #e8eef4;
+}
+
+table th
+{
+  padding: 6px 5px;
+  text-align: left;
+  background-color: #e8eef4; 
+  border: solid 1px #e8eef4;   
+}
+
+/* MISC  
+----------------------------------------------------------*/
+.clear
+{
+    clear: both;
+}
+
+.error
+{
+    color:Red;
+}
+
+#menucontainer
+{
+    margin-top:60px;
+}
+
+div#title
+{
+    display:block;
+    float:left;
+    text-align:left;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.display-label,
+.editor-label,
+.display-field,
+.editor-field
+{
+    margin: 0.5em 0;
+}
+
+.text-box
+{
+    width: 30em;
+}
+
+.text-box.multi-line
+{
+    height: 6.5em;
+}
+
+.tri-state
+{
+    width: 6em;
+}
+
+/*navlist*/
+#navcontainer { margin-left: 0px; width:250px; padding-top:5px; }
+
+#navcontainer ul
+{
+  width:250px;  
+margin: 0;
+padding: 0;
+list-style-type: none;
+font-family: verdana, arial, Helvetica, sans-serif;
+}
+
+#navcontainer li { width:250px; height:40px;  border-bottom: 0px solid white; }
+
+#navcontainer a
+{
+display:inline-block;
+height:40px;
+width: 250px;
+color: #fff;
+
+
+
+background-repeat:repeat-y;
+text-decoration: none;
+}
+
+#navcontainer a:hover
+{
+color: #fff;
+height:40px;
+
+background-repeat:repeat-x;
+text-decoration: none;
+}
+
+#navcontainer ul ul li {  }
+
+#navcontainer ul ul a
+{
+display: block;
+
+width: 250px;
+color: #fff;
+text-decoration: none;
+}
+
+#navcontainer ul ul a:hover
+{
+   width: 250px;
+color: #fff;
+text-decoration: none;
+}
+
+
+/* eeeeeeeeeeZZZZZ   */
+#Lijevisidebar
+{
+    padding:0px;
+}
+
+#vijesticontent
+{
+     color:#575757;
+     font-family:Microsoft Sans Serif;
+     font-size: 1.1em;
+}
+
+
+#logiranikorisnik
+{
+  font-family:Microsoft Sans Serif;
+  font-size:1.1em;  
+  padding-left:10px;
+  color:#656565;
+  width:200px;
+  background-color: #e0e3e5;
+  margin-left: 10px;
+  margin-right:10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  -moz-border-radius: 5px;
+  border-bottom-radius: 5x;
+ }
+ 
+ 
+ #logiranikorisnikcrta
+{ 
+  margin-top:10px;
+  height:7px;
+  width:200px;
+  background-image:url("/Content/images/title_underline_gradient_200x1.png");
+  background-repeat:repeat-y;
+ }
+ 
+ 
+ #logiranikorisniknaslov
+{ 
+  padding-top:0px; 
+  font-family:Microsoft Sans Serif;
+  font-size:1.5em; 
+  font-weight: normal; 
+  padding-left:0px;
+  padding-bottom:20px;
+  color:#1a4388;
+
+ }
+ 
+ #vijestiheader 
+ {
+  padding-top:5px; 
+  font-family:Microsoft Sans Serif;
+  font-size:1.5em; 
+  font-weight: normal; 
+  padding-left:0px;
+  padding-bottom:10px;
+  color:#1a4388;   
+     }
+   #vijestiheadercrta 
+   {
+  margin-top:10px;
+  height:5px;
+  width:430px;
+  background-image:url("/Content/images/title_underline_gradient_200x1.png");
+  background-repeat:no-repeat;}  
+ 
+ 
+ #tockastapodcrtana
+{ 
+   width:200px;
+   border-bottom: 1px dotted #3399ff;
+   float:left;
+   margin-top:2px;
+ }
+ 
+
+#headerslika
+{
+    height:40px;
+    width:100px;
+    float:left;
+    background-image:url("../Content/design/LogoPlaviWebHeder.png");
+    background-repeat: no-repeat;
+}
+
+#headerslika:hover 
+{
+     background-image:url("../Content/design/LogoMagentaWebHeder.png"); 
+}
+
+#rborderkorisnik
+{ 
+   width:5px;
+   height:800px;
+   border-right: 2px solid #66b1df;
+   float:right;
+   margin-top:10px;
+   margin-right:5px;
+ }
+ 
+ .desnilinkovi
+{
+  font-family:Microsoft Sans Serif;
+  font-size:1.2em;  
+  color:#0066ff;
+  text-decoration: underline;
+  padding-bottom: 20px;
+ }
+ 

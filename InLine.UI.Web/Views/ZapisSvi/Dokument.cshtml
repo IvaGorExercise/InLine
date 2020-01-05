@@ -1,0 +1,531 @@
+﻿@using InLine.Repository.Data.Helper;
+
+@{
+    string Autocomplete = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Autocomplete + "Dokument";
+    string IDZapisVr = @InLine.Model.Data.FieldString.ZapisVr.IDZapisVr;
+    string Start = CommonFunctions.PagingVrijednostiDefault.Start;
+    string Count = CommonFunctions.PagingVrijednostiDefault.Count;
+    string ulUgovorStanOtkupSelector = "#ulUgovorStanOtkup";
+    string ulUgovorStanOtkupAneksSelector = "#ulUgovorStanOtkupAneks";
+    string ulRacunUlazSelector = "#ulRacunulaz";
+    string ID_ZapisSelector = "#ID_Zapis";
+    string DokumentInputSelector = "#DokumentInput";
+    string ZapisOpisSelector = "#ZapisOpis";
+    string ID_KontniPlanAnalitikaSelector = "#ID_KontniPlanAnalitika";
+
+}
+
+
+
+@if(ViewBag.ZapisVr != null)
+{
+    <table width="100%">
+    <tr>
+    <td width="4%">
+     Analitika
+    </td>
+
+    <td width="32%">
+     @Html.DropDownList(IDZapisVr, (SelectList)ViewBag.ZapisVr)
+    </td>
+
+    <td width="10%">Opis dokumenta</td>
+        <td>
+       <input id="DokumentOpisInput" type="text" value="" maxlength="50"/>
+    </td>
+    </tr>
+    <tr>
+    <td width="10%">Dokument</td>
+        <td colspan ="3">
+       <input id="DokumentInput" class="btnDropDownSymbol autocompleteDokument ui-autocomplete-input" type="text" value="" name="poslovniPartner" autocomplete="off"/>
+    </td>
+    </tr>
+    </table>
+    
+    <div id="dialog" title="DOKUMENT" class="hidden"></div>
+}
+
+
+
+
+
+<script type="text/javascript">
+
+    $("#DokumentOpisInput").change(function ()  {
+
+     var DokumentOpis = $('#DokumentOpisInput').val();
+     $('#ZapisOpis').val(DokumentOpis);
+
+   });
+
+
+
+    $(".btnDropDownSymbol").click(function () {
+        Dialozi.ComboAll();
+    });
+
+
+      $.zapisDokument = function() {
+
+       var parts = $('#IDZapisVr').val().split(':');
+       var kpAnalitika = parts[0];
+       var vrstaDokument = parts[1];
+//       alert(parts);
+
+      $("@ID_KontniPlanAnalitikaSelector").val(kpAnalitika);
+
+         switch (vrstaDokument) {
+                case ("1002"):
+                 var widgetAutoComplete = $("." + '@Autocomplete').autocomplete({
+            showHeader: true,
+            source: function (request, response) {
+            var kojiSubjekt = $("#ID_Subjekt").val();
+
+                var kojiKriterij = 3;
+                var url = '@Url.Action("GetUlazniRacun", @InLine.UI.Web.T4.ControllerName.ControllerName.ZapisSvi)';
+                var kojalista = "@ulRacunUlazSelector";
+
+                $.ajax({
+                    url: url,
+                    data: { query: request.term, kriterij: kojiSubjekt, start: @Start, count: @Count },
+                    dataType: 'json',
+                    type: 'GET',
+                    success: function (data) {
+                        response($.map(data,
+                        function (item) {
+                            return {
+                                label: item.ID_RacunUlaz,
+                                value1: item.ID_ZapisRacunUlaz,
+                                value2: item.ID_PoslovniSubjekt,
+                                value3: item.ID_SubjektRacunUlaz
+                            }
+
+                        }));
+
+                        var previousScroll = 0;
+                        var page = 1;
+
+                        $(kojalista).scroll(function () {
+
+                            var currentScroll = $(this).scrollTop();
+
+                            var x = $(kojalista).prop('scrollHeight');
+                            var y = $(kojalista).prop('offsetHeight');
+
+                            if (currentScroll > previousScroll) {
+
+                                if(page >=0)
+                                {
+                                    if (currentScroll >= x - y)
+                                        {
+                                           page += 1;
+
+                                            var countPage = page * @Count
+                                            $.ajax({
+                                                url: url,
+                                                data: { query: request.term, kriterij: kojiSubjekt, start: @Start, count: countPage },
+                                                dataType: 'json',
+                                                type: 'GET',
+                                                success: function (data) {
+                                                    response($.map(data,
+                                                        function (item) {
+
+                                                                return {
+                                                                           label: item.ID_RacunUlaz,
+                                                                           value1: item.ID_ZapisRacunUlaz,
+                                                                           value2: item.ID_PoslovniSubjekt,
+                                                                           value3: item.ID_SubjektRacunUlaz
+
+                                                                        }
+                                                                }));
+                                                            }
+                                                        })
+                                            }
+                                }
+                                    
+
+                            }
+                            else {
+                                page -= 1;
+                            }
+
+                            previousScroll = currentScroll;
+
+                        });
+                    }
+                })
+    
+            },
+
+            select:
+                function (event, ui) {
+                     $("@ID_ZapisSelector").val(ui.item.value1);
+                    $("@DokumentInputSelector").val("ID_POSLOVNISUBJEKT: " + ui.item.value2 + " - " +  " ID_SUBJEKT " + ui.item.value3);
+                    return false;
+                },
+
+            minLength: 0
+
+        }).data("autocomplete");
+                    widgetAutoComplete._renderItem = function (ul, item) {
+            ul.attr("id", "ulRacunUlaz");
+            return $("<li class='tblAutocompleteLi'><table class='tblAutocomplete'></table></li>").data("item.autocomplete-item", item).append("<a><table width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><td width='100px'>" + item.value1 + "</td><td width='100px'>" + item.value2 + "</td><td width='100px'>" + item.value3 + "</td></tr></table></a>").appendTo("#ulRacunUlaz");
+        }
+                    widgetAutoComplete._renderMenu = function (ul, item) {
+            var self = this;
+            $.each(item, function (index, items) {
+                if (index == 0)
+                    ul.append("<li><table class='autocompleteHeader'  width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><th width='100px'>ID_Zapis</th><th width='100px'> ID_PoslovniSubjekt </th><th width='100px'> ID_Subjekt </th></tr></table></li>");
+                self._renderItemData(ul, items);
+            });
+        }
+
+                    break;
+
+
+             case ("10001"):
+
+
+         $("#dialog").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 880,
+            modal: true,
+            show: {
+                effect: "none",
+                duration: 0
+            },
+            hide: {
+                effect: "none",
+                duration: 0
+            },
+            modal: true,
+            resizable: true,
+            position: 'center',
+            draggable: true,
+            buttons: 
+            {
+//                'Zatvori': function()
+//                {
+//                    $(this).dialog('close');
+//                 }
+
+//                    Zatvori:
+//                    {
+//                        text: "",
+//                        title: "Zatvori",
+//                        class: 'ZatvoriClass',
+//                        click: function () {
+//                            $(this).dialog("close");
+//                            $(this).empty();
+//                        }
+//                    }
+    
+            },
+            close: function() {
+            },
+            open: function() {
+
+            }
+            });
+     
+            $(function() {
+            var idValue = $("#ID_Subjekt").val();
+            var url = '@Url.Action("ZapisUgovorStanOtkup", "ZapisSvi")';
+                $("#dialog").dialog("open").load(url,{ id: idValue } );
+//                     $("#dialog").dialog("open").load("../ZapisSvi/ZapisUgovorStanOtkup" );
+            });
+
+                  
+
+//                var widgetAutoComplete = $("." + '@Autocomplete').autocomplete({
+//                showHeader: true,
+//                source: function (request, response) {
+
+//                var kojiKriterij = 3;
+//                var url = '@Url.Action("GetUgovorStanOtkup", @InLine.UI.Web.T4.ControllerName.ControllerName.ZapisSvi)';
+//                var kojalista = "@ulUgovorStanOtkupSelector";
+
+//                $.ajax({
+//                    url: url,
+//                    data: { query: request.term, kriterij: 1, start: @Start, count: @Count },
+//                    dataType: 'json',
+//                    type: 'GET',
+//                    success: function (data) {
+//                        response($.map(data,
+//                        function (item) {
+//                            return {
+//                                label: item.ID_UgovorStanOtkup,
+//                                value1: item.ID_ZapisUgovorStanOtkup,
+//                                value2: item.BrojUgovor,
+//                                value3: item.BrojAneks
+//                            }
+
+//                        }));
+
+//                        var previousScroll = 0;
+//                        var page = 1;
+
+//                        $(kojalista).scroll(function () {
+
+//                            var currentScroll = $(this).scrollTop();
+
+//                            var x = $(kojalista).prop('scrollHeight');
+//                            var y = $(kojalista).prop('offsetHeight');
+
+//                            if (currentScroll > previousScroll) {
+
+//                                if(page >=0)
+//                                {
+//                                    if (currentScroll >= x - y)
+//                                        {
+//                                           page += 1;
+
+//                                            var countPage = page * @Count
+//                                            $.ajax({
+//                                                url: url,
+//                                                data: { query: request.term, kriterij: 1, start: @Start, count: countPage },
+//                                                dataType: 'json',
+//                                                type: 'GET',
+//                                                success: function (data) {
+//                                                    response($.map(data,
+//                                                        function (item) {
+
+//                                                                return {
+//                                                                          label: item.ID_UgovorStanOtkup,
+//                                                                          value1: item.ID_ZapisUgovorStanOtkup,
+//                                                                          value2: item.BrojUgovor,
+//                                                                          value3: item.BrojAneks
+
+//                                                                        }
+//                                                                }));
+//                                                            }
+//                                                        })
+//                                            }
+//                                }
+//                                    
+
+//                            }
+//                            else {
+//                                page -= 1;
+//                            }
+
+//                            previousScroll = currentScroll;
+
+//                        });
+//                    }
+//                })
+//    
+//            },
+
+//            select:
+//                function (event, ui) {
+//                     $("@ID_ZapisSelector").val(ui.item.value1);
+//                    $("@DokumentInputSelector").val("BR. UGOVORA: " + ui.item.value2 + " - " + "BR. ANEKSA" +  ui.item.value3);
+//                    return false;
+//                },
+
+//            minLength: 0
+
+//        }).data("autocomplete");
+//                widgetAutoComplete._renderItem = function (ul, item) {
+//            ul.attr("id", "ulUgovorStanOtkup");
+//            return $("<li class='tblAutocompleteLi'><table class='tblAutocomplete'></table></li>").data("item.autocomplete-item", item).append("<a><table width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><td width='100px'>" + item.value1 + "</td><td width='100px'>" + item.value2 + "</td><td width='100px'>" + item.value3 + "</td></tr></table></a>").appendTo("#ulUgovorStanOtkup");
+//        }
+//                widgetAutoComplete._renderMenu = function (ul, item) {
+//                var self = this;
+//                $.each(item, function (index, items) {
+//                if (index == 0)
+//                    ul.append("<li><table class='autocompleteHeader'  width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><th width='100px'>ID_Zapis</th><th width='100px'> Broj ugovora</th><th width='100px'>" + 'Broj aneksa' + "</th></tr></table></li>");
+//                self._renderItemData(ul, items);
+//            });
+//        }
+
+           break;
+
+
+
+            case ("10002"):
+
+            $("#dialog").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 880,
+            show: {
+            effect: "none",
+            duration: 0
+            },
+            hide: {
+                effect: "none",
+                duration: 0
+            },
+            modal: true,
+            resizable: true,
+            position: 'center',
+            draggable: true,
+            buttons: {
+//                'Zatvori': function()
+//                {
+//                    $(this).dialog('close');
+//                    }
+    
+            },
+            close: function() {
+            },
+            open: function() {
+
+            }
+            });
+     
+            $(function() {
+            var idValue = $("#ID_Subjekt").val();
+            var url = '@Url.Action("ZapisUgovorStanOtkupAneks", "ZapisSvi")';
+                $("#dialog").dialog("open").load(url,{ id: idValue } );
+//                     $("#dialog").dialog("open").load("../ZapisSvi/ZapisUgovorStanOtkup" );
+            });
+
+//                var widgetAutoComplete = $("." + '@Autocomplete').autocomplete({
+//                showHeader: true,
+//                source: function (request, response) {
+
+//                var kojiKriterij = 3;
+//                var url = '@Url.Action("GetUgovorStanOtkupAneks2", @InLine.UI.Web.T4.ControllerName.ControllerName.ZapisSvi)';
+//                var kojalista = "@ulUgovorStanOtkupAneksSelector";
+
+//                $.ajax({
+//                    url: url,
+//                    data: { query: request.term, kriterij: 1, start: @Start, count: @Count },
+//                    dataType: 'json',
+//                    type: 'GET',
+//                    success: function (data) {
+//                        response($.map(data,
+//                        function (item) {
+//                            return {
+//                                label: item.ID_UgovorStanOtkupAneks,
+//                                value1: item.ID_ZapisUgovorStanOtkupAneks,
+//                                value2: item.BrojUgovor,
+//                                value3: item.BrojAneks
+//                            }
+
+//                        }));
+
+//                        var previousScroll = 0;
+//                        var page = 1;
+
+//                        $(kojalista).scroll(function () {
+
+//                            var currentScroll = $(this).scrollTop();
+
+//                            var x = $(kojalista).prop('scrollHeight');
+//                            var y = $(kojalista).prop('offsetHeight');
+
+//                            if (currentScroll > previousScroll) {
+
+//                                if(page >=0)
+//                                {
+//                                    if (currentScroll >= x - y)
+//                                        {
+//                                           page += 1;
+
+//                                            var countPage = page * @Count
+//                                            $.ajax({
+//                                                url: url,
+//                                                data: { query: request.term, kriterij: 1, start: @Start, count: countPage },
+//                                                dataType: 'json',
+//                                                type: 'GET',
+//                                                success: function (data) {
+//                                                    response($.map(data,
+//                                                        function (item) {
+
+//                                                                return {
+//                                                                          label: item.ID_UgovorStanOtkupAneks,
+//                                                                          value1: item.ID_ZapisUgovorStanOtkupAneks,
+//                                                                          value2: item.BrojUgovor,
+//                                                                          value3: item.BrojAneks
+
+//                                                                        }
+//                                                                }));
+//                                                            }
+//                                                        })
+//                                            }
+//                                }
+//                                    
+
+//                            }
+//                            else {
+//                                page -= 1;
+//                            }
+
+//                            previousScroll = currentScroll;
+
+//                        });
+//                    }
+//                })
+//    
+//            },
+
+//            select:
+//                function (event, ui) {
+//                     $("@ID_ZapisSelector").val(ui.item.value1);
+//                    $("@DokumentInputSelector").val("BR. UGOVORA: " + ui.item.value2 + " - " + "BR. ANEKSA" +  ui.item.value3);
+//                    return false;
+//                },
+
+//            minLength: 0
+
+//        }).data("autocomplete");
+//                widgetAutoComplete._renderItem = function (ul, item) {
+//            ul.attr("id", "ulUgovorStanOtkupAneks");
+//            return $("<li class='tblAutocompleteLi'><table class='tblAutocomplete'></table></li>").data("item.autocomplete-item", item).append("<a><table width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><td width='100px'>" + item.value1 + "</td><td width='100px'>" + item.value2 + "</td><td width='100px'>" + item.value3 + "</td></tr></table></a>").appendTo("#ulUgovorStanOtkupAneks");
+//        }
+//                widgetAutoComplete._renderMenu = function (ul, item) {
+//            var self = this;
+//            $.each(item, function (index, items) {
+//                if (index == 0)
+//                    ul.append("<li><table class='autocompleteHeader'  width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><th width='100px'>ID_Zapis</th><th width='100px'> Broj ugovora</th><th width='100px'>" + 'Broj aneksa' + "</th></tr></table></li>");
+//                self._renderItemData(ul, items);
+//            });
+//        }
+
+           break;
+
+
+        }
+        };
+
+         $('#IDZapisVr').change(function () {
+            $("@DokumentInputSelector").val("");
+            $("@ID_ZapisSelector").val("");
+            $.zapisDokument();
+        });
+
+        $("@DokumentInputSelector").focus(function () {
+            $.zapisDokument();
+        });
+
+      
+
+        $.ZapisUgovorStanOtkupOnSelectRow = function () {
+            var selectedRowId = $("#" + "@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.ZapisUgovorStanOtkupEntity").jqGrid('getGridParam', 'selrow');
+            var Zapis = $("#" + "@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.ZapisUgovorStanOtkupEntity").jqGrid('getCell', selectedRowId, 'ID_Zapis');
+            var brojUgovor = $("#" + "@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.ZapisUgovorStanOtkupEntity").jqGrid('getCell', selectedRowId, 'BrojUgovor');
+            var brojDokument = $("#" + "@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.ZapisUgovorStanOtkupEntity").jqGrid('getCell', selectedRowId, 'Broj');
+            $("@ID_ZapisSelector").val(Zapis);
+            $("@DokumentInputSelector").val("BR. UGOVORA: " + brojUgovor + " - " + "BR. DOKUMENTA " + brojDokument);
+        };
+
+
+            $.ZapisUgovorStanOtkupAneksOnSelectRow = function () {
+            var selectedRowId = $("#" + "@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkupAneks.ZapisUgovorStanOtkupAneksEntity").jqGrid('getGridParam', 'selrow');
+            var Zapis = $("#" + "@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkupAneks.ZapisUgovorStanOtkupAneksEntity").jqGrid('getCell', selectedRowId, 'ID_Zapis');
+            var brojAneks = $("#" + "@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkupAneks.ZapisUgovorStanOtkupAneksEntity").jqGrid('getCell', selectedRowId, 'BrojAneks');
+            var brojUgovor = $("#" + "@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkupAneks.ZapisUgovorStanOtkupAneksEntity").jqGrid('getCell', selectedRowId, 'BrojUgovor');
+            var brojDokument = $("#" + "@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkupAneks.ZapisUgovorStanOtkupAneksEntity").jqGrid('getCell', selectedRowId, 'Broj');
+            $("@ID_ZapisSelector").val(Zapis);
+            $("@DokumentInputSelector").val("BR. UGOVORA: " + brojUgovor + " - BR. ANEKSA: " + brojAneks + " - BR. DOKUMENTA " + brojDokument);
+        };
+
+
+    
+ </script>
+

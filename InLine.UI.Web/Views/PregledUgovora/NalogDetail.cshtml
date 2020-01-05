@@ -1,0 +1,203 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.UgovorStanOtkupNalogDetaljFormFormatted
+
+ <style type="text/css">
+.text-box[type=text], .text-box[type=number], .text-box[type=date] { width:100px; border:"0";}
+#PozivNaBrojOdobrenja, #PozivNaBrojZaduzenja { width:100%; }
+#nalog-detail #BrojUgovor, #nalog-detail #BrojNalog { font-weight:bold;}
+
+</style>
+
+ @{
+    string prefixLabela = "labela_nalog_detalj_";
+ }
+
+<table class ="UgovorStanOtkupNalogDetail form_background" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+   <tbody>
+
+      <tr id="tr1">
+	    <td style="background-color:#FFF2C2; font-weight:bold">@Html.LabelFor(model => model.BrojUgovor, new { id = @prefixLabela + @Html.NameFor(model => model.BrojUgovor) })</td>
+        <td >@Html.EditorFor(model => model.BrojUgovor)</td>	
+        <td style="background-color:#FFF2C2; font-weight:bold">@Html.LabelFor(model => model.BrojNalog, new { id = @prefixLabela + @Html.NameFor(model => model.BrojNalog) })</td>
+        <td>@Html.EditorFor(model => model.BrojNalog)</td>								                
+    </tr>
+
+       
+     <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+
+
+   <tr>
+	    <td>@Html.LabelFor(model => model.GodinaNalog, new { id = @prefixLabela + @Html.NameFor(model => model.GodinaNalog) })</td>
+        <td>@Html.EditorFor(model => model.GodinaNalog)</td>	
+        <td>@Html.LabelFor(model => model.Iznos, new { id = @prefixLabela + @Html.NameFor(model => model.Iznos) })</td>
+        <td>@Html.EditorFor(model => model.Iznos)</td>								                
+    </tr>
+    
+
+      <tr>
+	     <td>@Html.LabelFor(model => model.BrojAneks, new { id = @prefixLabela + @Html.NameFor(model => model.GodinaNalog) })</td>
+        <td>@Html.EditorFor(model => model.BrojAneks)</td>	
+        <td>@Html.LabelFor(model => model.BrojStorno, new { id = @prefixLabela + @Html.NameFor(model => model.BrojStorno) })</td>
+        <td>@Html.EditorFor(model => model.BrojStorno)</td>								                
+    </tr>
+    
+       <tr>
+	    <td>@Html.LabelFor(model => model.BrojIzvod, new { id = @prefixLabela + @Html.NameFor(model => model.BrojIzvod) })</td>
+        <td>@Html.EditorFor(model => model.BrojIzvod)</td>	
+        <td>@Html.LabelFor(model => model.BrojObveznica, new { id = @prefixLabela + @Html.NameFor(model => model.BrojObveznica) })</td>
+        <td>@Html.EditorFor(model => model.BrojObveznica)</td>								                
+    </tr>
+    
+      <tr>
+         <td>@Html.LabelFor(model => model.BrojObrok, new { id = @prefixLabela + @Html.NameFor(model => model.BrojObrok) })</td>
+        <td>@Html.EditorFor(model => model.BrojObrok)</td>		
+	    <td>@Html.LabelFor(model => model.BrojRjesenje, new { id = @prefixLabela + @Html.NameFor(model => model.BrojRjesenje) })</td>
+        <td>@Html.EditorFor(model => model.BrojRjesenje)</td>	
+						                
+    </tr>
+
+       <tr>
+	    <td>@Html.LabelFor(model => model.GodinaObracun, new { id = @prefixLabela + @Html.NameFor(model => model.GodinaObracun) })</td>
+        <td>@Html.EditorFor(model => model.GodinaObracun)</td>	
+        <td>@Html.LabelFor(model => model.GodinaRjesenje, new { id = @prefixLabela + @Html.NameFor(model => model.GodinaRjesenje) })</td>
+        <td>@Html.EditorFor(model => model.GodinaRjesenje)</td>								                
+    </tr>
+
+        
+     <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+
+       <tr>
+ 	    <td>@Html.LabelFor(model => model.Svrha, new { id = @prefixLabela + @Html.NameFor(model => model.Svrha) })</td>
+        <td colspan="3">@Html.TextAreaFor(model => model.Svrha)</td>
+                     
+    </tr>
+
+      <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+
+     <tr>
+	    <td>@Html.LabelFor(model => model.OpisPovrat, new { id = @prefixLabela + @Html.NameFor(model => model.OpisPovrat) })</td>
+        <td>@Html.EditorFor(model => model.OpisPovrat)</td>	
+        <td>@Html.LabelFor(model => model.SifraRacun, new { id = @prefixLabela + @Html.NameFor(model => model.SifraRacun) })</td>
+        <td>@Html.EditorFor(model => model.SifraRacun)</td>								                
+    </tr>
+
+     <tr>
+	    <td>@Html.LabelFor(model => model.SifraSubjekt, new { id = @prefixLabela + @Html.NameFor(model => model.SifraSubjekt) })</td>
+        <td>@Html.EditorFor(model => model.SifraSubjekt)</td>	
+        <td>@Html.LabelFor(model => model.VeznaOznaka, new { id = @prefixLabela + @Html.NameFor(model => model.VeznaOznaka) })</td>
+        <td>@Html.EditorFor(model => model.VeznaOznaka)</td>								                
+    </tr>
+
+     <tr>
+	    <td>@Html.LabelFor(model => model.Racun, new { id = @prefixLabela + @Html.NameFor(model => model.Racun) })</td>
+       <td>@Html.EditorFor(model => model.Racun)</td>
+        <td>@Html.LabelFor(model => model.Svrha, new { id = @prefixLabela + @Html.NameFor(model => model.Svrha) })</td>
+       <td>@Html.EditorFor(model => model.Svrha)</td>			                
+    </tr>
+
+      <tr>
+	    <td>@Html.LabelFor(model => model.PozivNaBrojOdobrenja, new { id = @prefixLabela + @Html.NameFor(model => model.PozivNaBrojOdobrenja) })</td>
+       <td colspan="3">@Html.EditorFor(model => model.PozivNaBrojOdobrenja)</td>	                
+    </tr>
+
+      <tr>
+        <td>@Html.LabelFor(model => model.PozivNaBrojZaduzenja, new { id = @prefixLabela + @Html.NameFor(model => model.PozivNaBrojZaduzenja) })</td>
+       <td colspan="3">@Html.EditorFor(model => model.PozivNaBrojZaduzenja)</td>			                
+    </tr>
+
+    <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+
+
+     <tr>
+ 	    <td>@Html.LabelFor(model => model.IznosJednokratno, new { id = @prefixLabela + @Html.NameFor(model => model.IznosJednokratno) })</td>
+        <td>@Html.EditorFor(model => model.IznosJednokratno)</td>
+         <td>@Html.LabelFor(model => model.IznosKamata, new { id = @prefixLabela + @Html.NameFor(model => model.IznosKamata) })</td>
+        <td>@Html.EditorFor(model => model.IznosKamata)</td>                 
+    </tr>
+
+    <tr>
+ 	    <td>@Html.LabelFor(model => model.IznosKredit, new { id = @prefixLabela + @Html.NameFor(model => model.IznosKredit) })</td>
+        <td>@Html.EditorFor(model => model.IznosKredit)</td>
+         <td>@Html.LabelFor(model => model.IznosKreditRevalorizacija, new { id = @prefixLabela + @Html.NameFor(model => model.IznosKreditRevalorizacija) })</td>
+        <td>@Html.EditorFor(model => model.IznosKreditRevalorizacija)</td>                 
+    </tr>
+
+       <tr>
+ 	    <td>@Html.LabelFor(model => model.IznosTecajnaRazlika, new { id = @prefixLabela + @Html.NameFor(model => model.IznosTecajnaRazlika) })</td>
+        <td>@Html.EditorFor(model => model.IznosTecajnaRazlika)</td>
+         <td>@Html.LabelFor(model => model.IznosTecajnaRazlika2, new { id = @prefixLabela + @Html.NameFor(model => model.IznosTecajnaRazlika2) })</td>
+        <td>@Html.EditorFor(model => model.IznosTecajnaRazlika2)</td>                 
+    </tr>
+
+    <tr>
+ 	    <td>@Html.LabelFor(model => model.IznosUcesce, new { id = @prefixLabela + @Html.NameFor(model => model.IznosUcesce) })</td>
+        <td>@Html.EditorFor(model => model.IznosUcesce)</td>
+         <td>@Html.LabelFor(model => model.IznosValuta, new { id = @prefixLabela + @Html.NameFor(model => model.IznosValuta) })</td>
+        <td>@Html.EditorFor(model => model.IznosValuta)</td>                 
+    </tr>
+
+
+      <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+
+        <tr>
+ 	    <td>@Html.LabelFor(model => model.OsobaInsert, new { id = @prefixLabela + @Html.NameFor(model => model.OsobaInsert) })</td>
+        <td>@Html.EditorFor(model => model.OsobaInsert)</td>
+         <td>@Html.LabelFor(model => model.DatumInsert, new { id = @prefixLabela + @Html.NameFor(model => model.DatumInsert) })</td>
+        <td>@Html.EditorFor(model => model.DatumInsert)</td>
+      </tr>
+
+     <tr>
+        <td>@Html.LabelFor(model => model.OsobaUpdate, new { id = @prefixLabela + @Html.NameFor(model => model.OsobaUpdate) })</td>
+        <td>@Html.EditorFor(model => model.OsobaUpdate)</td>
+        <td>@Html.LabelFor(model => model.DatumUpdate, new { id = @prefixLabela + @Html.NameFor(model => model.DatumUpdate) })</td>
+        <td>@Html.EditorFor(model => model.DatumUpdate)</td>            
+    </tr>
+
+    		
+  </tbody>
+</table>
+
+
+
+    <script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $("#labela_nalog_detalj_BrojUgovor").text("Broj ugovora");
+            $("#labela_nalog_detalj_BrojNalog").text("Broj nalog");
+            $("#labela_nalog_detalj_GodinaNalog").text("Godina nalog");
+            $("#labela_nalog_detalj_Iznos").text("Broj ugovora");
+            $("#labela_nalog_detalj_BrojAneks").text("Broj aneks");
+            $("#labela_nalog_detalj_BrojStorno").text("Broj storno");
+            $("#labela_nalog_detalj_BrojIzvod").text("Broj izvod");
+            $("#labela_nalog_detalj_BrojObveznica").text("Broj ugovora");
+            $("#labela_nalog_detalj_BrojObrok").text("Broj obroka");
+            $("#labela_nalog_detalj_BrojRjesenje").text("Broj rješenja");
+            $("#labela_nalog_detalj_GodinaObracun").text("Godina obračuna");
+            $("#labela_nalog_detalj_GodinaRjesenje").text("Godina rješenja");
+            $("#labela_nalog_detalj_OpisPovrat").text("Opis povrat");
+            $("#labela_nalog_detalj_SifraRacun").text("Šufra računa");
+            $("#labela_nalog_detalj_SifraSubjekt").text("Šifra subjekt");
+            $("#labela_nalog_detalj_VeznaOznaka").text("Vezna oznaka");
+            $("#labela_nalog_detalj_Racun").text("Račun");
+            $("#labela_nalog_detalj_PozivNaBrojOdobrenja").text("Poziv na broj odobrenja");
+            $("#labela_nalog_detalj_PozivNaBrojZaduzenja").text("Poziv na broj zaduženja");
+
+            $("#labela_nalog_detalj_Svrha").text("Svrha");
+            $("#labela_nalog_detalj_IznosJednokratno").text("Iznos jednokratno");
+            $("#labela_nalog_detalj_IznosKamata").text("Iznos kamata");
+            $("#labela_nalog_detalj_IznosKredit").text("Iznos kredit");
+            $("#labela_nalog_detalj_IznosKreditRevalorizacija").text("Iznos kredit revalorizacija");
+            $("#labela_nalog_detalj_IznosTecajnaRazlika").text("Iznos tečaj razlika");
+            $("#labela_nalog_detalj_IznosTecajnaRazlika2").text("Iznos tečaj razlika2");
+
+            $("#labela_nalog_detalj_IznosUcesce").text("Iznos učešće");
+            $("#labela_nalog_detalj_IznosValuta").text("Iznos valuta");
+            $("#labela_nalog_detalj_OsobaInsert").text("Kreirao");
+            $("#labela_nalog_detalj_OsobaUpdate").text("Promijenio");
+            $("#labela_nalog_detalj_DatumInsert").text("Kreirano datum");
+            $("#labela_nalog_detalj_DatumUpdate").text("Promjena datuma");
+
+        });
+   
+
+    </script>

@@ -1,0 +1,621 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <ds Ref="2" type="Stimulsoft.Report.Dictionary.StiSqlDatabase" isKey="true">
+        <Alias>ds</Alias>
+        <ConnectionStringEncrypted>+fLBidwFMflhXM14YwTpKt5ugUjFVMOBcVr1hGcsZW7CYHcpYlfqnUZNJZhh2HeP827Zr01de5nta4QQahjrL4J4i2/vcUKBYXvR3GMEtWrfyNGJT0zSvOJL+VhjAK4v0VxTicVRUlloW5xs+30=</ConnectionStringEncrypted>
+        <Name>ds</Name>
+      </ds>
+    </Databases>
+    <DataSources isList="true" count="1">
+      <ds Ref="3" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>ds</Alias>
+        <Columns isList="true" count="52">
+          <value>ID_HUB2013A,System.Int64</value>
+          <value>ID_HUB,System.Int64</value>
+          <value>IDHUBNalogVrsta2013A,System.Int32</value>
+          <value>IDHUBModel2013APlatitelj,System.Int32</value>
+          <value>IDHUBModel2013APrimatelj,System.Int32</value>
+          <value>IDValutaPlacanje,System.String</value>
+          <value>IDValutaPokrice,System.String</value>
+          <value>IDHUBNamjena2013A,System.Int32</value>
+          <value>IDHUBNamjena2013ANaziv,System.String</value>
+          <value>IDHUBNamjena2013AOznaka,System.String</value>
+          <value>IDHUBPrimateljVrsta2013A,System.Int32</value>
+          <value>IDHUBPrimateljVrsta2013AOznaka,System.String</value>
+          <value>IDHUBPrimateljVrsta2013ANaziv,System.String</value>
+          <value>IDHUBTroskoviOpcija2013A,System.Int32</value>
+          <value>IDHUBTroskoviOpcija2013AOznaka,System.String</value>
+          <value>IDHUBTroskoviOpcija2013ANaziv,System.String</value>
+          <value>ID_StornoHUB2013A,System.Int64</value>
+          <value>IDDrzavaPrimatelj,System.String</value>
+          <value>PlatiteljNaziv,System.String</value>
+          <value>IDDrzavaBanka,System.String</value>
+          <value>PlatiteljAdresa,System.String</value>
+          <value>PlatiteljSjediste,System.String</value>
+          <value>PlatiteljRacun,System.String</value>
+          <value>PlatiteljPozivNaBroj,System.String</value>
+          <value>PrimateljNaziv,System.String</value>
+          <value>PrimateljAdresa,System.String</value>
+          <value>PrimateljSjediste,System.String</value>
+          <value>PrimateljRacun,System.String</value>
+          <value>PrimateljPozivNaBroj,System.String</value>
+          <value>Iznos,System.Decimal</value>
+          <value>OpisPlacanje,System.String</value>
+          <value>OpisPlacanjePlatitelj,System.String</value>
+          <value>Hitno,System.Boolean</value>
+          <value>SWIFT,System.String</value>
+          <value>BankaNaziv,System.String</value>
+          <value>BankaAdresa,System.String</value>
+          <value>BankaSjediste,System.String</value>
+          <value>Storno,System.Boolean</value>
+          <value>HUBModel2013APlatiteljOznaka,System.String</value>
+          <value>HUBModel2013APlatiteljPredOznaka,System.String</value>
+          <value>HUBModel2013APrimateljOznaka,System.String</value>
+          <value>HUBModel2013APrimateljPredOznaka,System.String</value>
+          <value>DrzavaPrimateljSif,System.String</value>
+          <value>DrzavaBankaSif,System.String</value>
+          <value>BrojUgovor,System.Int32</value>
+          <value>BrojObrok,System.Int32</value>
+          <value>ID_HUBImportHUB,System.Int64</value>
+          <value>Godina,System.Int32</value>
+          <value>Mjesec,System.Int32</value>
+          <value>ID_HUBImport,System.Int64</value>
+          <value>DatumIzvrsenje,System.DateTime</value>
+          <value>DatumDospijece,System.DateTime</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ds</Name>
+        <NameInSource>ds</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT TOP {top} hub.VIEW_HUB2013A.ID_HUB2013A, hub.VIEW_HUB2013A.ID_HUB,
+  hub.VIEW_HUB2013A.IDHUBNalogVrsta2013A,
+  hub.VIEW_HUB2013A.IDHUBModel2013APlatitelj,
+  hub.VIEW_HUB2013A.IDHUBModel2013APrimatelj,
+  hub.VIEW_HUB2013A.IDValutaPlacanje, hub.VIEW_HUB2013A.IDValutaPokrice,
+  hub.VIEW_HUB2013A.IDHUBNamjena2013A, hub.VIEW_HUB2013A.IDHUBNamjena2013ANaziv,
+  hub.VIEW_HUB2013A.IDHUBNamjena2013AOznaka,
+  hub.VIEW_HUB2013A.IDHUBPrimateljVrsta2013A,
+  hub.VIEW_HUB2013A.IDHUBPrimateljVrsta2013AOznaka,
+  hub.VIEW_HUB2013A.IDHUBPrimateljVrsta2013ANaziv,
+  hub.VIEW_HUB2013A.IDHUBTroskoviOpcija2013A,
+  hub.VIEW_HUB2013A.IDHUBTroskoviOpcija2013AOznaka,
+  hub.VIEW_HUB2013A.IDHUBTroskoviOpcija2013ANaziv,
+  hub.VIEW_HUB2013A.ID_StornoHUB2013A, hub.VIEW_HUB2013A.IDDrzavaPrimatelj,
+  hub.VIEW_HUB2013A.PlatiteljNaziv, hub.VIEW_HUB2013A.IDDrzavaBanka,
+  hub.VIEW_HUB2013A.PlatiteljAdresa, hub.VIEW_HUB2013A.PlatiteljSjediste,
+  hub.VIEW_HUB2013A.PlatiteljRacun, hub.VIEW_HUB2013A.PlatiteljPozivNaBroj,
+  hub.VIEW_HUB2013A.PrimateljNaziv, hub.VIEW_HUB2013A.PrimateljAdresa,
+  hub.VIEW_HUB2013A.PrimateljSjediste, hub.VIEW_HUB2013A.PrimateljRacun,
+  hub.VIEW_HUB2013A.PrimateljPozivNaBroj, hub.VIEW_HUB2013A.Iznos,
+  hub.VIEW_HUB2013A.OpisPlacanje, hub.VIEW_HUB2013A.OpisPlacanjePlatitelj,
+  hub.VIEW_HUB2013A.Hitno, hub.VIEW_HUB2013A.SWIFT,
+  hub.VIEW_HUB2013A.BankaNaziv, hub.VIEW_HUB2013A.BankaAdresa,
+  hub.VIEW_HUB2013A.BankaSjediste, hub.VIEW_HUB2013A.Storno, hub.VIEW_HUB2013A.HUBModel2013APlatiteljOznaka,
+  hub.VIEW_HUB2013A.HUBModel2013APlatiteljPredOznaka,
+  hub.VIEW_HUB2013A.HUBModel2013APrimateljOznaka,
+  hub.VIEW_HUB2013A.HUBModel2013APrimateljPredOznaka,
+  hub.VIEW_HUB2013A.DrzavaPrimateljSif, hub.VIEW_HUB2013A.DrzavaBankaSif,
+  hub.VIEW_HUB2013A.BrojUgovor, hub.VIEW_HUB2013A.BrojObrok,
+  hub.VIEW_HUB2013A.ID_HUBImportHUB, hub.VIEW_HUB2013A.Godina,
+  hub.VIEW_HUB2013A.Mjesec, hub.VIEW_HUB2013A.ID_HUBImport,
+  hub.VIEW_HUB2013A.DatumIzvrsenje, hub.VIEW_HUB2013A.DatumDospijece
+FROM hub.VIEW_HUB2013A
+
+WHERE 
+hub.VIEW_HUB2013A.Mjesec = {Mjesec} AND hub.VIEW_HUB2013A.Godina = {Godina}
+
+ORDER BY
+hub.VIEW_HUB2013A.BrojUgovor</SqlCommand>
+      </ds>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="6">
+      <value>,IznosString,IznosString,System.String,ds.Iznos.ToString_x0028__x0029_.Replace_x0028__x0022__x002C__x0022__x002C__x0020__x0022__x0022__x0029_.PadLeft_x0028_15_x002C__x0020__x0027_0_x0027__x0029_,True,True</value>
+      <value>,barkod,barkod,System.Int32,_x0031_,False,True</value>
+      <value>,vrsta,vrsta,System.Int32,_x0031_,True,False</value>
+      <value>,top,top,System.Int32,_x0031_27,False,False</value>
+      <value>,Mjesec,Mjesec,System.Int64,Month_x0028_Today_x0029_,False,False</value>
+      <value>,Godina,Godina,System.Int64,Year_x0028_Today_x0029_,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="4" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="1">
+        <DataBand1 Ref="5" type="DataBand" isKey="true">
+          <BeforePrintEvent>if (barkod == 1 &amp;&amp; vrsta == 1)
+{
+BarCode1.Enabled = true;
+}
+
+else
+{
+BarCode1.Enabled = false;
+}</BeforePrintEvent>
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <CanGrow>False</CanGrow>
+          <ClientRectangle>0,4,210,99</ClientRectangle>
+          <Components isList="true" count="23">
+            <Primatelj Ref="6" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>7,36,40.87,16</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>2e497c33f4eb4a1892e4f1cde69671f8</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Primatelj</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{ToUpperCase(Repl(ds.PrimateljNaziv))}
+{ToUpperCase(ds.PrimateljAdresa)}
+{ToUpperCase(ds.PrimateljSjediste)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Primatelj>
+            <PrimateljRacun Ref="7" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>78.29,27.81,67.33,4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>b5a8911a30fb44fc9716b01c80051caa</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>PrimateljRacun</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{ds.PrimateljRacun}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+            </PrimateljRacun>
+            <PrimateljModel Ref="8" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>53.67,36,12.68,4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>14624228b77240548265d1ae4a6bedaa</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>PrimateljModel</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{ds.HUBModel2013APrimateljPredOznaka}{ds.HUBModel2013APrimateljOznaka}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </PrimateljModel>
+            <PrimateljPozivNaBroj Ref="9" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>74,36,71.79,4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>8af68152aed444f39de80dfa5ebc8d30</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>PrimateljPozivNaBroj</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{ds.PrimateljPozivNaBroj}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+            </PrimateljPozivNaBroj>
+            <OpisPlacanje Ref="10" type="Text" isKey="true">
+              <AutoWidth>True</AutoWidth>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>85.52,42,58.14,15.19</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <Guid>ab1b5ad71bab40f0a6b0f3a8024c4f31</Guid>
+              <Margins>0,0,0,0</Margins>
+              <MaxNumberOfLines>4</MaxNumberOfLines>
+              <Name>OpisPlacanje</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{Repl(ds.OpisPlacanje)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+            </OpisPlacanje>
+            <TalonRacun Ref="11" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>153.83,28.3,50,4.52</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>d8bb34981c28417dabee0ee6b67943cf</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>TalonRacun</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{ds.PrimateljRacun}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+            </TalonRacun>
+            <TalonModel Ref="12" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>154.34,36.4,50,4.86</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>ec57de5d083e4fe99c594878420b7c87</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>TalonModel</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{ds.HUBModel2013APrimateljPredOznaka}{ds.HUBModel2013APrimateljOznaka}   {ds.PrimateljPozivNaBroj}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </TalonModel>
+            <Platitelj Ref="13" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7,9.3,40.87,15.66</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>7282ff68f725485093e05e481407bdfa</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Platitelj</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{ToUpperCase(ds.PlatiteljNaziv)}
+{ToUpperCase(ds.PlatiteljAdresa)}
+{ToUpperCase(ds.PlatiteljSjediste)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Platitelj>
+            <ValutaPlacanja Ref="14" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>75.85,7.81,10,4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>70d1a6cdd32e4bfdbe650b6676245326</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>ValutaPlacanja</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{ds.IDValutaPlacanje}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </ValutaPlacanja>
+            <BarCode1 Ref="15" type="Stimulsoft.Report.BarCodes.StiBarCode" isKey="true">
+              <AutoScale>True</AutoScale>
+              <BackColor>Transparent</BackColor>
+              <BarCodeType Ref="16" type="Stimulsoft.Report.BarCodes.StiPdf417BarCodeType" isKey="true">
+                <AspectRatio>1</AspectRatio>
+                <AutoDataColumns>False</AutoDataColumns>
+                <DataColumns>9</DataColumns>
+                <DataRows>3</DataRows>
+                <EncodingMode>Byte</EncodingMode>
+                <ErrorsCorrectionLevel>Level4</ErrorsCorrectionLevel>
+                <Module>10</Module>
+              </BarCodeType>
+              <ClientRectangle>5.85,58.64,58,26</ClientRectangle>
+              <Code>HRVHUB30{((char)10).ToString()}{ds.IDValutaPlacanje}{((char)10).ToString()}{IznosString}{((char)10).ToString()}{ToUpperCase(EncodeTextToString2(ds.PlatiteljNaziv))}{((char)10).ToString()}{ToUpperCase(EncodeTextToString2(ds.PlatiteljAdresa))}{((char)10).ToString()}{ToUpperCase(EncodeTextToString2(ds.PlatiteljSjediste))}{((char)10).ToString()}{ToUpperCase(EncodeTextToString2(ReplNewLine(ds.PrimateljNaziv)))}{((char)10).ToString()}{ToUpperCase(EncodeTextToString2(ds.PrimateljAdresa))}{((char)10).ToString()}{ToUpperCase(EncodeTextToString2(ds.PrimateljSjediste))}{((char)10).ToString()}{ds.PrimateljRacun}{((char)10).ToString()}{ds.HUBModel2013APrimateljPredOznaka}{ds.HUBModel2013APrimateljOznaka}{((char)10).ToString()}{ds.PrimateljPozivNaBroj}{((char)10).ToString()}{ds.IDHUBNamjena2013AOznaka}{((char)10).ToString()}OTPLATA STAMBENOG KREDITA{((char)10).ToString()}
+</Code>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold,Pixel</Font>
+              <ForeColor>Black</ForeColor>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>d57e9c322c114a1cbe4313dfd0cc135b</Guid>
+              <Name>BarCode1</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+            </BarCode1>
+            <IznosDecimala Ref="17" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>140.6,7.81,13.19,4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>a2fc6b98cad048fe93df18bdc23fbde3</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>IznosDecimala</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{Substring(ds.Iznos.ToString(),(Length(ds.Iznos.ToString())-2),2)}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </IznosDecimala>
+            <InfoPdf Ref="18" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.83,88.62,54.23,3.35</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6</Font>
+              <Guid>50d3fd0a1cbf4127baa06f4bb7f91252</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>InfoPdf</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{Godina}_{Mjesec}.pdf  {PageNumber}/{TotalPageCount}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </InfoPdf>
+            <InfoHUB Ref="19" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.85,91.32,54.18,3.02</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6</Font>
+              <Guid>cc2149b174874dbf87609b0835755eff</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>InfoHUB</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{LineThrough}/{ds.Count}
+
+</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </InfoHUB>
+            <Hitno Ref="20" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>58.86,8.47,4,4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>baabe07a0245475a813516509c342276</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Hitno</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{Switch(ds.Hitno == true, "x")}
+</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Hitno>
+            <IznosCijelo Ref="21" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>92,7.81,48.81,4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>1793934bbba64c3884ebd09bc7cfb76a</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>IznosCijelo</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{Substring(ds.Iznos.ToString(),0,Length(ds.Iznos.ToString())-2).PadLeft(15, '*')}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </IznosCijelo>
+            <TalonValuta Ref="22" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>156,8.66,10,4.69</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>5b1a414b79f14f1e842ef179cf1bc536</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>TalonValuta</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{ds.IDValutaPlacanje}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </TalonValuta>
+            <TalonIznos Ref="23" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>168,8.66,33.97,4.69</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>ba9bac6ff4e941febe631323e20003a3</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>TalonIznos</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{ds.Iznos.ToString().PadLeft(15, '*')}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </TalonIznos>
+            <TalonOpis Ref="24" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>153.8,44,50.2,13.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>878b08ceb26e4c6c85e4fc5ec6d2dfe5</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>TalonOpis</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{ds.OpisPlacanjePlatitelj}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </TalonOpis>
+            <TalonPlatitelja Ref="25" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>154,14.66,50,4.19</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>36755edc20dc404490f338ead84867f4</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>TalonPlatitelja</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{ToUpperCase(ds.PlatiteljNaziv)}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </TalonPlatitelja>
+            <Napomena Ref="26" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>153.26,86.25,54,2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,5,Bold</Font>
+              <Guid>09cc44af225a40ebbd008decf10a9bf4</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Napomena</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>GRAD ZAGREB - PRODAJA STANOVA, OBROK ZA {Month(ds.DatumDospijece)}. {Year(ds.DatumDospijece)}.
+</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Napomena>
+            <SifraNamjena Ref="27" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>53.67,45.9,22.27,4.51</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>7f47aecc3cc343cda4cd6379157804b5</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>SifraNamjena</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{ds.IDHUBNamjena2013AOznaka}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </SifraNamjena>
+            <Text23 Ref="28" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>53.68,22.5,12.68,4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>60d2acc118814dd5a8f5faae04ca93f6</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text23</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{Switch(ds.IDHUBModel2013APlatitelj == 0, "")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text23>
+            <DatumIzvrsenje Ref="29" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>53.5,53.5,22,4.51</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>77fabb9e93d74297ac828fd62d3b3c6d</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>DatumIzvrsenje</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{Replace(Format("{0:MM.dd.yyyy}", ds.DatumIzvrsenje),".","")}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="30" type="DateFormat" isKey="true">
+                <StringFormat>dd/MM/yyyy</StringFormat>
+              </TextFormat>
+              <Type>Expression</Type>
+            </DatumIzvrsenje>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>ds</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Guid>27f34107e77e4561aec431034516ef57</Guid>
+          <Name>DataBand1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>c5c35f4149c042a4a664369dc5ad5f68</Guid>
+      <Margins>0,0,0,0</Margins>
+      <Name>Page1</Name>
+      <PageHeight>297</PageHeight>
+      <PageWidth>210</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="31" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="32" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>7/11/2013 9:19:11 AM</ReportChanged>
+  <ReportCreated>4/17/2013 10:27:55 AM</ReportCreated>
+  <ReportFile>C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\Content\Reporti\HUB2013A.mrt</ReportFile>
+  <ReportGuid>308587eb2f9644d98b85e1e616d8a304</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Millimeters</ReportUnit>
+  <ReportVersion>2013.1.1600</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+		
+		public string EncodeTextToString(string st)
+		{
+			byte[] data = System.Text.Encoding.ASCII.GetBytes(st);
+			System.Text.StringBuilder sb = new System.Text.StringBuilder();
+			for (int index = 0; index &lt; data.Length; index++)
+			{
+				sb.Append((char)data[index]);
+			}
+			return sb.ToString();            
+		}
+		
+		public string EncodeTextToString2(string st)
+		{
+			byte[] data = System.Text.Encoding.UTF8.GetBytes(st);
+			System.Text.StringBuilder sb = new System.Text.StringBuilder();
+			for (int index = 0; index &lt; data.Length; index++)
+			{
+				sb.Append((char)data[index]);
+			}
+			return sb.ToString();            
+		}
+		
+		private string Repl(string s)
+		{
+			return s.Replace("\\n", "\n");
+		}
+		
+		private string ReplNewLine(string s)
+		{
+			return s.Replace("\\n", "");
+		}
+		
+		private string Odrezi(string s, int koliko)
+		{
+			string rezultat = s;
+
+			if (!String.IsNullOrEmpty(s))
+			{
+				if (s.Length &gt; koliko)
+				{
+					rezultat = s.Substring(0, koliko);
+				}
+			}
+			return rezultat;
+		}
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

@@ -1,0 +1,121 @@
+﻿
+@model InLine.UI.Web.Controllers.KriterijFolder
+
+
+@{
+    string AkcijaTreeViewTemeljnicaStKriterij = "TreeViewTemeljnicaStKriterij";
+}
+
+
+
+ <style type="text/css">
+ #KriterijOkvir 
+ {
+    padding-left:5px;
+     padding-right:5px;
+      padding-top:0px;
+       padding-bottom:3px;
+       display:;
+}
+
+ #tbl-kriterijkriterijst
+ {
+    width:100%;
+
+}
+ #tbl-kriterijkriterijst td
+ {
+    padding-left:10px;
+     padding-right:5px;
+      padding-top:0px;
+       padding-bottom:3px;
+       font-size:1em;
+}
+
+
+
+
+</style>
+	
+<div id="KriterijOkvir">
+<h4>Parametri glavne knjige</h4>
+
+<table id="tbl-kriterijkriterijst">
+
+   @if ((@Model.KojiKriterijList.Count - 1) > 0)
+   {
+       if ((@Model.KojiKriterijList.Count - 1) > 2)
+       {
+           <tr>
+                @for (int j = 0; j <= 2; j++)
+                {
+                    Model.KojiKriterij = @Model.KojiKriterijList.ElementAt(j).ID_Kriterij;   
+                    <td class="kriterij" id ="@Model.KojiKriterij" style="vertical-align:top; width:33%;"> <b>@Model.KojiKriterijList.ElementAt(j).Naziv.ToUpper()</b>
+                    @{Html.RenderAction(@AkcijaTreeViewTemeljnicaStKriterij, Model);}
+                    </td>
+                }
+           </tr>
+       
+            <tr>
+              @for (int j = 3; j <= @Model.KojiKriterijList.Count - 1; j++)
+              {
+                  Model.KojiKriterij = @Model.KojiKriterijList.ElementAt(j).ID_Kriterij;   
+                    <td class="kriterij" id ="@Model.KojiKriterij" style="vertical-align:top; width:33%;"> <b>@Model.KojiKriterijList.ElementAt(j).Naziv.ToUpper()</b>
+                    @{Html.RenderAction(@AkcijaTreeViewTemeljnicaStKriterij, Model);}
+                    </td>
+              }
+           </tr>
+       }
+
+       else if ((@Model.KojiKriterijList.Count - 1) == 1)
+       {
+               <tr>
+                @for (int j = 0; j <= @Model.KojiKriterijList.Count - 1; j++)
+                {
+                    Model.KojiKriterij = @Model.KojiKriterijList.ElementAt(j).ID_Kriterij;   
+                    <td class="kriterij" id ="@Model.KojiKriterij" style="vertical-align:top; width:50%;"> <b>@Model.KojiKriterijList.ElementAt(j).Naziv.ToUpper()</b>
+                    @{Html.RenderAction(@AkcijaTreeViewTemeljnicaStKriterij, Model);}
+                    </td>
+                }
+           </tr>
+       }
+
+       else
+       {
+               <tr>
+                @for (int j = 0; j <= @Model.KojiKriterijList.Count - 1; j++)
+                {
+                    Model.KojiKriterij = @Model.KojiKriterijList.ElementAt(j).ID_Kriterij;   
+                    <td class="kriterij" id ="@Model.KojiKriterij" style="vertical-align:top; width:33%;"> <b>@Model.KojiKriterijList.ElementAt(j).Naziv.ToUpper()</b>
+                    @{Html.RenderAction(@AkcijaTreeViewTemeljnicaStKriterij, Model);}
+                    </td>
+                }
+           </tr>
+       }
+   }
+
+   else
+   {
+        <tr>
+              @for (int j = 0; j <= @Model.KojiKriterijList.Count - 1; j++)
+              {
+                  Model.KojiKriterij = @Model.KojiKriterijList.ElementAt(j).ID_Kriterij;   
+                    <td class="kriterij" id ="@Model.KojiKriterij" style="vertical-align:top; padding-right:50%;"> <b>@Model.KojiKriterijList.ElementAt(j).Naziv.ToUpper()</b>
+                    @{Html.RenderAction(@AkcijaTreeViewTemeljnicaStKriterij, Model);}
+                    </td>
+              }
+           </tr>
+   }
+   
+
+ 
+</table>
+
+</div>
+
+<script type="text/javascript">
+</script>
+
+
+
+

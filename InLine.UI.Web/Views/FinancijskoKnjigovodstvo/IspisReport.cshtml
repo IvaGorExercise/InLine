@@ -1,0 +1,23 @@
+﻿@using Stimulsoft.Report.MvcMobile;
+
+@{
+    ViewBag.Title = "Ispis";
+    Layout = "";
+}
+@Html.Stimulsoft().RenderMvcMobileViewerScripts()
+
+<table>
+    <tr>
+        <td style="width: 100%;" valign="top">
+            @Html.Stimulsoft().StiMvcMobileViewer(new StiMvcMobileViewerOptions() {
+                Theme = StiTheme.Blue,
+                ActionGetReportSnapshot = "GetReportSnapshot",
+                ActionViewerEvent = "ViewerEvent",
+                ActionPrintReport = "PrintReport",
+                ActionExportReport = "ExportReport",
+                FullScreen = true,
+                ScrollbarsMode = true
+            })
+        </td>
+    </tr>
+</table>

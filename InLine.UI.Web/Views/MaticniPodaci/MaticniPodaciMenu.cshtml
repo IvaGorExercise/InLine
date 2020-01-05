@@ -1,0 +1,27 @@
+﻿@*
+<div id="menuizbornik">
+    <ul id="navigacija">
+        <li class="navigacijaShow"><a class="navigacijaShowIkona" href="#"><span>&#9776;</span></a>
+            <div><ul class="submenu">
+              <li><a href="#">xxxxxxx</a>
+                <li>@Html.ActionLink("Poslovna godina", "PoslovnaGodina", "MaticniPodaci")</li>
+                <li>@Html.ActionLink("Tecajnica", "Tecaj", "MaticniPodaci")</li>
+            </ul></div>
+        </li>
+    </ul>
+</div>*@
+
+
+
+<div id="menuizbornik">
+    <ul id="navigacija">
+          <li class="navigacijaShow"><a class="navigacijaShowIkona" href="#"><span>&#9776;</span></a>
+            <div>
+            <ul class="submenu">
+              <li>@Html.ActionLink("Poslovna godina", "PoslovnaGodina", "MaticniPodaci")</li>
+            <li>@Html.ActionLink("Tečajnica", "Tecaj", "MaticniPodaci")</li>
+            </ul>
+            </div>
+        </li>
+    </ul>
+</div>

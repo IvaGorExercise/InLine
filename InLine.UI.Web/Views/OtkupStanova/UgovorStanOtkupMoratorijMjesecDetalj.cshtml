@@ -1,0 +1,133 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.UgovorStanOtkupMoratorijMjesecDetaljFormFormatted
+
+ <style type="text/css">
+.text-box[type=text], .text-box[type=number], .text-box[type=date] { width:100px; border:"0";}
+#trosak-detail #BrojUgovor, #trosak-detail #Datum{ font-weight:bold;}
+.Generalije {font-size: .9em}
+
+</style>
+
+ @{
+     string prefixLabela = "labela_UgovorStanOtkupMoratorijMjesec_Detalj_";
+ }
+
+  @{
+      string Akcija = @InLine.Model.Data.FieldString.View.UgovorStanOtkupMoratorijMjesec.UgovorStanOtkupMoratorijMjesecEntity + InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert;
+      string IDForma = @InLine.Model.Data.FieldString.View.UgovorStanOtkupMoratorijMjesec.UgovorStanOtkupMoratorijMjesecEntity + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Forma;
+
+}
+
+
+@using (Html.BeginForm(Akcija, @InLine.UI.Web.T4.ControllerName.ControllerName.OtkupStanova, FormMethod.Post, new { id = IDForma, @class = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormClass }))
+{
+    
+    @Html.HiddenFor(model => model.ID_UgovorStanOtkupMoratorijMjesec);
+    @Html.HiddenFor(model => model.ID_UgovorStanOtkupMoratorij);
+    @Html.HiddenFor(model => model.BrojUgovor);
+    @Html.HiddenFor(model => model.BrojMoratorij);                                                       
+    @Html.HiddenFor(model => model.OsobaInsert);
+    @Html.HiddenFor(model => model.DatumInsert);                                                                                                                            
+    @Html.HiddenFor(model => model.OsobaUpdate);
+    @Html.HiddenFor(model => model.DatumUpdate);  
+
+
+ <table class ="UgovorStanOtkupMoratorijMjesecDetail" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+   <tbody>
+
+      <tr>
+	    <td>@Html.LabelFor(model => model.BrojUgovor, new { id = @prefixLabela + @Html.NameFor(model => model.BrojUgovor) })</td>
+        <td >@Html.DisplayFor(model => model.BrojUgovor)</td>	
+        <td >@Html.LabelFor(model => model.BrojMoratorij, new { id = @prefixLabela + @Html.NameFor(model => model.BrojMoratorij) })</td>
+        <td>@Html.DisplayFor(model => model.BrojMoratorij)</td>								                
+    </tr>
+
+     <tr>
+	    <td>@Html.LabelFor(model => model.Godina, new { id = @prefixLabela + @Html.NameFor(model => model.Godina) })</td>
+        <td>@Html.EditorFor(model => model.Godina)</td>	
+        <td>@Html.LabelFor(model => model.Mjesec, new { id = @prefixLabela + @Html.NameFor(model => model.Mjesec) })</td>
+        <td>@Html.EditorFor(model => model.Mjesec)</td>								                
+    </tr>
+
+      <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+
+   <tr>
+           <table class="Generalije" width="100%">
+                    <tr>
+                 <td>@Html.LabelFor(model => model.OsobaInsert, new { id = @prefixLabela + @Html.NameFor(model => model.OsobaInsert) })
+                    @Html.DisplayFor(model => model.OsobaInsert)</td>
+                <td>@Html.LabelFor(model => model.DatumInsert, new { id = @prefixLabela + @Html.NameFor(model => model.DatumInsert) }) 
+                    @Html.DisplayFor(model => model.DatumInsert)</td>
+                 <td>@Html.LabelFor(model => model.OsobaUpdate, new { id = @prefixLabela + @Html.NameFor(model => model.OsobaUpdate) })
+                 @Html.DisplayFor(model => model.OsobaUpdate)</td>
+                <td>@Html.LabelFor(model => model.DatumUpdate, new { id = @prefixLabela + @Html.NameFor(model => model.DatumUpdate) })
+                    @Html.DisplayFor(model => model.DatumUpdate)</td>	
+                </tr>
+            </table>
+   </tr> 		
+  </tbody>
+</table>
+     
+  <br />
+ <div id="poruka_UgovorStanOtkupMoratorij"></div>
+     
+}
+
+   <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+   <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+
+        <script>
+
+            $(document).ready(function () {
+
+                $('#' + '@InLine.Model.Data.FieldString.View.UgovorStanOtkupMoratorijMjesec.UgovorStanOtkupMoratorijMjesecEntity' + 'DialogSpremiKopiraj').hide();
+                $('#' + '@InLine.Model.Data.FieldString.View.UgovorStanOtkupMoratorijMjesec.UgovorStanOtkupMoratorijMjesecEntity' + 'DialogSpremiDodaj').hide();
+
+                Dialozi.DatePicker();
+
+            });
+
+
+    </script>
+
+    <script type="text/javascript">
+
+        $(function () {
+            $("#labela_UgovorStanOtkupMoratorijMjesec_Detalj_BrojUgovor").text("Broj ugovora:");
+            $("#labela_UgovorStanOtkupMoratorijMjesec_Detalj_BrojMoratorij").text("Broj moratorija:");
+            $("#labela_UgovorStanOtkupMoratorijMjesec_Detalj_Godina").text("Godina:");
+            $("#labela_UgovorStanOtkupMoratorijMjesec_Detalj_Mjesec").text("Mjesec");
+            $("#labela_UgovorStanOtkupMoratorijMjesec_Detalj_OsobaInsert").text("Kreirao");
+            $("#labela_UgovorStanOtkupMoratorijMjesec_Detalj_OsobaUpdate").text("Promijenio:");
+            $("#labela_UgovorStanOtkupMoratorijMjesec_Detalj_DatumInsert").text("Kreirano datum:");
+            $("#labela_UgovorStanOtkupMoratorijMjesec_Detalj_DatumUpdate").text("Promjena datuma:");
+        });
+   
+
+    </script>
+
+
+     <script type="text/javascript">
+         function InsertEditSucces() {
+
+         }
+
+         function InsertEditError() {
+
+         }
+
+
+         function DeleteSucces() {
+
+         }
+
+
+         function DeleteError() {
+
+         }
+
+         function ProvjeraKodUnosa() {
+             return true;
+         }
+
+
+    </script>

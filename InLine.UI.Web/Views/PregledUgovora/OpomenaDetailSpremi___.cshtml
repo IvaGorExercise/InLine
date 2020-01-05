@@ -1,0 +1,106 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.OpomenaDetaljFormFormatted
+
+ <style type="text/css">
+.text-box[type=text], .text-box[type=number], .text-box[type=date] { width:100px; border:"0";}
+#PozivNaBrojOdobrenja, #PozivNaBrojZaduzenja { width:100%; }
+#opomena-detail #BrojUgovor, #opomena-detail #BrojOpomena { font-weight:bold;}
+
+</style>
+
+ @{
+     string prefixLabela = "labela_opomena_detalj_";
+ }
+
+
+  @using (Html.BeginForm("OpomenaDetailSpremi", "PregledUgovora", FormMethod.Post, new { id = "frmOpomenaDetailEdit" + @Model.ID_Opomena }))
+  {
+  
+     <div class='success'><%: ViewData["Message"]%></div>
+      
+      @Html.HiddenFor(model => model.ID_Opomena)
+      @Html.HiddenFor(model => model.ID_Zapis)
+      @Html.HiddenFor(model => model.ID_OsobaInsert)
+      @Html.HiddenFor(model => model.DatumInsert)
+
+<table class ="OpomenaDetail" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+   <tbody>
+
+      <tr id="tr1">
+	    <td style="background-color:#FFF2C2; font-weight:bold">@Html.LabelFor(model => model.BrojOpomena, new { id = @prefixLabela + @Html.NameFor(model => model.BrojOpomena) })</td>
+        <td >@Html.EditorFor(model => model.BrojOpomena)</td>	
+        <td></td>
+        <td></td>								                
+    </tr>
+
+       
+     <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+     
+
+   <tr>
+	    <td>@Html.LabelFor(model => model.DatumDospijeceOd, new { id = @prefixLabela + @Html.NameFor(model => model.DatumDospijeceOd) })</td>
+        <td>@Html.EditorFor(model => model.DatumDospijeceOd)</td>	
+        <td>@Html.LabelFor(model => model.DatumDospijeceDo, new { id = @prefixLabela + @Html.NameFor(model => model.DatumDospijeceDo) })</td>
+        <td>@Html.EditorFor(model => model.DatumDospijeceDo)</td>								                
+    </tr>
+
+
+      <tr>
+	    <td>@Html.LabelFor(model => model.OpomenaIznosMin, new { id = @prefixLabela + @Html.NameFor(model => model.OpomenaIznosMin) })</td>
+        <td>@Html.EditorFor(model => model.OpomenaIznosMin)</td>	
+        <td>@Html.LabelFor(model => model.BrojNeplaceniObrokMin, new { id = @prefixLabela + @Html.NameFor(model => model.BrojNeplaceniObrokMin) })</td>
+        <td>@Html.EditorFor(model => model.BrojNeplaceniObrokMin)</td>								                
+    </tr>
+
+
+      <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+
+     <tr>
+ 	    <td>@Html.LabelFor(model => model.OsobaInsert, new { id = @prefixLabela + @Html.NameFor(model => model.OsobaInsert) })</td>
+        <td>@Html.DisplayFor(model => model.OsobaInsert)</td>
+         <td>@Html.LabelFor(model => model.DatumInsert, new { id = @prefixLabela + @Html.NameFor(model => model.DatumInsert) })</td>
+        <td>@Html.DisplayFor(model => model.DatumInsert)</td>
+      </tr>
+
+     <tr>
+        <td>@Html.LabelFor(model => model.OsobaUpdate, new { id = @prefixLabela + @Html.NameFor(model => model.OsobaUpdate) })</td>
+        <td>@Html.EditorFor(model => model.OsobaUpdate)</td>
+        <td>@Html.LabelFor(model => model.DatumUpdate, new { id = @prefixLabela + @Html.NameFor(model => model.DatumUpdate) })</td>
+        <td>@Html.EditorFor(model => model.DatumUpdate)</td>            
+    </tr>
+
+
+    		
+  </tbody>
+</table>
+
+   <button id="btn-opomena-detalj" type="submit" name="ProgramNastavnaCjelinaSatAdd" value="ProgramNastavnaCjelinaSatAdd">Spremi</button> 
+           <input type="submit" value="Save" />
+                <input type="button" value="Close" onclick="closeTab()" />  
+  }
+
+
+    <script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $("#labela_opomena_detalj_BrojOpomena").text("Broj opomene:");
+            $("#labela_opomena_detalj_DatumDospijeceOd").text("Datum dospijeće od:");
+            $("#labela_opomena_detalj_DatumDospijeceDo").text("Datum dospijeće do:");
+            $("#labela_opomena_detalj_OpomenaIznosMin").text("Opomena iznos min.:");
+            $("#labela_opomena_detalj_BrojNeplaceniObrokMin").text("Broj neplaćenih obroka min:");
+            $("#labela_opomena_detalj_OsobaInsert").text("Kreirao:");
+            $("#labela_opomena_detalj_OsobaUpdate").text("Promijenio:");
+            $("#labela_opomena_detalj_DatumInsert").text("Kreirano datum:");
+            $("#labela_opomena_detalj_DatumUpdate").text("Promjena datuma:");
+
+
+        });
+   
+
+    </script>
+
+    <script type="text/javascript">
+  
+   
+
+</script>

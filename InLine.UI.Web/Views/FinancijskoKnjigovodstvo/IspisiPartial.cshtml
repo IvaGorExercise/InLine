@@ -1,0 +1,1054 @@
+﻿@using InLine.Repository.Data.Helper;
+@{
+    string Datepicker = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Datepicker;
+
+    string Autocomplete1 = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Autocomplete + "Subjekt";
+    string Start = CommonFunctions.PagingVrijednostiDefault.Start;
+    string Count = CommonFunctions.PagingVrijednostiDefault.Count;
+    string ulSubjektSelector = "#ulSubjekt";
+  
+}
+<style type="text/css">
+    .CLASScombo
+    {
+        width: 250px;
+        float: left;
+    }
+    #DatumOdPomoc
+    {
+        width: 100px;
+        margin-right: 15px;
+    }
+    #DatumDoPomoc
+    {
+        width: 100px;
+    }
+    #DatumDospijecaOdPomoc
+    {
+        width: 100px;
+        margin-right: 15px;
+    }
+    #DatumDospijecaDoPomoc
+    {
+        width: 100px;
+    }
+    #DatumDospijecaObrokaOdPomoc
+    {
+        width: 100px;
+        margin-right: 15px;
+    }
+    #DatumDospijecaObrokaDoPomoc
+    {
+        width: 100px;
+    }
+    #DatumPoslovnePromjeneOdPomoc
+    {
+        width: 100px;
+        margin-right: 15px;
+    }
+    #DatumPoslovnePromjeneDoPomoc
+    {
+        width: 100px;
+    }
+    .ui-multiselect-menu
+    {
+        width: 550px !important;
+    }
+</style>
+<div id="DIVNaslov" style="float: left; width: 80%">
+    <h2>
+    </h2>
+</div>
+<div style="float: right; width: 20%">
+    <br />
+    <button id="BTNPonistiParametre">
+        Poništi parametre</button></div>
+<div>
+    <div id="DIVBrojUgovora" style="float: left; width: 100%; padding-top: 10px; display: none;">
+        <div style="float: left; width: 18%;">
+            Broj ugovora:
+        </div>
+        <div style="float: right; width: 82%;">
+            od:
+            <input type="text" id="TEXTBrojUgovoraOd" style="width: 50px;" />
+            do:
+            <input type="text" id="TEXTBrojUgovoraDo" style="width: 50px;" />
+        </div>
+    </div>
+
+    <div id="DIVDatumDospijecaObroka" style="float: left; width: 100%; padding-top: 10px;
+        display: none;">
+        <div style="float: left; width: 18%;">
+            Datum dospijeća:
+        </div>
+        <div style="float: right; width: 82%;">
+            @Html.Hidden("DatumDospijecaObrokaOd")
+            od: @Html.TextBox("DatumDospijecaObrokaOdPomoc", null, new { @class = @Datepicker })
+            @Html.Hidden("DatumDospijecaObrokaDo")
+            do: @Html.TextBox("DatumDospijecaObrokaDoPomoc", null, new { @class = @Datepicker })
+        </div>
+    </div>
+
+    <div id="DIVBrojNaloga" style="float: left; width: 100%; padding-top: 10px; display: none;">
+        <div style="float: left; width: 18%;">
+            Broj naloga:
+        </div>
+        <div style="float: right; width: 82%;">
+            od:
+            <input type="text" id="TEXTBrojNalogaOd" style="width: 50px;" />
+            do:
+            <input type="text" id="TEXTBrojNalogaDo" style="width: 50px;" />
+        </div>
+    </div>
+
+    <div id="DIVGodinaNaloga" style="float: left; width: 100%; padding-top: 10px; display: none;">
+        <div style="float: left; width: 18%;">
+            Godina naloga:
+        </div>
+        <div style="float: right; width: 82%;">
+            od:
+            <input type="text" id="TEXTGodinaNalogaOd" style="width: 50px;" />
+            do:
+            <input type="text" id="TEXTGodinaNalogaDo" style="width: 50px;" />
+        </div>
+    </div>
+
+    <div id="DIVDatumTemeljnice" style="float: left; width: 100%; padding-top: 10px;
+        display: none;">
+        <p id="PKarticaPoslovnogPartnera" style="float: left; width: 100%; display: none;">***Ovdje možete odabrati period kroz više godina***</p>
+        <div style="float: left; width: 18%;">
+            Datum temeljnica:
+        </div>
+        <div style="float: right; width: 82%;">
+            @Html.Hidden("DatumOd")
+            od: @Html.TextBox("DatumOdPomoc", null, new { @class = @Datepicker })
+            @Html.Hidden("DatumDo")
+            do: @Html.TextBox("DatumDoPomoc", null, new { @class = @Datepicker })
+        </div>
+    </div>
+    <div id="DIVDatumDospijeca" style="float: left; width: 100%; padding-top: 10px;
+        display: none;">
+        <div style="float: left; width: 18%;">
+            Datum dospijeća:
+        </div>
+        <div style="float: right; width: 82%;">
+            @Html.Hidden("DatumDospijecaOd")
+            od: @Html.TextBox("DatumDospijecaOdPomoc", null, new { @class = @Datepicker })
+            @Html.Hidden("DatumDospijecaDo")
+            do: @Html.TextBox("DatumDospijecaDoPomoc", null, new { @class = @Datepicker })
+        </div>
+    </div>
+    <div id="DIVKlase" style="float: left; width: 100%; padding-top: 10px; display: none;">
+        <div style="float: left; width: 18%;">
+            Klase prihoda i rashoda:
+        </div>
+        <div style="float: right; width: 82%;">
+            <input type="text" id="TEXTKlase" style="width: 400px;" /><br />
+            Upišite klase prihoda i rashoda, npr: 4,7,3
+        </div>
+    </div>
+    <div id="DIVSubjekt" style="float: left; width: 100%; padding-top: 10px; display: none;">
+        <div style="float: left; width: 18%;">
+            Poslovni partner:
+        </div>
+        <div style="float: right; width: 82%;">
+            <input type="text" id="PoslovniPartnerTEXT" style="width: 150px;" />
+            <input id="PoslovniPartnerInput" class="btnDropDownSymbol autocompleteSubjekt ui-autocomplete-input"
+                type="text" value="" name="poslovniPartner" autocomplete="off" style="width: 300px;">
+            <button id="btn_zatvoriPoslovnogPartnera">
+                Zatvori</button>
+        </div>
+    </div>
+    <div id="DIVKonto" style="float: left; width: 100%; padding-top: 10px; display: none;">
+        <div style="float: left; width: 18%;">
+            Konto:
+        </div>
+        <div style="float: right; width: 82%;">
+            <input type="text" id="KontniPlanStTEXT" style="width: 200px;" />
+            @Html.DropDownList("KontniPlanStCOMBO", (SelectList)ViewBag.KontniPlanStCombo, new { @class = "CLASScombo", @multiple = "multiple" })
+        </div>
+    </div>
+    <div id="DIVVrstaTemeljnice" style="float: left; width: 100%; padding-top: 10px;
+        display: none;">
+        <div style="float: left; width: 18%;">
+            Vrsta tem:
+        </div>
+        <div style="float: right; width: 82%;">
+            <input type="text" id="VrstaTemeljniceTEXT" style="width: 200px;" />
+            @Html.DropDownList("VrstaTemeljniceCOMBO", (SelectList)ViewBag.VrstaTemeljniceCombo, new { @class = "CLASScombo", @multiple = "multiple" })
+        </div>
+    </div>
+    <div id="DIVBrojTemeljnice" style="float: left; width: 100%; padding-top: 10px; display: none;">
+        <div style="float: left; width: 18%;">
+            Broj temeljnice:
+        </div>
+        <div style="float: right; width: 82%;">
+            od:
+            <input type="text" id="TEXTBrojTemeljniceOd" style="width: 50px;" />
+            do:
+            <input type="text" id="TEXTBrojTemeljniceDo" style="width: 50px;" />
+        </div>
+    </div>
+    @{ 
+        int brojIME = 1;
+        foreach (var kriterij in ViewBag.Kriteriji)
+        {                    
+        <div class="CLASSKriteriji" style="float: left; width: 100%; padding-top: 10px; display: none;">
+            <div style="float: left; width: 18%;">
+                @kriterij.Naziv:
+            </div>
+            <div style="float: right; width: 82%;">
+                <input type="text" id="listaKriterija@(brojIME)TEXT" style="width:200px;"/>
+                @Html.DropDownList("listaKriterija" + brojIME.ToString() + "COMBO", null, new { @class = "CLASScombo", @multiple = "multiple" })
+            </div>
+            @{
+            brojIME++;
+            }
+        </div>
+        }
+    }
+    <div id="DIVZapisVr" style="float: left; width: 100%; padding-top: 10px; display: none;">
+        <div style="float: left; width: 18%;">
+            Vrsta dokumenta:
+        </div>
+        <div style="float: right; width: 82%;">
+            <input type="text" id="ZapisVrTEXT" style="width: 200px;" />
+            @Html.DropDownList("ZapisVrCombo", (SelectList)ViewBag.ZapisVrCombo, new { @class = "CLASScombo", @multiple = "multiple" })
+        </div>
+    </div>
+    <div id="DIVDatumPoslovnePromjene" style="float: left; width: 100%; padding-top: 10px;
+        display: none;">
+        <div style="float: left; width: 18%;">
+            Datum posl. promj.:
+        </div>
+        <div style="float: right; width: 82%;">
+            @Html.Hidden("DatumPoslovnePromjeneOd")
+            od: @Html.TextBox("DatumPoslovnePromjeneOdPomoc", null, new { @class = @Datepicker })
+            @Html.Hidden("DatumPoslovnePromjeneDo")
+            do: @Html.TextBox("DatumPoslovnePromjeneDoPomoc", null, new { @class = @Datepicker })
+        </div>
+    </div>
+    <div id="DIVDnevnikPo" style="float: left; width: 100%; padding-top: 10px; display: none;">
+        <div style="float: left; width: 18%;">
+            Dnevnik po:
+        </div>
+        <div style="float: right; width: 82%;">
+            <select id="DnevnikPo_SLCT_ID" style="width: 150px;">
+                <option value="0" selected="selected">Datum temeljnice</option>
+                <option value="1">Datum knjiženja</option>
+                <option value="2">Datum poslovne promjene</option>
+            </select>
+        </div>
+    </div>
+    <div id="DIVPoredakPo" style="float: left; width: 100%; padding-top: 10px; display: none;">
+        <div style="float: left; width: 18%;">
+            Poredak po:
+        </div>
+        <div style="float: right; width: 82%;">
+            <select id="PoredakPo1_SLCT_ID" style="width: 150px;">
+                <option value="0" style="display: none;">Broj stavke</option>
+                <option value="1" style="display: none;">Opis knjiženja</option>
+                <option value="2" style="display: none;">Datum poslovne promjene</option>
+                <option value="3" style="display: none;">Konto</option>
+                <option value="4" style="display: none;">Poslovni partner</option>
+                <option value="5" style="display: none;">Dokument</option>
+                <option value="6" style="display: none;">Datum temeljnice</option>
+                <option value="7" style="display: none;">Vrsta temeljnice</option>
+                <option value="8" style="display: none;">Broj dokumenta</option>
+                <option value="9" style="display: none;">Broj temeljnice</option>
+                <option value="10" style="display: none;">Datum knjiženja</option>
+                <option value="11" style="display: none;">Naziv partnera</option>
+                <option value="12" style="display: none;">Šifra partnera</option>
+            </select>
+            <select id="PoredakPo2_SLCT_ID" style="width: 150px;">
+                <option value="0" style="display: none;">Broj stavke</option>
+                <option value="1" style="display: none;">Opis knjiženja</option>
+                <option value="2" style="display: none;">Datum poslovne promjene</option>
+                <option value="3" style="display: none;">Konto</option>
+                <option value="4" style="display: none;">Poslovni partner</option>
+                <option value="5" style="display: none;">Dokument</option>
+                <option value="6" style="display: none;">Datum temeljnice</option>
+                <option value="7" style="display: none;">Vrsta temeljnice</option>
+                <option value="8" style="display: none;">Broj dokumenta</option>
+                <option value="9" style="display: none;">Broj temeljnice</option>
+                <option value="10" style="display: none;">Datum knjiženja</option>
+                <option value="11" style="display: none;">Naziv partnera</option>
+                <option value="12" style="display: none;">Šifra partnera</option>
+            </select>
+            <select id="PoredakPo3_SLCT_ID" style="width: 150px;">
+                <option value="0" style="display: none;">Broj stavke</option>
+                <option value="1" style="display: none;">Opis knjiženja</option>
+                <option value="2" style="display: none;">Datum poslovne promjene</option>
+                <option value="3" style="display: none;">Konto</option>
+                <option value="4" style="display: none;">Poslovni partner</option>
+                <option value="5" style="display: none;">Dokument</option>
+                <option value="6" style="display: none;">Datum temeljnice</option>
+                <option value="7" style="display: none;">Vrsta temeljnice</option>
+                <option value="8" style="display: none;">Broj dokumenta</option>
+                <option value="9" style="display: none;">Broj temeljnice</option>
+                <option value="10" style="display: none;">Datum knjiženja</option>
+                <option value="11" style="display: none;">Naziv partnera</option>
+                <option value="12" style="display: none;">Šifra partnera</option>
+            </select>
+        </div>
+    </div>
+    <div id="DIVOstaliParametri" style="float: left; width: 100%; padding-top: 10px;
+        display: none;">
+        <div style="float: left; width: 18%;">
+            Ostali Parametri:
+        </div>
+        <div style="float: right; width: 82%;">
+            <input id="CHECKNeuskladeneTemeljnice" name="CHECKOstaliParametri" type="checkbox"
+                value="0" style="display: none;" />
+            <label for="CHECKNeuskladeneTemeljnice" style="display: none;">
+                Prikaži samo neusklađene temeljnice</label>
+@*            <input id="CHECKNovaStrana" name="CHECKOstaliParametri" type="checkbox" value="1"
+                style="display: none;" />
+            <label for="CHECKNovaStrana" style="display: none;">
+                Svaki konto na novu stranu</label>*@
+            <input id="CHECKSvaKonta" name="CHECKOstaliParametri" type="checkbox" value="2" style="display: none;" />
+            <label for="CHECKSvaKonta" style="display: none;">
+                Uzmi samo salda konti(a ne sve)</label>
+        </div>
+    </div>
+    <div id="DIVOstaliParametriOTKUP" style="float: left; width: 100%; padding-top: 10px;
+        display: none;">
+        <div style="float: left; width: 18%;">
+            Ostali Parametri:
+        </div>
+        <div style="float: right; width: 82%;">
+            <input id="CHECKSamoNositelji" name="CHECKOstaliParametriOTKUP" type="checkbox"
+                value="0" style="display: none;" />
+            <label for="CHECKSamoNositelji" style="display: none;">
+                Prikaži samo nositelje</label>
+        </div>
+    </div>
+    <div id="DIVSuma" style="float: left; width: 100%; padding-top: 10px; display: none;">
+        <div style="float: left; width: 18%;">
+            Suma:
+        </div>
+        <div style="float: right; width: 82%;">
+            <input id="CHECKSumaRazred" name="CHECKSuma" type="checkbox" value="0" checked="checked" />
+            Razred
+            <input id="CHECKSumaSkupina" name="CHECKSuma" type="checkbox" value="1" checked="checked" />
+            Skupina
+            <input id="CHECKSumaPodskupina" name="CHECKSuma" type="checkbox" value="2" checked="checked" />
+            Podskupina
+            <input id="CHECKSumaOdjeljak" name="CHECKSuma" type="checkbox" value="3" checked="checked" />
+            Odjeljak
+        </div>
+    </div>
+    <div id="DIVIspis" style="float: left; width: 100%; padding-top: 10px; display: none;">
+        <div style="float: left; width: 18%;">
+            Ispis:
+        </div>
+        <div style="float: right; width: 82%;">
+            <input id="RADIOProknjizene" name="RadioGrupa" type="radio" value="0" />
+            Proknjižene (iz GK)
+            <input id="RADIONeproknjizene" name="RadioGrupa" type="radio" value="1" />
+            NEPROKNJIŽENE
+            <input id="RADIOSve" name="RadioGrupa" type="radio" value="2" checked="checked" />
+            SVE (i proknjižene i neproknjižene)
+        </div>
+    </div>
+    <div id="DIVNapomena" style="float: left; width: 100%; padding-top: 10px;">
+        <br />
+        NAPOMENA: Ako koje polje ostavite prazno - odabrali ste SVE</div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#BTNPonistiParametre').click(function () { // postavlja sve na DEFAULTNE vrijednosti
+
+            $.HideSve(); // nalazi se u Ispis.cshtml
+
+            $('#TEXTBrojUgovoraOd').val("");
+            $('#TEXTBrojUgovoraDo').val("");
+
+            $('#TEXTBrojNalogaOd').val("");
+            $('#TEXTBrojNalogaDo').val("");
+
+            $('#TEXTGodinaNalogaOd').val("");
+            $('#TEXTGodinaNalogaDo').val("");
+
+            $('#DatumOdPomoc').val("");
+            $('#DatumOdPomoc').change();
+
+            $('#DatumDoPomoc').val("");
+            $('#DatumDoPomoc').change();
+
+            $('#DatumDospijecaOdPomoc').val("");
+            $('#DatumDospijecaOdPomoc').change();
+
+            $('#DatumDospijecaDoPomoc').val("");
+            $('#DatumDospijecaDoPomoc').change();
+
+            $('#DatumDospijecaObrokaOdPomoc').val("");
+            $('#DatumDospijecaObrokaOdPomoc').change();
+
+            $('#DatumDospijecaObrokaDoPomoc').val("");
+            $('#DatumDospijecaObrokaDoPomoc').change();
+
+            $("#TEXTKlase").val("");
+
+            $("#KontniPlanStCOMBO").val(null);
+            $("#KontniPlanStCOMBO").multiselect("refresh");
+            $.KontoComboFunkcija();
+
+            $("#ZapisVrCombo").val(null);
+            $("#ZapisVrCombo").multiselect("refresh");
+            $.VrstaTemComboFunkcija();
+
+            $("#VrstaTemeljniceCOMBO").val(null);
+            $("#VrstaTemeljniceCOMBO").multiselect("refresh");
+            $.VrstaTemComboFunkcija();
+
+            $("#listaKriterija1COMBO").val(null);
+            $("#listaKriterija1COMBO").multiselect("refresh");
+            $.KriterijComboFunkcija("listaKriterija1COMBO");
+
+            $("#listaKriterija2COMBO").val(null);
+            $("#listaKriterija2COMBO").multiselect("refresh");
+            $.KriterijComboFunkcija("listaKriterija2COMBO");
+
+            $("#listaKriterija3COMBO").val(null);
+            $("#listaKriterija3COMBO").multiselect("refresh");
+            $.KriterijComboFunkcija("listaKriterija3COMBO");
+
+            $("#listaKriterija4COMBO").val(null);
+            $("#listaKriterija4COMBO").multiselect("refresh");
+            $.KriterijComboFunkcija("listaKriterija4COMBO");
+
+            $("#listaKriterija5COMBO").val(null);
+            $("#listaKriterija5COMBO").multiselect("refresh");
+            $.KriterijComboFunkcija("listaKriterija5COMBO");
+
+            $("#listaKriterija6COMBO").val(null);
+            $("#listaKriterija6COMBO").multiselect("refresh");
+            $.KriterijComboFunkcija("listaKriterija6COMBO");
+
+            $('#TEXTBrojTemeljniceOd').val("");
+            $('#TEXTBrojTemeljniceDo').val("");
+
+            $('#DatumPoslovnePromjeneOd').val("");
+            $('#DatumPoslovnePromjeneOd').change();
+
+            $('#DatumPoslovnePromjeneDo').val("");
+            $('#DatumPoslovnePromjeneDo').change();
+
+            $('#DnevnikPo_SLCT_ID').val("0");
+
+            $('#CHECKNovaStrana').attr('checked', false);
+            $('#CHECKNeuskladeneTemeljnice').attr('checked', false);
+            $('#CHECKSvaKonta').attr('checked', true);
+            $('#CHECKSamoNositelji').attr('checked', true);
+            $('input[name=CHECKSuma]').attr('checked', true);
+            $('#RADIOSve').attr('checked', true);
+
+            $("#PoslovniPartnerTEXT").val("");
+            $("#PoslovniPartnerInput").val("Izaberi");
+
+            $.ShowIzabrano();
+        });
+
+        Dialozi.DatePicker();
+
+        //Datum temeljnice  
+        Dialozi.PostaviDatumPolje('DatumOd', '@ViewBag.DatumOd');
+        Dialozi.PostaviDatumPolje('DatumDo', '@ViewBag.DatumDo');
+
+        $('#DatumOdPomoc').change(function (event) {
+            var dat = $('#DatumOdPomoc').val();
+            Dialozi.PostaviDatumPolje('DatumOd', dat);
+
+            if ($('#DatumOdPomoc').val() == "") {
+                Dialozi.PostaviDatumPolje('DatumOd', '@ViewBag.DatumOd');
+            }
+
+            if($("#DIVNaslov h2").text() != "2.1.6. Kartica poslovnog partnera - po godinama") {
+                var novidatumprovjera = $('#DatumOdPomoc').val().split(".");
+                var novidatum = new Date(novidatumprovjera[2], novidatumprovjera[1] - 1, novidatumprovjera[0]);
+
+                var defaultdatumprovjeraDo = '@ViewBag.DatumDo'.split(".");
+                var defaultdatumDo = new Date(defaultdatumprovjeraDo[2], defaultdatumprovjeraDo[1] - 1, defaultdatumprovjeraDo[0]);
+
+                var defaultdatumprovjeraOd = '@ViewBag.DatumOd'.split(".");
+                var defaultdatumOd = new Date(defaultdatumprovjeraOd[2], defaultdatumprovjeraOd[1] - 1, defaultdatumprovjeraOd[0]);
+
+                if (novidatum > defaultdatumDo || novidatum < defaultdatumOd) {
+                    Dialozi.PostaviDatumPolje('DatumOd', '@ViewBag.DatumOd');
+                }
+            }
+        });
+
+        $('#DatumDoPomoc').change(function (event) {
+            var dat = $('#DatumDoPomoc').val();
+            Dialozi.PostaviDatumPolje('DatumDo', dat);
+
+            if ($('#DatumDoPomoc').val() == "") {
+                Dialozi.PostaviDatumPolje('DatumDo', '@ViewBag.DatumDo');
+            }
+
+            if($("#DIVNaslov h2").text() != "2.1.6. Kartica poslovnog partnera - po godinama") {
+                var novidatumprovjera = $('#DatumDoPomoc').val().split(".");
+                var novidatum = new Date(novidatumprovjera[2], novidatumprovjera[1] - 1, novidatumprovjera[0]);
+
+                var defaultdatumprovjeraDo = '@ViewBag.DatumDo'.split(".");
+                var defaultdatumDo = new Date(defaultdatumprovjeraDo[2], defaultdatumprovjeraDo[1] - 1, defaultdatumprovjeraDo[0]);
+
+                var defaultdatumprovjeraOd = '@ViewBag.DatumOd'.split(".");
+                var defaultdatumOd = new Date(defaultdatumprovjeraOd[2], defaultdatumprovjeraOd[1] - 1, defaultdatumprovjeraOd[0]);
+
+                if (novidatum > defaultdatumDo || novidatum < defaultdatumOd) {
+                    Dialozi.PostaviDatumPolje('DatumDo', '@ViewBag.DatumDo');
+                }
+            }
+        });
+
+        //Datum dospijeća 
+        $('#DatumDospijecaOdPomoc').change(function (event) {
+            var dat = $('#DatumDospijecaOdPomoc').val();
+            Dialozi.PostaviDatumPolje('DatumDospijecaOd', dat);
+        });
+
+        $('#DatumDospijecaDoPomoc').change(function (event) {
+            var dat = $('#DatumDospijecaDoPomoc').val();
+            Dialozi.PostaviDatumPolje('DatumDospijecaDo', dat);
+        });
+
+        //Datum dospijeća obroka
+        $('#DatumDospijecaObrokaOdPomoc').change(function (event) {
+            var dat = $('#DatumDospijecaObrokaOdPomoc').val();
+            Dialozi.PostaviDatumPolje('DatumDospijecaObrokaOd', dat);
+        });
+
+        $('#DatumDospijecaObrokaDoPomoc').change(function (event) {
+            var dat = $('#DatumDospijecaObrokaDoPomoc').val();
+            Dialozi.PostaviDatumPolje('DatumDospijecaObrokaDo', dat);
+        });
+
+        //Kontni plan
+        $("#KontniPlanStCOMBO").multiselect({
+            create: function () {
+                $(this).val("");
+            },
+            checkAllText: "Označi sve",
+            uncheckAllText: "Odznači sve",
+            noneSelectedText: "Izaberi",
+            selectedText: "# - Broj izabranih",
+            selectedList: 1,
+            position: {
+                my: 'right top',
+                at: 'right bottom'
+            }
+
+        });
+
+        $("#KontniPlanStCOMBO").change(function () {
+            $.KontoComboFunkcija();
+        });
+
+        $("#KontniPlanStTEXT").focusout(function () {
+            $.KontoTextFunkcija();
+        });
+
+        $("#KontniPlanStTEXT").on('input', function (event) { 
+            this.value = this.value.replace(/[^*-,0-9]/g, '');
+        });
+
+        //Dokument
+        $("#ZapisVrCombo").multiselect({
+            create: function () {
+                $(this).val("");
+            },
+            checkAllText: "Označi sve",
+            uncheckAllText: "Odznači sve",
+            noneSelectedText: "Izaberi",
+            selectedText: "# - Broj izabranih",
+            selectedList: 1,
+            position: {
+                my: 'right top',
+                at: 'right bottom'
+            }
+        });
+
+        $("#ZapisVrCombo").change(function () {
+            $.DokumentComboFunkcija();
+        });
+
+        $("#ZapisVrTEXT").focusout(function () {
+            $.DokumentTextFunkcija();
+        });
+
+        $("#ZapisVrTEXT").on('input', function (event) { 
+            this.value = this.value.replace(/[^-,0-9]/g, '');
+        });
+
+
+        //Vrsta Temeljnice
+        $("#VrstaTemeljniceCOMBO").multiselect({
+            create: function () {
+                $(this).val("");
+            },
+            checkAllText: "Označi sve",
+            uncheckAllText: "Odznači sve",
+            noneSelectedText: "Izaberi",
+            selectedText: "# - Broj izabranih",
+            selectedList: 1,
+            position: {
+                my: 'right top',
+                at: 'right bottom'
+            }
+        });
+
+        $("#VrstaTemeljniceCOMBO").change(function () {
+            $.VrstaTemComboFunkcija();
+        });
+
+        $("#VrstaTemeljniceTEXT").focusout(function () {
+            $.VrstaTemTextFunkcija();
+        });
+
+        $("#VrstaTemeljniceTEXT").on('input', function (event) { 
+            this.value = this.value.replace(/[^-,0-9]/g, '');
+        });
+
+
+        //Kriteriji
+        var BrojKriterija = $('.CLASSKriteriji').length;
+        for (var a = 1; a <= BrojKriterija; a++) {
+            $("#listaKriterija" + a + "COMBO").multiselect({
+                create: function () {
+                    $(this).val("");
+                },
+                checkAllText: "Označi sve",
+                uncheckAllText: "Odznači sve",
+                noneSelectedText: "Izaberi",
+                selectedText: "# - Broj izabranih",
+                selectedList: 1,
+                position: {
+                    my: 'right top',
+                    at: 'right bottom'
+                }
+            });
+
+            $("#listaKriterija" + a + "COMBO").change(function () {
+                $.KriterijComboFunkcija($(this).attr('id'));
+            });
+
+            $("#listaKriterija" + a + "TEXT").focusout(function () {
+                $.KriterijTextFunkcija($(this).attr('id'));
+            });
+
+            $("#listaKriterija" + a + "TEXT").on('input', function (event) { 
+            this.value = this.value.replace(/[^-,0-9]/g, '');
+            });
+        }
+
+
+        // Funkcije koje uređuju tekstove u textboxevima
+        $.KontoTextFunkcija = function () {
+
+            var COMBO = $("#KontniPlanStCOMBO");
+            var TEXTBOX = $("#KontniPlanStTEXT");
+            var TEXT_IZ_TEXTBOXA = TEXTBOX.val().replace(/\s+/g, '').split(',');
+            var LISTA_IZABRANIH = [];
+
+            var SVI_STR = $("#KontniPlanStCOMBO option").map(function () {
+                return $(this).val();
+            }).get().join(';');
+
+            var LISTA_SVIH = SVI_STR.split(';');
+
+            for (var a = 0; a < TEXT_IZ_TEXTBOXA.length; a++) {
+                if (TEXT_IZ_TEXTBOXA[a].slice(-1) == '*') {
+                    var BROJ = TEXT_IZ_TEXTBOXA[a].slice(0, -1);
+                    for (var b = 0; b < LISTA_SVIH.length; b++) {
+                        if (LISTA_SVIH[b].match("^" + BROJ)) {
+                            LISTA_IZABRANIH.push(LISTA_SVIH[b]);
+                        }
+                    }
+                }
+                else {
+                    LISTA_IZABRANIH.push(TEXT_IZ_TEXTBOXA[a]);
+                }
+            }
+
+            COMBO.val(LISTA_IZABRANIH);
+            COMBO.multiselect("refresh");
+            $.KontoComboFunkcija();
+        };
+
+        $.KontoComboFunkcija = function () {
+
+            var LISTA_IZABRANO = [];
+            LISTA_IZABRANO = $("#KontniPlanStCOMBO").val();
+
+            if (LISTA_IZABRANO === null || $("#KontniPlanStCOMBO option").length == LISTA_IZABRANO.length) {
+                $("#KontniPlanStTEXT").val("");
+            }
+            else {
+                $("#KontniPlanStTEXT").val(LISTA_IZABRANO.join(", "));
+            }
+        };
+
+        $.VrstaTemTextFunkcija = function () {
+            var COMBO = $("#VrstaTemeljniceCOMBO");
+            var TEXTBOX = $("#VrstaTemeljniceTEXT");
+            var TEXT_IZ_TEXTBOXA = TEXTBOX.val().replace(/\s+/g, '').split(',');
+            var LISTA_IZABRANIH = [];
+
+            for (var a = 0; a < TEXT_IZ_TEXTBOXA.length; a++) {
+                if (TEXT_IZ_TEXTBOXA[a].indexOf('-') === -1) {
+                    LISTA_IZABRANIH.push(TEXT_IZ_TEXTBOXA[a]);
+                }
+                else {
+                    var RAZDVOJENI_BROJEVI = TEXT_IZ_TEXTBOXA[a].split('-').map(Number);
+                    for (var i = RAZDVOJENI_BROJEVI[0]; i <= RAZDVOJENI_BROJEVI[1]; i++) {
+                        LISTA_IZABRANIH.push(i);
+                    };
+                }
+            }
+
+            COMBO.val(LISTA_IZABRANIH);
+            COMBO.multiselect("refresh");
+            $.VrstaTemComboFunkcija();
+        };
+
+        $.VrstaTemComboFunkcija = function () {
+            var COMBO = $("#VrstaTemeljniceCOMBO");
+            var TEXTBOX = $("#VrstaTemeljniceTEXT");
+
+            var LISTA_IZABRANIH = [];
+
+            LISTA_IZABRANIH = COMBO.val();
+
+            if (LISTA_IZABRANIH == null || $("#VrstaTemeljniceCOMBO option").length == LISTA_IZABRANIH.length) {
+                TEXTBOX.val("");
+            }
+            else {
+                TEXTBOX.val($.UrediText(LISTA_IZABRANIH));
+            }
+        };
+
+        $.DokumentTextFunkcija = function () {
+            var COMBO = $("#ZapisVrCombo");
+            var TEXTBOX = $("#ZapisVrTEXT");
+            var TEXT_IZ_TEXTBOXA = TEXTBOX.val().replace(/\s+/g, '').split(',');
+            var LISTA_IZABRANIH = [];
+
+            for (var a = 0; a < TEXT_IZ_TEXTBOXA.length; a++) {
+                if (TEXT_IZ_TEXTBOXA[a].indexOf('-') === -1) {
+                    LISTA_IZABRANIH.push(TEXT_IZ_TEXTBOXA[a]);
+                }
+                else {
+                    var RAZDVOJENI_BROJEVI = TEXT_IZ_TEXTBOXA[a].split('-').map(Number);
+                    for (var i = RAZDVOJENI_BROJEVI[0]; i <= RAZDVOJENI_BROJEVI[1]; i++) {
+                        LISTA_IZABRANIH.push(i);
+                    };
+                }
+            }
+
+            COMBO.val(LISTA_IZABRANIH);
+            COMBO.multiselect("refresh");
+            $.VrstaTemComboFunkcija();
+        };
+
+        $.DokumentComboFunkcija = function () {
+            var COMBO = $("#ZapisVrCombo");
+            var TEXTBOX = $("#ZapisVrTEXT");
+
+            var LISTA_IZABRANIH = [];
+
+            LISTA_IZABRANIH = COMBO.val();
+
+            if (LISTA_IZABRANIH == null || $("#ZapisVrCombo option").length == LISTA_IZABRANIH.length) {
+                TEXTBOX.val("");
+            }
+            else {
+                TEXTBOX.val($.UrediText(LISTA_IZABRANIH));
+            }
+        };
+
+        $.KriterijTextFunkcija = function (IME) {
+            IME = IME.substr(0, IME.length - 4);
+
+            var COMBO = $("#" + IME + "COMBO");
+            var TEXTBOX = $("#" + IME + "TEXT");
+            var TEXT_IZ_TEXTBOXA = TEXTBOX.val().replace(/\s+/g, '').split(',');
+            var LISTA_IZABRANIH = [];
+
+            for (var a = 0; a < TEXT_IZ_TEXTBOXA.length; a++) {
+                if (TEXT_IZ_TEXTBOXA[a].indexOf('-') === -1) {
+                    LISTA_IZABRANIH.push(TEXT_IZ_TEXTBOXA[a]);
+                }
+                else {
+                    var RAZDVOJENI_BROJEVI = TEXT_IZ_TEXTBOXA[a].split('-').map(Number);
+                    for (var i = RAZDVOJENI_BROJEVI[0]; i <= RAZDVOJENI_BROJEVI[1]; i++) {
+                        LISTA_IZABRANIH.push(i);
+                    };
+                }
+            }
+            var LISTA_IZABRANIH_VALUE = [];
+
+            for (var c = 0; c < LISTA_IZABRANIH.length; c++) {
+                if (LISTA_IZABRANIH[c] != "")
+                    LISTA_IZABRANIH_VALUE.push($("#" + IME + "COMBO option:contains('" + LISTA_IZABRANIH[c] + " - ')").attr('value'));
+            }
+            COMBO.val(LISTA_IZABRANIH_VALUE);
+
+            COMBO.multiselect("refresh");
+            $.KontoComboFunkcija(IME + "COMBO");
+        };
+
+        $.KriterijComboFunkcija = function (IME) {
+            IME = IME.substr(0, IME.length - 5);
+
+            var IZABRANO_STR = $("#" + IME + "COMBO option:selected").map(function () {
+                var index = $(this).text().indexOf('-');
+                return $(this).text().substr(0, index);
+            }).get().join(';');
+
+            var IZABRANO = IZABRANO_STR.split(';');
+
+            if (IZABRANO === null || $("#" + IME + "COMBO option").length == IZABRANO.length) {
+                $("#" + IME + "TEXT").val("");
+            }
+            else {
+                $("#" + IME + "TEXT").val($.UrediText(IZABRANO));
+            }
+        };
+
+        $.UrediText = function (DOSTAVLJENO) {
+            var IZABRANO = new Array();
+
+            DOSTAVLJENO = DOSTAVLJENO.sort(function (a, b) { return a - b });
+
+            for (var a = 0; a < DOSTAVLJENO.length; a++) {
+                var IZABRANO_LENGTH = IZABRANO.length;
+
+                if (DOSTAVLJENO[a] - IZABRANO[IZABRANO_LENGTH - 1] == 1) {
+                    if (IZABRANO[IZABRANO_LENGTH - 2] == "-") {
+                        IZABRANO.splice(IZABRANO_LENGTH - 2, 2);
+                    }
+                    IZABRANO.push("-");
+                }
+                else {
+                    if (IZABRANO_LENGTH != 0) {
+                        IZABRANO.push(",");
+                    }
+                }
+                IZABRANO.push(DOSTAVLJENO[a]);
+            };
+            return (IZABRANO.join(" "));
+        };
+
+        //Datum poslovne promjene
+
+        $('#DatumPoslovnePromjeneOdPomoc').change(function (event) {
+            var dat = $('#DatumPoslovnePromjeneOdPomoc').val();
+            Dialozi.PostaviDatumPolje('DatumPoslovnePromjeneOd', dat);
+        });
+
+        $('#DatumPoslovnePromjeneDoPomoc').change(function (event) {
+            var dat = $('#DatumPoslovnePromjeneDoPomoc').val();
+            Dialozi.PostaviDatumPolje('DatumPoslovnePromjeneDo', dat);
+        });
+
+
+        //Poslovni partner
+
+        $("." + '@Autocomplete1').each(function () {
+
+        var widgetAutoComplete = $(this).autocomplete({
+
+            showHeader: true,
+
+            source: function (request, response) {
+
+                var url = '@Url.Action("GetPoslovniSubjekt", @InLine.UI.Web.T4.ControllerName.ControllerName.SubjektSvi)';
+                var kojalista = "@ulSubjektSelector";
+
+                $.AutocompleteSubjekt(request, response, kojalista, url, @Start, @Count);
+            },
+
+            select:
+                function (event, ui) {
+                    $.TextPoslovnogPartnera(ui.item.value1.toUpperCase());
+                    return false;
+                },
+
+            minLength: 0
+
+        }).data("autocomplete");         
+
+           var originalCloseMethod =  $('#PoslovniPartnerInput').data('autocomplete').close;
+             $('#PoslovniPartnerInput').data('autocomplete').close = function (){};
+
+             $("#btn_zatvoriPoslovnogPartnera").click(function () {
+                originalCloseMethod.apply($('#PoslovniPartnerInput').data('autocomplete'), arguments);
+                $("#PoslovniPartnerInput").val("Izaberi");
+             });
+
+             $(document).keydown(function(e) {
+                if (e.keyCode == 27 ||e.keyCode == 13) { $("#btn_zatvoriPoslovnogPartnera").click(); }  
+                });
+
+
+
+
+
+        widgetAutoComplete._renderItem = function (ul, item) {
+
+            ul.attr('id', 'ulSubjekt');
+            return $("<li class='tblAutocompleteLi'><table class='tblAutocomplete'></table></li>").data("item.autocomplete-item", item).append("<a><table width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><td width='70px'>" + item.value1 + "</td><td width='300px'>" + item.value2 + "</td><td width='70px'>" + item.value3 + "</td></tr></table></a>").appendTo("#ulSubjekt");
+        }
+
+        widgetAutoComplete._renderMenu = function (ul, item) {
+
+            var self = this;
+            $.each(item, function (index, items) {
+                if (index == 0)
+                    ul.append("<li><table class='autocompleteHeader' width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><th width='70px'>" + '@InLine.Model.Data.FieldString.View.PoslovniSubjektSubjekt.Oznaka' + "</th><th width='300px'>" + '@InLine.Model.Data.FieldString.View.PoslovniSubjektSubjekt.Naziv' + "</th><th width='70px'> Vrsta  </th></tr></table></li>");
+                self._renderItemData(ul, items);
+            });
+        }
+
+    });
+
+      $.AutocompleteSubjekt = function (request, response, kojalista, url, Start, Count ) {
+
+                $.ajax({
+                    url: url,
+                    data: { query: request.term, start: Start, count: Count },
+                    dataType: 'json',
+                    type: 'GET',
+                    success: function (data) {
+                        response($.map(data,
+                        function (item) {
+                            return {
+                                id: item.ID_Subjekt,
+                                value1: item.Oznaka,
+                                value2: item.Naziv,
+                                value3: item.SubjektVrNaziv
+                            }
+                        }));
+
+                        var previousScroll = 0;
+                        var page = 1;
+
+                        $(kojalista).scroll(function () {
+
+                            var currentScroll = $(this).scrollTop();
+
+                            var x = $(kojalista).prop('scrollHeight');
+                            var y = $(kojalista).prop('offsetHeight');
+
+                            if (currentScroll > previousScroll) {
+
+                                if(page >=0)
+                                {
+                                    if (currentScroll >= x - y)
+                                        {
+                                           page += 1;
+
+                                            var countPage = page * Count
+                                            console.log('ajax ostali');
+                                            $.ajax({
+                                                url: url,
+                                                data: { query: request.term, start: Start, count: countPage },
+                                                dataType: 'json',
+                                                type: 'GET',
+                                                success: function (data) {
+                                                    response($.map(data,
+                                                        function (item) {
+                                                                return {
+                                                                            id: item.ID_Subjekt,
+                                                                            value1: item.Oznaka,
+                                                                            value2: item.Naziv,
+                                                                            value3: item.SubjektVrNaziv 
+                                                                        }
+                                                                    }));
+                                                            }
+                                                    })
+                                        }
+                                }
+                            }
+                            else {
+                                page -= 1;
+                            }
+                            previousScroll = currentScroll;
+                        });
+                    }
+                })
+            };
+    });
+
+        $("#PoslovniPartnerTEXT").focusout(function () {
+            $.TextPoslovnogPartnera();
+        });
+
+        $("#PoslovniPartnerTEXT").on('input', function (event) { 
+            this.value = this.value.replace(/[^-,0-9]/g, '');
+        });
+
+        $("#DIVSubjekt .btnDropDownSymbol").click(function () {
+            $('#PoslovniPartnerInput').val("");
+            $('#PoslovniPartnerInput').autocomplete("search");
+        });
+
+        $.TextPoslovnogPartnera = function (IZABRANO) {
+
+            var textBox_STRs = [];
+            if($("#PoslovniPartnerTEXT").val() != "")
+            {
+                var lista = $("#PoslovniPartnerTEXT").val().trim().split(',');
+                for ( var i = 0, l = lista.length; i < l; i++ ) {
+                        textBox_STRs.push(lista[i]);
+                    }                
+            }
+
+            if(IZABRANO != null)
+                textBox_STRs.push(IZABRANO);
+
+            var LISTA_IZABRANIH = [];
+            for (var a = 0; a < textBox_STRs.length; a++) {
+                if (textBox_STRs[a].indexOf('-') === -1) {
+                    var test = parseInt(textBox_STRs[a]);
+                    if(test)
+                        LISTA_IZABRANIH.push(test);
+                }
+                else {
+                    var RAZDVOJENI_BROJEVI = textBox_STRs[a].split('-').map(Number);
+                    for (var i = RAZDVOJENI_BROJEVI[0]; i <= RAZDVOJENI_BROJEVI[1]; i++) {
+                        var test = parseInt(i);
+                        if(test)
+                            LISTA_IZABRANIH.push(test);
+                    };
+                }
+            }
+
+            LISTA_IZABRANIH = $.unique(LISTA_IZABRANIH.sort(function(a, b){return b-a}));
+
+            var IZLAZ = new Array();
+
+            for (var a = 0; a < LISTA_IZABRANIH.length; a++) {
+                var IZLAZ_LENGTH = IZLAZ.length;
+
+                if (LISTA_IZABRANIH[a] - IZLAZ[IZLAZ_LENGTH - 1] == 1) {
+                    if (IZLAZ[IZLAZ_LENGTH - 2] == "-") {
+                        IZLAZ.splice(IZLAZ_LENGTH - 2, 2);
+                    }
+                    IZLAZ.push("-");
+                }
+                else {
+                    if (IZLAZ_LENGTH != 0) {
+                        IZLAZ.push(",");
+                    }
+                }
+                IZLAZ.push(LISTA_IZABRANIH[a]);                   
+
+            }
+            $("#PoslovniPartnerTEXT").val(IZLAZ.join(" "));
+        };
+</script>

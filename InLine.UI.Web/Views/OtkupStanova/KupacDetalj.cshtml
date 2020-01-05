@@ -1,0 +1,298 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.KupacDetaljFormFormatted
+
+ <style type="text/css">
+.text-box[type=text], .text-box[type=number], .text-box[type=date] { width:100%; border:"0";}
+#trosak-detail #BrojUgovor, #trosak-detail #Datum{ font-weight:bold;}
+
+</style>
+
+ @{
+    string prefixLabela = "labela_Kupac_Detalj_";
+ }
+
+ @{
+    string Akcija = @InLine.Model.Data.FieldString.Kupac.KupacEntity + InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert;
+    string IDForma = @InLine.Model.Data.FieldString.Kupac.KupacEntity+ InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Forma;
+    string Autocomplete = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Autocomplete + @InLine.Model.Data.FieldString.View.Kupac.KupacEntity + "Detalj";
+    
+
+}
+
+
+ @using (Html.BeginForm(Akcija, @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo, FormMethod.Post, new { id = IDForma, @class = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormClass }))
+ {
+    @Html.HiddenFor(model => model.ID_Kupac)
+    @Html.HiddenFor(model => model.ID_UgovorStanOtkupKupac)
+    @Html.HiddenFor(model => model.ID_PostaKupac)
+    @Html.HiddenFor(model => model.ID_Subjekt)
+
+    @Html.ValidationSummary(true)
+
+<table class ="KupacDetail form_background" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+   <tbody>
+
+      <tr>
+	    <td>@Html.LabelFor(model => model.OznakaKupac, new { id = @prefixLabela + @Html.NameFor(model => model.OznakaKupac) })</td>
+        <td colspan='3' >@Html.TextBoxFor(model => model.OznakaKupac)
+         @Html.ValidationMessageFor(model => model.OznakaKupac)</td>								                
+    </tr>
+
+      <tr>
+	    <td>@Html.LabelFor(model => model.PrezimeKupac, new { id = @prefixLabela + @Html.NameFor(model => model.PrezimeKupac) })</td>
+        <td colspan='3' >@Html.EditorFor(model => model.PrezimeKupac)
+         @Html.ValidationMessageFor(model => model.PrezimeKupac)</td>								                
+    </tr>
+
+     <tr>
+	    <td>@Html.LabelFor(model => model.ImeKupac, new { id = @prefixLabela + @Html.NameFor(model => model.ImeKupac) })</td>
+        <td colspan='3' >@Html.EditorFor(model => model.ImeKupac)
+         @Html.ValidationMessageFor(model => model.ImeKupac)</td>								                
+    </tr>
+
+
+     <tr>
+	    <td>@Html.LabelFor(model => model.JMBGKupac, new { id = @prefixLabela + @Html.NameFor(model => model.JMBGKupac) })</td>
+        <td>@Html.EditorFor(model => model.JMBGKupac)
+         @Html.ValidationMessageFor(model => model.JMBGKupac)</td>	
+         <td>@Html.LabelFor(model => model.OIBKupac, new { id = @prefixLabela + @Html.NameFor(model => model.OIBKupac) })</td>
+        <td>@Html.EditorFor(model => model.OIBKupac)
+         @Html.ValidationMessageFor(model => model.OIBKupac)</td>								                
+    </tr>
+
+   <tr>
+	    <td>@Html.LabelFor(model => model.UlicaKupac, new { id = @prefixLabela + @Html.NameFor(model => model.UlicaKupac) })</td>
+        <td colspan='3'>@Html.EditorFor(model => model.UlicaKupac)
+         @Html.ValidationMessageFor(model => model.UlicaKupac)</td>								                
+    </tr>
+
+    
+   <tr>
+	    <td>@Html.LabelFor(model => model.KucniBrojKupac, new { id = @prefixLabela + @Html.NameFor(model => model.KucniBrojKupac) })</td>
+        <td>@Html.EditorFor(model => model.KucniBrojKupac)
+         @Html.ValidationMessageFor(model => model.KucniBrojKupac)</td>	
+       	<td>@Html.LabelFor(model => model.KucniBrojDodatakKupac, new { id = @prefixLabela + @Html.NameFor(model => model.KucniBrojDodatakKupac) })</td>
+        <td>@Html.EditorFor(model => model.KucniBrojDodatakKupac)
+         @Html.ValidationMessageFor(model => model.KucniBrojDodatakKupac)</td>								                
+    </tr>
+
+        <tr>
+ 	    <td>@Html.LabelFor(model => model.PostanskiBrojKupac, new { id = @prefixLabela + @Html.NameFor(model => model.PostanskiBroj) })</td>
+        <td>@Html.TextBoxFor(model => model.PostanskiBrojKupac, new { @class = Autocomplete })
+         @Html.ValidationMessageFor(model => model.PostanskiBrojKupac)</td>
+         <td>@Html.LabelFor(model => model.PostaKupac, new { id = @prefixLabela + @Html.NameFor(model => model.Posta) })</td>
+        <td>@Html.TextBoxFor(model => model.PostaKupac, new { @class = Autocomplete })
+         @Html.ValidationMessageFor(model => model.PostaKupac)</td>
+      </tr>
+
+  </tbody>
+</table>
+
+ <div id="poruka_Kupac">
+ </div>
+
+
+ }
+
+<script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+
+
+  <script type="text/javascript">
+
+      $(function () {
+          $("#labela_Kupac_Detalj_OznakaKupac").text("Oznaka");
+          $("#labela_Kupac_Detalj_PrezimeKupac").text("Prezime");
+          $("#labela_Kupac_Detalj_ImeKupac").text("Ime");
+          $("#labela_Kupac_Detalj_JMBGKupac").text("JMBG");
+          $("#labela_Kupac_Detalj_OIBKupac").text("OIB");
+          $("#labela_Kupac_Detalj_UlicaKupac").text("Ulica");
+          $("#labela_Kupac_Detalj_KucniBrojKupac").text("Kućni broj");
+          $("#labela_Kupac_Detalj_KucniBrojDodatakKupac").text("Kućni broj dodatak");
+          $("#labela_Kupac_Detalj_PostanskiBroj").text("Poštanski broj");
+          $("#labela_Kupac_Detalj_Posta").text("Mjesto");
+      });
+   
+   </script>
+
+ 
+     <script>
+
+         $(document).ready(function () {
+
+             $('#' + '@InLine.Model.Data.FieldString.View.Kupac.KupacEntity' + 'DialogSpremiKopiraj').hide();
+             $('#' + '@InLine.Model.Data.FieldString.View.Kupac.KupacEntity' + 'DialogSpremiDodaj').hide();
+
+             Dialozi.DatePicker();
+
+         });
+
+    </script>
+
+
+<script type="text/javascript">
+
+    var url = '@Url.Action("GetPosta", "PregledUgovora")';
+
+    $('.' + '@Autocomplete').autocomplete({
+
+        source: function (request, response) {
+
+            var kojePolje = $(this.element).prop("id");
+            var kojiKriterij = 0;
+
+            if (kojePolje == "@InLine.Model.Data.FieldString.Kupac.PostanskiBroj" + "@InLine.Model.Data.FieldString.Kupac.KupacEntity") {
+                kojiKriterij = 1;
+            }
+            else if (kojePolje == "@InLine.Model.Data.FieldString.Kupac.Posta" + "@InLine.Model.Data.FieldString.Kupac.KupacEntity") {
+                kojiKriterij = 2;
+            }
+
+            $.ajax({
+                url: url,
+                data: { query: request.term, kriterij: kojiKriterij },
+                dataType: 'json',
+                type: 'GET',
+                success: function (data) {
+                    response($.map(data,
+                        function (item) {
+                            return {
+                                label: item.Oznaka + " " + item.Naziv.toUpperCase(),
+                                value1: item.ID_Posta,
+                                value2: item.Oznaka,
+                                value3: item.Naziv
+                            }
+
+                        }));
+                }
+            })
+        },
+        select:
+        function (event, ui) {
+            $("@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + "@InLine.Model.Data.FieldString.Kupac.ID_Posta" + "@InLine.Model.Data.FieldString.Kupac.KupacEntity").val(ui.item.value1);
+            $("@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + "@InLine.Model.Data.FieldString.Kupac.PostanskiBroj" + "@InLine.Model.Data.FieldString.Kupac.KupacEntity").val(ui.item.value2);
+            $("@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + "@InLine.Model.Data.FieldString.Kupac.Posta" + "@InLine.Model.Data.FieldString.Kupac.KupacEntity").val(ui.item.value3.toUpperCase());
+            return false;
+        },
+        minLength: 2
+    });
+
+ </script>
+
+
+   <script type="text/javascript">
+       $.PostaviKupcanaFormu = function (item) {
+
+           var url = '@Url.Action("GetKupacDetalj", @InLine.UI.Web.T4.ControllerName.ControllerName.OtkupStanova)';
+           $.ajax({
+               url: url,
+               data: { idKupac: item },
+               dataType: 'json',
+               type: 'GET',
+               success: function (data) {
+                   if (data != null) {
+                       $('#Oznaka').val($.trim(data.Oznaka));
+                       $('#Naziv').val($.trim(data.Naziv));
+
+                       if (data.Naziv.length > 0) {
+
+                           var ZaSplit = data.Naziv;
+                           var arr = ZaSplit.split(' ', 1);
+
+                           var prezime = ZaSplit.substr(0, ZaSplit.indexOf(' '));
+                           var ime = ZaSplit.substr(ZaSplit.indexOf(' ') + 1);
+
+                           $('#PrezimeUgovorStanOtkupKupac').val($.trim(prezime));
+                           $('#ImeUgovorStanOtkupKupac').val($.trim(ime));
+                       }
+
+                       $('#JMBG').val($.trim(data.JMBG));
+                       $('#OIB').val($.trim(data.OIB));
+                       $('#Ulica').val($.trim(data.Ulica));
+                       $('#KucniBroj').val($.trim(data.KucniBroj));
+                       $('#KucniBrojDodatak').val($.trim(data.KucniBrojDodatak));
+                       $('#PostanskiBroj').val($.trim(data.PostanskiBroj));
+                       $('#Posta').val($.trim(data.Posta));
+                       $('#ID_Kupac').val($.trim(data.ID_Kupac));
+                   }
+                   else {
+                       //  $('#SubjektRacun').val("");
+                   }
+
+               }
+
+           });
+
+       };
+
+
+       $("#Oznaka").change(function (event) {
+           var item = $(this).val();
+           var url = '@Url.Action("GetSubjektOznaka", "SubjektSvi", @InLine.UI.Web.T4.ControllerName.ControllerName.SubjektSvi)';
+
+           $.ajax({
+               url: url,
+               data: { Oznaka: item },
+               dataType: 'json',
+               type: 'GET',
+               success: function (data) {
+                   if (data > 0) {
+                       alert("Ta oznaka već postoji. Molimo upišite novi.");
+                   }
+
+                   else {
+                       $("#Oznaka").val(item);
+                   }
+
+
+               }
+
+           });
+
+       });
+
+
+   </script>
+
+      <script type="text/javascript">
+          function InsertEditSucces() {
+
+              var item = $("#ID_Kupac").val();
+              $.PostaviKupcanaFormu(item);
+          }
+
+          function InsertEditError() {
+
+              var kojiKupac = $("#poruka_Kupac").text();
+
+              if (kojiKupac != '' && kojiKupac.length > 7) {
+                  duzina = kojiKupac.length;
+                  kljucnaRijec = kojiKupac.substring(0, 7);
+
+                  if (kljucnaRijec == 'XKupac_') {
+                      var item = kojiKupac.substring(7, duzina);
+                      $.PostaviKupcanaFormu(item);
+                      $("#KupacDialog").dialog("close");
+                      $("#KupacDialog").empty();
+                  }
+
+              }
+          }
+
+
+          function DeleteSucces() {
+
+          }
+
+
+          function DeleteError() {
+
+          }
+
+          $.ProvjeraKodUnosa = function () {
+              return true;
+          };
+
+
+    </script>
+

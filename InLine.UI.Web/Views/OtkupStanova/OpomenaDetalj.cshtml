@@ -1,0 +1,204 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.OpomenaDetaljFormFormatted
+
+ <style type="text/css">
+
+ #BrojOpomena { width:20%;}
+ #DatumPomoc { width:20%;}
+
+</style>
+
+
+
+ @{
+     string prefixLabela = "labela_Opomena_Detalj_";
+ }
+ 
+
+ @{
+     string Akcija = @InLine.Model.Data.FieldString.View.Opomena.OpomenaEntity + InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert;
+     string IDForma = @InLine.Model.Data.FieldString.View.Opomena.OpomenaEntity + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Forma;
+     string Datum = "Datum";
+     string DatumPomoc = "DatumPomoc";
+     string DatumDospijeceOd = "DatumDospijeceOd";
+     string DatumDospijeceOdPomoc = "DatumDospijeceOdPomoc";
+     string DatumDospijeceDo = "DatumDospijeceDo";
+     string DatumDospijeceDoPomoc = "DatumDospijeceDoPomoc";
+     string Datepicker = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Datepicker;
+
+ }
+
+
+ @using (Html.BeginForm(Akcija, @InLine.UI.Web.T4.ControllerName.ControllerName.OtkupStanova, FormMethod.Post, new { id = IDForma, @class = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormClass }))
+ {
+    @Html.HiddenFor(model => model.ID_Opomena)
+    @Html.HiddenFor(model => model.Datum)
+    @Html.HiddenFor(model => model.DatumDospijeceOd)
+    @Html.HiddenFor(model => model.DatumDospijeceDo)
+
+    @Html.HiddenFor(model => model.OsobaInsert);
+    @Html.HiddenFor(model => model.DatumInsert);
+    @Html.HiddenFor(model => model.ID_OsobaInsert);
+                                                                                                                                                  
+    @Html.HiddenFor(model => model.OsobaUpdate);
+    @Html.HiddenFor(model => model.OsobaUpdate);
+    @Html.HiddenFor(model => model.ID_OsobaUpdate);
+
+
+    @Html.ValidationSummary(true)
+
+
+<table class ="OpomenaDetail @InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormBackground" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+   <tbody>
+
+     <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+     
+     <tr>
+	    <td >@Html.LabelFor(model => model.BrojOpomena, new { id = @prefixLabela + @Html.NameFor(model => model.BrojOpomena) })</td>
+        <td colspan="3">@Html.EditorFor(model => model.BrojOpomena)
+           @Html.ValidationMessageFor(model => model.BrojOpomena) </td>				                
+    </tr>
+
+     <tr>
+	    <td >@Html.LabelFor(model => model.Datum, new { id = @prefixLabela + @Html.NameFor(model => model.Datum) })</td>
+        <td colspan="3">@Html.TextBox(@DatumPomoc, null, new { @class = @Datepicker })
+           @Html.ValidationMessageFor(model => model.Datum) </td>				                
+    </tr>
+
+   <tr>
+	    <td>@Html.LabelFor(model => model.DatumDospijeceOd, new { id = @prefixLabela + @Html.NameFor(model => model.DatumDospijeceOd) })</td>
+        <td>@Html.TextBox(@DatumDospijeceOdPomoc, null, new { @class = @Datepicker })
+        @Html.ValidationMessageFor(model => model.DatumDospijeceOd)</td>	
+        <td>@Html.LabelFor(model => model.DatumDospijeceDo, new { id = @prefixLabela + @Html.NameFor(model => model.DatumDospijeceDo) })</td>
+        <td>@Html.TextBox(@DatumDospijeceDoPomoc, null, new { @class = @Datepicker })
+        @Html.ValidationMessageFor(model => model.DatumDospijeceDo)</td>								                
+    </tr>
+
+      <tr>
+	    <td>@Html.LabelFor(model => model.OpomenaIznosMin, new { id = @prefixLabela + @Html.NameFor(model => model.OpomenaIznosMin) })</td>
+        <td>@Html.EditorFor(model => model.OpomenaIznosMin)
+        @Html.ValidationMessageFor(model => model.OpomenaIznosMin)</td>	
+        <td>@Html.LabelFor(model => model.BrojNeplaceniObrokMin, new { id = @prefixLabela + @Html.NameFor(model => model.BrojNeplaceniObrokMin) })</td>
+        <td>@Html.EditorFor(model => model.BrojNeplaceniObrokMin)
+        @Html.ValidationMessageFor(model => model.BrojNeplaceniObrokMin)</td>								                
+    </tr>
+
+       <tr>
+       <table class="Generalije" width="100%">
+       <tr>
+         <td>@Html.LabelFor(model => model.OsobaInsert, new { id = @prefixLabela + @Html.NameFor(model => model.OsobaInsert) })
+        @Html.DisplayFor(model => model.OsobaInsert)</td>
+        <td>@Html.LabelFor(model => model.DatumInsert, new { id = @prefixLabela + @Html.NameFor(model => model.DatumInsert) }) 
+         @Html.DisplayFor(model => model.DatumInsert)</td>
+         <td>@Html.LabelFor(model => model.OsobaUpdate, new { id = @prefixLabela + @Html.NameFor(model => model.OsobaUpdate) })
+        @Html.DisplayFor(model => model.OsobaUpdate)</td>
+        <td>@Html.LabelFor(model => model.DatumUpdate, new { id = @prefixLabela + @Html.NameFor(model => model.DatumUpdate) })
+        @Html.DisplayFor(model => model.DatumUpdate)</td>	
+       </tr>
+       </table>
+    </tr>
+
+
+
+
+
+ 
+  </tbody>
+</table>
+<div>
+<div id="poruka_Opomena" ></div>
+</div>
+
+ }
+
+  <script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+   <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+   <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/DecimalValidator.js")" type="text/javascript"></script>
+      <script src="@Url.Content("~/Scripts/chosen.jquery.min.js")" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        $(function () {
+            $("#labela_Opomena_Detalj_BrojOpomena").text("Broj opomena");
+            $("#labela_Opomena_Detalj_BrojNeplaceniObrokMin").text("Broj neplaćenih obroka");
+            $("#labela_Opomena_Detalj_DatumDospijeceOd").text("Od datuma DVO");
+            $("#labela_Opomena_Detalj_DatumDospijeceDo").text("Do datuma DVO");
+            $("#labela_Opomena_Detalj_OpomenaIznosMin").text("Minimalni iznos");
+
+            $("#labela_Opomena_Detalj_OsobaInsert").text("Kreirao:");
+            $("#labela_Opomena_Detalj_DatumInsert").text("Datum unosa:");
+
+            $("#labela_Opomena_Detalj_OsobaUpdate").text("Promijenio:");
+            $("#labela_Opomena_Detalj_DatumUpdate").text("Datum promjene:");
+        });
+
+
+    </script>
+
+    
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            Dialozi.DatePicker();
+
+            var valueDatum = '@Model.Datum.GetValueOrDefault().ToShortDateString()';
+            Dialozi.PostaviDatumPolje('@Datum', valueDatum);
+            Dialozi.DocumentReadyValid('@Datum');
+
+
+            var valueDatumDospijeceOd = '@Model.DatumDospijeceOd.GetValueOrDefault().ToShortDateString()';
+            Dialozi.PostaviDatumPolje('@DatumDospijeceOd', valueDatumDospijeceOd);
+            Dialozi.DocumentReadyValid('@DatumDospijeceOd');
+
+            var valueDatumDospijeceDo = '@Model.DatumDospijeceDo.GetValueOrDefault().ToShortDateString()';
+            Dialozi.PostaviDatumPolje('@DatumDospijeceDo', valueDatumDospijeceDo);
+            Dialozi.DocumentReadyValid('@DatumDospijeceDo');
+
+            $('#' + '@DatumPomoc').change(function (event) {
+                var dat = $('#' + '@DatumPomoc').val();
+                Dialozi.PostaviDatumPolje('@Datum', dat);
+            });
+
+            $('#' + '@DatumDospijeceOdPomoc').change(function (event) {
+                var dat = $('#' + '@DatumDospijeceOdPomoc').val();
+                Dialozi.PostaviDatumPolje('@DatumDospijeceOd', dat);
+            });
+
+            $('#' + '@DatumDospijeceDoPomoc').change(function (event) {
+                var dat = $('#' + '@DatumDospijeceDoPomoc').val();
+                Dialozi.PostaviDatumPolje('@DatumDospijeceDo', dat);
+            });
+
+        });
+
+
+
+     
+    </script>
+
+
+    <script type="text/javascript">
+        function InsertEditSucces() {
+
+        }
+
+        function InsertEditError() {
+
+        }
+
+
+        function DeleteSucces() {
+
+        }
+
+        function DeleteError() {
+
+        }
+
+        function ProvjeraKodUnosa() {
+            return true;
+        }
+
+
+    </script>

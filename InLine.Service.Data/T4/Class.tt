@@ -1,0 +1,486 @@
+﻿<#@ template language="C#" debug="false" hostspecific="true"#>
+<#@ include file="EF.Utility.CS.ttinclude"#>
+<#@ Assembly Name= "$(SolutionDir)\bin\InLine.Common.dll"#>
+<#@ import namespace="InLine.Common" #>
+<#@ output extension=".cs"#>
+<#
+
+CodeGenerationTools code = new CodeGenerationTools(this);
+MetadataLoader loader = new MetadataLoader(this);
+CodeRegion region = new CodeRegion(this, 1);
+MetadataTools ef = new MetadataTools(this);
+
+//string inputFile = @"..\..\InLine.Model.Data\InLineData.edmx";
+//string inputFile = VS.SolutionPath() + @"\InLine.Model.Admin\InLineAdmin.edmx";
+string inputFile = VS.SolutionPath() + @"\InLine.Model.Data\InLineData.edmx";
+EdmItemCollection ItemCollection = loader.CreateEdmItemCollection(inputFile);
+string NameSpace = "InLine.Service.Data";
+string EntityName;
+string keyParam = "";
+string keyParamType = "";
+System.Data.Metadata.Edm.TypeUsage clrType = null;
+var parametersName = string.Empty;
+var parametersType =  string.Empty;
+string privremena = string.Empty;
+
+
+EntityFrameworkTemplateFileManager fileManager = EntityFrameworkTemplateFileManager.Create(this);
+WriteHeader(fileManager);
+
+foreach (var entity in ItemCollection.GetItems<EntityType>().OrderBy(e => e.Name))
+{
+	parametersName = string.Empty;
+	parametersType = string.Empty;
+
+	var propertiesLong = entity.Properties.Where(p => p.TypeUsage.EdmType is PrimitiveType && p.DeclaringType == entity && code.Escape(p.TypeUsage) == "long" && p.Name.Contains("ID_"));
+    EntityName = code.Escape(entity);
+
+	if (T4.ClassName(EntityName) != "Audit")
+	{
+
+	fileManager.StartNewFile(T4.ClassNameFull(EntityName) + ".cs");
+    BeginNamespace(T4.NameSpace(EntityName,NameSpace), code);
+#>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using InLine;
+using System.Web;
+using System.Data.Objects;
+
+public partial class <#=T4.ClassName(EntityName)#> : <#=T4.InterfaceNameFull(EntityName)#>
+{
+	#region Fields
+
+	Repository.Data.<#=T4.InterfaceNameFull(EntityName)#> _repository;
+	public Repository.Admin.IDozvoleZabranePoruke _admin;
+	Model.Admin.KorisnikData _korisnik_data;
+
+    #endregion
+
+		
+    #region Constructors
+
+    public <#=T4.ClassName(EntityName)#>(Model.Admin.KorisnikData korisnik_data)
+        : this(new Repository.Data.<#=T4.ClassNameFull(EntityName)#>(korisnik_data.ConnString), new Repository.Admin.DozvoleZabranePoruke())
+    { 
+	   _korisnik_data = korisnik_data;
+	}
+
+    public <#=T4.ClassName(EntityName)#>(Repository.Data.<#=T4.InterfaceNameFull(EntityName)#> repository, Repository.Admin.IDozvoleZabranePoruke admin)
+    {
+        _repository = repository;
+        _admin = admin;
+    }
+		
+    #endregion
+
+
+	#region Methods
+	<# 
+	if (T4.IsView(EntityName) == false)
+	{
+	#>
+		
+	<#
+	foreach (var keyMember in entity.KeyMembers)
+	{
+		parametersName = parametersName + keyMember.Name.ToString() + "," ;
+		parametersType = parametersType + T4.CleanType(keyMember.TypeUsage.ToString().Remove(0,4),true) + " " + keyMember.Name.ToString() + "," ;
+
+	}
+	#>
+
+
+
+	public IEnumerable<Model.Data.<#=T4.ClassNameFull(EntityName)#>> SelectResult(<#=parametersType.TrimEnd(',')#>)
+    { 
+        IEnumerable<Model.Data.<#=T4.ClassNameFull(EntityName)#>> rezultat;
+
+        try
+        {
+            rezultat = _repository.SelectResult(<#=parametersName.TrimEnd(',')#>);
+        }
+
+        catch (Exception ex)
+        {
+            Model.Admin.StatusPoruka poruka = _admin.AddLogGetException((ex.InnerException != null ? ex.InnerException.ToString() : ex.Message.ToString()), ex.StackTrace.ToString(), _korisnik_data);
+			InLine.Repository.Data.Helper.CommonFunctions.StaviPorukuUSession(poruka, _korisnik_data);
+            rezultat = null;
+        }
+
+        return rezultat;  
+    }
+		
+
+	public IList<Model.Admin.StatusPoruka> Insert(Model.Data.Item.<#=T4.ClassNameFull(EntityName)#>Item item)
+	{
+		IList<Model.Admin.StatusPoruka> poruke = new List<Model.Admin.StatusPoruka>();
+
+			try
+			{
+				_repository.Insert(item); 
+			}
+
+			catch (Exception ex)
+			{
+				Model.Admin.StatusPoruka poruka = _admin.AddLogGetException((ex.InnerException != null ? ex.InnerException.ToString() : ex.Message.ToString()), ex.StackTrace.ToString(), _korisnik_data);
+				InLine.Repository.Data.Helper.CommonFunctions.StaviPorukuUSession(poruka, _korisnik_data);
+				poruke.Add(poruka);
+			}
+
+		return poruke;
+	}
+
+
+	public Model.Data.<#=T4.ClassNameFull(EntityName)#> InsertResult(Model.Data.Item.<#=T4.ClassNameFull(EntityName)#>Item item)
+    { 
+         Model.Data.<#=T4.ClassNameFull(EntityName)#> rezultat;
+
+        try
+        {
+            rezultat = _repository.InsertResult(item).FirstOrDefault();
+        }
+
+        catch (Exception ex)
+        {
+            Model.Admin.StatusPoruka poruka = _admin.AddLogGetException((ex.InnerException != null ? ex.InnerException.ToString() : ex.Message.ToString()), ex.StackTrace.ToString(), _korisnik_data);
+			InLine.Repository.Data.Helper.CommonFunctions.StaviPorukuUSession(poruka, _korisnik_data);
+            rezultat = null;
+        }
+
+        return rezultat;  
+    }
+	
+
+
+	public IList<Model.Admin.StatusPoruka> Update(Model.Data.Item.<#=T4.ClassNameFull(EntityName)#>Item item)
+	{
+		IList<Model.Admin.StatusPoruka> poruke = new List<Model.Admin.StatusPoruka>();
+
+			try
+			{
+				_repository.Update(item);
+			}
+
+			catch (Exception ex)
+			{
+				Model.Admin.StatusPoruka poruka = _admin.AddLogGetException((ex.InnerException != null ? ex.InnerException.ToString() : ex.Message.ToString()), ex.StackTrace.ToString(), _korisnik_data);
+				InLine.Repository.Data.Helper.CommonFunctions.StaviPorukuUSession(poruka, _korisnik_data);
+				poruke.Add(poruka);
+			}
+  
+
+		return poruke;
+	}
+
+
+	public Model.Data.<#=T4.ClassNameFull(EntityName)#> UpdateResult(Model.Data.Item.<#=T4.ClassNameFull(EntityName)#>Item item)
+    { 
+         Model.Data.<#=T4.ClassNameFull(EntityName)#> rezultat;
+
+        try
+        {
+            rezultat = _repository.UpdateResult(item).FirstOrDefault();
+        }
+
+        catch (Exception ex)
+        {
+            Model.Admin.StatusPoruka poruka = _admin.AddLogGetException((ex.InnerException != null ? ex.InnerException.ToString() : ex.Message.ToString()), ex.StackTrace.ToString(), _korisnik_data);
+			InLine.Repository.Data.Helper.CommonFunctions.StaviPorukuUSession(poruka, _korisnik_data);
+            rezultat = null;
+        }
+
+        return rezultat;  
+    }
+		
+	public IList<Model.Admin.StatusPoruka> Delete(Model.Data.Item.<#=T4.ClassNameFull(EntityName)#>Item item)
+	{
+		IList<Model.Admin.StatusPoruka> poruke = new List<Model.Admin.StatusPoruka>();
+
+			try
+			{
+				_repository.Delete(item);
+			}
+
+			catch (Exception ex)
+			{
+				Model.Admin.StatusPoruka poruka = _admin.AddLogGetException((ex.InnerException != null ? ex.InnerException.ToString() : ex.Message.ToString()), ex.StackTrace.ToString(), _korisnik_data);
+				InLine.Repository.Data.Helper.CommonFunctions.StaviPorukuUSession(poruka, _korisnik_data);
+				poruke.Add(poruka);
+			}
+ 
+
+		return poruke;
+	}
+
+
+	public int DeleteResult(Model.Data.Item.<#=T4.ClassNameFull(EntityName)#>Item item)
+    { 
+        int rezultat = 0;
+
+        try
+        {
+            //rezultat = Convert.ToInt32(_repository.DeleteResult(item));
+             ObjectResult<Nullable<Int32>> totalRecordsCount_rezult = _repository.DeleteResult(item);
+             rezultat = Convert.ToInt32(totalRecordsCount_rezult.ElementAt(0));
+        }
+
+        catch (Exception ex)
+        {
+            Model.Admin.StatusPoruka poruka = _admin.AddLogGetException((ex.InnerException != null ? ex.InnerException.ToString() : ex.Message.ToString()), ex.StackTrace.ToString(), _korisnik_data);
+			InLine.Repository.Data.Helper.CommonFunctions.StaviPorukuUSession(poruka, _korisnik_data);
+        }
+
+        return rezultat;  
+    }
+
+		<#
+		}
+
+	#>
+
+    public Model.Data.<#=T4.ClassNameFull(EntityName)#> FindID(long id)
+    {
+        Model.Data.<#=T4.ClassNameFull(EntityName)#> rezultat;
+
+        try
+        {
+            rezultat = _repository.FindID(id);
+        }
+
+        catch (Exception ex)
+        {
+            Model.Admin.StatusPoruka poruka = _admin.AddLogGetException((ex.InnerException != null ? ex.InnerException.ToString() : ex.Message.ToString()), ex.StackTrace.ToString(), _korisnik_data);
+			InLine.Repository.Data.Helper.CommonFunctions.StaviPorukuUSession(poruka, _korisnik_data);
+            rezultat = null;
+        }
+
+        return rezultat;  
+    }
+	
+		
+    //public IEnumerable<Model.Data.<#=T4.ClassNameFull(EntityName)#>> GetGridData(string filter, string sort, long? start, long? count, bool customserach = false)
+    //{
+      //  IEnumerable<Model.Data.<#=T4.ClassNameFull(EntityName)#>> rezultat;
+
+      //  try
+      //  {
+        //    rezultat = _repository.GetGridData(filter, sort, start, count, customserach);
+        //}
+
+       // catch (Exception ex)
+       // {
+        //    Model.Admin.StatusPoruka poruka = _admin.AddLogGetException((ex.InnerException != null ? ex.InnerException.ToString() : ex.Message.ToString()), ex.StackTrace.ToString(), _korisnik_data);
+         //   rezultat = null;
+        //}
+
+       // return rezultat;  
+    //}
+
+	public IEnumerable<Model.Data.<#=T4.ClassNameFull(EntityName)#>> GetGridData(string filter, string key, string value, string sort, long? start, long? count, bool customserach = false)
+    {
+        IEnumerable<Model.Data.<#=T4.ClassNameFull(EntityName)#>> rezultat;
+
+        try
+        {
+            rezultat = _repository.GetGridData(filter, key, value, sort, start, count, customserach);
+        }
+
+        catch (Exception ex)
+        {
+            Model.Admin.StatusPoruka poruka = _admin.AddLogGetException((ex.InnerException != null ? ex.InnerException.ToString() : ex.Message.ToString()), ex.StackTrace.ToString(), _korisnik_data);
+			InLine.Repository.Data.Helper.CommonFunctions.StaviPorukuUSession(poruka, _korisnik_data);
+            rezultat = null;
+        }
+
+        return rezultat;  
+    }
+		
+
+    public long GetCount(string filter, string key, string value, bool customserach = false)
+    {
+        long rezultat;
+
+        try
+        {
+            rezultat = _repository.GetCount(filter, key, value, customserach);
+        }
+
+        catch (Exception ex)
+        {
+            Model.Admin.StatusPoruka poruka = _admin.AddLogGetException((ex.InnerException != null ? ex.InnerException.ToString() : ex.Message.ToString()), ex.StackTrace.ToString(), _korisnik_data);
+			InLine.Repository.Data.Helper.CommonFunctions.StaviPorukuUSession(poruka, _korisnik_data);
+            rezultat = -1;
+        }
+
+        return rezultat;  
+    }
+
+
+
+	public IEnumerable<Model.Data.<#=T4.ClassNameFull(EntityName)#>> GetData(<#= "List<Model.Data.Field."+T4.ClassNameFull(EntityName)+">"#> fields, <#= "List<Model.Data.Filter."+T4.ClassNameFull(EntityName)+">"#>  filter, <#= "List<Model.Data.Sort."+T4.ClassNameFull(EntityName)+">"#>  sort, long? start = null, long? count = null)
+    {
+        IEnumerable<Model.Data.<#=T4.ClassNameFull(EntityName)#>> rezultat;
+
+        try
+        {
+            rezultat = _repository.GetData(fields, filter, sort, start, count);
+        }
+
+        catch (Exception ex)
+        {
+            Model.Admin.StatusPoruka poruka = _admin.AddLogGetException((ex.InnerException != null ? ex.InnerException.ToString() : ex.Message.ToString()), ex.StackTrace.ToString(), _korisnik_data);
+			InLine.Repository.Data.Helper.CommonFunctions.StaviPorukuUSession(poruka, _korisnik_data);
+            rezultat = null;
+        }
+
+        return rezultat;  
+    }
+
+
+	#endregion
+}
+
+<#
+    EndNamespace(T4.NameSpace(EntityName,NameSpace));
+}
+}
+
+if (!VerifyTypesAreCaseInsensitiveUnique(ItemCollection))
+{
+    return "";
+}
+
+fileManager.Process();
+
+#>
+<#+
+string GetResourceString(string resourceName)
+{
+	if(_resourceManager == null)
+	{
+		_resourceManager = new System.Resources.ResourceManager("System.Data.Entity.Design", typeof(System.Data.Entity.Design.MetadataItemCollectionFactory).Assembly);
+	}
+	
+    return _resourceManager.GetString(resourceName, null);
+}
+System.Resources.ResourceManager _resourceManager;
+
+void WriteHeader(EntityFrameworkTemplateFileManager fileManager)
+{
+    fileManager.StartHeader();
+#>
+//------------------------------------------------------------------------------
+// <auto-generated>
+// <#=GetResourceString("Template_GeneratedCodeCommentLine1")#>
+//
+// <#=GetResourceString("Template_GeneratedCodeCommentLine2")#>
+// <#=GetResourceString("Template_GeneratedCodeCommentLine3")#>
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+<#+
+    fileManager.EndBlock();
+}
+
+void BeginNamespace(string namespaceName, CodeGenerationTools code)
+{
+    CodeRegion region = new CodeRegion(this);
+    if (!String.IsNullOrEmpty(namespaceName))
+    {
+#>
+namespace <#=code.EscapeNamespace(namespaceName)#>
+{
+<#+
+        PushIndent(CodeRegion.GetIndent(1));
+    }
+}
+
+
+void EndNamespace(string namespaceName)
+{
+    if (!String.IsNullOrEmpty(namespaceName))
+    {
+        PopIndent();
+#>
+}
+<#+
+    }
+}
+
+void WriteProperty(CodeGenerationTools code, EdmProperty edmProperty)
+{
+    string accessibility = Accessibility.ForProperty(edmProperty);
+	string type = code.Escape(edmProperty.TypeUsage);
+	bool nullableType = code.Escape(edmProperty.TypeUsage).Contains("Nullable<");
+	string name = code.Escape(edmProperty);
+	string getterAccessibility = code.SpaceAfter(Accessibility.ForGetter(edmProperty));
+	string setterAccessibility = code.SpaceAfter(Accessibility.ForSetter(edmProperty));
+	string declaringType = code.Escape(edmProperty.DeclaringType);
+
+	type = T4.CleanType(type);
+
+	if (name == "ID_" + declaringType) WritePropertyID(accessibility, type, name, getterAccessibility, setterAccessibility);
+
+	WriteProperty(accessibility, type, name, getterAccessibility, setterAccessibility);
+}
+
+void WriteNavigationProperty(CodeGenerationTools code, NavigationProperty navigationProperty)
+{
+    var endType = code.Escape(navigationProperty.ToEndMember.GetEntityType());
+    WriteProperty(PropertyVirtualModifier(Accessibility.ForProperty(navigationProperty)),
+                  navigationProperty.ToEndMember.RelationshipMultiplicity == RelationshipMultiplicity.Many ? ("ICollection<" + endType + ">") : endType,
+                  code.Escape(navigationProperty),
+                  code.SpaceAfter(Accessibility.ForGetter(navigationProperty)),
+                  code.SpaceAfter(Accessibility.ForSetter(navigationProperty)));
+}
+
+void WriteProperty(string accessibility, string type, string name, string getterAccessibility, string setterAccessibility)
+{
+#>
+    <#=accessibility#> <#=type#> <#=name#> { <#=getterAccessibility#>get; <#=setterAccessibility#>set; }
+<#+
+}
+
+void WritePropertyID(string accessibility, string type, string name, string getterAccessibility, string setterAccessibility)
+{
+#>
+    <#=accessibility#> <#=type#> ID
+	{
+		<#=getterAccessibility#>get { return this.<#=name#>; }
+		<#=setterAccessibility#>set { this.<#=name#> = value; }
+	}
+<#+
+}
+
+string PropertyVirtualModifier(string accessibility)
+{
+    return accessibility + (accessibility != "private" ? " virtual" : "");
+}
+
+bool VerifyTypesAreCaseInsensitiveUnique(EdmItemCollection itemCollection)
+{
+    var alreadySeen = new Dictionary<string, bool>(StringComparer.OrdinalIgnoreCase);
+    foreach(var type in itemCollection.GetItems<StructuralType>())
+    {
+        if (!(type is EntityType || type is ComplexType))
+        {
+            continue;
+        }
+
+        if (alreadySeen.ContainsKey(type.FullName))
+        {
+            Error(String.Format(CultureInfo.CurrentCulture, "This template does not support types that differ only by case, the types {0} are not supported", type.FullName));
+            return false;
+        }
+        else
+        {
+            alreadySeen.Add(type.FullName, true);
+        }
+    }
+
+    return true;
+}
+#>

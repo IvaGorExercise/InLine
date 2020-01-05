@@ -1,0 +1,158 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.KupacDetaljFormFormatted
+
+ <style type="text/css">
+.text-box[type=text], .text-box[type=number], .text-box[type=date] { width:100%; border:"0";}
+#trosak-detail #BrojUgovor, #trosak-detail #Datum{ font-weight:bold;}
+
+</style>
+
+ @{
+    string prefixLabela = "labela_kupac_detalj_";
+ }
+
+ @{
+    string Akcija = @InLine.Model.Data.FieldString.Kupac.KupacEntity + InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert;
+    string IDForma = @InLine.Model.Data.FieldString.Kupac.KupacEntity+ InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Forma;
+    string Autocomplete = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Autocomplete;
+
+}
+
+
+ @using (Html.BeginForm(Akcija, @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo, FormMethod.Post, new { id = IDForma, @class = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormClass }))
+ {
+    @Html.HiddenFor(model => model.ID_Kupac)
+    @Html.HiddenFor(model => model.ID_UgovorStanOtkupKupac)
+    @Html.HiddenFor(model => model.ID_Posta)
+
+    @Html.ValidationSummary(true)
+
+<table class ="UgovorStanOtkupTrosakDetail form_background" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+   <tbody>
+
+      <tr>
+	    <td>@Html.LabelFor(model => model.Oznaka, new { id = @prefixLabela + @Html.NameFor(model => model.Oznaka) })</td>
+        <td colspan='3' >@Html.DisplayFor(model => model.Oznaka)
+         @Html.ValidationMessageFor(model => model.Oznaka)</td>								                
+    </tr>
+
+     <tr>
+	    <td style="background-color:#FFF2C2; font-weight:bold">@Html.LabelFor(model => model.Naziv, new { id = @prefixLabela + @Html.NameFor(model => model.Naziv) })</td>
+        <td colspan='3' style="background-color:#FFF2C2; font-weight:bold" >@Html.EditorFor(model => model.Naziv)
+         @Html.ValidationMessageFor(model => model.Naziv)</td>									                
+    </tr>
+
+
+     <tr>
+	    <td>@Html.LabelFor(model => model.JMBG, new { id = @prefixLabela + @Html.NameFor(model => model.JMBG) })</td>
+        <td>@Html.EditorFor(model => model.JMBG)
+         @Html.ValidationMessageFor(model => model.JMBG)</td>	
+         <td>@Html.LabelFor(model => model.OIB, new { id = @prefixLabela + @Html.NameFor(model => model.OIB) })</td>
+        <td>@Html.EditorFor(model => model.OIB)
+         @Html.ValidationMessageFor(model => model.OIB)</td>								                
+    </tr>
+
+   <tr>
+	    <td>@Html.LabelFor(model => model.Ulica, new { id = @prefixLabela + @Html.NameFor(model => model.Ulica) })</td>
+        <td colspan='3'>@Html.EditorFor(model => model.Ulica)
+         @Html.ValidationMessageFor(model => model.Ulica)</td>								                
+    </tr>
+
+    
+   <tr>
+	    <td>@Html.LabelFor(model => model.KucniBroj, new { id = @prefixLabela + @Html.NameFor(model => model.KucniBroj) })</td>
+        <td>@Html.EditorFor(model => model.KucniBroj)
+         @Html.ValidationMessageFor(model => model.KucniBroj)</td>	
+       	<td>@Html.LabelFor(model => model.KucniBrojDodatak, new { id = @prefixLabela + @Html.NameFor(model => model.KucniBrojDodatak) })</td>
+        <td>@Html.EditorFor(model => model.KucniBrojDodatak)
+         @Html.ValidationMessageFor(model => model.KucniBrojDodatak)</td>								                
+    </tr>
+
+        <tr>
+ 	    <td>@Html.LabelFor(model => model.PostanskiBroj, new { id = @prefixLabela + @Html.NameFor(model => model.PostanskiBroj) })</td>
+        <td>@Html.TextBoxFor(model => model.PostanskiBroj, new { @class = Autocomplete })
+         @Html.ValidationMessageFor(model => model.PostanskiBroj)</td>
+         <td>@Html.LabelFor(model => model.Posta, new { id = @prefixLabela + @Html.NameFor(model => model.Posta) })</td>
+        <td>@Html.TextBoxFor(model => model.Posta, new { @class = Autocomplete })
+         @Html.ValidationMessageFor(model => model.Posta)</td>
+      </tr>
+
+  </tbody>
+</table>
+
+ <div id="poruka_Master">
+ </div>
+     
+    <div id="kriterijKriterijStPoruke">
+     @{Html.RenderAction("Nositelj", new { id = Model.ID_UgovorStanOtkupKupac });}
+    </div>
+
+ }
+
+<script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+
+
+  <script type="text/javascript">
+
+        $(function () {
+            $("#labela_kupac_detalj_KucniBroj").text("Kućni broj");
+            $("#labela_kupac_detalj_KucniBrojDodatak").text("Kućni broj dodatak");
+            $("#labela_kupac_detalj_PostanskiBroj").text("Poštanski broj");
+            $("#labela_kupac_detalj_Posta").text("Mjesto");
+        });
+   
+   </script>
+
+ 
+
+
+<script type="text/javascript">
+
+  var url = '@Url.Action("GetPosta","PregledUgovora")';
+
+  $('.autocomplete').autocomplete({
+
+      source: function (request, response) {
+
+          var kojePolje = $(this.element).prop("id");
+          var kojiKriterij = 0;
+
+          if (kojePolje == "@InLine.Model.Data.FieldString.Kupac.PostanskiBroj") {
+              kojiKriterij = 1;
+          }
+          else if (kojePolje == "@InLine.Model.Data.FieldString.Kupac.Posta") {
+              kojiKriterij = 2;
+          }
+
+          $.ajax({
+              url: url,
+              data: { query: request.term, kriterij: kojiKriterij },
+              dataType: 'json',
+              type: 'GET',
+              success: function (data) {
+                  response($.map(data,
+                        function (item) {
+                            return {
+                                label: item.ID_Posta + " " + item.Naziv.toUpperCase(),
+                                value1: item.ID_Posta,
+                                value2: item.Oznaka,
+                                value3: item.Naziv
+                            }
+
+                        }));
+              }
+          })
+      },
+      select:
+        function (event, ui) {
+            $("@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + "@InLine.Model.Data.FieldString.Kupac.ID_Posta").val(ui.item.value1);
+            $("@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + "@InLine.Model.Data.FieldString.Kupac.PostanskiBroj").val(ui.item.value2);
+            $("@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + "@InLine.Model.Data.FieldString.Kupac.Posta").val(ui.item.value3.toUpperCase());
+            return false;
+        },
+      minLength: 2
+  });
+
+ </script>
+

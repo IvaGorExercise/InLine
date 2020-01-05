@@ -1,0 +1,198 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.Izvod2012ADetaljFormFormatted
+
+ <style type="text/css">
+
+ #Naziv { width:100%;}
+
+</style>
+
+
+ @{
+    string prefixLabela = "labela_Izvod2012A_Detalj_";
+ }
+ 
+
+ @{
+     string Akcija = @InLine.Model.Data.FieldString.View.Izvod2012A.Izvod2012AEntity + InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert;
+     string IDForma = @InLine.Model.Data.FieldString.View.Izvod2012A.Izvod2012AEntity + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Forma;
+ }
+
+
+ @using (Html.BeginForm(Akcija, @InLine.UI.Web.T4.ControllerName.ControllerName.Izvod, FormMethod.Post, new { id = IDForma, @class = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormClass }))
+ {
+    @Html.HiddenFor(model => model.ID_Izvod2012A)
+
+
+    @Html.ValidationSummary(true)
+
+
+<table class ="TemeljnicaVrDetail @InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormBackground" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+   <tbody>
+
+     <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+     
+      <tr>
+	    <td >@Html.LabelFor(model => model.BankaVBDI, new { id = @prefixLabela + @Html.NameFor(model => model.BankaVBDI) })</td>
+        <td >@Html.EditorFor(model => model.BankaVBDI)
+           @Html.ValidationMessageFor(model => model.BankaVBDI) </td>
+               <td >@Html.LabelFor(model => model.BankaBIC, new { id = @prefixLabela + @Html.NameFor(model => model.BankaBIC) })</td>
+        <td colspan="3">@Html.EditorFor(model => model.BankaBIC)
+           @Html.ValidationMessageFor(model => model.BankaBIC) </td>					                
+    </tr>
+
+
+     <tr>
+	    <td >@Html.LabelFor(model => model.BankaNaziv, new { id = @prefixLabela + @Html.NameFor(model => model.BankaNaziv) })</td>
+        <td colspan="3">@Html.EditorFor(model => model.BankaNaziv)
+           @Html.ValidationMessageFor(model => model.BankaNaziv) </td>				                
+    </tr>
+
+         <tr>
+	    <td >@Html.LabelFor(model => model.Naziv, new { id = @prefixLabela + @Html.NameFor(model => model.Naziv) })</td>
+        <td >@Html.EditorFor(model => model.Naziv)
+           @Html.ValidationMessageFor(model => model.Naziv) </td>
+             <td >@Html.LabelFor(model => model.Sjediste, new { id = @prefixLabela + @Html.NameFor(model => model.Sjediste) })</td>
+        <td >@Html.EditorFor(model => model.Sjediste)
+           @Html.ValidationMessageFor(model => model.Sjediste) </td>			                
+    </tr>
+
+
+     <tr>
+	    <td >@Html.LabelFor(model => model.MaticniBroj, new { id = @prefixLabela + @Html.NameFor(model => model.MaticniBroj) })</td>
+        <td >@Html.EditorFor(model => model.MaticniBroj)
+           @Html.ValidationMessageFor(model => model.MaticniBroj) </td>
+           
+        <td >@Html.LabelFor(model => model.OIB, new { id = @prefixLabela + @Html.NameFor(model => model.OIB) })</td>
+        <td >@Html.EditorFor(model => model.OIB)
+           @Html.ValidationMessageFor(model => model.OIB) </td>				                
+    </tr>
+
+       <tr>
+	    <td >@Html.LabelFor(model => model.Racun, new { id = @prefixLabela + @Html.NameFor(model => model.Racun) })</td>
+        <td >@Html.EditorFor(model => model.Racun)
+           @Html.ValidationMessageFor(model => model.Racun) </td>
+           
+      <td >@Html.LabelFor(model => model.IDValuta, new { id = @prefixLabela + @Html.NameFor(model => model.IDValuta) })</td>
+        <td >@Html.EditorFor(model => model.IDValuta)
+           @Html.ValidationMessageFor(model => model.IDValuta) </td>				                
+    </tr>
+
+    <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+
+      <tr>
+	    <td >@Html.LabelFor(model => model.IzvadakVr, new { id = @prefixLabela + @Html.NameFor(model => model.IzvadakVr) })</td>
+        <td >@Html.DisplayFor(model => model.IzvadakVr)
+           @Html.ValidationMessageFor(model => model.IzvadakVr) </td>
+        <td >@Html.LabelFor(model => model.VrstaIzvadak, new { id = @prefixLabela + @Html.NameFor(model => model.VrstaIzvadak) })</td>
+        <td >@Html.DisplayFor(model => model.VrstaIzvadak)
+           @Html.ValidationMessageFor(model => model.VrstaIzvadak) </td>					                
+    </tr>
+
+    <tr>
+
+       <td >@Html.LabelFor(model => model.DatumIzvadak, new { id = @prefixLabela + @Html.NameFor(model => model.DatumIzvadak) })</td>
+        <td >@Html.EditorFor(model => model.DatumIzvadak)
+           @Html.ValidationMessageFor(model => model.DatumIzvadak) </td>
+	    <td >@Html.LabelFor(model => model.DatumObrada, new { id = @prefixLabela + @Html.NameFor(model => model.DatumObrada) })</td>
+        <td >@Html.EditorFor(model => model.DatumObrada)
+           @Html.ValidationMessageFor(model => model.DatumObrada) </td>			                
+    </tr>
+
+
+
+    <tr>
+	    <td >@Html.LabelFor(model => model.RedniBrojIzvadak, new { id = @prefixLabela + @Html.NameFor(model => model.RedniBrojIzvadak) })</td>
+        <td >@Html.DisplayFor(model => model.RedniBrojIzvadak)
+           @Html.ValidationMessageFor(model => model.RedniBrojIzvadak) </td>
+
+       <td >@Html.LabelFor(model => model.PodbrojIzvadak, new { id = @prefixLabela + @Html.NameFor(model => model.PodbrojIzvadak) })</td>
+        <td >@Html.DisplayFor(model => model.PodbrojIzvadak)
+           @Html.ValidationMessageFor(model => model.PodbrojIzvadak) </td>				                
+    </tr>
+
+
+     <tr>
+	    <td >@Html.LabelFor(model => model.RedniBrojGrupa, new { id = @prefixLabela + @Html.NameFor(model => model.RedniBrojGrupa) })</td>
+        <td >@Html.DisplayFor(model => model.RedniBrojGrupa)
+           @Html.ValidationMessageFor(model => model.RedniBrojGrupa) </td>			                
+    </tr>
+
+
+    <tr>
+	    <td >@Html.LabelFor(model => model.IznosDuguje, new { id = @prefixLabela + @Html.NameFor(model => model.IznosDuguje) })</td>
+        <td >@Html.EditorFor(model => model.IznosDuguje)
+           @Html.ValidationMessageFor(model => model.IznosDuguje) </td>	
+               <td >@Html.LabelFor(model => model.IznosPotrazuje, new { id = @prefixLabela + @Html.NameFor(model => model.IznosPotrazuje) })</td>
+        <td >@Html.EditorFor(model => model.IznosPotrazuje)
+           @Html.ValidationMessageFor(model => model.IznosPotrazuje) </td>			                
+    </tr>
+
+
+     <tr>
+	    <td >@Html.LabelFor(model => model.Saldostaro, new { id = @prefixLabela + @Html.NameFor(model => model.Saldostaro) })</td>
+        <td >@Html.EditorFor(model => model.Saldostaro)
+           @Html.ValidationMessageFor(model => model.Saldostaro) </td>
+           
+       <td >@Html.LabelFor(model => model.SaldoNovo, new { id = @prefixLabela + @Html.NameFor(model => model.SaldoNovo) })</td>
+        <td >@Html.EditorFor(model => model.SaldoNovo)
+           @Html.ValidationMessageFor(model => model.SaldoNovo) </td>				                
+    </tr>
+
+
+  </tbody>
+</table>
+<div>
+<div id="poruka_Master" ></div>
+</div>
+
+ }
+
+  <script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+   <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+   <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/DecimalValidator.js")" type="text/javascript"></script>
+      <script src="@Url.Content("~/Scripts/chosen.jquery.min.js")" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        $(function () {
+            $("#labela_Izvod2012A_Detalj_Oznaka").text("");
+
+        });
+
+
+    </script>
+
+    
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+
+        });
+
+
+     
+    </script>
+
+
+    <script type="text/javascript">
+        function InsertEditSucces() {
+
+        }
+
+        function InsertEditError() {
+
+        }
+
+
+        function DeleteSucces() {
+
+        }
+
+        function DeleteError() {
+
+        }
+
+
+    </script>

@@ -1,0 +1,169 @@
+﻿@model InLine.Repository.Data.Helper.RANDOM_TEST
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style type="text/css">
+    #container
+    {
+        margin-left: 20px;
+    }
+</style>
+
+@{
+    int brStupaca = @Model.Stupaca; 
+}
+
+  <div id="content-inner">
+  <div class="breadCrumbHolder module">
+        <div id="breadCrumb3" class="breadCrumb module">
+            <ul>
+                <li><a href="/Pocetna/Index">Home</a> </li>
+                <li><a href="/HUB2013A/HUBKreirajGradTEST">HUB Test</a></li>
+            </ul>
+        </div>
+    </div>
+
+ <div id="container">
+@using (Html.BeginForm("Random", "HUB2013A", FormMethod.Post))
+{
+        <h4>
+            Random Uzorci PDF-a</h4>
+        <div>
+
+            @Html.LabelFor(model => model.Mjesec)
+            <br />
+            @Html.EditorFor(model => model.Mjesec)
+            @Html.ValidationMessageFor(model => model.Mjesec)
+            <br />
+            <br />
+
+            @Html.LabelFor(model => model.Godina)
+            <br />
+            @Html.EditorFor(model => model.Godina)
+            @Html.ValidationMessageFor(model => model.Godina)
+            <br />
+
+            @Html.LabelFor(model => model.Server)
+            <br />
+            @Html.EditorFor(model => model.Server)
+            @Html.ValidationMessageFor(model => model.Server)
+            <br />
+            <br />
+
+            @Html.LabelFor(model => model.Baza)
+            <br />
+            @Html.EditorFor(model => model.Baza)
+            @Html.ValidationMessageFor(model => model.Baza)
+            <br />
+
+            @Html.LabelFor(model => model.Stupaca)
+            <br />
+            @Html.EditorFor(model => model.Stupaca)
+            @Html.ValidationMessageFor(model => model.Stupaca)
+
+            <br />
+            <br />
+
+           @Html.LabelFor(model => model.Take)
+            <br />
+            @Html.EditorFor(model => model.Take)
+            @Html.ValidationMessageFor(model => model.Take)
+            <br />
+            <br />
+
+            @Html.LabelFor(model => model.KojiUgovori)
+            <br />
+            @if (Model.KojiUgovori != null)
+            {
+                <table>
+           
+             @for (int i = 0; i <= Model.KojiUgovori.Count() / brStupaca + 1; i++)
+             {
+
+                 <tr>
+                 @for (int z = 0; z < brStupaca; z++)
+                 {
+                     var zzz = brStupaca * z + (brStupaca - (brStupaca - z));
+                     var col = brStupaca * i + z;
+
+                     if (@col < Model.KojiUgovori.Count())
+                     {
+                      <td>
+            
+                         @Model.KojiUgovori[@col],
+                      </td>        
+                     }
+
+                 }
+                 </tr>
+     
+             }
+              </table>
+            }
+            
+         <br />
+
+        </div>
+        <button id="random" type="submit" name="Random" value="Random">
+            Random Uzorak PDF</button>
+        <br />
+}
+
+<br />
+ <div id="container">
+  <div id="poruka">
+     <label id="poruka-labela">
+     </label>
+   </div>
+</div>
+
+   </div> 
+</div>
+
+<script type="text/javascript">
+
+    var interv;
+
+    function ProvjeriTempDataRandom() {
+        var ajaxTime = new Date().getTime();
+        $.ajax
+             ({
+                 url: '@Url.Action("/ProvjeraTEST")',
+                 type: 'GET',
+                 success: function (data) {
+                     $("#poruka-labela").html(data).show();
+                     if (data.indexOf("KRAJ") >= 0) {
+                         $("#poruka-labela").html(data).show().addClass("blue").delay(3000);
+                     }
+                 }
+             }).done(function (data) {
+                 if (data.indexOf("KRAJ") >= 0) {
+                     clearInterval(interv);
+                     alert("Kraj");
+                 }
+
+             });
+    }
+
+    //    var interv = setInterval("ProvjeriTempDataRandom()", 2 * 15 * 1000);
+</script>
+
+
+<script>
+
+    $(document).ready(function () {
+        var priprema = "@Model.Poruka";
+        if (priprema == 'Priprema') {
+            interv = setInterval("ProvjeriTempDataRandom()", 2 * 1 * 1000);
+        }
+    });
+
+//    $(document).ready(function () {
+//         interv = setInterval("ProvjeriTempDataRandom()", 2 * 2 * 1000);
+//    });
+
+</script>
+

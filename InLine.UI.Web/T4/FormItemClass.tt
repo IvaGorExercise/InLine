@@ -1,0 +1,311 @@
+﻿<#
+//*********************************************************
+//
+//    Copyright (c) Microsoft. All rights reserved.
+//    This code is licensed under the Microsoft Public License.
+//    THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+//    ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+//    IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+//    PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+#>
+<#@ template language="C#" debug="false" hostspecific="true"#>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ include file="EF.Utility.CS.ttinclude"#>
+<#@output extension=".cs"#>
+<#@ Assembly Name= "$(SolutionDir)\bin\InLine.Common.dll"#>
+<#@ Assembly Name="System.Data.Linq.dll" #>
+<#@ Import Namespace="System.Data" #>
+<#@ Import Namespace="System.Data.Linq" #> 
+<#@ Import Namespace="System.Linq" #>
+<#@ import namespace="InLine.Common" #> 
+
+<#
+CodeGenerationTools code = new CodeGenerationTools(this);
+MetadataLoader loader = new MetadataLoader(this);
+CodeRegion region = new CodeRegion(this, 4);
+MetadataTools ef = new MetadataTools(this);
+
+//string inputFile = @"..\..\InLine.Model.Data\InLineData.edmx";
+string inputFile = VS.SolutionPath() + @"\InLine.Model.Data\InLineData.edmx";
+EdmItemCollection ItemCollection = loader.CreateEdmItemCollection(inputFile);
+string namespaceName = "InLine.UI.Web.T4.FormFormattedTemplate";
+string annotationNamespace = "http://schemas.microsoft.com/ado/2009/02/edm/annotation";
+string EntityName;
+string gridNamespaceName = "InLine.UI.Web.T4.FormFormattedTemplate.";
+string ClassNameSpace;
+string ClassName;
+string ClassBaseType;
+string FileName;
+
+EntityFrameworkTemplateFileManager fileManager = EntityFrameworkTemplateFileManager.Create(this);
+
+WriteHeader(fileManager);
+
+foreach (EntityType entity in ItemCollection.GetItems<EntityType>().OrderBy(e => e.Name))
+{
+	EntityName = code.Escape(entity);
+
+	if (T4.ClassName(EntityName) != "Audit")
+	{
+
+    ClassNameSpace = namespaceName;
+	ClassName = code.Escape(entity);
+	ClassBaseType = code.Escape(entity.BaseType);
+	FileName = ClassName;
+
+	if (ClassName.Length > 5)
+    {
+		if (ClassName.Substring(0,5).ToUpper().Equals("VIEW_"))
+		{
+			ClassNameSpace += ".View";
+			ClassName = ClassName.Substring(5);
+			FileName = "View." + ClassName;
+		}
+    }
+
+	if (ClassName.Length > 4)
+    {
+		if (ClassName.Substring(0,4).ToUpper().Equals("USP_"))
+		{
+			ClassNameSpace += ".Procedure";
+			ClassName = ClassName.Substring(4);
+			FileName = "Procedure." + ClassName;
+		}
+    }
+
+	if (ClassName.Length > 4)
+    {
+		if (ClassName.Substring(0,4).ToUpper().Equals("FNS_"))
+		{
+			ClassNameSpace += ".Function";
+			ClassName = ClassName.Substring(4);
+			FileName = "Function." + ClassName;
+		}
+    }
+	
+	FileName += ".FormItemClass";
+    fileManager.StartNewFile(FileName + ".cs");
+	BeginNamespace((T4.NameSpace(EntityName,namespaceName)) + ".AtributClass", code);
+    bool entityHasNullableFKs = entity.NavigationProperties.Any(np => np.GetDependentProperties().Any(p=>ef.IsNullable(p)));
+#>
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.Linq;
+using System.Web;
+using System.ComponentModel;
+using Lib.Web.Mvc.JQuery.JqGrid.DataAnnotations;
+using Lib.Web.Mvc.JQuery.JqGrid;
+using System.ComponentModel.DataAnnotations;
+using Lib.Web.Mvc.JQuery.JqGrid.Constants;
+using System.Web.Mvc;
+using InLine;
+
+
+<#=Accessibility.ForType(entity)#> <#=code.SpaceAfter(code.AbstractOption(entity))#>static class <#=T4.ClassName(EntityName)#><#=code.StringBefore(" : ", code.Escape(entity.BaseType))#>
+{
+	
+<#
+    foreach (EdmProperty edmProperty in entity.Properties.Where(p => p.TypeUsage.EdmType is PrimitiveType && p.DeclaringType == entity))
+    {
+        bool isForeignKey = entity.NavigationProperties.Any(np=>np.GetDependentProperties().Contains(edmProperty));
+        bool isDefaultValueDefinedInModel = (edmProperty.DefaultValue != null);
+		
+		MetaDataContext _context = new MetaDataContext();
+	  	var result = from p in _context.TablicaPoljes
+					where p.TablicaNaziv == entity.Name && p.TablicaPoljeNaziv == edmProperty.Name
+	 				select p;
+#>
+
+	public static class <#=edmProperty#>
+	{
+		public const string Item = "<#=edmProperty#>";
+	<#
+	if (result.Any())
+	{
+	#>
+	<#	
+	if (result.First().Labela != null)
+	{ 
+	#> public const string DisplayName = "<#=result.First().Labela#>"; 
+	<#	
+	}
+	else
+	{ 
+	#>  public const string DisplayName = "<#=edmProperty#>";
+	<#
+	}
+	#>
+	<#
+	}		
+	else
+	{ 
+		#>  public const string DisplayName = "<#=edmProperty#>"; 
+	<#
+	}					
+#>
+<# // begin max length attribute
+	if (code.Escape(edmProperty.TypeUsage) == "string")
+	{
+	int maxLength = 0;
+  if (edmProperty.TypeUsage.Facets["MaxLength"].Value != null && Int32.TryParse(edmProperty.TypeUsage.Facets["MaxLength"].Value.ToString(), out maxLength))
+  {
+#>	public const string StringLength = "Najveći broj znakova je <#=code.CreateLiteral(maxLength)#>";
+<#
+   }
+}
+  if ( edmProperty.TypeUsage.Facets["Nullable"].Value.ToString() =="False")
+  {
+#>
+		public const string Required = "*";
+<#
+   }
+#>
+<# 
+if (code.Escape(edmProperty.TypeUsage) == "long")
+{
+	MetadataProperty storeGeneratedPatternProperty = null;
+    edmProperty.MetadataProperties.TryGetValue(annotationNamespace + ":StoreGeneratedPattern", false, out storeGeneratedPatternProperty);
+	
+  if (storeGeneratedPatternProperty != null && storeGeneratedPatternProperty.Value.ToString() == "Identity")
+  { #> 
+  <#
+   }
+}
+#>
+		public const string Sortable = "<#=edmProperty#>";
+	}
+
+<#    
+    }
+
+#>
+
+}
+<#
+    EndNamespace(namespaceName);
+}
+}
+
+if (!VerifyTypesAreCaseInsensitiveUnique(ItemCollection))
+{
+    return "";
+}
+
+fileManager.Process();
+
+#>
+<#+
+//Split entity name by capitals
+void WriteDisplayName(EdmProperty edmProperty) 
+{
+	string displayName = edmProperty.Name;
+	if (!string.IsNullOrEmpty(displayName))
+		{displayName = Regex.Replace(displayName,"([A-Z]+)", " $1",RegexOptions.Compiled).Trim();
+		string displayAttribute = string.Format("[DisplayName(\"{0}\")]", displayName);
+#>
+	<#=displayAttribute#>
+<#+
+	}
+}
+#>
+
+<#+
+string GetResourceString(string resourceName)
+{
+	if(_resourceManager == null)
+	{
+		_resourceManager = new System.Resources.ResourceManager("System.Data.Entity.Design", typeof(System.Data.Entity.Design.MetadataItemCollectionFactory).Assembly);
+	}
+	
+    return _resourceManager.GetString(resourceName, null);
+}
+System.Resources.ResourceManager _resourceManager;
+
+void WriteHeader(EntityFrameworkTemplateFileManager fileManager, params string[] extraUsings)
+{
+    fileManager.StartHeader();
+#>
+//------------------------------------------------------------------------------
+// <auto-generated>
+// <#=GetResourceString("Template_GeneratedCodeCommentLine1")#>
+//
+// <#=GetResourceString("Template_GeneratedCodeCommentLine2")#>
+// <#=GetResourceString("Template_GeneratedCodeCommentLine3")#>
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+<#+
+    fileManager.EndBlock();
+}
+
+void BeginNamespace(string namespaceName, CodeGenerationTools code)
+{
+    CodeRegion region = new CodeRegion(this);
+    if (!String.IsNullOrEmpty(namespaceName))
+    {
+#>
+namespace <#=code.EscapeNamespace(namespaceName)#>
+{
+<#+
+        PushIndent(CodeRegion.GetIndent(1));
+    }
+}
+
+
+void EndNamespace(string namespaceName)
+{
+    if (!String.IsNullOrEmpty(namespaceName))
+    {
+        PopIndent();
+#>
+}
+<#+
+    }
+}
+
+bool IsReadWriteAccessibleProperty(EdmMember member)
+{
+    string setter = Accessibility.ForWriteOnlyProperty(member);
+    string getter = Accessibility.ForReadOnlyProperty(member);
+
+    return getter != "private" && getter != "protected" && setter != "private" && setter != "protected";
+}
+
+string PropertyVirtualModifier(string accessibility)
+{
+    return accessibility + (accessibility != "private" ? " virtual" : "");
+}
+
+
+bool VerifyTypesAreCaseInsensitiveUnique(EdmItemCollection itemCollection)
+{
+    Dictionary<string, bool> alreadySeen = new Dictionary<string, bool>(StringComparer.OrdinalIgnoreCase);
+    foreach(StructuralType type in itemCollection.GetItems<StructuralType>())
+    {
+        if (!(type is EntityType || type is ComplexType))
+        {
+            continue;
+        }
+
+        if (alreadySeen.ContainsKey(type.FullName))
+        {
+            Error(String.Format(CultureInfo.CurrentCulture, "This template does not support types that differ only by case, the types {0} are not supported", type.FullName));
+            return false;
+        }
+        else
+        {
+            alreadySeen.Add(type.FullName, true);
+        }
+
+    }
+
+    return true;
+}
+#>
+

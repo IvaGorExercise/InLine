@@ -1,0 +1,1202 @@
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\obj\Debug\InLine.UI.Web.csprojResolveAssemblyReference.cache
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\chosen-sprite.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\chosen.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\design\ajax-loader.gif
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\design\Fortius_logo_left_sidebar-01.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\design\LogoMagentaiWebLogin.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\design\LogoMagentaWebHeder.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\design\LogoPlaviWebHeder.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\design\LogoPlaviWebLogin.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\First.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\chosen-sprite.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\datebutton.gif
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\fortius_logo_bijeli_30.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\fortius_logo_sareni_30.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\header_blue_1x40.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\evidencija_rada-01.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\financijsko_knjkigovodstvo02-01.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\home-01.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\izvodi-01.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\maticni_podaci-01.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\place-01.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\plan-01.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\putni_nalozi-01-01.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\putni_nalozi-01.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\sitni_inventar-01.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\menu_background_blue_1x1013.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\menu_hover_1x40.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\menu_left_250x1.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\menu_left_background_250x1.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\menu_left_background_dark_250x1.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\menu_left_background_sivi_250x1.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\ModulIcons\financijsko_knjkigovodstvo02-01.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\ModulIcons\HUB.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\ModulIcons\Izvodi.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\ModulIcons\Kamate.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\ModulIcons\Maticni.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\ModulIcons\Otkup.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\side_shadow_1x30.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\submenu_350x1.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\title_underline_gradient_200x1.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\jqGrid\ellipsis-xbl.xml
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\jqGrid\jquery-ui-jqgrid.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\jquery-ui-1.8.16.custom.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\jquery-ui.multiselect.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Site.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery-ui.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.accordion.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.all.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.autocomplete.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.base.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.button.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.core.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.datepicker.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.dialog.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.menu.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.menubar.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.progressbar.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.resizable.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.selectable.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.slider.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.spinner.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.tabs.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.theme.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.tooltip.css
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Scripts\chosen.jquery.min.js
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Scripts\datepicker.min.js
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Scripts\dPassword.js
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\HUB2013ATest.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\Thumbs.db
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.UI.Web.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.UI.Web.pdb
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\FileHelpers.DataLink.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\FileHelpers.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\FileHelpers.ExcelStorage.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Common.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Model.Admin.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Model.Data.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Repository.Admin.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Repository.Data.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Service.Admin.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Service.Data.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Microsoft.CSharp.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Newtonsoft.Json.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.ComponentModel.DataAnnotations.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Configuration.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Data.DataSetExtensions.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Data.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Data.Entity.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Drawing.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.EnterpriseServices.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Net.Http.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Net.Http.Formatting.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Net.Http.WebRequest.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Transactions.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Abstractions.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.ApplicationServices.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.DynamicData.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Entity.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Extensions.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Helpers.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Http.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Http.WebHost.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Mvc.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Razor.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Routing.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Services.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.WebPages.Deployment.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.WebPages.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.WebPages.Razor.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Xml.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Xml.Linq.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Common.pdb
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Model.Admin.pdb
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Model.Data.pdb
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Repository.Admin.pdb
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Repository.Data.pdb
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Service.Admin.pdb
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Service.Data.pdb
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\EntityFramework.xml
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\FileHelpers.xml
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\FileHelpers.DataLink.xml
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\FileHelpers.ExcelStorage.xml
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Lib.Web.Mvc.pdb
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Newtonsoft.Json.xml
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Net.Http.xml
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Net.Http.Formatting.xml
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Net.Http.WebRequest.xml
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Helpers.xml
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Http.xml
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Http.WebHost.xml
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Mvc.xml
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Razor.xml
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.WebPages.xml
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.WebPages.Deployment.xml
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.WebPages.Razor.xml
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\obj\Debug\InLine.UI.Web.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\obj\Debug\InLine.UI.Web.pdb
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\chosen-sprite.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\chosen.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\design\ajax-loader.gif
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\design\Fortius_logo_left_sidebar-01.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\design\LogoMagentaiWebLogin.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\design\LogoMagentaWebHeder.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\design\LogoPlaviWebHeder.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\design\LogoPlaviWebLogin.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\First.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\chosen-sprite.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\datebutton.gif
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\fortius_logo_bijeli_30.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\fortius_logo_sareni_30.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\header_blue_1x40.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\MenuIcons\evidencija_rada-01.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\MenuIcons\financijsko_knjkigovodstvo02-01.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\MenuIcons\home-01.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\MenuIcons\izvodi-01.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\MenuIcons\maticni_podaci-01.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\MenuIcons\place-01.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\MenuIcons\plan-01.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\MenuIcons\putni_nalozi-01-01.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\MenuIcons\putni_nalozi-01.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\MenuIcons\sitni_inventar-01.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\menu_background_blue_1x1013.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\menu_hover_1x40.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\menu_left_250x1.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\menu_left_background_250x1.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\menu_left_background_dark_250x1.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\menu_left_background_sivi_250x1.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\ModulIcons\financijsko_knjkigovodstvo02-01.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\ModulIcons\HUB.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\ModulIcons\Izvodi.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\ModulIcons\Kamate.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\ModulIcons\Maticni.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\ModulIcons\Otkup.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\side_shadow_1x30.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\submenu_350x1.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\title_underline_gradient_200x1.png
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\jqGrid\ellipsis-xbl.xml
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\jqGrid\jquery-ui-jqgrid.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\jquery-ui-1.8.16.custom.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\jquery-ui.multiselect.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\Site.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\themes\base\jquery-ui.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\themes\base\jquery.ui.accordion.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\themes\base\jquery.ui.all.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\themes\base\jquery.ui.autocomplete.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\themes\base\jquery.ui.base.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\themes\base\jquery.ui.button.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\themes\base\jquery.ui.core.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\themes\base\jquery.ui.datepicker.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\themes\base\jquery.ui.dialog.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\themes\base\jquery.ui.menu.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\themes\base\jquery.ui.menubar.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\themes\base\jquery.ui.progressbar.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\themes\base\jquery.ui.resizable.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\themes\base\jquery.ui.selectable.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\themes\base\jquery.ui.slider.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\themes\base\jquery.ui.spinner.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\themes\base\jquery.ui.tabs.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\themes\base\jquery.ui.theme.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\themes\base\jquery.ui.tooltip.css
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Scripts\chosen.jquery.min.js
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Scripts\datepicker.min.js
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Scripts\dPassword.js
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\Reporti\HUB2013ATest.mrt
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\images\Thumbs.db
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\InLine.UI.Web.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\InLine.UI.Web.pdb
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\FileHelpers.DataLink.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\FileHelpers.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\FileHelpers.ExcelStorage.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\InLine.Common.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\InLine.Model.Admin.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\InLine.Model.Data.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\InLine.Repository.Admin.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\InLine.Repository.Data.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\InLine.Service.Admin.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\InLine.Service.Data.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Microsoft.CSharp.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Newtonsoft.Json.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Stimulsoft.Base.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Stimulsoft.Report.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Stimulsoft.Report.Web.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Stimulsoft.Report.WebDesign.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.ComponentModel.DataAnnotations.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Configuration.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Data.DataSetExtensions.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Data.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Data.Entity.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Drawing.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.EnterpriseServices.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Net.Http.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Net.Http.Formatting.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Net.Http.WebRequest.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Transactions.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.Abstractions.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.ApplicationServices.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.DynamicData.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.Entity.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.Extensions.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.Helpers.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.Http.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.Http.WebHost.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.Mvc.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.Razor.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.Routing.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.Services.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.WebPages.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Xml.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Xml.Linq.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\InLine.Common.pdb
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\InLine.Model.Admin.pdb
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\InLine.Model.Data.pdb
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\InLine.Repository.Admin.pdb
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\InLine.Repository.Data.pdb
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\InLine.Service.Admin.pdb
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\InLine.Service.Data.pdb
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\EntityFramework.xml
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\FileHelpers.xml
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\FileHelpers.DataLink.xml
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\FileHelpers.ExcelStorage.xml
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Stimulsoft.Base.xml
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Stimulsoft.Report.xml
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Stimulsoft.Report.Web.xml
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Stimulsoft.Report.WebDesign.xml
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Newtonsoft.Json.xml
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Net.Http.xml
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Net.Http.Formatting.xml
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Net.Http.WebRequest.xml
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.Helpers.xml
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.Http.xml
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.Http.WebHost.xml
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.Mvc.xml
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.Razor.xml
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.WebPages.xml
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\obj\Debug\InLine.UI.Web.csprojResolveAssemblyReference.cache
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\obj\Debug\InLine.UI.Web.dll
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\obj\Debug\InLine.UI.Web.pdb
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\HUB2013A.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\HUB2013ARaspoUgovor.mrt
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\Reporti\HUB2013A.mrt
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Content\Reporti\HUB2013ARaspoUgovor.mrt
+C:\Users\goran\Desktop\INLINE-GRAD\InLine.UI.Web\bin\Lib.Web.Mvc.pdb
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Images\groovepaper.png
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\HUB2013ARaspoUgovorUZORAK.mrt
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\chosen-sprite.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\chosen.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\design\ajax-loader.gif
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\design\Fortius_logo_left_sidebar-01.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\design\LogoMagentaiWebLogin.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\design\LogoMagentaWebHeder.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\design\LogoPlaviWebHeder.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\design\LogoPlaviWebLogin.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\First.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\chosen-sprite.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\datebutton.gif
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\fortius_logo_bijeli_30.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\fortius_logo_sareni_30.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\header_blue_1x40.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\MenuIcons\evidencija_rada-01.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\MenuIcons\financijsko_knjkigovodstvo02-01.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\MenuIcons\home-01.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\MenuIcons\izvodi-01.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\MenuIcons\maticni_podaci-01.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\MenuIcons\place-01.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\MenuIcons\plan-01.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\MenuIcons\putni_nalozi-01-01.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\MenuIcons\putni_nalozi-01.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\MenuIcons\sitni_inventar-01.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\menu_background_blue_1x1013.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\menu_hover_1x40.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\menu_left_250x1.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\menu_left_background_250x1.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\menu_left_background_dark_250x1.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\menu_left_background_sivi_250x1.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\ModulIcons\financijsko_knjkigovodstvo02-01.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\ModulIcons\HUB.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\ModulIcons\Izvodi.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\ModulIcons\Kamate.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\ModulIcons\Maticni.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\ModulIcons\Otkup.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\side_shadow_1x30.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\submenu_350x1.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\title_underline_gradient_200x1.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\jqGrid\ellipsis-xbl.xml
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\jqGrid\jquery-ui-jqgrid.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\jquery-ui-1.8.16.custom.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\jquery-ui.multiselect.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\Site.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\themes\base\jquery-ui.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\themes\base\jquery.ui.accordion.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\themes\base\jquery.ui.all.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\themes\base\jquery.ui.autocomplete.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\themes\base\jquery.ui.base.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\themes\base\jquery.ui.button.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\themes\base\jquery.ui.core.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\themes\base\jquery.ui.datepicker.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\themes\base\jquery.ui.dialog.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\themes\base\jquery.ui.menu.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\themes\base\jquery.ui.menubar.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\themes\base\jquery.ui.progressbar.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\themes\base\jquery.ui.resizable.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\themes\base\jquery.ui.selectable.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\themes\base\jquery.ui.slider.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\themes\base\jquery.ui.spinner.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\themes\base\jquery.ui.tabs.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\themes\base\jquery.ui.theme.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\themes\base\jquery.ui.tooltip.css
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Images\groovepaper.png
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Scripts\chosen.jquery.min.js
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Scripts\datepicker.min.js
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Scripts\dPassword.js
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\Reporti\HUB2013ATest.mrt
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\Reporti\HUB2013A.mrt
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\Reporti\HUB2013ARaspoUgovor.mrt
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\Reporti\HUB2013ARaspoUgovorUZORAK.mrt
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Content\images\Thumbs.db
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\InLine.UI.Web.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\InLine.UI.Web.pdb
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\FileHelpers.DataLink.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\FileHelpers.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\FileHelpers.ExcelStorage.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\InLine.Common.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\InLine.Model.Admin.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\InLine.Model.Data.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\InLine.Repository.Admin.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\InLine.Repository.Data.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\InLine.Service.Admin.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\InLine.Service.Data.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Microsoft.CSharp.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\MvcSiteMapProvider.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Newtonsoft.Json.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Stimulsoft.Base.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Stimulsoft.Report.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Stimulsoft.Report.Web.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Stimulsoft.Report.WebDesign.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.ComponentModel.DataAnnotations.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Configuration.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Data.DataSetExtensions.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Data.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Data.Entity.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Drawing.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.EnterpriseServices.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Net.Http.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Net.Http.Formatting.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Net.Http.WebRequest.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Transactions.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.Abstractions.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.ApplicationServices.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.DynamicData.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.Entity.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.Extensions.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.Helpers.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.Http.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.Http.WebHost.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.Mvc.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.Razor.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.Routing.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.Services.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.WebPages.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Xml.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Xml.Linq.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\WebActivatorEx.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\InLine.Common.pdb
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\InLine.Model.Admin.pdb
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\InLine.Model.Data.pdb
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\InLine.Repository.Admin.pdb
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\InLine.Repository.Data.pdb
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\InLine.Service.Admin.pdb
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\InLine.Service.Data.pdb
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\EntityFramework.xml
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\FileHelpers.xml
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\FileHelpers.DataLink.xml
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\FileHelpers.ExcelStorage.xml
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Lib.Web.Mvc.pdb
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Stimulsoft.Base.xml
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Stimulsoft.Report.xml
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Stimulsoft.Report.Web.xml
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Stimulsoft.Report.WebDesign.xml
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.Helpers.xml
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.Mvc.xml
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.Razor.xml
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.WebPages.xml
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\Newtonsoft.Json.xml
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Net.Http.xml
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Net.Http.Formatting.xml
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Net.Http.WebRequest.xml
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.Http.xml
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\bin\System.Web.Http.WebHost.xml
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\obj\Debug\InLine.UI.Web.csprojResolveAssemblyReference.cache
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\obj\Debug\InLine.UI.Web.dll
+C:\Users\goran\Desktop\Novo\InLine.UI.Web\obj\Debug\InLine.UI.Web.pdb
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\MvcSiteMapProvider.dll
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\WebActivatorEx.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\chosen-sprite.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\chosen.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\design\ajax-loader.gif
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\design\Fortius_logo_left_sidebar-01.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\design\LogoMagentaiWebLogin.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\design\LogoMagentaWebHeder.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\design\LogoPlaviWebHeder.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\design\LogoPlaviWebLogin.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\First.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\chosen-sprite.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\datebutton.gif
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\fortius_logo_bijeli_30.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\fortius_logo_sareni_30.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\header_blue_1x40.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\MenuIcons\evidencija_rada-01.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\MenuIcons\financijsko_knjkigovodstvo02-01.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\MenuIcons\home-01.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\MenuIcons\izvodi-01.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\MenuIcons\maticni_podaci-01.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\MenuIcons\place-01.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\MenuIcons\plan-01.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\MenuIcons\putni_nalozi-01-01.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\MenuIcons\putni_nalozi-01.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\MenuIcons\sitni_inventar-01.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\menu_background_blue_1x1013.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\menu_hover_1x40.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\menu_left_250x1.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\menu_left_background_250x1.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\menu_left_background_dark_250x1.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\menu_left_background_sivi_250x1.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\ModulIcons\financijsko_knjkigovodstvo02-01.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\ModulIcons\HUB.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\ModulIcons\Izvodi.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\ModulIcons\Kamate.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\ModulIcons\Maticni.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\ModulIcons\Otkup.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\side_shadow_1x30.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\submenu_350x1.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\title_underline_gradient_200x1.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\jqGrid\ellipsis-xbl.xml
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\jqGrid\jquery-ui-jqgrid.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\jquery-ui-1.8.16.custom.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\jquery-ui.multiselect.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\Site.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\themes\base\jquery-ui.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\themes\base\jquery.ui.accordion.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\themes\base\jquery.ui.all.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\themes\base\jquery.ui.autocomplete.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\themes\base\jquery.ui.base.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\themes\base\jquery.ui.button.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\themes\base\jquery.ui.core.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\themes\base\jquery.ui.datepicker.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\themes\base\jquery.ui.dialog.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\themes\base\jquery.ui.menu.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\themes\base\jquery.ui.menubar.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\themes\base\jquery.ui.progressbar.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\themes\base\jquery.ui.resizable.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\themes\base\jquery.ui.selectable.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\themes\base\jquery.ui.slider.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\themes\base\jquery.ui.spinner.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\themes\base\jquery.ui.tabs.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\themes\base\jquery.ui.theme.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\themes\base\jquery.ui.tooltip.css
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Images\groovepaper.png
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Scripts\chosen.jquery.min.js
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Scripts\datepicker.min.js
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Scripts\dPassword.js
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\Reporti\HUB2013ATest.mrt
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\Reporti\HUB2013A.mrt
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\Reporti\HUB2013ARaspoUgovor.mrt
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\Reporti\HUB2013ARaspoUgovorUZORAK.mrt
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Content\images\Thumbs.db
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\InLine.UI.Web.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\InLine.UI.Web.pdb
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\FileHelpers.DataLink.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\FileHelpers.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\FileHelpers.ExcelStorage.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\InLine.Common.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\InLine.Model.Admin.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\InLine.Model.Data.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\InLine.Repository.Admin.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\InLine.Repository.Data.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\InLine.Service.Admin.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\InLine.Service.Data.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Microsoft.CSharp.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\MvcSiteMapProvider.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Newtonsoft.Json.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Stimulsoft.Base.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Stimulsoft.Report.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Stimulsoft.Report.Web.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Stimulsoft.Report.WebDesign.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.ComponentModel.DataAnnotations.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Configuration.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Data.DataSetExtensions.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Data.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Data.Entity.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Drawing.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.EnterpriseServices.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Net.Http.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Net.Http.Formatting.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Net.Http.WebRequest.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Transactions.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.Abstractions.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.ApplicationServices.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.DynamicData.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.Entity.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.Extensions.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.Helpers.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.Http.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.Http.WebHost.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.Mvc.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.Razor.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.Routing.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.Services.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.WebPages.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Xml.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Xml.Linq.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\WebActivatorEx.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\InLine.Common.pdb
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\InLine.Model.Admin.pdb
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\InLine.Model.Data.pdb
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\InLine.Repository.Admin.pdb
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\InLine.Repository.Data.pdb
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\InLine.Service.Admin.pdb
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\InLine.Service.Data.pdb
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\EntityFramework.xml
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\FileHelpers.xml
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\FileHelpers.DataLink.xml
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\FileHelpers.ExcelStorage.xml
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Lib.Web.Mvc.pdb
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Stimulsoft.Base.xml
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Stimulsoft.Report.xml
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Stimulsoft.Report.Web.xml
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Stimulsoft.Report.WebDesign.xml
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.Helpers.xml
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.Mvc.xml
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.Razor.xml
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.WebPages.xml
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\Newtonsoft.Json.xml
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Net.Http.xml
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Net.Http.Formatting.xml
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Net.Http.WebRequest.xml
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.Http.xml
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\bin\System.Web.Http.WebHost.xml
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\obj\Debug\InLine.UI.Web.csprojResolveAssemblyReference.cache
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\obj\Debug\InLine.UI.Web.dll
+C:\Users\goran\Desktop\NAjnovije\InLine.UI.Web\obj\Debug\InLine.UI.Web.pdb
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\chosen-sprite.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\chosen.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\design\ajax-loader.gif
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\design\Fortius_logo_left_sidebar-01.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\design\LogoMagentaiWebLogin.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\design\LogoMagentaWebHeder.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\design\LogoPlaviWebHeder.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\design\LogoPlaviWebLogin.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\First.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\chosen-sprite.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\datebutton.gif
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\fortius_logo_bijeli_30.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\fortius_logo_sareni_30.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\header_blue_1x40.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\MenuIcons\evidencija_rada-01.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\MenuIcons\financijsko_knjkigovodstvo02-01.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\MenuIcons\home-01.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\MenuIcons\izvodi-01.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\MenuIcons\maticni_podaci-01.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\MenuIcons\place-01.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\MenuIcons\plan-01.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\MenuIcons\putni_nalozi-01-01.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\MenuIcons\putni_nalozi-01.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\MenuIcons\sitni_inventar-01.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\menu_background_blue_1x1013.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\menu_hover_1x40.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\menu_left_250x1.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\menu_left_background_250x1.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\menu_left_background_dark_250x1.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\menu_left_background_sivi_250x1.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\ModulIcons\financijsko_knjkigovodstvo02-01.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\ModulIcons\HUB.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\ModulIcons\Izvodi.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\ModulIcons\Kamate.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\ModulIcons\Maticni.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\ModulIcons\Otkup.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\side_shadow_1x30.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\submenu_350x1.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\title_underline_gradient_200x1.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\jqGrid\ellipsis-xbl.xml
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\jqGrid\jquery-ui-jqgrid.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\jquery-ui-1.8.16.custom.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\jquery-ui.multiselect.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Site.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\themes\base\jquery-ui.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\themes\base\jquery.ui.accordion.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\themes\base\jquery.ui.all.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\themes\base\jquery.ui.autocomplete.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\themes\base\jquery.ui.base.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\themes\base\jquery.ui.button.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\themes\base\jquery.ui.core.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\themes\base\jquery.ui.datepicker.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\themes\base\jquery.ui.dialog.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\themes\base\jquery.ui.menu.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\themes\base\jquery.ui.menubar.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\themes\base\jquery.ui.progressbar.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\themes\base\jquery.ui.resizable.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\themes\base\jquery.ui.selectable.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\themes\base\jquery.ui.slider.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\themes\base\jquery.ui.spinner.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\themes\base\jquery.ui.tabs.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\themes\base\jquery.ui.theme.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\themes\base\jquery.ui.tooltip.css
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Images\groovepaper.png
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Scripts\chosen.jquery.min.js
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Scripts\datepicker.min.js
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Scripts\dPassword.js
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\HUB2013ATest.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\HUB2013A.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\HUB2013ARaspoUgovor.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\HUB2013ARaspoUgovorUZORAK.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\images\Thumbs.db
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\InLine.UI.Web.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\InLine.UI.Web.pdb
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\FileHelpers.DataLink.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\FileHelpers.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\FileHelpers.ExcelStorage.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\InLine.Common.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\InLine.Model.Admin.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\InLine.Model.Data.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\InLine.Repository.Admin.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\InLine.Repository.Data.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\InLine.Service.Admin.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\InLine.Service.Data.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Microsoft.CSharp.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\MvcSiteMapProvider.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Newtonsoft.Json.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.ComponentModel.DataAnnotations.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Configuration.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Data.DataSetExtensions.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Data.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Data.Entity.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Drawing.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.EnterpriseServices.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Net.Http.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Net.Http.WebRequest.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Transactions.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Web.Abstractions.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Web.ApplicationServices.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Web.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Web.DynamicData.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Web.Entity.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Web.Extensions.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Web.Helpers.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Web.Mvc.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Web.Razor.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Web.Routing.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Web.Services.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Web.WebPages.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Xml.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Xml.Linq.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\WebActivatorEx.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\InLine.Common.pdb
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\InLine.Model.Admin.pdb
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\InLine.Model.Data.pdb
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\InLine.Repository.Admin.pdb
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\InLine.Repository.Data.pdb
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\InLine.Service.Admin.pdb
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\InLine.Service.Data.pdb
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\EntityFramework.xml
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\FileHelpers.xml
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\FileHelpers.DataLink.xml
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\FileHelpers.ExcelStorage.xml
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Lib.Web.Mvc.pdb
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Web.Helpers.xml
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Web.Mvc.xml
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Web.Razor.xml
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Web.WebPages.xml
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Newtonsoft.Json.xml
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Net.Http.xml
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\System.Net.Http.WebRequest.xml
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\obj\Debug\InLine.UI.Web.csprojResolveAssemblyReference.cache
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\obj\Debug\InLine.UI.Web.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\obj\Debug\InLine.UI.Web.pdb
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.1. Konto kartica\1.1.1. Konto kartica poduzeća - analitički.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.1. Konto kartica\1.1.2. Konto kartica poduzeća - analitički-saldirani.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.1. Konto kartica\1.1.3. Konto kartica poduzeća - sintetički.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.1. Konto kartica\1.1.1. Konto kartica poduzeća - analitički.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.1. Konto kartica\1.1.2. Konto kartica poduzeća - analitički-saldirani.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.1. Konto kartica\1.1.3. Konto kartica poduzeća - sintetički.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Stimulsoft.Base.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Stimulsoft.Report.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Stimulsoft.Report.MvcMobile.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Stimulsoft.Report.Web.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Stimulsoft.Report.WebDesign.dll
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Stimulsoft.Base.xml
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Stimulsoft.Report.xml
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Stimulsoft.Report.Web.xml
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Stimulsoft.Report.WebDesign.xml
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.2. Dnevnik knjiženja\1.2.1. Popis temeljnica.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.2. Dnevnik knjiženja\1.2.2. Dnevnik knjiženja - analitika.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.4. Ostali pregledi\1.4.1. Ispis temeljnica.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.4. Ostali pregledi\1.4.2. Troškovi i prihodi.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.1. Analitika.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.2. Sintetika.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.3. Sintetika - početno stanje.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.5. Kartica poslovnog partnera.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.6. Kartica poslovnog partnera - po godinama.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.7. Najveća dugovanja i potraživanja.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.2. Po dokumentima\2.2.1. Analitika po partnerima.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.2. Po dokumentima\2.2.2. Sintetika po partnerima.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.3. Po dospijeću\2.3.1. Dokumenti po dospijeću.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.3. Po dospijeću\2.3.2. Dokumenti po dospijeću sa saldom.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.3. Po dospijeću\2.3.3. Dokumenti po partneru.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.3. Po dospijeću\2.3.4. Dokumenti po partneru sa saldom.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.5. Ostali pregledi\2.5.1. Sintetika po vrsti temeljnice i analitikama.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.1. Kartica ugovora.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.2. Ugovori s preplatom.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.2. Ostali ispisi\3.2.5. Knjigovodstvena kartica ovrhe.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.3. Ispis ugovora.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.4. Ugovori.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.5. Kupci po dokumentu.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.6. Dokumenti po kupcu.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.2. Ostali ispisi\3.2.6. Preplate.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.8. Knjigovodstvena kartica.mrt
+C:\Users\goran\Desktop\IVAA\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.9. Ugovori detaljno.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\chosen-sprite.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\chosen.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\design\ajax-loader.gif
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\design\Fortius_logo_left_sidebar-01.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\design\LogoMagentaiWebLogin.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\design\LogoMagentaWebHeder.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\design\LogoPlaviWebHeder.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\design\LogoPlaviWebLogin.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\First.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\chosen-sprite.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\datebutton.gif
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\fortius_logo_bijeli_30.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\fortius_logo_sareni_30.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\header_blue_1x40.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\evidencija_rada-01.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\financijsko_knjkigovodstvo02-01.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\home-01.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\izvodi-01.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\maticni_podaci-01.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\place-01.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\plan-01.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\putni_nalozi-01-01.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\putni_nalozi-01.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\sitni_inventar-01.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\menu_background_blue_1x1013.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\menu_hover_1x40.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\menu_left_250x1.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\menu_left_background_250x1.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\menu_left_background_dark_250x1.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\menu_left_background_sivi_250x1.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\ModulIcons\financijsko_knjkigovodstvo02-01.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\ModulIcons\HUB.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\ModulIcons\Izvodi.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\ModulIcons\Kamate.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\ModulIcons\Maticni.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\ModulIcons\Otkup.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\side_shadow_1x30.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\submenu_350x1.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\title_underline_gradient_200x1.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\jqGrid\ellipsis-xbl.xml
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\jqGrid\jquery-ui-jqgrid.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\jquery-ui-1.8.16.custom.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\jquery-ui.multiselect.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Site.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery-ui.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.accordion.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.all.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.autocomplete.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.base.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.button.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.core.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.datepicker.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.dialog.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.menu.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.menubar.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.progressbar.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.resizable.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.selectable.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.slider.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.spinner.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.tabs.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.theme.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.tooltip.css
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Images\groovepaper.png
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Scripts\chosen.jquery.min.js
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Scripts\datepicker.min.js
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Scripts\dPassword.js
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\HUB2013ATest.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\HUB2013A.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\HUB2013ARaspoUgovor.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\HUB2013ARaspoUgovorUZORAK.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.1. Konto kartica\1.1.1. Konto kartica poduzeća - analitički.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.1. Konto kartica\1.1.2. Konto kartica poduzeća - analitički-saldirani.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.1. Konto kartica\1.1.3. Konto kartica poduzeća - sintetički.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.2. Dnevnik knjiženja\1.2.1. Popis temeljnica.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.2. Dnevnik knjiženja\1.2.2. Dnevnik knjiženja - analitika.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.3. Konto (Račun)\1.3.1. Bilanca.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.3. Konto (Račun)\1.3.2. Bilanca sa početnim stanjem.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.3. Konto (Račun)\1.3.3. Zaključni list.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.4. Ostali pregledi\1.4.1. Ispis temeljnica.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.4. Ostali pregledi\1.4.2. Troškovi i prihodi.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.1. Analitika.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.2. Sintetika.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.3. Sintetika - početno stanje.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.5. Kartica poslovnog partnera.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.6. Kartica poslovnog partnera - po godinama.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.7. Najveća dugovanja i potraživanja.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.2. Po dokumentima\2.2.1. Analitika po partnerima.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.2. Po dokumentima\2.2.2. Sintetika po partnerima.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.3. Po dospijeću\2.3.1. Dokumenti po dospijeću.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.3. Po dospijeću\2.3.2. Dokumenti po dospijeću sa saldom.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.3. Po dospijeću\2.3.3. Dokumenti po partneru.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.3. Po dospijeću\2.3.4. Dokumenti po partneru sa saldom.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.5. Ostali pregledi\2.5.1. Sintetika po vrsti temeljnice i analitikama.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.1. Kartica ugovora.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.2. Ugovori s preplatom.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.3. Ispis ugovora.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.4. Ugovori.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.5. Kupci po dokumentu.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.6. Dokumenti po kupcu.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.7. Utuženi ugovori.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.8. Knjigovodstvena kartica.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.9. Ugovori detaljno.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.2. Ostali ispisi\3.2.1. Neplaćeni dospjeli dug.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.2. Ostali ispisi\3.2.2. Nalog.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.2. Ostali ispisi\3.2.3. Lista naloga.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.2. Ostali ispisi\3.2.4. Opomene.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.2. Ostali ispisi\3.2.5. Knjigovodstvena kartica ovrhe.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.2. Ostali ispisi\3.2.6. Preplate.mrt
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\Thumbs.db
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.UI.Web.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.UI.Web.pdb
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\EntityFramework.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\FileHelpers.DataLink.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\FileHelpers.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\FileHelpers.ExcelStorage.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Common.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Model.Admin.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Model.Data.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Repository.Admin.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Repository.Data.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Service.Admin.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Service.Data.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Lib.Web.Mvc.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Microsoft.CSharp.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Microsoft.Web.Infrastructure.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\MvcSiteMapProvider.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Newtonsoft.Json.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Stimulsoft.Base.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Stimulsoft.Report.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Stimulsoft.Report.MvcMobile.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Stimulsoft.Report.Web.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Stimulsoft.Report.WebDesign.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.ComponentModel.DataAnnotations.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Configuration.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Data.DataSetExtensions.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Data.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Data.Entity.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Drawing.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.EnterpriseServices.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Net.Http.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Net.Http.WebRequest.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Transactions.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Abstractions.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.ApplicationServices.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.DynamicData.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Entity.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Extensions.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Helpers.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Mvc.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Razor.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Routing.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Services.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.WebPages.Deployment.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.WebPages.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.WebPages.Razor.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Xml.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Xml.Linq.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\WebActivatorEx.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Common.pdb
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Model.Admin.pdb
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Model.Data.pdb
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Repository.Admin.pdb
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Repository.Data.pdb
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Service.Admin.pdb
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Service.Data.pdb
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\EntityFramework.xml
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\FileHelpers.xml
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\FileHelpers.DataLink.xml
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\FileHelpers.ExcelStorage.xml
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Lib.Web.Mvc.pdb
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Helpers.xml
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Mvc.xml
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Razor.xml
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.WebPages.xml
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.WebPages.Deployment.xml
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.WebPages.Razor.xml
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Newtonsoft.Json.xml
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Net.Http.xml
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Net.Http.WebRequest.xml
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\obj\Debug\InLine.UI.Web.csprojResolveAssemblyReference.cache
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\obj\Debug\InLine.UI.Web.dll
+E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\obj\Debug\InLine.UI.Web.pdb
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.2. Dnevnik knjiženja\1.2.1. Popis temeljnica.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.2. Dnevnik knjiženja\1.2.2. Dnevnik knjiženja - analitika.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.3. Konto (Račun)\1.3.1. Bilanca.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.3. Konto (Račun)\1.3.2. Bilanca sa početnim stanjem.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.3. Konto (Račun)\1.3.3. Zaključni list.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.4. Ostali pregledi\1.4.1. Ispis temeljnica.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.4. Ostali pregledi\1.4.2. Troškovi i prihodi.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.1. Analitika.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.2. Sintetika.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.3. Sintetika - početno stanje.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.5. Kartica poslovnog partnera.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.6. Kartica poslovnog partnera - po godinama.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.7. Najveća dugovanja i potraživanja.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.2. Po dokumentima\2.2.1. Analitika po partnerima.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.2. Po dokumentima\2.2.2. Sintetika po partnerima.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.3. Po dospijeću\2.3.1. Dokumenti po dospijeću.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.3. Po dospijeću\2.3.2. Dokumenti po dospijeću sa saldom.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.3. Po dospijeću\2.3.3. Dokumenti po partneru.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.3. Po dospijeću\2.3.4. Dokumenti po partneru sa saldom.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.5. Ostali pregledi\2.5.1. Sintetika po vrsti temeljnice i analitikama.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.1. Kartica ugovora.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.2. Ugovori s preplatom.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.3. Ispis ugovora.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.4. Ugovori.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.5. Kupci po dokumentu.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.6. Dokumenti po kupcu.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.7. Utuženi ugovori.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.8. Knjigovodstvena kartica.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.9. Ugovori detaljno.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.2. Ostali ispisi\3.2.1. Neplaćeni dospjeli dug.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.2. Ostali ispisi\3.2.2. Nalog.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.2. Ostali ispisi\3.2.3. Lista naloga.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.2. Ostali ispisi\3.2.4. Opomene.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.2. Ostali ispisi\3.2.5. Knjigovodstvena kartica ovrhe.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.2. Ostali ispisi\3.2.6. Preplate.mrt
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Stimulsoft.Base.xml
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Stimulsoft.Report.xml
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Stimulsoft.Report.Web.xml
+C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Stimulsoft.Report.WebDesign.xml
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\chosen-sprite.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\chosen.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\design\ajax-loader.gif
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\design\Fortius_logo_left_sidebar-01.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\design\LogoMagentaiWebLogin.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\design\LogoMagentaWebHeder.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\design\LogoPlaviWebHeder.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\design\LogoPlaviWebLogin.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\First.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\chosen-sprite.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\datebutton.gif
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\fortius_logo_bijeli_30.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\fortius_logo_sareni_30.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\header_blue_1x40.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\evidencija_rada-01.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\financijsko_knjkigovodstvo02-01.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\home-01.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\izvodi-01.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\maticni_podaci-01.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\place-01.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\plan-01.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\putni_nalozi-01-01.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\putni_nalozi-01.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\MenuIcons\sitni_inventar-01.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\menu_background_blue_1x1013.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\menu_hover_1x40.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\menu_left_250x1.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\menu_left_background_250x1.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\menu_left_background_dark_250x1.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\menu_left_background_sivi_250x1.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\ModulIcons\financijsko_knjkigovodstvo02-01.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\ModulIcons\HUB.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\ModulIcons\Izvodi.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\ModulIcons\Kamate.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\ModulIcons\Maticni.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\ModulIcons\Otkup.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\side_shadow_1x30.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\submenu_350x1.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\title_underline_gradient_200x1.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\jqGrid\ellipsis-xbl.xml
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\jqGrid\jquery-ui-jqgrid.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\jquery-ui-1.8.16.custom.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\jquery-ui.multiselect.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Site.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery-ui.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.accordion.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.all.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.autocomplete.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.base.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.button.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.core.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.datepicker.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.dialog.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.menu.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.menubar.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.progressbar.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.resizable.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.selectable.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.slider.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.spinner.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.tabs.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.theme.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\themes\base\jquery.ui.tooltip.css
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Images\groovepaper.png
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Scripts\chosen.jquery.min.js
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Scripts\datepicker.min.js
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Scripts\dPassword.js
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\HUB2013ATest.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\HUB2013A.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\HUB2013ARaspoUgovor.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\HUB2013ARaspoUgovorUZORAK.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.1. Konto kartica\1.1.1. Konto kartica poduzeća - analitički.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.1. Konto kartica\1.1.2. Konto kartica poduzeća - analitički-saldirani.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.1. Konto kartica\1.1.3. Konto kartica poduzeća - sintetički.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.2. Dnevnik knjiženja\1.2.1. Popis temeljnica.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.2. Dnevnik knjiženja\1.2.2. Dnevnik knjiženja - analitika.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.3. Konto (Račun)\1.3.1. Bilanca.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.3. Konto (Račun)\1.3.2. Bilanca sa početnim stanjem.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.3. Konto (Račun)\1.3.3. Zaključni list.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.4. Ostali pregledi\1.4.1. Ispis temeljnica.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.4. Ostali pregledi\1.4.2. Troškovi i prihodi.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.1. Analitika.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.2. Sintetika.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.3. Sintetika - početno stanje.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.5. Kartica poslovnog partnera.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.6. Kartica poslovnog partnera - po godinama.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.1. Po partnerima\2.1.7. Najveća dugovanja i potraživanja.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.2. Po dokumentima\2.2.1. Analitika po partnerima.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.2. Po dokumentima\2.2.2. Sintetika po partnerima.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.3. Po dospijeću\2.3.1. Dokumenti po dospijeću.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.3. Po dospijeću\2.3.2. Dokumenti po dospijeću sa saldom.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.3. Po dospijeću\2.3.3. Dokumenti po partneru.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.3. Po dospijeću\2.3.4. Dokumenti po partneru sa saldom.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\2. SALDO KONTI\2.5. Ostali pregledi\2.5.1. Sintetika po vrsti temeljnice i analitikama.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.1. Kartica ugovora.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.2. Ugovori s preplatom.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.3. Ispis ugovora.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.4. Ugovori.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.5. Kupci po dokumentu.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.6. Dokumenti po kupcu.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.7. Utuženi ugovori.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.8. Knjigovodstvena kartica.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ugovori\3.1.9. Ugovori detaljno.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.2. Ostali ispisi\3.2.1. Neplaćeni dospjeli dug.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.2. Ostali ispisi\3.2.2. Nalog.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.2. Ostali ispisi\3.2.3. Lista naloga.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.2. Ostali ispisi\3.2.4. Opomene.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.2. Ostali ispisi\3.2.5. Knjigovodstvena kartica ovrhe.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\Reporti\IspisiFinancijsko\3. GRAD\3.2. Ostali ispisi\3.2.6. Preplate.mrt
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Content\images\Thumbs.db
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.UI.Web.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.UI.Web.pdb
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\FileHelpers.DataLink.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\FileHelpers.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\FileHelpers.ExcelStorage.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Common.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Model.Admin.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Model.Data.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Repository.Admin.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Repository.Data.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Service.Admin.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Service.Data.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Microsoft.CSharp.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\MvcSiteMapProvider.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Newtonsoft.Json.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Stimulsoft.Base.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Stimulsoft.Report.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Stimulsoft.Report.Web.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Stimulsoft.Report.WebDesign.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.ComponentModel.DataAnnotations.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Configuration.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Data.DataSetExtensions.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Data.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Data.Entity.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Drawing.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.EnterpriseServices.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Net.Http.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Net.Http.Formatting.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Net.Http.WebRequest.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Transactions.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Abstractions.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.ApplicationServices.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.DynamicData.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Entity.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Extensions.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Helpers.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Http.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Http.WebHost.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Mvc.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Razor.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Routing.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Services.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.WebPages.Deployment.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.WebPages.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.WebPages.Razor.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Xml.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Xml.Linq.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\WebActivatorEx.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Common.pdb
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Model.Admin.pdb
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Model.Data.pdb
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Repository.Admin.pdb
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Repository.Data.pdb
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Service.Admin.pdb
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\InLine.Service.Data.pdb
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\EntityFramework.xml
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\FileHelpers.xml
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\FileHelpers.DataLink.xml
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\FileHelpers.ExcelStorage.xml
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Lib.Web.Mvc.pdb
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Stimulsoft.Base.xml
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Stimulsoft.Report.xml
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Stimulsoft.Report.Web.xml
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Stimulsoft.Report.WebDesign.xml
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Helpers.xml
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Mvc.xml
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Razor.xml
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.WebPages.xml
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.WebPages.Deployment.xml
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.WebPages.Razor.xml
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\Newtonsoft.Json.xml
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Net.Http.xml
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Net.Http.Formatting.xml
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Net.Http.WebRequest.xml
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Http.xml
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\bin\System.Web.Http.WebHost.xml
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\obj\Debug\InLine.UI.Web.csprojResolveAssemblyReference.cache
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\obj\Debug\InLine.UI.Web.dll
+C:\IVA_EKSTERNI\PROJEKTI\InLineGrad\InLine.UI.Web\obj\Debug\InLine.UI.Web.pdb

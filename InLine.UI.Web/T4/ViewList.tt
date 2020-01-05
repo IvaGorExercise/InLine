@@ -1,0 +1,43 @@
+﻿<#@ template language="C#" debug="True" hostspecific="True" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="System.Web" #>
+<#@ assembly name="System.Web.Mvc" #>
+<#@ assembly Name= "$(SolutionDir)\bin\InLine.Common.dll"#>
+<#@ import namespace="System.Web.Mvc" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Web" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="InLine.Common" #> 
+
+
+using System; 
+
+namespace ViewList 
+{
+
+    <# 
+     
+     //string viewsFolderPath = @"E:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\Views";
+	 string viewsFolderPath = VS.SolutionPath() + @"\InLine.UI.Web\Views";
+     
+     string[] folders = Directory.GetDirectories(viewsFolderPath);
+          
+     
+     foreach(string folderName in folders) 
+     {
+     #> 
+     public static class <#= System.IO.Path.GetFileName(folderName) #>
+	 {             
+     <#      
+      foreach(string file in Directory.GetFiles(folderName))
+	  {
+		 if(file.Substring(file.Length - 4) != "orig")
+			{ #>    public const string View<#= System.IO.Path.GetFileNameWithoutExtension(file) #> = "<#= System.IO.Path.GetFileNameWithoutExtension(file).ToString()  #>";
+	 <# }
+}#>
+}
+    <# 
+} #>          
+}
+

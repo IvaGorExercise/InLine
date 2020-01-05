@@ -1,0 +1,550 @@
+﻿@model InLine.UI.Web.Models.ViewModelCustom.HUB2013AGradTEST
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="../../Content/themes/base/jquery.ui.datepicker.css" rel="stylesheet"
+    type="text/css" />
+<link href="../../Content/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+    #hub-container
+    {
+        width: 900px;
+        height: 650px;
+        float: left;
+    }
+    #formaHUB
+    {
+        width: 320px;
+        margin-top: 10px;
+        margin-left: 20px;
+        margin-bottom: 5px;
+        height: 570px;
+        padding-left: 20px;
+        padding-right: 20px;
+        background: #f3f3f3;
+        float: left;
+        font-size: 14px;
+        border: 1px solid #E1E1E1;
+    }
+    #poruka-hub
+    {
+        width: 350px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        margin-left: 20px;
+        height: 400px;
+        padding-right: 20px;
+        float: left;
+    }
+    #poruka
+    {
+        width: 340px;
+        margin-top: 10px;
+        margin-left: 5px;
+        float: left;
+    }
+    #doc-upload
+    {
+        width: 800px;
+        height: 120px;
+        margin-top: 0px;
+        margin-bottom: 5px;
+        margin-left: 20px;
+        padding-left: 20px;
+        float: left;
+        font-size: 14px;
+    }
+    #greska
+    {
+        width: 340px;
+        height: 30px;
+        margin-top: 0px;
+        margin-bottom: 5px;
+        margin-left: 0px;
+        padding-left: 0px;
+        float: left;
+        color: #096CED;
+    }
+    #menu-okvir
+    {
+        width: 956px;
+        height: 20px;
+        float: left;
+        margin-top: 0px;
+        margin-bottom: 5px;
+        background: #3B8BC4;
+    }
+    #menu
+    {
+        width: 120px;
+        height: 20px;
+        padding-left: 5px;
+        padding-top: 2px;
+        float: left;
+    }
+    #loaderImage
+    {
+        width: 340px;
+        height: 30px;
+        float: left;
+    }
+    #Printer
+    {
+        width: 300px;
+    }
+    
+    #forma-grupa
+    {
+        width: 320px;
+        height: 50px;
+        margin-bottom: 5px;
+        float: left;
+    }
+    #forma-grupa-lijevo
+    {
+        width: 130px;
+        height: 50px;
+        float: left;
+    }
+    #forma-grupa-desno
+    {
+        width: 130px;
+        margin-left: 20px;
+        height: 50px;
+        float: left;
+    }
+    
+    
+    
+    input[type="text"]
+    {
+        width: 100px;
+    }
+    
+    #IDHUBNamjena2013A
+    {
+        width: 300px;
+    }
+    
+    #Top
+    {
+        width: 100px;
+    }
+    #PdfPage
+    {
+        width: 100px;
+    }
+    
+    #Mjesec
+    {
+        width: 100px;
+    }
+    
+    #Godina
+    {
+        width: 100px;
+    }
+    
+    #BrojUgovorMin
+    {
+        width: 100px;
+    }
+    
+    #BrojUgovorMax
+    {
+        width: 100px;
+    }
+    
+     #BrojUgovorMax
+    {
+        width: 100px;
+    }
+    
+     #Server
+    {
+        width: 290px;
+    }
+    
+     #Baza
+    {
+        width: 290px;
+    }
+    
+    
+    .red
+    {
+        color: #DB0421;
+    }
+    
+    
+    .blue
+    {
+        color: #096CED;
+    }
+    
+    .green
+    {
+        color: #178703;
+    }
+    
+    
+    #userinterface
+    {
+        float: right;
+        padding-top: 20px;
+        padding-right: 5px;
+        font-family: Microsoft Sans Serif;
+    }
+    #userinterface a:link
+    {
+        color: White;
+        text-decoration: none;
+    }
+    #userinterface a:hover
+    {
+        color: #ccc;
+        text-decoration: underline;
+    }
+    
+    #hub-button
+    {
+        margin-top: 7px;
+        background-repeat: no-repeat;
+        background-position: 10px 1px;
+        height: 30px;
+        font-size: 13px;
+        font-family: Arial;
+        color: #F2F2F2;
+        background-color: #5C80BC;
+        cursor: pointer;
+        font-weight: bold;
+        text-decoration: none;
+        width: 170px !important;
+        display: inline-block;
+        -moz-border-radius: 7px;
+        -webkit-border-radius: 7px;
+        border-radius: 7px; /* future proofing */
+        -khtml-border-radius: 7px;
+        box-shadow: 0 1px 4px 0 rgba(168, 168, 168, 0.6) inset;
+        border: 1px solid #5C80BC;
+    }
+    
+    #hub-button:hover
+    {
+        background-repeat: no-repeat;
+        background-position: 10px 1px;
+        background-color: #92AAD2;
+        color: #FFFFFF;
+        border: 1px solid #92AAD2;
+        height: 30px;
+    }
+    
+        #forma-grupa-server
+    {
+        width: 320px;
+        height: 70px;
+        margin-bottom: 30px;
+        float: left;
+    }
+</style>
+<div class="content-inner">
+    <div class="breadCrumbHolder module">
+        <div id="breadCrumb3" class="breadCrumb module">
+            <ul>
+                <li><a href="/Pocetna/Index">Home</a> </li>
+                <li><a href="#">HUB-ovi</a> </li>
+                <li><a href="/KupacUgovorStanOtkupView/KupacUgovorStanOtkup">Kreiranje HUB-ova</a></li>
+                <li><a href="/HUB2013A/Random">---Random Test---</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="doc-upload">
+        @Html.Partial("UploadDokumentTEST")
+        <label id="upload-labela">
+        </label>
+        <label id="ne-upload-labela">
+        </label>
+    </div>
+    <br />
+    <div id="hub-container">
+        <div id="formaHUB">
+            @using (Html.BeginForm("HUBKreirajGradTEST", "HUB2013A", FormMethod.Post))
+            {
+   
+                @Html.ValidationSummary(true)
+                <div>
+                    <h4>
+                       TEST</h4>
+                </div>
+           <div id="forma-grupa-server">
+       
+                        @Html.LabelFor(model => model.Server)
+                        <br />
+                        @Html.EditorFor(model => model.Server)
+                        @Html.ValidationMessageFor(model => model.Server)
+                        <br />
+                         <br />
+
+                        @Html.LabelFor(model => model.Baza)
+                        <br />
+                        @Html.EditorFor(model => model.Baza)
+                        @Html.ValidationMessageFor(model => model.Baza)
+                        <br />
+                </div>
+    
+                <div id="forma-grupa">
+                    <div id="forma-grupa-lijevo">
+                        @Html.LabelFor(model => model.Ponovo)
+                        <br />
+                        @Html.CheckBoxFor(model => model.Ponovo, new { @class = "Ponovo" })
+                        <br />
+                        <br />
+                    </div>
+                    <div id="forma-grupa-desno">
+                        @Html.LabelFor(model => model.Barkod)
+                        <br />
+                        @Html.CheckBoxFor(model => model.Barkod)
+                        <br />
+                        <br />
+                    </div>
+                </div>
+      
+                <div id="forma-grupa">
+                    <div id="forma-grupa-lijevo">
+                        @Html.LabelFor(model => model.BrojUgovorMin)
+                        <br />
+                        @Html.EditorFor(model => model.BrojUgovorMin)
+                        @Html.ValidationMessageFor(model => model.BrojUgovorMin)
+                        <br />
+                    </div>
+                    <div id="forma-grupa-desno">
+                        @Html.LabelFor(model => model.BrojUgovorMax)
+                        <br />
+                        @Html.EditorFor(model => model.BrojUgovorMax)
+                        @Html.ValidationMessageFor(model => model.BrojUgovorMax)
+                        <br />
+                        <br />
+                    </div>
+                </div>
+
+      
+                @Html.LabelFor(model => model.Printer)
+                <br />
+                @Html.DropDownList("Printer", (SelectList)ViewBag.Printer) 
+                <br />
+                <br />
+
+                <div id="forma-grupa">
+                    <div id="forma-grupa-lijevo">
+                        @Html.LabelFor(model => model.Mjesec)
+                        <br />
+                        @Html.EditorFor(model => model.Mjesec)
+                        @Html.ValidationMessageFor(model => model.Mjesec)
+                        <br />
+                    </div>
+                    <div id="forma-grupa-desno">
+                        @Html.LabelFor(model => model.Godina)
+                        <br />
+                        @Html.EditorFor(model => model.Godina)
+                        @Html.ValidationMessageFor(model => model.Godina)
+                        <br />
+                        <br />
+                    </div>
+                </div>
+
+                <div id="forma-grupa">
+                    <div id="forma-grupa-lijevo">
+                        @Html.LabelFor(model => model.PdfPage)
+                        <br />
+                        @Html.EditorFor(model => model.PdfPage)
+                        @Html.ValidationMessageFor(model => model.PdfPage)
+                        <br />
+                        <br />
+                    </div>
+                    <div id="forma-grupa-desno">
+                        @Html.LabelFor(model => model.Top)
+                        <br />
+                        @Html.EditorFor(model => model.Top)
+                        @Html.ValidationMessageFor(model => model.Top)
+                        <br />
+                        <br />
+                    </div>
+                </div>
+                <br /> 
+                <br /> 
+                @Html.LabelFor(model => model.IDHUBNamjena2013A)
+                <br />
+                @Html.DropDownList("IDHUBNamjena2013A", (SelectList)ViewBag.DanceAbilityMy, "--Odaberite--") 
+                <br />
+                <br />
+
+                <button id="hub-button" type="submit" name="HUBKreirajGrad" value="HUBKreirajGrad">
+                    Kreiranje HUB-ova</button>
+                <br />
+                <br />
+            }
+        </div>
+        <div id="poruka-hub">
+            <div id="loaderImage" style='display: none;'>
+            </div>
+            <div id="greska">
+                @Html.DisplayFor(model => model.StatusPoruka.PorukaTekst)
+                @Html.DisplayFor(model => model.StatusPoruka.StatusTekst)
+            </div>
+            <div id="poruka">
+                <br />
+                <br />
+                <label id="poruka-labela2">
+                </label>
+            </div>
+        </div>
+    </div>
+    <div id="rezultat">
+    </div>
+</div>
+<script type="text/javascript">
+
+    var interv;
+
+    function ProvjeriTempData() {
+        var ajaxTime = new Date().getTime();
+        $.ajax
+             ({
+                 url: '@Url.Action("/Provjera")',
+                 type: 'GET',
+                 success: function (data) {
+                     $("#poruka-labela2").html(data).show();
+                     if (data.indexOf("KRAJ") >= 0) {
+                         $("#poruka-labela2").html(data).show().addClass("blue").delay(3000);
+                     }
+                 }
+             }).done(function (data) {
+                 if (data.indexOf("KRAJ") >= 0)
+                  {
+                     clearInterval(interv);
+                     $("#loaderImage").hide();
+                 }
+
+             });
+
+    }
+
+    //    var interv = setInterval("ProvjeriTempData()", 2 * 15 * 1000);
+
+
+</script>
+<script type="text/javascript">
+
+    $('#hub-button').click(function () {
+        $("#loaderImage").show();
+
+    });
+
+    $('#hub-button-obroci').click(function () {
+        $("#loaderImage").show();
+
+    });
+
+    $('#hub-button-zaustavi').click(function () {
+        Zaustavi();
+    });
+
+
+</script>
+<script>
+    $(function () {
+
+        $("#Datum").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange: '2012:2030',
+            dateFormat: "dd.mm.yy"
+        });
+    });
+
+</script>
+<script>
+
+    $(document).ready(function () {
+        if ($('.Poruka').val() != '') {
+
+            var por = '@Model.Poruka';
+            $("#upload-labela").text(por).addClass("green").delay().fadeOut(4000);
+        }
+    });
+
+    $(document).ready(function () {
+        var priprema = "@Model.Poruka";
+        if (priprema == 'Priprema') {
+            interv = setInterval("ProvjeriTempData()", 2 * 15 * 1000);
+            $("#loaderImage").show();
+        }
+    });
+
+
+</script>
+<script type="text/javascript">
+    var cSpeed = 9;
+    var cWidth = 90;
+    var cHeight = 90;
+    var cTotalFrames = 20;
+    var cFrameWidth = 90;
+    var cImageSrc = '../../Content/images/sprites.gif';
+
+    var cImageTimeout = false;
+    var cIndex = 0;
+    var cXpos = 0;
+    var cPreloaderTimeout = false;
+    var SECONDS_BETWEEN_FRAMES = 0;
+
+    function startAnimation() {
+
+        document.getElementById('loaderImage').style.backgroundImage = 'url(' + cImageSrc + ')';
+        document.getElementById('loaderImage').style.width = cWidth + 'px';
+        document.getElementById('loaderImage').style.height = cHeight + 'px';
+
+        //FPS = Math.round(100/(maxSpeed+2-speed));
+        FPS = Math.round(100 / cSpeed);
+        SECONDS_BETWEEN_FRAMES = 1 / FPS;
+
+        cPreloaderTimeout = setTimeout('continueAnimation()', SECONDS_BETWEEN_FRAMES / 1000);
+
+    }
+
+    function continueAnimation() {
+
+        cXpos += cFrameWidth;
+        //increase the index so we know which frame of our animation we are currently on
+        cIndex += 1;
+
+        //if our cIndex is higher than our total number of frames, we're at the end and should restart
+        if (cIndex >= cTotalFrames) {
+            cXpos = 0;
+            cIndex = 0;
+        }
+
+        if (document.getElementById('loaderImage'))
+            document.getElementById('loaderImage').style.backgroundPosition = (-cXpos) + 'px 0';
+
+        cPreloaderTimeout = setTimeout('continueAnimation()', SECONDS_BETWEEN_FRAMES * 1000);
+    }
+
+    function stopAnimation() {//stops animation
+        clearTimeout(cPreloaderTimeout);
+        cPreloaderTimeout = false;
+    }
+
+    function imageLoader(s, fun)//Pre-loads the sprites image
+    {
+        clearTimeout(cImageTimeout);
+        cImageTimeout = 0;
+        genImage = new Image();
+        genImage.onload = function () { cImageTimeout = setTimeout(fun, 0) };
+        genImage.onerror = new Function('alert(\'Could not load the image\')');
+        genImage.src = s;
+    }
+
+    //The following code starts the animation
+    new imageLoader(cImageSrc, 'startAnimation()');
+</script>

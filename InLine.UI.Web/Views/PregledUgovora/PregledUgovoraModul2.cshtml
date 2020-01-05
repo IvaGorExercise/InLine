@@ -1,0 +1,99 @@
+﻿
+@using InLine.UI.Web.Helper
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+        
+       #okvir { width:800px; height:200px; margin-top:50px; margin-left:0px; float:left; text-align:center;  position: fixed; left: 50%; margin-left: -320px;}
+       #navcontainer a
+{
+padding: 5px 5px;
+color: #fff;
+background-color: #036;
+text-decoration: none;
+width:120px; height:50px; float:left; margin-left:5px; 
+                   -moz-border-radius-bottomright: 5px;
+                   border-bottom-right-radius: 5px;
+                   -moz-border-radius-topright: 5px;
+                   border-top-right-radius: 5px;
+                    -moz-border-radius-bottomleft: 5px;
+                   border-bottom-left-radius: 5px;
+                   -moz-border-radius-topleft: 5px;
+                   border-top-left-radius: 5px;
+                   font-weight:bolder;
+
+}
+
+#navcontainer a:hover
+{
+color: #fff;
+background-color: #69C;
+text-decoration: none;
+
+}
+
+#navcontainer ul ul li { margin: 0 0 1px 0; }
+
+#navcontainer ul ul a
+{
+
+padding: 15px 15px 15px 15px;
+color: #fff;
+background-color: #5377a7;
+text-decoration: none;
+text-align: left;
+}
+
+#navcontainer ul ul a:hover
+{
+color: #fff;
+background-color: #69C;
+text-decoration: none;
+}
+ 
+ #nav ul
+   {
+       display : inline;
+        position:absolute;
+    }
+        
+     #nav li:hover > ul
+     {
+          display : inline;
+          z-index: 1000;
+     }
+        
+     
+</style>
+
+
+<div id="okvir">
+  <div id="navcontainer">
+        <div id="navlist">
+  @Html.Partial(ViewList.PregledUgovora.ViewPregledUgovoraMenu2)
+
+  </div>
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+    $("#navShow a").first().hide();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+

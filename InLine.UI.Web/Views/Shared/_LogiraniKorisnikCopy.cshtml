@@ -1,0 +1,31 @@
+﻿@using InLine.UI.Web.Helper
+
+@{
+    string podaci = LogiraniKorisnikData.ShowLoiraniKorisnik();
+    string[] obrada = podaci.Split('-');
+    
+
+ }
+
+ <style type="text/css">
+    #logiranikorisnik { width:900px; height:15px; margin-top:0px; margin-left:10px; float:left; background-color: transparent; color:#8f9192;}
+
+  </style>
+
+<p></p>
+
+<div id="logiranikorisnik">
+
+<b>Korisnik:</b> @obrada[0] &nbsp
+
+<b>Server:</b> @obrada[1] &nbsp
+
+<b>Baza:</b> @obrada[2] &nbsp
+
+<b>Ime:</b> @obrada[4] &nbsp
+
+<b>Prezime:</b> @obrada[5] &nbsp
+
+</div>
+
+

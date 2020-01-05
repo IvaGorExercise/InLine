@@ -1,0 +1,160 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.KontniPlanAnalitikaDetaljFormFormatted
+
+ <style type="text/css">
+ #Konto{ width:100%;}
+ #Naziv { width:100%;}
+ #NazivKr { width:100%;}
+ #Kratica { width:100%;}
+ .PorukaStyle {color: red;}
+</style>
+
+
+ @{
+     string prefixLabela = "labela_KontniPlanAnalitika_Detalj_";
+ }
+ 
+
+  @{
+      string Akcija = @InLine.Model.Data.FieldString.KontniPlanAnalitika.KontniPlanAnalitikaEntity + InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert;
+      string IDForma = @InLine.Model.Data.FieldString.View.KontniPlanAnalitika.KontniPlanAnalitikaEntity + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Forma;
+      string IDZapisVrPomocSelector = "#IDZapisVrPomoc";
+      string IDZapisVrSelector = "#IDZapisVr";
+ }
+
+
+ @using (Html.BeginForm(Akcija, @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo, FormMethod.Post, new { id = IDForma, @class = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormClass }))
+ {
+  
+    @Html.HiddenFor(model => model.ID_KontniPlan)
+    @Html.HiddenFor(model => model.ID_KontniPlanAnalitika)
+    @Html.HiddenFor(model => model.IDZapisVr)
+
+    @Html.ValidationSummary(true)
+
+
+<table class ="KontniPlanStDetail @InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormBackground" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+   <tbody>
+
+       <tr>
+	    <td >@Html.LabelFor(model => model.Oznaka, new { id = @prefixLabela + @Html.NameFor(model => model.Oznaka) })</td>
+        <td colspan="3">@Html.EditorFor(model => model.Oznaka)
+           @Html.ValidationMessageFor(model => model.Oznaka) </td>				                
+    </tr>
+
+     <tr>
+	    <td >@Html.LabelFor(model => model.Naziv, new { id = @prefixLabela + @Html.NameFor(model => model.Naziv) })</td>
+        <td colspan="3">@Html.EditorFor(model => model.Naziv)
+           @Html.ValidationMessageFor(model => model.Naziv) </td>				                
+    </tr>
+
+   <tr>
+	    <td>@Html.LabelFor(model => model.NazivKr, new { id = @prefixLabela + @Html.NameFor(model => model.NazivKr) })</td>
+        <td>@Html.EditorFor(model => model.NazivKr)
+        @Html.ValidationMessageFor(model => model.NazivKr)</td>	
+        <td>@Html.LabelFor(model => model.Kratica, new { id = @prefixLabela + @Html.NameFor(model => model.Kratica) })</td>
+        <td>@Html.EditorFor(model => model.Kratica)
+        @Html.ValidationMessageFor(model => model.Kratica)</td>								                
+    </tr>
+
+     <tr>
+          <td>@Html.LabelFor(model => model.IDZapisVr, new { id = @prefixLabela + @Html.NameFor(model => model.IDZapisVr) })</td>
+        <td>@Html.DropDownList("IDZapisVrPomoc", (SelectList)ViewBag.IDZapisVr)
+        @Html.ValidationMessageFor(model => model.IDZapisVr)</td>				                
+    </tr>
+
+ 
+ 
+  </tbody>
+</table>
+     
+<div id="poruka_KontniPlanAnalitika">
+</div>
+
+ }
+   <script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/chosen.jquery.min.js")" type="text/javascript"></script>
+
+
+
+    <script type="text/javascript">
+
+        Dialozi.VaidirajHiddenPolja('@IDForma');
+
+        $(document).ready(function () {
+
+
+            if (@Model.ID_KontniPlanAnalitika == -1) {
+                 $("@IDZapisVrSelector").val("");
+            }
+
+            else {
+                var selectIDZapisVr = @Model.IDZapisVr;
+                $("@IDZapisVrPomocSelector").val(selectIDZapisVr);
+            }
+
+        });
+
+
+
+        $(function () {
+
+            $("@IDZapisVrPomocSelector").change(function () {
+                var selectIDZapisVr = $('#IDZapisVrPomoc :selected').val();
+
+               if (selectIDZapisVr != "") {
+                  $("@IDZapisVrSelector").val(selectIDZapisVr);
+            }
+
+            else {
+                   $("@IDZapisVrSelector").val("");
+            }
+
+            });
+        });
+
+
+</script>
+
+  <script type="text/javascript">
+
+      $("@IDZapisVrPomocSelector").chosen();
+
+
+      $(function () {
+          $("#labela_KontniPlanAnalitika_Detalj_Konto").text("Konto");
+          $("#labela_KontniPlanAnalitika_Detalj_Naziv").text("Naziv");
+          $("#labela_KontniPlanAnalitika_Detalj_NazivKr").text("Skraćeni naziv");
+          $("#labela_KontniPlanAnalitika_Detalj_IDZapisVr").text("Vrsta dokumenta");
+        });
+   
+    </script>
+
+
+
+ <script type="text/javascript">
+     function InsertEditSucces() {
+
+     }
+
+     function InsertEditError() {
+
+     }
+
+
+     function DeleteSucces() {
+
+     }
+
+
+     function DeleteError() {
+
+     }
+
+     function ProvjeraKodUnosa() {
+         return false;
+     }
+
+
+    </script>

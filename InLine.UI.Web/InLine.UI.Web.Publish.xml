@@ -1,0 +1,662 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="E:\RADNO\PROJEKTI\DeployGrad" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Views/MaticniPodaci/MaticniPodaci.cshtml" publishTime="05/06/2015 09:48:36" />
+    <file relUrl="Views/OtkupStanova/UgovorStanOtkupDetalj.cshtml" publishTime="09/29/2014 15:33:37" />
+    <file relUrl="Models/images/ui-flag_blue.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/1. GLAVNA KNJIGA/1.1. Konto kartica/1.1.2. Konto kartica poduzeća - analitički-saldirani.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="bin/InLine.Common.dll" publishTime="04/04/2015 19:07:29" />
+    <file relUrl="bin/System.Web.ApplicationServices.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="Scripts/jquery.jstree/themes/default/d.gif" publishTime="11/25/2013 12:46:50" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/Ispisi.cshtml" publishTime="01/19/2015 11:18:55" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/3. GRAD/3.1. Ugovori/3.1.8. Knjigovodstvena kartica.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/TreeViewTemeljnicaStKriterijPartial.cshtml" publishTime="05/07/2014 13:58:30" />
+    <file relUrl="Content/images/menu_left_250x1.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Views/ZapisSvi/Dokument.cshtml" publishTime="09/10/2014 09:26:00" />
+    <file relUrl="Content/images/title_underline_gradient_200x1.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Stimulsoft.Report.WebDesign.dll" publishTime="10/03/2013 15:26:14" />
+    <file relUrl="bin/Stimulsoft.Report.MvcMobile.dll" publishTime="10/03/2013 15:26:14" />
+    <file relUrl="bin/System.Web.WebPages.Razor.dll" publishTime="03/21/2014 10:03:30" />
+    <file relUrl="Models/themes/base/jquery.ui.datepicker.css" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Views/OtkupStanova/DokumentVrDetalj.cshtml" publishTime="02/13/2015 12:15:46" />
+    <file relUrl="Content/images/menu_left_background_250x1.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/themes/base/jquery.ui.menu.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Content/menu/images/submenu-bottom.gif" publishTime="02/01/2010 17:13:24" />
+    <file relUrl="Scripts/jquery.treeview/images/treeview-gray-line.gif" publishTime="11/21/2013 09:08:56" />
+    <file relUrl="Models/images/MenuIcons/putni_nalozi-01-01.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Scripts/jquery.jqGrid.locale-en-4.4.1.js" publishTime="05/15/2013 09:38:19" />
+    <file relUrl="Scripts/jquery.treeview/images/ajax-loader.gif" publishTime="11/21/2013 09:08:56" />
+    <file relUrl="Scripts/jquery.treeview/images/file.gif" publishTime="11/21/2013 09:08:56" />
+    <file relUrl="Content/images/MenuIcons/plan-01.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/1. GLAVNA KNJIGA/1.4. Ostali pregledi/1.4.2. Troškovi i prihodi.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="bin/InLine.Service.Admin.dll" publishTime="04/13/2015 17:01:15" />
+    <file relUrl="Content/themes/base/minified/images/ui-icons_2e83ff_256x240.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/System.Web.WebPages.Razor.xml" publishTime="03/21/2014 10:03:30" />
+    <file relUrl="bin/Newtonsoft.Json.xml" publishTime="05/15/2013 09:38:28" />
+    <file relUrl="bin/Lib.Web.Mvc.pdb" publishTime="06/06/2014 14:32:42" />
+    <file relUrl="bin/Content/Reporti/HUB2013ARaspoUgovor.mrt" publishTime="11/14/2013 09:37:19" />
+    <file relUrl="bin/System.Web.Razor.xml" publishTime="03/21/2014 10:03:30" />
+    <file relUrl="Models/themes/base/jquery.ui.base.css" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/Content/images/menu_left_250x1.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/MvcSiteMapProvider.dll" publishTime="03/21/2014 10:03:31" />
+    <file relUrl="Content/menu/images/left.png" publishTime="02/01/2010 17:13:24" />
+    <file relUrl="Scripts/jquery.jstree/themes/default/d.png" publishTime="11/25/2013 12:46:50" />
+    <file relUrl="bin/System.Web.Helpers.dll" publishTime="03/21/2014 10:03:30" />
+    <file relUrl="Views/Izvodi/UploadDatoteka.cshtml" publishTime="10/31/2014 08:55:35" />
+    <file relUrl="Scripts/dPassword.js" publishTime="06/26/2014 13:26:10" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/3. GRAD/3.1. Ugovori/3.1.9. Ugovori detaljno.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="Scripts/jquery.treeview/jquery.treeview.sortable.js" publishTime="11/21/2013 09:09:16" />
+    <file relUrl="Views/PregledUgovora/StatusPoruka.cshtml" publishTime="10/10/2013 10:09:19" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/Kriterij.cshtml" publishTime="04/20/2015 15:10:24" />
+    <file relUrl="Models/images/MenuIcons/place-01.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/Content/themes/base/jquery.ui.tooltip.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.1. Po partnerima/2.1.6. Kartica poslovnog partnera - po godinama.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Views/Izvodi/Datoteka.cshtml" publishTime="07/21/2014 11:51:25" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.3. Po dospijeću/2.3.4. Dokumenti po partneru sa saldom.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Content/themes/base/jquery.ui.tabs.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Scripts/jquery.treeview/images/treeview-default-line.gif" publishTime="11/21/2013 09:08:56" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.1. Po partnerima/2.1.2. Sintetika.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Models/themes/base/minified/images/ui-icons_2e83ff_256x240.png" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="Content/themes/base/minified/images/ui-icons_cd0a0a_256x240.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/jqGrid/ellipsis-xbl.xml" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Views/HUB2013A/Greska.cshtml" publishTime="02/21/2014 14:08:36" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/IspisiPartial.cshtml" publishTime="11/24/2014 14:58:56" />
+    <file relUrl="Content/jquery.multiselect.css" publishTime="04/14/2014 14:51:03" />
+    <file relUrl="Models/themes/base/jquery.ui.core.css" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Views/ZapisSvi/ZapisUgovorStanOtkupAneks.cshtml" publishTime="11/10/2014 11:57:09" />
+    <file relUrl="Models/themes/base/images/ui-icons_cd0a0a_256x240.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/images/red_message.gif" publishTime="05/20/2013 16:04:11" />
+    <file relUrl="Models/themes/base/jquery.ui.button.css" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/1. GLAVNA KNJIGA/1.1. Konto kartica/1.1.1. Konto kartica poduzeća - analitički.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="bin/InLine.Model.Admin.dll" publishTime="04/04/2015 19:10:52" />
+    <file relUrl="Views/PregledUgovora/UgovorDetail.cshtml" publishTime="02/10/2015 12:19:34" />
+    <file relUrl="Content/themes/base/minified/images/ui-bg_flat_0_aaaaaa_40x100.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Views/PregledUgovora/ObrokUplataDetail.cshtml" publishTime="01/08/2014 08:59:43" />
+    <file relUrl="bin/Content/themes/base/jquery.ui.spinner.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/TemeljnicaVrDetalj.cshtml" publishTime="02/13/2015 12:16:13" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/TreeViewTemeljnicaStKriterij.cshtml" publishTime="05/07/2014 14:05:22" />
+    <file relUrl="bin/Microsoft.CSharp.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/3. GRAD/3.1. Ugovori/3.1.7. Utuženi ugovori.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.progressbar.min.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/images/ModulIcons/Izvodi.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/Content/images/MenuIcons/place-01.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Views/PregledUgovora/PregledUgovoraModul2.cshtml" publishTime="01/13/2015 14:42:08" />
+    <file relUrl="Content/images/ModulIcons/Otkup.png" publishTime="05/28/2014 16:41:50" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/3. GRAD/3.2. Ostali ispisi/3.2.1. Neplaćeni dospjeli dug.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="Content/themes/base/jquery.ui.autocomplete.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/System.Web.Mvc.xml" publishTime="03/21/2014 10:03:30" />
+    <file relUrl="Models/themes/base/images/ui-icons_454545_256x240.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.1. Po partnerima/2.1.5. Kartica poslovnog partnera.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Views/MaticniPodaci/Tecaj.cshtml" publishTime="04/15/2015 08:37:46" />
+    <file relUrl="Content/chosen-sprite.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/images/MenuIcons/sitni_inventar-01.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Views/Izvodi/Izvod2012AStOtkupDetalj.cshtml" publishTime="10/28/2014 15:56:10" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/3. GRAD/3.2. Ostali ispisi/3.2.1. Neplaćeni dospjeli dug.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="Content/menu/images/subsubmenu-top.gif" publishTime="02/01/2010 17:13:24" />
+    <file relUrl="bin/Content/images/ModulIcons/Otkup.png" publishTime="05/28/2014 16:41:50" />
+    <file relUrl="Content/images/ModulIcons/Izvodi.png" publishTime="05/28/2014 16:49:13" />
+    <file relUrl="Content/jquery-ui.multiselect.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/themes/base/jquery.ui.all.css" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/images/MenuIcons/place-01.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/themes/base/jquery.ui.slider.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/System.Web.Abstractions.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/1. GLAVNA KNJIGA/1.2. Dnevnik knjiženja/1.2.2. Dnevnik knjiženja - analitika.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="bin/Content/images/side_shadow_1x30.png" publishTime="05/14/2014 12:35:46" />
+    <file relUrl="Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Scripts/jquery.multiselect.js" publishTime="04/14/2014 14:51:03" />
+    <file relUrl="Scripts/jquery-ui-1.9.0.min.js" publishTime="05/15/2013 09:38:19" />
+    <file relUrl="Mvc__.sitemap" publishTime="04/20/2015 14:23:09" />
+    <file relUrl="bin/System.Web.WebPages.dll" publishTime="03/21/2014 10:03:31" />
+    <file relUrl="Models/images/header_blue_flip_1x40.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/themes/base/minified/images/ui-icons_888888_256x240.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/3. GRAD/3.1. Ugovori/3.1.2. Ugovori s preplatom.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="bin/WebActivatorEx.dll" publishTime="03/21/2014 10:03:31" />
+    <file relUrl="Content/themes/base/jquery.ui.spinner.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/images/MenuIcons/financijsko_knjkigovodstvo02-01.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/images/ModulIcons/HUB.png" publishTime="05/28/2014 16:49:23" />
+    <file relUrl="Scripts/jquery.treeview/images/treeview-black.gif" publishTime="11/21/2013 09:08:56" />
+    <file relUrl="bin/InLine.Service.Admin.pdb" publishTime="04/13/2015 17:01:15" />
+    <file relUrl="Views/PregledUgovora/Nositelj.cshtml" publishTime="01/29/2015 15:55:17" />
+    <file relUrl="bin/System.Net.Http.dll" publishTime="05/15/2013 09:38:28" />
+    <file relUrl="Content/images/blue_message.gif" publishTime="05/20/2013 16:04:11" />
+    <file relUrl="Views/Home/LogOnParcijalni.cshtml" publishTime="06/26/2014 13:26:22" />
+    <file relUrl="Content/jqGrid/jquery-ui-jqgrid.css" publishTime="07/16/2014 09:01:48" />
+    <file relUrl="bin/System.Net.Http.WebRequest.dll" publishTime="05/15/2013 09:38:28" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.1. Po partnerima/2.1.3. Sintetika - početno stanje.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Views/Izvodi/IzvodiPregled.cshtml" publishTime="04/20/2015 14:30:15" />
+    <file relUrl="Content/themes/base/jquery.ui.dialog.css" publishTime="12/20/2013 14:00:14" />
+    <file relUrl="Content/images/menu_left_background_sivi_250x1.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Views/PregledUgovora/OpomenaDetailTest___.cshtml" publishTime="09/18/2013 13:14:56" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/KontniPlan.cshtml" publishTime="04/20/2015 15:12:52" />
+    <file relUrl="Models/design/Fortius_logo_left_sidebar-01.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Scripts/jquery.easing.1.3.js" publishTime="06/17/2013 09:43:15" />
+    <file relUrl="Models/images/title_underline_gradient_200x1.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/Content/images/chosen-sprite.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Scripts/jquery-1.8.2-vsdoc.js" publishTime="05/15/2013 09:38:18" />
+    <file relUrl="Views/SubjektSvi/SubjektSviMenu.cshtml" publishTime="02/17/2015 12:52:12" />
+    <file relUrl="Content/images/ModulIcons/Maticni.png" publishTime="05/28/2014 16:47:22" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.tooltip.min.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/InLine.Model.Data.pdb" publishTime="04/13/2015 17:00:54" />
+    <file relUrl="Content/images/MenuIcons/home-01.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/themes/base/images/SpremiDodaj.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/FileHelpers.DataLink.xml" publishTime="05/15/2013 09:38:27" />
+    <file relUrl="Content/chosen.css" publishTime="11/10/2014 10:41:33" />
+    <file relUrl="bin/InLine.Common.pdb" publishTime="04/04/2015 19:07:29" />
+    <file relUrl="Models/images/ModulIcons/Maticni.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/ListaDatoteka.cshtml" publishTime="05/15/2014 13:55:02" />
+    <file relUrl="Views/OtkupStanova/Ugovori.cshtml" publishTime="04/08/2015 09:07:18" />
+    <file relUrl="bin/Content/chosen-sprite.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Content/themes/base/minified/images/ui-bg_glass_75_dadada_1x400.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Content/images/ModulIcons/financijsko_knjkigovodstvo02-01.png" publishTime="05/28/2014 16:43:29" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/KontniPlanStDetalj.cshtml" publishTime="04/20/2015 15:53:09" />
+    <file relUrl="bin/Lib.Web.Mvc.dll" publishTime="06/06/2014 14:32:42" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/3. GRAD/3.1. Ugovori/3.1.9. Ugovori detaljno.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.datepicker.min.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Images/Chevron.gif" publishTime="05/24/2013 11:27:28" />
+    <file relUrl="Models/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Scripts/jquery.validate.unobtrusive.min.js" publishTime="11/06/2013 16:11:40" />
+    <file relUrl="bin/FileHelpers.xml" publishTime="05/15/2013 09:38:27" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.3. Po dospijeću/2.3.1. Dokumenti po dospijeću.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="bin/Content/themes/base/jquery.ui.base.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Scripts/jquery.treeview/images/treeview-gray.gif" publishTime="11/21/2013 09:08:56" />
+    <file relUrl="bin/Content/themes/base/jquery.ui.theme.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/images/header_blue_1x40.png" publishTime="05/12/2014 11:08:38" />
+    <file relUrl="Models/images/menu_background_blue_1x1013.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/design/LogoPlaviWebHeder.png" publishTime="05/22/2013 13:28:24" />
+    <file relUrl="Models/images/ModulIcons/Otkup.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Models/images/MenuIcons/putni_nalozi-01.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Models/themes/base/minified/jquery.ui.menu.min.css" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="bin/Stimulsoft.Base.dll" publishTime="10/02/2013 17:25:54" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.spinner.min.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Content/themes/base/images/ui-icons_cd0a0a_256x240.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/themes/base/jquery-ui.css" publishTime="04/28/2015 09:44:49" />
+    <file relUrl="Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png" publishTime="05/23/2014 10:19:24" />
+    <file relUrl="Models/themes/base/minified/images/ui-bg_glass_55_fbf9ee_1x400.png" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="bin/Content/images/submenu_350x1.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Content/images/menu_background_blue_1x1013.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/themes/base/minified/jquery-ui.min.css" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="bin/Stimulsoft.Report.Web.dll" publishTime="10/02/2013 17:20:40" />
+    <file relUrl="Content/images/MenuIcons/putni_nalozi-01.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Content/themes/base/minified/images/ui-bg_highlight-soft_75_cccccc_1x100.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/design/LogoPlaviWebHeder.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/3. GRAD/3.2. Ostali ispisi/3.2.3. Lista naloga.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="bin/Content/design/LogoMagentaWebHeder.png" publishTime="05/22/2013 13:30:57" />
+    <file relUrl="Models/themes/base/jquery.ui.dialog.css" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/Content/Reporti/HUB2013ATest.mrt" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/InLine.UI.Web.pdb" publishTime="05/14/2015 12:06:13" />
+    <file relUrl="bin/Content/Reporti/HUB2013ARaspoUgovorUZORAK.mrt" publishTime="10/23/2013 13:37:08" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.3. Po dospijeću/2.3.2. Dokumenti po dospijeću sa saldom.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Views/HUB2013A/Random.cshtml" publishTime="02/21/2014 14:09:03" />
+    <file relUrl="Models/themes/base/minified/jquery.ui.resizable.min.css" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.button.min.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/images/MenuIcons/financijsko_knjkigovodstvo02-01.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Scripts/CustomScripts/Test.js" publishTime="01/23/2014 08:45:21" />
+    <file relUrl="Scripts/jquery-1.8.2.js" publishTime="05/15/2013 09:38:18" />
+    <file relUrl="bin/System.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/1. GLAVNA KNJIGA/1.2. Dnevnik knjiženja/1.2.1. Popis temeljnica.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Views/Shared/Error.cshtml" publishTime="05/15/2013 09:38:22" />
+    <file relUrl="Models/images/MenuIcons/maticni_podaci-01.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.autocomplete.min.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/InLine.Model.Admin.pdb" publishTime="04/04/2015 19:10:52" />
+    <file relUrl="Views/PregledUgovora/OpomenaDetailSpremi___.cshtml" publishTime="09/18/2013 12:20:35" />
+    <file relUrl="Content/themes/base/images/ui-icons_454545_256x240.png" publishTime="09/09/2014 11:02:56" />
+    <file relUrl="Views/OtkupStanova/Obrada.cshtml" publishTime="11/03/2014 11:53:03" />
+    <file relUrl="Scripts/jquery.treeview/images/treeview-famfamfam-line.gif" publishTime="11/21/2013 09:08:56" />
+    <file relUrl="Models/images/ui-flag_red.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/design/LogoMagentaWebHeder.png" publishTime="05/22/2013 13:30:57" />
+    <file relUrl="Views/PregledUgovora/TrosakDetail.cshtml" publishTime="01/08/2014 09:00:33" />
+    <file relUrl="Scripts/datepicker.min.js" publishTime="05/15/2013 09:38:18" />
+    <file relUrl="Views/OtkupStanova/UgovorStanOtkupKupacDetalj.cshtml" publishTime="04/07/2015 13:50:22" />
+    <file relUrl="Models/images/MenuIcons/izvodi-01.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png" publishTime="05/14/2014 12:40:47" />
+    <file relUrl="bin/System.Web.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="Content/themes/base/minified/images/ui-bg_glass_65_ffffff_1x400.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.5. Ostali pregledi/2.5.1. Sintetika po vrsti temeljnice i analitikama.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Content/themes/base/minified/images/ui-bg_glass_95_fef1ec_1x400.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Scripts/jquery.treeview/images/treeview-black-line.gif" publishTime="11/21/2013 09:08:56" />
+    <file relUrl="Scripts/jquery.treeview/images/plus.gif" publishTime="11/21/2013 09:08:56" />
+    <file relUrl="bin/System.ComponentModel.DataAnnotations.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/1. GLAVNA KNJIGA/1.1. Konto kartica/1.1.3. Konto kartica poduzeća - sintetički.mrt" publishTime="09/11/2014 10:56:41" />
+    <file relUrl="Content/themes/base/jquery.ui.slider.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.2. Po dokumentima/2.2.2. Sintetika po partnerima.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Views/OtkupStanova/StanDetalj.cshtml" publishTime="10/20/2014 12:32:38" />
+    <file relUrl="Models/themes/base/jquery.ui.accordion.css" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Views/Shared/Select.cshtml" publishTime="10/29/2013 12:54:20" />
+    <file relUrl="Global.asax" publishTime="05/15/2013 09:38:18" />
+    <file relUrl="Models/images/delete.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Views/PregledUgovora/ObrokDetail.cshtml" publishTime="01/08/2014 08:58:11" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/TemeljnicaStDetalj.cshtml" publishTime="04/08/2015 15:10:46" />
+    <file relUrl="Views/Administracija/AdministrativniPodaci.cshtml" publishTime="05/14/2014 13:37:16" />
+    <file relUrl="Scripts/jquery-ui-1.9.0.js" publishTime="05/15/2013 09:38:18" />
+    <file relUrl="Scripts/jquery.treeview/images/minus.gif" publishTime="11/21/2013 09:08:56" />
+    <file relUrl="Models/images/MenuIcons/sitni_inventar-01.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="packages.config" publishTime="07/25/2014 11:44:32" />
+    <file relUrl="bin/Content/design/ajax-loader.gif" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Content/themes/base/jquery.ui.accordion.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Microsoft.Web.Infrastructure.dll" publishTime="05/15/2013 09:38:28" />
+    <file relUrl="Views/Web.config" publishTime="03/21/2014 10:03:27" />
+    <file relUrl="Models/images/menu_hover_1x40.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Models/themes/base/minified/images/ui-icons_cd0a0a_256x240.png" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="bin/Content/Reporti/HUB2013A.mrt" publishTime="07/11/2013 09:19:18" />
+    <file relUrl="Content/themes/base/minified/images/ui-bg_glass_75_e6e6e6_1x400.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/System.Data.Entity.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/KriterijStDetalj.cshtml" publishTime="01/08/2014 08:55:56" />
+    <file relUrl="bin/Content/images/datebutton.gif" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/images/fortius_logo_sareni_30.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Views/PregledUgovora/Select.cshtml" publishTime="09/06/2013 12:47:32" />
+    <file relUrl="Scripts/jquery.treeview/images/file.png" publishTime="11/21/2013 09:08:56" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.5. Ostali pregledi/2.5.1. Sintetika po vrsti temeljnice i analitikama.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Content/menu/images/left.gif" publishTime="02/01/2010 17:13:24" />
+    <file relUrl="Views/PregledUgovora/OpomenaDetail___.cshtml" publishTime="09/18/2013 12:39:58" />
+    <file relUrl="Scripts/jquery.treeview/images/treeview-default.gif" publishTime="11/21/2013 09:08:56" />
+    <file relUrl="Views/Shared/_StatusPoruka.cshtml" publishTime="10/10/2013 10:05:47" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/KriterijStKriterijStKriterijStDetalj.cshtml" publishTime="02/13/2015 12:23:33" />
+    <file relUrl="bin/System.Transactions.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/3. GRAD/3.1. Ugovori/3.1.3. Ispis ugovora.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="Models/themes/base/jquery-ui.css" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Views/Shared/_LayoutFinancijsko.cshtml" publishTime="01/19/2015 13:03:28" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/3. GRAD/3.1. Ugovori/3.1.1. Kartica ugovora.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="bin/Content/themes/base/jquery.ui.menubar.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Models/images/info.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/menu/menu.css" publishTime="05/29/2014 10:56:51" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.menu.min.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/3. GRAD/3.2. Ostali ispisi/3.2.5. Knjigovodstvena kartica ovrhe.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="bin/InLine.Service.Data.pdb" publishTime="04/13/2015 17:01:14" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/KriterijDetalj.cshtml" publishTime="03/01/2015 14:10:39" />
+    <file relUrl="bin/Content/themes/base/jquery.ui.dialog.css" publishTime="12/20/2013 14:00:14" />
+    <file relUrl="Views/PregledUgovora/NalogDetail.cshtml" publishTime="01/08/2014 08:57:31" />
+    <file relUrl="Views/HUB2013A/HUBKreirajGradTEST.cshtml" publishTime="09/01/2014 08:50:06" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/3. GRAD/3.1. Ugovori/3.1.4. Ugovori.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="Models/themes/base/jquery.ui.menu.css" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/InLine.Repository.Admin.dll" publishTime="04/13/2015 17:00:57" />
+    <file relUrl="Scripts/jquery.treeview/images/folder.gif" publishTime="11/21/2013 09:08:56" />
+    <file relUrl="bin/System.Web.DynamicData.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="Views/MaticniPodaci/TecajListaDetalj.cshtml" publishTime="04/01/2015 10:44:54" />
+    <file relUrl="bin/InLine.Repository.Data.dll" publishTime="04/13/2015 17:01:07" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/3. GRAD/3.2. Ostali ispisi/3.2.4. Opomene.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="bin/Content/images/MenuIcons/putni_nalozi-01.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/3. GRAD/3.1. Ugovori/3.1.5. Kupci po dokumentu.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="Models/themes/base/images/ui-bg_flat_75_ffffff_40x100.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/Newtonsoft.Json.dll" publishTime="05/15/2013 09:38:28" />
+    <file relUrl="Images/ChevronOverlay.png" publishTime="05/24/2013 11:27:28" />
+    <file relUrl="Models/themes/base/images/ui-bg_glass_65_ffffff_1x400.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/System.Configuration.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="bin/System.Web.WebPages.xml" publishTime="03/21/2014 10:03:31" />
+    <file relUrl="Scripts/jquery-1.8.2.min.js" publishTime="05/15/2013 09:38:18" />
+    <file relUrl="Content/images/side_shadow_1x30.png" publishTime="05/14/2014 12:35:46" />
+    <file relUrl="Content/images/green_message.gif" publishTime="05/20/2013 16:04:11" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/TreeViewKontniPlanKriterijPartial.cshtml" publishTime="04/22/2014 09:13:00" />
+    <file relUrl="Views/OtkupStanova/Dokumenti.cshtml" publishTime="01/19/2015 11:12:43" />
+    <file relUrl="bin/Content/themes/base/jquery.ui.selectable.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Content/themes/base/minified/images/ui-icons_222222_256x240.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/themes/base/minified/jquery.ui.spinner.min.css" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="Scripts/CustomScripts/DialogsAndCrud.js" publishTime="04/15/2015 15:02:11" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.slider.min.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/themes/base/jquery.ui.tooltip.css" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="Models/themes/base/minified/images/ui-bg_highlight-soft_75_cccccc_1x100.png" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="Scripts/jquery.treeview/images/treeview-famfamfam.gif" publishTime="11/21/2013 09:08:56" />
+    <file relUrl="bin/Content/images/ModulIcons/Maticni.png" publishTime="05/28/2014 16:47:22" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/3. GRAD/3.1. Ugovori/3.1.6. Dokumenti po kupcu.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="Views/OtkupStanova/Opomene.cshtml" publishTime="04/28/2015 12:20:54" />
+    <file relUrl="bin/System.Web.WebPages.Deployment.dll" publishTime="03/21/2014 10:03:30" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.1. Po partnerima/2.1.2. Sintetika.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/1. GLAVNA KNJIGA/1.3. Konto (Račun)/1.3.3. Zaključni list.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Content/menu/images/right.gif" publishTime="02/01/2010 17:13:24" />
+    <file relUrl="Models/images/MenuIcons/home-01.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/3. GRAD/3.1. Ugovori/3.1.8. Knjigovodstvena kartica.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="Views/Pocetna/IndexPartialGrad.cshtml" publishTime="01/19/2015 09:55:31" />
+    <file relUrl="Scripts/jquery.treeview/images/folder.png" publishTime="11/21/2013 09:08:56" />
+    <file relUrl="bin/EntityFramework.xml" publishTime="04/01/2011 23:26:06" />
+    <file relUrl="Content/menu/images/GlavniMenuPozadina.png" publishTime="01/13/2015 12:49:20" />
+    <file relUrl="Models/themes/base/minified/jquery.ui.slider.min.css" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="bin/System.EnterpriseServices.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="Models/design/LogoMagentaWebHeder.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/FileHelpers.dll" publishTime="05/15/2013 09:38:27" />
+    <file relUrl="Models/images/green_message.gif" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Views/Shared/_LogiraniKorisnikCopy.cshtml" publishTime="12/18/2013 10:38:42" />
+    <file relUrl="Views/OtkupStanova/UgovorStanOtkupMoratorijMjesecDetalj.cshtml" publishTime="04/20/2015 15:54:49" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/1. GLAVNA KNJIGA/1.1. Konto kartica/1.1.1. Konto kartica poduzeća - analitički.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="bin/Content/images/ModulIcons/financijsko_knjkigovodstvo02-01.png" publishTime="05/28/2014 16:43:29" />
+    <file relUrl="bin/EntityFramework.dll" publishTime="04/06/2011 11:33:38" />
+    <file relUrl="bin/Content/themes/base/jquery.ui.all.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Content/themes/base/images/Uredi.png" publishTime="11/18/2014 11:34:30" />
+    <file relUrl="Views/Izvodi/Izvod2012ADetalj.cshtml" publishTime="09/09/2014 11:18:47" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/3. GRAD/3.1. Ugovori/3.1.5. Kupci po dokumentu.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="Views/OtkupStanova/OpomenaDetalj.cshtml" publishTime="05/13/2015 14:10:13" />
+    <file relUrl="Models/themes/base/jquery.ui.autocomplete.css" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Models/images/ModulIcons/Kamate.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/System.Net.Http.WebRequest.xml" publishTime="05/15/2013 09:38:28" />
+    <file relUrl="Models/images/MenuIcons/evidencija_rada-01.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/Content/images/fortius_logo_sareni_30.png" publishTime="05/22/2013 13:27:36" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.2. Po dokumentima/2.2.2. Sintetika po partnerima.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Content/themes/base/jquery.ui.all.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/themes/base/images/Zatvori.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Scripts/jquery.treeview/jquery.treeview.js" publishTime="11/21/2013 09:09:16" />
+    <file relUrl="Content/menu/images/submenu-pointer.png" publishTime="02/01/2010 17:13:24" />
+    <file relUrl="Views/Shared/_Layout.cshtml" publishTime="01/19/2015 13:03:22" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.3. Po dospijeću/2.3.2. Dokumenti po dospijeću sa saldom.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Content/menu/images/submenu-pointer-hover.gif" publishTime="02/01/2010 17:13:24" />
+    <file relUrl="Content/First.css" publishTime="12/20/2013 12:51:07" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.resizable.min.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/System.Data.DataSetExtensions.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/3. GRAD/3.1. Ugovori/3.1.6. Dokumenti po kupcu.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="bin/Content/images/ModulIcons/Kamate.png" publishTime="05/28/2014 16:48:45" />
+    <file relUrl="Views/OtkupStanova/UgovorStanOtkupMoratorijDetalj.cshtml" publishTime="04/20/2015 15:54:44" />
+    <file relUrl="Content/design/Fortius_logo_left_sidebar-01.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Scripts/jquery.treeview/images/treeview-red.gif" publishTime="11/21/2013 09:08:56" />
+    <file relUrl="Content/themes/base/jquery.ui.menu.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/System.Xml.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="Content/jqGrid/ellipsis-xbl.xml" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Scripts/jquery.treeview/jquery.treeview.css" publishTime="11/21/2013 09:09:16" />
+    <file relUrl="Content/images/ui-flag_blue.png" publishTime="12/05/2013 13:12:30" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/1. GLAVNA KNJIGA/1.4. Ostali pregledi/1.4.2. Troškovi i prihodi.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Images/groovepaper.png" publishTime="05/15/2014 15:16:53" />
+    <file relUrl="Models/themes/base/images/Spremi.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Models/themes/base/minified/images/ui-bg_flat_75_ffffff_40x100.png" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="Content/images/ui-flag_red.png" publishTime="12/05/2013 13:12:30" />
+    <file relUrl="Content/images/fortius_logo_sareni_30.png" publishTime="05/22/2013 13:27:36" />
+    <file relUrl="Content/Reporti/HUB2013ATest.mrt" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/1. GLAVNA KNJIGA/1.3. Konto (Račun)/1.3.1. Bilanca.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Models/themes/base/images/ui-icons_222222_256x240.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/3. GRAD/3.2. Ostali ispisi/3.2.6. Preplate.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="Models/themes/base/minified/images/ui-icons_222222_256x240.png" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="Content/images/header_blue_1x40.png" publishTime="05/12/2014 11:08:38" />
+    <file relUrl="Scripts/jquery.jqGrid-4.4.1.js" publishTime="05/15/2013 09:38:19" />
+    <file relUrl="bin/Content/themes/base/jquery.ui.accordion.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/InLine.Repository.Data.pdb" publishTime="04/13/2015 17:01:07" />
+    <file relUrl="bin/System.Web.Mvc.dll" publishTime="03/21/2014 10:03:30" />
+    <file relUrl="Models/jqGrid/jquery-ui-jqgrid.css" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/themes/base/images/Spremi.png" publishTime="06/27/2014 11:33:04" />
+    <file relUrl="Models/themes/base/minified/jquery.ui.core.min.css" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="Content/Reporti/HUB2013A.mrt" publishTime="07/11/2013 09:19:18" />
+    <file relUrl="bin/Stimulsoft.Report.dll" publishTime="10/02/2013 17:20:40" />
+    <file relUrl="Content/images/ModulIcons/HUB.png" publishTime="05/28/2014 16:49:23" />
+    <file relUrl="bin/Content/images/MenuIcons/putni_nalozi-01-01.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/themes/base/images/SpremiKopiraj.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Models/images/sprites.gif" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.1. Po partnerima/2.1.7. Najveća dugovanja i potraživanja.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Models/jqGrid/ellipsis-xbl.xml" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/System.Xml.Linq.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/3. GRAD/3.2. Ostali ispisi/3.2.5. Knjigovodstvena kartica ovrhe.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/3. GRAD/3.1. Ugovori/3.1.4. Ugovori.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="Content/menu/images/submenu-bottom.png" publishTime="05/14/2014 09:19:38" />
+    <file relUrl="Models/design/LogoMagentaiWebLogin.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/FileHelpers.DataLink.dll" publishTime="05/15/2013 09:38:27" />
+    <file relUrl="bin/FileHelpers.ExcelStorage.dll" publishTime="05/15/2013 09:38:27" />
+    <file relUrl="Models/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Views/Administracija/PoslovniSubjekt.cshtml" publishTime="04/07/2014 15:49:13" />
+    <file relUrl="bin/System.Web.Routing.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="Content/themes/base/jquery-ui.css" publishTime="04/28/2015 09:44:49" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.3. Po dospijeću/2.3.4. Dokumenti po partneru sa saldom.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Views/SubjektSvi/Subjekt.cshtml" publishTime="11/18/2014 11:51:06" />
+    <file relUrl="Views/MaticniPodaci/PoslovnaGodinaDetalj.cshtml" publishTime="03/19/2014 09:55:54" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/1. GLAVNA KNJIGA/1.1. Konto kartica/1.1.2. Konto kartica poduzeća - analitički-saldirani.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Content/themes/base/images/SpremiDodaj.png" publishTime="06/27/2014 11:34:02" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.selectable.min.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/images/MenuIcons/plan-01.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Models/images/blue_message.gif" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/menu/images/selected.png" publishTime="02/01/2010 17:13:24" />
+    <file relUrl="Scripts/jquery.jstree/jquery.jstree.js" publishTime="11/25/2013 12:47:55" />
+    <file relUrl="Content/themes/base/images/Obrisi.png" publishTime="06/27/2014 11:32:48" />
+    <file relUrl="Content/themes/base/jquery.ui.button.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/themes/base/jquery.ui.menubar.css" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Models/design/ajax-loader.gif" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/menu/menu_style.css" publishTime="01/19/2015 10:37:00" />
+    <file relUrl="Models/themes/base/jquery.ui.theme.css" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Models/themes/base/images/ui-icons_888888_256x240.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Scripts/jquery.treeview/jquery.treeview.async.js" publishTime="11/21/2013 09:09:16" />
+    <file relUrl="Content/themes/base/images/Zatvori.png" publishTime="06/27/2014 09:46:04" />
+    <file relUrl="Content/images/submenu_350x1.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/images/ModulIcons/Izvodi.png" publishTime="05/28/2014 16:49:13" />
+    <file relUrl="Views/HUB2013A/HUBKreirajGrad.cshtml" publishTime="09/22/2014 09:55:16" />
+    <file relUrl="bin/Images/groovepaper.png" publishTime="05/15/2014 15:16:53" />
+    <file relUrl="Content/images/MenuIcons/maticni_podaci-01.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/themes/base/minified/images/ui-bg_glass_75_dadada_1x400.png" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="bin/Content/design/LogoPlaviWebLogin.png" publishTime="05/22/2013 14:25:27" />
+    <file relUrl="Content/images/MenuIcons/financijsko_knjkigovodstvo02-01.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/images/header_blue_1x40.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png" publishTime="05/14/2014 12:33:52" />
+    <file relUrl="Views/PregledUgovora/PregledUgovora.cshtml" publishTime="01/22/2015 10:33:17" />
+    <file relUrl="Models/themes/base/minified/jquery.ui.tooltip.min.css" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="Models/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Models/themes/base/jquery.ui.spinner.css" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Models/themes/base/minified/jquery.ui.progressbar.min.css" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="Content/images/fortius_logo_sareni_30 copy.png" publishTime="05/22/2013 13:26:32" />
+    <file relUrl="Scripts/jquery.treeview/images/treeview-red-line.gif" publishTime="11/21/2013 09:08:56" />
+    <file relUrl="bin/Content/themes/base/jquery.ui.resizable.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/First.css" publishTime="12/20/2013 12:51:07" />
+    <file relUrl="Content/images/menu_left_background_dark_250x1.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Content/images/sprites_horizontal.GIF" publishTime="09/01/2014 09:25:26" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.dialog.min.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/3. GRAD/3.2. Ostali ispisi/3.2.2. Nalog.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="bin/InLine.Model.Data.dll" publishTime="04/13/2015 17:00:54" />
+    <file relUrl="bin/Content/images/menu_left_background_250x1.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Scripts/jquery.jqGrid.addons-4.4.1.js" publishTime="05/15/2013 09:38:19" />
+    <file relUrl="Content/Site.css" publishTime="11/21/2014 11:54:16" />
+    <file relUrl="Content/images/MenuIcons/sitni_inventar-01.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/images/menu_hover_1x40.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Scripts/jquery.jBreadCrumb.1.1.js" publishTime="06/17/2013 09:43:15" />
+    <file relUrl="bin/Content/jqGrid/jquery-ui-jqgrid.css" publishTime="07/16/2014 09:01:48" />
+    <file relUrl="Views/PregledUgovora/PregledUgovoraModul.cshtml" publishTime="01/19/2015 11:25:04" />
+    <file relUrl="Content/themes/base/jquery.ui.selectable.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/themes/base/jquery.ui.autocomplete.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/System.Web.Services.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="Views/MaticniPodaci/IzborTecaj.cshtml" publishTime="04/23/2015 13:07:01" />
+    <file relUrl="Content/images/menu_hover_1x40.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Content/menu/images/subsubmenu-top.png" publishTime="02/01/2010 17:13:24" />
+    <file relUrl="Models/images/datebutton.gif" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Scripts/DecimalValidator.js" publishTime="11/10/2013 16:47:53" />
+    <file relUrl="Scripts/jquery.jqGrid-4.4.1.min.js" publishTime="05/15/2013 09:38:19" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/IspisReport.cshtml" publishTime="07/17/2014 15:42:33" />
+    <file relUrl="bin/System.Data.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="Models/themes/base/jquery.ui.tabs.css" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/themes/base/jquery.ui.progressbar.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Content/images/delete.png" publishTime="05/22/2013 13:53:40" />
+    <file relUrl="bin/Content/images/menu_background_blue_1x1013.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/InLine.Repository.Admin.pdb" publishTime="04/13/2015 17:00:57" />
+    <file relUrl="Content/Reporti/HUB2013ARaspoUgovor.mrt" publishTime="11/14/2013 09:37:19" />
+    <file relUrl="bin/Content/design/LogoPlaviWebHeder.png" publishTime="05/22/2013 13:28:24" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.2. Po dokumentima/2.2.1. Analitika po partnerima.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Views/OtkupStanova/UgovorStanOtkupUnos.cshtml" publishTime="04/20/2015 13:59:30" />
+    <file relUrl="Models/images/side_shadow_1x30.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/design/LogoMagentaiWebLogin.png" publishTime="05/22/2013 13:31:53" />
+    <file relUrl="bin/Content/images/MenuIcons/home-01.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Views/Shared/_LogiraniKorisnik.cshtml" publishTime="05/15/2014 10:16:34" />
+    <file relUrl="bin/Content/images/fortius_logo_bijeli_30.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/images/MenuIcons/plan-01.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/1. GLAVNA KNJIGA/1.4. Ostali pregledi/1.4.1. Ispis temeljnica.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Models/images/red_message.gif" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Scripts/jquery.validate.unobtrusive.js" publishTime="11/06/2013 16:11:40" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/TreeViewKontniPlanKriterij.cshtml" publishTime="04/22/2014 09:15:38" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.3. Po dospijeću/2.3.3. Dokumenti po partneru.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.1. Po partnerima/2.1.5. Kartica poslovnog partnera.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Models/themes/base/images/ui-icons_2e83ff_256x240.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/Content/design/Fortius_logo_left_sidebar-01.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/themes/base/minified/jquery.ui.accordion.min.css" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="Views/PregledUgovora/ObrokPreplataDetail.cshtml" publishTime="01/08/2014 08:58:43" />
+    <file relUrl="Content/images/header_blue_flip_1x40.png" publishTime="05/12/2014 11:31:35" />
+    <file relUrl="Views/Home/Greska.cshtml" publishTime="05/21/2013 17:50:51" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.core.min.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Views/Izvodi/Izvodi.cshtml" publishTime="01/19/2015 11:03:36" />
+    <file relUrl="Views/Pocetna/Index.cshtml" publishTime="01/19/2015 10:02:05" />
+    <file relUrl="Scripts/chosen.jquery.min.js" publishTime="05/15/2013 09:38:18" />
+    <file relUrl="Views/OtkupStanova/KupacDetalj.cshtml" publishTime="04/07/2015 13:40:33" />
+    <file relUrl="Models/images/chosen-sprite.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Models/themes/base/minified/images/ui-icons_454545_256x240.png" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="bin/Content/themes/base/jquery.ui.datepicker.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/InLine.Service.Data.dll" publishTime="04/13/2015 17:01:14" />
+    <file relUrl="Views/PregledUgovora/PregledUgovoraMenu.cshtml" publishTime="02/02/2015 10:33:16" />
+    <file relUrl="Content/design/ajax-loader.gif" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/images/menu_left_background_sivi_250x1.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.1. Po partnerima/2.1.1. Analitika.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Models/images/fortius_logo_bijeli_30.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Models/themes/base/minified/images/ui-icons_888888_256x240.png" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="Content/design/LogoPlaviWebLogin.png" publishTime="05/22/2013 14:25:27" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.3. Po dospijeću/2.3.3. Dokumenti po partneru.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Content/themes/base/jquery.ui.datepicker.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Content/themes/base/images/ui-icons_888888_256x240.png" publishTime="09/09/2014 11:14:54" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/3. GRAD/3.1. Ugovori/3.1.7. Utuženi ugovori.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="bin/Content/jquery-ui-1.8.16.custom.css" publishTime="05/16/2014 09:11:42" />
+    <file relUrl="bin/System.Web.Helpers.xml" publishTime="03/21/2014 10:03:30" />
+    <file relUrl="bin/Content/images/title_underline_gradient_200x1.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/TemeljnicaDetalj.cshtml" publishTime="02/13/2015 12:16:24" />
+    <file relUrl="Content/themes/base/minified/images/ui-icons_454545_256x240.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/3. GRAD/3.1. Ugovori/3.1.3. Ispis ugovora.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="Views/HUB2013A/UploadDokumentTEST.cshtml" publishTime="10/22/2013 14:01:57" />
+    <file relUrl="bin/Content/themes/base/jquery.ui.progressbar.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Views/ZapisSvi/ZapisUgovorStanOtkup.cshtml" publishTime="11/10/2014 11:38:54" />
+    <file relUrl="Scripts/jquery-ui-menubar.js" publishTime="05/15/2013 09:38:19" />
+    <file relUrl="Scripts/jquery.treeview/images/folder-closed.png" publishTime="11/21/2013 09:08:56" />
+    <file relUrl="bin/Content/images/MenuIcons/izvodi-01.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/3. GRAD/3.2. Ostali ispisi/3.2.2. Nalog.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="bin/Scripts/dPassword.js" publishTime="06/26/2014 13:26:10" />
+    <file relUrl="Web.config" publishTime="05/14/2015 12:32:17" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/1. GLAVNA KNJIGA/1.4. Ostali pregledi/1.4.1. Ispis temeljnica.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Content/themes/base/images/ui-icons_2e83ff_256x240.png" publishTime="11/20/2014 16:26:50" />
+    <file relUrl="Models/images/ModulIcons/financijsko_knjkigovodstvo02-01.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/1. GLAVNA KNJIGA/1.2. Dnevnik knjiženja/1.2.2. Dnevnik knjiženja - analitika.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="bin/Content/themes/base/jquery.ui.core.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Content/themes/base/jquery.ui.menubar.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/themes/base/minified/jquery.ui.theme.min.css" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="Content/images/fortius_logo_bijeli_30.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Views/Administracija/AdministracijaMenu.cshtml" publishTime="02/17/2015 13:32:49" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.2. Po dokumentima/2.2.1. Analitika po partnerima.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Content/images/sprites.gif" publishTime="05/27/2013 10:57:20" />
+    <file relUrl="Views/PregledUgovora/OpomenaUgovorDetail.cshtml" publishTime="01/08/2014 09:00:13" />
+    <file relUrl="bin/FileHelpers.ExcelStorage.xml" publishTime="05/15/2013 09:38:27" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.1. Po partnerima/2.1.1. Analitika.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Scripts/CustomScripts/poruke.js" publishTime="11/21/2014 10:02:48" />
+    <file relUrl="Content/themes/base/jquery.ui.theme.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/themes/base/images/Obrisi.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/Content/Site.css" publishTime="11/21/2014 11:54:16" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/3. GRAD/3.1. Ugovori/3.1.2. Ugovori s preplatom.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.accordion.min.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/1. GLAVNA KNJIGA/1.3. Konto (Račun)/1.3.2. Bilanca sa početnim stanjem.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Models/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Views/Izvodi/Izvod2012AOtkupDetalj.cshtml" publishTime="10/28/2014 15:56:33" />
+    <file relUrl="Models/themes/base/minified/images/ui-bg_glass_75_e6e6e6_1x400.png" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="bin/System.Web.Razor.dll" publishTime="03/21/2014 10:03:30" />
+    <file relUrl="bin/Content/images/menu_left_background_sivi_250x1.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Scripts/jquery-ui.multiselect.js" publishTime="05/15/2013 09:38:19" />
+    <file relUrl="Models/themes/base/jquery.ui.slider.css" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Views/PregledUgovora/KupacDetail.cshtml" publishTime="01/27/2014 10:42:01" />
+    <file relUrl="bin/Content/themes/base/jquery.ui.tabs.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/chosen.css" publishTime="11/10/2014 10:41:33" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/FinancijskoKnjigovodstvo.cshtml" publishTime="02/17/2015 13:02:43" />
+    <file relUrl="Models/themes/base/minified/jquery.ui.tabs.min.css" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="Content/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png" publishTime="05/14/2014 12:29:08" />
+    <file relUrl="Content/images/ModulIcons/Kamate.png" publishTime="05/28/2014 16:48:45" />
+    <file relUrl="Views/Izvodi/IzvodiPregledGrad.cshtml" publishTime="01/19/2015 11:02:37" />
+    <file relUrl="bin/Scripts/chosen.jquery.min.js" publishTime="05/15/2013 09:38:18" />
+    <file relUrl="Views/Pocetna/IndexPartialMain.cshtml" publishTime="01/19/2015 11:40:13" />
+    <file relUrl="Content/themes/base/jquery.ui.base.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/themes/base/jquery.ui.resizable.css" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Views/OtkupStanova/Kupac.cshtml" publishTime="04/07/2015 13:46:29" />
+    <file relUrl="Models/design/LogoPlaviWebLogin.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/Content/themes/base/jquery.ui.button.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Scripts/jquery.tmpl.min.js" publishTime="05/15/2013 09:38:19" />
+    <file relUrl="bin/InLine.UI.Web.dll" publishTime="05/14/2015 12:06:13" />
+    <file relUrl="bin/Content/images/MenuIcons/maticni_podaci-01.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.3. Po dospijeću/2.3.1. Dokumenti po dospijeću.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Content/images/datebutton.gif" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.tabs.min.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Content/themes/base/minified/images/ui-bg_flat_75_ffffff_40x100.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/images/fortius_logo_sareni_30 copy.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/images/MenuIcons/izvodi-01.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Views/OtkupStanova/FormiranjeObroka.cshtml" publishTime="11/13/2014 11:10:57" />
+    <file relUrl="Content/themes/base/minified/jquery-ui.min.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/1. GLAVNA KNJIGA/1.3. Konto (Račun)/1.3.3. Zaključni list.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="bin/Content/images/MenuIcons/evidencija_rada-01.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/images/submenu_350x1.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/System.Web.WebPages.Deployment.xml" publishTime="03/21/2014 10:03:30" />
+    <file relUrl="Views/PregledUgovora/MoratorijMjesecDetail.cshtml" publishTime="10/22/2013 12:05:31" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/3. GRAD/3.2. Ostali ispisi/3.2.3. Lista naloga.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="Content/Reporti/HUB2013ARaspoUgovorUZORAK.mrt" publishTime="10/23/2013 13:37:08" />
+    <file relUrl="Scripts/jquery.validate.min.js" publishTime="11/06/2013 16:11:40" />
+    <file relUrl="Content/themes/base/jquery.ui.tooltip.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.theme.min.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/Temeljnica.cshtml" publishTime="04/20/2015 15:17:25" />
+    <file relUrl="Models/themes/base/minified/jquery.ui.datepicker.min.css" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="Views/MaticniPodaci/MaticniPodaciMenu.cshtml" publishTime="02/17/2015 13:36:07" />
+    <file relUrl="Content/images/dropdown_arrow.png" publishTime="03/14/2014 14:25:49" />
+    <file relUrl="Content/themes/base/jquery.ui.resizable.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Views/_ViewStart.cshtml" publishTime="05/15/2013 09:38:22" />
+    <file relUrl="bin/Content/Reporti/IspisiFinancijsko/3. GRAD/3.2. Ostali ispisi/3.2.6. Preplate.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="Models/themes/base/minified/images/ui-bg_flat_0_aaaaaa_40x100.png" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="Content/themes/base/images/ui-icons_222222_256x240.png" publishTime="09/09/2014 11:15:19" />
+    <file relUrl="Views/Izvodi/Izvod2012AStDetalj.cshtml" publishTime="09/09/2014 10:10:16" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.1. Po partnerima/2.1.7. Najveća dugovanja i potraživanja.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/KontniPlanDetalj.cshtml" publishTime="02/13/2015 12:22:20" />
+    <file relUrl="Models/images/ui-flag_green.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/Content/design/LogoMagentaiWebLogin.png" publishTime="05/22/2013 13:31:53" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/1. GLAVNA KNJIGA/1.3. Konto (Račun)/1.3.2. Bilanca sa početnim stanjem.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Content/menu/images/submenu-pointer.gif" publishTime="02/01/2010 17:13:24" />
+    <file relUrl="Mvc.sitemap" publishTime="02/17/2015 10:49:20" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/3. GRAD/3.2. Ostali ispisi/3.2.4. Opomene.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="Scripts/jquery.jstree/themes/default/throbber.gif" publishTime="11/25/2013 12:46:50" />
+    <file relUrl="Views/MaticniPodaci/PoslovniPartner.cshtml" publishTime="05/29/2014 12:30:10" />
+    <file relUrl="Views/OtkupStanova/UgovorStanOtkupAneksDetalj.cshtml" publishTime="04/21/2015 09:24:12" />
+    <file relUrl="bin/Content/images/menu_left_background_dark_250x1.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Scripts/jquery.treeview/jquery.treeview.edit.js" publishTime="11/21/2013 09:09:16" />
+    <file relUrl="Views/SubjektSvi/Osoba.cshtml" publishTime="11/12/2014 16:13:45" />
+    <file relUrl="Content/images/ui-flag_green.png" publishTime="12/05/2013 13:12:30" />
+    <file relUrl="Content/images/chosen-sprite.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/themes/base/minified/jquery.ui.button.min.css" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="Content/images/MenuIcons/evidencija_rada-01.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/themes/base/jquery.ui.selectable.css" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Scripts/jquery.jstree/themes/default/style.css" publishTime="11/25/2013 12:46:50" />
+    <file relUrl="Models/themes/base/images/ui-bg_glass_75_dadada_1x400.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/themes/base/minified/images/ui-bg_glass_55_fbf9ee_1x400.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/images/menu_left_background_dark_250x1.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/KontniPlanAnalitikaDetalj.cshtml" publishTime="02/13/2015 12:22:09" />
+    <file relUrl="Content/themes/base/images/SpremiKopiraj.png" publishTime="06/27/2014 11:33:26" />
+    <file relUrl="Images/IconHome.gif" publishTime="05/24/2013 11:27:28" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/1. GLAVNA KNJIGA/1.3. Konto (Račun)/1.3.1. Bilanca.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Models/themes/base/jquery.ui.progressbar.css" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png" publishTime="05/14/2014 12:29:41" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/FinancijskoMenu.cshtml" publishTime="01/19/2015 10:47:36" />
+    <file relUrl="Content/images/MenuIcons/putni_nalozi-01-01.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/images/dropdown_arrow.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Views/MaticniPodaci/TecajVr.cshtml" publishTime="04/20/2015 12:38:01" />
+    <file relUrl="Views/OtkupStanova/Kupci.cshtml" publishTime="02/02/2015 13:50:14" />
+    <file relUrl="bin/System.Web.Entity.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="Models/images/menu_left_background_250x1.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="bin/System.Drawing.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="Views/FinancijskoKnjigovodstvo/KontniPlanTemeljnicaVrDetalj.cshtml" publishTime="02/13/2015 12:23:05" />
+    <file relUrl="Models/themes/base/minified/jquery.ui.selectable.min.css" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="Content/images/info.png" publishTime="05/15/2014 15:44:32" />
+    <file relUrl="Views/SubjektSvi/OsobaDetalj.cshtml" publishTime="02/13/2015 12:24:10" />
+    <file relUrl="bin/System.Web.Extensions.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="Content/menu/images/right.png" publishTime="05/14/2014 09:19:25" />
+    <file relUrl="Models/images/menu_left_250x1.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Models/themes/base/minified/jquery.ui.dialog.min.css" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.1. Po partnerima/2.1.3. Sintetika - početno stanje.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Views/MaticniPodaci/TecajListaStDetalj.cshtml" publishTime="04/10/2015 14:05:49" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/1. GLAVNA KNJIGA/1.1. Konto kartica/1.1.3. Konto kartica poduzeća - sintetički.mrt" publishTime="09/11/2014 10:56:41" />
+    <file relUrl="Models/images/ModulIcons/HUB.png" publishTime="07/18/2014 09:56:11" />
+    <file relUrl="Content/BreadCrumb.css" publishTime="05/24/2013 11:27:28" />
+    <file relUrl="Views/MaticniPodaci/PoslovnaGodina.cshtml" publishTime="07/14/2014 13:02:22" />
+    <file relUrl="Scripts/jquery.treeview/images/folder-closed.gif" publishTime="11/21/2013 09:08:56" />
+    <file relUrl="Views/Izvodi/IzvodiMenu.cshtml" publishTime="04/20/2015 14:28:58" />
+    <file relUrl="Content/jquery-ui-1.8.16.custom.css" publishTime="05/16/2014 09:11:42" />
+    <file relUrl="bin/Content/images/Thumbs.db" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/themes/base/minified/jquery.ui.autocomplete.min.css" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="bin/System.Net.Http.xml" publishTime="05/15/2013 09:38:28" />
+    <file relUrl="Views/HUB2013A/UploadDokument.cshtml" publishTime="06/01/2013 14:14:13" />
+    <file relUrl="Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/themes/base/minified/images/ui-bg_glass_65_ffffff_1x400.png" publishTime="07/18/2014 09:56:12" />
+    <file relUrl="Views/PregledUgovora/ObrokDetail___.cshtml" publishTime="09/06/2013 12:51:03" />
+    <file relUrl="Views/PregledUgovora/UgovorDetailKratki.cshtml" publishTime="01/08/2014 09:02:17" />
+    <file relUrl="bin/Scripts/datepicker.min.js" publishTime="05/15/2013 09:38:18" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/3. GRAD/3.1. Ugovori/3.1.1. Kartica ugovora.mrt" publishTime="11/21/2014 13:25:46" />
+    <file relUrl="Views/Administracija/PoslovnaGodina.cshtml" publishTime="04/07/2014 15:57:12" />
+    <file relUrl="Content/menu/menu.js" publishTime="05/14/2014 09:07:30" />
+    <file relUrl="Content/themes/base/jquery.ui.core.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/2. SALDO KONTI/2.1. Po partnerima/2.1.6. Kartica poslovnog partnera - po godinama.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="Content/Reporti/IspisiFinancijsko/1. GLAVNA KNJIGA/1.2. Dnevnik knjiženja/1.2.1. Popis temeljnica.mrt" publishTime="11/07/2014 14:25:59" />
+    <file relUrl="bin/Content/jquery-ui.multiselect.css" publishTime="05/15/2013 09:38:16" />
+    <file relUrl="Models/themes/base/minified/images/ui-bg_glass_95_fef1ec_1x400.png" publishTime="07/18/2014 09:56:12" />
+  </publishProfile>
+</publishData>

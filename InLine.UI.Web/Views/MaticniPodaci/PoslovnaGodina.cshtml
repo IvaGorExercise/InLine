@@ -1,0 +1,211 @@
+﻿@{
+
+    Layout = "~/Views/Shared/_LayoutFinancijsko.cshtml";
+}
+
+
+@{
+    var grid1 = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.PoslovniSubjektGridFormatted>(InLine.Model.Data.FieldString.View.PoslovniSubjekt.PoslovniSubjektEntity,
+     dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+     hiddenEnabled: true,
+     footerEnabled: false,
+     userDataOnFooter: true,
+     dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+     methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+     pager: true,
+     caption: "1. PODUZEĆE",
+     parametersNames: new Lib.Web.Mvc.JQuery.JqGrid.JqGridParametersNames() { PagesCount = "npage" },
+     width: 3510,
+     rowsNumber: 10,
+     height: 225,
+     url: Url.Action("PoslovniSubjektGrid"),
+     loadComplete: "$.MasterLoad",
+     onSelectRow: "$.MasterSelect",
+     sortingName: @InLine.Model.Data.FieldString.View.PoslovniSubjekt.Naziv,
+     sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Asc,
+     viewRecords: false).FilterToolbar(new Lib.Web.Mvc.JQuery.JqGrid.JqGridFilterToolbarOptions() { StringResult = true })
+     .Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions() { Search = false, Add = false, Delete = false, Edit = false, Refresh = true });
+ 
+ 
+    var grid2 = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.PoslovnaGodinaPoslovniSubjektGridFormatted>(InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.PoslovnaGodinaPoslovniSubjektEntity,
+    dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+    hiddenEnabled: true,
+    footerEnabled: false,
+    userDataOnFooter: false,
+    dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+    methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+    pager: true,
+    caption: "2. POSLOVNA GODINA",
+    parametersNames: new Lib.Web.Mvc.JQuery.JqGrid.JqGridParametersNames() { PagesCount = "npage" },
+    width:1240,
+    rowsNumber: 10,
+    height: 235,
+    onSelectRow: "$.PoslovnaGodinaOnSelectRow",
+    onDoubleClickRow: "$.PoslovnaGodinaDetail",
+    sortingName: @InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.Godina,
+    sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Desc,
+    viewRecords: false).FilterToolbar(new Lib.Web.Mvc.JQuery.JqGrid.JqGridFilterToolbarOptions() { StringResult = true })
+    .Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions() { Search = false, Add = false, Delete = false, Edit = false, Refresh = true })
+    .AddNavigatorButton("", "ui-icon-plus", "$.addPoslovnaGodina", Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorButtonPositions.Last, "Dodaj poslovnu godinu")
+    .AddNavigatorButton("", "ui-icon-pencil", "$.PoslovnaGodinaDetail", Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorButtonPositions.Last, "Izmjeni poslovnu godinu")
+    .AddNavigatorButton("", "ui-icon-trash", "$.deletePoslovnaGodina", Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorButtonPositions.Last, "Obriši poslovnu godinu"); 
+ }
+
+ 
+  <div class="PrviRed">
+       @Html.Partial(ViewList.MaticniPodaci.ViewMaticniPodaciMenu)
+ </div>
+    <table style="width:100%;">
+<tbody>
+    <tr>
+          <td style="width:60%;min-width:60%;vertical-align:top;">
+							                <table width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+								                <tbody>
+                                                <tr>
+									                <td style="vertical-align:top;height:auto;">
+		
+										               <table  cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+											                <tbody>
+                                                            <tr>
+												                <td style="vertical-align:top;">
+												                    @grid1.GetHtml()
+                                                                    </table>
+                                               
+												                </td>
+											                </tr>
+                                                            <tr>
+                                                            <td>
+                                                            </td>
+                                                            </tr>
+                                                             <tr>
+												                <td style="vertical-align:top;">
+												                    @grid2.GetHtml()
+												                </td>
+											                </tr>											
+										                </tbody>
+                                                        </table>
+                                                
+                                                      
+									                </td>
+								                </tr>
+							
+							                </tbody>
+                                           </table>
+
+
+
+<div id="PoslovnaGodinaDialog" class="hidden"></div>
+
+
+@section JavaScript {
+
+    <script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+
+      $(document).ready(function () {
+           @grid1.GetJavaScript()
+            jQuery('@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.PoslovniSubjekt.PoslovniSubjektEntity').hideCol('@InLine.Model.Data.FieldString.View.PoslovniSubjekt.ID_PoslovniSubjekt');
+                        jQuery('@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.PoslovniSubjekt.PoslovniSubjektEntity').hideCol('@InLine.Model.Data.FieldString.View.PoslovniSubjekt.ID_Subjekt');
+                                                jQuery('@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.PoslovniSubjekt.PoslovniSubjektEntity').hideCol('@InLine.Model.Data.FieldString.View.PoslovniSubjekt.IDSubjekt');
+
+                @grid2.GetJavaScript()
+           jQuery('@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.PoslovnaGodinaPoslovniSubjektEntity').hideCol('@InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.ID_PoslovnaGodina');
+                                 jQuery('@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.PoslovnaGodinaPoslovniSubjektEntity').hideCol('@InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.Oznaka');
+                      jQuery('@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.PoslovnaGodinaPoslovniSubjektEntity').hideCol('@InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.Naziv');
+        });
+
+
+
+
+    $(document).ready(function () {
+
+        var grid = "#" + '@InLine.Model.Data.FieldString.View.PoslovniSubjekt.PoslovniSubjektEntity';
+        var grid2 = "#" + '@InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.PoslovnaGodinaPoslovniSubjektEntity';
+
+           $(window).bind('resize', function () {
+               $(grid).setGridWidth($(window).width());
+               $(grid2).setGridWidth($(window).width());
+
+           }).trigger('resize');
+
+    });
+
+
+        
+    $.MasterLoad = function (data) {
+        var prvisw = $(this).getDataIDs()[0];
+        jQuery(this).setSelection(prvisw, true);
+
+        var polje = '@InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.ID_PoslovniSubjekt';
+        var grid = '@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.PoslovnaGodinaPoslovniSubjektEntity';
+        var kontroler = "@InLine.UI.Web.T4.ControllerName.ControllerName.MaticniPodaci";
+        var akcija = "../" + kontroler + "/" + '@InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.PoslovnaGodinaPoslovniSubjektEntity' + "Grid";
+
+
+        setTimeout(function () {
+            jQuery(grid).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.setGridParam', { url: akcija, postData: { key: polje, value: prvisw} });
+            jQuery(grid).trigger('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.reloadGrid');
+        }, 1000)
+
+    };
+
+
+    $.MasterSelect = function (data) 
+    {
+        Dialozi.LoadSlaveGrid("@InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.PoslovnaGodinaPoslovniSubjektEntity", "@InLine.Model.Data.FieldString.View.PoslovniSubjekt.PoslovniSubjektEntity", "@InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.ID_PoslovniSubjekt", "@InLine.UI.Web.T4.ControllerName.ControllerName.MaticniPodaci", "@InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.PoslovnaGodinaPoslovniSubjektEntity");
+    };
+
+
+    $.addPoslovnaGodina = function () {
+        var gridTitle = '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.gview_' + '@InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.PoslovnaGodinaPoslovniSubjektEntity' + '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.JqGridTitle';
+        var title = jQuery(gridTitle).text();
+        Dialozi.InsertEditSlave("@InLine.Model.Data.FieldString.PoslovnaGodina.PoslovnaGodinaEntity", "@InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.PoslovnaGodinaPoslovniSubjektEntity", "@InLine.Model.Data.FieldString.View.PoslovniSubjekt.PoslovniSubjektEntity", "@InLine.UI.Web.T4.ControllerName.ControllerName.MaticniPodaci", "@InLine.Model.Data.FieldString.PoslovnaGodina.PoslovnaGodinaEntity", "@InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert", 800, 210, title);
+    };
+
+   $.deletePoslovnaGodina  = function () {
+        Dialozi.DeleteIzGrida("@InLine.Model.Data.FieldString.PoslovnaGodina.PoslovnaGodinaEntity", "@InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.PoslovnaGodinaPoslovniSubjektEntity", "@InLine.UI.Web.T4.ControllerName.ControllerName.MaticniPodaci");
+    };
+
+
+    $.PoslovnaGodinaDetail = function () {
+        var gridTitle = '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.gview_' + '@InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.PoslovnaGodinaPoslovniSubjektEntity' + '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.JqGridTitle';
+        var title = jQuery(gridTitle).text();
+        Dialozi.InsertEditSlave("@InLine.Model.Data.FieldString.PoslovnaGodina.PoslovnaGodinaEntity", "@InLine.Model.Data.FieldString.View.PoslovnaGodinaPoslovniSubjekt.PoslovnaGodinaPoslovniSubjektEntity", "@InLine.Model.Data.FieldString.View.PoslovniSubjekt.PoslovniSubjektEntity", "@InLine.UI.Web.T4.ControllerName.ControllerName.MaticniPodaci", "@InLine.Model.Data.FieldString.PoslovnaGodina.PoslovnaGodinaEntity", "@InLine.UI.Web.Helper.KeyWord.TipAkcija.Edit", 800, 210, title);
+    };
+
+
+
+
+
+       $(function () {
+               $("#jqgh_PoslovnaGodinaPoslovniSubjekt_Godina").text("Poslovna godina");
+               $("#jqgh_PoslovnaGodinaPoslovniSubjekt_DatumOd").text("Datum od");
+               $("#jqgh_PoslovnaGodinaPoslovniSubjekt_DatumDo").text("Datum do");
+               $("#jqgh_PoslovnaGodinaPoslovniSubjekt_IDValuta").text("Valuta");
+               $("#jqgh_PoslovnaGodinaPoslovniSubjekt_GodinaKrozGodina").text("Godina od/Godina do");
+           });
+
+    </script>
+
+
+     <script type="text/javascript">
+
+         function InsertEditSucces() {
+
+         }
+
+         function InsertEditError() {
+         }
+
+
+         function DeleteSucces() {
+         }
+
+
+         function DeleteError() {
+         }
+
+
+    </script>
+
+  }

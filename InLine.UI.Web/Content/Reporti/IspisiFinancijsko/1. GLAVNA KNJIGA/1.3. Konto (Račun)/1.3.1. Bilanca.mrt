@@ -1,0 +1,1312 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <KontoKarticaPoduzecaAnaliticki Ref="2" type="Stimulsoft.Report.Dictionary.StiSqlDatabase" isKey="true">
+        <Alias>KontoKarticaPoduzecaAnaliticki</Alias>
+        <ConnectionStringEncrypted>+SBTiecF6tViQb2F8BSsO95gu4nde3M54Vr1zOQYbUbCVoEJRhgTyEZEpcxhAG0b0WrNAsVXk5lFQaFs6RxtL/V4iw/VVgGZcm3NyWFYYWfEVs2JTVbTzWtJ/cRqXKTrjci7LUYD+g==</ConnectionStringEncrypted>
+        <Name>KontoKarticaPoduzecaAnaliticki</Name>
+      </KontoKarticaPoduzecaAnaliticki>
+    </Databases>
+    <DataSources isList="true" count="1">
+      <DataSource1 Ref="3" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>DataSource1</Alias>
+        <Columns isList="true" count="22">
+          <value>KontoKontniPlanSt,System.String</value>
+          <value>NazivKontniPlanSt,System.String</value>
+          <value>GodinaPoslovnaGodina,System.Int32</value>
+          <value>NazivSubjekt,System.String</value>
+          <value>IznosDugujeTemeljnicaSt,System.Decimal</value>
+          <value>IznosPotrazujeTemeljnicaSt,System.Decimal</value>
+          <value>Id_Kriterij1,System.Int64</value>
+          <value>KriterijOznaka1,System.String</value>
+          <value>KriterijNaziv1,System.String</value>
+          <value>KriterijKratica1,System.String</value>
+          <value>ID_KriterijSt1,System.Int64</value>
+          <value>KriterijStOznaka1,System.String</value>
+          <value>KriterijStNaziv1,System.String</value>
+          <value>ID_Kriterij2,System.Int64</value>
+          <value>KriterijOznaka2,System.String</value>
+          <value>KriterijNaziv2,System.String</value>
+          <value>KriterijKratica2,System.String</value>
+          <value>ID_KriterijSt2,System.Int64</value>
+          <value>KriterijStOznaka2,System.String</value>
+          <value>KriterijStNaziv2,System.String</value>
+          <value>DatumTemeljnica,System.DateTime</value>
+          <value>SubjektOznakaPoslovniSubjekt,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>DataSource1</Name>
+        <NameInSource>KontoKarticaPoduzecaAnaliticki</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT fik.KontniPlanSt.Konto AS KontoKontniPlanSt,
+	fik.KontniPlanSt.Naziv AS NazivKontniPlanSt, mat.PoslovnaGodina.Godina AS
+	GodinaPoslovnaGodina, sbj.Subjekt.Naziv AS NazivSubjekt,
+	Sum(fik.TemeljnicaSt.IznosDuguje) AS IznosDugujeTemeljnicaSt,
+	Sum(fik.TemeljnicaSt.IznosPotrazuje) AS IznosPotrazujeTemeljnicaSt,
+	Max(CASE fik.Kriterij.RedniBroj
+    WHEN 1 THEN fik.TemeljnicaStKriterij.ID_Kriterij ELSE NULL
+  END) AS Id_Kriterij1, Max(CASE fik.Kriterij.RedniBroj
+    WHEN 1 THEN fik.Kriterij.Oznaka ELSE NULL
+  END) AS KriterijOznaka1, Max(CASE fik.Kriterij.RedniBroj
+    WHEN 1 THEN fik.Kriterij.Naziv ELSE NULL
+  END) AS KriterijNaziv1, Max(CASE fik.Kriterij.RedniBroj
+    WHEN 1 THEN fik.Kriterij.Kratica ELSE NULL
+  END) AS KriterijKratica1, Max(CASE fik.Kriterij.RedniBroj
+    WHEN 1 THEN fik.TemeljnicaStKriterij.ID_KriterijSt ELSE NULL
+  END) AS ID_KriterijSt1, Max(CASE fik.Kriterij.RedniBroj
+    WHEN 1 THEN fik.KriterijSt.Oznaka ELSE NULL
+  END) AS KriterijStOznaka1, Max(CASE fik.Kriterij.RedniBroj
+    WHEN 1 THEN fik.KriterijSt.Naziv ELSE NULL
+  END) AS KriterijStNaziv1, Max(CASE fik.Kriterij.RedniBroj
+    WHEN 2 THEN fik.TemeljnicaStKriterij.ID_Kriterij ELSE NULL
+  END) AS ID_Kriterij2, Max(CASE fik.Kriterij.RedniBroj
+    WHEN 2 THEN fik.Kriterij.Oznaka ELSE NULL
+  END) AS KriterijOznaka2, Max(CASE fik.Kriterij.RedniBroj
+    WHEN 2 THEN fik.Kriterij.Naziv ELSE NULL
+  END) AS KriterijNaziv2, Max(CASE fik.Kriterij.RedniBroj
+    WHEN 2 THEN fik.Kriterij.Kratica ELSE NULL
+  END) AS KriterijKratica2, Max(CASE fik.Kriterij.RedniBroj
+    WHEN 2 THEN fik.TemeljnicaStKriterij.ID_KriterijSt ELSE NULL
+  END) AS ID_KriterijSt2, Max(CASE fik.Kriterij.RedniBroj
+    WHEN 2 THEN fik.KriterijSt.Oznaka ELSE NULL
+  END) AS KriterijStOznaka2, Max(CASE fik.Kriterij.RedniBroj
+    WHEN 2 THEN fik.KriterijSt.Naziv ELSE NULL
+  END) AS KriterijStNaziv2
+FROM fik.GlavnaKnjiga LEFT JOIN
+  fik.KontniPlan ON fik.KontniPlan.ID_KontniPlan =
+    fik.GlavnaKnjiga.ID_KontniPlan LEFT JOIN
+  mat.PoslovnaGodina ON mat.PoslovnaGodina.ID_PoslovnaGodina =
+    fik.KontniPlan.ID_PoslovnaGodina LEFT JOIN
+  mat.PoslovniSubjekt ON mat.PoslovniSubjekt.ID_PoslovniSubjekt =
+    mat.PoslovnaGodina.ID_PoslovniSubjekt LEFT JOIN
+  sbj.Subjekt ON sbj.Subjekt.ID_Subjekt = mat.PoslovniSubjekt.ID_Subjekt
+  LEFT JOIN
+  fik.KontniPlanSt ON fik.KontniPlanSt.ID_KontniPlan =
+    fik.KontniPlan.ID_KontniPlan LEFT JOIN
+  fik.TemeljnicaSt ON fik.KontniPlanSt.ID_KontniPlanSt =
+    fik.TemeljnicaSt.ID_KontniPlanSt LEFT JOIN
+  fik.TemeljnicaStKriterij ON fik.TemeljnicaSt.ID_TemeljnicaSt =
+    fik.TemeljnicaStKriterij.ID_TemeljnicaSt LEFT JOIN
+  fik.Kriterij ON fik.Kriterij.ID_Kriterij =
+    fik.TemeljnicaStKriterij.ID_Kriterij LEFT JOIN
+  fik.KriterijSt ON fik.KriterijSt.ID_KriterijSt =
+    fik.TemeljnicaStKriterij.ID_KriterijSt LEFT JOIN
+  fik.Temeljnica ON fik.Temeljnica.ID_Temeljnica =
+    fik.TemeljnicaSt.ID_Temeljnica LEFT JOIN
+  sbj.Subjekt AS Subjekt2 ON fik.TemeljnicaSt.ID_Subjekt = Subjekt2.ID_Subjekt
+
+ {ostatakSQLUpita_STR}
+
+GROUP BY fik.KontniPlanSt.Konto, fik.KontniPlanSt.Naziv,
+  mat.PoslovnaGodina.Godina, sbj.Subjekt.Naziv</SqlCommand>
+      </DataSource1>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="8">
+      <value>,ostatakSQLUpita_STR,ostatakSQLUpita_STR,System.String,,False,False</value>
+      <value>,Sort,Sort,Stimulsoft.Report.StringList,,False,False</value>
+      <value>,Knjizeno_BOOL,Knjizeno_BOOL,System.Boolean,false,False,False</value>
+      <value>,Zaglavlje,Zaglavlje,System.String,,False,False</value>
+      <value>,Suma4,Suma4,Stimulsoft.Report.StringList,,False,False</value>
+      <value>,Suma3,Suma3,Stimulsoft.Report.StringList,,False,False</value>
+      <value>,Suma2,Suma2,Stimulsoft.Report.StringList,,False,False</value>
+      <value>,Suma1,Suma1,Stimulsoft.Report.StringList,,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="4" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="13">
+        <PageFooterBand1 Ref="5" type="PageFooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,18.4,27.7,0.6</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text27 Ref="6" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0.2,0.2,3.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text27</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{Time}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text27>
+            <Text28 Ref="7" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>23.2,0.2,4.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text28</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{PageNumber}/{TotalPageCount}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text28>
+            <HorizontalLinePrimitive2 Ref="8" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>0,0,27.6,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="9" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Name>HorizontalLinePrimitive2</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <StartCap Ref="10" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>PageFooterBand1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </PageFooterBand1>
+        <HeaderBand1 Ref="11" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,27.7,3</ClientRectangle>
+          <Components isList="true" count="12">
+            <Text1 Ref="12" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,2.6,1.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>f239d35b3c5740338d0c79c6b9b9ce71</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="4" />
+              <Parent isRef="11" />
+              <Text>Konto</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text1>
+            <Text2 Ref="13" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>1.8,2.6,11.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>217a6ed8a60344a3be3a70d805582c67</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="4" />
+              <Parent isRef="11" />
+              <Text>Naziv konta</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text2>
+            <Text10 Ref="14" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>13.2,2.6,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>99d2d23d953044b8b85295e008b9c287</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="4" />
+              <Parent isRef="11" />
+              <Text>Duguje</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text10>
+            <Text11 Ref="15" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>16.8,2.6,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>65cb9836756145eaafd8099b5cab4e75</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="4" />
+              <Parent isRef="11" />
+              <Text>Potražuje</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text11>
+            <Text29 Ref="16" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,1.2,27.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,14,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text29</Name>
+              <Page isRef="4" />
+              <Parent isRef="11" />
+              <Text>Bilanca poduzeća (po kontu)&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp; godina: {DataSource1.GodinaPoslovnaGodina}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text29>
+            <Text30 Ref="17" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,0,5.2,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text30</Name>
+              <Page isRef="4" />
+              <Parent isRef="11" />
+              <Text>{DataSource1.NazivSubjekt}
+Adresa kasnije 1
+Adresa kasnije 2</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text30>
+            <Text45 Ref="18" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,2,27.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text45</Name>
+              <Page isRef="4" />
+              <Parent isRef="11" />
+              <Text>{Zaglavlje}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text45>
+            <Text3 Ref="19" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>20.4,2.6,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>0cfa3416b1d346bd8f609c94a4fe9f43</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="4" />
+              <Parent isRef="11" />
+              <Text>Dugovni saldo</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text3>
+            <Text4 Ref="20" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>24,2.6,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>75f24fb819db48fd8fdbffc2bf7e8765</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="4" />
+              <Parent isRef="11" />
+              <Text>Potražni saldo</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text4>
+            <Text39 Ref="21" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>10.6,0.4,4.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="1">
+                <value>_x007B_Knjizeno_BOOL_x0020__x003D__x003D__x0020_false_x007D_,Red,Transparent,Arial_x002C_9.75_x002C_Bold_x002C_Point_x002C_False_x002C_238,True,True,_x0022_PRIVREMENO_x0022_,,None</value>
+              </Conditions>
+              <Font>Arial,8</Font>
+              <Guid>c4e105a964e94a54a1cd86820406210f</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text39</Name>
+              <Page isRef="4" />
+              <Parent isRef="11" />
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text39>
+            <StartPointPrimitive1 Ref="22" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+              <ClientRectangle>0,2.6,0,0</ClientRectangle>
+              <Name>StartPointPrimitive1</Name>
+              <Page isRef="4" />
+              <Parent isRef="11" />
+              <ReferenceToGuid>853a47bcc5ac49b0a3cb5e6133ce75d0</ReferenceToGuid>
+            </StartPointPrimitive1>
+            <EndPointPrimitive1 Ref="23" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+              <ClientRectangle>27.6,3,0,0</ClientRectangle>
+              <Name>EndPointPrimitive1</Name>
+              <Page isRef="4" />
+              <Parent isRef="11" />
+              <ReferenceToGuid>853a47bcc5ac49b0a3cb5e6133ce75d0</ReferenceToGuid>
+            </EndPointPrimitive1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderBand1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </HeaderBand1>
+        <GroupHeaderBand4 Ref="24" type="GroupHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,4.2,27.7,0</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Condition>{Left(DataSource1.KontoKontniPlanSt,1)}</Condition>
+          <Conditions isList="true" count="1">
+            <value>_x007B_Suma1.Count_x0020__x0021__x003D__x0020_0_x007D_,Black,Transparent,Arial_x002C_8,True,False,,,None</value>
+          </Conditions>
+          <Enabled>False</Enabled>
+          <Guid>bbf2336160b642b88fd63e2d535ddbaf</Guid>
+          <Name>GroupHeaderBand4</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </GroupHeaderBand4>
+        <GroupHeaderBand3 Ref="25" type="GroupHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,5,27.7,0</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Condition>{Left(DataSource1.KontoKontniPlanSt,2)}</Condition>
+          <Conditions isList="true" count="1">
+            <value>_x007B_Suma2.Count_x0020__x0021__x003D__x0020_0_x007D_,Black,Transparent,Arial_x002C_8,True,False,,,None</value>
+          </Conditions>
+          <Enabled>False</Enabled>
+          <Guid>34ce1f2f51a44425b5e2b6b504e58add</Guid>
+          <Name>GroupHeaderBand3</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </GroupHeaderBand3>
+        <GroupHeaderBand2 Ref="26" type="GroupHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,5.8,27.7,0</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Condition>{Left(DataSource1.KontoKontniPlanSt,3)}</Condition>
+          <Conditions isList="true" count="1">
+            <value>_x007B_Suma3.Count_x0020__x0021__x003D__x0020_0_x007D_,Black,Transparent,Arial_x002C_8,True,False,,,None</value>
+          </Conditions>
+          <Enabled>False</Enabled>
+          <Name>GroupHeaderBand2</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </GroupHeaderBand2>
+        <GroupHeaderBand1 Ref="27" type="GroupHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,6.6,27.7,0</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Condition>{Left(DataSource1.KontoKontniPlanSt,4)}</Condition>
+          <Conditions isList="true" count="1">
+            <value>_x007B_Suma4.Count_x0020__x0021__x003D__x0020_0_x007D_,Black,Transparent,Arial_x002C_8,True,False,,,None</value>
+          </Conditions>
+          <Enabled>False</Enabled>
+          <Name>GroupHeaderBand1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <PrintOnAllPages>True</PrintOnAllPages>
+        </GroupHeaderBand1>
+        <DataBand1 Ref="28" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,7.4,27.7,0.4</ClientRectangle>
+          <Components isList="true" count="7">
+            <Text12 Ref="29" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,1.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="4" />
+              <Parent isRef="28" />
+              <Text>{DataSource1.KontoKontniPlanSt}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text12>
+            <Text5 Ref="30" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.8,0,11.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>83e321dbfaa446bbafec30adc4365aef</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="4" />
+              <Parent isRef="28" />
+              <Text>{DataSource1.NazivKontniPlanSt}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text5>
+            <Text19 Ref="31" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.2,0,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>74a0b775852c40c7af4a29ba0f8351ee</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text19</Name>
+              <Page isRef="4" />
+              <Parent isRef="28" />
+              <Text>{DataSource1.IznosDugujeTemeljnicaSt.ToString("N2")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text19>
+            <Text20 Ref="32" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16.8,0,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>0421de5743df45d78c9db9243ea6fb07</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text20</Name>
+              <Page isRef="4" />
+              <Parent isRef="28" />
+              <Text>{DataSource1.IznosPotrazujeTemeljnicaSt.ToString("N2")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text20>
+            <Text40 Ref="33" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20.4,0,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>61846fbdd55a4387ad76143e7c52955b</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text40</Name>
+              <Page isRef="4" />
+              <Parent isRef="28" />
+              <Text>{Switch(
+	DataSource1.IznosDugujeTemeljnicaSt &lt; 0, DataSource1.IznosPotrazujeTemeljnicaSt.ToString("N2"),
+	DataSource1.IznosPotrazujeTemeljnicaSt &lt; 0, DataSource1.IznosPotrazujeTemeljnicaSt.ToString("N2"),
+	Abs(DataSource1.IznosDugujeTemeljnicaSt) &gt;= Abs(DataSource1.IznosPotrazujeTemeljnicaSt), (DataSource1.IznosDugujeTemeljnicaSt - DataSource1.IznosPotrazujeTemeljnicaSt).ToString("N2"),
+	Abs(DataSource1.IznosDugujeTemeljnicaSt) &lt; Abs(DataSource1.IznosPotrazujeTemeljnicaSt), "0,00")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text40>
+            <Text41 Ref="34" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>24,0,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>debd2d007fd04e14851013dfb5c29879</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text41</Name>
+              <Page isRef="4" />
+              <Parent isRef="28" />
+              <Text>{Switch(
+	DataSource1.IznosPotrazujeTemeljnicaSt &lt; 0, DataSource1.IznosDugujeTemeljnicaSt.ToString("N2"),
+	DataSource1.IznosDugujeTemeljnicaSt &lt; 0, DataSource1.IznosDugujeTemeljnicaSt.ToString("N2"),
+	Abs(DataSource1.IznosDugujeTemeljnicaSt) &gt; Abs(DataSource1.IznosPotrazujeTemeljnicaSt), "0,00",
+	Abs(DataSource1.IznosPotrazujeTemeljnicaSt) &gt;= Abs(DataSource1.IznosDugujeTemeljnicaSt), (DataSource1.IznosPotrazujeTemeljnicaSt - DataSource1.IznosDugujeTemeljnicaSt).ToString("N2"))}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text41>
+            <HorizontalLinePrimitive1 Ref="35" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>0,0,27.6,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="36" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Name>HorizontalLinePrimitive1</Name>
+              <Page isRef="4" />
+              <Parent isRef="28" />
+              <StartCap Ref="37" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+              <Style>Dot</Style>
+            </HorizontalLinePrimitive1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>DataSource1</DataSourceName>
+          <FilterOn>False</FilterOn>
+          <Filters isList="true" count="1">
+            <value>_x007B_DateToStr_x0028_DataSource1.DatumTemeljnica_x0029__x0020__x0021__x003D__x0020_DBNull.Value.ToString_x0028__x0029__x007D_</value>
+          </Filters>
+          <Name>DataBand1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Sort isList="true" count="2">
+            <value>ASC</value>
+            <value>KontoKontniPlanSt</value>
+          </Sort>
+        </DataBand1>
+        <GroupFooterBand1 Ref="38" type="GroupFooterBand" isKey="true">
+          <Border>Top;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,8.6,27.7,0.4</ClientRectangle>
+          <Components isList="true" count="7">
+            <Text21 Ref="39" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,0,1.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>2642b1949feb479bb6a1d4fb52315b76</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text21</Name>
+              <Page isRef="4" />
+              <Parent isRef="38" />
+              <Text>{Left(DataSource1.KontoKontniPlanSt,4)}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text21>
+            <Text9 Ref="40" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.2,0,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>82447fa61d81434eada45cca9dd99b55</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="4" />
+              <Parent isRef="38" />
+              <Text>{Sum(DataSource1.IznosDugujeTemeljnicaSt).ToString("N2")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text9>
+            <Text13 Ref="41" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16.8,0,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>ca246b2dda594d7d84ea4cec41217512</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text13</Name>
+              <Page isRef="4" />
+              <Parent isRef="38" />
+              <Text>{Sum(DataSource1.IznosPotrazujeTemeljnicaSt).ToString("N2")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text13>
+            <Text23 Ref="42" type="Text" isKey="true">
+              <AfterPrintEvent>suma4Brojac++</AfterPrintEvent>
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.8,0,11.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>e7a19d1bfbe34303b4612c2a46959aca</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text23</Name>
+              <Page isRef="4" />
+              <Parent isRef="38" />
+              <Text>{Suma4[suma4Brojac]}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text23>
+            <Text31 Ref="43" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>20.4,0,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>7432729bd8eb4bb5a3f51c2d01a92a4b</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text31</Name>
+              <Page isRef="4" />
+              <Parent isRef="38" />
+              <Text>{Switch(
+	Sum(DataSource1.IznosDugujeTemeljnicaSt) &lt; 0, Sum(DataSource1.IznosPotrazujeTemeljnicaSt).ToString("N2"),
+	Sum(DataSource1.IznosPotrazujeTemeljnicaSt) &lt; 0, Sum(DataSource1.IznosPotrazujeTemeljnicaSt).ToString("N2"),
+	Abs(Sum(DataSource1.IznosDugujeTemeljnicaSt)) &gt;= Abs(Sum(DataSource1.IznosPotrazujeTemeljnicaSt)), (Sum(DataSource1.IznosDugujeTemeljnicaSt) - Sum(DataSource1.IznosPotrazujeTemeljnicaSt)).ToString("N2"),
+	Abs(Sum(DataSource1.IznosDugujeTemeljnicaSt)) &lt; Abs(Sum(DataSource1.IznosPotrazujeTemeljnicaSt)), "0,00")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text31>
+            <Text35 Ref="44" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>24,0,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>3208c808f5c243669f2b83a9c188d602</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text35</Name>
+              <Page isRef="4" />
+              <Parent isRef="38" />
+              <Text>{Switch(
+	Sum(DataSource1.IznosPotrazujeTemeljnicaSt) &lt; 0, Sum(DataSource1.IznosDugujeTemeljnicaSt).ToString("N2"),
+	Sum(DataSource1.IznosDugujeTemeljnicaSt) &lt; 0, Sum(DataSource1.IznosDugujeTemeljnicaSt).ToString("N2"),
+	Abs(Sum(DataSource1.IznosDugujeTemeljnicaSt)) &gt; Abs(Sum(DataSource1.IznosPotrazujeTemeljnicaSt)), "0,00",
+	Abs(Sum(DataSource1.IznosPotrazujeTemeljnicaSt)) &gt;= Abs(Sum(DataSource1.IznosDugujeTemeljnicaSt)), (Sum(DataSource1.IznosPotrazujeTemeljnicaSt) - Sum(DataSource1.IznosDugujeTemeljnicaSt)).ToString("N2"))}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text35>
+            <HorizontalLinePrimitive3 Ref="45" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>0,0,27.6,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="46" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Name>HorizontalLinePrimitive3</Name>
+              <Page isRef="4" />
+              <Parent isRef="38" />
+              <StartCap Ref="47" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive3>
+          </Components>
+          <Conditions isList="true" count="1">
+            <value>_x007B_Suma4.Count_x0020__x0021__x003D__x0020_0_x007D_,Black,Transparent,Arial_x002C_8,True,False,,,None</value>
+          </Conditions>
+          <Enabled>False</Enabled>
+          <Guid>6f13cfe7545a4a779c52cd1f2c179239</Guid>
+          <Name>GroupFooterBand1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </GroupFooterBand1>
+        <GroupFooterBand2 Ref="48" type="GroupFooterBand" isKey="true">
+          <Border>Top;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,9.8,27.7,0.4</ClientRectangle>
+          <Components isList="true" count="7">
+            <Text6 Ref="49" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,0,1.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>61c5cecf9c9b44038e8dc781be36d005</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="4" />
+              <Parent isRef="48" />
+              <Text>{Left(DataSource1.KontoKontniPlanSt,3)}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text6>
+            <Text14 Ref="50" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.2,0,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>5c14f3e1829042d1b50180df49a8cdb0</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="4" />
+              <Parent isRef="48" />
+              <Text>{Sum(DataSource1.IznosDugujeTemeljnicaSt).ToString("N2")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text14>
+            <Text15 Ref="51" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16.8,0,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>1062299f0b0e4c39965a0f598bbf7985</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text15</Name>
+              <Page isRef="4" />
+              <Parent isRef="48" />
+              <Text>{Sum(DataSource1.IznosPotrazujeTemeljnicaSt).ToString("N2")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text15>
+            <Text24 Ref="52" type="Text" isKey="true">
+              <AfterPrintEvent>suma3Brojac++</AfterPrintEvent>
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.8,0,11.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>f7e5a183c485491dba37ff2c1e879041</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text24</Name>
+              <Page isRef="4" />
+              <Parent isRef="48" />
+              <Text>{Suma3[suma3Brojac]}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text24>
+            <Text32 Ref="53" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>20.4,0,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>384d789933994686a3a34699d0634f89</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text32</Name>
+              <Page isRef="4" />
+              <Parent isRef="48" />
+              <Text>{Switch(
+	Sum(DataSource1.IznosDugujeTemeljnicaSt) &lt; 0, Sum(DataSource1.IznosPotrazujeTemeljnicaSt).ToString("N2"),
+	Sum(DataSource1.IznosPotrazujeTemeljnicaSt) &lt; 0, Sum(DataSource1.IznosPotrazujeTemeljnicaSt).ToString("N2"),
+	Abs(Sum(DataSource1.IznosDugujeTemeljnicaSt)) &gt;= Abs(Sum(DataSource1.IznosPotrazujeTemeljnicaSt)), (Sum(DataSource1.IznosDugujeTemeljnicaSt) - Sum(DataSource1.IznosPotrazujeTemeljnicaSt)).ToString("N2"),
+	Abs(Sum(DataSource1.IznosDugujeTemeljnicaSt)) &lt; Abs(Sum(DataSource1.IznosPotrazujeTemeljnicaSt)), "0,00")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text32>
+            <Text36 Ref="54" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>24,0,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>04b87a180a4f44c99479d6398947d416</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text36</Name>
+              <Page isRef="4" />
+              <Parent isRef="48" />
+              <Text>{Switch(
+	Sum(DataSource1.IznosPotrazujeTemeljnicaSt) &lt; 0, Sum(DataSource1.IznosDugujeTemeljnicaSt).ToString("N2"),
+	Sum(DataSource1.IznosDugujeTemeljnicaSt) &lt; 0, Sum(DataSource1.IznosDugujeTemeljnicaSt).ToString("N2"),
+	Abs(Sum(DataSource1.IznosDugujeTemeljnicaSt)) &gt; Abs(Sum(DataSource1.IznosPotrazujeTemeljnicaSt)), "0,00",
+	Abs(Sum(DataSource1.IznosPotrazujeTemeljnicaSt)) &gt;= Abs(Sum(DataSource1.IznosDugujeTemeljnicaSt)), (Sum(DataSource1.IznosPotrazujeTemeljnicaSt) - Sum(DataSource1.IznosDugujeTemeljnicaSt)).ToString("N2"))}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text36>
+            <HorizontalLinePrimitive4 Ref="55" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>0,0,27.6,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="56" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Name>HorizontalLinePrimitive4</Name>
+              <Page isRef="4" />
+              <Parent isRef="48" />
+              <StartCap Ref="57" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive4>
+          </Components>
+          <Conditions isList="true" count="1">
+            <value>_x007B_Suma3.Count_x0020__x0021__x003D__x0020_0_x007D_,Black,Transparent,Arial_x002C_8,True,False,,,None</value>
+          </Conditions>
+          <Enabled>False</Enabled>
+          <Guid>bd1c11d67cbf431ca84982ee56519957</Guid>
+          <Name>GroupFooterBand2</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </GroupFooterBand2>
+        <GroupFooterBand3 Ref="58" type="GroupFooterBand" isKey="true">
+          <Border>Top;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,11,27.7,0.4</ClientRectangle>
+          <Components isList="true" count="7">
+            <Text7 Ref="59" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,0,1.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>b2477a024ad0401d97d504e0406368b2</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="4" />
+              <Parent isRef="58" />
+              <Text>{Left(DataSource1.KontoKontniPlanSt,2)}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text7>
+            <Text16 Ref="60" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.2,0,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>0d3279ceee814a7c85ec21d6dbffa264</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text16</Name>
+              <Page isRef="4" />
+              <Parent isRef="58" />
+              <Text>{Sum(DataSource1.IznosDugujeTemeljnicaSt).ToString("N2")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text16>
+            <Text17 Ref="61" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16.8,0,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>8e50709bd7494f5e83dfc7fa5ff81cd1</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text17</Name>
+              <Page isRef="4" />
+              <Parent isRef="58" />
+              <Text>{Sum(DataSource1.IznosPotrazujeTemeljnicaSt).ToString("N2")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text17>
+            <Text33 Ref="62" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>20.4,0,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>10a543405cb545488c6a4a22db4794cf</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text33</Name>
+              <Page isRef="4" />
+              <Parent isRef="58" />
+              <Text>{Switch(
+	Sum(DataSource1.IznosDugujeTemeljnicaSt) &lt; 0, Sum(DataSource1.IznosPotrazujeTemeljnicaSt).ToString("N2"),
+	Sum(DataSource1.IznosPotrazujeTemeljnicaSt) &lt; 0, Sum(DataSource1.IznosPotrazujeTemeljnicaSt).ToString("N2"),
+	Abs(Sum(DataSource1.IznosDugujeTemeljnicaSt)) &gt;= Abs(Sum(DataSource1.IznosPotrazujeTemeljnicaSt)), (Sum(DataSource1.IznosDugujeTemeljnicaSt) - Sum(DataSource1.IznosPotrazujeTemeljnicaSt)).ToString("N2"),
+	Abs(Sum(DataSource1.IznosDugujeTemeljnicaSt)) &lt; Abs(Sum(DataSource1.IznosPotrazujeTemeljnicaSt)), "0,00")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text33>
+            <Text37 Ref="63" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>24,0,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>ccc9f460857149ae91b39b799935705f</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text37</Name>
+              <Page isRef="4" />
+              <Parent isRef="58" />
+              <Text>{Switch(
+	Sum(DataSource1.IznosPotrazujeTemeljnicaSt) &lt; 0, Sum(DataSource1.IznosDugujeTemeljnicaSt).ToString("N2"),
+	Sum(DataSource1.IznosDugujeTemeljnicaSt) &lt; 0, Sum(DataSource1.IznosDugujeTemeljnicaSt).ToString("N2"),
+	Abs(Sum(DataSource1.IznosDugujeTemeljnicaSt)) &gt; Abs(Sum(DataSource1.IznosPotrazujeTemeljnicaSt)), "0,00",
+	Abs(Sum(DataSource1.IznosPotrazujeTemeljnicaSt)) &gt;= Abs(Sum(DataSource1.IznosDugujeTemeljnicaSt)), (Sum(DataSource1.IznosPotrazujeTemeljnicaSt) - Sum(DataSource1.IznosDugujeTemeljnicaSt)).ToString("N2"))}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text37>
+            <Text25 Ref="64" type="Text" isKey="true">
+              <AfterPrintEvent>suma2Brojac++</AfterPrintEvent>
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.8,0,11.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>bb29246b736f46abbf60a1702b29fef4</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text25</Name>
+              <Page isRef="4" />
+              <Parent isRef="58" />
+              <Text>{Suma2[suma2Brojac]}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text25>
+            <HorizontalLinePrimitive5 Ref="65" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>0,0,27.6,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="66" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Name>HorizontalLinePrimitive5</Name>
+              <Page isRef="4" />
+              <Parent isRef="58" />
+              <StartCap Ref="67" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive5>
+          </Components>
+          <Conditions isList="true" count="1">
+            <value>_x007B_Suma2.Count_x0020__x0021__x003D__x0020_0_x007D_,Black,Transparent,Arial_x002C_8,True,False,,,None</value>
+          </Conditions>
+          <Enabled>False</Enabled>
+          <Guid>bd2fdb1c44574f0189418f890fda4c03</Guid>
+          <Name>GroupFooterBand3</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </GroupFooterBand3>
+        <GroupFooterBand4 Ref="68" type="GroupFooterBand" isKey="true">
+          <Border>Top;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,12.2,27.7,0.8</ClientRectangle>
+          <Components isList="true" count="7">
+            <Text8 Ref="69" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,0,1.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>7d799c99c4db486fa948fbbdb9c11f9c</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="4" />
+              <Parent isRef="68" />
+              <Text>{Left(DataSource1.KontoKontniPlanSt,1)}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text8>
+            <Text18 Ref="70" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.2,0,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>a202428e8a474df3aef44c3b2fcfd649</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text18</Name>
+              <Page isRef="4" />
+              <Parent isRef="68" />
+              <Text>{Sum(DataSource1.IznosDugujeTemeljnicaSt).ToString("N2")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text18>
+            <Text22 Ref="71" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16.8,0,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>45a0ebdfa28a45ba8f543f394ea49e56</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text22</Name>
+              <Page isRef="4" />
+              <Parent isRef="68" />
+              <Text>{Sum(DataSource1.IznosPotrazujeTemeljnicaSt).ToString("N2")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text22>
+            <Text34 Ref="72" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>20.4,0,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>388abe5afa6b45d58126ec8c630f19c0</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text34</Name>
+              <Page isRef="4" />
+              <Parent isRef="68" />
+              <Text>{Switch(
+	Sum(DataSource1.IznosDugujeTemeljnicaSt) &lt; 0, Sum(DataSource1.IznosPotrazujeTemeljnicaSt).ToString("N2"),
+	Sum(DataSource1.IznosPotrazujeTemeljnicaSt) &lt; 0, Sum(DataSource1.IznosPotrazujeTemeljnicaSt).ToString("N2"),
+	Abs(Sum(DataSource1.IznosDugujeTemeljnicaSt)) &gt;= Abs(Sum(DataSource1.IznosPotrazujeTemeljnicaSt)), (Sum(DataSource1.IznosDugujeTemeljnicaSt) - Sum(DataSource1.IznosPotrazujeTemeljnicaSt)).ToString("N2"),
+	Abs(Sum(DataSource1.IznosDugujeTemeljnicaSt)) &lt; Abs(Sum(DataSource1.IznosPotrazujeTemeljnicaSt)), "0,00")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text34>
+            <Text38 Ref="73" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>24,0,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>36cce94ad52c410dbf7564df20800e95</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text38</Name>
+              <Page isRef="4" />
+              <Parent isRef="68" />
+              <Text>{Switch(
+	Sum(DataSource1.IznosPotrazujeTemeljnicaSt) &lt; 0, Sum(DataSource1.IznosDugujeTemeljnicaSt).ToString("N2"),
+	Sum(DataSource1.IznosDugujeTemeljnicaSt) &lt; 0, Sum(DataSource1.IznosDugujeTemeljnicaSt).ToString("N2"),
+	Abs(Sum(DataSource1.IznosDugujeTemeljnicaSt)) &gt; Abs(Sum(DataSource1.IznosPotrazujeTemeljnicaSt)), "0,00",
+	Abs(Sum(DataSource1.IznosPotrazujeTemeljnicaSt)) &gt;= Abs(Sum(DataSource1.IznosDugujeTemeljnicaSt)), (Sum(DataSource1.IznosPotrazujeTemeljnicaSt) - Sum(DataSource1.IznosDugujeTemeljnicaSt)).ToString("N2"))}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text38>
+            <Text26 Ref="74" type="Text" isKey="true">
+              <AfterPrintEvent>suma1Brojac++</AfterPrintEvent>
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.8,0,11.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>b7f50c5e054a487bb0ebd32c7d7887b6</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text26</Name>
+              <Page isRef="4" />
+              <Parent isRef="68" />
+              <Text>{Suma1[suma1Brojac]}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text26>
+            <HorizontalLinePrimitive6 Ref="75" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>0,0,27.4,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="76" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Name>HorizontalLinePrimitive6</Name>
+              <Page isRef="4" />
+              <Parent isRef="68" />
+              <StartCap Ref="77" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive6>
+          </Components>
+          <Conditions isList="true" count="1">
+            <value>_x007B_Suma1.Count_x0020__x0021__x003D__x0020_0_x007D_,Black,Transparent,Arial_x002C_8,True,False,,,None</value>
+          </Conditions>
+          <Enabled>False</Enabled>
+          <Guid>24de22c1f3b84cec997bd73e2181ea89</Guid>
+          <Name>GroupFooterBand4</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </GroupFooterBand4>
+        <FooterBand1 Ref="78" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,13.8,27.7,0.6</ClientRectangle>
+          <Components isList="true" count="6">
+            <Text42 Ref="79" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>8,0.2,5,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text42</Name>
+              <Page isRef="4" />
+              <Parent isRef="78" />
+              <Text>Ukupna suma za odabrani period:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text42>
+            <Text43 Ref="80" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.2,0.2,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>f07cf34cca5c4b2cb504a6a06784811d</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text43</Name>
+              <Page isRef="4" />
+              <Parent isRef="78" />
+              <Text>{Sum(DataSource1.IznosDugujeTemeljnicaSt).ToString("N2")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text43>
+            <Text44 Ref="81" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16.8,0.2,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>3e21e0e089084646b753fc2745a1ea7a</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text44</Name>
+              <Page isRef="4" />
+              <Parent isRef="78" />
+              <Text>{Sum(DataSource1.IznosPotrazujeTemeljnicaSt).ToString("N2")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text44>
+            <Text46 Ref="82" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>20.4,0.2,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>84f0a11dfa5246d9a88e9877ba718aa8</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text46</Name>
+              <Page isRef="4" />
+              <Parent isRef="78" />
+              <Text>{Switch(
+	Sum(DataSource1.IznosDugujeTemeljnicaSt) &lt; 0, Sum(DataSource1.IznosPotrazujeTemeljnicaSt).ToString("N2"),
+	Sum(DataSource1.IznosPotrazujeTemeljnicaSt) &lt; 0, Sum(DataSource1.IznosPotrazujeTemeljnicaSt).ToString("N2"),
+	Abs(Sum(DataSource1.IznosDugujeTemeljnicaSt)) &gt;= Abs(Sum(DataSource1.IznosPotrazujeTemeljnicaSt)), (Sum(DataSource1.IznosDugujeTemeljnicaSt) - Sum(DataSource1.IznosPotrazujeTemeljnicaSt)).ToString("N2"),
+	Abs(Sum(DataSource1.IznosDugujeTemeljnicaSt)) &lt; Abs(Sum(DataSource1.IznosPotrazujeTemeljnicaSt)), "0,00")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text46>
+            <Text47 Ref="83" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>24,0.2,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Guid>dd3e3b3f5c984a9f9b890577c1d9da57</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text47</Name>
+              <Page isRef="4" />
+              <Parent isRef="78" />
+              <Text>{Switch(
+	Sum(DataSource1.IznosPotrazujeTemeljnicaSt) &lt; 0, Sum(DataSource1.IznosDugujeTemeljnicaSt).ToString("N2"),
+	Sum(DataSource1.IznosDugujeTemeljnicaSt) &lt; 0, Sum(DataSource1.IznosDugujeTemeljnicaSt).ToString("N2"),
+	Abs(Sum(DataSource1.IznosDugujeTemeljnicaSt)) &gt; Abs(Sum(DataSource1.IznosPotrazujeTemeljnicaSt)), "0,00",
+	Abs(Sum(DataSource1.IznosPotrazujeTemeljnicaSt)) &gt;= Abs(Sum(DataSource1.IznosDugujeTemeljnicaSt)), (Sum(DataSource1.IznosPotrazujeTemeljnicaSt) - Sum(DataSource1.IznosDugujeTemeljnicaSt)).ToString("N2"))}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text47>
+            <HorizontalLinePrimitive7 Ref="84" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>0,0,27.6,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="85" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Name>HorizontalLinePrimitive7</Name>
+              <Page isRef="4" />
+              <Parent isRef="78" />
+              <Size>2</Size>
+              <StartCap Ref="86" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive7>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>FooterBand1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </FooterBand1>
+        <RectanglePrimitive1 Ref="87" type="RectanglePrimitive" isKey="true">
+          <ClientRectangle>0,3,27.6,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <Guid>853a47bcc5ac49b0a3cb5e6133ce75d0</Guid>
+          <Name>RectanglePrimitive1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </RectanglePrimitive1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>deffdddf8c65404695eb89321c4604cf</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>21</PageHeight>
+      <PageWidth>29.7</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="88" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="89" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>8/22/2014 1:38:25 PM</ReportChanged>
+  <ReportCreated>4/15/2014 2:05:59 PM</ReportCreated>
+  <ReportFile>C:\Users\goran\Desktop\IVAA\InLine.UI.Web\Content\Reporti\IspisiFinancijsko\1. GLAVNA KNJIGA\1.4. Bilanca\1.4.1. Konto (Račun).mrt</ReportFile>
+  <ReportGuid>6efc3174428e44ce9ca364a0e3933f3c</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2013.2.1700</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+		public int suma1Brojac = 0, suma2Brojac = 0, suma3Brojac = 0, suma4Brojac = 0;
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="1">
+    <Style1 Ref="90" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Brush>LightGray</Brush>
+      <Conditions isList="true" count="0" />
+      <Description />
+      <Font>Arial,8</Font>
+      <Name>Style1</Name>
+      <TextBrush>Black</TextBrush>
+    </Style1>
+  </Styles>
+</StiSerializer>

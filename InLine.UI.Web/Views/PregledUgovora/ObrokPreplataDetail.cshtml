@@ -1,0 +1,128 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.UgovorStanOtkupObrokPreplataDetaljFormFormatted
+
+ <style type="text/css">
+.text-box[type=text], .text-box[type=number], .text-box[type=date] { width:100px; border:"0";}
+#trosak-detail #BrojUgovor, #trosak-detail #Datum{ font-weight:bold;}
+
+</style>
+
+ @{
+    string prefixLabela = "labela_obrok_preplata_detalj_";
+ }
+
+<table class ="UgovorStanOtkupObrokPreplataDetail form_background" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+   <tbody>
+
+      <tr id="tr1">
+	    <td style="background-color:#FFF2C2; font-weight:bold">@Html.LabelFor(model => model.BrojUgovor, new { id = @prefixLabela + @Html.NameFor(model => model.BrojUgovor) })</td>
+        <td >@Html.EditorFor(model => model.BrojUgovor)</td>	
+        <td style="background-color:#FFF2C2; font-weight:bold">@Html.LabelFor(model => model.BrojPreplata, new { id = @prefixLabela + @Html.NameFor(model => model.BrojPreplata) })</td>
+        <td>@Html.EditorFor(model => model.BrojPreplata)</td>								                
+    </tr>
+
+     <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+    
+      <tr>
+        <td>@Html.LabelFor(model => model.IznosPreplata, new { id = @prefixLabela + @Html.NameFor(model => model.IznosPreplata) })</td>
+        <td>@Html.EditorFor(model => model.IznosPreplata)</td>
+        <td>@Html.LabelFor(model => model.Datum, new { id = @prefixLabela + @Html.NameFor(model => model.Datum) })</td>
+        <td>@Html.EditorFor(model => model.Datum)</td>
+
+      </tr>
+
+      <tr>
+         <td>@Html.LabelFor(model => model.IznosPreplataValuta, new { id = @prefixLabela + @Html.NameFor(model => model.IznosPreplataValuta) })</td>
+        <td>@Html.EditorFor(model => model.IznosPreplataValuta)</td>
+ 	    <td>@Html.LabelFor(model => model.Broj, new { id = @prefixLabela + @Html.NameFor(model => model.Broj) })</td>
+        <td>@Html.EditorFor(model => model.Broj)</td>
+      </tr>
+
+      <tr>
+         <td>@Html.LabelFor(model => model.BrojObveznica, new { id = @prefixLabela + @Html.NameFor(model => model.BrojObveznica) })</td>
+        <td>@Html.EditorFor(model => model.BrojObveznica)</td>
+ 	    <td>@Html.LabelFor(model => model.NeZateznaKamata, new { id = @prefixLabela + @Html.NameFor(model => model.NeZateznaKamata) })</td>
+        <td>
+           @if(@Model.NeZateznaKamata == false)
+            {
+                <div> NE</div>
+            }
+            else
+            {
+             <div> DA</div>
+            }
+        </td>
+      </tr>
+
+       <tr>
+         <td>@Html.LabelFor(model => model.MjesecObrokFormiranje, new { id = @prefixLabela + @Html.NameFor(model => model.MjesecObrokFormiranje) })</td>
+        <td>@Html.EditorFor(model => model.MjesecObrokFormiranje)</td>
+ 	    <td>@Html.LabelFor(model => model.GodinaObrokFormiranje, new { id = @prefixLabela + @Html.NameFor(model => model.GodinaObrokFormiranje) })</td>
+        <td>@Html.EditorFor(model => model.GodinaObrokFormiranje)</td>
+      </tr>
+
+      <tr>
+ 	    <td>@Html.LabelFor(model => model.BrojObrok, new { id = @prefixLabela + @Html.NameFor(model => model.BrojObrok) })</td>
+        <td>@Html.EditorFor(model => model.BrojObrok)</td>
+         <td>@Html.LabelFor(model => model.BrojAneks, new { id = @prefixLabela + @Html.NameFor(model => model.BrojAneks) })</td>
+        <td>@Html.EditorFor(model => model.BrojAneks)</td>
+      </tr>
+
+      <tr>
+ 	    <td>@Html.LabelFor(model => model.BrojStorno, new { id = @prefixLabela + @Html.NameFor(model => model.BrojStorno) })</td>
+        <td>@Html.EditorFor(model => model.BrojStorno)</td>
+        <td>@Html.LabelFor(model => model.Aktivno, new { id = @prefixLabela + @Html.NameFor(model => model.Aktivno) })</td>
+        <td>@Html.EditorFor(model => model.Aktivno)</td>
+      </tr>
+
+
+       
+   <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+     
+
+      <tr>
+ 	    <td>@Html.LabelFor(model => model.OsobaInsert, new { id = @prefixLabela + @Html.NameFor(model => model.OsobaInsert) })</td>
+        <td>@Html.EditorFor(model => model.OsobaInsert)</td>
+         <td>@Html.LabelFor(model => model.DatumInsert, new { id = @prefixLabela + @Html.NameFor(model => model.DatumInsert) })</td>
+        <td>@Html.EditorFor(model => model.DatumInsert)</td>
+      </tr>
+
+     <tr>
+        <td>@Html.LabelFor(model => model.OsobaUpdate, new { id = @prefixLabela + @Html.NameFor(model => model.OsobaUpdate) })</td>
+        <td>@Html.EditorFor(model => model.OsobaUpdate)</td>
+        <td>@Html.LabelFor(model => model.DatumUpdate, new { id = @prefixLabela + @Html.NameFor(model => model.DatumUpdate) })</td>
+        <td>@Html.EditorFor(model => model.DatumUpdate)</td>            
+    </tr>
+
+    		
+  </tbody>
+</table>
+
+
+
+    <script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $("#labela_obrok_preplata_detalj_BrojUgovor").text("Broj ugovora");
+            $("#labela_obrok_preplata_detalj_BrojPreplata").text("Broj preplata");
+            $("#labela_obrok_preplata_detalj_IznosPreplata").text("Iznos preplata");
+            $("#labela_obrok_preplata_detalj_Datum").text("Datum");
+            $("#labela_obrok_preplata_detalj_IznosPreplataValuta").text("Iznos preplata valuta");
+            $("#labela_obrok_preplata_detalj_Broj").text("Broj");
+            $("#labela_obrok_preplata_detalj_BrojObveznica").text("Broj obveznica");
+            $("#labela_obrok_preplata_detalj_NeZateznaKamata").text("Ne zatezna kamata");
+            $("#labela_obrok_preplata_detalj_MjesecObrokFormiranje").text("Mjesec formiranje obroka");
+            $("#labela_obrok_preplata_detalj_GodinaObrokFormiranje").text("Godina formiranje obroka");
+            $("#labela_obrok_preplata_detalj_BrojObrok").text("Broj obrok");
+            $("#labela_obrok_preplata_detalj_BrojAneks").text("Broj aneks");
+            $("#labela_obrok_preplata_detalj_BrojStorno").text("Broj storno");
+            $("#labela_obrok_preplata_detalj_Aktivno").text("Aktivno");
+            $("#labela_obrok_preplata_detalj_OsobaInsert").text("Kreirao");
+            $("#labela_obrok_preplata_detalj_OsobaUpdate").text("Promijenio");
+            $("#labela_obrok_preplata_detalj_DatumInsert").text("Kreirano datum");
+            $("#labela_obrok_preplata_detalj_DatumUpdate").text("Promjena datuma");
+
+        });
+   
+
+    </script>

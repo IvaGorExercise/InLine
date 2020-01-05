@@ -1,0 +1,1161 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.UgovorStanOtkupAneksDetaljFormFormatted
+@using InLine.UI.Web.Helper;
+
+<style type="text/css">
+
+ #BrojUgovor{ width:80px;}
+ #BrojAneks{ width:50px;}
+ #KontrolniBroj{ width:30px;}
+ #DatumAneksPomoc{ width:90px;}
+ #TecajDM{ width:90px;}
+ #UgovorStanOtkupAneksID_ValutaPomoc_chzn{ width:260px !important;}
+ #UgovorStanOtkupAneksID_ValutaPomoc_chzn.chzn-container .chzn-drop { width:258px !important;}
+ #UgovorStanOtkupAneksID_ValutaPomoc_chzn input[type="text"]{ width:223px !important;}
+ #DetaljObrocniAneks  {width:100%; background-color:; }
+ #DetaljObrocniAneks table td { width: 25%}
+ #DetaljObrocniAneks input[type="text"], input[type="datetime"] {width:90px;}
+ #DetaljObrocniAneks input[type="number"]{width:90px;}
+ #DetaljJednokratniAneks  {width:100%;}
+ #DetaljJednokratniAneksX  table td { width: 25%}
+ #DetaljJednokratniAneks  input[type="text"], input[type="datetime"]{width:100%;}
+ .PrviStupac{width:110px !important; }
+ .PrviStupacUsko{width:10% !important; }
+ .DecimalNumber {text-align:right}
+ .DecimalNumberVise {text-align:right}
+ .Left {text-align:left}
+ .Right {text-align:right;}
+ .Generalije {font-size: .9em}
+ .plava2{ background-color: #E1F0FC}
+ .plava{ background-color: #F2F7FC}
+ .plava3{ background-color: #E1EDF7}
+ #IznosUkupnoObrok{ font-weight: bold;}
+ .bold{ font-weight: bold;}
+ #DetaljObrocniAneks #Mjesec { width:50px;}
+ #DetaljObrocniAneks #Godina{ width:70px;}
+
+ 
+</style>
+@{
+    string Akcija = @InLine.Model.Data.FieldString.View.UgovorStanOtkupAneks.UgovorStanOtkupAneksEntity + InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert;
+    string IDForma = @InLine.Model.Data.FieldString.View.UgovorStanOtkupAneks.UgovorStanOtkupAneksEntity + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Forma;
+    string DatumAneks = "DatumAneks";
+    string DatumAneksPomoc = "DatumAneksPomoc";
+    string Checked = "checked";
+    string Datepicker = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Datepicker;
+    string Obrocni = "Obročni";
+    string Jednokratni = "Jednokratni";
+    string UgovorStanOtkupAneksIDValutaPomoc = @InLine.Model.Data.FieldString.View.UgovorStanOtkupAneks.UgovorStanOtkupAneksEntity + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.ID_ValutaPomoc;
+    string UgovorStanOtkupAneksIDValutaPomocSelector = "#" + @InLine.Model.Data.FieldString.View.UgovorStanOtkupAneks.UgovorStanOtkupAneksEntity + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.ID_ValutaPomoc;
+    string VrstaUgovoraClass = ".VrstaUgovoraClass";
+    string VrstaUgovoraClassSelector = "VrstaUgovoraClass";
+    string DetaljObrocniSelector = "#DetaljObrocniAneks";
+    string DetaljJednokratniSelector = "#DetaljJednokratniAneks";
+    string Left = "Left";
+    string Right = "Right";
+    string ID_DokumentVr = "ID_DokumentVr";
+    string LabelaOznakaTecaj = "labelaOznakaTecaj";
+    string IznosUcesce = "IznosUcesce";
+    string BrojUgovor = "BrojUgovor";
+    string DetaljObrocni = "DetaljObrocniAneks";
+    string DetaljJednokratni = "DetaljJednokratniAneks";
+    string VodeceNule = "vodeceNule";
+    string DokumentVrstaAneksPomoc = "DokumentVrstaAneksPomoc";
+    string DokumentVrstaAneksPomocSelector = "#DokumentVrstaAneksPomoc";
+    string DecimalNumber = "DecimalNumber";
+    string DecimalNumberVise = "DecimalNumberVise";
+    string DokumentVrstaOznakaAneks = "DokumentVrstaOznakaAneks";
+    string DokumentVrstaOznakaAneksSelector = "#DokumentVrstaOznakaAneks";
+
+}
+
+@{
+    string prefixLabela = "labela_UgovorStanOtkupAneks_Detalj_";
+}
+
+
+@using (Html.BeginForm(Akcija, @InLine.UI.Web.T4.ControllerName.ControllerName.OtkupStanova, FormMethod.Post, new { id = IDForma, @class = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormClass }))
+{
+    @Html.HiddenFor(model => model.ID_UgovorStanOtkupAneks);
+    @Html.HiddenFor(model => model.ID_UgovorStanOtkup);
+    @Html.HiddenFor(model => model.ID_DokumentVr);
+    @Html.HiddenFor(model => model.DokumentVrsta);                                          
+    @Html.HiddenFor(model => model.VrstaUgovoraNazivAneks);                                                                                                                                                      
+    @Html.HiddenFor(model => model.IDValuta);
+    @Html.HiddenFor(model => model.DokumentGrupa);
+    @Html.HiddenFor(model => model.DokumentVrstaOznakaAneks);
+    @Html.HiddenFor(model => model.NadstojnickiAdaptiran);
+    @Html.HiddenFor(model => model.BrojObrokDospjelo);
+    @Html.HiddenFor(model => model.DatumAneks);
+                                                                                                                                                             
+    @Html.HiddenFor(model => model.OsobaInsert);
+    @Html.HiddenFor(model => model.DatumInsert);
+    @Html.HiddenFor(model => model.ID_OsobaInsert);                                                                                                                                           
+    @Html.HiddenFor(model => model.OsobaUpdate);
+    @Html.HiddenFor(model => model.ID_OsobaUpdate);
+                                               
+                                            
+                                                                                                                          
+    @Html.ValidationSummary(true)
+                                                                                                        
+                                               
+    <table class ="table1 @InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormBackground" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+        <tbody>
+            <tr>
+                <td>
+                    <table width="100%" valign="top">
+                        <tbody>
+                            <tr>
+                                <td colspan="4"> <label  id=Provjera class="red"></label> </td>
+                            </tr>
+                            <tr>
+                                <td class="PrviStupac">@Html.LabelFor(model => model.BrojUgovor, new { id = @prefixLabela + @Html.NameFor(model => model.BrojUgovor) })
+                                </td>
+                                <td >@Html.TextBoxFor(model => model.BrojUgovor, new { @class = @VodeceNule, @Value = (Model.BrojUgovor > 0 ? Model.BrojUgovor.ToString() : string.Empty), @disabled = "disabled" }) @Html.ValidationMessageFor(model => model.BrojUgovor)
+                                 -
+                               @Html.TextBoxFor(model => model.KontrolniBroj, new { @Value = (Model.BrojUgovor > 0 ? Model.KontrolniBroj.ToString() : string.Empty), @disabled = "disabled" })@Html.ValidationMessageFor(model => model.KontrolniBroj)
+                                </td>
+                                <td>@Html.LabelFor(model => model.BrojAneks, new { id = @prefixLabela + @Html.NameFor(model => model.BrojAneks) })
+                                </td>
+                                <td>@Html.EditorFor(model => model.BrojAneks) @Html.ValidationMessageFor(model => model.BrojAneks)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="PrviStupac">
+                                    Vrsta ugovora
+                                </td>
+                                <td colspan="3">@Html.RadioButtonFor(model => model.VrstaUgovoraAneks, 1, new { @class = @VrstaUgovoraClassSelector })
+                                    @Obrocni
+                                    @Html.RadioButtonFor(model => model.VrstaUgovoraAneks, 2, new { @class = VrstaUgovoraClassSelector })
+                                    @Jednokratni
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="PrviStupac" style="width: 20%;">@Html.LabelFor(model => model.DokumentVrsta, new { id = @prefixLabela + @Html.NameFor(model => model.DokumentVrsta) })
+                                </td>
+                                <td colspan="3">@Html.DropDownList(@DokumentVrstaAneksPomoc, (SelectList)ViewBag.DokumentVrstaAneks, new { @class = "aaa" })@Html.ValidationMessageFor(model => model.ID_DokumentVr)
+                                </td>
+                            </tr>
+                            <tr>
+                           <td colspan="4">
+                           <table>
+                           <tr>
+                            <td>@Html.LabelFor(model => model.Datum, new { id = @prefixLabela + @Html.NameFor(model => model.Datum) })
+                                </td>
+                                <td>@Html.TextBox(@DatumAneksPomoc, null, new { @class = @Datepicker })
+                                </td>
+                                  <td>@Html.LabelFor(model => model.TecajDM, new { id = @prefixLabela + @Html.NameFor(model => model.TecajDM) })
+                                </td>
+                                <td>@Html.TextBoxFor(model => model.TecajDM, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez6Decimala, Model.TecajDM), new { @class = @DecimalNumberVise })
+                                    <input id="btnPozoviTecaj"  type="button" value="Izaberi tečaj" name="PozoviTecaj"/>
+                                 @Html.ValidationMessageFor(model => model.TecajDM)
+                                </td>
+                                   <td>@Html.LabelFor(model => model.IznosPovrat, new { id = @prefixLabela + @Html.NameFor(model => model.IznosPovrat) })
+                                </td>
+                                <td>@Html.TextBoxFor(model => model.IznosPovrat, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosPovrat), new { @class = @DecimalNumber })
+                                </td>
+                                 <td>@Html.LabelFor(model => model.IDValuta)
+                                 </td>
+                                <td>
+                                </td>
+                                </tr>
+                           </table>
+                           </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+
+ <tr class="Aneks">
+ <td>
+<table  width="100%" valign="top">
+<tr>
+<td></td><td>Po aneksu</td><td>Ostatak do aneksa</td><td>Raspoređeno</td>
+</tr>
+<tr>
+    <td>Kredit</td>
+    <td>@Html.TextBoxFor(model => model.IznosKredit, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosKredit), new { @class = @DecimalNumber }) @Html.ValidationMessageFor(model => model.IznosKredit)</td>
+    <td>@Html.TextBoxFor(model => model.IznosKreditNeplaceno, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosKreditNeplaceno), new { @class = @DecimalNumber }) @Html.ValidationMessageFor(model => model.IznosKamataNeplaceno)</td>
+    <td>@Html.TextBoxFor(model => model.IznosKreditPlaceno, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosKreditPlaceno), new { @class = @DecimalNumber }) @Html.ValidationMessageFor(model => model.IznosKreditPlaceno)</td>
+</tr>
+<tr>
+ <td>Kamata</td>
+    <td>@Html.TextBoxFor(model => model.IznosKamata, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosKamata), new { @class = @DecimalNumber }) @Html.ValidationMessageFor(model => model.IznosKamata)</td>
+    <td>@Html.TextBoxFor(model => model.IznosKamataNeplaceno, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosKamataNeplaceno), new { @class = @DecimalNumber }) @Html.ValidationMessageFor(model => model.IznosKamataNeplaceno)</td>
+    <td>@Html.TextBoxFor(model => model.IznosKamataPlaceno, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosKamataPlaceno), new { @class = @DecimalNumber }) @Html.ValidationMessageFor(model => model.IznosKamataPlaceno)</td>
+</tr>
+<tr>
+ <td>Rev. kredita</td>
+    <td>@Html.TextBoxFor(model => model.IznosKreditRevalorizacija, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosKreditRevalorizacija), new { @class = @DecimalNumber }) @Html.ValidationMessageFor(model => model.IznosKreditRevalorizacija)</td>
+    <td>@Html.TextBoxFor(model => model.IznosKreditRevalorizacijaNeplaceno, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosKreditRevalorizacijaNeplaceno), new { @class = @DecimalNumber }) @Html.ValidationMessageFor(model => model.IznosKreditRevalorizacijaNeplaceno)</td>
+    <td>@Html.TextBoxFor(model => model.IznosKreditRevalorizacijaPlaceno, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosKreditRevalorizacijaPlaceno), new { @class = @DecimalNumber }) @Html.ValidationMessageFor(model => model.IznosKreditRevalorizacijaPlaceno)</td>
+</tr>
+
+<tr>
+ <td>Rev. kamate</td>
+    <td>@Html.TextBoxFor(model => model.IznosKamataRevalorizacija, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosKamataRevalorizacija), new { @class = @DecimalNumber }) @Html.ValidationMessageFor(model => model.IznosKamataRevalorizacija)</td>
+    <td>@Html.TextBoxFor(model => model.IznosKamataRevalorizacijaNeplaceno, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosKamataRevalorizacijaNeplaceno), new { @class = @DecimalNumber }) @Html.ValidationMessageFor(model => model.IznosKamataRevalorizacijaNeplaceno)</td>
+    <td>@Html.TextBoxFor(model => model.IznosKamataRevalorizacijaPlaceno, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosKamataRevalorizacijaPlaceno), new { @class = @DecimalNumber }) @Html.ValidationMessageFor(model => model.IznosKamataRevalorizacijaPlaceno)</td>
+</tr>
+
+<tr>
+ <td>Učešće</td>
+    <td>@Html.TextBoxFor(model => model.IznosUcesce, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosUcesce), new { @class = @DecimalNumber }) @Html.ValidationMessageFor(model => model.IznosUcesce)</td>
+    <td>@Html.TextBoxFor(model => model.IznosUcesceNeplaceno, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosUcesceNeplaceno), new { @class = @DecimalNumber }) @Html.ValidationMessageFor(model => model.IznosUcesceNeplaceno)</td>
+    <td>@Html.TextBoxFor(model => model.IznosUcescePlaceno, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosUcescePlaceno), new { @class = @DecimalNumber }) @Html.ValidationMessageFor(model => model.IznosUcescePlaceno)</td>
+</tr>
+
+<tr>
+ <td></td>
+    <td></td>
+    <td></td>
+    <td>Obroka:</td>
+</tr>
+
+</table>
+ </td>
+      </tr>
+             <tr>
+              <td colspan='2' valign="top">
+                    <table width="100%">
+                        <tr>
+                            <td>
+                                <div id="DetaljObrocniAneks" style="display: none; width:100%">
+                                    <table width="100%">
+                               
+                                     <tr class ="plava" id ="trKamata">
+                                            <td>@Html.LabelFor(model => model.BrojObrok, new { id = @prefixLabela + @Html.NameFor(model => model.BrojObrok) })
+                                            </td>
+                                            <td>
+                                                @Html.EditorFor(model => model.BrojObrok) @Html.ValidationMessageFor(model => model.BrojObrok)
+                                            </td>
+                                            <td>@Html.LabelFor(model => model.IznosKreditObrok, new { id = @prefixLabela + @Html.NameFor(model => model.IznosKreditObrok) })
+                                            </td>
+                                            <td>@Html.TextBoxFor(model => model.IznosKreditObrok, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosKreditObrok), new { @class = @DecimalNumber })
+                                            @Html.ValidationMessageFor(model => model.IznosKreditObrok)
+                                            </td>
+                                        </tr>
+                                        <tr class ="plava">
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>@Html.LabelFor(model => model.IznosKamataObrok, new { id = @prefixLabela + @Html.NameFor(model => model.IznosKamataObrok) })
+                                            </td>
+                                            <td>@Html.TextBoxFor(model => model.IznosKamataObrok, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosKamataObrok), new { @class = @DecimalNumber })
+                                            @Html.ValidationMessageFor(model => model.IznosKamataObrok)
+                                            </td>
+                                        </tr>
+                                          <tr class ="plava">
+                                             <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>@Html.LabelFor(model => model.IznosUkupnoObrok, new { id = @prefixLabela + @Html.NameFor(model => model.IznosUkupnoObrok), @class = "bold" })</td>
+                                            <td>@Html.TextBoxFor(model => model.IznosUkupnoObrok, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosUkupnoObrok), new { @class = @DecimalNumber })
+                                            @Html.ValidationMessageFor(model => model.IznosUkupnoObrok)
+                                            </td>
+                                          </tr>
+                                              
+                                        <tr class ="plava">
+                                            <td>Od mjeseca i godine
+                                            </td>
+                                            <td>@Html.EditorFor(model => model.Mjesec) @Html.ValidationMessageFor(model => model.Mjesec)
+                                             @Html.EditorFor(model => model.Godina) @Html.ValidationMessageFor(model => model.Godina)
+                                             @Html.ValidationMessageFor(model => model.Mjesec)
+                                             @Html.ValidationMessageFor(model => model.Godina)
+                                            </td>
+                                            <td>
+                                            @Html.LabelFor(model => model.BrojObrokOd, new { id = @prefixLabela + @Html.NameFor(model => model.BrojObrokOd) })
+                                            </td>
+                                            <td>
+                                            @Html.EditorFor(model => model.BrojObrokOd) @Html.ValidationMessageFor(model => model.BrojObrokOd)
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="DetaljJednokratniAneks" style="display: none; width:100%">
+                                    <table width="100%">
+                                        <tr>
+                                            <td class ="PrviStupac">@Html.LabelFor(model => model.IDValuta)
+                                            </td>
+                                            <td>@Html.DropDownList(UgovorStanOtkupAneksIDValutaPomoc, (SelectList)ViewBag.IDValuta)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class ="PrviStupac">Jed. iznos val</td>
+                                            <td>@Html.TextBoxFor(model => model.IznosJednokratnoValuta, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosJednokratnoValuta), new { @class = @DecimalNumber })@Html.ValidationMessageFor(model => model.IznosJednokratnoValuta)</td>
+                                            <td>@Html.TextBoxFor(model => model.IznosJednokratnoValutaNeplaceno, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosJednokratnoValutaNeplaceno), new { @class = @DecimalNumber }) @Html.ValidationMessageFor(model => model.IznosJednokratnoValutaNeplaceno)</td>
+                                            <td>@Html.TextBoxFor(model => model.IznosJednokratnoValutaPlaceno, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosJednokratnoValutaPlaceno), new { @class = @DecimalNumber }) @Html.ValidationMessageFor(model => model.IznosJednokratnoValutaPlaceno)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class ="PrviStupac">Jed. iznos KN</td>
+                                            <td>@Html.TextBoxFor(model => model.IznosJednokratno, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosJednokratno), new { @class = @DecimalNumber })@Html.ValidationMessageFor(model => model.IznosJednokratno)</td>
+                                            <td>@Html.TextBoxFor(model => model.IznosJednokratnoNeplaceno, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosJednokratnoNeplaceno), new { @class = @DecimalNumber }) @Html.ValidationMessageFor(model => model.IznosJednokratnoNeplaceno)</td>
+                                            <td>@Html.TextBoxFor(model => model.IznosJednokratnoPlaceno, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosJednokratnoPlaceno), new { @class = @DecimalNumber }) @Html.ValidationMessageFor(model => model.IznosJednokratnoPlaceno)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+      <tr>
+      <td colspan='2'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td>
+      </tr>
+
+      
+
+       <tr>
+       <table class="Generalije" width="100%">
+       <tr>
+         <td>@Html.LabelFor(model => model.OsobaInsert, new { id = @prefixLabela + @Html.NameFor(model => model.OsobaInsert) })
+        @Html.DisplayFor(model => model.OsobaInsert)</td>
+        <td>@Html.LabelFor(model => model.DatumInsert, new { id = @prefixLabela + @Html.NameFor(model => model.DatumInsert) }) 
+         @Html.DisplayFor(model => model.DatumInsert)</td>
+         <td>@Html.LabelFor(model => model.OsobaUpdate, new { id = @prefixLabela + @Html.NameFor(model => model.OsobaUpdate) })
+        @Html.DisplayFor(model => model.OsobaUpdate)</td>
+        <td>@Html.LabelFor(model => model.DatumUpdate, new { id = @prefixLabela + @Html.NameFor(model => model.DatumUpdate) })
+        @Html.DisplayFor(model => model.DatumUpdate)</td>	
+       </tr>
+       </table>
+    </tr>
+      <tr colspan='4'>
+          <div id="PozoviTecaj">
+           
+          </div>
+        </tr>
+
+   </tbody>
+    </table>
+    <br />
+    <div id="poruka_UgovorStanOtkupAneks"></div>	
+    
+}
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/chosen.jquery.min.js")" type="text/javascript"></script>
+
+ <script type="text/javascript">
+
+    $.ListaDokumentVr = function (item) {
+
+            var DokumentVrsta = $('@DokumentVrstaAneksPomocSelector');
+
+            var DokumentVrstaLista = DokumentVrsta.get(0);
+            for (var i = DokumentVrstaLista.options.length - 1; i > 0; i--) {
+                DokumentVrstaLista.remove(i);
+            }
+
+
+            var url = '@Url.Action("GetDokumentVrZaDropDown", @InLine.UI.Web.T4.ControllerName.ControllerName.OtkupStanova)';
+            $.ajax({
+                url: url,
+                data: { Vrsta: 1, Dokument: 2 },
+                dataType: 'json',
+                type: 'GET',
+                success: function (data) {
+                    if (data.length > 0) {
+                        for (var i = 0; i < data.length; i++) {
+                            var item = data[i];
+                            var Value = item.Value;
+                            var Text = item.Text;
+                            $('@DokumentVrstaAneksPomocSelector').append($("<option></option>").attr("value", Value).text(Text));
+                            $('@DokumentVrstaAneksPomocSelector').trigger("liszt:updated");
+                        }
+
+                    }
+                    else {
+
+                    }
+
+                }
+
+            });
+
+        };
+
+    $(".vodeceNule").change(function () {
+            var brojZnakova = $(this).val().length;
+            var vrijednost = $(this).val();
+            var nova = padding_left(vrijednost, "0", 7)
+            $(this).val(nova);
+
+        });
+
+    $.vodeceNuleFormat = function (Broj) {
+            var brojZnakova = Broj.length;
+            var vrijednost = Broj;
+            var nova = padding_left(vrijednost, "0", 7)
+            return nova;
+
+        };
+
+     function padding_left(s, c, n) {
+            if (!s || !c || s.length >= n) {
+                return s;
+            }
+            var max = (n - s.length) / c.length;
+            for (var i = 0; i < max; i++) {
+                s = c + s;
+            }
+            return s;
+        }
+
+  </script>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+
+    var validator = Dialozi.VratiValidator('@IDForma');
+    validator.settings.ignore = ":hidden:not(#ID_DokumentVr)";
+
+
+       $('#' + '@InLine.Model.Data.FieldString.View.UgovorStanOtkupAneks.UgovorStanOtkupAneksEntity' + 'DialogSpremiKopiraj').hide();
+       $('#' + '@InLine.Model.Data.FieldString.View.UgovorStanOtkupAneks.UgovorStanOtkupAneksEntity' + 'DialogSpremiDodaj').hide();
+
+        Dialozi.DatePicker();
+        $("#DokumentVrstaAneksPomoc").chosen();
+
+        var valutaUgovora = '@Model.IDValuta';
+        $("#" + '@UgovorStanOtkupAneksIDValutaPomoc').val(valutaUgovora).chosen();
+
+
+        var VrDokumenta = '@Model.ID_DokumentVr';
+        $('@DokumentVrstaAneksPomocSelector').val(VrDokumenta);
+        $('@DokumentVrstaAneksPomocSelector').trigger("liszt:updated");
+        $("#" + '@ID_DokumentVr').val(VrDokumenta);
+
+
+       $('@DokumentVrstaAneksPomocSelector').change(function (event) {
+
+           var VrDokumentaSelectiran =  $('@DokumentVrstaAneksPomocSelector').val();
+           var VrDokumentaOznakaSelectiran =  $('@DokumentVrstaOznakaAneksSelector').val();
+
+
+           if (VrDokumentaSelectiran > 0)
+           {
+             $("#" + '@ID_DokumentVr').val(VrDokumentaSelectiran);
+             $.postaviDokumentGrupa(VrDokumentaSelectiran);
+           }
+            
+       });
+
+          $('@UgovorStanOtkupAneksIDValutaPomocSelector').change(function (event) {
+
+           var VrDokumentaSelectiran =  $('@DokumentVrstaAneksPomocSelector').val();
+           var VrDokumentaOznakaSelectiran =  $('@DokumentVrstaOznakaAneksSelector').val();
+       });
+
+
+
+        $.validator.methods.number = function (value, element)
+        {
+            value = floatValue(value);
+            return this.optional(element) || !isNaN(value);
+        }
+
+        $.validator.methods.range = function (value, element, param)
+        {
+            value = floatValue(value);
+            return this.optional(element) ||
+           (value >= param[0] && value <= param[1]);
+        }
+
+        function floatValue(value) {
+            return parseFloat(value.replace(",", "."));
+        }
+
+
+        var vrstaUgovora = @Model.VrstaUgovoraAneks;
+
+ 
+
+        if(vrstaUgovora == 1)
+        {
+           $('#' + '@DetaljObrocni').show();
+        }
+        else if(vrstaUgovora == 2)
+        {
+          $('#' + '@DetaljJednokratni').show();
+        }
+        else{
+             $('#' + '@DetaljObrocni').hide();
+            $('#' + '@DetaljJednokratni').hide();
+        }
+
+
+        
+     $.FNS_KontrolniBroj05 = function (Broj) {
+
+            var KontrolniBroj = 0;
+            var Umnozak = 0;
+	        var Ostatak = 0;
+	        var Mnozitelj = 2;
+
+            while (Broj > 0)
+            {
+                Umnozak = Umnozak + (Broj % 10) * Mnozitelj;
+                Broj = Broj / 10;
+                Broj = parseInt(Broj)
+                Mnozitelj = Mnozitelj + 1;
+            }
+         
+            Ostatak = parseInt(Umnozak) % 11;
+
+            KontrolniBroj = 11 - Ostatak;
+
+            if((KontrolniBroj == 10) || (KontrolniBroj == 11))
+            {
+                 KontrolniBroj = 0;
+            }
+
+	        return KontrolniBroj;
+
+            };
+
+    });
+
+
+
+    $(document).ready(function () {
+
+          var valueDatumAneks = '@Model.DatumAneks.GetValueOrDefault().ToShortDateString()';
+            Dialozi.PostaviDatumPolje('@DatumAneks', valueDatumAneks);
+            Dialozi.DocumentReadyValid('@DatumAneks');
+
+    if(@Model.ID_UgovorStanOtkupAneks  > -1)
+        {
+            var kojaValuta = '@Model.IDValuta';
+            var kojaOznaka = '@Model.DokumentVrstaOznakaAneks';
+
+            Dialozi.DropDownValuta(kojaValuta);
+            $("#" + '@UgovorStanOtkupAneksIDValutaPomoc').trigger("liszt:updated");
+
+        }
+       
+    });
+
+
+
+
+    $('#' + '@DatumAneksPomoc').change(function (event) {
+        var dat = $('#' + '@DatumAneksPomoc').val();
+        Dialozi.PostaviDatumPolje('@DatumAneks', dat);
+    });
+
+    $(function () {
+        $("#labela_UgovorStanOtkupAneks_Detalj_BrojUgovor").text("Ugovor");
+        $("#labela_UgovorStanOtkupAneks_Detalj_BrojAneks").text("Broj aneks");
+        $("#labela_UgovorStanOtkupAneks_Detalj_DokumentVrsta").text("Dokument vrsta");
+        $("#labela_UgovorStanOtkupAneks_Detalj_TecajDM").text("Tečaj DEM");
+        $("#labela_UgovorStanOtkupAneks_Detalj_IDValuta").text("Valuta");
+        $("#labela_UgovorStanOtkupAneks_Detalj_IznosJednokratno").text("Iznos Jednokratno");
+        $("#labela_UgovorStanOtkupAneks_Detalj_IznosJednokratnoValuta").text("Iznos Jednokratno Valuta");
+        $("#labela_UgovorStanOtkupAneks_Detalj_BrojObrok").text("Broj obroka");
+        $("#labela_UgovorStanOtkupAneks_Detalj_IznosKredit").text("Ukupan kredit");
+        $("#labela_UgovorStanOtkupAneks_Detalj_IznosKreditObrok").text("Obrok kredita");
+        $("#labela_UgovorStanOtkupAneks_Detalj_IznosUkupnoObrok").text("Obrok ukupno");
+        $("#labela_UgovorStanOtkupAneks_Detalj_IznosKamata").text("Iznos kamata");
+        $("#labela_UgovorStanOtkupAneks_Detalj_IznosKamataObrok").text("Iznos kamata obrok");
+        $("#labela_UgovorStanOtkupAneks_Detalj_IznosPovrat").text("Povrat");
+        $("#labela_UgovorStanOtkupAneks_Detalj_BrojObrokOd").text("Od obroka");
+        $("#labela_UgovorStanOtkupAneks_Detalj_OsobaInsert").text("Kreirao:");
+        $("#labela_UgovorStanOtkupAneks_Detalj_DatumInsert").text("Datum unosa:");
+        $("#labela_UgovorStanOtkupAneks_Detalj_OsobaUpdate").text("Promijenio:");
+        $("#labela_UgovorStanOtkupAneks_Detalj_DatumUpdate").text("Datum promjene:");
+
+
+    });
+
+
+
+</script>
+
+<script type="text/javascript">
+
+    $("@VrstaUgovoraClass").each(function (i) {
+        $(this).on("click", function () {
+            var vrijednost = $(this).attr("value");
+
+            if (vrijednost == 1) {
+                $("@DetaljObrocniSelector").show();
+                $("@DetaljJednokratniSelector").hide();
+                $.ListaDokumentVr(vrijednost);
+                $("#" + '@LabelaOznakaTecaj').text("DEM");
+                $("#IznosJednokratno").val("0,00");
+                $("#IznosJednokratnoValuta").val("0,00");
+                $("#TecajPoUgovoru").val("");
+            }
+
+            else if (vrijednost == 2) {
+                $("@DetaljObrocniSelector").hide();
+                $("@DetaljJednokratniSelector").show();
+                $.ListaDokumentVr(vrijednost);
+            }
+        });
+    });
+
+
+
+
+</script>
+
+<script type="text/javascript">
+
+    $.postaviDokumentGrupa = function (item) {
+
+        var url = '@Url.Action("GetDokumentVr", @InLine.UI.Web.T4.ControllerName.ControllerName.OtkupStanova)';
+        $.ajax({
+            url: url,
+            data: { idDokumentVr: item },
+            dataType: 'json',
+            type: 'GET',
+            success: function (data) {
+                if (data != null) {
+                    $('#DokumentGrupa').val(data.IDDokumentGr);
+                    $('@DokumentVrstaOznakaAneksSelector').val(data.Oznaka);
+
+
+                }
+                else {
+                    $('#DokumentGrupa').val(null);
+                    $('@DokumentVrstaOznakaAneksSelector').val(null);
+                }
+
+            }
+
+        });
+
+    };
+
+
+</script>
+
+<script>
+
+    var decimalDeformatFunkcija = function (BROJ) {
+        if (!BROJ.match(/[a-zA-ZšđčćžŠĐČĆŽ]/g)) {
+
+            var count = BROJ.split(",").length - 1;
+
+            if (count < 2) {
+                BROJ = BROJ.replace(/ /g, '');
+                BROJ = BROJ.replace(/\./g, '');
+
+                if (count == 0) {
+                    BROJ += '.00';
+                };
+
+                if (count == 1) {
+                    var posljeZareza = BROJ.substr(BROJ.indexOf(',') + 1);
+                    if (posljeZareza.length == 0) {
+                        BROJ += '00';
+                    };
+                    if (posljeZareza.length == 1) {
+                        BROJ += '0';
+                    };
+                    if (posljeZareza.length > 2) {
+                        BROJ = BROJ.replace(/\,/g, '.');
+                        var ZAOKRUZENO = parseFloat(BROJ).toFixed(2);
+                        BROJ = ZAOKRUZENO.toString();
+                        BROJ = BROJ.replace(/\./g, ',');
+                    };
+                };
+                var parts = BROJ.split(',');
+                var part1 = parts[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1");
+                var part2 = parts[1];
+
+                BROJ = part1 + '.' + part2;
+            };
+        };
+        return BROJ;
+    }
+
+    var decimalViseDeformatFunkcija = function (BROJ) {
+        if (!BROJ.match(/[a-zA-ZšđčćžŠĐČĆŽ]/g)) {
+
+            var count = BROJ.split(",").length - 1;
+
+            if (count < 2) {
+                BROJ = BROJ.replace(/ /g, '');
+                BROJ = BROJ.replace(/\./g, '');
+
+                if (count == 0) {
+                    BROJ += '.00';
+                };
+
+                if (count == 1) {
+                    var posljeZareza = BROJ.substr(BROJ.indexOf(',') + 1);
+                    if (posljeZareza.length == 0) {
+                        BROJ += '00';
+                    };
+                    if (posljeZareza.length == 1) {
+                        BROJ += '0';
+                    };
+                    if (posljeZareza.length > 2) {
+                        BROJ = BROJ.replace(/\,/g, '.');
+                        var ZAOKRUZENO = parseFloat(BROJ).toFixed(6);
+                        BROJ = ZAOKRUZENO.toString();
+                        BROJ = BROJ.replace(/\./g, ',');
+                    };
+                };
+                var parts = BROJ.split(',');
+                var part1 = parts[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1");
+                var part2 = parts[1];
+
+                BROJ = part1 + '.' + part2;
+            };
+        };
+        return BROJ;
+    }
+
+
+    var decimalViseFunkcijaTest = function (BROJ) {
+        if (!BROJ.match(/[a-zA-ZšđčćžŠĐČĆŽ]/g)) {
+
+            var count = BROJ.split(",").length - 1;
+
+            if (count < 2) {
+                BROJ = BROJ.replace(/ /g, '');
+                BROJ = BROJ.replace(/\./g, '');
+
+                if (count == 0) {
+                    BROJ += ',00';
+                };
+
+                if (count == 1) {
+                    var posljeZareza = BROJ.substr(BROJ.indexOf(',') + 1);
+                    if (posljeZareza.length == 0) {
+                        BROJ += '00';
+                    };
+                    if (posljeZareza.length == 1) {
+                        BROJ += '0';
+                    };
+                    if (posljeZareza.length > 2) {
+                        BROJ = BROJ.replace(/\,/g, '.');
+
+                        var ZAOKRUZENO = parseFloat(BROJ).toFixed(6);
+                        BROJ = ZAOKRUZENO.toString();
+                        BROJ = BROJ.replace(/\./g, ',');
+                    };
+                };
+                var parts = BROJ.split(',');
+                var part1 = parts[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
+                var part2 = parts[1];
+
+                BROJ = part1 + ',' + part2;
+            };
+        };
+        return BROJ;
+    }
+
+    var decimalFunkcijaTest = function (BROJ) {
+        if (!BROJ.match(/[a-zA-ZšđčćžŠĐČĆŽ]/g)) {
+
+            var count = BROJ.split(",").length - 1;
+
+            if (count < 2) {
+                BROJ = BROJ.replace(/ /g, '');
+                BROJ = BROJ.replace(/\./g, '');
+
+                if (count == 0) {
+                    BROJ += ',00';
+                };
+
+                if (count == 1) {
+                    var posljeZareza = BROJ.substr(BROJ.indexOf(',') + 1);
+                    if (posljeZareza.length == 0) {
+                        BROJ += '00';
+                    };
+                    if (posljeZareza.length == 1) {
+                        BROJ += '0';
+                    };
+                    if (posljeZareza.length > 2) {
+                        BROJ = BROJ.replace(/\,/g, '.');
+
+                        var ZAOKRUZENO = parseFloat(BROJ).toFixed(2);
+                        BROJ = ZAOKRUZENO.toString();
+                        BROJ = BROJ.replace(/\./g, ',');
+                    };
+                };
+                var parts = BROJ.split(',');
+                var part1 = parts[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
+                var part2 = parts[1];
+
+                BROJ = part1 + ',' + part2;
+            };
+        };
+        return BROJ;
+    }
+
+
+
+    $(document).ready(function () {
+
+        var decimalFunkcija = function (BROJ) {
+            if (!BROJ.match(/[a-zA-ZšđčćžŠĐČĆŽ]/g)) {
+                var count = BROJ.split(",").length - 1;
+
+                if (count < 2) {
+                    BROJ = BROJ.replace(/ /g, '');
+                    BROJ = BROJ.replace(/\./g, '');
+
+                    if (count == 0) {
+                        BROJ += ',00';
+                    };
+
+                    if (count == 1) {
+                        var posljeZareza = BROJ.substr(BROJ.indexOf(',') + 1);
+                        if (posljeZareza.length == 0) {
+                            BROJ += '00';
+                        };
+                        if (posljeZareza.length == 1) {
+                            BROJ += '0';
+                        };
+                        if (posljeZareza.length > 2) {
+                            BROJ = BROJ.replace(/\,/g, '.');
+                            var ZAOKRUZENO = parseFloat(BROJ).toFixed(2);
+                            BROJ = ZAOKRUZENO.toString();
+                            BROJ = BROJ.replace(/\./g, ',');
+                        };
+                    };
+                    var parts = BROJ.split(',');
+                    var part1 = parts[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
+                    var part2 = parts[1];
+
+                    BROJ = part1 + ',' + part2;
+                };
+            };
+            return BROJ;
+        };
+
+        $(".DecimalNumber").blur(function () {
+            var ULAZ = $(this).val();
+            var IZLAZ = decimalFunkcija(ULAZ);
+            $(this).val(IZLAZ)
+        });
+
+        $(".DecimalNumber").keypress(function (e) {
+            if (e.which == 13) {
+                $(".DecimalNumber").blur();
+            }
+        });
+
+             $(".DecimalNumberVise").blur(function () {
+               var ULAZ = $(this).val();
+               var IZLAZ = Dialozi.DecimalFunkcija6(ULAZ);
+               $(this).val(IZLAZ)
+        
+           });
+
+           $(".DecimalNumberVise").keypress(function (e) {
+               if (e.which == 13) {
+                   $(".DecimalNumberVise").blur();
+               }
+           });
+
+
+
+        $("#IznosKredit").blur(function () {
+            var Broj = $("#BrojObrok").val();
+            var Kredit = $("#IznosKredit").val();
+            var Kamata = $("#IznosKamata").val();
+
+            if (Broj != "0" && Broj != "" && Kredit != "0,00") {
+                var Iznos = $(this).val();
+                var IznosDeformat = decimalDeformatFunkcija(Iznos);
+                var IZLAZ = $.IznosKreditKamataObrok(IznosDeformat, Broj);
+                IZLAZ = IZLAZ.toString().replace('.', ',');
+                var IZLAZ = decimalFunkcija(IZLAZ);
+                $("#IznosKreditObrok").val(IZLAZ);
+                $.ObrokUkupno();
+
+            }
+        });
+
+
+        $("#IznosKamata").blur(function () {
+            var Broj = $("#BrojObrok").val();
+            var Kredit = $("#IznosKredit").val();
+            var Kamata = $("#IznosKamata").val();
+
+            if (Broj != "0" && Broj != "" && Kamata != "0,00") {
+                var Iznos = $(this).val();
+                var IznosDeformat = decimalDeformatFunkcija(Iznos);
+                var IZLAZ = $.IznosKreditKamataObrok(IznosDeformat, Broj);
+                IZLAZ = IZLAZ.toString().replace('.', ',');
+                var IZLAZ = decimalFunkcija(IZLAZ);
+                $("#IznosKamataObrok").val(IZLAZ);
+                $.ObrokUkupno();
+            }
+        });
+
+
+
+        $("#BrojObrok").blur(function () {
+            var Broj = $("#BrojObrok").val();
+            var Kredit = $("#IznosKredit").val();
+            var Kamata = $("#IznosKamata").val();
+
+            if (Broj != "0" && Kredit != "0,00" && Kamata != "0,00") {
+                var IznosKredit = Kredit;
+                var IznosKreditDeformat = decimalDeformatFunkcija(IznosKredit);
+                var IZLAZKredit = $.IznosKreditKamataObrok(IznosKreditDeformat, Broj);
+                IZLAZKredit = IZLAZKredit.toString().replace('.', ',');
+                var IZLAZKredit = decimalFunkcija(IZLAZKredit);
+                $("#IznosKreditObrok").val(IZLAZKredit);
+
+                var IznosKamata = Kamata;
+                var IznosKamataDeformat = decimalDeformatFunkcija(IznosKamata);
+                var IZLAZKamata = $.IznosKreditKamataObrok(IznosKamataDeformat, Broj);
+                IZLAZKamata = IZLAZKamata.toString().replace('.', ',');
+                var IZLAZKamata = decimalFunkcija(IZLAZKamata);
+                $("#IznosKamataObrok").val(IZLAZKamata);
+
+                $.ObrokUkupno();
+
+            }
+        });
+
+
+        $.IznosKreditKamataObrok = function (Iznos, Broj) {
+
+            var rezult = Iznos / Broj;
+            return rezult;
+
+        };
+
+        $.Ukupno = function (Iznos1, Iznos2) {
+
+            var rezult = parseFloat(Iznos1) + parseFloat(Iznos2);
+            return rezult;
+
+        };
+
+
+        $.ObrokUkupno = function () {
+
+            var KreditObrok = $("#IznosKreditObrok").val();
+            var KamataObrok = $("#IznosKamataObrok").val();
+
+            var Kredit = $("#IznosKredit").val();
+            var Kamata = $("#IznosKamata").val();
+
+            var KreditObrokDeformat = decimalDeformatFunkcija(KreditObrok);
+            var KamataObrokDeformat = decimalDeformatFunkcija(KamataObrok);
+
+            var IzlazObrok = $.Ukupno(KreditObrokDeformat, KamataObrokDeformat);
+            IzlazObrokFormat = IzlazObrok.toString().replace('.', ',');
+            var IzlazObrokFormat = decimalFunkcija(IzlazObrokFormat);
+
+            $("#IznosUkupnoObrok").val(IzlazObrokFormat);
+
+            var KreditDeformat = decimalDeformatFunkcija(Kredit);
+            var KamataDeformat = decimalDeformatFunkcija(Kamata);
+            UkupnoKreditKamata = $.Ukupno(KreditDeformat, KamataDeformat);
+
+            var BrojObrok = $("#BrojObrok").val();
+            if (BrojObrok != "0") {
+                var Razlika = UkupnoKreditKamata - parseFloat((BrojObrok * IzlazObrok));
+
+                RazlikaIzlaz = Razlika.toString().replace('.', ',');
+                var RazlikaIzlazFormat = decimalFunkcija(RazlikaIzlaz);
+
+                $("#Razlika").val(RazlikaIzlazFormat);
+            }
+
+        };
+
+
+        $.IznosJednokratno = function () {
+
+            var Tecaj = $("#TecajPoUgovoru").val();
+            var IznosValuta = $("#IznosJednokratnoValuta").val();
+
+            if (Tecaj != '' && IznosValuta != '') {
+
+                Tecaj = decimalDeformatFunkcija(Tecaj);
+
+                if (parseFloat(Tecaj) != 0) {
+
+                    IznosValuta = decimalDeformatFunkcija(IznosValuta);
+
+                    var rezult = parseFloat(IznosValuta) / parseFloat(Tecaj);
+                    rezult = rezult.toString().replace('.', ',');
+                    rezult = decimalFunkcija(rezult);
+
+                    return rezult;
+                }
+
+                else {
+
+                    return '0,00';
+                }
+
+
+            }
+
+            else {
+                return '0,00';
+            }
+        };
+
+
+
+          var idUgovor = @Model.ID_UgovorStanOtkup;
+          var tecajIzModela = '@Model.TecajDM';
+
+          
+          if(tecajIzModela != '')
+          {
+            $(function(){
+
+              $.postaviAneksIznosiSaTecaj(idUgovor, tecajIzModela);
+             
+            });
+
+          }
+
+
+
+          $("#TecajDM").change(function () {
+            var brojZnakova = $(this).val().length;
+            var vrijednost = $(this).val();
+//            var nova = padding_left(vrijednost, "0", 7)
+            var nova = padding_left(vrijednost, 6, "0")
+            $(this).val(nova);
+             $.postaviAneksIznosiSaTecaj(idUgovor, nova);
+
+        });
+
+
+
+    $.postaviAneksIznosiSaTecaj = function (id, tecaj) {
+
+        var tecajDeformat = decimalViseDeformatFunkcija(tecaj);
+
+        var url = '@Url.Action("AneksIznosiSaTecaj", @InLine.UI.Web.T4.ControllerName.ControllerName.OtkupStanova)';
+        $.ajax({
+            url: url,
+            data: { idUgovorStanOtkup: id, iznosTecaj: tecajDeformat },
+            dataType: 'json',
+            type: 'GET',
+            success: function (data) {
+                if (data != null) {
+
+                    var IZLAZKredit = data.IznosKreditRevalorizacija;
+                    var IZLAZKamata = data.IznosKamataRevalorizacija;
+
+                    IZLAZKredit = IZLAZKredit.toString().replace('.', ',');
+                    IZLAZKredit = decimalFunkcija(IZLAZKredit);
+
+                    IZLAZKamata = IZLAZKamata.toString().replace('.', ',');
+                    IZLAZKamata = decimalFunkcija(IZLAZKamata);
+
+                    $('#IznosKreditRevalorizacijaNeplaceno').val(IZLAZKredit);
+                    $('#IznosKamataRevalorizacijaNeplaceno').val(IZLAZKamata);
+                }
+                else {
+                    $('#IznosKreditRevalorizacijaNeplaceno').val("0");
+                    $('#IznosKamataRevalorizacijaNeplaceno').val("0");
+                }
+
+            }
+
+        });
+
+    };
+
+
+
+          $("#btnPozoviTecaj").click(function () {
+
+            $("#PozoviTecaj").dialog({
+            autoOpen: false,
+            height: 570,
+            width: 880,
+            modal: true,
+            title:'TEČAJ',
+            show: {
+                effect: "none",
+                duration: 0
+            },
+            hide: {
+                effect: "none",
+                duration: 0
+            },
+            modal: true,
+            resizable: true,
+            position: 'center',
+            draggable: true,
+            buttons: 
+            {
+            },
+            close: function() {
+            },
+            open: function() {
+
+            }
+            });
+
+           var url = '@Url.Action("IzborTecaj", "MaticniPodaci")';
+                $("#PozoviTecaj").dialog("open").load(url);
+
+        });
+
+});
+
+
+
+</script>
+
+
+
+
+
+
+
+ <script type="text/javascript">
+     function InsertEditSucces() {
+
+     }
+
+     function InsertEditError() {
+
+     }
+
+
+     function DeleteSucces() {
+
+     }
+
+
+     function DeleteError() {
+
+     }
+
+     function ProvjeraKodUnosa() {
+         return true;
+     }
+
+
+    </script>
+

@@ -1,0 +1,21 @@
+﻿@model IList<InLine.Model.Admin.StatusPoruka>
+<div>
+ @if (@Model != null)
+ {
+
+     if (Model.Any())
+     {
+    
+      <h5>@Model.ElementAt(0).PorukaTekst.ToString()</h5>
+     <h5>obavijest</h5>
+     }
+    
+
+ }
+ else
+ {
+          <h5>null</h5>
+ }
+    
+ </div>   
+<h3>GRESKE</h3>

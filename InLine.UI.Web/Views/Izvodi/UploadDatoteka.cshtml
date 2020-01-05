@@ -1,0 +1,181 @@
+﻿@* <script src="http://malsup.github.com/jquery.form.js"></script>*@
+
+<style type="text/css">
+
+   #loaderImage
+    {
+        width: 100%
+    }
+    
+   #import
+    {
+        width: 215px;
+    }
+
+    </style>
+
+@using (Html.BeginForm("UploadDatoteka", "Izvodi", FormMethod.Post, new { enctype = "multipart/form-data", id = "fileUpload"}))
+{
+    <input type="file" name="file" id="file2" style="display: none;" />
+    <input type="button" id="import" value="Pročitaj datoteku" />
+    <input type="hidden" id="kojiIdRacunSubjekt" name="idOdabraniRacun" value=""/>
+@*    <input type="hidden" id="datumOdUpload" name="DatumOdUpload" value=""/>
+    <input type="hidden" id="datumDoUpload" name="DatumDoUpload" value=""/>*@
+    <input type="hidden" id="kojaPoslovaGodina" name="kojaPoslovaGodina" value=""/>
+    
+    <div id="loaderImage" style='display: none;'></div>
+    
+
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#file2').change(function () {
+            $('#fileUpload').submit();
+        });
+
+        $('#import').click(function () {
+            $('#file2').trigger('click');
+            //$("#loaderImage").show();
+        });
+    });
+
+</script>
+
+<script type="text/javascript">
+
+    $(function () {
+        $("form").submit(function (event) {
+            $("#loaderImage").show();
+            var dataString;
+            event.preventDefault();
+            var action = $("form").attr("action");
+            if ($("form").attr("enctype") == "multipart/form-data") {
+                dataString = new FormData($("form").get(0));
+                contentType = false;
+                processData = false;
+            } else {
+
+            }
+            $.ajax({
+                type: "POST",
+                url: action,
+                data: dataString,
+                dataType: "json",
+                contentType: contentType,
+                processData: processData,
+                success: function (data) {
+                    var poruka = "";
+                    if (data.length > 0) {
+                        for (var i = 0; i < data.length; i++) {
+                            poruka = poruka + "\n" + data[i];
+                        }
+                    }
+
+                    $("#loaderImage").hide();
+                    alert(poruka);
+
+                    var polje = '@InLine.Model.Data.FieldString.View.SubjektRacunBanka.ID_Subjekt';
+                    var gridIzvod2012A = '@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.Izvod2012A.Izvod2012AEntity';
+                    var kontroler = "@InLine.UI.Web.T4.ControllerName.ControllerName.Izvodi";
+                    var akcija = "../" + kontroler + "/" + '@InLine.Model.Data.FieldString.View.Izvod2012A.Izvod2012AEntity' + "Grid";
+                    var gridIzvod2012ASt = '@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.Izvod2012ASt.Izvod2012AStEntity';
+
+                    var masterid = kojaGlavnaKnjigaPromjena;
+                    jQuery(gridIzvod2012A).setSelection(masterid, true);
+                    jQuery(gridIzvod2012AOtkup).setSelection(masterid, true);
+
+                    //jQuery(grid).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.setGridParam', { url: akcija, postData: { key: polje, value: masterid} });
+                    jQuery(gridIzvod2012A).trigger('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.reloadGrid');
+
+                    $(gridIzvod2012ASt).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.clearGridData', true);
+
+
+
+                    var gridIzvod2012AOtkup = '@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.Izvod2012AOtkup.Izvod2012AOtkupEntity';
+                    var gridIzvod2012AStOtkup = '@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.Izvod2012AStOtkup.Izvod2012AStOtkupEntity';
+
+                    jQuery(gridIzvod2012AOtkup).trigger('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.reloadGrid');
+                    $(gridIzvod2012AStOtkup).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.clearGridData', true);
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+
+                    alert("Greška");
+                }
+            });
+        });
+    });
+
+</script>
+
+<script type="text/javascript">
+    var cSpeed = 9;
+    var cWidth = 213;
+    var cHeight = 20;
+    var cTotalFrames = 20;
+    var cFrameWidth = 213;
+    var cImageSrc = '../../Content/images/sprites_horizontal.GIF';
+
+    var cImageTimeout = false;
+    var cIndex = 0;
+    var cXpos = 0;
+    var cPreloaderTimeout = false;
+    var SECONDS_BETWEEN_FRAMES = 0;
+
+    function startAnimation() {
+
+        document.getElementById('loaderImage').style.backgroundImage = 'url(' + cImageSrc + ')';
+        document.getElementById('loaderImage').style.width = cWidth + 'px';
+        document.getElementById('loaderImage').style.height = cHeight + 'px';
+
+        //FPS = Math.round(100/(maxSpeed+2-speed));
+        FPS = Math.round(100 / cSpeed);
+        SECONDS_BETWEEN_FRAMES = 1 / FPS;
+
+        cPreloaderTimeout = setTimeout('continueAnimation()', SECONDS_BETWEEN_FRAMES / 1000);
+
+    }
+
+    function continueAnimation() {
+
+        cXpos += cFrameWidth;
+        //increase the index so we know which frame of our animation we are currently on
+        cIndex += 1;
+
+        //if our cIndex is higher than our total number of frames, we're at the end and should restart
+        if (cIndex >= cTotalFrames) {
+            cXpos = 0;
+            cIndex = 0;
+        }
+
+        if (document.getElementById('loaderImage'))
+            document.getElementById('loaderImage').style.backgroundPosition = (-cXpos) + 'px 0';
+
+        cPreloaderTimeout = setTimeout('continueAnimation()', SECONDS_BETWEEN_FRAMES * 1000);
+    }
+
+    function stopAnimation() {//stops animation
+        clearTimeout(cPreloaderTimeout);
+        cPreloaderTimeout = false;
+    }
+
+    function imageLoader(s, fun)//Pre-loads the sprites image
+    {
+        clearTimeout(cImageTimeout);
+        cImageTimeout = 0;
+        genImage = new Image();
+        genImage.onload = function () { cImageTimeout = setTimeout(fun, 0) };
+        genImage.onerror = new Function('alert(\'Could not load the image\')');
+        genImage.src = s;
+    }
+
+    //The following code starts the animation
+    new imageLoader(cImageSrc, 'startAnimation()');
+</script>
+
+
+
+
+

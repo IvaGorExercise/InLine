@@ -1,0 +1,522 @@
+﻿@model InLine.UI.Web.T4.GridFormattedTemplate.View.TecajnaListaComboFormatted
+@using InLine.Repository.Data.Helper;
+
+
+
+@{
+    long kojaBankaPromjena = 0;
+    string Start = CommonFunctions.PagingVrijednostiDefault.Start;
+    string Count = CommonFunctions.PagingVrijednostiDefault.Count;
+    string AutocompleteBanka = "AutocompleteBanka ";
+    string ulBankaSelector = "#ulBanka";
+    string Datepicker = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Datepicker;
+   
+}
+
+
+<style type="text/css">
+ 
+    #combo {background-color:#F5F5F5; font-size: 13px; font-weight: bold;}
+    .rowColorRED {  background-color:#F65556; color:White; }
+    #Godina {width:450px;}
+    #Banka {width:450px;}
+    #Naziv {width:350px;}
+    .btnDropDownSymbol
+    {
+    background: #ffffff url('../Content/images/dropdown_arrow.png') no-repeat 100%;
+    }
+    
+    .fontColorRED { color:#F65556 !important;}
+    
+    #DatumPomoc
+    {
+        width: 100px;
+        margin-right: 15px;
+    }
+ 
+     
+</style>
+
+@{
+    
+    var gridTecajLista = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.TecajListaGridFormatted>(InLine.Model.Data.FieldString.View.TecajLista.TecajListaEntity,
+      dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+      hiddenEnabled: true,
+      dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+      methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+      pager: true,
+      caption: "1. TEČAJNA LISTA",
+      parametersNames: new Lib.Web.Mvc.JQuery.JqGrid.JqGridParametersNames() { PagesCount = "npage" },
+      autoWidth: false,
+      width: 440,
+      shrinkToFit: true,
+      rowsNumber: 10,
+      height: 200,
+      multiSelect: false,
+      url: Url.Action("TecajListaGrid", new { key = "ID_Banka", value = @Model.ID_Banka.ToString()}),
+      loadComplete: "$.TecajListaMasterLoad",
+      onSelectRow: "$.TecajListaOnSelectRow",
+      onDoubleClickRow: "$.TecajListaDetail",
+      sortingName: @InLine.Model.Data.FieldString.View.TecajLista.ID_TecajLista,
+      sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Desc,
+      viewRecords: false).FilterToolbar(new Lib.Web.Mvc.JQuery.JqGrid.JqGridFilterToolbarOptions() { StringResult = true })
+      .Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions());
+
+
+    var gridTecajListaSt = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.TecajListaStGridFormatted>(InLine.Model.Data.FieldString.View.TecajListaSt.TecajListaStEntity,
+    dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+    hiddenEnabled: true,
+    dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+    methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+    pager: true,
+    caption: "2. STAVKE",
+    parametersNames: new Lib.Web.Mvc.JQuery.JqGrid.JqGridParametersNames() { PagesCount = "npage" },
+    autoWidth: false,
+    width: 440,
+    shrinkToFit: true,
+    rowsNumber: 50,
+    height: 200,
+    multiSelect: false,
+    loadComplete: "$.TecajListaStMasterLoad",
+    onSelectRow: "$.TecajListaStOnSelectRow",
+    onDoubleClickRow: "$.TecajListaStDetail",
+    sortingName: @InLine.Model.Data.FieldString.View.TecajListaSt.IDValutaIz,
+    sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Asc,
+    viewRecords: false).FilterToolbar(new Lib.Web.Mvc.JQuery.JqGrid.JqGridFilterToolbarOptions() { StringResult = true })
+    .Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions());
+
+ }
+
+
+
+<table style="width:100%;">
+<tr>
+<td style="width:100%;">				
+	<table width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+       <tr>
+        <td>
+         <div>
+          <table style="width:100%;">
+            <tr>
+            <td width="140px">BANKE:</td>
+            <td> <input id="Banka" class="btnDropDownSymbol AutocompleteBanka ui-autocomplete-input" type="text" value="" name="Racun" autocomplete="off"></td>
+            </tr>
+           </table>
+         </div>          
+        </td>
+       </tr>
+        <tr>
+        <td>
+        <table style="width:100%;">
+          <tr>
+                <td colspan = '4'>
+                 <div id="TecajVrsta">
+                  @{ Html.RenderAction("TecajVrPartial", "MaticniPodaci"); }
+
+                </div>
+                </td>
+           </tr>
+        </table>
+        </td>
+        </tr>
+       </table>
+</td>		 
+</tr>
+
+<tr>
+      <td style="vertical-align:top;">
+	<table width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+                                                <tr>
+									                <td style="vertical-align:top;height:auto;">
+		
+										                <table  cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+                                                             <tr>
+												                    <td style="vertical-align:top;">  @gridTecajLista.GetHtml()  </td>
+                                                                      <td> @gridTecajListaSt.GetHtml()</td>
+                                                               </tr>
+                                                         
+                                                           </table>
+												           
+												     </td>
+											      </tr>							
+                                               </table>
+		</td>
+</tr>
+
+   <tr>
+        <td colspan='4'>
+        <input id="btnIzaberiTecaj"  type="button" value="Izaberi tečaj" name="IzaberiTecaj">
+        </td>
+     </tr>
+						
+</table>
+						
+
+<div id="TecajListaDialog" class="hidden"></div>
+<div id="TecajListaStDialog" class="hidden"></div>
+<div id="poruka_Master"></div>	
+
+
+    <script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+
+
+      <script type="text/javascript">
+
+          $(document).ready(function () {
+
+              $.TecajListaMasterLoad = function (data) {
+                  var prvisw = $(this).getDataIDs()[0];
+                  jQuery(this).setSelection(prvisw, true);
+              };
+
+
+              $.TecajListaStMasterLoad = function (data) {
+                  var prvisw = $(this).getDataIDs()[0];
+                  jQuery(this).setSelection(prvisw, true);
+              };
+
+              $.TecajListaOnSelectRow = function () {
+                  Dialozi.LoadSlaveGrid("@InLine.Model.Data.FieldString.TecajListaSt.TecajListaStEntity", "@InLine.Model.Data.FieldString.View.TecajLista.TecajListaEntity", "@InLine.Model.Data.FieldString.View.TecajListaSt.ID_TecajLista", "@InLine.UI.Web.T4.ControllerName.ControllerName.MaticniPodaci", "@InLine.Model.Data.FieldString.View.TecajListaSt.TecajListaStEntity");
+              };
+          });
+
+</script>
+
+
+    <script type="text/javascript">
+
+    $(document).ready(function () 
+        {
+            @gridTecajLista.GetJavaScript()
+                 //jQuery(@InLine.Model.Data.FieldString.View.TecajLista.TecajListaEntity).hideCol('@InLine.Model.Data.FieldString.View.TecajLista.GodinaRedniBroj');
+
+            @gridTecajListaSt.GetJavaScript()
+             jQuery(@InLine.Model.Data.FieldString.View.TecajListaSt.TecajListaStEntity).hideCol('@InLine.Model.Data.FieldString.View.TecajListaSt.ID_TecajSD');
+              jQuery(@InLine.Model.Data.FieldString.View.TecajListaSt.TecajListaStEntity).hideCol('@InLine.Model.Data.FieldString.View.TecajListaSt.ID_TecajVrSD');
+                           jQuery(@InLine.Model.Data.FieldString.View.TecajListaSt.TecajListaStEntity).hideCol('@InLine.Model.Data.FieldString.View.TecajListaSt.ID_TecajKD');
+              jQuery(@InLine.Model.Data.FieldString.View.TecajListaSt.TecajListaStEntity).hideCol('@InLine.Model.Data.FieldString.View.TecajListaSt.ID_TecajVrKD');
+                           jQuery(@InLine.Model.Data.FieldString.View.TecajListaSt.TecajListaStEntity).hideCol('@InLine.Model.Data.FieldString.View.TecajListaSt.ID_TecajPD');
+              jQuery(@InLine.Model.Data.FieldString.View.TecajListaSt.TecajListaStEntity).hideCol('@InLine.Model.Data.FieldString.View.TecajListaSt.ID_TecajVrPD');
+                           jQuery(@InLine.Model.Data.FieldString.View.TecajListaSt.TecajListaStEntity).hideCol('@InLine.Model.Data.FieldString.View.TecajListaSt.ID_TecajKE');
+              jQuery(@InLine.Model.Data.FieldString.View.TecajListaSt.TecajListaStEntity).hideCol('@InLine.Model.Data.FieldString.View.TecajListaSt.ID_TecajVrKE');
+                           jQuery(@InLine.Model.Data.FieldString.View.TecajListaSt.TecajListaStEntity).hideCol('@InLine.Model.Data.FieldString.View.TecajListaSt.ID_TecajPE');
+              jQuery(@InLine.Model.Data.FieldString.View.TecajListaSt.TecajListaStEntity).hideCol('@InLine.Model.Data.FieldString.View.TecajListaSt.ID_TecajVrPE');
+
+        
+
+            var grid = '@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.TecajListaSt.TecajListaStEntity';
+            setTimeout(function () {
+             jQuery(grid).trigger('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.reloadGrid');
+         }, 2000)
+
+        });
+
+
+    </script>
+
+
+    <script type="text/javascript">
+
+
+      $(document).ready(function () {
+        $.PostaviBankaDefault = function () {
+
+            var url = '@Url.Action("GetBankaDefault", @InLine.UI.Web.T4.ControllerName.ControllerName.MaticniPodaci)';
+            $.ajax({
+                url: url,
+                data: {},
+                dataType: 'json',
+                type: 'GET',
+                success: function (data) {
+                    if (data != null) {
+                        kojiIDBanka = data.ID_Banka;
+                        $('#ID_Banka').val(kojiIDBanka);
+                        $('#Banka').val($.trim(data.Naziv.toUpperCase()));
+                    }
+                    else {
+                        $('#Banka').val("");
+                    }
+
+                }
+
+            });
+
+        };
+
+    });
+
+</script>
+
+
+  <script type="text/javascript">
+
+
+      $(document).ready(function () {
+
+          kojaBankaPromjena = @Model.ID_Banka;
+
+          var gridTecajLista = "#" + '@InLine.Model.Data.FieldString.View.TecajLista.TecajListaEntity';
+          var gridTecajListaSt = "#" + '@InLine.Model.Data.FieldString.View.TecajListaSt.TecajListaStEntity';
+
+
+            $(window).bind('resize', function () {
+//                $(gridTecajLista).setGridWidth($(window).width()/3.5);
+//                $(gridTecajListaSt).setGridWidth($(window).width()/2.36);
+                $(gridTecajLista).setGridWidth(300);
+                $(gridTecajListaSt).setGridWidth(540);
+            }).trigger('resize');
+
+        });
+
+
+</script>
+
+
+   <script type="text/javascript">
+
+       $(document).ready(function () {
+           Dialozi.DatePicker();
+           $.PostaviBankaDefault();
+       });
+
+   </script>
+
+
+
+ <script type="text/javascript">
+
+     $(function () {
+
+         $("#jqgh_TecajLista_RedniBroj").text("RB/dan");
+         $("#jqgh_TecajLista_GodinaRedniBroj").text("RB/god.");
+
+         $("#jqgh_TecajListaSt_RedniBroj").text("RB");
+         $("#jqgh_TecajListaSt_IDValutaIz").text("Valuta iz");
+         $("#jqgh_TecajListaSt_IDValutaU").text("Valuta u");
+         $("#jqgh_TecajListaSt_BrojJedinica").text("Br. jedinica");
+         $("#jqgh_TecajListaSt_TecajSD").text("Srednji");
+         $("#jqgh_TecajListaSt_TecajKD").text("Kupovni");
+         $("#jqgh_TecajListaSt_TecajPD").text("Prodajni");
+         $("#jqgh_TecajListaSt_TecajKE").text("Kupovni efekt.");
+         $("#jqgh_TecajListaSt_TecajPE").text("Prodajni efekt.");
+
+     });
+
+</script>
+
+ <script type="text/javascript">
+
+     $("#btnIzaberiTecaj").click(function () {
+
+         var TecajVrIDIzabran = 0;
+         var TecajVrOznakaIzabran = 0;
+         var IzabranRedTecaj = 0;
+
+         var gridTecajLista = "#" + '@InLine.Model.Data.FieldString.View.TecajLista.TecajListaEntity';
+         var IzabraniRedGridTecajnaLista = $(gridTecajLista).jqGrid('getGridParam', 'selrow');
+         var gridTecajListaSt = "#" + '@InLine.Model.Data.FieldString.View.TecajListaSt.TecajListaStEntity';
+         var IzabraniRedGridTecaj = $(gridTecajListaSt).jqGrid('getGridParam', 'selrow');
+         var KojePolje = "";
+         var NazivTecaj = "";
+         var DatumTecajnaLista = "";
+
+
+         $("input[type='radio']").each(function (i, e) {
+
+             if ($(this).is(':checked')) {
+                 TecajVrIDIzabran = $(this).attr("id");
+                 TecajVrOznakaIzabran = $(this).attr("value");
+             }
+
+         });
+
+
+         switch (TecajVrOznakaIzabran) {
+
+             case "SD":
+                 KojePolje = "TecajSD";
+                 NazivTecaj = "Srednji";
+                 break;
+             case "KD":
+                 KojePolje = "TecajKD";
+                 NazivTecaj = "Kupovni";
+                 break;
+             case "PD":
+                 KojePolje = "TecajPD";
+                 NazivTecaj = "Prodajni";
+                 break;
+             case "KE":
+                 KojePolje = "TecajKE";
+                 NazivTecaj = "Kupovni ef.";
+                 break;
+             case "PE":
+                 KojePolje = "TecajPE";
+                 NazivTecaj = "Prodajni ef.";
+                 break;
+         }
+
+
+
+         var KojiTecaj = $(gridTecajListaSt).jqGrid('getCell', IzabraniRedGridTecaj, KojePolje);
+         var KojaValuta = $(gridTecajListaSt).jqGrid('getCell', IzabraniRedGridTecaj, "IDValutaIz");
+         var DatumTecajnaLista = $(gridTecajLista).jqGrid('getCell', IzabraniRedGridTecajnaLista, "Datum");
+         var KojaBanka = $("#Banka").val();
+         var PorukaIzabrano = "ODABRALI STE \n";
+         PorukaIzabrano = PorukaIzabrano + "Banka: " + KojaBanka + "\n";
+         PorukaIzabrano = PorukaIzabrano + "Tečajna lista na datum: " + DatumTecajnaLista + "\n";
+         PorukaIzabrano = PorukaIzabrano + NazivTecaj + " tečaj iz valute " + KojaValuta + " u HRK \n";
+         PorukaIzabrano = PorukaIzabrano + "Iznos tečaja: " + KojiTecaj;
+
+
+         if (confirm(PorukaIzabrano)) {
+
+             $("#PozoviTecaj").dialog("close");
+             $("#PozoviTecaj").empty();
+             $("#TecajDM").val(KojiTecaj).change();
+         }
+
+     });
+
+
+
+</script>
+
+
+<script type="text/javascript">
+
+     $("." + '@AutocompleteBanka').each(function () {
+
+        var widgetAutoComplete = $(this).autocomplete({
+            showHeader: true,
+            source: function (request, response) {
+
+                var url = '@Url.Action("GetBanka", @InLine.UI.Web.T4.ControllerName.ControllerName.MaticniPodaci)';
+                var kojalista = "@ulBankaSelector";
+
+               $.AutocompleteBanka(request, response, kojalista, url, @Start, @Count);
+
+            },
+
+            select:
+                function (event, ui) {
+                    kojaBankaPromjena = ui.item.label;
+                    $("#Banka").val($.trim(ui.item.value1.toUpperCase()));
+                    ReloadTecajLista(ui.item.label);
+                    return false;
+                },
+
+            minLength: 0
+
+        }).data("autocomplete");
+
+
+        widgetAutoComplete._renderItem = function (ul, item) {
+
+            ul.attr('id', 'ulBanka');
+            return $("<li class='tblAutocompleteLi'><table class='tblAutocomplete'></table></li>").data("item.autocomplete-item", item).append("<a><table width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><td width='300px'>" + item.value1.toUpperCase() + "</td></tr></table></a>").appendTo("#ulBanka");
+        }
+
+        widgetAutoComplete._renderMenu = function (ul, item) {
+
+            var self = this;
+            $.each(item, function (index, items) {
+                if (index == 0)
+                    ul.append("<li><table class='autocompleteHeader'  width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><th width='300px'>" + '@InLine.Model.Data.FieldString.Banka.Naziv' + "</th></tr></table></li>");
+                self._renderItemData(ul, items);
+            });
+        }
+
+    });
+
+      $.AutocompleteBanka = function (request, response, kojalista, url, Start, Count ) {
+
+                $.ajax({
+                    url: url,
+                    data: { query: request.term, start: Start, count: Count },
+                    dataType: 'json',
+                    type: 'GET',
+                    success: function (data) {
+                        response($.map(data,
+                        function (item) {
+                            return {
+                                label: item.ID_Banka,
+                                value1: item.Naziv
+                            }
+
+                        }));
+
+                        var previousScroll = 0;
+                        var page = 1;
+
+                        $(kojalista).scroll(function () {
+
+                            var currentScroll = $(this).scrollTop();
+
+                            var x = $(kojalista).prop('scrollHeight');
+                            var y = $(kojalista).prop('offsetHeight');
+
+                            if (currentScroll > previousScroll) {
+
+                                if(page >=0)
+                                {
+                                    if (currentScroll >= x - y)
+                                        {
+                                           page += 1;
+
+                                            var countPage = page * Count
+                                            $.ajax({
+                                                url: url,
+                                                data: { query: request.term, start: Start, count: countPage },
+                                                dataType: 'json',
+                                                type: 'GET',
+                                                success: function (data) {
+                                                    response($.map(data,
+                                                        function (item) {
+
+                                                                return {
+                                                                          label: item.ID_Banka,
+                                                                            value1: item.Naziv
+
+                                                                        }
+                                                                }));
+                                                            }
+                                                        })
+                                            }
+                                }
+                                    
+
+                            }
+                            else {
+                                page -= 1;
+                            }
+
+                            previousScroll = currentScroll;
+
+                        });
+                    }
+                })
+    };
+
+
+
+     function ReloadTecajLista(id) {
+
+        var polje = '@InLine.Model.Data.FieldString.View.SubjektRacunBanka.ID_Subjekt';
+        var grid = '@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.TecajLista.TecajListaEntity';
+        var kontroler = "@InLine.UI.Web.T4.ControllerName.ControllerName.MaticniPodaci";
+        var akcija = "../" + kontroler + "/" + '@InLine.Model.Data.FieldString.View.TecajLista.TecajListaEntity' + "Grid";
+        var grid2 = '@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.TecajListaSt.TecajListaStEntity';
+
+        kojaBankaPromjena = id;
+
+        jQuery(grid).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.setGridParam', { url: akcija, postData: { key: "ID_Banka", value: id}});
+        jQuery(grid).trigger('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.reloadGrid');
+
+        $(grid2).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.clearGridData', true);
+     
+    };
+
+
+</script>
+
+

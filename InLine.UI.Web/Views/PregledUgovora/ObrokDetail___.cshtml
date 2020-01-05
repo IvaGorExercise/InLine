@@ -1,0 +1,77 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.UgovorStanOtkupObrokUplataFormFormatted
+
+ <style type="text/css">
+.text-box[type=text], .text-box[type=number], .text-box[type=datetime] { width:70px; border:"0";}
+
+
+</style>
+
+
+@{
+    var modelName = Model.GetType().Name;
+    var polja = Model.GetType().GetProperties().Count();
+    var redovi = 0;
+    var neparni = polja % 2;
+    
+    if(neparni != 0)
+    {
+        redovi = Model.GetType().GetProperties().Count() / 2 + 1;
+    }
+    else
+    {
+        redovi = Model.GetType().GetProperties().Count() / 2;
+    }
+    
+ }
+
+<table id="@modelName" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%; background-color:#EFEEEE">
+   <tbody>
+@*foreach (var property in Model.GetType().GetProperties())
+{
+   <tr>
+   <td> @Html.Label(property.Name) </td>
+   <td> @Html.Editor(property.Name)</td>
+   <td> @Html.ValidationMessage(property.Name)</td>
+   </tr>
+}*@
+
+
+   @for (int i = 0; i <= redovi; i++)
+   {
+       var column1 = i + i;
+       var column2 = i + i + 1;
+       
+       var rowName = "row_" + i;
+
+      <tr id="@rowName">
+
+        @if (@column1 <= Model.GetType().GetProperties().Count() - 1)
+        {
+           var labelName = "labela_" + Model.GetType().GetProperties().ElementAt(@column1).Name;
+           var dataName = "data_" + Model.GetType().GetProperties().ElementAt(@column1).Name;
+            
+           <td id ="@labelName"> @Html.Label(Model.GetType().GetProperties().ElementAt(@column1).Name)</td>
+           <td id ="@dataName"> @Html.Editor(Model.GetType().GetProperties().ElementAt(@column1).Name) </td>
+            
+            
+            if (@column2 < Model.GetType().GetProperties().Count() - 1)
+            {
+                <td id ="@labelName"> @Html.Label(Model.GetType().GetProperties().ElementAt(@column2).Name)</td>
+                <td ="@dataName"> @Html.Editor(Model.GetType().GetProperties().ElementAt(@column2).Name) </td>
+            }
+
+            else
+            {
+               <td id ="@labelName"> </td>
+               <td ="@dataName"> </td>
+
+            }
+
+        }
+
+      </tr>
+   }
+  
+
+  </tbody>
+</table>

@@ -1,0 +1,480 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.TemeljnicaDetaljFormFormatted
+
+ <style type="text/css">
+
+ #Naziv { width:100%;}
+ #Tecaj { width:50%;}
+ #trTecaj {display:none;}
+ #trValutaInfo {display:none;}
+ #TemeljnicaDatumPomoc { width:50%;}
+ #DatumKnjizenjePomoc { width:170px;}
+ 
+  .KnizenoNe 
+  {
+     width:100px;
+     background-color:#205392;
+     color:#ffffff;
+  }
+  
+  .KnizenoDa
+  {
+     color:#205392;
+     background-color:#d6e2f0;
+    }
+
+
+
+</style>
+
+@{
+    int DaLiKnjizeno = 0;
+    
+    if (@Model.Knjizeno == false)
+    {
+        DaLiKnjizeno = 0;
+    }
+    
+    else{
+        
+        DaLiKnjizeno = 1;
+    }
+}
+
+ @{
+    string prefixLabela = "labela_Temeljnica_Detalj_";
+
+ }
+ 
+  @{
+     string Akcija = @InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity + InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert;
+     string IDForma = @InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Forma;
+     string IDValutaPomoc = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.ID_ValutaPomoc;
+     string Datepicker = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Datepicker;
+     string Temeljnica = @InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity;
+     string Datum = @InLine.Model.Data.FieldString.Temeljnica.Datum;
+     string DatumKnjizenje = @InLine.Model.Data.FieldString.Temeljnica.DatumKnjizenje;
+     string DatumKnjizenjePomoc = @InLine.Model.Data.FieldString.Temeljnica.DatumKnjizenje + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Pomoc;
+     string Duguje = "Duguje";
+     string Potrazuje = "Potražuje";
+     string Saldo = "Saldo";
+     string HRK = "HRK";
+     string trTecajSelector = "#trTecaj";
+     string trNeValutaInfoSelector = "#trNeValutaInfo";
+     string trValutaInfoSelector = "#trValutaInfo";
+     string TecajSelector = @InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash + @InLine.Model.Data.FieldString.View.Temeljnica.Tecaj;
+     string TecajVrijednostDefault = "1,00";
+     string DecimalNumber = "DecimalNumber";
+     string Left = "Left";
+     string TemeljnicaIDValutaPomoc = @InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.ID_ValutaPomoc;
+     string Knjizeno = @InLine.Model.Data.FieldString.Temeljnica.Knjizeno;
+     string BtnKnjizi = "btnKnjizi";
+     string TemeljnicaDatum = "TemeljnicaDatum";
+     string TemeljnicaDatumPomoc = "TemeljnicaDatum" + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Pomoc;
+     string KnizenoDaClass = "KnizenoDa";
+     string KnizenoNeClass = "KnizenoNe";
+
+ }
+
+
+ @using (Html.BeginForm(Akcija, @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo, FormMethod.Post, new { id = IDForma, @class = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormClass}))
+ {
+    @Html.HiddenFor(model => model.ID_TemeljnicaVr)
+    @Html.HiddenFor(model => model.ID_Temeljnica)
+    @Html.HiddenFor(model => model.IDValuta)
+    @Html.HiddenFor(model => model.TemeljnicaDatum)
+    @Html.HiddenFor(model => model.DatumKnjizenje)
+    @Html.HiddenFor(model => model.NazivKr)
+    @Html.HiddenFor(model => model.Kratica)
+    @Html.HiddenFor(model => model.Knjizeno)
+
+
+    @Html.ValidationSummary(false)
+
+
+<table class ="TemeljnicaDetail @InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormBackground" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+   <tbody>
+
+     
+    <tr>
+    @*    <td>@Html.LabelFor(model => model.Knjizeno, new { id = @prefixLabela + @Html.NameFor(model => model.Knjizeno) })</td>
+        <td>@Html.DisplayFor(model => model.Knjizeno)
+        @Html.ValidationMessageFor(model => model.Knjizeno)</td>*@
+        <td><input type="button" id="btnKnjizi" class="KnizenoNe" value="Knjiži" name="Knjizi" /></td>
+        <td>@Html.LabelFor(model => model.DatumKnjizenje, new { id = @prefixLabela + @Html.NameFor(model => model.DatumKnjizenje) })
+        @Html.TextBox(@DatumKnjizenjePomoc, null, new { @class = Datepicker })</td>
+        <td > </td>
+        <td></td>
+
+
+  
+        						                
+    </tr>
+
+     <tr>
+	    <td >@Html.LabelFor(model => model.Oznaka, new { id = @prefixLabela + @Html.NameFor(model => model.Oznaka) })</td>
+        <td colspan="3">@Html.EditorFor(model => model.Oznaka)
+           @Html.ValidationMessageFor(model => model.Oznaka) </td>				                
+    </tr>
+
+     <tr>
+	    <td >@Html.LabelFor(model => model.Naziv, new { id = @prefixLabela + @Html.NameFor(model => model.Naziv) })</td>
+        <td colspan="3">@Html.EditorFor(model => model.Naziv)
+           @Html.ValidationMessageFor(model => model.Naziv) </td>				                
+    </tr>
+
+  @*  <tr>
+	    <td>@Html.LabelFor(model => model.NazivKr, new { id = @prefixLabela + @Html.NameFor(model => model.NazivKr) })</td>
+        <td>@Html.EditorFor(model => model.NazivKr)
+        @Html.ValidationMessageFor(model => model.NazivKr)</td>	
+        <td>@Html.LabelFor(model => model.Kratica, new { id = @prefixLabela + @Html.NameFor(model => model.Kratica) })</td>
+        <td>@Html.EditorFor(model => model.Kratica)
+        @Html.ValidationMessageFor(model => model.Kratica)
+        </td>				                
+    </tr>*@
+
+
+    <tr>
+    <td>@Html.LabelFor(model => model.Datum, new { id = @prefixLabela + @Html.NameFor(model => model.Datum) })</td>
+        <td colspan="3">@Html.TextBox(@TemeljnicaDatumPomoc, null, new { @class = Datepicker })
+        @Html.ValidationMessageFor(model => model.Datum)</td>				                
+    </tr>
+
+  @*  <tr>
+        <td colspan="4">
+            <table style="width:100%;">
+                <tr>
+                <td>@Html.LabelFor(model => model.Storno, new { id = @prefixLabela + @Html.NameFor(model => model.Storno) })
+                @Html.CheckBoxFor(model => model.Storno)
+                @Html.ValidationMessageFor(model => model.Storno)</td>
+
+                <td>@Html.LabelFor(model => model.PocetnoStanje, new { id = @prefixLabela + @Html.NameFor(model => model.PocetnoStanje) })
+                @Html.DisplayFor(model => model.PocetnoStanje)
+                @Html.ValidationMessageFor(model => model.PocetnoStanje)</td>
+
+                <td>@Html.LabelFor(model => model.ZavrsnoKnjizenje, new { id = @prefixLabela + @Html.NameFor(model => model.ZavrsnoKnjizenje) })
+                @Html.CheckBoxFor(model => model.ZavrsnoKnjizenje)
+                @Html.ValidationMessageFor(model => model.ZavrsnoKnjizenje)</td>
+                </tr>
+                </table>
+          </td>  					                
+    </tr>*@
+
+    <tr>	
+        <td>@Html.LabelFor(model => model.Opis, new { id = @prefixLabela + @Html.NameFor(model => model.Opis) })</td>
+        <td colspan="3">@Html.TextAreaFor(model => Model.Opis)
+        @Html.ValidationMessageFor(model => model.Opis)</td>								                
+    </tr>
+
+     <tr>
+	    <td>@Html.LabelFor(model => model.IDValuta, new { id = @prefixLabela + @Html.NameFor(model => model.IDValuta) })</td>
+        <td>@Html.DropDownList(TemeljnicaIDValutaPomoc, (SelectList)ViewBag.IDValuta)
+        @Html.ValidationMessageFor(model => model.IDValuta)</td>							                
+    </tr>
+
+     <tr id ="trTecaj">
+	    <td>@Html.LabelFor(model => model.Tecaj, new { id = @prefixLabela + @Html.NameFor(model => model.Tecaj) })</td>
+        <td colspan="3">@Html.TextBoxFor(model => model.Tecaj, new { @class = @DecimalNumber + " " + @Left })
+        @Html.ValidationMessageFor(model => model.Tecaj)</td>								                
+    </tr>
+
+     <tr>
+       	<td colspan="4">
+            <table width="100%">
+            <tr>
+            <th>UKUPNO NA TEMELJNICI</th>
+              <th>@Duguje</th>
+                <th>@Potrazuje</th>
+                  <th>@Saldo</th>
+            </tr>
+            <tr id="trNeValutaInfo">
+            <td>HRK</td>
+                  <td>@Html.DisplayFor(model => model.SumIznosDuguje)</td>
+                        <td>@Html.DisplayFor(model => model.SumIznosPotrazuje)</td>
+                              <td>@Html.DisplayFor(model => model.Saldo)</td>
+            </tr>
+
+            <tr id="trValutaInfo">
+            
+                  <td>@Html.DisplayFor(model => model.IDValuta)</td>
+                        <td>@Html.DisplayFor(model => model.SumIznosDugujeValuta)</td>
+                              <td>@Html.DisplayFor(model => model.SumIznosPotrazujeValuta)</td>
+                                    <td>@Html.DisplayFor(model => model.SaldoValuta)</td>
+            </tr>
+            
+            </table>
+
+            </td>				                
+    </tr>
+
+      <tr>
+        <td> </td>
+        <td>
+        </td>
+         <td></td>
+        <td></td>
+        </tr>	
+  </tbody>
+</table>
+<div>
+<div id="poruka_Temeljnica" ></div>
+</div>
+
+ }
+
+  <script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+   <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+   <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/DecimalValidator.js")" type="text/javascript"></script>
+     <script src="@Url.Content("~/Scripts/chosen.jquery.min.js")" type="text/javascript"></script>
+
+
+   <script type="text/javascript">
+
+       $(function () {
+           $("#labela_Temeljnica_Detalj_Oznaka").text("Broj");
+            $("#labela_Temeljnica_Detalj_NazivKr").text("Skraćeni naziv");
+            $("#labela_Temeljnica_Detalj_Datum").text("Datum temeljnice");
+            $("#labela_Temeljnica_Detalj_IDValuta").text("Valuta");
+            $("#labela_Temeljnica_Detalj_Knjizeno").text("Knjiženo");
+            $("#labela_Temeljnica_Detalj_PocetnoStanje").text("Početno stanje");
+            $("#labela_Temeljnica_Detalj_ZavrsnoKnjizenje").text("Završno knjiženje");
+            $("#labela_Temeljnica_Detalj_DatumKnjizenje").text("Datum knjiženja");
+            $("#labela_Temeljnica_Detalj_Opis").text("Napomena");
+
+        });
+
+    </script>
+
+    
+    <script type="text/javascript">
+
+        Dialozi.VaidirajHiddenPolja('@IDForma');
+
+        $(document).ready(function () {
+            var modelvaluta = '@Model.IDValuta';
+            Dialozi.DropDownValutaSaPrefix('@Temeljnica', modelvaluta);
+            Dialozi.DatePicker();
+
+            var datum = '@Model.TemeljnicaDatum.Date.ToShortDateString()';
+            Dialozi.PostaviDatumPolje('@TemeljnicaDatum', datum);
+            Dialozi.DocumentReadyValid('@TemeljnicaDatum');
+
+
+            if ($('#' + '@TemeljnicaIDValutaPomoc').val() != '@HRK') {
+                $("@trTecajSelector").show();
+                $("@trValutaInfoSelector").show();
+                //$('@TecajSelector').val("");
+            }
+
+            else {
+                $('@TecajSelector').val("@TecajVrijednostDefault");
+                $("@trValutaInfoSelector").hide();
+            }
+
+        });
+
+        $(function () {
+            Dialozi.PostaviValuta();
+        });
+
+
+        var DaLiKnjizenoIndikator = @DaLiKnjizeno;
+
+        $(function () {
+
+            if(DaLiKnjizenoIndikator == 1)
+            {
+               $("#" + '@BtnKnjizi').attr('value', 'Rasknjiži');
+               $("#" + '@BtnKnjizi').removeClass("@KnizenoNeClass").addClass("@KnizenoDaClass");
+            }
+
+            else
+            {
+               $("#" + '@BtnKnjizi').attr('value', 'Knjiži');
+               $("#" + '@BtnKnjizi').removeClass("@KnizenoDaClass").addClass("@KnizenoNeClass");
+            }
+        });
+
+
+        $('#' + '@TemeljnicaIDValutaPomoc').change(function (event) {
+
+            var selektiranaValuta = $('#' + '@TemeljnicaIDValutaPomoc').val();
+
+            if (selektiranaValuta != '@HRK') {
+                $("@trTecajSelector").show();
+                $("@trValutaInfoSelector").show();
+                $('@TecajSelector').val("");
+            }
+
+            else
+             {
+                 $("@trTecajSelector").hide();
+                 $("@trValutaInfoSelector").hide();
+                $('@TecajSelector').val("@TecajVrijednostDefault");
+         
+            }
+
+        });
+
+        $(function () {
+            var value = '@Model.DatumKnjizenje.GetValueOrDefault().ToShortDateString()';
+            Dialozi.PostaviDatumPolje('@DatumKnjizenje', value);
+            Dialozi.DocumentReadyValid('@DatumKnjizenje');
+        });
+
+
+        $('#' + '@DatumKnjizenjePomoc').change(function (event) {
+            var dat = $('#' + '@DatumKnjizenjePomoc').val();
+            Dialozi.PostaviDatumPolje('@DatumKnjizenje', dat);
+        });
+
+
+    </script>
+
+
+     <script type="text/javascript">
+
+         $('#' + "@TemeljnicaDatumPomoc").change(function (event) {
+             var dat = $('#' + "@TemeljnicaDatumPomoc").val();
+             Dialozi.PostaviDatumPolje('@TemeljnicaDatum', dat);
+
+         });
+
+ 
+</script>
+
+    <script type="text/javascript">
+
+        $("#" + '@BtnKnjizi').click(function (event) 
+        {
+            event.preventDefault();
+
+            var idTemeljnica = @Model.ID_Temeljnica;
+            var KnjizenoPolje = '@Model.Knjizeno';
+            var KnjizenoPost = 0;
+            var KojiDatumKnjizenje =  $("#DatumKnjizenje").val();
+
+            if(DaLiKnjizenoIndikator == 1)
+            {
+                KnjizenoPost = 1;
+            }
+
+            else{
+
+                KnjizenoPost = 0;
+            }
+
+            if (idTemeljnica != -1) 
+            {
+                $.ajax({
+                    url: "/FinancijskoKnjigovodstvo/Knjizi",
+                    data: { Id: idTemeljnica, Knjizeno: KnjizenoPost, DatumKnjizenje: KojiDatumKnjizenje},
+                    type: 'POST',
+                    success: function (data) 
+                    {
+                        if (data.length > 0) 
+                        {
+                            porukeIzSkripte.VratiPorukuStatus(data, "Temeljnica");
+                        }
+
+                        else{
+             
+                           $.TemeljicaItem(idTemeljnica); 
+                           jQuery("#Temeljnica").trigger('reloadGrid');
+                        
+                        }
+                    }
+                });
+            }
+
+        });
+
+
+
+
+        $("#TemeljnicaDialogSpremiKopiraj").click(function (event) 
+        {
+              $("#" + '@Knjizeno').val('false');
+              $("#" + '@DatumKnjizenjePomoc').val('');
+              $("#DatumKnjizenje").val(null);
+              $("#" + '@BtnKnjizi').attr('value', 'Knjiži');
+              DaLiKnjizenoIndikator = 0;
+        });
+
+
+
+  $.TemeljicaItem = function (idtemeljnica)
+  {
+
+           var url = '@Url.Action("GetTemeljica", @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo)';
+            $.ajax({
+            url: url,
+            data: { id: idtemeljnica },
+            dataType: 'json',
+            type: 'GET',
+            success: function (data)
+             {
+                if (data.DatumKnjizenje != null)
+                {
+
+                   var datumSirovi = data.DatumKnjizenje.substr(6,13);
+
+                    if(data.DatumKnjizenje.length > 10 &&  data.DatumKnjizenje.length > 10)
+                    {
+                        var datumSirovi = data.DatumKnjizenje.substr(6,13);
+                        var datumSiroviParsirani = jQuery.parseJSON(datumSirovi);
+                        var datumKnjizenjeRow = new Date(datumSiroviParsirani);
+                        datumKnjizenjeRow = datumKnjizenjeRow.getDate() + '-' + (datumKnjizenjeRow.getMonth() + 1) + '-' +  datumKnjizenjeRow.getFullYear();
+                        var valueKnjizenje = datumKnjizenjeRow;
+                        Dialozi.PostaviDatumPolje('@DatumKnjizenje', valueKnjizenje);
+
+                        $("#" + '@BtnKnjizi').attr('value', 'Rasknjiži');
+                        $("#" + '@BtnKnjizi').removeClass("@KnizenoNeClass").addClass("@KnizenoDaClass");
+                        DaLiKnjizenoIndikator = 1;
+                        $("#" + '@Knjizeno').val('true');
+                    }
+
+                }
+
+                else{
+
+                      $("#" + '@DatumKnjizenjePomoc').val('');
+                      $("#DatumKnjizenje").val(null);
+                      $("#" + '@BtnKnjizi').attr('value', 'Knjiži');
+                      $("#" + '@BtnKnjizi').removeClass("@KnizenoDaClass").addClass("@KnizenoNeClass");
+                      DaLiKnjizenoIndikator = 0;
+                      $("#" + '@Knjizeno').val('false');
+                }
+
+             }
+
+        });
+
+   };
+
+</script>
+
+
+  <script type="text/javascript">
+      function InsertEditSucces() {
+
+      }
+
+      function InsertEditError() {
+
+      }
+
+      function DeleteSucces() {
+       
+      }
+
+      function DeleteError() {
+
+      }
+
+      function ProvjeraKodUnosa() {
+          return true;
+      }
+
+
+    </script>

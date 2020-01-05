@@ -1,0 +1,126 @@
+﻿<#@ template language="C#" debug="True" hostspecific="True" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="System.Web" #>
+<#@ assembly name="System.Web.Mvc" #>
+<#@ assembly Name= "$(SolutionDir)\bin\InLine.Common.dll"#>
+<#@ import namespace="System.Web.Mvc" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Web" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="InLine.Common" #> 
+<#
+string FileName = "";
+string FileNameCustom = "";
+string viewsFolderPath = VS.SolutionPath() + @"\InLine.UI.Web\Controllers";
+string ClassName = "ControllerName";
+string NamespaceName = "InLine.UI.Web.T4.ControllerName";
+
+
+#>
+using System;
+using System.Collections.Generic;
+
+namespace <#= NamespaceName #> 
+{
+    <# 
+     //string viewsFolderPath = @"C:\RADNO\PROJEKTI\InLineGrad\InLine.UI.Web\Controllers";
+     string[] folders = Directory.GetDirectories(viewsFolderPath);
+	 string[] customfile = Directory.GetFiles(viewsFolderPath);
+	 List<string> FileNameList = new List<string>() ;
+	 List<string> FileNameListCustom = new List<string>();
+         
+     foreach(string folderName in folders) 
+     {
+     #> 
+     public static class <#=ClassName #> 
+	  { 
+   // T4 Controlleri   
+     <#      
+      foreach(string file in Directory.GetFiles(folderName))
+	  {
+			if (System.IO.Path.GetFileNameWithoutExtension(file).Length > 19)
+			{
+				FileName = System.IO.Path.GetFileNameWithoutExtension(file).Remove(System.IO.Path.GetFileNameWithoutExtension(file).Length-18, 18);
+
+				if (FileName.Length > 5)
+				{
+					if (FileName.Substring(0,5).ToUpper().Equals("VIEW."))
+					{
+						FileName = FileName.Substring(5);
+						FileName = FileName + "View";
+					}
+
+					else
+					{
+						FileName = FileName;
+
+					}
+				}
+
+				FileNameList.Add(FileName);
+			}
+     #>      
+	 <#  
+	   if (!file.Contains("Class"))
+	   {
+	   #>
+	   	public const string <#= FileName #> = "<#= FileName #>";<#  
+	 }
+	 #><# 
+	 } 
+	 #><# 
+	}
+	 foreach(string folderName in folders) 
+     {
+     #> 
+
+
+       // Rucno dodani Controlleri  
+     <#      
+      foreach(string file2 in customfile)
+	  {
+			if (System.IO.Path.GetFileNameWithoutExtension(file2).Length >= 10)
+			{
+				FileNameCustom  = System.IO.Path.GetFileNameWithoutExtension(file2).Remove(System.IO.Path.GetFileNameWithoutExtension(file2).Length-10, 10);
+
+				if (FileNameCustom .Length > 5)
+				{
+					if (FileNameCustom .Substring(0,5).ToUpper().Equals("VIEW."))
+					{
+						FileNameCustom  = FileNameCustom.Substring(5);
+						FileNameCustom  = FileNameCustom + "View";
+					}
+
+					else
+					{
+						FileNameCustom  = FileNameCustom ;
+
+					}
+				}
+
+				FileNameListCustom.Add(FileNameCustom);
+			}
+     #>      
+	<#  
+	 if (!file2.Contains("Class"))
+	  {
+	 #>
+<#  
+	 if (!FileNameList.Contains(FileNameCustom))
+	 {
+	 #>
+	    public const string <#= FileNameCustom  #> = "<#= FileNameCustom  #>";<#  
+	 }
+	 #><#  
+	 }
+	 #>
+	 <# 
+	 } 
+	 #>
+     }
+    <# 
+	}
+	#> 
+}
+

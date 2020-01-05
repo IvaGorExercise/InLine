@@ -1,0 +1,229 @@
+﻿@{
+
+    Layout = "~/Views/Shared/_LayoutFinancijsko.cshtml";
+}
+
+@{
+    var grid1 = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.OsobaGridFormatted>(InLine.Model.Data.FieldString.View.Osoba.OsobaEntity,
+    dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+    hiddenEnabled: true,
+    footerEnabled: false,
+    userDataOnFooter: true,
+    dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+    methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+    pager: true,
+    caption: "1. OSOBA",
+    parametersNames: new Lib.Web.Mvc.JQuery.JqGrid.JqGridParametersNames() { PagesCount = "npage" },
+    width: 1260,
+    rowsNumber: 25,
+    height: 590,
+    url: Url.Action("OsobaGrid"),
+    onDoubleClickRow: "$.OsobaDetail",
+    sortingName: @InLine.Model.Data.FieldString.View.Osoba.ID_Osoba,
+    sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Desc,
+    viewRecords: false).FilterToolbar(new Lib.Web.Mvc.JQuery.JqGrid.JqGridFilterToolbarOptions() { StringResult = true })
+    .Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions() { Search = false, Add = false, Delete = false, Edit = false, Refresh = true })
+    .AddNavigatorButton("", "ui-icon-plus", "$.addOsoba", Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorButtonPositions.Last, "Dodaj osobu")
+    .AddNavigatorButton("", "ui-icon-pencil", "$.OsobaDetail", Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorButtonPositions.Last, "Izmjeni osobu")
+    .AddNavigatorButton("", "ui-icon-trash", "$.deleteOsoba", Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorButtonPositions.Last, "Obriši osobu");
+ }
+
+
+  <div class="PrviRed">
+            @Html.Partial("SubjektSviMenu")
+ </div>
+<table style="width:100%;">
+
+
+        <tr>
+          <td style="width:60%;min-width:60%;vertical-align:top;">
+							                <table width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+								                <tbody>
+                                                <tr>
+									                <td style="vertical-align:top;height:auto;">
+		
+										               <table  cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+											                <tbody>
+                                                            <tr>
+												                <td style="vertical-align:top;">
+												                    @grid1.GetHtml()
+												                </td>
+												                
+											                </tr>
+                                                               <tr>
+												                <td style="vertical-align:top;">
+											
+												                </td>
+												                
+											                </tr>												
+										                </tbody>
+                                                        </table>
+                                                      
+									                </td>
+								                </tr>
+							
+							                </tbody>
+                                            </table>
+				</td>
+        </tr>
+		</tbody>
+</table>						
+
+<div id="OsobaDialog" class="hidden"></div>
+
+
+@section JavaScript {
+
+    <script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+
+    $(document).ready(function () 
+        {
+           @grid1.GetJavaScript()
+            jQuery(@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity).hideCol('@InLine.Model.Data.FieldString.View.Osoba.ID_Subjekt');
+           jQuery(@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity).hideCol('@InLine.Model.Data.FieldString.View.Osoba.ID_Osoba');
+            jQuery(@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity).hideCol('@InLine.Model.Data.FieldString.View.Osoba.ID_Drzavljanstvo');
+             jQuery(@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity).hideCol('@InLine.Model.Data.FieldString.View.Osoba.ID_Narodnost');
+              jQuery(@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity).hideCol('@InLine.Model.Data.FieldString.View.Osoba.OIBHR');
+
+        });
+
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var grid = '@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity';
+            $('@InLine.UI.Web.Helper.KeyWord.JQueryRijec.cButton').click(function () {
+                $(grid).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.clearGridData', true);
+            });
+
+            $('@InLine.UI.Web.Helper.KeyWord.JQueryRijec.cButton').click(function () {
+                $(grid).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.clearGridData', true);
+            });
+
+        });
+
+        $(function () {
+            var grid = '@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity';
+            $('@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Form').each(function () {
+                $('@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Input').keypress(function (e) {
+                    // Enter pressed?
+                    if (e.which == 10 || e.which == 13) {
+                        $('@InLine.UI.Web.Helper.KeyWord.JQueryRijec.sButton').click();
+                        $(grid).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.clearGridData', true);
+                    }
+                });
+
+                $('@InLine.UI.Web.Helper.KeyWord.JQueryRijec.InputTypeSubmit').hide();
+            });
+
+        });
+
+
+
+        $(document).ready(function () {
+
+            var grid = "#" + '@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity';
+
+            $(window).bind('resize', function () {
+                $(grid).setGridWidth($(window).width());
+
+            }).trigger('resize');
+
+        });
+
+
+
+
+//        $.DatumRodenjaFormatter = function (cellvalue, options, rowObject)
+//        {
+//          if (cellvalue != null)
+//            {
+//                if (cellvalue == '01.01.0001.')
+//                {
+//                    return cellvalue;
+//                }
+//             
+//            }
+//            else
+//            {
+//                return cellvalue;
+//            }
+//        };
+
+
+
+</script>
+
+
+   <script type="text/javascript">
+
+       $.loadComplete = function () {
+
+
+       }
+
+       $.addOsoba = function () {
+           var gridTitle = '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.gview_' + '@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity' + '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.JqGridTitle';
+           var title = jQuery(gridTitle).text();
+           Dialozi.InsertEditMaster("@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity", "@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity", "@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity", "@InLine.UI.Web.T4.ControllerName.ControllerName.SubjektSvi", "@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity", "@InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert", 800, 550, title);
+       };
+
+       $.deleteOsoba = function () {
+           Dialozi.DeleteIzGrida("@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity", "@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity", "@InLine.UI.Web.T4.ControllerName.ControllerName.SubjektSvi");
+       };
+
+       $.OsobaDetail = function () {
+           var gridTitle = '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.gview_' + '@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity' + '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.JqGridTitle';
+           var title = jQuery(gridTitle).text();
+           Dialozi.InsertEditMaster("@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity", "@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity", "", "@InLine.UI.Web.T4.ControllerName.ControllerName.SubjektSvi", "@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity", "@InLine.UI.Web.Helper.KeyWord.TipAkcija.Edit", 800, 550, title, "", "");
+       };
+
+       $.addPoslovniSubjekt = function () {
+           var gridTitle = '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.gview_' + '@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity' + '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.JqGridTitle';
+           var title = jQuery(gridTitle).text();
+           Dialozi.InsertEditMaster("@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity", "@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity", "@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity", "@InLine.UI.Web.T4.ControllerName.ControllerName.SubjektSvi", "@InLine.Model.Data.FieldString.View.Osoba.OsobaEntity", "@InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert", 800, 490, title);
+       };
+
+
+</script>
+
+<script type="text/javascript">
+       $.ID_PoslovniSubjektFormatter = function (cellvalue, options, rowObject) 
+       {
+
+        if (cellvalue != null)
+            {
+            return "<img src='@Url.Content("~/Content/images/ui-flag_green.png")' alt='" + cellvalue + "' title='" + cellvalue + "' />";
+            }
+        else
+        {
+            return "<img src='@Url.Content("~/Content/Images/ui-flag_red.png")' alt='" + cellvalue + "' title='" + cellvalue + "' />";
+            }
+       };
+ </script>
+
+
+  <script type="text/javascript">
+
+      $(function () {
+
+          // Imena kolona za grid KontniPlan
+          $("#jqgh_Osoba_DatumRodenja").text("Datum rođenja");
+          $("#jqgh_Osoba_MjestoRodenja").text("Mjesto rođenja");
+          $("#jqgh_Osoba_OtacIme").text("Otac ime");
+          $("#jqgh_Osoba_MajkaPrezime").text("Majka prezime");
+          $("#jqgh_Osoba_MajkaPrezimeDjevojacko").text("Majka djevojačko prezime");
+          $("#jqgh_Osoba_MajkaIme").text("Majka ime");
+          $("#jqgh_Osoba_NazivDrzavljanstvo").text("Državljanstvo");
+          $("#jqgh_Osoba_NazivNarodnost").text("Narodnost");
+          $("#jqgh_Osoba_ID_PoslovniSubjekt").text("Poslovni subjekt");
+      });
+
+</script>
+
+
+
+
+
+}

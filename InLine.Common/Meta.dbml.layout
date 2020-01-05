@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Meta">
+  <DataContextMoniker Name="/MetaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="4646061c-a68e-412f-b6c4-ba230ac80497" absoluteBounds="5.875, 2.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/MetaDataContext/TablicaPolje" />
+      <nestedChildShapes>
+        <elementListCompartment Id="08ae6b19-7e2c-4eb1-b6ef-6bd01afc8bd3" absoluteBounds="5.89, 3.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

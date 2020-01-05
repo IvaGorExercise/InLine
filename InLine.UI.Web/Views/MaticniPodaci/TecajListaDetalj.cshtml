@@ -1,0 +1,139 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.TecajListaDetaljFormFormatted
+
+ <style type="text/css">
+
+ #Naziv { width:100%;}
+
+</style>
+
+
+ @{
+     string prefixLabela = "labela_TecajLista_Detalj_";
+ }
+ 
+
+ @{
+     string Akcija = @InLine.Model.Data.FieldString.View.TecajLista.TecajListaEntity + InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert;
+     string IDForma = @InLine.Model.Data.FieldString.View.TecajLista.TecajListaEntity + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Forma;
+     string DatumPomoc = @InLine.Model.Data.FieldString.TemeljnicaSt.Datum + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Pomoc;
+     string Datum = @InLine.Model.Data.FieldString.TemeljnicaSt.Datum;
+     string Datepicker = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Datepicker;
+ }
+
+
+ @using (Html.BeginForm(Akcija, @InLine.UI.Web.T4.ControllerName.ControllerName.MaticniPodaci, FormMethod.Post, new { id = IDForma, @class = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormClass }))
+ {
+    @Html.HiddenFor(model => model.ID_TecajLista)
+    @Html.HiddenFor(model => model.ID_Banka)
+    @Html.HiddenFor(model => model.Datum)
+
+
+    @Html.ValidationSummary(true)
+
+
+<table class ="TecajListaDetail @InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormBackground" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+   <tbody>
+
+     <tr><td colspan='6'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+     
+   <tr>
+    <td>@Html.LabelFor(model => model.Datum, new { id = @prefixLabela + @Html.NameFor(model => model.Datum) })</td>
+        <td>@Html.TextBox(@DatumPomoc, null, new { @class = Datepicker })
+           @Html.ValidationMessageFor(model => model.Datum) </td>
+	    <td>@Html.LabelFor(model => model.RedniBroj, new { id = @prefixLabela + @Html.NameFor(model => model.RedniBroj) })</td>
+        <td>@Html.EditorFor(model => model.RedniBroj)
+        @Html.ValidationMessageFor(model => model.RedniBroj)</td>	
+        <td>@Html.LabelFor(model => model.GodinaRedniBroj, new { id = @prefixLabela + @Html.NameFor(model => model.GodinaRedniBroj) })</td>
+        <td>@Html.EditorFor(model => model.GodinaRedniBroj)
+        @Html.ValidationMessageFor(model => model.GodinaRedniBroj)</td>								                
+    </tr>
+
+
+  </tbody>
+</table>
+<div>
+<div id="poruka_TecajLista" ></div>
+</div>
+
+ }
+
+  <script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+   <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+   <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/DecimalValidator.js")" type="text/javascript"></script>
+      <script src="@Url.Content("~/Scripts/chosen.jquery.min.js")" type="text/javascript"></script>
+
+
+   <script type="text/javascript">
+
+
+       $(document).ready(function () {
+
+           $('#TecajListaDialogSpremiKopiraj').hide();
+           $('#TecajListaDialogSpremiDodaj').hide();
+
+           Dialozi.DatePicker();
+
+           $(function () {
+               var value = '@Model.Datum.Date.ToShortDateString()';
+               Dialozi.PostaviDatumPolje('@Datum', value);
+               Dialozi.DocumentReadyValid('@Datum');
+           });
+
+           $('#' + '@DatumPomoc').change(function (event) {
+               var dat = $('#' + '@DatumPomoc').val();
+               Dialozi.PostaviDatumPolje('@Datum', dat);
+           });
+       });
+
+
+
+ 
+
+
+   </script>
+
+
+
+    <script type="text/javascript">
+
+        $(function () {
+            $("#labela_TecajLista_Detalj_Oznaka").text("Broj");
+            $("#labela_TecajLista_Detalj_RedniBroj").text("RB");
+            $("#labela_TecajLista_Detalj_GodinaRedniBroj").text("RB liste u godini");
+
+        });
+
+
+    </script>
+
+    
+
+
+
+
+    <script type="text/javascript">
+        function InsertEditSucces() {
+
+
+        }
+
+        function InsertEditError() {
+
+        }
+
+
+        function DeleteSucces() {
+
+        }
+
+        function DeleteError() {
+
+        }
+
+        function ProvjeraKodUnosa() {
+            return true;
+        }
+
+
+    </script>

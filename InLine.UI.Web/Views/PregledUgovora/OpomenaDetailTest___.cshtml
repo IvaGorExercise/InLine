@@ -1,0 +1,89 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.UgovorStanOtkupOpomenaDetaljFormFormatted
+
+@*<div id="tabs">
+<ul>
+<li><a href="#tabs-1">Opomena ugovor detalj</a></li>
+<li><a id="tab-opomena" href="#tabs-2">Opomena detalj</a></li>
+
+</ul>
+<div id="tabs-1">
+</div>
+<div id="tabs-2">
+</div>*@
+
+<div id="opomena-detalj"></div>
+<br />
+<div id="opomena-ugovor-detalj"></div>
+
+
+ <script>
+//     $(function () {
+//         $("#tabs").tabs();
+//     });
+
+//         $('#tabs').tabs(
+//                { cache: true },
+//                {
+//                    ajaxOptions: {
+//                        cache: false,
+//                        error: function(xhr, status, index, anchor) {
+//                            $(anchor.hash).html("Couldn't load this tab.");
+//                        },
+//                        data: {},
+//                            success: function(data, textStatus) {}
+//                        },
+//                        add: function (event, ui) {
+//                            //select the new tab
+//                            $('#tabs').tabs('select', '#' + ui.panel.id);
+//                        }
+//                    });
+        
+</script>
+
+ <script>
+
+  $(document).ready(function () 
+ {
+       var idOpomenaDetalj = '@Model.ID_Opomena';
+         $.ajax({
+             url: "@Url.Action("OpomenaDetail", "PregledUgovora")",
+             data: {id: idOpomenaDetalj},
+             type: 'POST',
+             success: function (result) {
+                 $('#opomena-detalj').html(result);
+             }
+         });
+
+     var idOpomenaUgovorDetalj = '@Model.ID_UgovorStanOtkupOpomena';
+         $.ajax({
+             url: "@Url.Action("OpomenaUgovorDetail", "PregledUgovora")",
+             data: {id: idOpomenaUgovorDetalj},
+             type: 'POST',
+             success: function (result) {
+                 $('#opomena-ugovor-detalj').html(result);
+             }
+         });
+  
+     });  
+
+
+</script>
+
+@* <script>
+ $('#tab-opomena').click(function () {
+     
+     var idOpomenaUgovorDetalj = '@Model.ID_Opomena';
+         $.ajax({
+             url: "@Url.Action("OpomenaDetail", "PregledUgovora")",
+             data: {id: idOpomenaUgovorDetalj},
+             type: 'POST',
+             success: function (result) {
+                 $('#opomena-detalj').html(result);
+             }
+         });
+  
+
+     });  
+
+
+</script>*@

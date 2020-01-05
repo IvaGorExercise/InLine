@@ -1,0 +1,23 @@
+﻿ @using InLine.Repository.Data.Helper;
+ 
+  @{
+
+    string mainmenu_version = "1";
+    mainmenu_version = CommonFunctions.GetMainMenu();
+    
+ }
+  
+  
+  <div>
+
+    @switch (mainmenu_version)
+    {
+        case "2":
+        @Html.Partial("IndexPartialGrad")
+        break;
+        default:
+        @Html.Partial("IndexPartialMain")
+        break;
+    }
+
+  </div>

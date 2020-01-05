@@ -1,0 +1,257 @@
+﻿
+@using InLine.UI.Web.Helper
+
+@{
+    //string podaci = LogiraniKorisnikData.ShowLoiraniKorisnik();
+    //string[] obrada = podaci.Split('X');
+
+    string podaci = ViewData["LoiraniKorisnik"].ToString();
+    string[] obrada = podaci.Split('X');
+    
+ }
+
+
+@{
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+        
+  
+ 
+       
+       #content-inner {text-align: center;}
+       
+       #logiranikorisnikokvir { width:890px; height:30px; margin-top:0px;}
+       #logiranikorisnik { width:800px; height:27px; margin-top:6px; margin-left:10px; float:left; text-align:left; background-color: transparent; color:#ffffff; display:none;}
+       #logiranikorisnikInfo{ width:20px; height:15px; margin-top:5px; margin-left:15px; float:left; text-align:center; color: #5073a7; color: #5073a7;
+    background-color:#c5dbf3;
+    padding-left:0px;
+   padding-top:3px;
+   padding-bottom:3px;
+   border-radius: 10px 10px 10px 10px;
+   font-weight: bold;
+   font-size: 1.1em;}
+       
+       #okvir {width:600px; height:550px; margin-top:30px; margin-left:0px;  position: fixed; left: 50%; margin-left: -320px;}
+       
+       #okvir-prvi { width:600; height:170px; }
+       #okvir-drugi { width:600; height:170px; }
+       #okvir-treci { width:600; height:170px; margin-top:10px;} 
+       
+       #okvir-prvi-1 { width:190px; height:170px; float:left; margin-left:5px; background-color: #8eb9e1;
+                   -moz-border-radius-bottomright: 10px;
+                   border-bottom-right-radius: 10px;
+                   -moz-border-radius-topright: 10px;
+                   border-top-right-radius: 10px;
+                    -moz-border-radius-bottomleft: 10px;
+                   border-bottom-left-radius: 10px;
+                   -moz-border-radius-topleft: 10px;
+                   border-top-left-radius: 10px;
+                   
+                   }   
+       #okvir-prvi-2 { width:190px; height:170px; float:left; margin-left:5px; background-color:#8eb9e1;
+                                    -moz-border-radius-bottomright: 10px;
+                   border-bottom-right-radius: 10px;
+                   -moz-border-radius-topright: 10px;
+                   border-top-right-radius: 10px;
+                    -moz-border-radius-bottomleft: 10px;
+                   border-bottom-left-radius: 10px;
+                   -moz-border-radius-topleft: 10px;
+                   border-top-left-radius: 10px;}   
+       #okvir-prvi-3 { width:190px; height:170px; float:left; margin-left:5px; background-color:#8eb9e1;
+                                    -moz-border-radius-bottomright: 10px;
+                   border-bottom-right-radius: 10px;
+                   -moz-border-radius-topright: 10px;
+                   border-top-right-radius: 10px;
+                    -moz-border-radius-bottomleft: 10px;
+                   border-bottom-left-radius: 10px;
+                   -moz-border-radius-topleft: 10px;
+                   border-top-left-radius: 10px;}  
+          
+       #okvir-drugi-1 { width:190px; height:170px; float:left; margin-left:5px; margin-top:5px; background-color:#8eb9e1;
+                                     -moz-border-radius-bottomright: 10px;
+                   border-bottom-right-radius: 10px;
+                   -moz-border-radius-topright: 10px;
+                   border-top-right-radius: 10px;
+                    -moz-border-radius-bottomleft: 10px;
+                   border-bottom-left-radius: 10px;
+                   -moz-border-radius-topleft: 10px;
+                   border-top-left-radius: 10px;}   
+       #okvir-drugi-2 { width:190px; height:170px; float:left; margin-left:5px; margin-top:5px; background-color:#8eb9e1;
+                                     -moz-border-radius-bottomright: 10px;
+                   border-bottom-right-radius: 10px;
+                   -moz-border-radius-topright: 10px;
+                   border-top-right-radius: 10px;
+                    -moz-border-radius-bottomleft: 10px;
+                   border-bottom-left-radius: 10px;
+                   -moz-border-radius-topleft: 10px;
+                   border-top-left-radius: 10px;}   
+       #okvir-drugi-3 { width:190px; height:170px; float:left; margin-left:5px; margin-top:5px;  background-color:#8eb9e1;
+                                     -moz-border-radius-bottomright: 10px;
+                   border-bottom-right-radius: 10px;
+                   -moz-border-radius-topright: 10px;
+                   border-top-right-radius: 10px;
+                    -moz-border-radius-bottomleft: 10px;
+                   border-bottom-left-radius: 10px;
+                   -moz-border-radius-topleft: 10px;
+                   border-top-left-radius: 10px;}
+                   
+       
+       #unutra-naslov { width:180px; height:20px; margin-left:0px; margin-top:10px; margin-bottom:2px; float:left; background-color:transparent; color:#ffffff; font-weight:bold; text-align:center; font-size:1.1em} 
+       #unutra-slika { width:180px; height:70px; margin-left:0px; padding-left:0px; margin-top:5px; float:left; background-color:transparent; text-align:center;}        
+       #unutra-opis { width:180px; height:43px; margin-left:5px; margin-top:15px; float:left; background-color:transparent; background-color:#8eb9e1;  color:#ffffff; text-align:center; font-size:0.9em; border-radius: 6px;}                   
+       
+    
+</style>
+
+<div class="PrviRed">
+
+<div id="logiranikorisnikokvir">
+<div id="logiranikorisnikInfo"><i>i</i></div>
+<div id="logiranikorisnik">
+
+<b>Korisnik:</b> @obrada[0] &nbsp
+
+<b>Server:</b> @obrada[1] &nbsp
+
+<b>Baza:</b> @obrada[2] &nbsp
+
+<b>Ime:</b> @obrada[5] &nbsp
+
+<b>Prezime:</b> @obrada[4] &nbsp
+
+<b>Godina:</b> @obrada[6] &nbsp
+
+</div>
+</div>
+</div>
+ 
+
+
+
+<div id="">
+
+<div id="okvir">
+<div id="okvir-prvi">
+<div id="okvir-prvi-1">
+<div id="unutra-naslov">
+MATIČNI PODACI
+</div>
+<div id="unutra-slika">
+<a href="/MaticniPodaci/MaticniPodaci"><img src="../Content/images/ModulIcons/Maticni.png" /></a>
+</div>
+<div id="unutra-opis">
+Matični podaci sa parametrima rada modula
+</div>
+</div>
+
+
+<div id="okvir-prvi-2">
+<div id="unutra-naslov">
+FINANCIJSKO KNJIGOVODSTVO
+</div>
+<div id="unutra-slika">
+<a href="/FinancijskoKnjigovodstvo/FinancijskoKnjigovodstvo"><img src="../Content/images/ModulIcons/financijsko_knjkigovodstvo02-01.png" /></a>
+</div>
+<div id="unutra-opis">
+Glavna knjiga, temeljnica, bilanca...
+</div>
+</div>
+
+<div id="okvir-prvi-3">
+<div id="unutra-naslov">
+IZVOD
+</div>
+<div id="unutra-slika" style="padding-left:10px; padding-top:0px;">
+<a href="/Izvodi/Izvodi"><img src="../Content/images/ModulIcons/Izvodi.png" /></a>
+</div>
+<div id="unutra-opis">
+Izvodi banke sa uplatama i isplatama po računu Grada
+</div>
+</div>
+</div>
+<div id="okvir-drugi">
+<div id="okvir-drugi-1">
+
+<div id="unutra-naslov">
+HUB-ovi
+</div>
+<div id="unutra-slika" style="padding-left:10px; padding-top:0px;">
+<a href="/HUB2013A/HUBKreirajGrad"><img src="../Content/images/ModulIcons/HUB.png" /></a>
+@*  <li id="active">@Html.ActionLink("Grid HUB 3", "HUBKreirajGrad", "HUB2013A")</li>*@
+</div>
+<div id="unutra-opis">
+Gerneriranje i ispis HUB-ova
+</div>
+
+</div>
+
+<div id="okvir-drugi-2">
+<div id="unutra-naslov">
+OBRAČUN DUGA SA KAMATOM
+</div>
+<div id="unutra-slika">
+<a href="#"><img src="../Content/images/ModulIcons/Kamate.png" /></a>
+</div>
+<div id="unutra-opis">
+Formiranje opomena sa pripadajućom zakonskom zateznom kamatom
+</div>
+</div>
+
+@*<div id="okvir-drugi-3">
+<div id="unutra-naslov">
+OTKUP STANOVA
+</div>
+<div id="unutra-slika">
+<a href="/PregledUgovora/PregledUgovoraModul"><img src="../Content/images/ModulIcons/Otkup.png" /></a>
+</div>
+<div id="unutra-opis">
+Ugovori otkupa, obroci, uplate, kartica ugovora, izvadak sa kamatom...... 
+</div>
+</div>*@
+</div>
+
+
+@*<div id="okvir-treci">
+<div id="okvir-prvi-2">
+<div id="unutra-naslov">
+HUB-TEST STARA STORA
+</div>
+<div id="unutra-slika" style="padding-left:10px; padding-top:0px;">
+<a href="/HUB2013A/HUBKreirajGradTEST"><img src="../Content/images/ModulIcons/HUB.png" /></a>
+</div>
+<div id="unutra-opis">
+INLINE TEST TEST TEST
+</div>
+</div>
+</div>*@
+
+
+</div>
+
+</div>
+
+
+
+
+<script type="text/javascript">
+
+    $("#logiranikorisnikInfo").mouseover(function () {
+        $("#logiranikorisnik").show();
+    });
+
+    $("#logiranikorisnikInfo").mouseout(function () {
+        $("#logiranikorisnik").hide();
+    });
+
+</script>
+
+
+
+
+
+
+
+
+
+

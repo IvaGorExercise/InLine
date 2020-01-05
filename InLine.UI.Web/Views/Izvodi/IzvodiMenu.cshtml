@@ -1,0 +1,40 @@
+﻿
+ @using InLine.Repository.Data.Helper;
+ 
+  @{
+
+    string mainmenu_version = "1";
+    mainmenu_version = CommonFunctions.GetMainMenu();
+    
+ }
+  
+  
+  <div>
+
+    @switch (mainmenu_version)
+    {
+        case "2":
+ <div id="menuizbornik">
+    <ul id="navigacija">
+         <li class="navigacijaShow"><a class="navigacijaShowIkona" href="#"><span>&#9776;</span></a>
+            <div><ul class="submenu">
+                <li>@Html.ActionLink("Pregled izvoda (Grad)", "IzvodiPregledGrad", "Izvodi")</li>
+            </ul></div>
+        </li>
+    </ul>
+</div>
+        break;
+        default:
+<div id="menuizbornik">
+    <ul id="navigacija">
+         <li class="navigacijaShow"><a class="navigacijaShowIkona" href="#"><span>&#9776;</span></a>
+            <div><ul class="submenu">
+                <li>@Html.ActionLink("Pregled izvoda (InLine)", "IzvodiPregled", "Izvodi")</li>
+            </ul></div>
+        </li>
+    </ul>
+</div>
+        break;
+    }
+
+  </div>

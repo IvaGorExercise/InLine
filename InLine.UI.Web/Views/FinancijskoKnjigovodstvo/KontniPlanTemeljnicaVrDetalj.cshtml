@@ -1,0 +1,231 @@
+﻿@model InLine.UI.Web.Controllers.PosebnaTemeljnicaVr
+
+ <style type="text/css">
+  .combochosen
+    {
+        width:98%;
+    }
+    
+    .grupa
+    {
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    
+    .grupaNaslov
+    {
+        margin-bottom: 3px;
+       
+    }
+    .grupaStavke
+    {
+        margin-bottom: 10px;
+    }
+    
+    .PorukaStyle
+     {
+         color: red;
+     }
+      
+    
+</style>
+
+    
+ @{
+     string prefixLabela = "labela_KontniPlanTemeljnicaVr_Detalj_";
+ }
+ 
+
+  @{
+      string Akcija = @InLine.Model.Data.FieldString.KontniPlanTemeljnicaVr.KontniPlanTemeljnicaVrEntity + InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert;
+      string IDForma = @InLine.Model.Data.FieldString.KontniPlanTemeljnicaVr.KontniPlanTemeljnicaVrEntity + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Forma;
+      string KontniPlanTemeljnicaVrList = "KontniPlanTemeljnicaVrList";
+
+ }
+
+
+ @using (Html.BeginForm(Akcija, @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo, FormMethod.Post, new { id = IDForma, @class = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormClass }))
+ {
+     @Html.HiddenFor(model => model.ID_GlavnaKnjiga)
+     @Html.HiddenFor(model => model.ID_KontniPlan)
+     @Html.HiddenFor(model => model.KontniPlanTemeljnicaVrList)
+     @Html.HiddenFor(model => model.SelectedProperties)
+     
+    @Html.ValidationSummary(true)
+
+
+<table class ="KontniPlanTemeljnicaVrTable @InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormBackground" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+   <tbody>
+
+     <tr>
+     <td>
+     <div class="grupa">
+
+  
+  
+
+     @if (@Model.ListaTemeljnicaVrVr.Any())
+     {
+        int RedniBroj = 0;
+         
+         foreach (var vrstavrste in Model.ListaTemeljnicaVrVr)
+         {
+             bool selektiran = false;
+             RedniBroj ++ ;
+             
+             <div class="grupaNaslov" id ="@vrstavrste.IDTemeljnicaVrVr">@RedniBroj.ToString().  @vrstavrste.Naziv</div>
+
+                 <div class="grupaStavke">
+                     <select id="@vrstavrste.IDTemeljnicaVrVr" class="combochosen" >
+                        <option value='-1'>--Odaberite--</option>
+
+                        @foreach (var vrste in Model.SelectedProperties)
+                        {
+                            if (@vrste.IsSelected == true && vrstavrste.IDTemeljnicaVrVr == @vrste.VrstaVrsta)
+                            {
+                                <option value='@vrste.Vrsta'  selected="selected" > @vrste.VrstaNaziv </option>   
+                            }
+
+                            else
+                            {
+                                <option value='@vrste.Vrsta'>@vrste.VrstaNaziv </option>   
+                            }
+                        }
+
+                       </select>
+              
+                   </div>
+         
+         }
+         
+          
+
+     }
+        </div>
+      </td>
+     </tr>
+
+    <tr>
+    <td colspan="7">
+      <label id="DuplaTemeljnicaVrPoruka" class="PorukaStyle"></label>
+    </td>
+    </tr>
+
+ 
+  </tbody>
+</table>
+     
+<div id="poruka_KontniPlanTemeljnicaVr">
+</div>
+
+ }
+   <script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/chosen.jquery.min.js")" type="text/javascript"></script>
+
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('#KontniPlanTemeljnicaVrDialogSpremiKopiraj').hide();
+            $('#KontniPlanTemeljnicaVrDialogSpremiDodaj').hide();
+            $(".combochosen").chosen();
+
+
+    });
+
+
+</script>
+
+  <script type="text/javascript">
+
+      $(function () {
+          $("#labela_KontniPlanTemeljnicaVr_Detalj_Konto").text("Konto");
+
+      });
+
+
+
+     
+   
+    </script>
+
+
+    <script type="text/javascript">
+
+        $(".grupa select").change(function () {
+
+            var myArray = [];
+            var myArrayIzabraniDropDown = [];
+
+
+            $('.KontniPlanTemeljnicaVrTable select').each(function (i, e) {
+
+                if (this.options[e.selectedIndex].text != "--Odaberite--") {
+                    myArrayIzabraniDropDown.push($(this).attr("value"));
+
+                    count = 0; 
+                    for (i = 0; i <= myArrayIzabraniDropDown.length; i++) {
+                        if (myArrayIzabraniDropDown[i] == $(this).attr("value"))
+                            count++;
+                    }
+
+
+                    if (count < 2) {
+                        myArray.push($(this).attr("id") + ":" + $(this).attr("value"));
+                        $('#KontniPlanTemeljnicaVrDialogSpremi').prop("disabled", false);
+                        $("#DuplaTemeljnicaVrPoruka").text("");
+
+                    }
+
+                    else {
+                        console.log("Ta temeljnica vec odabrana");
+                        $('#KontniPlanTemeljnicaVrDialogSpremi').prop("disabled", true);
+                        $("#DuplaTemeljnicaVrPoruka").text("Ista vrsta temeljnice ne smije bit odabrana za različite poslovne događaje.");
+                        return false;
+
+                    }
+
+
+                }
+
+            });
+
+            $("#" + '@KontniPlanTemeljnicaVrList').val(myArray);
+            console.log(myArray);
+            console.log(myArrayIzabraniDropDown);
+
+        });
+
+</script>
+
+
+
+ <script type="text/javascript">
+     function InsertEditSucces() {
+
+     }
+
+     function InsertEditError() {
+
+     }
+
+
+     function DeleteSucces() {
+
+     }
+
+
+     function DeleteError() {
+
+     }
+
+     function ProvjeraKodUnosa() {
+         return false;
+     }
+
+
+    </script>

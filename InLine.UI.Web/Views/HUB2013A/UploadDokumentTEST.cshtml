@@ -1,0 +1,74 @@
+﻿
+@using (Html.BeginForm("UploadDokumentTest", "HUB2013A", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+
+@*<form action="UploadDokument" method="post" enctype="multipart/form-data">*@
+    <div class="form-field">
+        <h4>Odaberite datoteku/ke iz kojih će se kreirati HUB-ovi</h4>
+        <div class="upload-container">
+            <div class="upload">
+                <input type="file" name="files" id="file1" size="50" /> 
+                <img src="@Url.Content("~/Content/images/delete.png")" alt="Remove picture." />
+            </div>
+         
+        </div> 
+              <input type="submit" class="send_upload" value="Upload" />       
+    </div>
+
+@*</form>*@
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var currentImage = 1;
+        $("body").on("change", "input[name='files']", function () {
+            var pathToRemoveIcon = "@Url.Content("~/Content/images/delete.png")";
+            currentImage = currentImage + 1;
+            var htmlToAppend = '<div class="upload"><input type="file" name="files" size="50"  id="file' + currentImage + '" /><img src="' + pathToRemoveIcon + '" alt="Remove picture." /></div>';
+            $('.upload-container').append(htmlToAppend);
+            var visina = $("#doc-upload").height();
+            var novavisina = visina + 20;
+             $("#doc-upload").height(novavisina);
+        }).on("click", ".upload img", function () {
+            if ($(this).parent().siblings().length > 0) {
+                $(this).parent().remove();    
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.send_upload').click(function () {
+            var fileCount = 0;
+
+            $('.upload-container').each(function () {
+
+                $('input[type=file]', this).each(function () {
+                    if ($(this).val() == '') {
+
+                    }
+                    else {
+                        fileCount++;
+                    }
+                });
+
+            });
+
+            if (fileCount == 0) {
+                $("#ne-upload-labela").text("Niste odabrali datoteku").addClass("red").show().delay(3000).fadeOut();
+                return false;
+            }
+
+            else {
+                return true;
+            }
+
+        });
+    });
+
+
+</script> 
+

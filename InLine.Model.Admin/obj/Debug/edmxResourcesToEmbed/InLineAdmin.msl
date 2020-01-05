@@ -1,0 +1,1677 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="InLineAdminModelStoreContainer" CdmEntityContainer="InLineAdminContext">
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGr_DELETE" FunctionName="InLineAdminModel.Store.USP_AkcijaGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGr_INSERT" FunctionName="InLineAdminModel.Store.USP_AkcijaGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGr_SELECT" FunctionName="InLineAdminModel.Store.USP_AkcijaGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_AkcijaGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGrAkcija_DELETE" FunctionName="InLineAdminModel.Store.USP_AkcijaGrAkcija_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGrAkcija_INSERT" FunctionName="InLineAdminModel.Store.USP_AkcijaGrAkcija_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGrAkcija_SELECT" FunctionName="InLineAdminModel.Store.USP_AkcijaGrAkcija_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGrAkcija_UPDATE" FunctionName="InLineAdminModel.Store.USP_AkcijaGrAkcija_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGrAkcijaGr_DELETE" FunctionName="InLineAdminModel.Store.USP_AkcijaGrAkcijaGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGrAkcijaGr_INSERT" FunctionName="InLineAdminModel.Store.USP_AkcijaGrAkcijaGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGrAkcijaGr_SELECT" FunctionName="InLineAdminModel.Store.USP_AkcijaGrAkcijaGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGrAkcijaGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_AkcijaGrAkcijaGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_AkcijaGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_AkcijaGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_AkcijaGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_AkcijaGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGrXAkcija_DELETE" FunctionName="InLineAdminModel.Store.USP_AkcijaGrXAkcija_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGrXAkcija_INSERT" FunctionName="InLineAdminModel.Store.USP_AkcijaGrXAkcija_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGrXAkcija_SELECT" FunctionName="InLineAdminModel.Store.USP_AkcijaGrXAkcija_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGrXAkcija_UPDATE" FunctionName="InLineAdminModel.Store.USP_AkcijaGrXAkcija_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGrXAkcijaGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_AkcijaGrXAkcijaGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGrXAkcijaGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_AkcijaGrXAkcijaGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGrXAkcijaGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_AkcijaGrXAkcijaGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_AkcijaGrXAkcijaGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_AkcijaGrXAkcijaGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_Baza_DELETE" FunctionName="InLineAdminModel.Store.USP_Baza_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_Baza_INSERT" FunctionName="InLineAdminModel.Store.USP_Baza_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_Baza_SELECT" FunctionName="InLineAdminModel.Store.USP_Baza_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_Baza_UPDATE" FunctionName="InLineAdminModel.Store.USP_Baza_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_BazaKorisnik_DELETE" FunctionName="InLineAdminModel.Store.USP_BazaKorisnik_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_BazaKorisnik_INSERT" FunctionName="InLineAdminModel.Store.USP_BazaKorisnik_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_BazaKorisnik_SELECT" FunctionName="InLineAdminModel.Store.USP_BazaKorisnik_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_BazaKorisnik_UPDATE" FunctionName="InLineAdminModel.Store.USP_BazaKorisnik_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGr_DELETE" FunctionName="InLineAdminModel.Store.USP_FormaGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGr_INSERT" FunctionName="InLineAdminModel.Store.USP_FormaGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGr_SELECT" FunctionName="InLineAdminModel.Store.USP_FormaGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_FormaGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGrForma_DELETE" FunctionName="InLineAdminModel.Store.USP_FormaGrForma_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGrForma_INSERT" FunctionName="InLineAdminModel.Store.USP_FormaGrForma_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGrForma_SELECT" FunctionName="InLineAdminModel.Store.USP_FormaGrForma_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGrForma_UPDATE" FunctionName="InLineAdminModel.Store.USP_FormaGrForma_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGrFormaGr_DELETE" FunctionName="InLineAdminModel.Store.USP_FormaGrFormaGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGrFormaGr_INSERT" FunctionName="InLineAdminModel.Store.USP_FormaGrFormaGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGrFormaGr_SELECT" FunctionName="InLineAdminModel.Store.USP_FormaGrFormaGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGrFormaGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_FormaGrFormaGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_FormaGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_FormaGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_FormaGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_FormaGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGrXForma_DELETE" FunctionName="InLineAdminModel.Store.USP_FormaGrXForma_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGrXForma_INSERT" FunctionName="InLineAdminModel.Store.USP_FormaGrXForma_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGrXForma_SELECT" FunctionName="InLineAdminModel.Store.USP_FormaGrXForma_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGrXForma_UPDATE" FunctionName="InLineAdminModel.Store.USP_FormaGrXForma_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGrXFormaGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_FormaGrXFormaGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGrXFormaGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_FormaGrXFormaGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGrXFormaGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_FormaGrXFormaGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaGrXFormaGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_FormaGrXFormaGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGr_DELETE" FunctionName="InLineAdminModel.Store.USP_FormaStGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGr_INSERT" FunctionName="InLineAdminModel.Store.USP_FormaStGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGr_SELECT" FunctionName="InLineAdminModel.Store.USP_FormaStGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_FormaStGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGrFormaSt_DELETE" FunctionName="InLineAdminModel.Store.USP_FormaStGrFormaSt_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGrFormaSt_INSERT" FunctionName="InLineAdminModel.Store.USP_FormaStGrFormaSt_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGrFormaSt_SELECT" FunctionName="InLineAdminModel.Store.USP_FormaStGrFormaSt_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGrFormaSt_UPDATE" FunctionName="InLineAdminModel.Store.USP_FormaStGrFormaSt_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGrFormaStGr_DELETE" FunctionName="InLineAdminModel.Store.USP_FormaStGrFormaStGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGrFormaStGr_INSERT" FunctionName="InLineAdminModel.Store.USP_FormaStGrFormaStGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGrFormaStGr_SELECT" FunctionName="InLineAdminModel.Store.USP_FormaStGrFormaStGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGrFormaStGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_FormaStGrFormaStGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_FormaStGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_FormaStGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_FormaStGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_FormaStGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGrXFormaSt_DELETE" FunctionName="InLineAdminModel.Store.USP_FormaStGrXFormaSt_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGrXFormaSt_INSERT" FunctionName="InLineAdminModel.Store.USP_FormaStGrXFormaSt_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGrXFormaSt_SELECT" FunctionName="InLineAdminModel.Store.USP_FormaStGrXFormaSt_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGrXFormaSt_UPDATE" FunctionName="InLineAdminModel.Store.USP_FormaStGrXFormaSt_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGrXFormaStGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_FormaStGrXFormaStGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGrXFormaStGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_FormaStGrXFormaStGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGrXFormaStGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_FormaStGrXFormaStGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_FormaStGrXFormaStGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_FormaStGrXFormaStGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_Korisnik_DELETE" FunctionName="InLineAdminModel.Store.USP_Korisnik_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_Korisnik_INSERT" FunctionName="InLineAdminModel.Store.USP_Korisnik_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_Korisnik_SELECT" FunctionName="InLineAdminModel.Store.USP_Korisnik_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_Korisnik_UPDATE" FunctionName="InLineAdminModel.Store.USP_Korisnik_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikFilter_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikFilter_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikFilter_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikFilter_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikFilter_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikFilter_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikFilter_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikFilter_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikFilterParametar_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikFilterParametar_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikFilterParametar_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikFilterParametar_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikFilterParametar_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikFilterParametar_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikFilterParametar_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikFilterParametar_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGr_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGr_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGr_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrAkcijaGr_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrAkcijaGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrAkcijaGr_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrAkcijaGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrAkcijaGr_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrAkcijaGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrAkcijaGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrAkcijaGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrFormaGr_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrFormaGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrFormaGr_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrFormaGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrFormaGr_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrFormaGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrFormaGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrFormaGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrFormaStGr_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrFormaStGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrFormaStGr_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrFormaStGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrFormaStGr_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrFormaStGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrFormaStGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrFormaStGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrID_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrID_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrID_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrID_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrID_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrID_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrID_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrID_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrKorisnik_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrKorisnik_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrKorisnik_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrKorisnik_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrKorisnik_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrKorisnik_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrKorisnik_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrKorisnik_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrKorisnikGr_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrKorisnikGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrKorisnikGr_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrKorisnikGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrKorisnikGr_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrKorisnikGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrKorisnikGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrKorisnikGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrReportGr_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrReportGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrReportGr_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrReportGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrReportGr_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrReportGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrReportGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrReportGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrReportStGr_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrReportStGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrReportStGr_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrReportStGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrReportStGr_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrReportStGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrReportStGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrReportStGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrSP_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrSP_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrSP_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrSP_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrSP_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrSP_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrSP_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrSP_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrSPParam_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrSPParam_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrSPParam_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrSPParam_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrSPParam_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrSPParam_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrSPParam_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrSPParam_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrTablicaGr_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrTablicaGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrTablicaGr_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrTablicaGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrTablicaGr_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrTablicaGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrTablicaGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrTablicaGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrTablicaPoljeGr_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrTablicaPoljeGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrTablicaPoljeGr_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrTablicaPoljeGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrTablicaPoljeGr_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrTablicaPoljeGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrTablicaPoljeGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrTablicaPoljeGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXAkcijaGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXAkcijaGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXAkcijaGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXAkcijaGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXAkcijaGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXAkcijaGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXAkcijaGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXAkcijaGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXFormaGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXFormaGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXFormaGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXFormaGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXFormaGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXFormaGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXFormaGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXFormaGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXFormaStGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXFormaStGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXFormaStGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXFormaStGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXFormaStGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXFormaStGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXFormaStGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXFormaStGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXKorisnik_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXKorisnik_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXKorisnik_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXKorisnik_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXKorisnik_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXKorisnik_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXKorisnik_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXKorisnik_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXKorisnikGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXKorisnikGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXKorisnikGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXKorisnikGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXKorisnikGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXKorisnikGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXKorisnikGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXKorisnikGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXReportGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXReportGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXReportGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXReportGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXReportGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXReportGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXReportGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXReportGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXReportStGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXReportStGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXReportStGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXReportStGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXReportStGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXReportStGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXReportStGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXReportStGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXTablicaGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXTablicaGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXTablicaGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXTablicaGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXTablicaGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXTablicaGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXTablicaGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXTablicaGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXTablicaPoljeGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXTablicaPoljeGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXTablicaPoljeGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXTablicaPoljeGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXTablicaPoljeGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXTablicaPoljeGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikGrXTablicaPoljeGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikGrXTablicaPoljeGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikSession_DELETE" FunctionName="InLineAdminModel.Store.USP_KorisnikSession_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikSession_INSERT" FunctionName="InLineAdminModel.Store.USP_KorisnikSession_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikSession_SELECT" FunctionName="InLineAdminModel.Store.USP_KorisnikSession_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_KorisnikSession_UPDATE" FunctionName="InLineAdminModel.Store.USP_KorisnikSession_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_Licenca_DELETE" FunctionName="InLineAdminModel.Store.USP_Licenca_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_Licenca_INSERT" FunctionName="InLineAdminModel.Store.USP_Licenca_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_Licenca_SELECT" FunctionName="InLineAdminModel.Store.USP_Licenca_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_Licenca_UPDATE" FunctionName="InLineAdminModel.Store.USP_Licenca_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaAkcijaGr_DELETE" FunctionName="InLineAdminModel.Store.USP_LicencaAkcijaGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaAkcijaGr_INSERT" FunctionName="InLineAdminModel.Store.USP_LicencaAkcijaGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaAkcijaGr_SELECT" FunctionName="InLineAdminModel.Store.USP_LicencaAkcijaGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaAkcijaGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_LicencaAkcijaGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaFormaGr_DELETE" FunctionName="InLineAdminModel.Store.USP_LicencaFormaGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaFormaGr_INSERT" FunctionName="InLineAdminModel.Store.USP_LicencaFormaGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaFormaGr_SELECT" FunctionName="InLineAdminModel.Store.USP_LicencaFormaGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaFormaGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_LicencaFormaGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaFormaStGr_DELETE" FunctionName="InLineAdminModel.Store.USP_LicencaFormaStGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaFormaStGr_INSERT" FunctionName="InLineAdminModel.Store.USP_LicencaFormaStGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaFormaStGr_SELECT" FunctionName="InLineAdminModel.Store.USP_LicencaFormaStGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaFormaStGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_LicencaFormaStGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaReportGr_DELETE" FunctionName="InLineAdminModel.Store.USP_LicencaReportGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaReportGr_INSERT" FunctionName="InLineAdminModel.Store.USP_LicencaReportGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaReportGr_SELECT" FunctionName="InLineAdminModel.Store.USP_LicencaReportGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaReportGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_LicencaReportGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaReportStGr_DELETE" FunctionName="InLineAdminModel.Store.USP_LicencaReportStGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaReportStGr_INSERT" FunctionName="InLineAdminModel.Store.USP_LicencaReportStGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaReportStGr_SELECT" FunctionName="InLineAdminModel.Store.USP_LicencaReportStGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaReportStGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_LicencaReportStGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaTablicaGr_DELETE" FunctionName="InLineAdminModel.Store.USP_LicencaTablicaGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaTablicaGr_INSERT" FunctionName="InLineAdminModel.Store.USP_LicencaTablicaGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaTablicaGr_SELECT" FunctionName="InLineAdminModel.Store.USP_LicencaTablicaGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaTablicaGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_LicencaTablicaGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaTablicaPoljeGr_DELETE" FunctionName="InLineAdminModel.Store.USP_LicencaTablicaPoljeGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaTablicaPoljeGr_INSERT" FunctionName="InLineAdminModel.Store.USP_LicencaTablicaPoljeGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaTablicaPoljeGr_SELECT" FunctionName="InLineAdminModel.Store.USP_LicencaTablicaPoljeGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_LicencaTablicaPoljeGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_LicencaTablicaPoljeGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_Log_DELETE" FunctionName="InLineAdminModel.Store.USP_Log_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_Log_INSERT" FunctionName="InLineAdminModel.Store.USP_Log_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_Log_SELECT" FunctionName="InLineAdminModel.Store.USP_Log_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_Log_UPDATE" FunctionName="InLineAdminModel.Store.USP_Log_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGr_DELETE" FunctionName="InLineAdminModel.Store.USP_ReportGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGr_INSERT" FunctionName="InLineAdminModel.Store.USP_ReportGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGr_SELECT" FunctionName="InLineAdminModel.Store.USP_ReportGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_ReportGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGrReport_DELETE" FunctionName="InLineAdminModel.Store.USP_ReportGrReport_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGrReport_INSERT" FunctionName="InLineAdminModel.Store.USP_ReportGrReport_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGrReport_SELECT" FunctionName="InLineAdminModel.Store.USP_ReportGrReport_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGrReport_UPDATE" FunctionName="InLineAdminModel.Store.USP_ReportGrReport_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGrReportGr_DELETE" FunctionName="InLineAdminModel.Store.USP_ReportGrReportGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGrReportGr_INSERT" FunctionName="InLineAdminModel.Store.USP_ReportGrReportGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGrReportGr_SELECT" FunctionName="InLineAdminModel.Store.USP_ReportGrReportGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGrReportGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_ReportGrReportGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_ReportGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_ReportGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_ReportGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_ReportGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGrXReport_DELETE" FunctionName="InLineAdminModel.Store.USP_ReportGrXReport_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGrXReport_INSERT" FunctionName="InLineAdminModel.Store.USP_ReportGrXReport_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGrXReport_SELECT" FunctionName="InLineAdminModel.Store.USP_ReportGrXReport_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGrXReport_UPDATE" FunctionName="InLineAdminModel.Store.USP_ReportGrXReport_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGrXReportGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_ReportGrXReportGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGrXReportGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_ReportGrXReportGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGrXReportGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_ReportGrXReportGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportGrXReportGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_ReportGrXReportGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGr_DELETE" FunctionName="InLineAdminModel.Store.USP_ReportStGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGr_INSERT" FunctionName="InLineAdminModel.Store.USP_ReportStGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGr_SELECT" FunctionName="InLineAdminModel.Store.USP_ReportStGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_ReportStGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGrReportSt_DELETE" FunctionName="InLineAdminModel.Store.USP_ReportStGrReportSt_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGrReportSt_INSERT" FunctionName="InLineAdminModel.Store.USP_ReportStGrReportSt_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGrReportSt_SELECT" FunctionName="InLineAdminModel.Store.USP_ReportStGrReportSt_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGrReportSt_UPDATE" FunctionName="InLineAdminModel.Store.USP_ReportStGrReportSt_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGrReportStGr_DELETE" FunctionName="InLineAdminModel.Store.USP_ReportStGrReportStGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGrReportStGr_INSERT" FunctionName="InLineAdminModel.Store.USP_ReportStGrReportStGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGrReportStGr_SELECT" FunctionName="InLineAdminModel.Store.USP_ReportStGrReportStGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGrReportStGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_ReportStGrReportStGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_ReportStGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_ReportStGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_ReportStGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_ReportStGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGrXReportSt_DELETE" FunctionName="InLineAdminModel.Store.USP_ReportStGrXReportSt_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGrXReportSt_INSERT" FunctionName="InLineAdminModel.Store.USP_ReportStGrXReportSt_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGrXReportSt_SELECT" FunctionName="InLineAdminModel.Store.USP_ReportStGrXReportSt_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGrXReportSt_UPDATE" FunctionName="InLineAdminModel.Store.USP_ReportStGrXReportSt_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGrXReportStGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_ReportStGrXReportStGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGrXReportStGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_ReportStGrXReportStGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGrXReportStGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_ReportStGrXReportStGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_ReportStGrXReportStGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_ReportStGrXReportStGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGr_DELETE" FunctionName="InLineAdminModel.Store.USP_TablicaGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGr_INSERT" FunctionName="InLineAdminModel.Store.USP_TablicaGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGr_SELECT" FunctionName="InLineAdminModel.Store.USP_TablicaGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_TablicaGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGrTablica_DELETE" FunctionName="InLineAdminModel.Store.USP_TablicaGrTablica_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGrTablica_INSERT" FunctionName="InLineAdminModel.Store.USP_TablicaGrTablica_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGrTablica_SELECT" FunctionName="InLineAdminModel.Store.USP_TablicaGrTablica_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGrTablica_UPDATE" FunctionName="InLineAdminModel.Store.USP_TablicaGrTablica_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGrTablicaGr_DELETE" FunctionName="InLineAdminModel.Store.USP_TablicaGrTablicaGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGrTablicaGr_INSERT" FunctionName="InLineAdminModel.Store.USP_TablicaGrTablicaGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGrTablicaGr_SELECT" FunctionName="InLineAdminModel.Store.USP_TablicaGrTablicaGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGrTablicaGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_TablicaGrTablicaGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_TablicaGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_TablicaGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_TablicaGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_TablicaGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGrXTablica_DELETE" FunctionName="InLineAdminModel.Store.USP_TablicaGrXTablica_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGrXTablica_INSERT" FunctionName="InLineAdminModel.Store.USP_TablicaGrXTablica_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGrXTablica_SELECT" FunctionName="InLineAdminModel.Store.USP_TablicaGrXTablica_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGrXTablica_UPDATE" FunctionName="InLineAdminModel.Store.USP_TablicaGrXTablica_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGrXTablicaGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_TablicaGrXTablicaGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGrXTablicaGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_TablicaGrXTablicaGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGrXTablicaGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_TablicaGrXTablicaGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaGrXTablicaGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_TablicaGrXTablicaGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGr_DELETE" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGr_INSERT" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGr_SELECT" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGrTablicaPolje_DELETE" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGrTablicaPolje_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGrTablicaPolje_INSERT" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGrTablicaPolje_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGrTablicaPolje_SELECT" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGrTablicaPolje_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGrTablicaPolje_UPDATE" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGrTablicaPolje_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGrTablicaPoljeGr_DELETE" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGrTablicaPoljeGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGrTablicaPoljeGr_INSERT" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGrTablicaPoljeGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGrTablicaPoljeGr_SELECT" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGrTablicaPoljeGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGrTablicaPoljeGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGrTablicaPoljeGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGrXTablicaPolje_DELETE" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGrXTablicaPolje_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGrXTablicaPolje_INSERT" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGrXTablicaPolje_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGrXTablicaPolje_SELECT" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGrXTablicaPolje_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGrXTablicaPolje_UPDATE" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGrXTablicaPolje_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGrXTablicaPoljeGrX_DELETE" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGrXTablicaPoljeGrX_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGrXTablicaPoljeGrX_INSERT" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGrXTablicaPoljeGrX_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGrXTablicaPoljeGrX_SELECT" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGrXTablicaPoljeGrX_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_TablicaPoljeGrXTablicaPoljeGrX_UPDATE" FunctionName="InLineAdminModel.Store.USP_TablicaPoljeGrXTablicaPoljeGrX_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_Vijest_DELETE" FunctionName="InLineAdminModel.Store.USP_Vijest_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_Vijest_INSERT" FunctionName="InLineAdminModel.Store.USP_Vijest_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_Vijest_SELECT" FunctionName="InLineAdminModel.Store.USP_Vijest_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_Vijest_UPDATE" FunctionName="InLineAdminModel.Store.USP_Vijest_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_VijestGr_DELETE" FunctionName="InLineAdminModel.Store.USP_VijestGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_VijestGr_INSERT" FunctionName="InLineAdminModel.Store.USP_VijestGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_VijestGr_SELECT" FunctionName="InLineAdminModel.Store.USP_VijestGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_VijestGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_VijestGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_VijestGrVijest_DELETE" FunctionName="InLineAdminModel.Store.USP_VijestGrVijest_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_VijestGrVijest_INSERT" FunctionName="InLineAdminModel.Store.USP_VijestGrVijest_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_VijestGrVijest_SELECT" FunctionName="InLineAdminModel.Store.USP_VijestGrVijest_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_VijestGrVijest_UPDATE" FunctionName="InLineAdminModel.Store.USP_VijestGrVijest_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_VijestGrVijestKorisnikGr_DELETE" FunctionName="InLineAdminModel.Store.USP_VijestGrVijestKorisnikGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_VijestGrVijestKorisnikGr_INSERT" FunctionName="InLineAdminModel.Store.USP_VijestGrVijestKorisnikGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_VijestGrVijestKorisnikGr_SELECT" FunctionName="InLineAdminModel.Store.USP_VijestGrVijestKorisnikGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_VijestGrVijestKorisnikGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_VijestGrVijestKorisnikGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_VijestKorisnikGr_DELETE" FunctionName="InLineAdminModel.Store.USP_VijestKorisnikGr_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_VijestKorisnikGr_INSERT" FunctionName="InLineAdminModel.Store.USP_VijestKorisnikGr_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_VijestKorisnikGr_SELECT" FunctionName="InLineAdminModel.Store.USP_VijestKorisnikGr_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_VijestKorisnikGr_UPDATE" FunctionName="InLineAdminModel.Store.USP_VijestKorisnikGr_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_VijestKorisnikGrKorisnik_DELETE" FunctionName="InLineAdminModel.Store.USP_VijestKorisnikGrKorisnik_DELETE" />
+    <FunctionImportMapping FunctionImportName="USP_VijestKorisnikGrKorisnik_INSERT" FunctionName="InLineAdminModel.Store.USP_VijestKorisnikGrKorisnik_INSERT" />
+    <FunctionImportMapping FunctionImportName="USP_VijestKorisnikGrKorisnik_SELECT" FunctionName="InLineAdminModel.Store.USP_VijestKorisnikGrKorisnik_SELECT" />
+    <FunctionImportMapping FunctionImportName="USP_VijestKorisnikGrKorisnik_UPDATE" FunctionName="InLineAdminModel.Store.USP_VijestKorisnikGrKorisnik_UPDATE" />
+    <FunctionImportMapping FunctionImportName="USP_Vijesti" FunctionName="InLineAdminModel.Store.USP_Vijesti" />
+    <FunctionImportMapping FunctionImportName="USP_DozvolaAkcija" FunctionName="InLineAdminModel.Store.USP_DozvolaAkcija" />
+    <FunctionImportMapping FunctionImportName="USP_DozvolaAkcijaOznaka" FunctionName="InLineAdminModel.Store.USP_DozvolaAkcijaOznaka" />
+    <FunctionImportMapping FunctionImportName="USP_ZabranaAkcija" FunctionName="InLineAdminModel.Store.USP_ZabranaAkcija" />
+    <FunctionImportMapping FunctionImportName="USP_ZabranaAkcijaOznaka" FunctionName="InLineAdminModel.Store.USP_ZabranaAkcijaOznaka" />
+    <EntitySetMapping Name="AkcijaGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.AkcijaGr">
+        <MappingFragment StoreEntitySet="AkcijaGr">
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="ID_AkcijaGr" ColumnName="ID_AkcijaGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AkcijaGrAkcija">
+      <EntityTypeMapping TypeName="InLineAdminModel.AkcijaGrAkcija">
+        <MappingFragment StoreEntitySet="AkcijaGrAkcija">
+          <ScalarProperty Name="ID_AkcijaGrAkcijaNad" ColumnName="ID_AkcijaGrAkcijaNad" />
+          <ScalarProperty Name="IDAkcija" ColumnName="IDAkcija" />
+          <ScalarProperty Name="ID_AkcijaGr" ColumnName="ID_AkcijaGr" />
+          <ScalarProperty Name="ID_AkcijaGrAkcija" ColumnName="ID_AkcijaGrAkcija" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AkcijaGrAkcijaGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.AkcijaGrAkcijaGr">
+        <MappingFragment StoreEntitySet="AkcijaGrAkcijaGr">
+          <ScalarProperty Name="ID_AkcijaGrNad" ColumnName="ID_AkcijaGrNad" />
+          <ScalarProperty Name="ID_AkcijaGr" ColumnName="ID_AkcijaGr" />
+          <ScalarProperty Name="ID_AkcijaGrAkcijaGr" ColumnName="ID_AkcijaGrAkcijaGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AkcijaGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.AkcijaGrX">
+        <MappingFragment StoreEntitySet="AkcijaGrX">
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="ID_AkcijaGrX" ColumnName="ID_AkcijaGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AkcijaGrXAkcija">
+      <EntityTypeMapping TypeName="InLineAdminModel.AkcijaGrXAkcija">
+        <MappingFragment StoreEntitySet="AkcijaGrXAkcija">
+          <ScalarProperty Name="ID_AkcijaGrXAkcijaNad" ColumnName="ID_AkcijaGrXAkcijaNad" />
+          <ScalarProperty Name="IDAkcija" ColumnName="IDAkcija" />
+          <ScalarProperty Name="ID_AkcijaGrX" ColumnName="ID_AkcijaGrX" />
+          <ScalarProperty Name="ID_AkcijaGrXAkcija" ColumnName="ID_AkcijaGrXAkcija" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AkcijaGrXAkcijaGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.AkcijaGrXAkcijaGrX">
+        <MappingFragment StoreEntitySet="AkcijaGrXAkcijaGrX">
+          <ScalarProperty Name="ID_AkcijaGrXNad" ColumnName="ID_AkcijaGrXNad" />
+          <ScalarProperty Name="ID_AkcijaGrX" ColumnName="ID_AkcijaGrX" />
+          <ScalarProperty Name="ID_AkcijaGrXAkcijaGrX" ColumnName="ID_AkcijaGrXAkcijaGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Baza">
+      <EntityTypeMapping TypeName="InLineAdminModel.Baza">
+        <MappingFragment StoreEntitySet="Baza">
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="BazaNaziv" ColumnName="BazaNaziv" />
+          <ScalarProperty Name="Server" ColumnName="Server" />
+          <ScalarProperty Name="ID_Baza" ColumnName="ID_Baza" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BazaKorisnik">
+      <EntityTypeMapping TypeName="InLineAdminModel.BazaKorisnik">
+        <MappingFragment StoreEntitySet="BazaKorisnik">
+          <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+          <ScalarProperty Name="Korisnik" ColumnName="Korisnik" />
+          <ScalarProperty Name="ID_Korisnik" ColumnName="ID_Korisnik" />
+          <ScalarProperty Name="ID_Baza" ColumnName="ID_Baza" />
+          <ScalarProperty Name="ID_BazaKorisnik" ColumnName="ID_BazaKorisnik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormaGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.FormaGr">
+        <MappingFragment StoreEntitySet="FormaGr">
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="ID_FormaGr" ColumnName="ID_FormaGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormaGrForma">
+      <EntityTypeMapping TypeName="InLineAdminModel.FormaGrForma">
+        <MappingFragment StoreEntitySet="FormaGrForma">
+          <ScalarProperty Name="ID_FormaGrFormaNad" ColumnName="ID_FormaGrFormaNad" />
+          <ScalarProperty Name="IDForma" ColumnName="IDForma" />
+          <ScalarProperty Name="ID_FormaGr" ColumnName="ID_FormaGr" />
+          <ScalarProperty Name="ID_FormaGrForma" ColumnName="ID_FormaGrForma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormaGrFormaGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.FormaGrFormaGr">
+        <MappingFragment StoreEntitySet="FormaGrFormaGr">
+          <ScalarProperty Name="ID_FormaGrNad" ColumnName="ID_FormaGrNad" />
+          <ScalarProperty Name="ID_FormaGr" ColumnName="ID_FormaGr" />
+          <ScalarProperty Name="ID_FormaGrFormaGr" ColumnName="ID_FormaGrFormaGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormaGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.FormaGrX">
+        <MappingFragment StoreEntitySet="FormaGrX">
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="ID_FormaGrX" ColumnName="ID_FormaGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormaGrXForma">
+      <EntityTypeMapping TypeName="InLineAdminModel.FormaGrXForma">
+        <MappingFragment StoreEntitySet="FormaGrXForma">
+          <ScalarProperty Name="ID_FormaGrXFormaNad" ColumnName="ID_FormaGrXFormaNad" />
+          <ScalarProperty Name="IDForma" ColumnName="IDForma" />
+          <ScalarProperty Name="ID_FormaGrX" ColumnName="ID_FormaGrX" />
+          <ScalarProperty Name="ID_FormaGrXForma" ColumnName="ID_FormaGrXForma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormaGrXFormaGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.FormaGrXFormaGrX">
+        <MappingFragment StoreEntitySet="FormaGrXFormaGrX">
+          <ScalarProperty Name="ID_FormaGrXNad" ColumnName="ID_FormaGrXNad" />
+          <ScalarProperty Name="ID_FormaGrX" ColumnName="ID_FormaGrX" />
+          <ScalarProperty Name="ID_FormaGrXFormaGrX" ColumnName="ID_FormaGrXFormaGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormaStGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.FormaStGr">
+        <MappingFragment StoreEntitySet="FormaStGr">
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="ID_FormaStGr" ColumnName="ID_FormaStGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormaStGrFormaSt">
+      <EntityTypeMapping TypeName="InLineAdminModel.FormaStGrFormaSt">
+        <MappingFragment StoreEntitySet="FormaStGrFormaSt">
+          <ScalarProperty Name="ID_FormaStGrFormaStNad" ColumnName="ID_FormaStGrFormaStNad" />
+          <ScalarProperty Name="IDFormaSt" ColumnName="IDFormaSt" />
+          <ScalarProperty Name="IDForma" ColumnName="IDForma" />
+          <ScalarProperty Name="ID_FormaStGr" ColumnName="ID_FormaStGr" />
+          <ScalarProperty Name="ID_FormaStGrFormaSt" ColumnName="ID_FormaStGrFormaSt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormaStGrFormaStGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.FormaStGrFormaStGr">
+        <MappingFragment StoreEntitySet="FormaStGrFormaStGr">
+          <ScalarProperty Name="ID_FormaStGrNad" ColumnName="ID_FormaStGrNad" />
+          <ScalarProperty Name="ID_FormaStGr" ColumnName="ID_FormaStGr" />
+          <ScalarProperty Name="ID_FormaStGrFormaStGr" ColumnName="ID_FormaStGrFormaStGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormaStGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.FormaStGrX">
+        <MappingFragment StoreEntitySet="FormaStGrX">
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="ID_FormaStGrX" ColumnName="ID_FormaStGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormaStGrXFormaSt">
+      <EntityTypeMapping TypeName="InLineAdminModel.FormaStGrXFormaSt">
+        <MappingFragment StoreEntitySet="FormaStGrXFormaSt">
+          <ScalarProperty Name="ID_FormaStGrXFormaStNad" ColumnName="ID_FormaStGrXFormaStNad" />
+          <ScalarProperty Name="IDFormaSt" ColumnName="IDFormaSt" />
+          <ScalarProperty Name="IDForma" ColumnName="IDForma" />
+          <ScalarProperty Name="ID_FormaStGrX" ColumnName="ID_FormaStGrX" />
+          <ScalarProperty Name="ID_FormaStGrXFormaSt" ColumnName="ID_FormaStGrXFormaSt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormaStGrXFormaStGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.FormaStGrXFormaStGrX">
+        <MappingFragment StoreEntitySet="FormaStGrXFormaStGrX">
+          <ScalarProperty Name="ID_FormaStGrXNad" ColumnName="ID_FormaStGrXNad" />
+          <ScalarProperty Name="ID_FormaStGrX" ColumnName="ID_FormaStGrX" />
+          <ScalarProperty Name="ID_FormaStGrXFormaStGrX" ColumnName="ID_FormaStGrXFormaStGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Korisnik">
+      <EntityTypeMapping TypeName="InLineAdminModel.Korisnik">
+        <MappingFragment StoreEntitySet="Korisnik">
+          <ScalarProperty Name="SessionTime" ColumnName="SessionTime" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="ID_Korisnik" ColumnName="ID_Korisnik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGr">
+        <MappingFragment StoreEntitySet="KorisnikGr">
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="ID_KorisnikGr" ColumnName="ID_KorisnikGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGrAkcijaGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGrAkcijaGr">
+        <MappingFragment StoreEntitySet="KorisnikGrAkcijaGr">
+          <ScalarProperty Name="ID_AkcijaGr" ColumnName="ID_AkcijaGr" />
+          <ScalarProperty Name="ID_KorisnikGr" ColumnName="ID_KorisnikGr" />
+          <ScalarProperty Name="ID_KorisnikGrAkcijaGr" ColumnName="ID_KorisnikGrAkcijaGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGrFormaGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGrFormaGr">
+        <MappingFragment StoreEntitySet="KorisnikGrFormaGr">
+          <ScalarProperty Name="ID_FormaGr" ColumnName="ID_FormaGr" />
+          <ScalarProperty Name="ID_KorisnikGr" ColumnName="ID_KorisnikGr" />
+          <ScalarProperty Name="ID_KorisnikGrFormaGr" ColumnName="ID_KorisnikGrFormaGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGrFormaStGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGrFormaStGr">
+        <MappingFragment StoreEntitySet="KorisnikGrFormaStGr">
+          <ScalarProperty Name="ID_FormaStGr" ColumnName="ID_FormaStGr" />
+          <ScalarProperty Name="ID_KorisnikGr" ColumnName="ID_KorisnikGr" />
+          <ScalarProperty Name="ID_KorisnikGrFormaStGr" ColumnName="ID_KorisnikGrFormaStGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGrID">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGrID">
+        <MappingFragment StoreEntitySet="KorisnikGrID">
+          <ScalarProperty Name="Dozvola" ColumnName="Dozvola" />
+          <ScalarProperty Name="OperatorLogicki" ColumnName="OperatorLogicki" />
+          <ScalarProperty Name="TablicaID" ColumnName="TablicaID" />
+          <ScalarProperty Name="TablicaNaziv" ColumnName="TablicaNaziv" />
+          <ScalarProperty Name="TablicaShema" ColumnName="TablicaShema" />
+          <ScalarProperty Name="TablicaKorisnik" ColumnName="TablicaKorisnik" />
+          <ScalarProperty Name="ID_KorisnikGr" ColumnName="ID_KorisnikGr" />
+          <ScalarProperty Name="ID_KorisnikGrID" ColumnName="ID_KorisnikGrID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGrKorisnik">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGrKorisnik">
+        <MappingFragment StoreEntitySet="KorisnikGrKorisnik">
+          <ScalarProperty Name="ID_KorisnikGrKorisnikNad" ColumnName="ID_KorisnikGrKorisnikNad" />
+          <ScalarProperty Name="ID_Korisnik" ColumnName="ID_Korisnik" />
+          <ScalarProperty Name="ID_KorisnikGr" ColumnName="ID_KorisnikGr" />
+          <ScalarProperty Name="ID_KorisnikGrKorisnik" ColumnName="ID_KorisnikGrKorisnik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGrKorisnikGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGrKorisnikGr">
+        <MappingFragment StoreEntitySet="KorisnikGrKorisnikGr">
+          <ScalarProperty Name="ID_KorisnikGrNad" ColumnName="ID_KorisnikGrNad" />
+          <ScalarProperty Name="ID_KorisnikGr" ColumnName="ID_KorisnikGr" />
+          <ScalarProperty Name="ID_KorisnikGrKorisnikGr" ColumnName="ID_KorisnikGrKorisnikGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGrReportGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGrReportGr">
+        <MappingFragment StoreEntitySet="KorisnikGrReportGr">
+          <ScalarProperty Name="ID_ReportGr" ColumnName="ID_ReportGr" />
+          <ScalarProperty Name="ID_KorisnikGr" ColumnName="ID_KorisnikGr" />
+          <ScalarProperty Name="ID_KorisnikGrReportGr" ColumnName="ID_KorisnikGrReportGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGrReportStGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGrReportStGr">
+        <MappingFragment StoreEntitySet="KorisnikGrReportStGr">
+          <ScalarProperty Name="ID_ReportStGr" ColumnName="ID_ReportStGr" />
+          <ScalarProperty Name="ID_KorisnikGr" ColumnName="ID_KorisnikGr" />
+          <ScalarProperty Name="ID_KorisnikGrReportStGr" ColumnName="ID_KorisnikGrReportStGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGrSP">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGrSP">
+        <MappingFragment StoreEntitySet="KorisnikGrSP">
+          <ScalarProperty Name="SPOpis" ColumnName="SPOpis" />
+          <ScalarProperty Name="SPNaziv" ColumnName="SPNaziv" />
+          <ScalarProperty Name="SPShema" ColumnName="SPShema" />
+          <ScalarProperty Name="ID_KorisnikGr" ColumnName="ID_KorisnikGr" />
+          <ScalarProperty Name="ID_KorisnikGrSP" ColumnName="ID_KorisnikGrSP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGrSPParam">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGrSPParam">
+        <MappingFragment StoreEntitySet="KorisnikGrSPParam">
+          <ScalarProperty Name="ValueDecimal" ColumnName="ValueDecimal" />
+          <ScalarProperty Name="ValueDateTime" ColumnName="ValueDateTime" />
+          <ScalarProperty Name="ValueTime" ColumnName="ValueTime" />
+          <ScalarProperty Name="ValueDate" ColumnName="ValueDate" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="ValueInt" ColumnName="ValueInt" />
+          <ScalarProperty Name="ValueString" ColumnName="ValueString" />
+          <ScalarProperty Name="ValueBit" ColumnName="ValueBit" />
+          <ScalarProperty Name="Param" ColumnName="Param" />
+          <ScalarProperty Name="ID_KorisnikGrSP" ColumnName="ID_KorisnikGrSP" />
+          <ScalarProperty Name="ID_KorisnikGrSPParam" ColumnName="ID_KorisnikGrSPParam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGrTablicaGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGrTablicaGr">
+        <MappingFragment StoreEntitySet="KorisnikGrTablicaGr">
+          <ScalarProperty Name="ID_TablicaGr" ColumnName="ID_TablicaGr" />
+          <ScalarProperty Name="ID_KorisnikGr" ColumnName="ID_KorisnikGr" />
+          <ScalarProperty Name="ID_KorisnikGrTablicaGr" ColumnName="ID_KorisnikGrTablicaGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGrTablicaPoljeGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGrTablicaPoljeGr">
+        <MappingFragment StoreEntitySet="KorisnikGrTablicaPoljeGr">
+          <ScalarProperty Name="ID_TablicaPoljeGr" ColumnName="ID_TablicaPoljeGr" />
+          <ScalarProperty Name="ID_KorisnikGr" ColumnName="ID_KorisnikGr" />
+          <ScalarProperty Name="ID_KorisnikGrTablicaPoljeGr" ColumnName="ID_KorisnikGrTablicaPoljeGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGrX">
+        <MappingFragment StoreEntitySet="KorisnikGrX">
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="ID_KorisnikGrX" ColumnName="ID_KorisnikGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGrXAkcijaGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGrXAkcijaGrX">
+        <MappingFragment StoreEntitySet="KorisnikGrXAkcijaGrX">
+          <ScalarProperty Name="ID_AkcijaGrX" ColumnName="ID_AkcijaGrX" />
+          <ScalarProperty Name="ID_KorisnikGrX" ColumnName="ID_KorisnikGrX" />
+          <ScalarProperty Name="ID_KorisnikGrXAkcijaGrX" ColumnName="ID_KorisnikGrXAkcijaGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGrXFormaGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGrXFormaGrX">
+        <MappingFragment StoreEntitySet="KorisnikGrXFormaGrX">
+          <ScalarProperty Name="ID_FormaGrX" ColumnName="ID_FormaGrX" />
+          <ScalarProperty Name="ID_KorisnikGrX" ColumnName="ID_KorisnikGrX" />
+          <ScalarProperty Name="ID_KorisnikGrXFormaGrX" ColumnName="ID_KorisnikGrXFormaGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGrXFormaStGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGrXFormaStGrX">
+        <MappingFragment StoreEntitySet="KorisnikGrXFormaStGrX">
+          <ScalarProperty Name="ID_FormaStGrX" ColumnName="ID_FormaStGrX" />
+          <ScalarProperty Name="ID_KorisnikGrX" ColumnName="ID_KorisnikGrX" />
+          <ScalarProperty Name="ID_KorisnikGrXFormaStGrX" ColumnName="ID_KorisnikGrXFormaStGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGrXKorisnik">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGrXKorisnik">
+        <MappingFragment StoreEntitySet="KorisnikGrXKorisnik">
+          <ScalarProperty Name="ID_KorisnikGrXKorisnikNad" ColumnName="ID_KorisnikGrXKorisnikNad" />
+          <ScalarProperty Name="ID_Korisnik" ColumnName="ID_Korisnik" />
+          <ScalarProperty Name="ID_KorisnikGrX" ColumnName="ID_KorisnikGrX" />
+          <ScalarProperty Name="ID_KorisnikGrXKorisnik" ColumnName="ID_KorisnikGrXKorisnik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGrXKorisnikGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGrXKorisnikGrX">
+        <MappingFragment StoreEntitySet="KorisnikGrXKorisnikGrX">
+          <ScalarProperty Name="ID_KorisnikGrXNad" ColumnName="ID_KorisnikGrXNad" />
+          <ScalarProperty Name="ID_KorisnikGrX" ColumnName="ID_KorisnikGrX" />
+          <ScalarProperty Name="ID_KorisnikGrXKorisnikGrX" ColumnName="ID_KorisnikGrXKorisnikGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGrXReportGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGrXReportGrX">
+        <MappingFragment StoreEntitySet="KorisnikGrXReportGrX">
+          <ScalarProperty Name="ID_ReportGrX" ColumnName="ID_ReportGrX" />
+          <ScalarProperty Name="ID_KorisnikGrX" ColumnName="ID_KorisnikGrX" />
+          <ScalarProperty Name="ID_KorisnikGrXReportGrX" ColumnName="ID_KorisnikGrXReportGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGrXReportStGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGrXReportStGrX">
+        <MappingFragment StoreEntitySet="KorisnikGrXReportStGrX">
+          <ScalarProperty Name="ID_ReportStGrX" ColumnName="ID_ReportStGrX" />
+          <ScalarProperty Name="ID_KorisnikGrX" ColumnName="ID_KorisnikGrX" />
+          <ScalarProperty Name="ID_KorisnikGrXReportStGrX" ColumnName="ID_KorisnikGrXReportStGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGrXTablicaGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGrXTablicaGrX">
+        <MappingFragment StoreEntitySet="KorisnikGrXTablicaGrX">
+          <ScalarProperty Name="ID_TablicaGrX" ColumnName="ID_TablicaGrX" />
+          <ScalarProperty Name="ID_KorisnikGrX" ColumnName="ID_KorisnikGrX" />
+          <ScalarProperty Name="ID_KorisnikGrXTablicaGrX" ColumnName="ID_KorisnikGrXTablicaGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikGrXTablicaPoljeGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikGrXTablicaPoljeGrX">
+        <MappingFragment StoreEntitySet="KorisnikGrXTablicaPoljeGrX">
+          <ScalarProperty Name="ID_TablicaPoljeGrX" ColumnName="ID_TablicaPoljeGrX" />
+          <ScalarProperty Name="ID_KorisnikGrX" ColumnName="ID_KorisnikGrX" />
+          <ScalarProperty Name="ID_KorisnikGrXTablicaPoljeGrX" ColumnName="ID_KorisnikGrXTablicaPoljeGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Licenca">
+      <EntityTypeMapping TypeName="InLineAdminModel.Licenca">
+        <MappingFragment StoreEntitySet="Licenca">
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="ID_Licenca" ColumnName="ID_Licenca" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LicencaAkcijaGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.LicencaAkcijaGr">
+        <MappingFragment StoreEntitySet="LicencaAkcijaGr">
+          <ScalarProperty Name="ID_AkcijaGr" ColumnName="ID_AkcijaGr" />
+          <ScalarProperty Name="ID_Licenca" ColumnName="ID_Licenca" />
+          <ScalarProperty Name="ID_LicencaAkcijaGr" ColumnName="ID_LicencaAkcijaGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LicencaFormaGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.LicencaFormaGr">
+        <MappingFragment StoreEntitySet="LicencaFormaGr">
+          <ScalarProperty Name="ID_FormaGr" ColumnName="ID_FormaGr" />
+          <ScalarProperty Name="ID_Licenca" ColumnName="ID_Licenca" />
+          <ScalarProperty Name="ID_LicencaFormaGr" ColumnName="ID_LicencaFormaGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LicencaFormaStGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.LicencaFormaStGr">
+        <MappingFragment StoreEntitySet="LicencaFormaStGr">
+          <ScalarProperty Name="ID_FormaStGr" ColumnName="ID_FormaStGr" />
+          <ScalarProperty Name="ID_Licenca" ColumnName="ID_Licenca" />
+          <ScalarProperty Name="ID_LicencaFormaStGr" ColumnName="ID_LicencaFormaStGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LicencaReportGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.LicencaReportGr">
+        <MappingFragment StoreEntitySet="LicencaReportGr">
+          <ScalarProperty Name="ID_ReportGr" ColumnName="ID_ReportGr" />
+          <ScalarProperty Name="ID_Licenca" ColumnName="ID_Licenca" />
+          <ScalarProperty Name="ID_LicencaReportGr" ColumnName="ID_LicencaReportGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LicencaReportStGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.LicencaReportStGr">
+        <MappingFragment StoreEntitySet="LicencaReportStGr">
+          <ScalarProperty Name="ID_ReportStGr" ColumnName="ID_ReportStGr" />
+          <ScalarProperty Name="ID_Licenca" ColumnName="ID_Licenca" />
+          <ScalarProperty Name="ID_LicencaReportStGr" ColumnName="ID_LicencaReportStGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LicencaTablicaGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.LicencaTablicaGr">
+        <MappingFragment StoreEntitySet="LicencaTablicaGr">
+          <ScalarProperty Name="ID_TablicaGr" ColumnName="ID_TablicaGr" />
+          <ScalarProperty Name="ID_Licenca" ColumnName="ID_Licenca" />
+          <ScalarProperty Name="ID_LicencaTablicaGr" ColumnName="ID_LicencaTablicaGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LicencaTablicaPoljeGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.LicencaTablicaPoljeGr">
+        <MappingFragment StoreEntitySet="LicencaTablicaPoljeGr">
+          <ScalarProperty Name="ID_TablicaPoljeGr" ColumnName="ID_TablicaPoljeGr" />
+          <ScalarProperty Name="ID_Licenca" ColumnName="ID_Licenca" />
+          <ScalarProperty Name="ID_LicencaTablicaPoljeGr" ColumnName="ID_LicencaTablicaPoljeGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.ReportGr">
+        <MappingFragment StoreEntitySet="ReportGr">
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="ID_ReportGr" ColumnName="ID_ReportGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportGrReport">
+      <EntityTypeMapping TypeName="InLineAdminModel.ReportGrReport">
+        <MappingFragment StoreEntitySet="ReportGrReport">
+          <ScalarProperty Name="ID_ReportGrReportNad" ColumnName="ID_ReportGrReportNad" />
+          <ScalarProperty Name="IDReport" ColumnName="IDReport" />
+          <ScalarProperty Name="ID_ReportGr" ColumnName="ID_ReportGr" />
+          <ScalarProperty Name="ID_ReportGrReport" ColumnName="ID_ReportGrReport" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportGrReportGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.ReportGrReportGr">
+        <MappingFragment StoreEntitySet="ReportGrReportGr">
+          <ScalarProperty Name="ID_ReportGrNad" ColumnName="ID_ReportGrNad" />
+          <ScalarProperty Name="ID_ReportGr" ColumnName="ID_ReportGr" />
+          <ScalarProperty Name="ID_ReportGrReportGr" ColumnName="ID_ReportGrReportGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.ReportGrX">
+        <MappingFragment StoreEntitySet="ReportGrX">
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="ID_ReportGrX" ColumnName="ID_ReportGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportGrXReport">
+      <EntityTypeMapping TypeName="InLineAdminModel.ReportGrXReport">
+        <MappingFragment StoreEntitySet="ReportGrXReport">
+          <ScalarProperty Name="ID_ReportGrXReportNad" ColumnName="ID_ReportGrXReportNad" />
+          <ScalarProperty Name="IDReport" ColumnName="IDReport" />
+          <ScalarProperty Name="ID_ReportGrX" ColumnName="ID_ReportGrX" />
+          <ScalarProperty Name="ID_ReportGrXReport" ColumnName="ID_ReportGrXReport" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportGrXReportGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.ReportGrXReportGrX">
+        <MappingFragment StoreEntitySet="ReportGrXReportGrX">
+          <ScalarProperty Name="ID_ReportGrXNad" ColumnName="ID_ReportGrXNad" />
+          <ScalarProperty Name="ID_ReportGrX" ColumnName="ID_ReportGrX" />
+          <ScalarProperty Name="ID_ReportGrXReportGrX" ColumnName="ID_ReportGrXReportGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportStGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.ReportStGr">
+        <MappingFragment StoreEntitySet="ReportStGr">
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="ID_ReportStGr" ColumnName="ID_ReportStGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportStGrReportSt">
+      <EntityTypeMapping TypeName="InLineAdminModel.ReportStGrReportSt">
+        <MappingFragment StoreEntitySet="ReportStGrReportSt">
+          <ScalarProperty Name="ID_ReportStGrReportStNad" ColumnName="ID_ReportStGrReportStNad" />
+          <ScalarProperty Name="IDReportSt" ColumnName="IDReportSt" />
+          <ScalarProperty Name="IDReport" ColumnName="IDReport" />
+          <ScalarProperty Name="ID_ReportStGr" ColumnName="ID_ReportStGr" />
+          <ScalarProperty Name="ID_ReportStGrReportSt" ColumnName="ID_ReportStGrReportSt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportStGrReportStGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.ReportStGrReportStGr">
+        <MappingFragment StoreEntitySet="ReportStGrReportStGr">
+          <ScalarProperty Name="ID_ReportStGrNad" ColumnName="ID_ReportStGrNad" />
+          <ScalarProperty Name="ID_ReportStGr" ColumnName="ID_ReportStGr" />
+          <ScalarProperty Name="ID_ReportStGrReportStGr" ColumnName="ID_ReportStGrReportStGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportStGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.ReportStGrX">
+        <MappingFragment StoreEntitySet="ReportStGrX">
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="ID_ReportStGrX" ColumnName="ID_ReportStGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportStGrXReportSt">
+      <EntityTypeMapping TypeName="InLineAdminModel.ReportStGrXReportSt">
+        <MappingFragment StoreEntitySet="ReportStGrXReportSt">
+          <ScalarProperty Name="ID_ReportStGrXReportStNad" ColumnName="ID_ReportStGrXReportStNad" />
+          <ScalarProperty Name="IDReportSt" ColumnName="IDReportSt" />
+          <ScalarProperty Name="IDReport" ColumnName="IDReport" />
+          <ScalarProperty Name="ID_ReportStGrX" ColumnName="ID_ReportStGrX" />
+          <ScalarProperty Name="ID_ReportStGrXReportSt" ColumnName="ID_ReportStGrXReportSt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportStGrXReportStGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.ReportStGrXReportStGrX">
+        <MappingFragment StoreEntitySet="ReportStGrXReportStGrX">
+          <ScalarProperty Name="ID_ReportStGrXNad" ColumnName="ID_ReportStGrXNad" />
+          <ScalarProperty Name="ID_ReportStGrX" ColumnName="ID_ReportStGrX" />
+          <ScalarProperty Name="ID_ReportStGrXReportStGrX" ColumnName="ID_ReportStGrXReportStGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TablicaGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.TablicaGr">
+        <MappingFragment StoreEntitySet="TablicaGr">
+          <ScalarProperty Name="Kratica" ColumnName="Kratica" />
+          <ScalarProperty Name="NazivKr" ColumnName="NazivKr" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="ID_TablicaGr" ColumnName="ID_TablicaGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TablicaGrTablica">
+      <EntityTypeMapping TypeName="InLineAdminModel.TablicaGrTablica">
+        <MappingFragment StoreEntitySet="TablicaGrTablica">
+          <ScalarProperty Name="ID_TablicaGrTablicaNad" ColumnName="ID_TablicaGrTablicaNad" />
+          <ScalarProperty Name="TablicaNaziv" ColumnName="TablicaNaziv" />
+          <ScalarProperty Name="TablicaShema" ColumnName="TablicaShema" />
+          <ScalarProperty Name="TablicaKorisnik" ColumnName="TablicaKorisnik" />
+          <ScalarProperty Name="ID_TablicaGr" ColumnName="ID_TablicaGr" />
+          <ScalarProperty Name="ID_TablicaGrTablica" ColumnName="ID_TablicaGrTablica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TablicaGrTablicaGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.TablicaGrTablicaGr">
+        <MappingFragment StoreEntitySet="TablicaGrTablicaGr">
+          <ScalarProperty Name="ID_TablicaGrNad" ColumnName="ID_TablicaGrNad" />
+          <ScalarProperty Name="ID_TablicaGr" ColumnName="ID_TablicaGr" />
+          <ScalarProperty Name="ID_TablicaGrTablicaGr" ColumnName="ID_TablicaGrTablicaGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TablicaGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.TablicaGrX">
+        <MappingFragment StoreEntitySet="TablicaGrX">
+          <ScalarProperty Name="Kratica" ColumnName="Kratica" />
+          <ScalarProperty Name="NazivKr" ColumnName="NazivKr" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="ID_TablicaGrX" ColumnName="ID_TablicaGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TablicaGrXTablica">
+      <EntityTypeMapping TypeName="InLineAdminModel.TablicaGrXTablica">
+        <MappingFragment StoreEntitySet="TablicaGrXTablica">
+          <ScalarProperty Name="ID_TablicaGrXTablicaNad" ColumnName="ID_TablicaGrXTablicaNad" />
+          <ScalarProperty Name="TablicaNaziv" ColumnName="TablicaNaziv" />
+          <ScalarProperty Name="TablicaShema" ColumnName="TablicaShema" />
+          <ScalarProperty Name="TablicaKorisnik" ColumnName="TablicaKorisnik" />
+          <ScalarProperty Name="ID_TablicaGrX" ColumnName="ID_TablicaGrX" />
+          <ScalarProperty Name="ID_TablicaGrXTablica" ColumnName="ID_TablicaGrXTablica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TablicaGrXTablicaGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.TablicaGrXTablicaGrX">
+        <MappingFragment StoreEntitySet="TablicaGrXTablicaGrX">
+          <ScalarProperty Name="ID_TablicaGrXNad" ColumnName="ID_TablicaGrXNad" />
+          <ScalarProperty Name="ID_TablicaGrX" ColumnName="ID_TablicaGrX" />
+          <ScalarProperty Name="ID_TablicaGrXTablicaGrX" ColumnName="ID_TablicaGrXTablicaGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TablicaPoljeGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.TablicaPoljeGr">
+        <MappingFragment StoreEntitySet="TablicaPoljeGr">
+          <ScalarProperty Name="Kratica" ColumnName="Kratica" />
+          <ScalarProperty Name="NazivKr" ColumnName="NazivKr" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="ID_TablicaPoljeGr" ColumnName="ID_TablicaPoljeGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TablicaPoljeGrTablicaPolje">
+      <EntityTypeMapping TypeName="InLineAdminModel.TablicaPoljeGrTablicaPolje">
+        <MappingFragment StoreEntitySet="TablicaPoljeGrTablicaPolje">
+          <ScalarProperty Name="ID_TablicaPoljeGrTablicaPoljeNad" ColumnName="ID_TablicaPoljeGrTablicaPoljeNad" />
+          <ScalarProperty Name="TablicaPoljeNaziv" ColumnName="TablicaPoljeNaziv" />
+          <ScalarProperty Name="TablicaNaziv" ColumnName="TablicaNaziv" />
+          <ScalarProperty Name="TablicaShema" ColumnName="TablicaShema" />
+          <ScalarProperty Name="TablicaKorisnik" ColumnName="TablicaKorisnik" />
+          <ScalarProperty Name="ID_TablicaPoljeGr" ColumnName="ID_TablicaPoljeGr" />
+          <ScalarProperty Name="ID_TablicaPoljeGrTablicaPolje" ColumnName="ID_TablicaPoljeGrTablicaPolje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TablicaPoljeGrTablicaPoljeGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.TablicaPoljeGrTablicaPoljeGr">
+        <MappingFragment StoreEntitySet="TablicaPoljeGrTablicaPoljeGr">
+          <ScalarProperty Name="ID_TablicaPoljeGrNad" ColumnName="ID_TablicaPoljeGrNad" />
+          <ScalarProperty Name="ID_TablicaPoljeGr" ColumnName="ID_TablicaPoljeGr" />
+          <ScalarProperty Name="ID_TablicaPoljeGrTablicaPoljeGr" ColumnName="ID_TablicaPoljeGrTablicaPoljeGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TablicaPoljeGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.TablicaPoljeGrX">
+        <MappingFragment StoreEntitySet="TablicaPoljeGrX">
+          <ScalarProperty Name="Kratica" ColumnName="Kratica" />
+          <ScalarProperty Name="NazivKr" ColumnName="NazivKr" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="ID_TablicaPoljeGrX" ColumnName="ID_TablicaPoljeGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TablicaPoljeGrXTablicaPolje">
+      <EntityTypeMapping TypeName="InLineAdminModel.TablicaPoljeGrXTablicaPolje">
+        <MappingFragment StoreEntitySet="TablicaPoljeGrXTablicaPolje">
+          <ScalarProperty Name="ID_TablicaPoljeGrXTablicaPoljeNad" ColumnName="ID_TablicaPoljeGrXTablicaPoljeNad" />
+          <ScalarProperty Name="TablicaPoljeNaziv" ColumnName="TablicaPoljeNaziv" />
+          <ScalarProperty Name="TablicaNaziv" ColumnName="TablicaNaziv" />
+          <ScalarProperty Name="TablicaShema" ColumnName="TablicaShema" />
+          <ScalarProperty Name="TablicaKorisnik" ColumnName="TablicaKorisnik" />
+          <ScalarProperty Name="ID_TablicaPoljeGrX" ColumnName="ID_TablicaPoljeGrX" />
+          <ScalarProperty Name="ID_TablicaPoljeGrXTablicaPolje" ColumnName="ID_TablicaPoljeGrXTablicaPolje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TablicaPoljeGrXTablicaPoljeGrX">
+      <EntityTypeMapping TypeName="InLineAdminModel.TablicaPoljeGrXTablicaPoljeGrX">
+        <MappingFragment StoreEntitySet="TablicaPoljeGrXTablicaPoljeGrX">
+          <ScalarProperty Name="ID_TablicaPoljeGrXNad" ColumnName="ID_TablicaPoljeGrXNad" />
+          <ScalarProperty Name="ID_TablicaPoljeGrX" ColumnName="ID_TablicaPoljeGrX" />
+          <ScalarProperty Name="ID_TablicaPoljeGrXTablicaPoljeGrX" ColumnName="ID_TablicaPoljeGrXTablicaPoljeGrX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="InLineAdminModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drzava">
+      <EntityTypeMapping TypeName="InLineAdminModel.Drzava">
+        <MappingFragment StoreEntitySet="Drzava">
+          <ScalarProperty Name="DrzavaHtml4" ColumnName="DrzavaHtml4" />
+          <ScalarProperty Name="DrzavaHtml3" ColumnName="DrzavaHtml3" />
+          <ScalarProperty Name="DrzavaHtml2" ColumnName="DrzavaHtml2" />
+          <ScalarProperty Name="DrzavaHtml1" ColumnName="DrzavaHtml1" />
+          <ScalarProperty Name="KartaVPath" ColumnName="KartaVPath" />
+          <ScalarProperty Name="KartaMPath" ColumnName="KartaMPath" />
+          <ScalarProperty Name="KartaM" ColumnName="KartaM" />
+          <ScalarProperty Name="KartaV" ColumnName="KartaV" />
+          <ScalarProperty Name="GrbMPath" ColumnName="GrbMPath" />
+          <ScalarProperty Name="GrbVPath" ColumnName="GrbVPath" />
+          <ScalarProperty Name="GrbM" ColumnName="GrbM" />
+          <ScalarProperty Name="GrbV" ColumnName="GrbV" />
+          <ScalarProperty Name="ZastavaVPath" ColumnName="ZastavaVPath" />
+          <ScalarProperty Name="ZastavaMPath" ColumnName="ZastavaMPath" />
+          <ScalarProperty Name="ZastavaM" ColumnName="ZastavaM" />
+          <ScalarProperty Name="ZastavaV" ColumnName="ZastavaV" />
+          <ScalarProperty Name="IzborDrzava" ColumnName="IzborDrzava" />
+          <ScalarProperty Name="StsDrzava" ColumnName="StsDrzava" />
+          <ScalarProperty Name="Komentar" ColumnName="Komentar" />
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="Obuhvat" ColumnName="Obuhvat" />
+          <ScalarProperty Name="Nacija" ColumnName="Nacija" />
+          <ScalarProperty Name="Kratica1" ColumnName="Kratica1" />
+          <ScalarProperty Name="NazivStariEng" ColumnName="NazivStariEng" />
+          <ScalarProperty Name="NazivStariHr" ColumnName="NazivStariHr" />
+          <ScalarProperty Name="NazivLokalDugi" ColumnName="NazivLokalDugi" />
+          <ScalarProperty Name="NazivLokal" ColumnName="NazivLokal" />
+          <ScalarProperty Name="NazivEngDugi" ColumnName="NazivEngDugi" />
+          <ScalarProperty Name="NazivEng" ColumnName="NazivEng" />
+          <ScalarProperty Name="NazivHrDugi" ColumnName="NazivHrDugi" />
+          <ScalarProperty Name="NazivHr" ColumnName="NazivHr" />
+          <ScalarProperty Name="OznEng" ColumnName="OznEng" />
+          <ScalarProperty Name="OznHr" ColumnName="OznHr" />
+          <ScalarProperty Name="Internet" ColumnName="Internet" />
+          <ScalarProperty Name="FIPS104" ColumnName="FIPS104" />
+          <ScalarProperty Name="ISO3166" ColumnName="ISO3166" />
+          <ScalarProperty Name="OznDrzava" ColumnName="OznDrzava" />
+          <ScalarProperty Name="SifDrzava" ColumnName="SifDrzava" />
+          <ScalarProperty Name="IDDrzavaNad" ColumnName="IDDrzavaNad" />
+          <ScalarProperty Name="Teritorij" ColumnName="Teritorij" />
+          <ScalarProperty Name="Kod" ColumnName="Kod" />
+          <ScalarProperty Name="NazivFr" ColumnName="NazivFr" />
+          <ScalarProperty Name="NazivEn" ColumnName="NazivEn" />
+          <ScalarProperty Name="Kratica" ColumnName="Kratica" />
+          <ScalarProperty Name="NazivKr" ColumnName="NazivKr" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="IDDrzava" ColumnName="IDDrzava" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Akcija">
+      <EntityTypeMapping TypeName="InLineAdminModel.Akcija">
+        <MappingFragment StoreEntitySet="Akcija">
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="IDAkcija" ColumnName="IDAkcija" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AkcijaVr">
+      <EntityTypeMapping TypeName="InLineAdminModel.AkcijaVr">
+        <MappingFragment StoreEntitySet="AkcijaVr">
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="IDAkcijaVr" ColumnName="IDAkcijaVr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AkcijaVrAkcija">
+      <EntityTypeMapping TypeName="InLineAdminModel.AkcijaVrAkcija">
+        <MappingFragment StoreEntitySet="AkcijaVrAkcija">
+          <ScalarProperty Name="Akcija" ColumnName="Akcija" />
+          <ScalarProperty Name="AkcijaVr" ColumnName="AkcijaVr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AkcijaVrAkcijaVr">
+      <EntityTypeMapping TypeName="InLineAdminModel.AkcijaVrAkcijaVr">
+        <MappingFragment StoreEntitySet="AkcijaVrAkcijaVr">
+          <ScalarProperty Name="AkcijaVrNad" ColumnName="AkcijaVrNad" />
+          <ScalarProperty Name="AkcijaVr" ColumnName="AkcijaVr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Brojevi">
+      <EntityTypeMapping TypeName="InLineAdminModel.Brojevi">
+        <MappingFragment StoreEntitySet="Brojevi">
+          <ScalarProperty Name="Broj" ColumnName="Broj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Forma">
+      <EntityTypeMapping TypeName="InLineAdminModel.Forma">
+        <MappingFragment StoreEntitySet="Forma">
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="IDForma" ColumnName="IDForma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormaSt">
+      <EntityTypeMapping TypeName="InLineAdminModel.FormaSt">
+        <MappingFragment StoreEntitySet="FormaSt">
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="IDFormaSt" ColumnName="IDFormaSt" />
+          <ScalarProperty Name="IDForma" ColumnName="IDForma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormaVr">
+      <EntityTypeMapping TypeName="InLineAdminModel.FormaVr">
+        <MappingFragment StoreEntitySet="FormaVr">
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="IDFormaVr" ColumnName="IDFormaVr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kalendar">
+      <EntityTypeMapping TypeName="InLineAdminModel.Kalendar">
+        <MappingFragment StoreEntitySet="Kalendar">
+          <ScalarProperty Name="TjedanDan" ColumnName="TjedanDan" />
+          <ScalarProperty Name="GodinaDan" ColumnName="GodinaDan" />
+          <ScalarProperty Name="GodinaTjedan" ColumnName="GodinaTjedan" />
+          <ScalarProperty Name="Kvartal" ColumnName="Kvartal" />
+          <ScalarProperty Name="Dan" ColumnName="Dan" />
+          <ScalarProperty Name="Mjesec" ColumnName="Mjesec" />
+          <ScalarProperty Name="Godina" ColumnName="Godina" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+          <ScalarProperty Name="RBR" ColumnName="RBR" />
+          <ScalarProperty Name="IDDatum" ColumnName="IDDatum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KalendarGodina">
+      <EntityTypeMapping TypeName="InLineAdminModel.KalendarGodina">
+        <MappingFragment StoreEntitySet="KalendarGodina">
+          <ScalarProperty Name="Godina" ColumnName="Godina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KalendarGodinaDan">
+      <EntityTypeMapping TypeName="InLineAdminModel.KalendarGodinaDan">
+        <MappingFragment StoreEntitySet="KalendarGodinaDan">
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="GodinaDan" ColumnName="GodinaDan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KalendarGodinaMjesec">
+      <EntityTypeMapping TypeName="InLineAdminModel.KalendarGodinaMjesec">
+        <MappingFragment StoreEntitySet="KalendarGodinaMjesec">
+          <ScalarProperty Name="Mjesec" ColumnName="Mjesec" />
+          <ScalarProperty Name="Godina" ColumnName="Godina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KalendarGodinaTjedan">
+      <EntityTypeMapping TypeName="InLineAdminModel.KalendarGodinaTjedan">
+        <MappingFragment StoreEntitySet="KalendarGodinaTjedan">
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="GodinaTjedan" ColumnName="GodinaTjedan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KalendarMjesec">
+      <EntityTypeMapping TypeName="InLineAdminModel.KalendarMjesec">
+        <MappingFragment StoreEntitySet="KalendarMjesec">
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="Mjesec" ColumnName="Mjesec" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KalendarMjesecDan">
+      <EntityTypeMapping TypeName="InLineAdminModel.KalendarMjesecDan">
+        <MappingFragment StoreEntitySet="KalendarMjesecDan">
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="MjesecDan" ColumnName="MjesecDan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KalendarMjesecTjedan">
+      <EntityTypeMapping TypeName="InLineAdminModel.KalendarMjesecTjedan">
+        <MappingFragment StoreEntitySet="KalendarMjesecTjedan">
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="MjesecTjedan" ColumnName="MjesecTjedan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KalendarTjedanDan">
+      <EntityTypeMapping TypeName="InLineAdminModel.KalendarTjedanDan">
+        <MappingFragment StoreEntitySet="KalendarTjedanDan">
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="TjedanDan" ColumnName="TjedanDan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OperatorAritmeticki">
+      <EntityTypeMapping TypeName="InLineAdminModel.OperatorAritmeticki">
+        <MappingFragment StoreEntitySet="OperatorAritmeticki">
+          <ScalarProperty Name="Kratica" ColumnName="Kratica" />
+          <ScalarProperty Name="NazivKr" ColumnName="NazivKr" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="AritmetickiOperator" ColumnName="AritmetickiOperator" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OperatorLogicki">
+      <EntityTypeMapping TypeName="InLineAdminModel.OperatorLogicki">
+        <MappingFragment StoreEntitySet="OperatorLogicki">
+          <ScalarProperty Name="Kratica" ColumnName="Kratica" />
+          <ScalarProperty Name="NazivKr" ColumnName="NazivKr" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="LogickiOperator" ColumnName="LogickiOperator" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OperatorVremenski">
+      <EntityTypeMapping TypeName="InLineAdminModel.OperatorVremenski">
+        <MappingFragment StoreEntitySet="OperatorVremenski">
+          <ScalarProperty Name="Kratica" ColumnName="Kratica" />
+          <ScalarProperty Name="NazivKr" ColumnName="NazivKr" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="VremenskiOperator" ColumnName="VremenskiOperator" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Poruka">
+      <EntityTypeMapping TypeName="InLineAdminModel.Poruka">
+        <MappingFragment StoreEntitySet="Poruka">
+          <ScalarProperty Name="Tekst" ColumnName="Tekst" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="IDPorukaStatus" ColumnName="IDPorukaStatus" />
+          <ScalarProperty Name="ID_Poruka" ColumnName="ID_Poruka" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PorukaConstraint">
+      <EntityTypeMapping TypeName="InLineAdminModel.PorukaConstraint">
+        <MappingFragment StoreEntitySet="PorukaConstraint">
+          <ScalarProperty Name="Poruka" ColumnName="Poruka" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="IDPorukaStatus" ColumnName="IDPorukaStatus" />
+          <ScalarProperty Name="ID_PorukaConstraint" ColumnName="ID_PorukaConstraint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PorukaStatus">
+      <EntityTypeMapping TypeName="InLineAdminModel.PorukaStatus">
+        <MappingFragment StoreEntitySet="PorukaStatus">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="IDPorukaStatus" ColumnName="IDPorukaStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provjera">
+      <EntityTypeMapping TypeName="InLineAdminModel.Provjera">
+        <MappingFragment StoreEntitySet="Provjera">
+          <ScalarProperty Name="Poruka" ColumnName="Poruka" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="ID_Provjera" ColumnName="ID_Provjera" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Report">
+      <EntityTypeMapping TypeName="InLineAdminModel.Report">
+        <MappingFragment StoreEntitySet="Report">
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="IDReport" ColumnName="IDReport" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportSt">
+      <EntityTypeMapping TypeName="InLineAdminModel.ReportSt">
+        <MappingFragment StoreEntitySet="ReportSt">
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="IDReportSt" ColumnName="IDReportSt" />
+          <ScalarProperty Name="IDReport" ColumnName="IDReport" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportVr">
+      <EntityTypeMapping TypeName="InLineAdminModel.ReportVr">
+        <MappingFragment StoreEntitySet="ReportVr">
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="IDReportVr" ColumnName="IDReportVr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tablica">
+      <EntityTypeMapping TypeName="InLineAdminModel.Tablica">
+        <MappingFragment StoreEntitySet="Tablica">
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Labela" ColumnName="Labela" />
+          <ScalarProperty Name="Tip" ColumnName="Tip" />
+          <ScalarProperty Name="TablicaNaziv" ColumnName="TablicaNaziv" />
+          <ScalarProperty Name="TablicaShema" ColumnName="TablicaShema" />
+          <ScalarProperty Name="TablicaKorisnik" ColumnName="TablicaKorisnik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TablicaPolje">
+      <EntityTypeMapping TypeName="InLineAdminModel.TablicaPolje">
+        <MappingFragment StoreEntitySet="TablicaPolje">
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Labela" ColumnName="Labela" />
+          <ScalarProperty Name="TablicaPoljeNaziv" ColumnName="TablicaPoljeNaziv" />
+          <ScalarProperty Name="TablicaNaziv" ColumnName="TablicaNaziv" />
+          <ScalarProperty Name="TablicaShema" ColumnName="TablicaShema" />
+          <ScalarProperty Name="TablicaKorisnik" ColumnName="TablicaKorisnik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Audit">
+      <EntityTypeMapping TypeName="InLineAdminModel.Audit">
+        <MappingFragment StoreEntitySet="Audit">
+          <ScalarProperty Name="ActionDateTime" ColumnName="ActionDateTime" />
+          <ScalarProperty Name="Spid" ColumnName="Spid" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+          <ScalarProperty Name="InsertedXml" ColumnName="InsertedXml" />
+          <ScalarProperty Name="DeletedXml" ColumnName="DeletedXml" />
+          <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="SchemaName" ColumnName="SchemaName" />
+          <ScalarProperty Name="ID_Audit" ColumnName="ID_Audit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikFilter">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikFilter">
+        <MappingFragment StoreEntitySet="KorisnikFilter">
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="ID_Korisnik" ColumnName="ID_Korisnik" />
+          <ScalarProperty Name="ID_KorisnikFilter" ColumnName="ID_KorisnikFilter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikFilterParametar">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikFilterParametar">
+        <MappingFragment StoreEntitySet="KorisnikFilterParametar">
+          <ScalarProperty Name="ValueDecimal" ColumnName="ValueDecimal" />
+          <ScalarProperty Name="ValueDateTime" ColumnName="ValueDateTime" />
+          <ScalarProperty Name="ValueTime" ColumnName="ValueTime" />
+          <ScalarProperty Name="ValueDate" ColumnName="ValueDate" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="ValueInt" ColumnName="ValueInt" />
+          <ScalarProperty Name="ValueString" ColumnName="ValueString" />
+          <ScalarProperty Name="ValueBit" ColumnName="ValueBit" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="ID_KorisnikFilter" ColumnName="ID_KorisnikFilter" />
+          <ScalarProperty Name="ID_KorisnikFilterParametar" ColumnName="ID_KorisnikFilterParametar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnikSession">
+      <EntityTypeMapping TypeName="InLineAdminModel.KorisnikSession">
+        <MappingFragment StoreEntitySet="KorisnikSession">
+          <ScalarProperty Name="SessionDatum" ColumnName="SessionDatum" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="ID_Korisnik" ColumnName="ID_Korisnik" />
+          <ScalarProperty Name="ID_KorisnikSession" ColumnName="ID_KorisnikSession" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Log">
+      <EntityTypeMapping TypeName="InLineAdminModel.Log">
+        <MappingFragment StoreEntitySet="Log">
+          <ScalarProperty Name="Trace" ColumnName="Trace" />
+          <ScalarProperty Name="Exception" ColumnName="Exception" />
+          <ScalarProperty Name="Poruka" ColumnName="Poruka" />
+          <ScalarProperty Name="Korisnik" ColumnName="Korisnik" />
+          <ScalarProperty Name="Baza" ColumnName="Baza" />
+          <ScalarProperty Name="Server" ColumnName="Server" />
+          <ScalarProperty Name="ID_Baza" ColumnName="ID_Baza" />
+          <ScalarProperty Name="ID_Korisnik" ColumnName="ID_Korisnik" />
+          <ScalarProperty Name="Vrijeme" ColumnName="Vrijeme" />
+          <ScalarProperty Name="ID_Log" ColumnName="ID_Log" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vijest">
+      <EntityTypeMapping TypeName="InLineAdminModel.Vijest">
+        <MappingFragment StoreEntitySet="Vijest">
+          <ScalarProperty Name="PrikazDo" ColumnName="PrikazDo" />
+          <ScalarProperty Name="PrikazOd" ColumnName="PrikazOd" />
+          <ScalarProperty Name="Sadrzaj" ColumnName="Sadrzaj" />
+          <ScalarProperty Name="Podnaslov" ColumnName="Podnaslov" />
+          <ScalarProperty Name="Naslov" ColumnName="Naslov" />
+          <ScalarProperty Name="ID_Vijest" ColumnName="ID_Vijest" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VijestGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.VijestGr">
+        <MappingFragment StoreEntitySet="VijestGr">
+          <ScalarProperty Name="Kratica" ColumnName="Kratica" />
+          <ScalarProperty Name="NazivKr" ColumnName="NazivKr" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="ID_VijestGr" ColumnName="ID_VijestGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VijestGrVijest">
+      <EntityTypeMapping TypeName="InLineAdminModel.VijestGrVijest">
+        <MappingFragment StoreEntitySet="VijestGrVijest">
+          <ScalarProperty Name="ID_Vijest" ColumnName="ID_Vijest" />
+          <ScalarProperty Name="ID_VijestGr" ColumnName="ID_VijestGr" />
+          <ScalarProperty Name="ID_VijestGrVijest" ColumnName="ID_VijestGrVijest" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VijestGrVijestKorisnikGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.VijestGrVijestKorisnikGr">
+        <MappingFragment StoreEntitySet="VijestGrVijestKorisnikGr">
+          <ScalarProperty Name="ID_VijestKorisnikGr" ColumnName="ID_VijestKorisnikGr" />
+          <ScalarProperty Name="ID_VijestGr" ColumnName="ID_VijestGr" />
+          <ScalarProperty Name="ID_VijestGrVijestKorisnikGr" ColumnName="ID_VijestGrVijestKorisnikGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VijestKorisnikGr">
+      <EntityTypeMapping TypeName="InLineAdminModel.VijestKorisnikGr">
+        <MappingFragment StoreEntitySet="VijestKorisnikGr">
+          <ScalarProperty Name="Kratica" ColumnName="Kratica" />
+          <ScalarProperty Name="NazivKr" ColumnName="NazivKr" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="ID_VijestKorisnikGr" ColumnName="ID_VijestKorisnikGr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VijestKorisnikGrKorisnik">
+      <EntityTypeMapping TypeName="InLineAdminModel.VijestKorisnikGrKorisnik">
+        <MappingFragment StoreEntitySet="VijestKorisnikGrKorisnik">
+          <ScalarProperty Name="ID_Korisnik" ColumnName="ID_Korisnik" />
+          <ScalarProperty Name="ID_VijestKorisnikGr" ColumnName="ID_VijestKorisnikGr" />
+          <ScalarProperty Name="ID_VijestKorisnikGrKorisnik" ColumnName="ID_VijestKorisnikGrKorisnik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VIEW_BazaKorisnikKorisnikBaza">
+      <EntityTypeMapping TypeName="InLineAdminModel.VIEW_BazaKorisnikKorisnikBaza">
+        <MappingFragment StoreEntitySet="VIEW_BazaKorisnikKorisnikBaza">
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="BazaNaziv" ColumnName="BazaNaziv" />
+          <ScalarProperty Name="Server" ColumnName="Server" />
+          <ScalarProperty Name="SessionTime" ColumnName="SessionTime" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="KorisnikLozinka" ColumnName="KorisnikLozinka" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+          <ScalarProperty Name="Korisnik" ColumnName="Korisnik" />
+          <ScalarProperty Name="ID_Korisnik" ColumnName="ID_Korisnik" />
+          <ScalarProperty Name="ID_Baza" ColumnName="ID_Baza" />
+          <ScalarProperty Name="ID_BazaKorisnik" ColumnName="ID_BazaKorisnik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FormaVrForma" TypeName="InLineAdminModel.FormaVrForma" StoreEntitySet="FormaVrForma">
+      <EndProperty Name="FormaVr">
+        <ScalarProperty Name="IDFormaVr" ColumnName="IDFormaVr" />
+      </EndProperty>
+      <EndProperty Name="Forma">
+        <ScalarProperty Name="IDForma" ColumnName="IDForma" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FormaVrFormaVr" TypeName="InLineAdminModel.FormaVrFormaVr" StoreEntitySet="FormaVrFormaVr">
+      <EndProperty Name="FormaVr1">
+        <ScalarProperty Name="IDFormaVr" ColumnName="IDFormaVrNad" />
+      </EndProperty>
+      <EndProperty Name="FormaVr">
+        <ScalarProperty Name="IDFormaVr" ColumnName="IDFormaVr" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ReportVrReport" TypeName="InLineAdminModel.ReportVrReport" StoreEntitySet="ReportVrReport">
+      <EndProperty Name="ReportVr">
+        <ScalarProperty Name="IDReportVr" ColumnName="IDReportVr" />
+      </EndProperty>
+      <EndProperty Name="Report">
+        <ScalarProperty Name="IDReport" ColumnName="IDReport" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ReportVrReportVr" TypeName="InLineAdminModel.ReportVrReportVr" StoreEntitySet="ReportVrReportVr">
+      <EndProperty Name="ReportVr1">
+        <ScalarProperty Name="IDReportVr" ColumnName="IDReportVrNad" />
+      </EndProperty>
+      <EndProperty Name="ReportVr">
+        <ScalarProperty Name="IDReportVr" ColumnName="IDReportVr" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="VIEW_BazaKorisnikKorisnik">
+      <EntityTypeMapping TypeName="InLineAdminModel.VIEW_BazaKorisnikKorisnik">
+        <MappingFragment StoreEntitySet="VIEW_BazaKorisnikKorisnik">
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="BazaNaziv" ColumnName="BazaNaziv" />
+          <ScalarProperty Name="Server" ColumnName="Server" />
+          <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+          <ScalarProperty Name="Korisnik" ColumnName="Korisnik" />
+          <ScalarProperty Name="ID_Korisnik" ColumnName="ID_Korisnik" />
+          <ScalarProperty Name="ID_Baza" ColumnName="ID_Baza" />
+          <ScalarProperty Name="ID_BazaKorisnik" ColumnName="ID_BazaKorisnik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

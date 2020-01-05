@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="InLine" Class="MetaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=IVA-PC\IVASQL2012;Initial Catalog=InLine;Persist Security Info=True;User ID=sa" SettingsObjectName="InLine.Common.Properties.Settings" SettingsPropertyName="InLineConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="sis.TablicaPolje" Member="TablicaPoljes">
+    <Type Name="TablicaPolje">
+      <Column Name="TablicaKorisnik" Type="System.Boolean" DbType="Bit NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TablicaShema" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TablicaNaziv" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TablicaPoljeNaziv" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Labela" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Opis" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,210 @@
+﻿
+@using InLine.UI.Web.Helper
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+        
+       #okvir { width:800px; height:200px; margin-top:50px; margin-left:0px; float:left; text-align:left;  position: fixed; left: 50%; margin-left: -320px;}
+       
+       
+#navcontainer a
+{
+padding: 5px 5px;
+color: #fff;
+background-color: #036;
+text-decoration: none;
+width:120px; height:50px; float:left; margin-left:5px; 
+                   -moz-border-radius-bottomright: 5px;
+                   border-bottom-right-radius: 5px;
+                   -moz-border-radius-topright: 5px;
+                   border-top-right-radius: 5px;
+                    -moz-border-radius-bottomleft: 5px;
+                   border-bottom-left-radius: 5px;
+                   -moz-border-radius-topleft: 5px;
+                   border-top-left-radius: 5px;
+                   font-weight:bolder;
+
+}
+
+#navcontainer a:hover
+{
+color: #fff;
+background-color: #69C;
+text-decoration: none;
+
+}
+
+#navcontainer ul ul li 
+{
+    margin: 0 0 1px 0;
+    float: left !important;
+}
+
+#navcontainer ul ul a
+{
+
+padding: 15px 15px 15px 15px;
+color: #fff;
+background-color: #5377a7;
+text-decoration: none;
+text-align: left;
+}
+
+#navcontainer ul ul a:hover
+{
+color: #fff;
+background-color: #69C;
+text-decoration: none;
+}
+ 
+#navlist #navigacija ul
+   {
+       display : inline;
+       position:absolute;
+       float: left !important;
+    }
+        
+     #nav li:hover > ul
+     {
+          display : inline;
+          z-index: 1000;
+     }
+  
+      
+#navlist #navigacija li ul a{
+    float: left !important;
+    display:inline !important;
+    background-color: #5377a7;
+    border-top: 0px solid #3A5A8B;
+    border-bottom: 0px solid #162133;
+    margin-left:10px;
+}
+
+
+
+#navlist #navigacija li ul ul 
+{
+    float: left !important;
+    display:block;
+    left: 10px !important;
+    top: 45px !important;
+
+    
+}
+
+#navlist #navigacija li ul ul a
+{
+    width:12em;
+    background-color: #283d60;
+    height:25px
+}
+
+#navlist #navigacija li ul ul a:hover
+{
+    background-color: #1a2c4c;
+}
+
+
+#navlist #menuizbornik 
+{
+    float: left;
+    background-color: transparent;
+    background-image: none !important;
+}
+
+#navlist #navigacija ul.submenu
+{
+     float: left !important;
+     width:70em;
+     display : inline;
+     background-color: transparent;
+}
+
+#navlist #navigacija ul ul
+{
+     background-color: #233758;
+     width:14em;
+     padding:7px;
+     border-radius: 12px;
+     border-top: 1px solid #3A5A8B;
+     border-bottom: 1px solid #162133;
+}
+
+#navlist #navigacija ul ul li
+{
+    background-color: #283d60;
+     border-top: 1px solid #3A5A8B;
+     border-bottom: 1px solid #162133; 
+}
+
+#navlist #navigacija ul ul li:hover
+{
+    background-color: #1a2c4c;
+}
+
+
+#navlist #navigacija ul.submenu li {
+     display : inline;
+}
+
+
+#navlist #navigacija ul.submenu li {
+     display : inline;
+}
+
+
+#navlist #navigacija ul
+{
+    display : none;
+}
+
+
+
+    
+</style>
+
+<div class="PrviRed">
+</div>
+
+<div id="okvir">
+  <div id="navcontainer">
+        <div id="navlist">
+  @Html.Partial(ViewList.Izvodi.ViewIzvodiMenu)
+
+  </div>
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+    $("#navigacija ul").hide();
+    $(".navigacijaShow a").first().hide();
+
+    $("#navigacija ul.submenu").show();
+
+    $('#navigacija ul.submenu li').hover(function () {
+        $(this).find('ul').show();
+    },
+    function () {
+        $(this).find('ul').hide();
+    });
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+

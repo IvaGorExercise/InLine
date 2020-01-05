@@ -1,0 +1,873 @@
+﻿@model InLine.UI.Web.T4.GridFormattedTemplate.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjektComboFormatted
+@using InLine.Repository.Data.Helper;
+
+@{
+
+    Layout = "~/Views/Shared/_LayoutFinancijsko.cshtml";
+}
+
+
+@{
+
+    int kojaGodina = @Model.Godina;
+    string kojiNaziv = @Model.Naziv;
+    long kojiKontniPlan = @Model.ID_KontniPlan;
+    long kojaGlavnaKnjiga = @Model.ID_GlavnaKnjiga;
+    long kojaPoslovnaGodina = Convert.ToInt64(@Model.ID_PoslovnaGodina);
+    long kojiSubjektPromjena = 0;
+    long kojiIDSubjektRacunPromjena = Convert.ToInt64(@Model.ID_SubjektRacun);
+    string kojiRacunBroj = @Model.RacunBroj;
+    string kojiRacunNaziv = @Model.RacunNaziv;
+    DateTime kojiDatumOd = @Model.DatumOd.Value.Date;
+    DateTime kojiDatumDo = @Model.DatumDo.Value.Date;
+    string Autocomplete = "autocomplete";
+    string Start = CommonFunctions.PagingVrijednostiDefault.Start;
+    string Count = CommonFunctions.PagingVrijednostiDefault.Count;
+    string ulGlavnaKnjigaSelector = "#ulGlavnaKnjiga";
+    //string AutocompleteSubjektRacun = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Autocomplete + @InLine.Model.Data.FieldString.SubjektRacun.SubjektRacunEntity;
+    string AutocompleteSubjektRacun = "AutocompleteSubjektRacun";
+    string ulSubjektRacunSelector = "#ulSubjektRacun";
+    string Datepicker = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Datepicker;
+    string DatumOd = @InLine.Model.Data.FieldString.PoslovnaGodina.DatumOd;
+    string DatumDo = @InLine.Model.Data.FieldString.PoslovnaGodina.DatumDo;
+    string DatumOdPomoc = @InLine.Model.Data.FieldString.PoslovnaGodina.DatumOd + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Pomoc;
+    string DatumDoPomoc = @InLine.Model.Data.FieldString.PoslovnaGodina.DatumDo + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Pomoc;
+    int vrstaIzvod = 1;
+}
+
+<style type="text/css">
+ 
+    #GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjektPager {display:none;}
+    #combo {background-color:#F5F5F5; font-size: 13px; font-weight: bold;}
+    .rowColorRED {  background-color:#F65556; color:White; }
+    #Godina {width:450px;}
+    #SubjektRacun {width:450px;}
+    #Naziv {width:350px;}
+    .btnDropDownSymbol
+    {
+    background: #ffffff url('../Content/images/dropdown_arrow.png') no-repeat 100%;
+    }
+    
+    .fontColorRED { color:#F65556 !important;}
+    
+    #DatumOdPomoc
+    {
+        width: 100px;
+        margin-right: 15px;
+    }
+    #DatumDoPomoc
+    {
+        width: 100px;
+    }
+     
+</style>
+
+@{
+    
+    var grid2 = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.Izvod2012AGridFormatted>(InLine.Model.Data.FieldString.View.Izvod2012A.Izvod2012AEntity,
+      dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+      hiddenEnabled: true,
+      dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+      methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+      pager: true,
+      caption: "2. IZVODI",
+      parametersNames: new Lib.Web.Mvc.JQuery.JqGrid.JqGridParametersNames() { PagesCount = "npage" },
+      autoWidth: false,
+      width: 440,
+      shrinkToFit: true,
+      rowsNumber: 10,
+      height: 115,
+      multiSelect: false,
+      url: Url.Action("Izvod2012AGrid", new { key = "ID_SubjektRacun", value = @Model.ID_SubjektRacun.ToString(), datumOd = @kojiDatumOd.ToString("yyyy-MM-dd"), datumDo = @kojiDatumDo.ToString("yyyy-MM-dd"), vrsta = @vrstaIzvod }),
+      loadComplete: "$.Izvod2012AMasterLoad",
+      onSelectRow: "$.Izvod2012AOnSelectRow",
+      onDoubleClickRow: "$.Izvod2012ADetail",
+      sortingName: @InLine.Model.Data.FieldString.View.Izvod2012A.ID_Izvod,
+      sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Desc,
+      viewRecords: false).FilterToolbar(new Lib.Web.Mvc.JQuery.JqGrid.JqGridFilterToolbarOptions() { StringResult = true })
+      .Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions());
+
+    var grid3 = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.Izvod2012AStGridFormatted>(InLine.Model.Data.FieldString.View.Izvod2012ASt.Izvod2012AStEntity,
+        dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+        hiddenEnabled: true,
+        dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+        methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+        pager: true,
+        caption: "3. STAVKE IZVODA",
+        parametersNames: new Lib.Web.Mvc.JQuery.JqGrid.JqGridParametersNames() { PagesCount = "npage" },
+        autoWidth: false,
+        width: 660,
+        shrinkToFit: true,
+        rowsNumber: 15,
+        height: 350,
+        multiSelect: false,
+        loadComplete: "$.Izvod2012AStMasterLoad",
+        gridComplete: "$.Izvod2012AStFormater",
+        onSelectRow: "$.Izvod2012AStOnSelectRow",
+        onDoubleClickRow: "$.Izvod2012AStDetail",
+        sortingName: @InLine.Model.Data.FieldString.View.Izvod2012ASt.DatumIzvrsenje,
+        sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Desc,
+        viewRecords: false).FilterToolbar(new Lib.Web.Mvc.JQuery.JqGrid.JqGridFilterToolbarOptions() { StringResult = true })
+        .Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions());
+ 
+
+ }
+
+
+ <div class="PrviRed">
+          @Html.Partial(ViewList.Izvodi.ViewIzvodiMenu)
+ </div>
+
+<table style="width:100%;">
+<tbody>
+<tr>
+<td style="width:100%;">				
+	<table width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+		<tbody>
+        <tr>
+        <td>
+         <div>
+         <table><tr><td width="140px">RADNO PODRUČJE: </td><td><input id="Godina" class="btnDropDownSymbol autocomplete ui-autocomplete-input" type="text" value="" name="Konto" autocomplete="off"></td></tr></table>
+        </div>
+        </td>
+        </tr>
+       <tr>
+        <td>
+         <div>
+          <table>
+            <tr>
+            <td width="140px">SUBJEKT RAČUN:</td>
+            <td> <input id="SubjektRacun" class="btnDropDownSymbol AutocompleteSubjektRacun ui-autocomplete-input" type="text" value="" name="Racun" autocomplete="off"></td>
+            <td>
+                 <input id="rbSviRacuni" name="RadioGrupa" type="radio" value="0" checked="checked" />
+                        Svi računi
+                    <input id="rbOdabraniRacun" name="RadioGrupa" type="radio" value="1" />
+                        Odabrani račun   &nbsp
+             </td>
+              <td width="140px">
+                @Html.Partial("UploadDatoteka")
+             </td>
+             </tr>
+            </table>
+         </div>          
+        </td>
+       </tr>
+        <tr>
+        <td>
+        <table>
+        <tr>
+        <td width= "140px">
+           DATUM IZVODA:
+        </td>
+        <td width= "85%">
+        <div style="float: left; width: 170px;">
+              @Html.Hidden(@DatumOd)
+            od: @Html.TextBox(@DatumOdPomoc, null, new { @class = @Datepicker})
+        </div>
+        <div style="float: left; width: 170px;">
+            @Html.Hidden(@DatumDo)
+            do: @Html.TextBox(@DatumDoPomoc, null, new { @class = @Datepicker})
+        </div>
+        </td>
+        </tr>
+        </table>
+         
+        </td>
+        </tr>
+		</tbody>
+       </table>
+		</td>		 
+		</tr>
+
+        <tr>
+          <td style="vertical-align:top;">
+							                <table width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+								                <tbody>
+                                                <tr>
+									                <td style="vertical-align:top;height:auto;">
+		
+										               <table  cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+											                <tbody>
+                                                             <tr>
+                                                             <table style="width:100%;">
+                                                                    <tr>
+                                                                    <td style="vertical-align:top;">
+												                 
+                                                                    </td>
+                                                                   
+                                                             </table>
+												                
+											                </tr>
+                                                             <tr>
+												                <td style="vertical-align:top;">
+												                @grid2.GetHtml()
+												                </td>
+											                </tr>
+                                                             <tr>
+												                <td style="vertical-align:top;">
+												                               @grid3.GetHtml()
+												                </td>
+											                </tr>
+                                                             <tr>
+												                <td style="vertical-align:top;">
+												               </td>
+												                
+											                </tr>												
+										                </tbody>
+                                                        </table>
+                                                
+                                                      
+									                </td>
+								                </tr>
+							
+							                </tbody>
+                                            </table>
+				</td>
+        </tr>
+		</tbody>
+</table>						
+
+<div id="Izvod2012ADialog" class="hidden"></div>
+<div id="Izvod2012AStDialog" class="hidden"></div>
+
+
+
+
+@section JavaScript {
+
+    <script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+
+    $(document).ready(function () 
+        {
+            @grid2.GetJavaScript()
+              jQuery(@InLine.Model.Data.FieldString.View.Izvod2012A.Izvod2012AEntity).hideCol('@InLine.Model.Data.FieldString.View.Izvod2012A.ID_Zapis');
+              jQuery(@InLine.Model.Data.FieldString.View.Izvod2012A.Izvod2012AEntity).hideCol('@InLine.Model.Data.FieldString.View.Izvod2012A.IzvadakVr');
+
+            @grid3.GetJavaScript()
+               jQuery(@InLine.Model.Data.FieldString.View.Izvod2012ASt.Izvod2012AStEntity).hideCol('@InLine.Model.Data.FieldString.View.Izvod2012ASt.Racun');
+                 jQuery(@InLine.Model.Data.FieldString.View.Izvod2012ASt.Izvod2012AStEntity).hideCol('@InLine.Model.Data.FieldString.View.Izvod2012ASt.Izvod2012AStID_IzvodSt');
+
+            var grid = '@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.Izvod2012ASt.Izvod2012AStEntity';
+            setTimeout(function () {
+             jQuery(grid).trigger('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.reloadGrid');
+         }, 2000)
+
+        });
+
+
+    </script>
+
+    <script>
+
+        $.DodajVodecuNulu = function (item) {
+            if (item < 10) {
+                item = "0" + item;
+            }
+
+            else {
+                item = item;
+            }
+
+            return item;
+
+        };
+
+
+    </script>
+
+  <script type="text/javascript">
+
+
+        $(document).ready(function () {
+
+           var grid1 = "#" + '@InLine.Model.Data.FieldString.View.SubjektRacunBanka.SubjektRacunBankaEntity';
+            var grid2 = "#" + '@InLine.Model.Data.FieldString.View.Izvod2012A.Izvod2012AEntity';
+            var grid3 = "#" + '@InLine.Model.Data.FieldString.View.Izvod2012ASt.Izvod2012AStEntity';
+          
+
+            $(window).bind('resize', function () {
+                $(grid1).setGridWidth($(window).width());
+                $(grid2).setGridWidth($(window).width());
+                $(grid3).setGridWidth($(window).width());
+            }).trigger('resize');
+
+ 
+             $('#Godina').val(@kojaGodina + "   " + '@kojiNaziv.ToUpper()' );
+              kojaGlavnaKnjigaPromjena = @Model.ID_GlavnaKnjiga;
+              kojiSubjektPromjena = @Model.ID_Subjekt;
+
+            $('#SubjektRacun').val('@kojiRacunBroj' + "   " + '@kojiRacunNaziv');
+
+             $('#kojaPoslovaGodina').val(@kojaPoslovnaGodina);
+
+            kojiIDSubjektRacunPromjena = @Model.ID_SubjektRacun;
+
+            kojaPoslovnaGodina = @Model.ID_PoslovnaGodina;
+
+
+        });
+
+
+</script>
+
+
+   <script type="text/javascript">
+
+    
+
+       $(document).ready(function () {
+           Dialozi.DatePicker();
+       });
+
+
+       $(document).ready(function () {
+           var valueDatumOd = '@Model.DatumOd.GetValueOrDefault().ToShortDateString()';
+           Dialozi.PostaviDatumPolje('@DatumOd', valueDatumOd);
+
+           var valueDatumDo = '@Model.DatumDo.GetValueOrDefault().ToShortDateString()';
+           Dialozi.PostaviDatumPolje('@DatumDo', valueDatumDo);
+       });
+
+
+       $('#' + '@DatumOdPomoc').change(function (event) {
+           var dat = $('#' + '@DatumOdPomoc').val();
+           Dialozi.PostaviDatumPolje('@DatumOd', dat);
+           ReloadMaster(kojiSubjektPromjena, kojiSubjektPromjena, $('#' + '@DatumOd').val(), $('#' + '@DatumDo').val());
+
+       });
+
+
+       $('#' + '@DatumDoPomoc').change(function (event) {
+           var dat = $('#' + '@DatumDoPomoc').val();
+           Dialozi.PostaviDatumPolje('@DatumDo', dat);
+           ReloadMaster(kojiSubjektPromjena, kojiSubjektPromjena, $('#' + '@DatumOd').val(), $('#' + '@DatumDo').val());
+       });
+
+
+       $(function () {
+           Dialozi.PostaviValuta();
+       });
+
+   </script>
+
+  <script type="text/javascript">
+
+      $.Izvod2012AMasterLoad = function (data) {
+          var prvisw = $(this).getDataIDs()[0];
+          jQuery(this).setSelection(prvisw, true);
+      };
+
+     $.Izvod2012AOnSelectRow = function () {
+
+         Dialozi.LoadSlaveGrid("@InLine.Model.Data.FieldString.Izvod2012ASt.Izvod2012AStEntity", "@InLine.Model.Data.FieldString.View.Izvod2012A.Izvod2012AEntity", "@InLine.Model.Data.FieldString.View.Izvod2012ASt.ID_Izvod", "@InLine.UI.Web.T4.ControllerName.ControllerName.Izvodi", "@InLine.Model.Data.FieldString.View.Izvod2012ASt.Izvod2012AStEntity", "@InLine.Model.Data.FieldString.View.Izvod2012A.Izvod2012AID_Izvod");
+     };
+
+     $.Izvod2012ADetail = function () {
+         var gridTitle = '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.gview_' + '@InLine.Model.Data.FieldString.View.Izvod2012A.Izvod2012AEntity' + '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.JqGridTitle';
+         var title = jQuery(gridTitle).text();
+         Dialozi.InsertEditMaster("@InLine.Model.Data.FieldString.View.Izvod2012A.Izvod2012AEntity", "@InLine.Model.Data.FieldString.View.Izvod2012A.Izvod2012AEntity", "", "@InLine.UI.Web.T4.ControllerName.ControllerName.Izvodi", "@InLine.Model.Data.FieldString.View.Izvod2012A.Izvod2012AEntity", "@InLine.UI.Web.Helper.KeyWord.TipAkcija.Edit", 800, 450, title, "", "");
+     };
+
+
+     $.Izvod2012AStDetail = function () {
+         var gridTitle = '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.gview_' + '@InLine.Model.Data.FieldString.View.Izvod2012ASt.Izvod2012AStEntity' + '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.JqGridTitle';
+         var title = jQuery(gridTitle).text();
+         Dialozi.InsertEditSlave("@InLine.Model.Data.FieldString.Izvod2012ASt.Izvod2012AStEntity", "@InLine.Model.Data.FieldString.View.Izvod2012ASt.Izvod2012AStEntity", "@InLine.Model.Data.FieldString.View.Izvod2012A.Izvod2012AEntity", "@InLine.UI.Web.T4.ControllerName.ControllerName.Izvodi", "@InLine.Model.Data.FieldString.View.Izvod2012ASt.Izvod2012AStEntity", "@InLine.UI.Web.Helper.KeyWord.TipAkcija.Edit", 800, 410, title);
+     };
+
+</script>
+
+
+ <script type="text/javascript">
+
+     $(function () {
+         $("#jqgh_TemeljnicaVr_IDValuta").text("Valuta");
+ 
+     });
+
+</script>
+
+
+
+<script type="text/javascript">
+
+
+    $("." + '@Autocomplete').each(function () {
+
+
+        var widgetAutoComplete = $(this).autocomplete({
+            showHeader: true,
+            source: function (request, response) {
+
+                var kojiKriterij = 3;
+                var url = '@Url.Action("GetGlavnaKnjiga", @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo)';
+                var kojalista = "@ulGlavnaKnjigaSelector";
+
+               $.AutocompleteGlavnaKnjiga(request, response, kojalista, url, kojiKriterij, @Start, @Count);
+
+            },
+
+            select:
+                function (event, ui) {
+                     kojaGlavnaKnjigaPromjena = ui.item.label;
+                     kojiSubjektPromjena = ui.item.value4;
+                     kojiDatumOd = ui.item.value5;
+                     kojiDatumDo = ui.item.value6;
+                    $("@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + "@InLine.Model.Data.FieldString.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt.Godina").val(ui.item.value1 + "   " + ui.item.value2.toUpperCase());
+
+     
+              $.PostaviSubjektRacunComboText(ui.item.value4);
+       
+                         
+                  setTimeout(function () {
+                   ReloadMaster(ui.item.label, ui.item.value4, ui.item.value5, ui.item.value6, ui.item.value7);
+             }, 2000)
+
+               
+                   
+                    return false;
+                },
+
+            minLength: 0
+
+        }).data("autocomplete");
+
+
+        widgetAutoComplete._renderItem = function (ul, item) {
+
+            ul.attr('id', 'ulGlavnaKnjiga');
+            return $("<li class='tblAutocompleteLi'><table class='tblAutocomplete'></table></li>").data("item.autocomplete-item", item).append("<a><table width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><td width='50px'>" + item.value1 + "</td><td width='70px'>" + item.value4 + "</td><td width='350px'>" + item.value2 + "</td><td width='90px'>" + item.value3 + "</td></tr></table></a>").appendTo("#ulGlavnaKnjiga");
+        }
+
+        widgetAutoComplete._renderMenu = function (ul, item) {
+
+            var self = this;
+            $.each(item, function (index, items) {
+                if (index == 0)
+                    ul.append("<li><table class='autocompleteHeader'  width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><th width='70px'>" + '@InLine.Model.Data.FieldString.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt.Godina' + "</th><th width='70px'>" + '@InLine.Model.Data.FieldString.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt.Oznaka' + "</th><th width='350px'>" + '@InLine.Model.Data.FieldString.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt.Naziv' + "</th><th width='90px'>" + 'Valuta GK' + "</th></tr></table></li>");
+                self._renderItemData(ul, items);
+            });
+        }
+
+    });
+
+    $.AutocompleteGlavnaKnjiga = function (request, response, kojalista, url, kojiKriterij, Start, Count ) {
+
+                console.log('ajax prvi');
+                $.ajax({
+                    url: url,
+                    data: { query: request.term, kriterij: kojiKriterij, start: Start, count: Count },
+                    dataType: 'json',
+                    type: 'GET',
+                    success: function (data) {
+                        response($.map(data,
+                        function (item) {
+                            return {
+                                label: item.ID_GlavnaKnjiga,
+                                value1: item.Godina,
+                                value4: item.Oznaka,
+                                value2: item.Naziv,
+                                value3: item.IDValuta,
+                                value4: item.ID_Subjekt,
+                                value5: item.DatumOd,
+                                value6: item.DatumDo,
+                                value7: item.ID_PoslovnaGodina
+                            }
+
+                        }));
+
+                        var previousScroll = 0;
+                        var page = 1;
+
+                        $(kojalista).scroll(function () {
+
+                            var currentScroll = $(this).scrollTop();
+
+                            var x = $(kojalista).prop('scrollHeight');
+                            var y = $(kojalista).prop('offsetHeight');
+
+                            if (currentScroll > previousScroll) {
+
+                                if(page >=0)
+                                {
+                                    if (currentScroll >= x - y)
+                                        {
+                                           page += 1;
+
+                                            var countPage = page * Count
+                                            console.log('ajax ostali');
+                                            $.ajax({
+                                                url: url,
+                                                data: { query: request.term, kriterij: kojiKriterij, start: Start, count: countPage },
+                                                dataType: 'json',
+                                                type: 'GET',
+                                                success: function (data) {
+                                                    response($.map(data,
+                                                        function (item) {
+
+                                                                return {
+                                                                            label: item.ID_GlavnaKnjiga,
+                                                                            value1: item.Godina,
+                                                                            value4: item.Oznaka,
+                                                                            value2: item.Naziv,
+                                                                            value3: item.IDValuta,
+                                                                            value4: item.ID_Subjekt,
+                                                                            value5: item.DatumOd,
+                                                                            value6: item.DatumDo,
+                                                                            value7: item.ID_PoslovnaGodina
+                                                                        }
+                                                                }));
+                                                            }
+                                                        })
+                                            }
+                                }
+                                    
+
+                            }
+                            else {
+                                page -= 1;
+                            }
+
+                            previousScroll = currentScroll;
+
+                        });
+                    }
+                })
+    };
+
+
+
+    function ReloadMaster(id, idSubjekt, datumOd, datumDo, idPoslovnaGodina) {
+
+        var polje = '@InLine.Model.Data.FieldString.View.SubjektRacunBanka.ID_Subjekt';
+        var grid = '@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.Izvod2012A.Izvod2012AEntity';
+        var kontroler = "@InLine.UI.Web.T4.ControllerName.ControllerName.Izvodi";
+        var akcija = "../" + kontroler + "/" + '@InLine.Model.Data.FieldString.View.Izvod2012A.Izvod2012AEntity' + "Grid";
+        var grid2 = '@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.Izvod2012ASt.Izvod2012AStEntity';
+
+ 
+        kojiSubjektPromjena = idSubjekt;
+        kojaPoslovnaGodina = idPoslovnaGodina;
+
+        $('#kojaPoslovaGodina').val(idPoslovnaGodina);
+
+        //$.PostaviSubjektRacunComboText(kojiSubjektPromjena);
+
+         var racPrazan = $("#SubjektRacun").val();
+      
+        if(datumOd.length > 10 &&  datumDo.length > 10)
+        {
+            var datumSirovi = datumOd.substr(6,13);
+            var datumSiroviParsirani = jQuery.parseJSON(datumSirovi);
+            var datumOdRow = new Date(datumSiroviParsirani);
+            var datumOdRow2 = new Date(datumSiroviParsirani);
+            datumOdRow = datumOdRow.getDate() + '-' + (datumOdRow.getMonth() + 1) + '-' +  datumOdRow.getFullYear();
+            var valueDatumOd = datumOdRow;
+            Dialozi.PostaviDatumPolje('@DatumOd', valueDatumOd);
+            datumOdRow2 = datumOdRow2.getFullYear() + '-' +  $.DodajVodecuNulu((datumOdRow2.getMonth() + 1)) + '-' +  $.DodajVodecuNulu(datumOdRow2.getDate());
+
+
+            var datumSirovi = datumDo.substr(6,13);
+            var datumSiroviParsirani = jQuery.parseJSON(datumSirovi);
+            var datumDoRow = new Date(datumSiroviParsirani);
+            var datumDoRow2 = new Date(datumSiroviParsirani);
+            datumDoRow = datumDoRow.getDate() + '-' + (datumDoRow.getMonth() + 1) + '-' +  datumDoRow.getFullYear();
+            var valueDatumDo = datumDoRow;
+            Dialozi.PostaviDatumPolje('@DatumDo', valueDatumDo);
+            datumDoRow2 = datumDoRow2.getFullYear() + '-' +  $.DodajVodecuNulu((datumDoRow2.getMonth() + 1)) + '-' +  $.DodajVodecuNulu(datumDoRow2.getDate());
+         
+
+          
+
+            if(racPrazan != '')
+            {
+                 var masterid = idSubjekt;
+                jQuery(grid).setSelection(masterid, true);
+                jQuery(grid).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.setGridParam', { url: akcija, postData: { key: "ID_SubjektRacun", value: @kojiIDSubjektRacunPromjena, datumOd: datumOdRow2, datumDo: datumDoRow2, vrsta: @vrstaIzvod }});
+                jQuery(grid).trigger('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.reloadGrid');
+                $(grid2).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.clearGridData', true);
+            }
+
+            else{
+
+                $(grid).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.clearGridData', true);
+                $(grid2).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.clearGridData', true);
+            }
+         
+        }
+
+        else{
+
+      
+              var DatumOdLista = datumOd.split('/');
+              var DatumDoLista = datumDo.split('/');
+
+              var DatumOd = DatumOdLista[2] + "-" + $.DodajVodecuNulu(DatumOdLista[1]) + "-"  + $.DodajVodecuNulu(DatumOdLista[0]);
+              var DatumDo = DatumDoLista[2] + "-" + $.DodajVodecuNulu(DatumDoLista[1]) + "-" + $.DodajVodecuNulu(DatumDoLista[0]);
+
+
+             if(racPrazan != '')
+              {
+                    jQuery(grid).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.setGridParam', { url: akcija, postData: { key: "ID_SubjektRacun", value: @kojiIDSubjektRacunPromjena, datumOd: DatumOd, datumDo: DatumDo, vrsta: @vrstaIzvod }});
+                    jQuery(grid).trigger('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.reloadGrid');
+                    $(grid2).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.clearGridData', true);
+               }
+               else
+               {
+                    $(grid).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.clearGridData', true);
+                    $(grid2).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.clearGridData', true);
+               }
+
+             
+        }
+
+    };
+
+
+
+   $.PostaviSubjektRacunComboText = function (item) {
+  
+           var url = '@Url.Action("GetSubjektRacunDefault", @InLine.UI.Web.T4.ControllerName.ControllerName.Izvodi)';
+            $.ajax({
+                    url: url,
+                    data: { idSubjekt: item},
+                    dataType: 'json',
+                    type: 'GET',
+                    success: function (data) {
+                        if(data != null)
+                        {
+                            kojiIDSubjektRacunPromjena = data.ID_SubjektRacun;
+                            $('#SubjektRacun').val($.trim(data.Broj) + "   " + $.trim(data.Naziv));
+                        }
+                        else{
+                             $('#SubjektRacun').val("");
+                        }
+
+                    }
+
+                 });
+
+       };
+
+
+    $(".btnDropDownSymbol").click(function () {
+        Dialozi.ComboAll();
+    });
+
+
+
+     $("." + '@AutocompleteSubjektRacun').each(function () {
+
+        var widgetAutoComplete = $(this).autocomplete({
+            showHeader: true,
+            source: function (request, response) {
+
+                var url = '@Url.Action("GetSubjektRacun", @InLine.UI.Web.T4.ControllerName.ControllerName.Izvodi)';
+                var kojalista = "@ulSubjektRacunSelector";
+                var kojiSubjektID = kojiSubjektPromjena;
+
+               $.AutocompleteSubjektRacun(request, response, kojalista, url, kojiSubjektID, @Start, @Count);
+
+            },
+
+            select:
+                function (event, ui) {
+                    kojiIDSubjektRacunPromjena = ui.item.label;
+                    $("#SubjektRacun").val($.trim(ui.item.value1) + "   " + $.trim(ui.item.value2.toUpperCase()));
+                    ReloadSubjektRacun(ui.item.label);
+                    return false;
+                },
+
+            minLength: 0
+
+        }).data("autocomplete");
+
+
+        widgetAutoComplete._renderItem = function (ul, item) {
+
+            ul.attr('id', 'ulSubjektRacun');
+            return $("<li class='tblAutocompleteLi'><table class='tblAutocomplete'></table></li>").data("item.autocomplete-item", item).append("<a><table width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><td width='100px'>" + item.value1 + "</td><td width='300px'>" + item.value2 + "</td><td width='300px'>" + item.value3 + "</td><td><input type='checkbox' "  + item.value4 + "></td></tr></table></a>").appendTo("#ulSubjektRacun");
+        }
+
+        widgetAutoComplete._renderMenu = function (ul, item) {
+
+            var self = this;
+            $.each(item, function (index, items) {
+                if (index == 0)
+                    ul.append("<li><table class='autocompleteHeader'  width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><th width='100px'>" + '@InLine.Model.Data.FieldString.View.SubjektRacunBanka.Broj' + "</th><th width='300px'>" + '@InLine.Model.Data.FieldString.View.SubjektRacunBanka.Naziv' + "</th><th width='300px'>" + '@InLine.Model.Data.FieldString.View.SubjektRacunBanka.BankaNaziv' + "</th><th width='350px'>" + '@InLine.Model.Data.FieldString.View.SubjektRacunBanka.Devizni' + "</th></tr></table></li>");
+                self._renderItemData(ul, items);
+            });
+        }
+
+    });
+
+      $.AutocompleteSubjektRacun = function (request, response, kojalista, url, kojiSubjektID,  Start, Count ) {
+
+                $.ajax({
+                    url: url,
+                    data: { query: request.term, idSubjekt:kojiSubjektID, start: Start, count: Count },
+                    dataType: 'json',
+                    type: 'GET',
+                    success: function (data) {
+                        response($.map(data,
+                        function (item) {
+                            return {
+                                label: item.ID_SubjektRacun,
+                                value1: item.Broj,
+                                value2: item.Naziv,
+                                value3: item.BankaNaziv,
+                                value4: item.Devizni.toString() == "true" ? "checked" : ""
+                            }
+
+                        }));
+
+                        var previousScroll = 0;
+                        var page = 1;
+
+                        $(kojalista).scroll(function () {
+
+                            var currentScroll = $(this).scrollTop();
+
+                            var x = $(kojalista).prop('scrollHeight');
+                            var y = $(kojalista).prop('offsetHeight');
+
+                            if (currentScroll > previousScroll) {
+
+                                if(page >=0)
+                                {
+                                    if (currentScroll >= x - y)
+                                        {
+                                           page += 1;
+
+                                            var countPage = page * Count
+                                            $.ajax({
+                                                url: url,
+                                                data: { query: request.term, idSubjekt:kojiSubjektID, start: Start, count: countPage },
+                                                dataType: 'json',
+                                                type: 'GET',
+                                                success: function (data) {
+                                                    response($.map(data,
+                                                        function (item) {
+
+                                                                return {
+                                                                          label: item.ID_SubjektRacun,
+                                                                            value1: item.Broj,
+                                                                            value2: item.Naziv,
+                                                                            value3: item.BankaNaziv,
+                                                                            value4: item.Devizni.toString() == "1" ? "checked" : ""
+                                                                        }
+                                                                }));
+                                                            }
+                                                        })
+                                            }
+                                }
+                                    
+
+                            }
+                            else {
+                                page -= 1;
+                            }
+
+                            previousScroll = currentScroll;
+
+                        });
+                    }
+                })
+    };
+
+        function ReloadSubjektRacun(id) {
+
+        var polje = '@InLine.Model.Data.FieldString.View.SubjektRacunBanka.ID_Subjekt';
+        var grid = '@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.Izvod2012A.Izvod2012AEntity';
+        var kontroler = "@InLine.UI.Web.T4.ControllerName.ControllerName.Izvodi";
+        var akcija = "../" + kontroler + "/" + '@InLine.Model.Data.FieldString.View.Izvod2012A.Izvod2012AEntity' + "Grid";
+        var grid2 = '@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.Izvod2012ASt.Izvod2012AStEntity';
+
+        kojiIDSubjektRacunPromjena = id;
+        $('#kojiIdRacunSubjekt').val(kojiIDSubjektRacunPromjena);
+
+        var datumOd = $('#' + '@DatumOd').val();
+        var datumDo = $('#' + '@DatumDo').val();
+
+
+        if(datumOd.length > 10 &&  datumDo.length > 10)
+        {
+            var datumSirovi = datumOd.substr(6,13);
+            var datumSiroviParsirani = jQuery.parseJSON(datumSirovi);
+            var datumOdRow = new Date(datumSiroviParsirani);
+            var datumOdRow2 = new Date(datumSiroviParsirani);
+            datumOdRow = datumOdRow.getDate() + '-' + (datumOdRow.getMonth() + 1) + '-' +  datumOdRow.getFullYear();
+            var valueDatumOd = datumOdRow;
+            Dialozi.PostaviDatumPolje('@DatumOd', valueDatumOd);
+            datumOdRow2 = datumOdRow2.getFullYear() + '-' +  $.DodajVodecuNulu((datumOdRow2.getMonth() + 1)) + '-' +  $.DodajVodecuNulu(datumOdRow2.getDate());
+
+
+            var datumSirovi = datumDo.substr(6,13);
+            var datumSiroviParsirani = jQuery.parseJSON(datumSirovi);
+            var datumDoRow = new Date(datumSiroviParsirani);
+            var datumDoRow2 = new Date(datumSiroviParsirani);
+            datumDoRow = datumDoRow.getDate() + '-' + (datumDoRow.getMonth() + 1) + '-' +  datumDoRow.getFullYear();
+            var valueDatumDo = datumDoRow;
+            Dialozi.PostaviDatumPolje('@DatumDo', valueDatumDo);
+            datumDoRow2 = datumDoRow2.getFullYear() + '-' +  $.DodajVodecuNulu((datumDoRow2.getMonth() + 1)) + '-' +  $.DodajVodecuNulu(datumDoRow2.getDate());
+
+
+            jQuery(grid).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.setGridParam', { url: akcija, postData: { key: "ID_SubjektRacun", value: id, datumOd: datumOdRow2, datumDo: datumDoRow2, vrsta: @vrstaIzvod }});
+            jQuery(grid).trigger('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.reloadGrid');
+
+            $(grid2).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.clearGridData', true);
+        }
+
+        else{
+              var DatumOdLista = datumOd.split('/');
+              var DatumDoLista = datumDo.split('/');
+
+              var DatumOd = DatumOdLista[2] + "-" + $.DodajVodecuNulu(DatumOdLista[1]) + "-"  + $.DodajVodecuNulu(DatumOdLista[0]);
+              var DatumDo = DatumDoLista[2] + "-" + $.DodajVodecuNulu(DatumDoLista[1]) + "-" + $.DodajVodecuNulu(DatumDoLista[0]);
+
+              jQuery(grid).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.setGridParam', { url: akcija, postData: { key: "ID_SubjektRacun", value: id, datumOd: DatumOd, datumDo: DatumDo, vrsta: @vrstaIzvod }});
+              jQuery(grid).trigger('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.reloadGrid');
+
+              $(grid2).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.clearGridData', true);
+        }
+
+
+    };
+
+       $("#rbOdabraniRacun").click(function () {
+         var racun = $('#SubjektRacun').val();
+         var racunId = kojiIDSubjektRacunPromjena;
+
+         alert(racunId);
+
+            if(racun == '')
+            {
+               alert("Nije odabran račun!");
+              $("#import").attr("disabled", true);
+              $('#kojiIdRacunSubjekt').val('');
+         
+            }
+
+            else{
+
+                  $('#kojiIdRacunSubjekt').val(racunId);
+            }
+      
+        });
+
+       $("#rbSviRacuni").click(function () {
+
+           $("#import").attr("disabled", false);
+                  $('#kojiIdRacunSubjekt').val('');
+       
+          });
+
+
+
+
+
+  </script>
+
+
+}

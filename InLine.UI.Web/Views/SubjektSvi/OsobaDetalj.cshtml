@@ -1,0 +1,310 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.OsobaDetaljFormFormatted
+
+
+ <style type="text/css">
+</style>
+
+ @{
+    string prefixLabela = "labela_Osoba_Detalj_";
+ }
+ 
+  @{
+      string Akcija = @InLine.Model.Data.FieldString.View.Osoba.OsobaEntity + InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert;
+      string IDForma = @InLine.Model.Data.FieldString.View.Osoba.OsobaEntity + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Forma;
+      string ID_Drzavljanstvo = @InLine.Model.Data.FieldString.View.Osoba.ID_Drzavljanstvo;
+      string ID_Narodnost = @InLine.Model.Data.FieldString.View.Osoba.ID_Narodnost;
+      string DatumRodenja = @InLine.Model.Data.FieldString.Osoba.DatumRodenja;
+      string DatumRodenjaPomoc = @InLine.Model.Data.FieldString.Osoba.DatumRodenja + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Pomoc;
+
+      string OtacDatumRodenja = @InLine.Model.Data.FieldString.Osoba.OtacDatumRodenja;
+      string OtacDatumRodenjaPomoc = @InLine.Model.Data.FieldString.Osoba.OtacDatumRodenja + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Pomoc;
+
+      string MajkaDatumRodenja = @InLine.Model.Data.FieldString.Osoba.MajkaDatumRodenja;
+      string MajkaDatumRodenjaPomoc = @InLine.Model.Data.FieldString.Osoba.MajkaDatumRodenja + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Pomoc;
+
+      string DatumSmrti = @InLine.Model.Data.FieldString.Osoba.DatumSmrti;
+      string DatumSmrtiPomoc = @InLine.Model.Data.FieldString.Osoba.DatumSmrti + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Pomoc;
+      
+      string Datepicker = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Datepicker;
+ }
+
+ @using (Html.BeginForm(Akcija, @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo, FormMethod.Post, new { id = IDForma, @class = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormClass }))
+ {
+    @Html.HiddenFor(model => model.ID_Osoba)
+    @Html.HiddenFor(model => model.ID_Subjekt)
+    @Html.HiddenFor(model => model.DatumRodenja)
+    @Html.HiddenFor(model => model.OtacDatumRodenja)
+    @Html.HiddenFor(model => model.MajkaDatumRodenja)
+    @Html.HiddenFor(model => model.DatumSmrti)
+
+    @Html.ValidationSummary(true)
+
+
+<table class ="OsobaDetail @InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormBackground" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+   <tbody>
+
+     <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+     
+       <tr>
+	    <td >@Html.LabelFor(model => model.Oznaka, new { id = @prefixLabela + @Html.NameFor(model => model.Oznaka) })</td>
+        <td colspan="3">@Html.TextBoxFor(model => model.Oznaka)
+           @Html.ValidationMessageFor(model => model.Oznaka) </td>				                
+    </tr>
+
+     <tr>
+	    <td >@Html.LabelFor(model => model.Prezime, new { id = @prefixLabela + @Html.NameFor(model => model.Prezime) })</td>
+        <td colspan="3">@Html.EditorFor(model => model.Prezime)
+           @Html.ValidationMessageFor(model => model.Prezime) </td>				                
+    </tr>
+
+     <tr>
+	    <td >@Html.LabelFor(model => model.Ime, new { id = @prefixLabela + @Html.NameFor(model => model.Ime) })</td>
+        <td colspan="3">@Html.EditorFor(model => model.Ime)
+           @Html.ValidationMessageFor(model => model.Ime) </td>				                
+    </tr>
+
+   <tr>
+	    <td >@Html.LabelFor(model => model.OIB, new { id = @prefixLabela + @Html.NameFor(model => model.OIB) })</td>
+        <td colspan="3">
+            @Html.TextBox("OIB", Model.OIB != null ? Model.OIB.Trim() : Model.OIB)
+           @Html.ValidationMessageFor(model => model.OIB) </td>				                
+    </tr>
+
+     <tr>
+	    <td >@Html.LabelFor(model => model.JMBG, new { id = @prefixLabela + @Html.NameFor(model => model.JMBG) })</td>
+        <td colspan="3">@Html.EditorFor(model => model.JMBG)
+           @Html.ValidationMessageFor(model => model.JMBG) </td>				                
+    </tr>
+
+   <tr>
+	    <td>@Html.LabelFor(model => model.MjestoRodenja, new { id = @prefixLabela + @Html.NameFor(model => model.MjestoRodenja) })</td>
+        <td>@Html.EditorFor(model => model.MjestoRodenja)
+        @Html.ValidationMessageFor(model => model.MjestoRodenja)</td>	
+        <td>@Html.LabelFor(model => model.DatumRodenja, new { id = @prefixLabela + @Html.NameFor(model => model.DatumRodenja) })</td>
+        <td>@Html.TextBox(@DatumRodenjaPomoc, null, new { @class = Datepicker })
+        @Html.ValidationMessageFor(model => model.DatumRodenja)</td>								                
+    </tr>
+
+  <tr>
+        <td>@Html.LabelFor(model => model.ID_Drzavljanstvo, new { id = @prefixLabela + @Html.NameFor(model => model.ID_Drzavljanstvo) })</td>
+        <td>@Html.DropDownList(ID_Drzavljanstvo, (SelectList)ViewBag.ID_Drzavljanstvo, InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Odaberite, new { @class = "select-drzavljanstvo" })
+        @Html.ValidationMessageFor(model => model.ID_Drzavljanstvo)</td>
+	    <td>@Html.LabelFor(model => model.ID_Narodnost, new { id = @prefixLabela + @Html.NameFor(model => model.ID_Narodnost) })</td>
+        <td>@Html.DropDownList(ID_Narodnost, (SelectList)ViewBag.ID_Narodnost, InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Odaberite, new { @class = "select-narodnost" })
+        @Html.ValidationMessageFor(model => model.ID_Narodnost)</td>							                
+    </tr>
+
+
+    <tr>
+        <td>@Html.LabelFor(model => model.OtacPrezime, new { id = @prefixLabela + @Html.NameFor(model => model.OtacPrezime) })</td>
+        <td>@Html.TextBoxFor(model => model.OtacPrezime)
+        @Html.ValidationMessageFor(model => model.OtacPrezime)</td>	
+        <td>@Html.LabelFor(model => model.OtacIme, new { id = @prefixLabela + @Html.NameFor(model => model.OtacIme) })</td>
+        <td>@Html.TextBoxFor(model => model.OtacIme)
+        @Html.ValidationMessageFor(model => model.OtacIme)</td>				                
+    </tr>
+
+     <tr>
+        <td>@Html.LabelFor(model => model.OtacMjestoRodenja, new { id = @prefixLabela + @Html.NameFor(model => model.OtacMjestoRodenja) })</td>
+        <td>@Html.TextBoxFor(model => model.OtacMjestoRodenja)
+        @Html.ValidationMessageFor(model => model.OtacMjestoRodenja)</td>	
+        <td>@Html.LabelFor(model => model.OtacDatumRodenja, new { id = @prefixLabela + @Html.NameFor(model => model.OtacDatumRodenja) })</td>
+        <td>@Html.TextBox(@OtacDatumRodenjaPomoc, null, new { @class = Datepicker })
+        @Html.ValidationMessageFor(model => model.OtacDatumRodenja)</td>						                
+    </tr>
+
+    <tr>
+        <td>@Html.LabelFor(model => model.MajkaPrezimeDjevojacko, new { id = @prefixLabela + @Html.NameFor(model => model.MajkaPrezimeDjevojacko) })</td>
+        <td>@Html.TextBoxFor(model => model.MajkaPrezimeDjevojacko)
+        @Html.ValidationMessageFor(model => model.MajkaPrezimeDjevojacko)</td>	
+        <td>@Html.LabelFor(model => model.MajkaIme, new { id = @prefixLabela + @Html.NameFor(model => model.MajkaIme) })</td>
+        <td>@Html.TextBoxFor(model => model.MajkaIme)
+        @Html.ValidationMessageFor(model => model.MajkaIme)</td>				                
+    </tr>
+     <tr>
+        <td>@Html.LabelFor(model => model.MajkaPrezime, new { id = @prefixLabela + @Html.NameFor(model => model.MajkaPrezime) })</td>
+        <td>@Html.TextBoxFor(model => model.MajkaPrezime)
+            @Html.ValidationMessageFor(model => model.MajkaPrezime)</td>	
+         <td></td>
+        <td></td>				                
+    </tr>
+    <tr>
+       <td>@Html.LabelFor(model => model.MajkaMjestoRodenja, new { id = @prefixLabela + @Html.NameFor(model => model.MajkaMjestoRodenja) })</td>
+        <td>@Html.TextBoxFor(model => model.MajkaMjestoRodenja)
+        @Html.ValidationMessageFor(model => model.MajkaMjestoRodenja)</td>	
+        <td>@Html.LabelFor(model => model.MajkaDatumRodenja, new { id = @prefixLabela + @Html.NameFor(model => model.MajkaDatumRodenja) })</td>
+        <td>@Html.TextBox(@MajkaDatumRodenjaPomoc, null, new { @class = Datepicker })
+        @Html.ValidationMessageFor(model => model.MajkaDatumRodenja)</td>						                
+    </tr>
+
+     <tr>
+        <td>@Html.LabelFor(model => model.DatumSmrti, new { id = @prefixLabela + @Html.NameFor(model => model.DatumSmrti) })</td>
+        <td>@Html.TextBox(@DatumSmrtiPomoc, null, new { @class = Datepicker })
+        @Html.ValidationMessageFor(model => model.DatumSmrti)</td>								                
+    </tr>
+
+    <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+
+     <tr>
+       <td>@Html.LabelFor(model => model.JePoslovniSubjekt, new { id = @prefixLabela + @Html.NameFor(model => model.JePoslovniSubjekt) })</td>
+        <td colspan ="3">@Html.CheckBoxFor(model => model.JePoslovniSubjekt)
+        @Html.ValidationMessageFor(model => model.JePoslovniSubjekt)</td>	
+					                
+    </tr>
+
+ 
+  </tbody>
+</table>
+<div>
+</div>
+ <div id="poruka_Master" ></div>
+
+ }
+
+  <script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+   <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+   <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/DecimalValidator.js")" type="text/javascript"></script>
+     <script src="@Url.Content("~/Scripts/chosen.jquery.min.js")" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+
+        Dialozi.VaidirajHiddenPolja('@IDForma');
+
+        $(document).ready(function () {
+            Dialozi.DatePicker();
+        });
+
+        $(document).ready(function () {
+            var valueDatumOd = '@Model.DatumRodenja.Date.ToShortDateString()';
+            Dialozi.PostaviDatumPolje('@DatumRodenja', valueDatumOd);
+            Dialozi.DocumentReadyValid('@DatumRodenja');
+
+            var valueOtacDatumRodenja = '@Model.OtacDatumRodenja';
+            Dialozi.PostaviDatumPolje('@OtacDatumRodenja', valueOtacDatumRodenja);
+            Dialozi.DocumentReadyValid('@OtacDatumRodenja');
+
+            var valueMajkaDatumRodenja = '@Model.MajkaDatumRodenja';
+            Dialozi.PostaviDatumPolje('@MajkaDatumRodenja', valueMajkaDatumRodenja);
+            Dialozi.DocumentReadyValid('@MajkaDatumRodenja');
+
+            var valueDatumSmrti = '@Model.DatumSmrti';
+            Dialozi.PostaviDatumPolje('@DatumSmrti', valueDatumSmrti);
+            Dialozi.DocumentReadyValid('@DatumSmrti');
+        });
+
+        $('#' + '@DatumRodenjaPomoc').change(function (event) {
+            var dat = $('#' + '@DatumRodenjaPomoc').val();
+            Dialozi.PostaviDatumPolje('@DatumRodenja', dat);
+
+        });
+
+        $('#' + '@OtacDatumRodenjaPomoc').change(function (event) {
+            var dat = $('#' + '@OtacDatumRodenjaPomoc').val();
+            Dialozi.PostaviDatumPolje('@OtacDatumRodenja', dat);
+
+        });
+
+
+        $('#' + '@MajkaDatumRodenjaPomoc').change(function (event) {
+            var dat = $('#' + '@MajkaDatumRodenjaPomoc').val();
+            Dialozi.PostaviDatumPolje('@MajkaDatumRodenja', dat);
+
+        });
+
+        $('#' + '@DatumSmrtiPomoc').change(function (event) {
+            var dat = $('#' + '@DatumSmrtiPomoc').val();
+            Dialozi.PostaviDatumPolje('@DatumSmrti', dat);
+
+        });
+
+
+
+        $(function () {
+            var drzavljanstvo = '@Model.ID_Drzavljanstvo';
+            var narodnost = '@Model.ID_Narodnost';
+            $(".select-drzavljanstvo").val(drzavljanstvo).chosen();
+            $(".select-narodnost").val(narodnost).chosen();
+
+        });
+
+
+        $("#Oznaka").change(function (event) {
+            var item = $(this).val();
+            alert(item);
+            var url = '@Url.Action("GetSubjektOznaka", @InLine.UI.Web.T4.ControllerName.ControllerName.SubjektSvi)';
+
+            $.ajax({
+                url: url,
+                data: { Oznaka: item },
+                dataType: 'json',
+                type: 'GET',
+                success: function (data) {
+                    if (data > 0) {
+                        alert("Ta oznaka već postoji. Molimo upišite novi.");
+                        $("#Oznaka").val('');
+                    }
+
+                    else {
+                        $("#Oznaka").val(item);
+                    }
+
+
+                }
+
+            });
+
+        });
+
+   </script>
+
+
+   <script type="text/javascript">
+
+       $(function () {
+          $("#labela_Osoba_Detalj_Oznaka").text("Broj");
+          $("#labela_Osoba_Detalj_Prezime").text("Prezime");
+          $("#labela_Osoba_Detalj_Ime").text("Ime");
+          $("#labela_Osoba_Detalj_OIB").text("OIB");
+          $("#labela_Osoba_Detalj_MjestoRodenja").text("Mjesto rođenja");
+          $("#labela_Osoba_Detalj_DatumRodenja").text("Datum rođenja");
+          $("#labela_Osoba_Detalj_ID_Drzavljanstvo").text("Državljanstvo");
+          $("#labela_Osoba_Detalj_ID_Narodnost").text("Narodnost");
+          $("#labela_Osoba_Detalj_OtacPrezime").text("Otac prezime:");
+          $("#labela_Osoba_Detalj_OtacIme").text("Otac ime");
+          $("#labela_Osoba_Detalj_OtacMjestoRodenja").text("Mjesto rođenja oca");
+          $("#labela_Osoba_Detalj_OtacDatumRodenja").text("Datum rođenja oca");
+          $("#labela_Osoba_Detalj_MajkaPrezimeDjevojacko").text("Majka djevojačko prezime");
+          $("#labela_Osoba_Detalj_MajkaIme").text("Majka ime");
+          $("#labela_Osoba_Detalj_MajkaPrezime").text("Majka prezime"); 
+          $("#labela_Osoba_Detalj_MajkaMjestoRodenja").text("Mjesto rođenja majke");
+          $("#labela_Osoba_Detalj_MajkaDatumRodenja").text("Datum rođenja majke");
+          $("#labela_Osoba_Detalj_DatumSmrti").text("Datum smrti");
+       });
+
+   </script>
+
+
+    <script type="text/javascript">
+        function InsertEditSucces() {
+        }
+
+        function InsertEditError() {
+
+        }
+
+        function DeleteSucces() {
+
+        }
+
+        function DeleteError() {
+
+        }
+
+        function ProvjeraKodUnosa() {
+            return false;
+        }
+
+
+    </script>

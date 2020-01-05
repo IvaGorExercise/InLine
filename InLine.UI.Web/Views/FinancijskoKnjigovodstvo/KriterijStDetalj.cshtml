@@ -1,0 +1,80 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.KriterijStDetaljFormFormatted
+
+ <style type="text/css">
+ #Naziv { width:100%;}
+ #NazivKr { width:100%;}
+ #Kratica { width:100%;}
+</style>
+
+
+ @{
+    string prefixLabela = "labela_KriterijSt_Detalj_";
+ }
+ 
+ @{
+     string Akcija = @InLine.Model.Data.FieldString.View.KriterijSt.KriterijStEntity + InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert;
+     string IDForma = @InLine.Model.Data.FieldString.View.KriterijSt.KriterijStEntity + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Forma;
+ }
+
+
+ @using (Html.BeginForm(Akcija, @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo, FormMethod.Post, new { id = IDForma, @class = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormClass }))
+ {
+    @Html.HiddenFor(model => model.ID_Kriterij)
+    @Html.HiddenFor(model => model.ID_KriterijSt)
+
+    @Html.ValidationSummary(false)
+
+
+<table class ="KriterujStDetail form_background" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+   <tbody>
+
+
+     <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+
+    <tr>
+	    <td >@Html.LabelFor(model => model.Oznaka, new { id = @prefixLabela + @Html.NameFor(model => model.Oznaka) })</td>
+        <td colspan="3">@Html.EditorFor(model => model.Oznaka)
+           @Html.ValidationMessageFor(model => model.Oznaka) </td>				                
+    </tr>
+
+     <tr>
+	    <td >@Html.LabelFor(model => model.Naziv, new { id = @prefixLabela + @Html.NameFor(model => model.Naziv) })</td>
+        <td colspan="3">@Html.EditorFor(model => model.Naziv)
+           @Html.ValidationMessageFor(model => model.Naziv) </td>				                
+    </tr>
+
+   <tr>
+	    <td>@Html.LabelFor(model => model.NazivKr, new { id = @prefixLabela + @Html.NameFor(model => model.NazivKr) })</td>
+        <td>@Html.EditorFor(model => model.NazivKr)
+        @Html.ValidationMessageFor(model => model.NazivKr)</td>	
+        <td>@Html.LabelFor(model => model.Kratica, new { id = @prefixLabela + @Html.NameFor(model => model.Kratica) })</td>
+        <td>@Html.EditorFor(model => model.Kratica)
+        @Html.ValidationMessageFor(model => model.Kratica)</td>								                
+    </tr>
+
+  </tbody>
+</table>
+<div>
+</div>
+
+ }
+
+  <script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+   <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+   <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/DecimalValidator.js")" type="text/javascript"></script>
+     <script src="@Url.Content("~/Scripts/chosen.jquery.min.js")" type="text/javascript"></script>
+
+   <script type="text/javascript">
+
+       $(function () {
+           $("#labela_KriterijSt_Detalj_Konto").text("Konto");
+       });
+
+    </script>
+
+
+   <script type="text/javascript">
+     
+
+   </script>

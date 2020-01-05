@@ -1,0 +1,2488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FF0C7B51-4649-4B3B-8538-7B24D89184AC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InLine.Service.Data</RootNamespace>
+    <AssemblyName>InLine.Service.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Transactions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Banka.cs" />
+    <Compile Include="Classes\Izvod.cs" />
+    <Compile Include="Classes\TecajListaSt.cs" />
+    <Compile Include="Classes\Temeljnica.cs" />
+    <Compile Include="Classes\View.HUB2013A.cs" />
+    <Compile Include="Interfaces\IBanka.cs" />
+    <Compile Include="Interfaces\IIzvod.cs" />
+    <Compile Include="Interfaces\ITecajListaSt.cs" />
+    <Compile Include="Interfaces\ITemeljnica.cs" />
+    <Compile Include="Interfaces\View.IHUB2013A.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T4\Adresa.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Banka.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Class.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Datoteka.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DatotekaIzvod.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DatotekaIzvod2012A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DatotekaIzvodGr2012A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DatotekaIzvodSt2012A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DatotekaIzvodVerzija.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DatotekaIzvodVerzijaTablica.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DatotekaPolje.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DatotekaVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DatotekaVrPolje.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DatotekaVrPoljeTip.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DatotekaVrVerzija.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Davanje.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DavanjeDoprinosDohodak.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DavanjeDoprinosDohodakVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DavanjePDVVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DavanjePorezDohodakVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DavanjePosebanPorezDohodakVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DavanjeTablica.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DavanjeVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DavanjeVrTablica.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Dohodak.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DohodakDavanje.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DohodakIsplatitelj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DohodakOdbitak.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DohodakPrimatelj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DohodakPrimateljDavanje.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DohodakPrimateljIsplataGotovina.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DohodakPrimateljIsplataRacun.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DohodakPrimateljKoeficijent.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DohodakPrimateljOdbitak.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DohodakPrimateljPrimitak.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DohodakPrimateljPrimitakDavanje.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DohodakPrimitak.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DokumentGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DokumentVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DoprinosDohodak.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DoprinosDohodakVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Drzava.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DrzavaRadna.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DrzavaValuta.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Drzavljanstvo.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\GlavnaKnjiga.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\HUB.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\HUB2013A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\HUBDokumentIzvor2013A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\HUBImport.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\HUBImportHUB.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\HUBKontrola.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\HUBKontrolaModelPodatak2013A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\HUBModel2013A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\HUBModelPodatak2013A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\HUBNalogVrsta2013A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\HUBNamjena2013A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\HUBPrimateljVrsta2013A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\HUBTroskoviOpcija2013A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\HUBVerzija.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\HUBVerzijaTablica.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IAdresa.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IBanka.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDatoteka.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDatotekaIzvod.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDatotekaIzvod2012A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDatotekaIzvodGr2012A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDatotekaIzvodSt2012A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDatotekaIzvodVerzija.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDatotekaIzvodVerzijaTablica.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDatotekaPolje.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDatotekaVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDatotekaVrPolje.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDatotekaVrPoljeTip.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDatotekaVrVerzija.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDavanje.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDavanjeDoprinosDohodak.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDavanjeDoprinosDohodakVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDavanjePDVVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDavanjePorezDohodakVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDavanjePosebanPorezDohodakVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDavanjeTablica.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDavanjeVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDavanjeVrTablica.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDohodak.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDohodakDavanje.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDohodakIsplatitelj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDohodakOdbitak.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDohodakPrimatelj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDohodakPrimateljDavanje.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDohodakPrimateljIsplataGotovina.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDohodakPrimateljIsplataRacun.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDohodakPrimateljKoeficijent.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDohodakPrimateljOdbitak.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDohodakPrimateljPrimitak.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDohodakPrimateljPrimitakDavanje.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDohodakPrimitak.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDokumentGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDokumentVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDoprinosDohodak.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDoprinosDohodakVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDrzava.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDrzavaRadna.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDrzavaValuta.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IDrzavljanstvo.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IGlavnaKnjiga.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IHUB.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IHUB2013A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IHUBDokumentIzvor2013A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IHUBImport.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IHUBImportHUB.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IHUBKontrola.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IHUBKontrolaModelPodatak2013A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IHUBModel2013A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IHUBModelPodatak2013A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IHUBNalogVrsta2013A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IHUBNamjena2013A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IHUBPrimateljVrsta2013A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IHUBTroskoviOpcija2013A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IHUBVerzija.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IHUBVerzijaTablica.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IIzvod.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IIzvod2012A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IIzvod2012ASt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IIzvod2012ATransakcijaVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IIzvodPosiljatelj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IIzvodSt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IIzvodStTemeljnica.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IIzvodTemeljnica.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IIzvodVerzija.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IIzvodVerzijaTablica.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IJezik.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IJezikGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKalendar.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKalendarGodina.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKalendarGodinaDan.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKalendarGodinaKvartal.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKalendarGodinaMjesec.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKalendarGodinaTjedan.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKalendarKvartal.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKalendarMjesec.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKalendarMjesecDan.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKalendarMjesecTjedan.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKalendarTjedanDan.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKnjigaIRA.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKnjigaIRAPDV.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKnjigaOS.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKnjigaURA.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKnjigaURAPDV.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKontniPlan.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKontniPlanAnalitika.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKontniPlanSkup.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKontniPlanSkupGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKontniPlanSkupGrKontniPlanSkup.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKontniPlanSt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKontniPlanStKriterij.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKontniPlanTemeljnicaVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKriterij.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKriterijSt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKriterijStKriterijSt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IKupac.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ILokacija.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ILokacijaLokacija.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ILokacijaLokacijaStruktura.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IMirovinskiStup.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IMjernaJedinica.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IMjesto.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IMjestoDioTip.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IMjestoDrzava.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IMjestoGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IMjestoGrMjesto.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IMjestoGrMjestoDatum.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IMjestoGrTip.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IMjestoOpcina.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IMjestoPosta.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IMjestoTip.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\INalog.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\INarodnost.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\INekretnina.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Interface.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObjekt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObjektGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObjektGrObjekt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObjektGrObjektGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObjektTablica.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObjektVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObjektVrTablica.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazac.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacID.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacID1.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacID12010A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacID1Potvrda2010A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacID1Verzija.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacID2009A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacID2011A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacIDIdentifikator2009A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacIDOpcina2003A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacIDVerzija.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacIDVerzijaTablica.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacIP.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacIP2011A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacIPIdentifikator2005A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacIPMjesec2011A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacIPVerzija.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacPDV.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacPDV2012A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacPDVK.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacPolje.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacRSm.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacRSmA2005A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacRSmB2005A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacRSmDopusteno2005A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacRSmObracunVr2005A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacRSmObveznikVr2005A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacRSmOsiguranjeOsnova2005A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacRSmStaz2005A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacRSmVerzija.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacVrPolje.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrazacVrPoljeTip.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObrt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObveznicaJavnogDuga.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IObveznicaJavnogDugaIspravak.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOdbitak.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOdbitakGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOdbitakGrOdbitak.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOdbitakGrOdbitakGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOpcina.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOpcinaGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOpcinaGrOpcina.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOpcinaGrOpcinaDatum.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOpcinaGrTip.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOpcinaOpcinaTip.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOpcinaTip.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOpcinaZupanija.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOperatorAritmeticki.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOperatorLogicki.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOperatorVremenski.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOpomena.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOsnovnoSredstvo.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOsnovnoSredstvoDnevnik.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOsnovnoSredstvoDogadaj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOsoba.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOsobaBoraviste.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOsobaPrebivaliste.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IOsobaPrezime.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPDV.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPDVVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPlacanjeVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPoduzece.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPorezDohodak.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPorezDohodakPrirez.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPorezDohodakVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPoreznaUprava.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPoreznaUpravaIspostava.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPosebanPorezDohodak.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPosebanPorezDohodakVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPoslovnaGodina.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPoslovnaGodinaSubjekt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPoslovnaGodinaSubjektGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPoslovnaGodinaSubjektGrSubjekt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPoslovniSubjekt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPosta.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPoticanjeZaposljavanja.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPraznik.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPraznikGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPraznikGrPraznik.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPraznikPravilo.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPraznikPraviloPomak.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPraznikPraviloVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPrimateljKoeficijent.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPrimateljKoeficijentGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPrimitak.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPrimitakGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPrimitakGrPrimitak.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPrimitakGrPrimitakGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPrimitakProsjekGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPrimitakProsjekIznos.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IPrimitakProsjekIzracun.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IRabat.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IRacun.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IRacunIzlaz.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IRacunIzlazKontniPlan.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IRacunIzlazKontniPlanKriterij.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IRacunIzlazSt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IRacunUlaz.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IRacunUlazKontniPlan.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IRacunUlazKontniPlanKriterij.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IRacunUlazSt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IRacunVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IRadnoMjesto.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IRoba.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IShema.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IShemaGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IShemaGrShema.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IShemaGrShemaGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IShemaGrShemaGrStruktura.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IShemaSt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IShemaStPolje.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IShemaStPoljeUvjet.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ISpol.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IStan.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IStrucnaSprema.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ISubjekt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ISubjektEmail.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ISubjektFunkcija.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ISubjektGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ISubjektGrSubjekt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ISubjektGrSubjektGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ISubjektRacun.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ISubjektTablica.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ISubjektTelefon.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ISubjektVeza.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ISubjektVezaVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ISubjektVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ISubjektVrTablica.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ISubjektWeb.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ITablica.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ITablicaPolje.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ITablicaPoljeUI.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ITecaj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ITecajLista.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ITecajListaSt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ITecajVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ITemeljnica.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ITemeljnicaSt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ITemeljnicaStKriterij.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ITemeljnicaVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ITemeljnicaVrVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ITransakcijskiRacun.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IUgovorStanOtkup.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IUgovorStanOtkupAneks.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IUgovorStanOtkupKupac.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IUgovorStanOtkupMoratorij.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IUgovorStanOtkupMoratorijMjesec.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IUgovorStanOtkupObrok.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IUgovorStanOtkupObrokPreplata.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IUgovorStanOtkupObrokUplata.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IUgovorStanOtkupOpomena.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IUgovorStanOtkupShema.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IUgovorStanOtkupTrosak.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IUlica.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IUlicaTip.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IUsluga.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IValuta.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IValutaRadna.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IVozilo.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZapis.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZapisGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZapisGrZapis.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZapisGrZapisGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZapisTablica.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZapisVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZapisVrTablica.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZaposlenje.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZaposlenjeOpcina.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZaposlenjeRadnoMjesto.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZateznaKamata.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZbrojniNalog.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZbrojniNalog2013A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZbrojniNalogHUB.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZbrojniNalogVerzija.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZbrojniNalogVerzijaTablica.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZgrada.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZN14OsnovaPlacanja.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZupanija.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZupanijaGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZupanijaGrTip.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZupanijaGrZupanija.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IZupanijaGrZupanijaDatum.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Izvod.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Izvod2012A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Izvod2012ASt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Izvod2012ATransakcijaVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IzvodPosiljatelj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IzvodSt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IzvodStTemeljnica.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IzvodTemeljnica.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IzvodVerzija.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IzvodVerzijaTablica.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Jezik.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\JezikGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Kalendar.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarGodina.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarGodinaDan.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarGodinaKvartal.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarGodinaMjesec.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarGodinaTjedan.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarKvartal.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarMjesec.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarMjesecDan.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarMjesecTjedan.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KalendarTjedanDan.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KnjigaIRA.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KnjigaIRAPDV.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KnjigaOS.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KnjigaURA.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KnjigaURAPDV.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KontniPlan.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KontniPlanAnalitika.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KontniPlanSkup.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KontniPlanSkupGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KontniPlanSkupGrKontniPlanSkup.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KontniPlanSt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KontniPlanStKriterij.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KontniPlanTemeljnicaVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Kriterij.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KriterijSt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KriterijStKriterijSt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Kupac.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Lokacija.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\LokacijaLokacija.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\LokacijaLokacijaStruktura.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\MirovinskiStup.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\MjernaJedinica.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Mjesto.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\MjestoDioTip.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\MjestoDrzava.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\MjestoGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\MjestoGrMjesto.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\MjestoGrMjestoDatum.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\MjestoGrTip.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\MjestoOpcina.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\MjestoPosta.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\MjestoTip.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Nalog.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Narodnost.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Nekretnina.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Objekt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObjektGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObjektGrObjekt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObjektGrObjektGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObjektTablica.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObjektVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObjektVrTablica.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Obrazac.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacID.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacID1.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacID12010A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacID1Potvrda2010A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacID1Verzija.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacID2009A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacID2011A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacIDIdentifikator2009A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacIDOpcina2003A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacIDVerzija.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacIDVerzijaTablica.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacIP.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacIP2011A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacIPIdentifikator2005A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacIPMjesec2011A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacIPVerzija.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacPDV.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacPDV2012A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacPDVK.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacPolje.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacRSm.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacRSmA2005A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacRSmB2005A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacRSmDopusteno2005A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacRSmObracunVr2005A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacRSmObveznikVr2005A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacRSmOsiguranjeOsnova2005A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacRSmStaz2005A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacRSmVerzija.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacVrPolje.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObrazacVrPoljeTip.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Obrt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObveznicaJavnogDuga.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ObveznicaJavnogDugaIspravak.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Odbitak.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OdbitakGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OdbitakGrOdbitak.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OdbitakGrOdbitakGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Opcina.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OpcinaGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OpcinaGrOpcina.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OpcinaGrOpcinaDatum.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OpcinaGrTip.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OpcinaOpcinaTip.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OpcinaTip.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OpcinaZupanija.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OperatorAritmeticki.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OperatorLogicki.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OperatorVremenski.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Opomena.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OsnovnoSredstvo.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OsnovnoSredstvoDnevnik.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OsnovnoSredstvoDogadaj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Osoba.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OsobaBoraviste.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OsobaPrebivaliste.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OsobaPrezime.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PDV.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PDVVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PlacanjeVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Poduzece.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PorezDohodak.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PorezDohodakPrirez.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PorezDohodakVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PoreznaUprava.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PoreznaUpravaIspostava.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PosebanPorezDohodak.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PosebanPorezDohodakVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PoslovnaGodina.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PoslovnaGodinaSubjekt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PoslovnaGodinaSubjektGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PoslovnaGodinaSubjektGrSubjekt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PoslovniSubjekt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Posta.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PoticanjeZaposljavanja.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Praznik.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PraznikGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PraznikGrPraznik.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PraznikPravilo.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PraznikPraviloPomak.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PraznikPraviloVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PrimateljKoeficijent.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PrimateljKoeficijentGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Primitak.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PrimitakGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PrimitakGrPrimitak.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PrimitakGrPrimitakGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PrimitakProsjekGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PrimitakProsjekIznos.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\PrimitakProsjekIzracun.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Rabat.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Racun.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\RacunIzlaz.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\RacunIzlazKontniPlan.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\RacunIzlazKontniPlanKriterij.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\RacunIzlazSt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\RacunUlaz.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\RacunUlazKontniPlan.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\RacunUlazKontniPlanKriterij.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\RacunUlazSt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\RacunVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\RadnoMjesto.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Roba.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Shema.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ShemaGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ShemaGrShema.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ShemaGrShemaGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ShemaGrShemaGrStruktura.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ShemaSt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ShemaStPolje.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ShemaStPoljeUvjet.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Spol.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Stan.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\StrucnaSprema.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Subjekt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\SubjektEmail.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\SubjektFunkcija.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\SubjektGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\SubjektGrSubjekt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\SubjektGrSubjektGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\SubjektRacun.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\SubjektTablica.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\SubjektTelefon.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\SubjektVeza.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\SubjektVezaVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\SubjektVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\SubjektVrTablica.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\SubjektWeb.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Tablica.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaPolje.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TablicaPoljeUI.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Tecaj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TecajLista.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TecajListaSt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TecajVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Temeljnica.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TemeljnicaSt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TemeljnicaStKriterij.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TemeljnicaVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TemeljnicaVrVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TransakcijskiRacun.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\UgovorStanOtkup.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\UgovorStanOtkupAneks.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\UgovorStanOtkupKupac.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\UgovorStanOtkupMoratorij.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\UgovorStanOtkupMoratorijMjesec.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\UgovorStanOtkupObrok.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\UgovorStanOtkupObrokPreplata.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\UgovorStanOtkupObrokUplata.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\UgovorStanOtkupOpomena.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\UgovorStanOtkupShema.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\UgovorStanOtkupTrosak.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Ulica.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\UlicaTip.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Usluga.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Valuta.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ValutaRadna.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.DokumentGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.DokumentVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.DokumentVrDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.GlavnaKnjigaKontniPlanKontniPlanSt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.HUB2013A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IDokumentGr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IDokumentVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IDokumentVrDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IGlavnaKnjigaKontniPlanKontniPlanSt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IGlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IHUB2013A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IIzvod2012A.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IIzvod2012ADetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IIzvod2012AOtkup.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IIzvod2012AOtkupDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IIzvod2012ASt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IIzvod2012AStDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IIzvod2012AStOtkup.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IIzvod2012AStOtkupDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IKontniPlan.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IKontniPlanAnalitika.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IKontniPlanAnalitikaDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IKontniPlanAnalitikaZapisVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IKontniPlanDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IKontniPlanSt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IKontniPlanStDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IKontniPlanTemeljnicaVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IKriterij.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IKriterijDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IKriterijSt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IKriterijStDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IKriterijStKriterijStKriterijSt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IKriterijStKriterijStKriterijStDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IKupac.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IKupacDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IOpomena.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IOpomenaDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IOsoba.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IOsobaDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IPoslovnaGodinaDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IPoslovnaGodinaPoslovniSubjekt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IPoslovniSubjekt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IPoslovniSubjektSubjekt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IStan.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IStanDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.ISubjekt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.ISubjektRacunBanka.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.ITecajLista.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.ITecajListaDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.ITecajListaSt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.ITecajListaStDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.ITemeljnica.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.ITemeljnicaDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.ITemeljnicaSt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.ITemeljnicaStDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.ITemeljnicaStKontniPlanSt.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.ITemeljnicaStKriterij.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.ITemeljnicaTemeljnicaVrGlavnaKnjiga.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.ITemeljnicaVr.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.ITemeljnicaVrDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkup.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupAneks.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupAneksDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupKupac.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupKupacDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupKupacNositelj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupMoratorij.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupMoratorijDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupMoratorijMjesec.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupMoratorijMjesecDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupNalog.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupNalogDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupObrok.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupObrokDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupObrokIznos.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupObrokPreplata.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupObrokPreplataDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupObrokUplata.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupObrokUplataDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupOpomena.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupOpomenaDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupTrosak.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupTrosakDetalj.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IUgovorStanOtkupZavrsetak.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IZapis.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IZapisRacunUlaz.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IZapisUgovorStanOtkup.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IZapisUgovorStanOtkupAneks.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.IZapisVrAnalitika.cs">
+      <DependentUpon>Interface.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.Izvod2012A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.Izvod2012ADetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.Izvod2012AOtkup.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.Izvod2012AOtkupDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.Izvod2012ASt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.Izvod2012AStDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.Izvod2012AStOtkup.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.Izvod2012AStOtkupDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.KontniPlan.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.KontniPlanAnalitika.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.KontniPlanAnalitikaDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.KontniPlanAnalitikaZapisVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.KontniPlanDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.KontniPlanSt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.KontniPlanStDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.KontniPlanTemeljnicaVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.Kriterij.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.KriterijDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.KriterijSt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.KriterijStDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.KriterijStKriterijStKriterijSt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.KriterijStKriterijStKriterijStDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.Kupac.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.KupacDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.Opomena.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.OpomenaDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.Osoba.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.OsobaDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.PoslovnaGodinaDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.PoslovnaGodinaPoslovniSubjekt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.PoslovniSubjekt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.PoslovniSubjektSubjekt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.Stan.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.StanDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.Subjekt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.SubjektRacunBanka.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.TecajLista.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.TecajListaDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.TecajListaSt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.TecajListaStDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.Temeljnica.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.TemeljnicaDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.TemeljnicaSt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.TemeljnicaStDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.TemeljnicaStKontniPlanSt.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.TemeljnicaStKriterij.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.TemeljnicaTemeljnicaVrGlavnaKnjiga.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.TemeljnicaVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.TemeljnicaVrDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkup.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupAneks.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupAneksDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupKupac.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupKupacDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupKupacNositelj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupMoratorij.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupMoratorijDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupMoratorijMjesec.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupMoratorijMjesecDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupNalog.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupNalogDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupObrok.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupObrokDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupObrokIznos.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupObrokPreplata.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupObrokPreplataDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupObrokUplata.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupObrokUplataDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupOpomena.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupOpomenaDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupTrosak.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupTrosakDetalj.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.UgovorStanOtkupZavrsetak.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.Zapis.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.ZapisRacunUlaz.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.ZapisUgovorStanOtkup.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.ZapisUgovorStanOtkupAneks.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\View.ZapisVrAnalitika.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Vozilo.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Zapis.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ZapisGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ZapisGrZapis.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ZapisGrZapisGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ZapisTablica.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ZapisVr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ZapisVrTablica.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Zaposlenje.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ZaposlenjeOpcina.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ZaposlenjeRadnoMjesto.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ZateznaKamata.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ZbrojniNalog.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ZbrojniNalog2013A.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ZbrojniNalogHUB.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ZbrojniNalogVerzija.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ZbrojniNalogVerzijaTablica.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Zgrada.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ZN14OsnovaPlacanja.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Zupanija.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ZupanijaGr.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ZupanijaGrTip.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ZupanijaGrZupanija.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ZupanijaGrZupanijaDatum.cs">
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InLine.Common\InLine.Common.csproj">
+      <Project>{10170356-9DCC-42D1-A404-883E52F5B8EA}</Project>
+      <Name>InLine.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InLine.Model.Admin\InLine.Model.Admin.csproj">
+      <Project>{9FAE6E45-E207-413B-8238-0CDF03560434}</Project>
+      <Name>InLine.Model.Admin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InLine.Model.Data\InLine.Model.Data.csproj">
+      <Project>{B4CC4F1B-9575-42B8-9434-15AC61E53FA5}</Project>
+      <Name>InLine.Model.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InLine.Repository.Admin\InLine.Repository.Admin.csproj">
+      <Project>{DBAE2D85-BC65-4F88-A94B-3890484E053E}</Project>
+      <Name>InLine.Repository.Admin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InLine.Repository.Data\InLine.Repository.Data.csproj">
+      <Project>{5969B753-5839-4814-BF96-CA3270EDA154}</Project>
+      <Name>InLine.Repository.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="T4\Class.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Class.cs</LastGenOutput>
+    </None>
+    <None Include="T4\Interface.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Interface.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

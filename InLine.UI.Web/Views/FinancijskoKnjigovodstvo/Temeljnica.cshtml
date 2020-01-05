@@ -1,0 +1,751 @@
+﻿@model InLine.UI.Web.T4.GridFormattedTemplate.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjektComboFormatted
+@using InLine.Repository.Data.Helper;
+
+@{
+
+    Layout = "~/Views/Shared/_LayoutFinancijsko.cshtml";
+}
+
+@{
+
+    int kojaGodina = @Model.Godina;
+    string kojiNaziv = @Model.Naziv;
+    long kojiKontniPlan = @Model.ID_KontniPlan;
+    long kojaGlavnaKnjiga = @Model.ID_GlavnaKnjiga;
+    long kojiKontniPlanPromjena = 0;
+    long kojaGlavnaKnjigaPromjena = 0;
+    string Autocomplete = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Autocomplete;
+    string AutocompleteTest = "autocompleteTest";
+    string fontColorREDClass = "fontColorRED";
+    string gridFooterColumnClass = "ui-widget-content footrow footrow-ltr";
+    string Start = CommonFunctions.PagingVrijednostiDefault.Start;
+    string Count = CommonFunctions.PagingVrijednostiDefault.Count;
+    string ulGlavnaKnjigaSelector = "#ulGlavnaKnjiga";
+
+  
+}
+
+<style type="text/css">
+ 
+    #GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjektPager {display:none;}
+    #TemeljnicaStPager {color:#205392; font-weight: bold;}
+    #combo {background-color:#F5F5F5; font-size: 13px; font-weight: bold;}
+    .rowColorRED {  background-color:#F65556; color:White; }
+    #Godina {width:350px;}
+    #Naziv {width:350px;}
+    
+    .btnDropDownSymbol
+    {
+    background: #ffffff url('../Content/images/dropdown_arrow.png') no-repeat 100%;
+    }
+    
+    .fontColorRED { color:#F65556 !important;}
+    
+   
+</style>
+@{
+
+
+    var grid2 = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.TemeljnicaVrGridFormatted>(InLine.Model.Data.FieldString.View.TemeljnicaVr.TemeljnicaVrEntity,
+   dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+   hiddenEnabled: true,
+   dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+   methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+   pager: true,
+   caption: "1. VRSTA TEMELJNICE",
+   parametersNames: new Lib.Web.Mvc.JQuery.JqGrid.JqGridParametersNames() { PagesCount = "npage" },
+   autoWidth: false,
+   width: 440,
+   shrinkToFit: true,
+   rowsNumber: 10,
+   height: 115,
+   multiSelect: false,
+   url: Url.Action("TemeljnicaVrGrid", new { key = "ID_GlavnaKnjiga", value = @Model.ID_GlavnaKnjiga.ToString() }),
+   loadComplete: "$.TemeljnicaVrMasterLoad",
+   onSelectRow: "$.TemeljnicaVrOnSelectRow",
+   onDoubleClickRow: "$.TemeljnicaVrDetail",
+   sortingName: @InLine.Model.Data.FieldString.View.TemeljnicaVr.ID_TemeljnicaVr,
+   sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Desc,
+   viewRecords: false).FilterToolbar(new Lib.Web.Mvc.JQuery.JqGrid.JqGridFilterToolbarOptions() { StringResult = true })
+   .Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions())
+   .AddNavigatorButton("", "ui-icon-plus", "$.addTemeljnicaVr", Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorButtonPositions.Last, "Dodaj vrstu temeljnice")
+   .AddNavigatorButton("", "ui-icon-pencil", "$.TemeljnicaVrDetail", Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorButtonPositions.Last, "Izmjeni vrstu temeljnice")
+   .AddNavigatorButton("", "ui-icon-trash", "$.deleteTemeljnicaVr", Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorButtonPositions.Last, "Obriši vrstu temeljnice");
+
+    var grid3 = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.TemeljnicaGridFormatted>(InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity,
+    dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+    hiddenEnabled: true,
+    dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+    methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+    pager: true,
+    caption: "2. TEMELJNICA",
+    parametersNames: new Lib.Web.Mvc.JQuery.JqGrid.JqGridParametersNames() { PagesCount = "npage" },
+    autoWidth: false,
+    width: 660,
+    shrinkToFit: true,
+    rowsNumber: 10,
+    height: 115,
+    multiSelect: false,
+    loadComplete: "$.TemeljnicaMasterLoad",
+    gridComplete: "$.TemeljnicaFormater",
+    onSelectRow: "$.TemeljnicaOnSelectRow",
+    onDoubleClickRow: "$.TemeljnicaDetail",
+    sortingName: @InLine.Model.Data.FieldString.View.Temeljnica.ID_Temeljnica,
+    sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Desc,
+    viewRecords: false).FilterToolbar(new Lib.Web.Mvc.JQuery.JqGrid.JqGridFilterToolbarOptions() { StringResult = true })
+    .Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions())
+    .AddNavigatorButton("", "ui-icon-plus", "$.addTemeljnica", Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorButtonPositions.Last, "Dodaj temeljnice")
+    .AddNavigatorButton("", "ui-icon-pencil", "$.TemeljnicaDetail", Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorButtonPositions.Last, "Izmjeni temeljnice")
+    .AddNavigatorButton("", "ui-icon-trash", "$.deleteTemeljnica", Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorButtonPositions.Last, "Obriši temeljnice");
+
+
+    var grid4 = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.TemeljnicaStGridFormatted>(InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity,
+    dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+    hiddenEnabled: true,
+    footerEnabled: true,
+    userDataOnFooter: true,
+    dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+    methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+    pager: true,
+    caption: "3. STAVKA TEMELJNICE",
+    parametersNames: new Lib.Web.Mvc.JQuery.JqGrid.JqGridParametersNames() { PagesCount = "npage" },
+    width:1025,
+    autoWidth: false,
+    rowsNumber: 10,
+    height: 310,
+    multiSelect: false,
+    loadComplete: "$.FooterSaldoFormater",
+    onSelectRow: "$.TemeljnicaStOnSelectRow",
+    onDoubleClickRow: "$.TemeljnicaStDetail",
+    sortingName: @InLine.Model.Data.FieldString.View.TemeljnicaSt.RedniBroj,
+    sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Asc,
+    viewRecords: false).FilterToolbar(new Lib.Web.Mvc.JQuery.JqGrid.JqGridFilterToolbarOptions() { StringResult = true })
+    .Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions())
+    .AddNavigatorButton("", "ui-icon-plus", "$.addTemeljnicaSt", Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorButtonPositions.Last, "Dodaj stavku temeljnice")
+    .AddNavigatorButton("", "ui-icon-pencil", "$.TemeljnicaStDetail", Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorButtonPositions.Last, "Izmjeni stavku temeljnice")
+    .AddNavigatorButton("", "ui-icon-trash", "$.deleteTemeljnicaSt", Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorButtonPositions.Last, "Obriši stavku temeljnice"); 
+
+ }
+
+@*  <div class="PrviRed">
+
+        <div id="navcontainer">
+        <div id="navlist">
+          @Html.Partial(ViewList.FinancijskoKnjigovodstvo.ViewFinancijskoMenu)
+       </div> 
+    </div> 
+ </div>*@
+
+ <div class="PrviRed">
+          @Html.Partial(ViewList.FinancijskoKnjigovodstvo.ViewFinancijskoMenu)
+ </div>
+
+<table style="width:100%;">
+<tbody>
+<tr>
+<td style="width:100%;">				
+	<table width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+		<tbody>
+        <tr>
+        <td>
+         <div id="Kontni">
+     @*    GLAVNA KNJIGA: <input id="Godina2" class="btnDropDownSymbol autocomplete ui-autocomplete-input" type="text" value="" name="Konto" autocomplete="off">*@
+         @*Naziv <input id="Naziv" class="btnDropDownSymbol autocomplete ui-autocomplete-input" type="text" value="" name="Konto" autocomplete="off">*@
+
+        GLAVNA KNJIGA: <input id="Godina" class="btnDropDownSymbol autocompleteTest ui-autocomplete-input" type="text" value="" name="Konto" autocomplete="off">
+</div>
+        </td>
+        </tr>
+                                                  
+		</tbody>
+       </table>
+		</td>		 
+		</tr>
+
+        <tr>
+          <td style="vertical-align:top;">
+							                <table width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+								                <tbody>
+                                                <tr>
+									                <td style="vertical-align:top;height:auto;">
+		
+										               <table  cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+											                <tbody>
+                                                             <tr>
+                                                             <table style="width:100%;">
+                                                                    <tr>
+                                                                    <td style="vertical-align:top;">
+												                    @grid2.GetHtml()
+                                                                    </td>
+                                                                     <td style="vertical-align:top;">
+                                                                        @grid3.GetHtml()
+                                                                     </td>
+                                                                     </tr>
+                                                             </table>
+												                
+											                </tr>
+                                                             <tr>
+												                <td style="vertical-align:top;">
+												              
+												                </td>
+											                </tr>
+                                                             <tr>
+												                <td style="vertical-align:top;">
+												                    @grid4.GetHtml()
+												                </td>
+											                </tr>
+                                                             <tr>
+												                <td style="vertical-align:top;">
+												               </td>
+												                
+											                </tr>												
+										                </tbody>
+                                                        </table>
+                                                
+                                                      
+									                </td>
+								                </tr>
+							
+							                </tbody>
+                                            </table>
+				</td>
+        </tr>
+		</tbody>
+</table>						
+
+<div id="TemeljnicaVrDialog" class="hidden"></div>
+<div id="TemeljnicaDialog" class="hidden"></div>
+<div id="TemeljnicaStDialog" class="hidden"></div>
+<div id="poruka_Master"></div>
+
+
+
+@section JavaScript {
+
+    <script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+
+    $(document).ready(function () 
+        {
+      
+            @grid2.GetJavaScript()
+             jQuery(@InLine.Model.Data.FieldString.View.TemeljnicaVr.TemeljnicaVrEntity).hideCol('@InLine.Model.Data.FieldString.View.TemeljnicaVr.ID_TemeljnicaVr');
+            jQuery(@InLine.Model.Data.FieldString.View.TemeljnicaVr.TemeljnicaVrEntity).hideCol('@InLine.Model.Data.FieldString.View.TemeljnicaVr.ID_GlavnaKnjiga');
+                        jQuery(@InLine.Model.Data.FieldString.View.TemeljnicaVr.TemeljnicaVrEntity).hideCol('@InLine.Model.Data.FieldString.View.TemeljnicaVr.Opis');
+
+            @grid3.GetJavaScript();
+              jQuery(@InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity).hideCol('@InLine.Model.Data.FieldString.View.Temeljnica.ID_Temeljnica');
+              jQuery(@InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity).hideCol('@InLine.Model.Data.FieldString.View.Temeljnica.ID_TemeljnicaVr');
+                jQuery(@InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity).hideCol('@InLine.Model.Data.FieldString.View.Temeljnica.PocetnoStanje');
+                 jQuery(@InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity).hideCol('@InLine.Model.Data.FieldString.View.Temeljnica.ZavrsnoKnjizenje');
+
+            @grid4.GetJavaScript();
+            jQuery(@InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity).hideCol('@InLine.Model.Data.FieldString.View.TemeljnicaSt.ID_TemeljnicaSt');
+              jQuery(@InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity).hideCol('@InLine.Model.Data.FieldString.View.TemeljnicaSt.ID_Temeljnica');
+              jQuery(@InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity).hideCol('@InLine.Model.Data.FieldString.View.TemeljnicaSt.KontniPlanStNaziv');
+               jQuery(@InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity).hideCol('@InLine.Model.Data.FieldString.View.TemeljnicaSt.Tecaj');
+
+
+            var grid = '@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity';
+            setTimeout(function () {
+             jQuery(grid).trigger('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.reloadGrid');
+         }, 2000)
+
+        });
+
+
+    </script>
+
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+            var grid = "#" + '@InLine.Model.Data.FieldString.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjektEntity';
+            var grid2 = "#" + '@InLine.Model.Data.FieldString.View.TemeljnicaVr.TemeljnicaVrEntity';
+            var grid3 = "#" + '@InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity';
+            var grid4 = "#" + '@InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity';
+
+
+            $(window).bind('resize', function () {
+                $(grid).setGridWidth($(window).width());
+               $(grid2).setGridWidth($(window).width()/3.7);
+              $(grid3).setGridWidth($(window).width()/1.39);
+                $(grid4).setGridWidth($(window).width());
+            }).trigger('resize');
+
+ 
+             $('#Godina').val(@kojaGodina + "   " + '@kojiNaziv.ToUpper()' );
+              kojaGlavnaKnjigaPromjena = @Model.ID_GlavnaKnjiga;
+
+
+//            $("#cButton").click(function () {
+//                $(grid).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.clearGridData', true);
+//                $(grid2).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.clearGridData', true);
+//                $(grid3).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.clearGridData', true);
+//                $(grid4).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.clearGridData', true);
+//            });
+
+//        });
+
+
+//        $(function () {
+//            $(".NoReload").click(function () {
+//                $("#gbox_GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt").show();
+//                $('#combo').hide();
+//            });
+
+//   
+//            $(".NoReloadTd input[type=text]").keypress(function (e) {
+//                // Enter pressed?
+//                if (e.which == 10 || e.which == 13) {
+
+//                    $("#sButton").click();
+//                }
+//            });
+
+//        });
+
+
+//        $(function () {
+//            $('form').each(function () {
+//                $("input.NoReload[type=button]").keypress(function (e) {
+//                    // Enter pressed?
+//                    if (e.which == 10 || e.which == 13) {
+
+//                        $("#sButton").click();
+
+//                    }
+//                });
+
+//                $('input[type=submit]').hide();
+//            });
+
+        });
+
+
+</script>
+
+
+
+
+ <script type="text/javascript">
+
+     $.TemeljnicaVrMasterLoad = function (data) {
+         var prvisw = $(this).getDataIDs()[0];
+         jQuery(this).setSelection(prvisw, true);
+     };
+
+
+     $.TemeljnicaMasterLoad = function (data) {
+         var prvisw = $(this).getDataIDs()[0];
+         jQuery(this).setSelection(prvisw, true);
+     };
+
+
+     $.TemeljnicaVrOnSelectRow = function () {
+         $.OcistiPager();
+
+         Dialozi.LoadSlaveGrid("@InLine.Model.Data.FieldString.Temeljnica.TemeljnicaEntity", "@InLine.Model.Data.FieldString.View.TemeljnicaVr.TemeljnicaVrEntity", "@InLine.Model.Data.FieldString.View.Temeljnica.ID_TemeljnicaVr", "@InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo", "@InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity");
+         var grid = "#" + '@InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity';
+         $(grid).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.clearGridData', true);
+     };
+
+
+     $.TemeljnicaOnSelectRow = function () {
+         $.OcistiPager();
+
+         Dialozi.LoadSlaveGrid("@InLine.Model.Data.FieldString.TemeljnicaSt.TemeljnicaStEntity", "@InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity", "@InLine.Model.Data.FieldString.View.TemeljnicaSt.ID_Temeljnica", "@InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo", "@InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity");
+
+     };
+
+
+     $.TemeljnicaStOnSelectRow = function () {
+         var grid = "#" + '@InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity';
+         var selectedRowId = $(this).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.getGridParam', '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.selrow');
+         var imeKonto = $(this).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.getCell', selectedRowId, '@InLine.Model.Data.FieldString.View.TemeljnicaSt.KontniPlanStNaziv');
+         jQuery(grid + "Pager").text(imeKonto);
+
+     };
+
+     $.OcistiPager= function () {
+         var grid = "#" + '@InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity';
+         jQuery(grid + "Pager").text("");
+
+     };
+
+
+
+     $.FooterSaldoFormater = function () {
+
+         var Duguje = $('.ui-jqgrid-sdiv').find('td[aria-describedby="TemeljnicaSt_IznosDuguje"]').text();
+         var Potrazuje = $('.ui-jqgrid-sdiv').find('td[aria-describedby="TemeljnicaSt_IznosPotrazuje"]').text();
+         var DugujeValuta = $('.ui-jqgrid-sdiv').find('td[aria-describedby="TemeljnicaSt_IznosDugujeValuta"]').text();
+         var PotrazujeValuta = $('.ui-jqgrid-sdiv').find('td[aria-describedby="TemeljnicaSt_IznosPotrazujeValuta"]').text();
+
+         Duguje = Duguje.replace(/\./g, '');
+         Potrazuje = Potrazuje.replace(/\./g, '');
+         DugujeValuta = DugujeValuta.replace(/\./g, '');
+         PotrazujeValuta = PotrazujeValuta.replace(/\./g, '');
+
+         Duguje = Duguje.replace(',', '.');
+         Potrazuje = Potrazuje.replace(',', '.');
+         DugujeValuta = DugujeValuta.replace(',', '.');
+         PotrazujeValuta = PotrazujeValuta.replace(',', '.');
+
+         var DugujeIznos = parseFloat(Duguje);
+         var PotrazujeIznos = parseFloat(Potrazuje);
+         var DugujeValutaIznos = parseFloat(DugujeValuta);
+         var PotrazujeValutaIznos = parseFloat(PotrazujeValuta);
+
+         if (DugujeIznos != PotrazujeIznos) {
+
+             $('.ui-jqgrid-sdiv td[aria-describedby="TemeljnicaSt_IznosDuguje"]').removeClass("@gridFooterColumnClass").addClass("@fontColorREDClass");
+             $('.ui-jqgrid-sdiv td[aria-describedby="TemeljnicaSt_IznosPotrazuje"]').removeClass("@gridFooterColumnClass").addClass("@fontColorREDClass");
+
+         }
+         else {
+             $('.ui-jqgrid-sdiv td[aria-describedby="TemeljnicaSt_IznosDuguje"]').removeClass("@fontColorREDClass");
+             $('.ui-jqgrid-sdiv td[aria-describedby="TemeljnicaSt_IznosPotrazuje"]').removeClass("@fontColorREDClass");
+         }
+
+         if (DugujeValutaIznos != PotrazujeValutaIznos) {
+             $('.ui-jqgrid-sdiv td[aria-describedby="TemeljnicaSt_IznosDugujeValuta"]').removeClass("@gridFooterColumnClass").addClass("@fontColorREDClass");
+             $('.ui-jqgrid-sdiv td[aria-describedby="TemeljnicaSt_IznosPotrazujeValuta"]').removeClass("@gridFooterColumnClass").addClass("@fontColorREDClass");
+         }
+         else {
+             $('.ui-jqgrid-sdiv td[aria-describedby="TemeljnicaSt_IznosDugujeValuta"]').removeClass("@fontColorREDClass");
+             $('.ui-jqgrid-sdiv td[aria-describedby="TemeljnicaSt_IznosPotrazujeValuta"]').removeClass("@fontColorREDClass");
+         }
+     };
+
+
+</script>
+
+<script type="text/javascript">
+
+
+    $.addTemeljnicaVr = function () {
+        var gridTitle = '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.gview_' + '@InLine.Model.Data.FieldString.View.TemeljnicaVr.TemeljnicaVrEntity' + '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.JqGridTitle';
+        var title = jQuery(gridTitle).text();
+        var comboId = kojaGlavnaKnjigaPromjena;
+        Dialozi.InsertEditSlave("@InLine.Model.Data.FieldString.TemeljnicaVr.TemeljnicaVrEntity", "@InLine.Model.Data.FieldString.View.TemeljnicaVr.TemeljnicaVrEntity", "", "@InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo", "@InLine.Model.Data.FieldString.View.TemeljnicaVr.TemeljnicaVrEntity", "@InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert", 800, 350, title, "@InLine.Model.Data.FieldString.View.TemeljnicaVr.TemeljnicaVrEntity", comboId);
+    };
+
+    $.TemeljnicaVrDetail = function () {
+        var gridTitle = '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.gview_' + '@InLine.Model.Data.FieldString.View.TemeljnicaVr.TemeljnicaVrEntity' + '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.JqGridTitle';
+        var title = jQuery(gridTitle).text();
+        Dialozi.InsertEditSlave("@InLine.Model.Data.FieldString.TemeljnicaVr.TemeljnicaVrEntity", "@InLine.Model.Data.FieldString.View.TemeljnicaVr.TemeljnicaVrEntity", "@InLine.Model.Data.FieldString.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjektEntity", "@InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo", "@InLine.Model.Data.FieldString.View.TemeljnicaVr.TemeljnicaVrEntity", "@InLine.UI.Web.Helper.KeyWord.TipAkcija.Edit", 800, 350, title, "@InLine.Model.Data.FieldString.View.TemeljnicaVr.TemeljnicaVrEntity");
+    };
+
+    $.deleteTemeljnicaVr = function () {
+        Dialozi.DeleteIzGrida("@InLine.Model.Data.FieldString.TemeljnicaVr.TemeljnicaVrEntity", "@InLine.Model.Data.FieldString.View.TemeljnicaVr.TemeljnicaVrEntity", "@InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo", "Temeljnica");
+    };
+
+    $.addTemeljnica = function () {
+        var gridTitle = '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.gview_' + '@InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity' + '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.JqGridTitle';
+        var title = jQuery(gridTitle).text();
+        Dialozi.InsertEditSlave("@InLine.Model.Data.FieldString.Temeljnica.TemeljnicaEntity", "@InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity", "@InLine.Model.Data.FieldString.View.TemeljnicaVr.TemeljnicaVrEntity", "@InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo", "@InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity", "@InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert", 800, 470, title, "@InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity");
+    };
+
+    $.TemeljnicaDetail = function () {
+        var gridTitle = '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.gview_' + '@InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity' + '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.JqGridTitle';
+        var title = jQuery(gridTitle).text();
+        Dialozi.InsertEditSlave("@InLine.Model.Data.FieldString.Temeljnica.TemeljnicaEntity", "@InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity", "@InLine.Model.Data.FieldString.View.TemeljnicaVr.TemeljnicaVrEntity", "@InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo", "@InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity", "@InLine.UI.Web.Helper.KeyWord.TipAkcija.Edit", 800, 470, title, "@InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity");
+    };
+
+    $.deleteTemeljnica = function () {
+        Dialozi.DeleteIzGrida("@InLine.Model.Data.FieldString.Temeljnica.TemeljnicaEntity", "@InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity", "@InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo", "Temeljnica");
+    };
+
+    $.addTemeljnicaSt = function () {
+        var gridTitle = '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.gview_' + '@InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity' + '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.JqGridTitle';
+        var title = jQuery(gridTitle).text();
+        Dialozi.InsertEditSlave("@InLine.Model.Data.FieldString.TemeljnicaSt.TemeljnicaStEntity", "@InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity", "@InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity", "@InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo", "@InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity", "@InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert", 800, 650, title, "@InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity");
+    };
+
+    $.TemeljnicaStDetail = function () {
+        var gridTitle = '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.gview_' + '@InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity' + '@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.JqGridTitle';
+        var title = jQuery(gridTitle).text();
+        Dialozi.InsertEditSlave("@InLine.Model.Data.FieldString.TemeljnicaSt.TemeljnicaStEntity", "@InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity", "@InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity", "@InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo", "@InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity", "@InLine.UI.Web.Helper.KeyWord.TipAkcija.Edit", 800, 650, title, "@InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity");
+    };
+
+    $.deleteTemeljnicaSt = function () {
+        Dialozi.DeleteIzGrida("@InLine.Model.Data.FieldString.TemeljnicaSt.TemeljnicaStEntity", "@InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity", "@InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo", "Temeljnica");
+    };
+
+</script>
+
+ <script type="text/javascript">
+
+     $(function () {
+         $("#jqgh_TemeljnicaVr_IDValuta").text("Valuta");
+         $("#jqgh_TemeljnicaVr_Tecaj").text("Tečaj");
+         $("#jqgh_TemeljnicaVr_Oznaka").text("Broj");
+
+         $("#jqgh_Temeljnica_IDValuta").text("Valuta");
+         $("#jqgh_Temeljnica_Knjizeno").text("Knjiženo");
+         $("#jqgh_Temeljnica_PocetnoStanje").text("Početno stanje");
+         $("#jqgh_Temeljnica_ZavrsnoKnjizenje").text("Završno knjiženje");
+         $("#jqgh_Temeljnica_DatumKnjizenje").text("Datum knjiženja");
+         $("#jqgh_Temeljnica_SaldoValuta").text("Saldo valuta");
+         $("#jqgh_Temeljnica_Oznaka").text("Broj");
+
+
+         $("#jqgh_TemeljnicaSt_RedniBroj").text("RB");
+         $("#jqgh_TemeljnicaSt_KontniPlanStNaziv").text("Konto");
+         $("#jqgh_TemeljnicaSt_IznosDuguje").text("Duguje");
+         $("#jqgh_TemeljnicaSt_IznosPotrazuje").text("Potražuje");
+         $("#jqgh_TemeljnicaSt_IDValuta").text("Valuta");
+         $("#jqgh_TemeljnicaSt_IznosDugujeValuta").text("Duguje valuta");
+         $("#jqgh_TemeljnicaSt_IznosPotrazujeValuta").text("Potražuje valuta");
+         $("#jqgh_TemeljnicaSt_KontniPlanStTecaj").text("Tečaj");
+     });
+
+</script>
+
+
+
+<script type="text/javascript">
+
+    $("." + '@Autocomplete').each(function () {
+
+        var widgetAutoComplete = $(this).autocomplete({
+
+            showHeader: true,
+
+            source: function (request, response) {
+
+            var kojiKriterij = 3;
+            var url = '@Url.Action("GetGlavnaKnjiga", @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo)';
+
+
+                $.ajax({
+                    url: url,
+                    data: { query: request.term, kriterij: kojiKriterij },
+                    dataType: 'json',
+                    type: 'GET',
+                    success: function (data) {
+                        response($.map(data,
+                        function (item) {
+                            return {
+                                label: item.ID_GlavnaKnjiga,
+                                value1: item.Godina,
+                                value2: item.Naziv,
+                                value3: item.IDValuta
+                            }
+
+                        }));
+                    }
+                })
+            },
+            select:
+                function (event, ui) {
+                    kojaGlavnaKnjigaPromjena = ui.item.label;
+                    $("@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + "@InLine.Model.Data.FieldString.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt.Godina").val(ui.item.value1 + "   " + ui.item.value2.toUpperCase());
+//                    $("@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + "@InLine.Model.Data.FieldString.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt.Naziv").val(ui.item.value2.toUpperCase());
+                    ReloadMaster(ui.item.label);
+                    return false;
+                },
+
+            minLength: 0
+
+        }).data("autocomplete");
+
+
+        widgetAutoComplete._renderItem = function (ul, item) {
+
+            return $("<li><table class='tblAutocomplete'></table></li>").data("item.autocomplete-item", item).append("<a><table width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><td width='100px'>" + item.value1 + "</td><td width='350px'>" + item.value2 + "</td><td width='90px'>" + item.value3 + "</td></tr></table></a>").appendTo(ul);
+        }
+
+        widgetAutoComplete._renderMenu = function (ul, item) {
+
+            var self = this;
+            $.each(item, function (index, items) {
+                if (index == 0)
+                    ul.append("<li><table class='autocompleteHeader'  width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><th width='100px'>" + '@InLine.Model.Data.FieldString.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt.Godina' + "</th><th width='350px'>" + '@InLine.Model.Data.FieldString.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt.Naziv' + "</th><th width='90px'>" + 'Valuta GK' + "</th></tr></table></li>");
+                self._renderItemData(ul, items);
+            });
+        }
+
+
+    });
+
+
+
+    // Test Autocomplete elementi
+    $("." + '@AutocompleteTest').each(function () {
+
+
+        var widgetAutoComplete = $(this).autocomplete({
+            showHeader: true,
+            source: function (request, response) {
+
+                var kojiKriterij = 3;
+                var url = '@Url.Action("GetGlavnaKnjiga", @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo)';
+                var kojalista = "@ulGlavnaKnjigaSelector";
+
+               $.AutocompleteGlavnaKnjiga(request, response, kojalista, url, kojiKriterij, @Start, @Count);
+
+            },
+
+            select:
+                function (event, ui) {
+                    kojaGlavnaKnjigaPromjena = ui.item.label;
+                    $("@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + "@InLine.Model.Data.FieldString.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt.Godina").val(ui.item.value1 + "   " + ui.item.value2.toUpperCase());
+                    //                    $("@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + "@InLine.Model.Data.FieldString.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt.Naziv").val(ui.item.value2.toUpperCase());
+                    ReloadMaster(ui.item.label);
+                    return false;
+                },
+
+            minLength: 0
+
+        }).data("autocomplete");
+
+
+        widgetAutoComplete._renderItem = function (ul, item) {
+
+            ul.attr('id', 'ulGlavnaKnjiga');
+            return $("<li class='tblAutocompleteLi'><table class='tblAutocomplete'></table></li>").data("item.autocomplete-item", item).append("<a><table width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><td width='50px'>" + item.value1 + "</td><td width='70px'>" + item.value4 + "</td><td width='350px'>" + item.value2 + "</td><td width='90px'>" + item.value3 + "</td></tr></table></a>").appendTo("#ulGlavnaKnjiga");
+        }
+
+        widgetAutoComplete._renderMenu = function (ul, item) {
+
+            var self = this;
+            $.each(item, function (index, items) {
+                if (index == 0)
+                    ul.append("<li><table class='autocompleteHeader'  width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><th width='70px'>" + '@InLine.Model.Data.FieldString.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt.Godina' + "</th><th width='70px'>" + '@InLine.Model.Data.FieldString.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt.Oznaka' + "</th><th width='350px'>" + '@InLine.Model.Data.FieldString.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt.Naziv' + "</th><th width='90px'>" + 'Valuta GK' + "</th></tr></table></li>");
+                self._renderItemData(ul, items);
+            });
+        }
+
+    });
+
+
+
+
+    $.AutocompleteGlavnaKnjiga = function (request, response, kojalista, url, kojiKriterij, Start, Count ) {
+
+                console.log('ajax prvi');
+                $.ajax({
+                    url: url,
+                    data: { query: request.term, kriterij: kojiKriterij, start: Start, count: Count },
+                    dataType: 'json',
+                    type: 'GET',
+                    success: function (data) {
+                        response($.map(data,
+                        function (item) {
+                            return {
+                                label: item.ID_GlavnaKnjiga,
+                                value1: item.Godina,
+                                value4: item.Oznaka,
+                                value2: item.Naziv,
+                                value3: item.IDValuta
+                            }
+
+                        }));
+
+                        var previousScroll = 0;
+                        var page = 1;
+
+                        $(kojalista).scroll(function () {
+
+                            var currentScroll = $(this).scrollTop();
+
+                            var x = $(kojalista).prop('scrollHeight');
+                            var y = $(kojalista).prop('offsetHeight');
+
+                            if (currentScroll > previousScroll) {
+
+                                if(page >=0)
+                                {
+                                    if (currentScroll >= x - y)
+                                        {
+                                           page += 1;
+
+                                            var countPage = page * Count
+                                            console.log('ajax ostali');
+                                            $.ajax({
+                                                url: url,
+                                                data: { query: request.term, kriterij: kojiKriterij, start: Start, count: countPage },
+                                                dataType: 'json',
+                                                type: 'GET',
+                                                success: function (data) {
+                                                    response($.map(data,
+                                                        function (item) {
+
+                                                            //$("<li class='scroler'><table class='tblAutocomplete'></table></li>").data("item.autocomplete-item", item).append("<a><table width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><td width='100px'>" + item.Godina + "</td><td width='350px'>" + data.Naziv + "</td><td width='90px'>" + data.IDValuta + "</td></tr></table></a>").appendTo("#divscroll");
+
+                                                                return {
+                                                                            label: item.ID_GlavnaKnjiga,
+                                                                            value1: item.Godina,
+                                                                            value4: item.Oznaka,
+                                                                            value2: item.Naziv,
+                                                                            value3: item.IDValuta
+                                                                        }
+                                                                }));
+                                                            }
+                                                        })
+                                            }
+                                }
+                                    
+
+                            }
+                            else {
+                                page -= 1;
+                            }
+
+                            previousScroll = currentScroll;
+
+                        });
+                    }
+                })
+    };
+
+
+    function ReloadMaster(id) {
+
+        var polje = '@InLine.Model.Data.FieldString.View.GlavnaKnjigaKontniPlanPoslovnaGodinaPoslovniSubjekt.ID_GlavnaKnjiga';
+        var grid = '@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.TemeljnicaVr.TemeljnicaVrEntity';
+        var kontroler = "@InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo";
+        var akcija = "../" + kontroler + "/" + '@InLine.Model.Data.FieldString.View.TemeljnicaVr.TemeljnicaVrEntity' + "Grid";
+        var grid2 = '@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity';
+        var grid3 = '@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity';
+
+        var masterid = id;
+        jQuery(grid).setSelection(masterid, true);
+
+        jQuery(grid).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.setGridParam', { url: akcija, postData: { key: polje, value: masterid} });
+        jQuery(grid).trigger('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.reloadGrid');
+
+        $(grid2).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.clearGridData', true);
+        $(grid3).jqGrid('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.clearGridData', true);
+
+    };
+
+
+    $(".btnDropDownSymbol").click(function () {
+        Dialozi.ComboAll();
+    });
+
+
+  </script>
+
+
+
+    <script type="text/javascript">
+        $.TemeljnicaFormater = function () {
+            var rows = $("#Temeljnica").getDataIDs();
+            for (var i = 0; i < rows.length; i++) {
+                var status = $("#Temeljnica").getCell(rows[i], "Saldo");
+                if ((status != '0,00') && (status != '')) {
+                 $("#Temeljnica").jqGrid('setRowData', rows[i], false, { background: '#FFE6E6', border: '#FFADAD' });
+//                    var _tr = $("#Temeljnica").jqGrid('setRowData', rows[i], false);
+//                    _tr.addClass('GriTemeljnicaRazlika');
+                }
+            }
+
+        };
+
+   </script>
+
+}

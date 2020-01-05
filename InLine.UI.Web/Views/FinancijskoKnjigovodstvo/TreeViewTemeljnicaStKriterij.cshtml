@@ -1,0 +1,149 @@
+﻿
+@model InLine.UI.Web.Controllers.KriterijFolder
+
+ <style type="text/css">
+ #radioGumbi 
+ {
+    padding-bottom:10px;
+    display: none;
+}
+ #selectContainer 
+ {
+    width: 100%;
+ }
+ 
+ #selectLista
+ {
+    float:left;
+ }
+ 
+ .selectPoruka
+ {
+    width: 10px;
+    color:Red;
+    font-size: 15px;
+    float:right;
+    display: none;
+    cursor: pointer;
+ }
+ 
+  .selectPorukaOpis
+ {
+    color:Red;
+    font-size: 12px;
+    float:left;
+ }
+ 
+ .combochosen
+ {
+    width:93%;
+}
+
+
+
+
+
+
+</style>
+
+
+@{
+    var treeviewId = @Model.KojiKriterij;
+}
+
+
+
+	
+@if (@Model.Folderi.Any())
+{
+
+@helper DropCombo(IEnumerable<InLine.UI.Web.Controllers.Folder> folders)
+    {
+    string rbName = "rb_" + @folders.ElementAt(0).ID_Kriterij;
+    bool obavezan = false;
+    bool obavezanDa = false;
+    bool obavezanNe = false;
+    string rbNameBezRb = @folders.ElementAt(0).ID_Kriterij.ToString();
+    string DivPoruka = @folders.ElementAt(0).ID_Kriterij + "_selectPoruka";
+    string DivPorukaOpis = @folders.ElementAt(0).ID_Kriterij + "_selectPorukaOpis";
+    
+  
+    <div>
+    @foreach (var folder in folders)
+    {
+        
+        if (folder.ID_Kriterij.ToString() == rbNameBezRb && folder.IsKriterijObavezanFolder == true)
+        {
+            obavezan = true;
+        }
+
+        if (obavezan)
+        {
+            obavezanDa = true;
+            obavezanNe = false;
+        }
+
+        else
+        {
+            obavezanDa = false;
+            obavezanNe = true;
+        }
+
+    }
+    
+        <div id ="radioGumbi">
+            kriterij obavezan:
+                <input type="radio" name="@rbName" value="1" checked="@obavezanDa" />da
+                <input type="radio" name="@rbName" value="0" checked="@obavezanNe"/>ne
+            </div> 
+
+        </div>
+  
+       <div id="selectContainer">
+       
+            <select id="@folders.ElementAt(0).ID_Kriterij" class="combochosen" >
+            <option value='-1'>--Odaberite--</option>
+
+            @foreach (var folder in folders)
+            {
+                <option value='@folder.ID_KriterijSt' selected="@folder.IsChecked" >@folder.KriterijStNaziv </option> 
+                   
+            }
+
+           </select>
+     
+        
+            <div id="@DivPoruka" class="selectPoruka">
+            *
+            </div>
+            
+            <div id="@DivPorukaOpis" class="selectPorukaOpis">
+            </div>
+
+         </div>
+       
+  }
+   
+    <br />
+ 
+<div id="dropcombo"  >
+	@DropCombo(Model.Folderi)
+</div>
+
+
+}
+
+ else
+ {
+    <br />
+    <br />
+    
+    <div>Za ovaj kriterij nema stavaka</div>
+     
+  }
+
+
+
+
+
+

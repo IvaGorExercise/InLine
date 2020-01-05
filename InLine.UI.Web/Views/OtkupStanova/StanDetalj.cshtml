@@ -1,0 +1,103 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.StanDetaljFormFormatted
+
+<style type="text/css">
+
+ #BrojUgovor{ width:85px;}
+
+ 
+</style>
+@{
+    string IDPostaPomoc = "IDPostaPomoc";
+}
+@{
+    string prefixLabela = "labela_Stan_Detalj_";
+}
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.ID_Posta);                                           
+    @Html.ValidationSummary(false)
+                                                                                                        
+                                               
+    <table class ="table1 @InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormBackground" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+        <tbody>
+            <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+     
+     <tr>
+	    <td >@Html.LabelFor(model => model.Oznaka, new { id = @prefixLabela + @Html.NameFor(model => model.Oznaka) })</td>
+        <td colspan="3">@Html.EditorFor(model => model.Oznaka)
+           @Html.ValidationMessageFor(model => model.Oznaka) </td>				                
+    </tr>
+
+     <tr>
+	    <td >@Html.LabelFor(model => model.Naziv, new { id = @prefixLabela + @Html.NameFor(model => model.Naziv) })</td>
+        <td colspan="3">@Html.EditorFor(model => model.Naziv)
+           @Html.ValidationMessageFor(model => model.Naziv) </td>				                
+    </tr>
+
+   <tr>
+	    <td>@Html.LabelFor(model => model.NazivKr, new { id = @prefixLabela + @Html.NameFor(model => model.NazivKr) })</td>
+        <td>@Html.EditorFor(model => model.NazivKr)
+        @Html.ValidationMessageFor(model => model.NazivKr)</td>	
+        <td>@Html.LabelFor(model => model.Kratica, new { id = @prefixLabela + @Html.NameFor(model => model.Kratica) })</td>
+        <td>@Html.EditorFor(model => model.Kratica)
+        @Html.ValidationMessageFor(model => model.Kratica)</td>								                
+    </tr>
+
+      <tr>
+	    <td>@Html.LabelFor(model => model.Ulica, new { id = @prefixLabela + @Html.NameFor(model => model.Ulica) })</td>
+        <td>@Html.EditorFor(model => model.Ulica)
+        @Html.ValidationMessageFor(model => model.Ulica)</td>
+        <td>@Html.LabelFor(model => model.Kat, new { id = @prefixLabela + @Html.NameFor(model => model.Kat) })</td>
+        <td>@Html.EditorFor(model => model.Kat)
+        @Html.ValidationMessageFor(model => model.Kat)</td>							                
+    </tr>
+    <tr>
+         <td>@Html.LabelFor(model => model.Posta, new { id = @prefixLabela + @Html.NameFor(model => model.Posta) })</td>
+         <td colspan="3">@Html.DropDownList(@IDPostaPomoc, (SelectList)ViewBag.IDPosta)
+        </td>
+    </tr>
+
+      <tr>
+	    <td>@Html.LabelFor(model => model.Povrsina, new { id = @prefixLabela + @Html.NameFor(model => model.Povrsina) })</td>
+        <td>@Html.EditorFor(model => model.Povrsina)
+        @Html.ValidationMessageFor(model => model.Povrsina)</td>	
+        <td>@Html.LabelFor(model => model.BrojSoba, new { id = @prefixLabela + @Html.NameFor(model => model.BrojSoba) })</td>
+        <td>@Html.EditorFor(model => model.BrojSoba)
+        @Html.ValidationMessageFor(model => model.BrojSoba)</td>								                
+    </tr>
+
+       <tr>
+	    <td>@Html.LabelFor(model => model.KatastarskaCestica, new { id = @prefixLabela + @Html.NameFor(model => model.KatastarskaCestica) })</td>
+        <td>@Html.EditorFor(model => model.KatastarskaCestica)
+        @Html.ValidationMessageFor(model => model.KatastarskaCestica)</td>	
+        <td>@Html.LabelFor(model => model.KatastarskaCesticaOpcina, new { id = @prefixLabela + @Html.NameFor(model => model.KatastarskaCesticaOpcina) })</td>
+        <td>@Html.EditorFor(model => model.KatastarskaCesticaOpcina)
+        @Html.ValidationMessageFor(model => model.KatastarskaCesticaOpcina)</td>								                
+    </tr>
+
+
+      
+        </tbody>
+    </table>
+  <div id="poruka_Master"></div>
+    
+    
+}
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/chosen.jquery.min.js")" type="text/javascript"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#IDPostaPomoc").chosen();
+
+    });
+
+
+
+    $(function () {
+        $("#labela_labela_Stan_Detalj_BrojUgovor").text("Broj ugovora");
+    });
+
+</script>
+

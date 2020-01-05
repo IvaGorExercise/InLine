@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0FF38CA7-F4E8-4BAB-902C-41D5BDB13A0C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InLine.Service.Admin</RootNamespace>
+    <AssemblyName>InLine.Service.Admin</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\ILogin.cs" />
+    <Compile Include="Interfaces\IPocetnaSaVijestima.cs" />
+    <Compile Include="Classes\Login.cs" />
+    <Compile Include="Classes\PocetnaSaVijestima.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InLine.Common\InLine.Common.csproj">
+      <Project>{10170356-9DCC-42D1-A404-883E52F5B8EA}</Project>
+      <Name>InLine.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InLine.Model.Admin\InLine.Model.Admin.csproj">
+      <Project>{9FAE6E45-E207-413B-8238-0CDF03560434}</Project>
+      <Name>InLine.Model.Admin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InLine.Model.Data\InLine.Model.Data.csproj">
+      <Project>{B4CC4F1B-9575-42B8-9434-15AC61E53FA5}</Project>
+      <Name>InLine.Model.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InLine.Repository.Admin\InLine.Repository.Admin.csproj">
+      <Project>{DBAE2D85-BC65-4F88-A94B-3890484E053E}</Project>
+      <Name>InLine.Repository.Admin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InLine.Repository.Data\InLine.Repository.Data.csproj">
+      <Project>{5969B753-5839-4814-BF96-CA3270EDA154}</Project>
+      <Name>InLine.Repository.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,154 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.UgovorStanOtkupMoratorijDetaljFormFormatted
+
+ <style type="text/css">
+.text-box[type=text], .text-box[type=number] { width:100px; border:"0";}
+#MoratorijDatumPomoc {width:100px; border:"0"}
+.Generalije {font-size: .9em}
+
+</style>
+
+ @{
+     string prefixLabela = "labela_UgovorStanOtkupMoratorij_Detalj_";
+ }
+
+ @{
+     string Akcija = @InLine.Model.Data.FieldString.View.UgovorStanOtkupMoratorij.UgovorStanOtkupMoratorijEntity + InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert;
+     string IDForma = @InLine.Model.Data.FieldString.View.UgovorStanOtkupMoratorij.UgovorStanOtkupMoratorijEntity + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Forma;
+     string MoratorijDatum = "MoratorijDatum";
+     string MoratorijDatumPomoc = "MoratorijDatumPomoc";
+     string Datepicker = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Datepicker;
+ 
+
+}
+
+
+@using (Html.BeginForm(Akcija, @InLine.UI.Web.T4.ControllerName.ControllerName.OtkupStanova, FormMethod.Post, new { id = IDForma, @class = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormClass }))
+{
+    @Html.HiddenFor(model => model.ID_UgovorStanOtkupMoratorij);
+    @Html.HiddenFor(model => model.ID_UgovorStanOtkup);
+    @Html.HiddenFor(model => model.BrojUgovor);
+    @Html.HiddenFor(model => model.MoratorijDatum);                                                         
+    @Html.HiddenFor(model => model.OsobaInsert);
+    @Html.HiddenFor(model => model.DatumInsert);                                                                                                                            
+    @Html.HiddenFor(model => model.OsobaUpdate);
+    Html.HiddenFor(model => model.DatumUpdate);  
+
+                                               
+                                            
+                                                                                                                          
+    @Html.ValidationSummary(true)
+
+    <table class ="UgovorStanOtkupMoratorijDetail" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+       <tbody>
+
+        <tr>
+	        <td>@Html.LabelFor(model => model.BrojUgovor, new { id = @prefixLabela + @Html.NameFor(model => model.BrojUgovor) })</td>
+            <td colspan ="3" >@Html.DisplayFor(model => model.BrojUgovor)</td>							                
+        </tr>
+
+      <tr>
+	        <td>@Html.LabelFor(model => model.BrojMoratorij, new { id = @prefixLabela + @Html.NameFor(model => model.BrojMoratorij) })</td>
+            <td>@Html.EditorFor(model => model.BrojMoratorij)</td>	
+            <td>@Html.LabelFor(model => model.MoratorijDatum, new { id = @prefixLabela + @Html.NameFor(model => model.MoratorijDatum) })</td>
+            <td>@Html.TextBox(@MoratorijDatumPomoc, null, new { @class = @Datepicker }) @Html.ValidationMessageFor(model => model.MoratorijDatum)</td>								                
+        </tr>
+
+        <tr><td colspan='4'></td></tr>
+
+         <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+
+            <tr>
+ 	          <table class="Generalije" width="100%">
+                    <tr>
+                 <td>@Html.LabelFor(model => model.OsobaInsert, new { id = @prefixLabela + @Html.NameFor(model => model.OsobaInsert) })
+                    @Html.DisplayFor(model => model.OsobaInsert)</td>
+                <td>@Html.LabelFor(model => model.DatumInsert, new { id = @prefixLabela + @Html.NameFor(model => model.DatumInsert) }) 
+                    @Html.DisplayFor(model => model.DatumInsert)</td>
+                 <td>@Html.LabelFor(model => model.OsobaUpdate, new { id = @prefixLabela + @Html.NameFor(model => model.OsobaUpdate) })
+                 @Html.DisplayFor(model => model.OsobaUpdate)</td>
+                <td>@Html.LabelFor(model => model.DatumUpdate, new { id = @prefixLabela + @Html.NameFor(model => model.DatumUpdate) })
+                    @Html.DisplayFor(model => model.DatumUpdate)</td>	
+                </tr>
+            </table>
+          </tr>
+      </tbody>
+    </table>
+    
+     <br />
+    <div id="poruka_UgovorStanOtkupMoratorij"></div>	
+
+}
+
+   <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+   <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        $(function () {
+            $("#labela_UgovorStanOtkupMoratorij_Detalj_BrojUgovor").text("Broj ugovora:");
+            $("#labela_UgovorStanOtkupMoratorij_Detalj_BrojMoratorij").text("Broj moratorija:");
+            $("#labela_UgovorStanOtkupMoratorij_Detalj_MoratorijDatum").text("Datum:");
+            $("#labela_UgovorStanOtkupMoratorij_Detalj_OsobaInsert").text("Kreirao:");
+            $("#labela_UgovorStanOtkupMoratorij_Detalj_OsobaUpdate").text("Promijenio:");
+            $("#labela_UgovorStanOtkupMoratorij_Detalj_DatumInsert").text("Kreirano datum:");
+            $("#labela_UgovorStanOtkupMoratorij_Detalj_DatumUpdate").text("Promjena datuma:");
+        });
+   
+
+    </script>
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('#' + '@InLine.Model.Data.FieldString.View.UgovorStanOtkupMoratorij.UgovorStanOtkupMoratorijEntity' + 'DialogSpremiKopiraj').hide();
+            $('#' + '@InLine.Model.Data.FieldString.View.UgovorStanOtkupMoratorij.UgovorStanOtkupMoratorijEntity' + 'DialogSpremiDodaj').hide();
+
+            Dialozi.DatePicker();
+
+        });
+
+
+         $(function () {
+            var value = '@Model.MoratorijDatum.GetValueOrDefault().ToShortDateString()';
+            Dialozi.PostaviDatumPolje('@MoratorijDatum', value);
+            Dialozi.DocumentReadyValid('@MoratorijDatum');
+        });
+
+
+        $('#' + '@MoratorijDatumPomoc').change(function (event) {
+            var dat = $('#' + '@MoratorijDatumPomoc').val();
+            Dialozi.PostaviDatumPolje('@MoratorijDatum', dat);
+        });
+
+
+    </script>
+
+
+
+     <script type="text/javascript">
+         function InsertEditSucces() {
+
+         }
+
+         function InsertEditError() {
+
+         }
+
+
+         function DeleteSucces() {
+
+         }
+
+
+         function DeleteError() {
+
+         }
+
+         function ProvjeraKodUnosa() {
+             return true;
+         }
+
+
+    </script>

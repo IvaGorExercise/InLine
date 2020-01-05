@@ -1,0 +1,82 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.UgovorStanOtkupTrosakDetaljFormFormatted
+
+ <style type="text/css">
+.text-box[type=text], .text-box[type=number], .text-box[type=date] { width:100px; border:"0";}
+#trosak-detail #BrojUgovor, #trosak-detail #Datum{ font-weight:bold;}
+
+</style>
+
+ @{
+    string prefixLabela = "labela_trosak_detalj_";
+ }
+
+<table class ="UgovorStanOtkupTrosakDetail form_background" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+   <tbody>
+
+      <tr id="tr1">
+	    <td style="background-color:#FFF2C2; font-weight:bold">@Html.LabelFor(model => model.BrojUgovor, new { id = @prefixLabela + @Html.NameFor(model => model.BrojUgovor) })</td>
+        <td >@Html.EditorFor(model => model.BrojUgovor)</td>	
+        <td style="background-color:#FFF2C2; font-weight:bold">@Html.LabelFor(model => model.Datum, new { id = @prefixLabela + @Html.NameFor(model => model.Datum) })</td>
+        <td>@Html.EditorFor(model => model.Datum)</td>								                
+    </tr>
+
+       
+     <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+     
+     <tr>
+	    <td>@Html.LabelFor(model => model.Iznos, new { id = @prefixLabela + @Html.NameFor(model => model.Iznos) })</td>
+        <td>@Html.EditorFor(model => model.Iznos)</td>	
+        <td>@Html.LabelFor(model => model.IDValuta, new { id = @prefixLabela + @Html.NameFor(model => model.IDValuta) })</td>
+        <td>@Html.EditorFor(model => model.IDValuta)</td>								                
+    </tr>
+
+   <tr>
+	    <td>@Html.LabelFor(model => model.BrojIzvod, new { id = @prefixLabela + @Html.NameFor(model => model.BrojIzvod) })</td>
+        <td>@Html.EditorFor(model => model.BrojIzvod)</td>	
+        <td>@Html.LabelFor(model => model.BrojStavka, new { id = @prefixLabela + @Html.NameFor(model => model.BrojStavka) })</td>
+        <td>@Html.EditorFor(model => model.BrojStavka)</td>								                
+    </tr>
+
+    
+ 
+      <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+
+        <tr>
+ 	    <td>@Html.LabelFor(model => model.OsobaInsert, new { id = @prefixLabela + @Html.NameFor(model => model.OsobaInsert) })</td>
+        <td>@Html.EditorFor(model => model.OsobaInsert)</td>
+         <td>@Html.LabelFor(model => model.DatumInsert, new { id = @prefixLabela + @Html.NameFor(model => model.DatumInsert) })</td>
+        <td>@Html.EditorFor(model => model.DatumInsert)</td>
+      </tr>
+
+     <tr>
+        <td>@Html.LabelFor(model => model.OsobaUpdate, new { id = @prefixLabela + @Html.NameFor(model => model.OsobaUpdate) })</td>
+        <td>@Html.EditorFor(model => model.OsobaUpdate)</td>
+        <td>@Html.LabelFor(model => model.DatumUpdate, new { id = @prefixLabela + @Html.NameFor(model => model.DatumUpdate) })</td>
+        <td>@Html.EditorFor(model => model.DatumUpdate)</td>            
+    </tr>
+
+    		
+  </tbody>
+</table>
+
+
+
+    <script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $("#labela_trosak_detalj_BrojUgovor").text("Broj ugovora");
+            $("#labela_trosak_detalj_Datum").text("Datum");
+            $("#labela_trosak_detalj_Iznos").text("Iznos");
+            $("#labela_trosak_detalj_IDValuta").text("Šifra valute");
+            $("#labela_trosak_detalj_BrojIzvod").text("Br. izvod");
+            $("#labela_trosak_detalj_BrojStavka").text("Br. stavka");
+            $("#labela_trosak_detalj_OsobaInsert").text("Kreirao");
+            $("#labela_trosak_detalj_OsobaUpdate").text("Promijenio");
+            $("#labela_trosak_detalj_DatumInsert").text("Kreirano datum");
+            $("#labela_trosak_detalj_DatumUpdate").text("Promjena datuma");
+
+        });
+   
+
+    </script>

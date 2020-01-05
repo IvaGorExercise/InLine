@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<DocumentationPreferences xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SavePreferences>true</SavePreferences>
+  <SuppressDialog>false</SuppressDialog>
+  <ConnectString>Data Source=DINKO-PC\WEB;Initial Catalog=InLineHuagati;User ID=sa;password=F0rtius;Persist Security Info=True;</ConnectString>
+  <DBServerVersion>11</DBServerVersion>
+  <PersistConnectString>true</PersistConnectString>
+  <PrefixEntityDocWithTableName>true</PrefixEntityDocWithTableName>
+  <PrefixMemberDocWithColumnName>true</PrefixMemberDocWithColumnName>
+  <UseExtendedProperties>true</UseExtendedProperties>
+  <ExtendedPropertyName>MS_Description</ExtendedPropertyName>
+  <UseIndexDefinitions>true</UseIndexDefinitions>
+  <StoreAsSummaryComment>true</StoreAsSummaryComment>
+  <StoreAsAttribute>false</StoreAsAttribute>
+  <AttributeName />
+</DocumentationPreferences>

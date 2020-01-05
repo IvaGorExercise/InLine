@@ -1,0 +1,222 @@
+﻿@model InLine.UI.Web.Models.ViewModelCustom.ObrociGrad
+
+@{
+    Layout = "~/Views/Shared/_LayoutFinancijsko.cshtml";
+}
+
+@{
+    int Pocelo = 0;
+    Pocelo = Model.FormiranjePocelo;
+}
+
+@{
+    String VodeceNule = "vodeceNule";
+}
+
+
+
+<style type="text/css">
+ #Mjesec{ width:150px;}
+ #Godina{ width:150px;}
+ #UvjetRevalorizacije{ width:150px;}
+ #BrojUgovorMinString{ width:150px;}
+ #BrojUgovorMaxString{ width:150px;}
+ #ID_ValutaPomoc_chzn{ width:150px;}
+ select{ width:312px;}
+ #Obrada
+ {
+   padding: 10px 10px 10px 10px;
+  }
+  
+      #btnFormirajObrok
+    {
+        margin-top: 7px;
+        background-repeat: no-repeat;
+        background-position: 10px 1px;
+        height: 30px;
+        font-size: 13px;
+        font-family: Arial;
+        color: #F2F2F2;
+        background-color: #5C80BC;
+        cursor: pointer;
+        font-weight: bold;
+        text-decoration: none;
+        width: 120px !important;
+        display: inline-block;
+        -moz-border-radius: 7px;
+        -webkit-border-radius: 7px;
+        border-radius: 7px; /* future proofing */
+        -khtml-border-radius: 7px;
+        box-shadow: 0 1px 4px 0 rgba(168, 168, 168, 0.6) inset;
+        border: 1px solid #5C80BC;
+    }
+    
+    #btnFormirajObrok:hover
+    {
+        background-repeat: no-repeat;
+        background-position: 10px 1px;
+        background-color: #92AAD2;
+        color: #FFFFFF;
+        border: 1px solid #92AAD2;
+        height: 30px;
+    }
+</style>
+
+@{
+    string IDValutaPomoc = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.ID_ValutaPomoc;
+}
+
+
+ <div class="PrviRed">
+          @Html.Partial("~/Views/" + InLine.UI.Web.T4.ControllerName.ControllerName.PregledUgovora + "/" + ViewList.PregledUgovora.ViewPregledUgovoraMenu + ".cshtml")
+ </div>
+
+
+ @using (Html.BeginForm("FormiranjeObroka", "OtkupStanova", FormMethod.Post))
+ {
+     @Html.HiddenFor(model => model.BrojUgovorMin);
+     @Html.HiddenFor(model => model.BrojUgovorMax);
+                                             
+     @Html.ValidationSummary(true)
+
+<table style="width:100%;">
+
+    <tbody>
+        <tr>
+            <td style="width:100%;">				
+                <table width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+		            <tbody>
+                        <tr>
+	                        <td style="width:20%;" >@Html.LabelFor(model => model.Mjesec)</td>
+                            <td colspan="3">@Html.TextBoxFor(model => model.Mjesec) @Html.TextBoxFor(model => model.Godina)
+                                 @Html.ValidationMessageFor(model => model.Mjesec)
+                                      @Html.ValidationMessageFor(model => model.Godina)
+
+                            </td>				                
+                        </tr>
+         @*               <tr>
+	                        <td style="width:20%;">@Html.LabelFor(model => model.IDValuta)</td>
+                            <td>@Html.DropDownList(IDValutaPomoc, (SelectList)ViewBag.IDValuta)</td>							                
+                         </tr>*@
+                         <tr>
+	                        <td style="width:20%;" >@Html.LabelFor(model => model.UvjetRevalorizacije)</td>
+                            <td colspan="3">@Html.EditorFor(model => model.UvjetRevalorizacije)</td>				                
+                        </tr>
+                          <tr>
+	                        <td style="width:20%;" >@Html.LabelFor(model => model.BrojUgovorMin)</td>
+                            <td colspan="3">@Html.TextBoxFor(model => model.BrojUgovorMinString, new { @class = @VodeceNule })</td>
+                          			                
+                        </tr>
+
+                         <tr>
+	                        <td style="width:20%;" >@Html.LabelFor(model => model.BrojUgovorMax)</td>
+                            <td colspan="3">@Html.TextBoxFor(model => model.BrojUgovorMaxString, new { @class = @VodeceNule })</td>				                
+                        </tr>
+                          <tr>
+	                        <td style="width:20%;" ></td>
+                            <td colspan="3">@Html.CheckBoxFor(model => model.Unaprijed) @Html.LabelFor(model => model.Unaprijed)
+                            @Html.CheckBoxFor(model => model.Preplata) @Html.LabelFor(model => model.Preplata)
+                            @Html.CheckBoxFor(model => model.Kamata) @Html.LabelFor(model => model.Kamata)</td>				                
+                        </tr>
+
+                        
+		            </tbody>
+                </table>
+		    </td>		 
+        </tr>
+        <tr>
+        <td>
+        <div id="Obrada">
+             @{ Html.RenderAction("Obrada", "OtkupStanova"); }
+        </div>
+        </td>
+        </tr>
+        <tr>
+        <td style="text-align:right;">
+         <button id="btnFormirajObrok" type="submit" name="FormiranjeObroka" value="FormiranjeObroka">
+                    Formiraj</button>
+        </td>
+        </tr>
+	</tbody>
+</table>	
+     
+ }	
+			
+
+
+@section JavaScript {
+
+    <script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/chosen.jquery.min.js")" type="text/javascript"></script>
+
+
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+        var modelvaluta = 'DEM';
+        Dialozi.DropDownValuta(modelvaluta);
+
+        if(@Pocelo == 1)
+        {
+           interv = setInterval("ProvjeriTempData()", 2 * 1 * 1000);
+
+        }
+
+    });
+
+    $(function () {
+        Dialozi.PostaviValuta();
+    });
+
+    </script>
+
+
+    <script type="text/javascript">
+        $(".vodeceNule").change(function () {
+            var brojZnakova = $(this).val().length;
+            var vrijednost = $(this).val();
+            var nova = padding_left(vrijednost, "0", 7)
+            $(this).val(nova);
+
+        });
+
+
+        function padding_left(s, c, n) {
+            if (!s || !c || s.length >= n) {
+                return s;
+            }
+            var max = (n - s.length) / c.length;
+            for (var i = 0; i < max; i++) {
+                s = c + s;
+            }
+            return s;
+        }
+
+    </script>
+
+
+    <script type="text/javascript">
+
+        var interv;
+
+        function ProvjeriTempData() {
+                var ajaxTime = new Date().getTime();
+                     $.ajax
+                         ({
+                             url: '@Url.Action("ObradaObroka", @InLine.UI.Web.T4.ControllerName.ControllerName.OtkupStanova)',
+                             type: 'GET',
+                             success: function (data) {
+                                 if (data.length > 0) {
+            
+                                     $("#Obrada").html(data);
+                                 }
+                             }
+                         }).done(function (data) {
+
+             });
+        }
+
+
+</script>
+
+}

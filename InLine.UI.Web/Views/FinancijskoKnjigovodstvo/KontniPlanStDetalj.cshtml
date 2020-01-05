@@ -1,0 +1,581 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.KontniPlanStDetaljFormFormatted
+
+ <style type="text/css">
+ #Konto{ width:100%;}
+ #Naziv { width:100%;}
+ #NazivKr { width:100%;}
+ #Kratica { width:100%;}
+ .PorukaStyle {color: red;}
+ #poruka_KontniPlanSt{ float:left; width: 600px;}
+ 
+ 
+</style>
+
+
+ @{
+     string prefixLabela = "labela_KontniPlanSt_Detalj_";
+ }
+ 
+
+  @{
+      string Akcija = @InLine.Model.Data.FieldString.KontniPlanSt.KontniPlanStEntity + InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert;
+      string IDForma = @InLine.Model.Data.FieldString.KontniPlanSt.KontniPlanStEntity + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Forma;
+      string IdKonto = "#Konto";
+      string Obavezan = "obavezan";
+      string Dopusten = "dopušten";
+      string NijeDopusten = "nije dopušten";
+      string Checked = "checked";
+      string KriterijKriterijStList = "KriterijKriterijStList";
+      string KriterijObaveznoList = "KriterijObaveznoList";
+      string KontoSintetika = "Sintetika";
+      string KontoAnalitika = "Analitika";
+      string SaldoKontiSelector = "#SaldoKonti";
+      string VrstaKontaSelector = "#VrstaKonta";
+      string SaldoKontiPorukaSelector = "#SaldoKontiPoruka";
+      string KontoPorukaSelector = "#KontoPoruka";
+      
+ }
+
+
+ @using (Html.BeginForm(Akcija, @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo, FormMethod.Post, new { id = IDForma, @class = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormClass }))
+ {
+  
+    @Html.HiddenFor(model => model.ID_KontniPlan)
+    @Html.HiddenFor(model => model.ID_KontniPlanSt)
+    @Html.HiddenFor(model => model.KriterijKriterijStList)
+    @Html.HiddenFor(model => model.KriterijObaveznoList)
+
+    @Html.ValidationSummary(true)
+
+
+<table class ="KontniPlanStDetail @InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormBackground" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+   <tbody>
+
+    <tr>
+    <td colspan="7">
+      <label id="SaldoKontiPoruka" class="PorukaStyle"></label>
+    </td>
+    </tr>
+
+     <tr>
+	    <td >@Html.LabelFor(model => model.Konto, new { id = @prefixLabela + @Html.NameFor(model => model.Konto) })</td>
+        <td colspan="5">@Html.EditorFor(model => model.Konto)
+           @Html.ValidationMessageFor(model => model.Konto)
+           <label id="KontoPoruka" class="PorukaStyle"></label> </td>
+        <td colspan="2"> <label id="VrstaKonta"></label></td>					                
+    </tr>
+
+      <tr>
+        <td>@Html.LabelFor(model => model.Naziv, new { id = @prefixLabela + @Html.NameFor(model => model.Naziv) })</td>
+        <td colspan="7">@Html.EditorFor(model => model.Naziv)
+        @Html.ValidationMessageFor(model => model.Naziv)</td>								                
+    </tr>
+
+   <tr>
+	    <td>@Html.LabelFor(model => model.NazivKr, new { id = @prefixLabela + @Html.NameFor(model => model.NazivKr) })</td>
+        <td colspan="3">@Html.EditorFor(model => model.NazivKr)
+        @Html.ValidationMessageFor(model => model.NazivKr)</td>	
+        <td>@Html.LabelFor(model => model.Kratica, new { id = @prefixLabela + @Html.NameFor(model => model.Kratica) })</td>
+        <td colspan="3">@Html.TextBoxFor(model => model.Kratica)
+        @Html.ValidationMessageFor(model => model.Kratica)</td>								                
+    </tr>
+
+     <tr>
+ 	    <td>@Html.LabelFor(model => model.SaldoKonti, new { id = @prefixLabela + @Html.NameFor(model => model.SaldoKonti) })</td>
+        <td colspan="7">@Html.CheckBoxFor(model => model.SaldoKonti)
+       </td>
+      </tr>
+
+ 
+  </tbody>
+</table>
+     
+     <div id="Provjera" style="display:;" >
+     <table class ="KontniPlanStDetail @InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormBackground" style="width:100%;">
+      <tr>
+      <td colspan='8'style="height:5px; background-color:#f1f7fd; color:#205392; padding-top: 2px; padding-bottom:2px; font-weight:bold">Provjere kod ručnog unosa</td></tr>
+
+      <tr>
+            <td>@Html.LabelFor(model => model.UnosDuguje, new { id = @prefixLabela + @Html.NameFor(model => model.UnosDuguje) })</td>
+            <td colspan="7">
+            <table style="width:100%;">
+                <tr>
+                    <td style="width:33%;">@Html.RadioButtonFor(model => model.UnosDuguje, 1, new { Checked = @Checked })@Obavezan</td>
+                    <td style="width:33%;"> @Html.RadioButtonFor(model => model.UnosDuguje, 2)@Dopusten</td>
+                    <td style="width:33%;"> @Html.RadioButtonFor(model => model.UnosDuguje, 3)@NijeDopusten</td>
+                </tr>
+                </table>
+            </td>
+      </tr>
+
+       <tr>
+            <td>@Html.LabelFor(model => model.UnosPotrazuje, new { id = @prefixLabela + @Html.NameFor(model => model.UnosPotrazuje) })</td>
+            <td colspan="7">
+            <table style="width:100%;">
+                <tr>
+                    <td style="width:33%;">@Html.RadioButtonFor(model => model.UnosPotrazuje, 1, new { Checked = @Checked })@Obavezan</td>
+                    <td style="width:33%;"> @Html.RadioButtonFor(model => model.UnosPotrazuje, 2)@Dopusten</td>
+                    <td style="width:33%;"> @Html.RadioButtonFor(model => model.UnosPotrazuje, 3)@NijeDopusten</td>
+                </tr>
+                </table>
+            </td>
+      </tr>
+
+         <tr>
+            <td>@Html.LabelFor(model => model.UnosSubjekt, new { id = @prefixLabela + @Html.NameFor(model => model.UnosSubjekt) })</td>
+            <td colspan="7">
+            <table style="width:100%;">
+                <tr>
+                    <td style="width:33%;">@Html.RadioButtonFor(model => model.UnosSubjekt, 1)@Obavezan</td>
+                    <td style="width:33%;"> @Html.RadioButtonFor(model => model.UnosSubjekt, 2)@Dopusten</td>
+                    <td style="width:33%;"> @Html.RadioButtonFor(model => model.UnosSubjekt, 3)@NijeDopusten</td>
+                </tr>
+                </table>
+            </td>
+      </tr>
+
+      <tr>
+            <td>@Html.LabelFor(model => model.UnosZapis, new { id = @prefixLabela + @Html.NameFor(model => model.UnosZapis) })</td>
+            <td colspan="7">
+            <table style="width:100%;">
+                <tr>
+                    <td style="width:33%;">@Html.RadioButtonFor(model => model.UnosZapis, 1)@Obavezan</td>
+                    <td style="width:33%;"> @Html.RadioButtonFor(model => model.UnosZapis, 2)@Dopusten</td>
+                    <td style="width:33%;"> @Html.RadioButtonFor(model => model.UnosZapis, 3)@NijeDopusten</td>
+                </tr>
+                </table>
+            </td>
+      </tr>
+
+      </table>
+   </div>
+
+  <div>
+      @{Html.RenderAction("KontniPlanKriterij", new { ID_KontniPlan = Model.ID_KontniPlan, ID_KontniPlanSt = Model.ID_KontniPlanSt });}
+  </div> 
+     
+  <div id="kriterijKriterijStOdabrani">
+ <br />
+  <div id="navcontainer">
+        <div id="navlist">
+      <ul >
+           <li>@Html.ActionLink("Dodaj paremetre glavne knjige", "Kriterij", "FinancijskoKnjigovodstvo")</li>
+      </ul>
+         </div> 
+            </div> 
+    </div>
+     <br />
+<div id="poruka_KontniPlanSt">
+</div>
+
+ }
+   <script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/chosen.jquery.min.js")" type="text/javascript"></script>
+
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $.EnableDisablePoljaKonta = function (count) {
+
+                if (count == 0) {
+
+                    $("#Konto").attr("disabled", false);
+                    $("#NazivKr").attr("disabled", false);
+                    $("#Kratica").attr("disabled", false);
+                    $("#SaldoKonti").attr("disabled", false);
+                    $("#Provjera").find("input[type='radio']").prop('disabled', false);
+                    $("#KriterijOkvir").find("input[type='radio']").prop('disabled', false);
+                    $("#KriterijOkvir").find("select").prop('disabled', false).trigger("liszt:updated");
+                    $("@SaldoKontiPorukaSelector").text("");
+
+                }
+
+                else {
+
+//                    $("#Konto").attr('readonly', true);
+//                    $("#Konto").css('background-color', '#E7E7E7');
+//                    $("#NazivKr").attr('readonly', true);
+//                    $("#NazivKr").css('background-color', '#E7E7E7');
+//                    $("#Kratica").attr('readonly', true);
+//                    $("#Kratica").css('background-color', '#E7E7E7');
+                    //                    $("#SaldoKonti").attr("disabled", true);
+                    $("#Konto").attr("disabled", true);
+                    $("#NazivKr").attr("disabled", true);
+                    $("#Kratica").attr("disabled", true);
+                    $("#SaldoKonti").attr("disabled", true);
+
+                    $("#Provjera").find("input[type='radio']").prop('disabled', true);
+                    $("#KriterijOkvir").find("input[type='radio']").prop('disabled', true);
+                    $("#KriterijOkvir").find("select").prop('disabled', true).trigger("liszt:updated");
+                    $("@SaldoKontiPorukaSelector").text("Postoji stavka glavne knjige i kontu je dopušteno samo mijenjanje naziva.");
+                }
+
+            };
+        });
+
+
+
+
+</script>
+
+  <script type="text/javascript">
+
+      $(".combochosen").chosen();
+
+
+      $(document).ready(function () {
+
+      $('#KontniPlanStDialogSpremiKopiraj').hide();
+
+         var duljinaKonta = $('@IdKonto').val().length;
+         var TemeljnicaImaKonto = @Model.TemeljnicaStImaOvajKonto;
+
+           $.EnableDisablePoljaKonta(@Model.TemeljnicaStImaOvajKonto);
+
+              if (duljinaKonta >= @Model.AnalitikaOd)
+              {
+                  if(TemeljnicaImaKonto > 0)
+                  {
+                       //$("@SaldoKontiSelector").attr("disabled", true);
+                        $("#SaldoKonti").attr('readonly', true);
+                         $("#SaldoKonti").click(function (e) {
+                          e.preventDefault();
+                           e.stopPropagation();
+                    });
+                       $("@VrstaKontaSelector").text("@KontoAnalitika");
+                  }
+                  else
+                  {
+                        //$("@SaldoKontiSelector").attr("disabled", false);
+                         $("#SaldoKonti").attr('readonly', false);
+                        $("@VrstaKontaSelector").text("@KontoAnalitika");
+                  }
+
+              }
+              else if(duljinaKonta == 0)
+              {
+                  $("@VrstaKontaSelector").text("");
+              }
+               else
+              {
+                 $("@SaldoKontiSelector").attr("disabled", true);
+                 $("@SaldoKontiSelector").attr("checked", false);
+                  $("@VrstaKontaSelector").text("@KontoSintetika");
+              }
+
+
+              if('@Model.SaldoKonti' == "True")
+              {
+                $("input:radio[name=UnosSubjekt]").click( function(e){
+                       e.preventDefault();
+                       e.stopPropagation();
+                });
+
+                 $("input:radio[name=UnosZapis]").click( function(e){
+                       e.preventDefault();
+                       e.stopPropagation();
+                });
+              }
+
+      });
+
+
+
+      $('@IdKonto').change(function () {
+  
+              var duljinaKonta = $('@IdKonto').val().length;
+              var analitikaGK = @Model.AnalitikaOd
+
+              var jeSaldoKonti = '@Model.SaldoKonti';
+              var idKontniPlanSt = @Model.ID_KontniPlanSt; 
+
+              $("@KontoPorukaSelector").text("");
+
+             if(duljinaKonta < @Model.AnalitikaOd)
+              {
+                 $("@SaldoKontiSelector").attr("checked", false);
+                  $("@VrstaKontaSelector").text("@KontoSintetika");
+                   $("input:radio[name=UnosSubjekt][value=2]").attr("checked", true);
+                    $("input:radio[name=UnosZapis][value=2]").attr("checked", true);
+                    $("input:radio[name=UnosSubjekt]").unbind('click');
+                    $("input:radio[name=UnosZapis]").unbind('click');
+
+
+               }
+           
+              if((jeSaldoKonti == "True") && (idKontniPlanSt  > -1) )
+              {
+                   PostaviStanjaKontrola(@Model.TemeljnicaStImaOvajKonto);
+               }
+
+              else if (duljinaKonta >= @Model.AnalitikaOd)
+              {
+                $("@SaldoKontiSelector").attr("disabled", false);
+                $("@VrstaKontaSelector").text("@KontoAnalitika");
+           
+              }
+              else
+              {
+                 $("@SaldoKontiSelector").attr("disabled", true);
+                 $("@SaldoKontiSelector").attr("checked", false);
+                  $("input:radio[name=UnosSubjekt][value=2]").attr("checked", true);
+                $("input:radio[name=UnosZapis][value=2]").attr("checked", true);
+                 $("@VrstaKontaSelector").text("@KontoSintetika");
+
+              }
+
+          });
+
+
+          
+      $("@SaldoKontiSelector").click(function () {
+
+
+           var duljinaKonta = $('@IdKonto').val().length;
+           var jeSaldoKonti = '@Model.SaldoKonti';
+           var idKontniPlanSt = @Model.ID_KontniPlanSt;
+
+
+            if(duljinaKonta < @Model.AnalitikaOd)
+            {
+                 $(this).attr("checked", false);
+            }
+           
+            if((jeSaldoKonti == "True") && (idKontniPlanSt  > -1) )
+            {
+                PostaviStanjaKontrola(@Model.TemeljnicaStImaOvajKonto);
+            }
+
+           else if(this.checked) 
+           {
+                $("input:radio[name=UnosSubjekt][value=1]").attr("checked", true);
+                $("input:radio[name=UnosZapis][value=1]").attr("checked", true);
+                    $("input:radio[name=UnosSubjekt]").click( function(e){
+                           e.preventDefault();
+                           e.stopPropagation();
+                    });
+
+                     $("input:radio[name=UnosZapis]").click( function(e){
+                           e.preventDefault();
+                           e.stopPropagation();
+                    });
+
+            }
+
+           else
+           {
+                $("input:radio[name=UnosSubjekt][value=2]").attr("checked", true);
+                $("input:radio[name=UnosZapis][value=2]").attr("checked", true);
+                $("input:radio[name=UnosSubjekt]").unbind('click');
+                $("input:radio[name=UnosZapis]").unbind('click');
+           }
+
+          });
+
+
+
+
+ function PostaviStanjaKontrola(count) {
+
+        var idKontniPlanSt = @Model.ID_KontniPlanSt;
+        var duljinaKonta = $('@IdKonto').val().length;
+        var analitikaGK = @Model.AnalitikaOd
+
+     
+            
+                if (count == 1) 
+                {
+                        $("@SaldoKontiSelector").prop('checked', true);
+                        $("@SaldoKontiPorukaSelector").text("Postoji stavka glavne knjige i kontu je dopušteno samo mijenjanje naziva.");
+
+                  
+                       if (duljinaKonta < @Model.AnalitikaOd)
+                        {
+                             $("@IdKonto").val("");
+                             $("@KontoPorukaSelector").text("Konto mora imati najmanje " + analitikaGK + " znamenaka");
+                              $("@VrstaKontaSelector").text();
+                             $("@SaldoKontiSelector").attr("disabled", false);
+                             $("@SaldoKontiSelector").attr("checked", true);
+                             $("@VrstaKontaSelector").text("@KontoSintetika");
+                        }
+
+                        else{
+                            $("@VrstaKontaSelector").text("@KontoAnalitika");
+                        }
+                    
+                }
+
+                else
+                {
+
+                     if (duljinaKonta < @Model.AnalitikaOd)
+                        {
+                            $("@VrstaKontaSelector").text("@KontoSintetika");
+                        }
+                        else
+                        {
+                            $("@VrstaKontaSelector").text("@KontoAnalitika");
+                        }
+
+
+                      if($("@SaldoKontiSelector").attr("checked")) 
+                       {
+                            $("input:radio[name=UnosSubjekt][value=1]").attr("checked", true);
+                            $("input:radio[name=UnosZapis][value=1]").attr("checked", true);
+                                $("input:radio[name=UnosSubjekt]").click( function(e){
+                                       e.preventDefault();
+                                       e.stopPropagation();
+                                });
+
+                                 $("input:radio[name=UnosZapis]").click( function(e){
+                                       e.preventDefault();
+                                       e.stopPropagation();
+                                });
+
+                        }
+
+                       else
+                       {
+                            $("input:radio[name=UnosSubjekt][value=2]").attr("checked", true);
+                            $("input:radio[name=UnosZapis][value=2]").attr("checked", true);
+                            $("input:radio[name=UnosSubjekt]").unbind('click');
+                            $("input:radio[name=UnosZapis]").unbind('click');
+                       }
+                }
+
+
+    }
+   
+
+      $(function () {
+            $("#labela_KontniPlanSt_Detalj_Konto").text("Konto");
+            $("#labela_KontniPlanSt_Detalj_Naziv").text("Naziv");
+            $("#labela_KontniPlanSt_Detalj_NazivKr").text("Skraćeni naziv");
+            $("#labela_KontniPlanSt_Detalj_DugujeDopusteno").text("Duguje dopusteno");
+            $("#labela_KontniPlanSt_Detalj_DugujeObavezno").text("Duguje obavezno");
+            $("#labela_KontniPlanSt_Detalj_PotrazujeDopusteno").text("PotrazujedDopusteno");
+            $("#labela_KontniPlanSt_Detalj_PotrazujeObavezno").text("Potrazuje obavezno");
+            $("#labela_KontniPlanSt_Detalj_ZapisDopusteno").text("Zapis dopusteno");
+            $("#labela_KontniPlanSt_Detalj_ZapisObavezno").text("Zapis obavezno");
+            $("#labela_KontniPlanSt_Detalj_SubjektDopusteno").text("Subjekt dopusteno");
+            $("#labela_KontniPlanSt_Detalj_SubjektObavezno").text("Subjekt obavezno");
+            $("#labela_KontniPlanSt_Detalj_ObjektDopusteno").text("Objekt dopusteno");
+            $("#labela_KontniPlanSt_Detalj_ObjektObavezno").text("Objekt obavezno");
+            $("#labela_KontniPlanSt_Detalj_DavanjeDopusteno").text("Davanje dopusteno");
+            $("#labela_KontniPlanSt_Detalj_DavanjeObavezno").text("Davanje obavezno");
+        });
+   
+    </script>
+
+  <script type="text/javascript">
+
+       //Sa radio button obavezno
+      $(".kriterij select").change(function () {
+
+          var stavka = $(this).attr("id");
+          var kriterij = $(this).attr("value");
+          var myArray = [];
+
+          $('#tbl-kriterijkriterijst select').each(function (i, e) {
+
+              if (this.options[e.selectedIndex].text != "--Odaberite--") {
+                  myArray.push($(this).attr("value") + ":" + $(this).attr("id"));
+              }
+
+              else {
+
+                  var kojiGumb = $(this).attr("id");
+                  //$("#radioGumbi input:radio[name=rb_" + kojiGumb + "][value=0]").attr('checked', true);
+                  $("input:radio[name=rb_" + kojiGumb + "]")[1].checked = true;
+              }
+          });
+
+
+          $("#" + '@KriterijKriterijStList').val(myArray);
+          console.log(myArray);
+
+
+
+          var myArrayRadioButton = [];
+          var kojiGumb = $(this).attr("name");
+
+          $("#radioGumbi input[type='radio']:checked").each(function (i, e) {
+              var kojiGumb = $(this).attr("name");
+              var kojiGumbKriterij = kojiGumb.substring(3, (kojiGumb.length));
+              myArrayRadioButton.push(kojiGumbKriterij + ":" + $(this).attr("value"));
+          });
+
+          $("#" + '@KriterijObaveznoList').val(myArrayRadioButton);
+          console.log(myArrayRadioButton);
+
+      });
+
+
+           $("#radioGumbi input[type='radio']").click(function () {
+               var myArrayRadioButton = [];
+               var kojiGumb = $(this).attr("name");
+
+               $("#radioGumbi input[type='radio']:checked").each(function (i, e) {
+                    var kojiGumb = $(this).attr("name");
+                    var kojiGumbKriterij = kojiGumb.substring(3, (kojiGumb.length));
+                    myArrayRadioButton.push(kojiGumbKriterij + ":" + $(this).attr("value"));
+               });
+
+               $("#" + '@KriterijObaveznoList').val(myArrayRadioButton);
+               console.log(myArrayRadioButton);
+
+
+
+               var stavka = $(this).attr("id");
+               var kriterij = $(this).attr("value");
+               var myArray = [];
+
+               $('#tbl-kriterijkriterijst select').each(function (i, e) {
+
+                   if (this.options[e.selectedIndex].text != "--Odaberite--") {
+                       myArray.push($(this).attr("value") + ":" + $(this).attr("id"));
+                   }
+               });
+
+               $("#" + '@KriterijKriterijStList').val(myArray);
+               console.log(myArray);
+           });
+
+</script>
+
+
+ <script type="text/javascript">
+     function InsertEditSucces() {
+
+//         $("#KontniPlanStDialog").dialog("close");
+//         $("#KontniPlanStDialog").empty();
+
+     }
+
+     function InsertEditError() {
+
+     }
+
+
+     function DeleteSucces() {
+//         $("#KontniPlanStDialog").dialog("close");
+//         $("#KontniPlanStDialog").empty();
+
+     }
+
+
+     function DeleteError() {
+
+     }
+
+     function ProvjeraKodUnosa() {
+         return true;
+     }
+
+
+    </script>

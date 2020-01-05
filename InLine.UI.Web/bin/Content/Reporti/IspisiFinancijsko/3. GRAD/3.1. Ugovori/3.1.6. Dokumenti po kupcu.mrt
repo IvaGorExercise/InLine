@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <KontoKarticaPoduzecaAnaliticki Ref="2" type="Stimulsoft.Report.Dictionary.StiSqlDatabase" isKey="true">
+        <Alias>KontoKarticaPoduzecaAnaliticki</Alias>
+        <ConnectionStringEncrypted>+SBTiecF6tViQb2F8BSsO95gu4nde3M54Vr1zOQYbUbCVoEJRhgTyEZEpcxhAG0b0WrNAsVXk5lFQaFs6RxtL/V4iw/VVgGZcm3NyWFYYWfEVs2JTVbTzWtJ/cRqXKTrjci7LUYD+g==</ConnectionStringEncrypted>
+        <Name>KontoKarticaPoduzecaAnaliticki</Name>
+      </KontoKarticaPoduzecaAnaliticki>
+    </Databases>
+    <DataSources isList="true" count="1">
+      <DataSource1 Ref="3" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>DataSource1</Alias>
+        <Columns isList="true" count="28">
+          <value>Broj,System.Int32</value>
+          <value>Datum,System.DateTime</value>
+          <value>Tecaj,System.Decimal</value>
+          <value>IznosKN,System.Decimal</value>
+          <value>IznosUValuti,System.Decimal</value>
+          <value>Valuta,System.String</value>
+          <value>Ucesce,System.Decimal</value>
+          <value>Kredit,System.Decimal</value>
+          <value>BrojObroka,System.Int32</value>
+          <value>IznosObroka,System.Decimal</value>
+          <value>BrojUgovor,System.Int32</value>
+          <value>Kupac_Naziv,System.String</value>
+          <value>Kupac_Ulica,System.String</value>
+          <value>Kupac_KucniBroj,System.String</value>
+          <value>Kupac_KucniBrojDodatak,System.String</value>
+          <value>Kupac_PostanskiBroj,System.String</value>
+          <value>Kupac_Posta,System.String</value>
+          <value>Pretvorba,System.Boolean</value>
+          <value>DokumentVr_Naziv,System.String</value>
+          <value>DokumentVr_Oznaka,System.String</value>
+          <value>IznosKamataObrok,System.Decimal</value>
+          <value>BrojObrokDospjelo,System.Int32</value>
+          <value>IznosKreditObrok,System.Decimal</value>
+          <value>Kamata,System.Decimal</value>
+          <value>KreditReval,System.Decimal</value>
+          <value>KamataReval,System.Decimal</value>
+          <value>Kupac_Oznaka,System.String</value>
+          <value>Nositelj,System.Boolean</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>DataSource1</Name>
+        <NameInSource>KontoKarticaPoduzecaAnaliticki</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT ots.UgovorStanOtkup.BrojAneks AS Broj, ots.UgovorStanOtkup.Datum AS
+  Datum, ots.UgovorStanOtkup.TecajDM AS Tecaj,
+  ots.UgovorStanOtkup.IznosJednokratno AS IznosKN,
+  ots.UgovorStanOtkup.IznosJednokratnoValuta AS IznosUValuti,
+  ots.UgovorStanOtkup.IDValuta AS Valuta, ots.UgovorStanOtkup.IznosUcesce AS
+  Ucesce, ots.UgovorStanOtkup.IznosKredit AS Kredit,
+  ots.UgovorStanOtkup.BrojObrok AS BrojObroka,
+  ots.UgovorStanOtkup.IznosUkupnoObrok AS IznosObroka,
+  ots.UgovorStanOtkup.BrojUgovor AS BrojUgovor, ots.Kupac.Naziv AS Kupac_Naziv,
+  ots.Kupac.Ulica AS Kupac_Ulica, ots.Kupac.KucniBroj AS Kupac_KucniBroj,
+  ots.Kupac.KucniBrojDodatak AS Kupac_KucniBrojDodatak,
+  ots.Kupac.PostanskiBroj AS Kupac_PostanskiBroj,
+  ots.Kupac.Posta AS Kupac_Posta, ots.UgovorStanOtkup.Pretvorba AS Pretvorba,
+  ots.DokumentVr.Naziv AS DokumentVr_Naziv, ots.DokumentVr.Oznaka AS
+  DokumentVr_Oznaka, ots.UgovorStanOtkup.IznosKamataObrok AS IznosKamataObrok,
+  ots.UgovorStanOtkup.BrojObrokDospjelo AS BrojObrokDospjelo,
+  ots.UgovorStanOtkup.IznosKreditObrok AS IznosKreditObrok,
+  ots.UgovorStanOtkup.IznosKamata AS Kamata,
+  ots.UgovorStanOtkup.IznosKreditRevalorizacija AS KreditReval,
+  ots.UgovorStanOtkup.IznosKamataRevalorizacija AS KamataReval,
+  ots.Kupac.Oznaka AS Kupac_Oznaka, ots.UgovorStanOtkupKupac.Nositelj AS
+  Nositelj
+FROM ots.UgovorStanOtkup LEFT JOIN
+  ots.UgovorStanOtkupKupac ON ots.UgovorStanOtkup.ID_UgovorStanOtkup =
+    ots.UgovorStanOtkupKupac.ID_UgovorStanOtkup LEFT JOIN
+  ots.Kupac ON ots.Kupac.ID_Kupac = ots.UgovorStanOtkupKupac.ID_Kupac LEFT JOIN
+  ots.DokumentVr ON ots.DokumentVr.ID_DokumentVr =
+    ots.UgovorStanOtkup.ID_DokumentVr
+
+{ostatakSQLUpita_STR}</SqlCommand>
+      </DataSource1>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="12">
+      <value>,ostatakSQLUpita_STR,ostatakSQLUpita_STR,System.String,,False,False</value>
+      <value>,Zaglavlje,Zaglavlje,System.String,,False,False</value>
+      <value>,Pomoc1,Pomoc1,System.Decimal,,False,False</value>
+      <value>,Pomoc2,Pomoc2,System.Decimal,,False,False</value>
+      <value>,Pomoc3,Pomoc3,System.Decimal,,False,False</value>
+      <value>,Pomoc4,Pomoc4,System.Decimal,,False,False</value>
+      <value>,Pomoc5,Pomoc5,System.Decimal,,False,False</value>
+      <value>,Pomoc6,Pomoc6,System.Decimal,,False,False</value>
+      <value>,Pomoc7,Pomoc7,System.Decimal,,False,False</value>
+      <value>,Pomoc8,Pomoc8,System.Decimal,,False,False</value>
+      <value>,PomocFooter2,PomocFooter2,System.Decimal,,False,False</value>
+      <value>,PomocFooter1,PomocFooter1,System.Decimal,,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="4" type="Page" isKey="true">
+      <Border>None;Black;2;Dot;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="6">
+        <PageFooterBand1 Ref="5" type="PageFooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,27.1,19,0.6</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text27 Ref="6" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0.2,0.2,3.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text27</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{Time}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text27>
+            <Text28 Ref="7" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>14.8,0.2,4.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text28</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{PageNumber}/{TotalPageCount}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text28>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>PageFooterBand1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </PageFooterBand1>
+        <HeaderBand1 Ref="8" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,19,2.6</ClientRectangle>
+          <Components isList="true" count="6">
+            <Panel1 Ref="9" type="Panel" isKey="true">
+              <Brush>LightGray</Brush>
+              <ClientRectangle>3.2,1.8,9.6,0.4</ClientRectangle>
+              <Components isList="true" count="3">
+                <Text2 Ref="10" type="Text" isKey="true">
+                  <Border>None;Black;1;Dot;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0,0,1.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8,Bold</Font>
+                  <Guid>d14a52a3d633400abe5ae139867bada6</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text2</Name>
+                  <Page isRef="4" />
+                  <Parent isRef="9" />
+                  <Text>Br. kupca</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                </Text2>
+                <Text3 Ref="11" type="Text" isKey="true">
+                  <Border>None;Black;1;Dot;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>2.2,0,5.4,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8,Bold</Font>
+                  <Guid>f9380fd1730c49abac2388996816138a</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text3</Name>
+                  <Page isRef="4" />
+                  <Parent isRef="9" />
+                  <Text>Prezime i ime</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                </Text3>
+                <StartPointPrimitive1 Ref="12" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+                  <ClientRectangle>0,0,0,0</ClientRectangle>
+                  <Name>StartPointPrimitive1</Name>
+                  <Page isRef="4" />
+                  <Parent isRef="9" />
+                  <ReferenceToGuid>8b7ecf66e7224f29ba1efb361911bc55</ReferenceToGuid>
+                </StartPointPrimitive1>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <Name>Panel1</Name>
+              <Page isRef="4" />
+              <Parent isRef="8" />
+            </Panel1>
+            <Text7 Ref="13" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,0.8,19,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,11,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="4" />
+              <Parent isRef="8" />
+              <Text>DOKUMETI PO KUPCU</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text7>
+            <Text8 Ref="14" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>15.2,0.2,3.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="4" />
+              <Parent isRef="8" />
+              <Text>Datum: {Today.ToString("dd.MM.yyyy")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text8>
+            <Text1 Ref="15" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>9.2,2.2,1.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="4" />
+              <Parent isRef="8" />
+              <Text>Ugovor</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text1>
+            <Text47 Ref="16" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>11.2,2.2,1.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>d7c4e013ee8142efa8cf7e5c73c9b449</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text47</Name>
+              <Page isRef="4" />
+              <Parent isRef="8" />
+              <Text>Nositelj</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text47>
+            <EndPointPrimitive1 Ref="17" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+              <ClientRectangle>12.8,2.6,0,0</ClientRectangle>
+              <Name>EndPointPrimitive1</Name>
+              <Page isRef="4" />
+              <Parent isRef="8" />
+              <ReferenceToGuid>8b7ecf66e7224f29ba1efb361911bc55</ReferenceToGuid>
+            </EndPointPrimitive1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderBand1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </HeaderBand1>
+        <GroupHeaderBand1 Ref="18" type="GroupHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,3.8,19,0.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Panel2 Ref="19" type="Panel" isKey="true">
+              <Brush>LightGray</Brush>
+              <ClientRectangle>3.2,0.2,9.6,0.4</ClientRectangle>
+              <Components isList="true" count="3">
+                <Text6 Ref="20" type="Text" isKey="true">
+                  <Border>None;Black;1;Dot;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>2.2,0,7,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8,Bold</Font>
+                  <Guid>037107ed017f41839e7d28702d6838e8</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text6</Name>
+                  <Page isRef="4" />
+                  <Parent isRef="19" />
+                  <Text>{DataSource1.Kupac_Naziv}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>DataColumn</Type>
+                </Text6>
+                <Text5 Ref="21" type="Text" isKey="true">
+                  <Border>None;Black;1;Dot;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0,0,1.6,0.4</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,8,Bold</Font>
+                  <Guid>a7f75082c16f40399fc3a0ce0d9c83d8</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text5</Name>
+                  <Page isRef="4" />
+                  <Parent isRef="19" />
+                  <Text>{DataSource1.Kupac_Oznaka}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>DataColumn</Type>
+                </Text5>
+                <HorizontalLinePrimitive1 Ref="22" type="HorizontalLinePrimitive" isKey="true">
+                  <ClientRectangle>0,0,9.6,0.0254</ClientRectangle>
+                  <Color>Black</Color>
+                  <EndCap Ref="23" type="Cap" isKey="true">
+                    <Color>Black</Color>
+                  </EndCap>
+                  <Name>HorizontalLinePrimitive1</Name>
+                  <Page isRef="4" />
+                  <Parent isRef="19" />
+                  <StartCap Ref="24" type="Cap" isKey="true">
+                    <Color>Black</Color>
+                  </StartCap>
+                  <Style>Dot</Style>
+                </HorizontalLinePrimitive1>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <Guid>ac4f75bd7ea14fb0adf86d2d34b02a15</Guid>
+              <Name>Panel2</Name>
+              <Page isRef="4" />
+              <Parent isRef="18" />
+            </Panel2>
+          </Components>
+          <Condition>{DataSource1.Kupac_Oznaka}</Condition>
+          <Conditions isList="true" count="0" />
+          <Name>GroupHeaderBand1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </GroupHeaderBand1>
+        <DataBand1 Ref="25" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,5.2,19,0.4</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text9 Ref="26" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.2,0,1.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="2">
+                <value>DataSource1.Nositelj,EqualTo,true,,Boolean,Black,Transparent,Arial_x002C_8,True,True,_x0022_D_x0022_,,None</value>
+                <value>DataSource1.Nositelj,EqualTo,false,,Boolean,Black,Transparent,Arial_x002C_8,True,True,_x0022_N_x0022_,,None</value>
+              </Conditions>
+              <Font>Arial,8</Font>
+              <Guid>f113ba500dec4dcb9b7b44cc76886181</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="4" />
+              <Parent isRef="25" />
+              <Text>{DataSource1.Nositelj}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+            </Text9>
+            <Text4 Ref="27" type="Text" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.2,0,1.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>4c1fb79ef4674507abb9a6a3e222fd53</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="4" />
+              <Parent isRef="25" />
+              <Text>{DataSource1.BrojUgovor}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text4>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>DataSource1</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Sort isList="true" count="2">
+            <value>ASC</value>
+            <value>Aneks_BrojAneks</value>
+          </Sort>
+        </DataBand1>
+        <RectanglePrimitive1 Ref="28" type="RectanglePrimitive" isKey="true">
+          <ClientRectangle>3.2,2.2,9.6,0.8</ClientRectangle>
+          <Color>Black</Color>
+          <Guid>8b7ecf66e7224f29ba1efb361911bc55</Guid>
+          <Name>RectanglePrimitive1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </RectanglePrimitive1>
+        <StartPointPrimitive3 Ref="29" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+          <ClientRectangle>7,7.2,0,0</ClientRectangle>
+          <Name>StartPointPrimitive3</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <ReferenceToGuid>525323f6e97747cc9c2f57ce3fda46a6</ReferenceToGuid>
+        </StartPointPrimitive3>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>deffdddf8c65404695eb89321c4604cf</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="30" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="31" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>11/20/2014 1:29:49 PM</ReportChanged>
+  <ReportCreated>4/15/2014 2:05:59 PM</ReportCreated>
+  <ReportFile>C:\Users\goran\Desktop\IVAA\InLine.UI.Web\Content\Reporti\IspisiFinancijsko\3. GRAD\3.1. Ispisi\3.1.6. Dokumenti po kupcu.mrt</ReportFile>
+  <ReportGuid>a4c0540fa5f74572a9b5fa54ba848dd1</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2013.2.1700</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="1">
+    <Style1 Ref="32" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Brush>LightGray</Brush>
+      <Conditions isList="true" count="0" />
+      <Description />
+      <Font>Arial,8</Font>
+      <Name>Style1</Name>
+      <TextBrush>Black</TextBrush>
+    </Style1>
+  </Styles>
+</StiSerializer>

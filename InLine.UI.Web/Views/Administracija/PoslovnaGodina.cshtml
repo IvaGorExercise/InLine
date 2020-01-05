@@ -1,0 +1,27 @@
+﻿
+<table>
+
+       @if (ViewBag.PoslovnaGodina != null)
+            {
+                  <tr> @Html.Label("Godina:")
+                      <td>@Html.DropDownList("ID_PoslovnaGodina", (SelectList)ViewBag.PoslovnaGodina)</td>
+                  </tr>
+            }
+
+</table>
+
+</div>
+
+
+
+<script>
+
+    $("#ID_PoslovnaGodina").change(function () 
+        {
+             var kojaGodina = $('#ID_PoslovnaGodina option:selected').text();
+              $('#Godina').val(kojaGodina);
+
+    });
+
+
+</script>

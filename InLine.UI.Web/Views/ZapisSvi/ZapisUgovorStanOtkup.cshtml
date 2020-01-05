@@ -1,0 +1,135 @@
+﻿@{
+    string SubjektPoljeValue = String.Empty;
+
+    if (ViewBag.ID != -1)
+    {
+        SubjektPoljeValue = ViewBag.ID.ToString();
+    }
+    else
+    {
+        SubjektPoljeValue = String.Empty;
+    }
+    
+}
+
+@{
+    var gridZapisUgovor = new Lib.Web.Mvc.JQuery.JqGrid.JqGridHelper<InLine.UI.Web.T4.GridFormattedTemplate.View.ZapisUgovorStanOtkupGridFormatted>(InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.ZapisUgovorStanOtkupEntity,
+    dynamicScrollingMode: Lib.Web.Mvc.JQuery.JqGrid.JqGridDynamicScrollingModes.HoldAllRows,
+    hiddenEnabled: true,
+    footerEnabled: false,
+    userDataOnFooter: false,
+    dataType: Lib.Web.Mvc.JQuery.JqGrid.JqGridDataTypes.Json,
+    methodType: Lib.Web.Mvc.JQuery.JqGrid.JqGridMethodTypes.Post,
+    pager: false,
+    caption: "UGOVORI",
+    parametersNames: new Lib.Web.Mvc.JQuery.JqGrid.JqGridParametersNames() { PagesCount = "npage" },
+    width: 1135,
+    rowsNumber: 10,
+    height: 290,
+    url: Url.Action("../ZapisSvi/ZapisUgovorStanOtkupGrid", new { key = "KupacID_Subjekt", value = @SubjektPoljeValue }),
+    onSelectRow: "$.ZapisUgovorStanOtkupOnSelectRow",
+    sortingName: @InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.BrojUgovor,
+    sortingOrder: Lib.Web.Mvc.JQuery.JqGrid.JqGridSortingOrders.Desc,
+    viewRecords: false).FilterToolbar(new Lib.Web.Mvc.JQuery.JqGrid.JqGridFilterToolbarOptions() { StringResult = true })
+    .Navigator(new Lib.Web.Mvc.JQuery.JqGrid.JqGridNavigatorOptions() { Search = false, Add = false, Delete = false, Edit = false, Refresh = true }); 
+}
+@using (Html.BeginForm())
+{
+    <table class="@InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormBackground" style="width:100%;">
+        <tbody>
+            <tr>
+                <td id="grid" colspan="2" style="width: 100%; vertical-align: top;">
+                    @gridZapisUgovor.GetHtml()
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="poruka_Master">
+    </div>
+}
+@*  <div id="poruka_Master" ></div>*@
+<script type="text/javascript">
+
+    $(document).ready(function () {
+           @gridZapisUgovor.GetJavaScript()
+            jQuery(@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.ZapisUgovorStanOtkupEntity).hideCol('@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.TablicaNaziv');
+            jQuery(@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.ZapisUgovorStanOtkupEntity).hideCol('@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.ID_Zapis');
+            jQuery(@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.ZapisUgovorStanOtkupEntity).hideCol('@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.IDZapis');
+            jQuery(@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.ZapisUgovorStanOtkupEntity).hideCol('@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.BrojObrok');
+            jQuery(@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.ZapisUgovorStanOtkupEntity).hideCol('@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.BrojStorno');
+            jQuery(@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.ZapisUgovorStanOtkupEntity).hideCol('@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.BrojAneks');
+            jQuery(@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.ZapisUgovorStanOtkupEntity).hideCol('@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.KupacID_Subjekt');
+            jQuery(@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.ZapisUgovorStanOtkupEntity).hideCol('@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.Posta');
+        });
+</script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+//        var koji = $("#ID_Subjekt").val();
+//        polje = "ID_Subjekt";
+//        //alert(koji);
+
+//        setTimeout(function () {
+//            jQuery("#" + "@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.ZapisUgovorStanOtkupEntity").jqGrid('setGridParam', { url: "../ZapisSvi/ZapisUgovorStanOtkupGrid", postData: { key: "ID_Kupac", value: koji} });
+//            jQuery("#" + "@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.ZapisUgovorStanOtkupEntity").trigger('reloadGrid');
+        //        }, 2000)
+
+
+//        $.ZapisUgovorStanOtkupOnSelectRow = function () {
+//            var selectedRowId = $("#" + "@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.ZapisUgovorStanOtkupEntity").jqGrid('getGridParam', 'selrow');
+//            var selectedRowIdPolje = $("#" + "@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.ZapisUgovorStanOtkupEntity").jqGrid('getCell', selectedRowId, 'ID_Zapis');
+//            var brojUgovora = $("#" + "@InLine.Model.Data.FieldString.View.ZapisUgovorStanOtkup.ZapisUgovorStanOtkupEntity").jqGrid('getCell', selectedRowId, 'BrojUgovor');
+//            alert(selectedRowIdPolje);
+//            alert(brojUgovora);
+//            $("#ID_Zapis").val(selectedRowIdPolje);
+//            var x = $("#ID_Zapis").val();
+//            //alert(x);
+//            $("#DokumentInput").val("BR. UGOVORA: " + brojUgovora + " - " + "XXX");
+//        };
+
+    });
+
+</script>
+<script type="text/javascript">
+
+
+</script>
+
+<script type="text/javascript">
+
+    $(function () {
+        $("#jqgh_ZapisUgovorStanOtkup_TablicaNaziv").text("TN");
+        $("#jqgh_ZapisUgovorStanOtkup_BrojUgovor").text("Broj ugovora");
+        $("#jqgh_ZapisUgovorStanOtkup_KupacNaziv").text("Kupac naziv");
+        $("#jqgh_ZapisUgovorStanOtkup_Posta").text("Pošta");
+        $("#jqgh_ZapisUgovorStanOtkup_PostanskiBroj").text("Poštanski broj");
+        $("#jqgh_ZapisUgovorStanOtkup_IznosKredit").text("Iznos kredit");
+        $("#jqgh_ZapisUgovorStanOtkup_IDValuta").text("Valuta");
+  
+    });
+   
+</script>
+<script type="text/javascript">
+    function InsertEditSucces() {
+
+
+    }
+
+    function InsertEditError() {
+
+    }
+
+
+    function DeleteSucces() {
+
+
+    }
+
+
+    function DeleteError() {
+
+    }
+
+
+</script>

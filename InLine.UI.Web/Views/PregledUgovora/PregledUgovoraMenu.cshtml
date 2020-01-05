@@ -1,0 +1,179 @@
+﻿
+<style>
+
+
+@*#menuizbornik {
+    height: 31px;
+    width:100px;
+    padding-left: 5px;
+    float: right;
+    margin-right:15px;
+    background: url(../../Content/menu/images/GlavniMenuPozadina.png) no-repeat;
+}
+
+#navigacija, #navigacija ul{
+     margin:0;
+     padding:0;
+     list-style-type:none;
+     list-style-position:outside;
+     position:relative;
+     line-height:1.5em;
+     z-index: 1000;
+ }
+ 
+ li.navigacijaShow
+ {
+    margin-right:55px;
+ }
+ 
+
+ 
+#menuizbornik #navigacija a.navigacijaShowIkona
+ {
+    background-color: transparent;
+    border-top: 0px solid red;
+    border-bottom: 0px solid red;
+    padding:7px 7px;
+    
+ }
+ 
+  #navigacija a:link, #navigacija a:active, #navigacija a:visited{
+    display:block;
+    padding:7px 7px;
+    border:0px solid #333;
+    color:#fff;
+    text-decoration:none;
+    margin-right:0px;
+    border-top: 1px solid #3A5A8B;
+    border-bottom: 1px solid #162133;  
+ }
+
+#navigacija a:hover{
+    color:#FFFFFF;
+    background-color: #1a2c4c;
+}
+
+#navigacija li{
+    float:right;
+    position:relative;
+}
+
+#navigacija ul 
+{
+    position:absolute;
+    width:9em;
+    top:0em;
+    display:none;
+ 
+}
+
+#navigacija ul.submenu 
+{
+    width:15em;
+    padding:10px;
+    background-color: #233758;
+    left: -150px;
+    border-radius: 12px;     
+}
+
+#navigacija ul ul.submenu 
+{
+    width:13em;
+    padding:10px;
+    background-color: #233758;
+    left: -40px;
+    border-radius: 12px;
+       
+}
+
+
+
+#navigacija li ul a{
+    width:14em;
+    float:right;
+    background-color: #283d60;
+    margin-left:115px;
+}
+
+#navigacija ul ul{
+	top:auto;
+	background-color:transparent;
+	}
+
+#navigacija li ul ul 
+{
+    display:block;
+}
+
+
+#navigacija li:hover ul ul, #navigacija li:hover ul ul ul, #navigacija li:hover ul ul ul ul{
+    display:none;
+    }
+#navigacija li:hover ul, #navigacija li li:hover ul, #navigacija li li li:hover ul, #navigacija li li li li:hover ul{
+    display:block;
+    }
+*@
+
+</style>
+
+
+
+<div id="menuizbornik">
+
+   <ul id="navigacija">
+   <li class="navigacijaShow"><a class="navigacijaShowIkona" href="#"><span>&#9776;</span></a>
+        <ul class="submenu">
+           <li><a href="#">Evidencija</a>
+        <ul >
+            <li>@Html.ActionLink("Dokumenti", "Dokumenti", "OtkupStanova")</li>
+            <li>@Html.ActionLink("Dokumenti otkupa", "Ugovori", "OtkupStanova")</li>
+            <li>@Html.ActionLink("Promjena vlasništva", "xxx", "xxx")</li>
+            <li>@Html.ActionLink("Utuženi ugovori", "xxx", "xxx")</li>
+            <li>@Html.ActionLink("Zadnja rata", "xxx", "xxx")</li>
+            <li>@Html.ActionLink("Kupci i ulice", "Kupci", "OtkupStanova")</li>
+        </ul>
+    </li>
+     <li><a href="#">Pregled</a>
+             <ul >
+            <li>@Html.ActionLink("Pregled otkupa", "PregledUgovora", "PregledUgovora")</li>
+            <li>@Html.ActionLink("Opomene", "Opomene", "OtkupStanova")</li>
+        </ul>
+     </li>
+    <li><a href="#">Financije</a>
+        <ul>
+            <li>@Html.ActionLink("Formiranje obroka", "FormiranjeObroka", "OtkupStanova")</li>
+            <li>@Html.ActionLink("Nalog", "xxx", "xxx")</li>
+            <li>@Html.ActionLink("Obveznice", "xxx", "xxx")</li>
+        </ul>
+    </li>
+
+     <li><a href="#">Storno</a></li>
+        </ul>
+   </li>
+ 
+</ul>
+
+</div>
+
+
+@*
+   <ul id="navigacija">
+
+    <li><a href="#">Dokumenti</a>
+        <ul>
+            <li><a href="#">3.1 jQuery</a>
+                <ul>
+                    <li><a href="#">3.1.1 Download</a></li>
+                    <li><a href="#">3.1.2 Tutorial</a></li>
+                </ul>
+            </li>
+            <li><a href="#">3.2 Mootools</a></li>
+            <li><a href="#">3.3 Prototype</a></li>
+        </ul>
+    </li>
+     <li><a href="#">Evidencija</a></li>
+    <li><a href="#">Financije</a></li>
+</ul>*@
+
+
+

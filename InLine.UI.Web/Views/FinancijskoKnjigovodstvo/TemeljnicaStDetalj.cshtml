@@ -1,0 +1,1500 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.TemeljnicaStDetaljFormFormatted
+@using InLine.Repository.Data.Helper;
+@using InLine.UI.Web.Helper;
+
+<style type="text/css">
+    #ID_ValutaPomoc
+    {
+        width: 100%;
+    }
+    
+    .chzn-container a.error
+    {
+        border-color: red !important;
+    }
+    
+
+   /* ul {
+        margin-bottom: 0px;
+    }
+    
+    ul li {
+       
+        height:22px;
+    }
+    */
+    
+    #Konto { width:100%;}
+    #Naziv { width:100%;}
+    #tdTecaj {display:none;}
+   .DecimalNumber {text-align:right}
+   .Left {text-align:left}
+   #KontoOpis {color: #990033;}
+   
+   #tblDatumDospijecaPomoc
+   {
+       display: none;
+   }
+
+   
+
+    
+</style>
+@{
+    string prefixLabela = "labela_TemeljnicaSt_Detalj_";
+}
+
+
+@{
+    string Akcija = @InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity + InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert;
+    string IDForma = @InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Forma;
+    string IDValutaPomoc = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.ID_ValutaPomoc;
+    string Datepicker = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Datepicker;
+    string Chosen = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Chosen;
+    string DatumPomoc = @InLine.Model.Data.FieldString.TemeljnicaSt.Datum + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Pomoc;
+    string Datum = @InLine.Model.Data.FieldString.TemeljnicaSt.Datum;
+    string DatumDospijecaPomoc = @InLine.Model.Data.FieldString.TemeljnicaSt.DatumDospijeca + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Pomoc;
+    string DatumDospijeca = @InLine.Model.Data.FieldString.TemeljnicaSt.DatumDospijeca;
+    string KriterijKriterijStList = "KriterijKriterijStList";
+    //string Autocomplete = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Autocomplete;
+    string Autocomplete = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Autocomplete + @InLine.Model.Data.FieldString.View.TemeljnicaSt.TemeljnicaStEntity;
+    string Duguje = "Duguje";
+    string Potrazuje = "Potražuje";
+    string HRK = "HRK";
+    string tdTecajSelector = "#tdTecaj";
+    string TecajVrijednostDefault = "1,00";
+    string DecimalVrijednostDefault = "0,00";
+    string TecajSelector = @InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash + @InLine.Model.Data.FieldString.View.TemeljnicaSt.Tecaj;
+    string JeSaldoKonti = "0";
+    string JeSubjekt = "0";
+    string JeZapis = "0";
+    string textAlignClass = "textAlign";
+    string PoslovniPartnerInputSelector = "#PoslovniPartnerInput";
+    string DokumentInputSelector = "#DokumentInput";
+    string IDZapisVrSelector = "#IDZapisVr";
+    string DecimalNumber = "DecimalNumber";
+    string Left = "Left";
+    string tdValutaInfoSelector = "#tdValutaInfo";
+    string trValutaInfoSelector = "#trValutaInfo";
+    string DecimalNumberVise = "DecimalNumberVise";
+    string ValutaDomaca = InLine.UI.Web.Helper.KeyWord.Valuta.ValutaDomaca;
+    string Start = CommonFunctions.PagingVrijednostiDefault.Start;
+    string Count = CommonFunctions.PagingVrijednostiDefault.Count;
+    string ulKontoStSelector = "#ulKontoSt";
+    string tblDatumDospijecaPomocSelector = "#tblDatumDospijecaPomoc";
+  
+}
+
+@{
+    string kojiSubjektNaziv = String.Empty;
+    
+    if(@Model.SubjektNaziv != null)
+    {
+        kojiSubjektNaziv = @Model.SubjektOznaka + " " +  @Model.SubjektNaziv.ToUpper();
+    }
+
+    string kojiDokumentNaziv = String.Empty;
+
+    if (@Model.DocumentNaziv != null)
+    {
+        kojiDokumentNaziv = @Model.DocumentNaziv.ToUpper();
+    }
+
+    int zapisVr = 0;
+
+    if (@Model.IDZapisVr != null)
+    {
+        zapisVr = Convert.ToInt32(@Model.IDZapisVr);
+    }
+    else{
+
+        zapisVr = 0;
+    }
+    
+   string IDKontniPlanAnalitikaIDZapisVr = "0";
+
+    if (@Model.IDKontniPlanAnalitikaIDZapisVr != "")
+    {
+        IDKontniPlanAnalitikaIDZapisVr = @Model.IDKontniPlanAnalitikaIDZapisVr;
+    }
+    else{
+
+        IDKontniPlanAnalitikaIDZapisVr = "0";
+    }
+
+    int ImaDatumDospijeca = 0;
+    
+    if (@Model.DatumDospijeca != null)
+    {
+        ImaDatumDospijeca = 1;
+    }
+}
+
+
+@*@using (Ajax.BeginForm(Akcija, @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "kriterijKriterijStPoruke2", OnSuccess = "loadStatus" }, new { id = IDForma, @class = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormClass }))*@
+
+@using (Html.BeginForm(Akcija, @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo, FormMethod.Post, new { id = IDForma, @class = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormClass }))
+{
+    @Html.HiddenFor(model => model.ID_Temeljnica)
+    @Html.HiddenFor(model => model.ID_TemeljnicaSt)
+    @Html.HiddenFor(model => model.IDValuta)
+    @Html.HiddenFor(model => model.ID_KontniPlan)
+    @Html.HiddenFor(model => model.ID_KontniPlanSt)
+    @Html.HiddenFor(model => model.KriterijKriterijStList)
+    @Html.HiddenFor(model => model.Datum)
+    @Html.HiddenFor(model => model.DatumDospijeca)
+    @Html.HiddenFor(model => model.ID_Subjekt)
+    @Html.HiddenFor(model => model.ID_Zapis)
+    @Html.HiddenFor(model => model.ZapisOpis)
+    @Html.HiddenFor(model => model.ID_KontniPlanAnalitika)
+
+
+    @Html.ValidationSummary(false)
+  
+    <table class ="TemeljnicaStDetail @InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormBackground" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+        <tbody>
+            <tr>
+                <td colspan='4' style="height: 5px; background-color: #E7E7E7; padding-top: 2px;
+                    padding-bottom: 2px;">
+                </td>
+            </tr>
+            <tr>
+                <td colspan = '4'>
+                    <table>
+                    <tr>
+                    <td>
+                    @Html.LabelFor(model => model.Datum, new { id = @prefixLabela + @Html.NameFor(model => model.Datum) })</td>
+                      <td>@Html.TextBox(@DatumPomoc, null, new { @class = Datepicker })
+                    @Html.ValidationMessageFor(model => model.Datum)</td>
+
+                     <td>
+                     <table id="tblDatumDospijecaPomoc">
+                     <tr>
+                     <td>
+                         @Html.LabelFor(model => model.DatumDospijeca, new { id = @prefixLabela + @Html.NameFor(model => model.DatumDospijeca) })
+                       </td>
+                      <td>
+                        @Html.TextBox(@DatumDospijecaPomoc, null, new { @class = Datepicker })
+                        @Html.ValidationMessageFor(model => model.DatumDospijeca)
+                     </td>
+                     </tr>
+                     </table>
+
+                    </td>
+                    </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+            <td colspan='4'>
+             <table class ="TemeljnicaStDetail @InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormBackground" width="100%">
+                <tr>
+                   <td>@Html.LabelFor(model => model.Konto, new { id = @prefixLabela + @Html.NameFor(model => model.Konto) })</td>
+                   <td colspan='2'>
+                   @Html.TextBoxFor(model => model.Konto, new { @class = "btnDropDownSymbol " + Autocomplete })
+                    </td>
+                   <td></td>
+                   <td style="width:70%;">@Html.TextBoxFor(model => model.Naziv, new { @class = "btnDropDownSymbol " + Autocomplete })
+ 
+                   </td>
+                    
+                 </tr>
+             </table>
+             </td>
+            </tr>
+            <tr>
+            <td>
+            <div id="KontoOpis">
+
+            </div>
+            </td>
+            </tr>
+
+            <tr>
+                <td colspan = '4'>
+                 <div id="PoslovniPartner">
+                   @{ Html.RenderPartial("~/Views/SubjektSvi/Subjekt.cshtml");  }
+                </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan = '4'>
+                 <div id="Dokument">
+                   @{ Html.RenderAction("Dokument", "ZapisSvi", new { ID_KontniPlan = @Model.ID_KontniPlan });  }
+                </div>
+                </td>
+            </tr>
+
+            <tr>
+       	<td>
+          <table width="100%">
+            <tr>
+            <td style="width:75%;vertical-align:top;">
+            <table width="100%">
+              <tr>
+                  <th width="5%"></th>
+                <th width="25%" >@Duguje</th>
+                <th width="25%">@Potrazuje</th>
+            </tr>
+               <tr id="trValutaInfo">
+                <td id="tdValutaInfo"></td>
+                 <td>@Html.TextBoxFor(model => model.IznosDugujeValuta, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosDugujeValuta), new { @class = @DecimalNumber })
+                    @Html.ValidationMessageFor(model => model.IznosDugujeValuta)</td>
+                   <td>@Html.TextBoxFor(model => model.IznosPotrazujeValuta, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosPotrazujeValuta), new { @class = @DecimalNumber })
+                    @Html.ValidationMessageFor(model => model.IznosPotrazujeValuta)</td>
+            </tr>
+
+            <tr id="trNeValutaInfo">
+                <td>@ValutaDomaca</td>
+                     <td>@Html.TextBoxFor(model => model.IznosDuguje, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosDuguje), new { @class = @DecimalNumber })
+                    @Html.ValidationMessageFor(model => model.IznosDuguje)</td>
+                            <td>@Html.TextBoxFor(model => model.IznosPotrazuje, String.Format(KeyWord.FormaterRazno.DecimalFormat.TockaZarez, Model.IznosPotrazuje), new { @class = @DecimalNumber })
+                    @Html.ValidationMessageFor(model => model.IznosPotrazuje)</td>
+                   
+            </tr>
+
+            </table>
+            </td>
+            <td style="width:25%;vertical-align:top;">
+             <table >
+             <tr>
+              <th>Valuta</th>
+             </tr>
+             <tr>
+             <td>
+               @Html.DropDownList(IDValutaPomoc, (SelectList)ViewBag.IDValuta)
+                    @Html.ValidationMessageFor(model => model.IDValuta)
+             </td>
+             </tr>
+             </table>
+            </td>
+            </tr>
+
+            </table>
+            </td>
+          <td id="tdTecaj">
+            <table>
+            <tr>
+              <td>@Html.LabelFor(model => model.Tecaj, new { id = @prefixLabela + @Html.NameFor(model => model.Tecaj) })
+                </td>
+                <td>@Html.TextBoxFor(model => model.Tecaj, new { @class = @DecimalNumberVise + " " + @Left })
+                    @Html.ValidationMessageFor(model => model.Tecaj)
+                </td>
+            </tr>
+            </table>
+            </td>				                
+    </tr>
+
+            <tr>
+     <td colspan="8">
+     <table width="100%">
+     <tr>
+        <td width="15%">@Html.LabelFor(model => model.Opis, new { id = @prefixLabela + @Html.NameFor(model => model.Opis) })</td>
+        <td >@Html.TextAreaFor(model => Model.Opis)
+        @Html.ValidationMessageFor(model => model.Opis)</td>	
+     </tr>
+     </table>
+     	</td>						                
+    </tr>
+        </tbody>
+    </table>
+    <div>
+    </div>
+    <div id="poruka_TemeljnicaSt">
+    </div>
+    <div>
+        @{Html.RenderAction("TemeljnicaStKriterijForma", new { ID_KontniPlan = Model.ID_KontniPlan, ID_KontniPlanSt = Model.ID_KontniPlanSt, ID_TemeljnicaSt = Model.ID_TemeljnicaSt });}
+    </div>
+ <br />
+
+}
+
+
+
+<script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/DecimalValidator.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/chosen.jquery.min.js")" type="text/javascript"></script>
+<link href="../../Scripts/jquery.treeview/jquery.treeview.css" rel="stylesheet" type="text/css" />
+<script src="../../Scripts/jquery.treeview/jquery.treeview.js" type="text/javascript"></script>
+<script src="../../Scripts/jquery.jstree/jquery.jstree.js" type="text/javascript"></script>
+<script src="../../Scripts/CustomScripts/DialogsAndCrud.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+
+    $(function () {
+        $("#labela_TemeljnicaSt_Detalj_DatumDospijeca").text("Datum dospijeća");
+        $("#labela_TemeljnicaSt_Detalj_ID_KontniPlanSt").text("Konto stavka");
+        $("#labela_TemeljnicaSt_Detalj_IznosDuguje").text("Iznos duguje");
+        $("#labela_TemeljnicaSt_Detalj_IznosPotrazuje").text("Iznos potražuje");
+        $("#labela_TemeljnicaSt_Detalj_IznosDugujeValuta").text("Iznos duguje valuta");
+        $("#labela_TemeljnicaSt_Detalj_IznosPotrazujeValuta").text("Iznos potražuje valuta");
+        $("#labela_TemeljnicaSt_Detalj_IDValuta").text("Valuta");
+        $("#labela_TemeljnicaSt_Detalj_Tecaj").text("Tečaj");
+        $("#labela_TemeljnicaSt_Detalj_Konto").text("Konto");
+        $("#labela_TemeljnicaSt_Detalj_KontoNaziv").text("Konto naziv");
+        $("#labela_TemeljnicaSt_Detalj_Opis").text("Napomena");
+    });
+
+</script>
+<script type="text/javascript">
+
+
+    function KontoSvojstvProvjera() {
+          var SubjektDopusteno = @Model.SubjektDopusteno;
+          var ZapisDopusteno = @Model.ZapisDopusteno;
+
+           if (SubjektDopusteno == 1) {
+            $('@PoslovniPartnerInputSelector').attr("disabled", false);
+            $('@PoslovniPartnerInputSelector').css('background-color', '#fff');
+
+            }
+
+            else {
+                $('@PoslovniPartnerInputSelector').attr("disabled", true);
+                $('@PoslovniPartnerInputSelector').css('background-color', '#E7E7E7');
+            }
+
+
+            if (ZapisDopusteno == 1) {
+  
+            }
+
+            else {
+   
+                $('@DokumentInputSelector').attr("disabled", true);
+                $('@DokumentInputSelector').css('background-color', '#E7E7E7');
+                $("@IDZapisVrSelector").attr('disabled', true).trigger("liszt:updated");
+            }
+
+    }
+
+
+   function TemeljnicaStKriterij() {
+
+        var idTemeljnicaSt = @Model.ID_TemeljnicaSt;
+
+        $.ajax({
+            url: '@Url.Action("TemeljnicaStKriteriji", @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo)',
+            dataType: 'json',
+            type: 'GET',
+            data: { idTemeljnicaStPost: idTemeljnicaSt },
+            success: function (data) {
+                if (data.length > 0) {
+                    PostaviKriterijeTemeljnicaSt(data);
+                }
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+                alert(ajaxOptions);
+
+            }
+        });
+    }
+
+
+    var validator = Dialozi.VratiValidator('@IDForma');
+    validator.settings.ignore = ":hidden:not(select)";
+    validator.settings.ignore = [];
+
+
+
+    $(document).ready(function () {
+
+        $('#DokumentOpisInput').val('@Model.ZapisOpis');
+
+        var modelvaluta = '@Model.IDValuta';
+        Dialozi.DropDownValuta(modelvaluta);
+        Dialozi.DatePicker();
+        $("input[type='text']:first", document.forms[0]).focus();
+        $("#" + '@IDForma' + " select").chosen();
+
+
+        if ($('#' + '@IDValutaPomoc').val() != '@ValutaDomaca')
+         {
+            $("@tdTecajSelector").show();
+
+
+            if ('@Model.ID_TemeljnicaSt' != "-1") {
+                $('@TecajSelector').val('@Model.Tecaj');
+               
+            }
+
+            else {
+
+                $('@TecajSelector').val("");
+                     $('@TecajSelector').val('@Model.Tecaj');
+            }
+
+            $('@tdValutaInfoSelector').html(modelvaluta);
+            $("@trValutaInfoSelector").show();
+        }
+
+        else {
+            $('@TecajSelector').val("@TecajVrijednostDefault");
+            $("@tdTecajSelector").hide();
+            $("@trValutaInfoSelector").hide();
+        }
+
+        $('@PoslovniPartnerInputSelector').val('@kojiSubjektNaziv.ToUpper()');
+         $('#DokumentInput').val('@kojiDokumentNaziv.ToUpper()');
+
+
+//         if(@zapisVr != 0)
+//         {
+//           $('#IDZapisVr').val(@zapisVr);
+//           $('#IDZapisVr').trigger("liszt:updated");
+//         }
+
+          if('@IDKontniPlanAnalitikaIDZapisVr' != "0")
+         {
+           $('#IDZapisVr').val('@IDKontniPlanAnalitikaIDZapisVr');
+           $('#IDZapisVr').trigger("liszt:updated");
+         }
+
+
+        KontoSvojstvProvjera();
+
+
+        if ('@Model.ID_TemeljnicaSt' != "-1") {
+            TemeljnicaStKriterij();
+        }
+
+
+       if ('@ImaDatumDospijeca' == 1) {
+        $("@tblDatumDospijecaPomocSelector").show();
+        }
+        else{
+         $("@tblDatumDospijecaPomocSelector").hide();
+        }
+
+    });
+
+
+
+    $(function () {
+        Dialozi.PostaviValuta();
+    });
+
+
+    $(function () {
+        var value = '@Model.Datum.Date.ToShortDateString()';
+        Dialozi.PostaviDatumPolje('@Datum', value);
+        Dialozi.DocumentReadyValid('@Datum');
+    });
+
+
+    $('#' + '@DatumPomoc').change(function (event) {
+        var dat = $('#' + '@DatumPomoc').val();
+        Dialozi.PostaviDatumPolje('@Datum', dat);
+    });
+
+
+     $(function () {
+        var value = '@Model.DatumDospijeca.GetValueOrDefault().ToShortDateString()';
+        Dialozi.PostaviDatumPolje('@DatumDospijeca', value);
+        Dialozi.DocumentReadyValid('@DatumDospijeca');
+    });
+
+
+    $('#' + '@DatumDospijecaPomoc').change(function (event) {
+        var dat = $('#' + '@DatumDospijecaPomoc').val();
+        Dialozi.PostaviDatumPolje('@DatumDospijeca', dat);
+    });
+
+
+
+
+
+
+    $('#' + '@IDValutaPomoc').change(function (event) {
+
+        var selektiranaValuta = $('#' + '@IDValutaPomoc').val();
+
+        if (selektiranaValuta != '@ValutaDomaca') {
+            $("@tdTecajSelector").show();
+            $('@TecajSelector').val("");
+            $('@tdValutaInfoSelector').html(selektiranaValuta);
+            $("@trValutaInfoSelector").show();
+        }
+
+        else {
+            $('@TecajSelector').val("@TecajVrijednostDefault");
+            $("@tdTecajSelector").hide();
+            $("@trValutaInfoSelector").hide();
+        }
+
+    });
+
+
+    $('@TecajSelector').change(function () {
+
+//        var tecajIznos = $('@TecajSelector').val().replace(',', '.');
+//        //tecajIznos = tecajIznos.replace(',', '.')
+
+//        var selektiranaValuta = $('#' + '@IDValutaPomoc').val();
+
+//        var iznosDugujeValuta = $("#IznosDugujeValuta").val().replace(',', '.');
+//        //iznosDugujeValuta = iznosDugujeValuta.replace(',', '.');
+
+//        var iznosPotrazujeValuta = $("#IznosPotrazujeValuta").val().replace(',', '.');
+//        //iznosPotrazujeValuta = iznosPotrazujeValuta.replace(',', '.');
+
+
+//        if (tecajIznos != "0" && tecajIznos != "") {
+//            iznosDuguje = iznosDugujeValuta * tecajIznos;
+//            iznosPotrazuje = iznosPotrazujeValuta * tecajIznos;
+//        }
+
+//        if (selektiranaValuta != '@ValutaDomaca') {
+//            $("#trValutaInfo").show();
+//            $("#IznosDuguje").val(iznosDuguje.toFixed(2).replace('.', ','));
+//            $("#IznosPotrazuje").val(iznosPotrazuje.toFixed(2).replace('.', ','));
+//        }
+
+//        else {
+//            $('@TecajSelector').val("@TecajVrijednostDefault");
+//            $("#trValutaInfo").hide();
+
+//        }
+
+    });
+
+
+
+       var izracunTecaj = function ()
+       {
+
+            var selektiranaValuta = $('#' + '@IDValutaPomoc').val();
+            var tecajIznos = decimalViseDeformatFunkcija($('@TecajSelector').val());
+            var iznosDugujeValuta = decimalDeformatFunkcija($("#IznosDugujeValuta").val());
+            var iznosPotrazujeValuta = decimalDeformatFunkcija($("#IznosPotrazujeValuta").val());
+
+            if (tecajIznos != "0" && tecajIznos != "") {
+               iznosDuguje = iznosDugujeValuta * tecajIznos;
+               iznosPotrazuje = iznosPotrazujeValuta * tecajIznos;
+                iznosDuguje = iznosDuguje.toString().replace('.', ',');
+                iznosPotrazuje = iznosPotrazuje.toString().replace(/\./g, ',');
+            }
+
+            if (selektiranaValuta != '@ValutaDomaca') {
+
+                $("@trValutaInfoSelector").show();
+
+                $("#IznosDuguje").val(iznosDuguje);
+                var a = decimalFunkcijaTest($('#IznosDuguje').val());
+                a = a;
+                $("#IznosDuguje").val(a);
+
+                $("#IznosPotrazuje").val(iznosPotrazuje);
+                var b = decimalFunkcijaTest($('#IznosPotrazuje').val());
+                b = b;
+                $("#IznosPotrazuje").val(b);
+            }
+
+            else {
+                $('@TecajSelector').val("@TecajVrijednostDefault");
+                $("@trValutaInfoSelector").hide();
+
+                }
+        };
+
+
+        var decimalDeformatFunkcija = function (BROJ) {
+            if (!BROJ.match(/[a-zA-ZšđčćžŠĐČĆŽ]/g)) {
+
+                var count = BROJ.split(",").length - 1;
+
+                if (count < 2) {
+                    BROJ = BROJ.replace(/ /g, '');
+                    BROJ = BROJ.replace(/\./g, '');
+
+                    if (count == 0) {
+                        BROJ += '.00';
+                    };
+
+                    if (count == 1) {
+                        var posljeZareza = BROJ.substr(BROJ.indexOf(',') + 1);
+                        if (posljeZareza.length == 0) {
+                            BROJ += '00';
+                        };
+                        if (posljeZareza.length == 1) {
+                            BROJ += '0';
+                        };
+                        if (posljeZareza.length > 2) {
+                            BROJ = BROJ.replace(/\,/g, '.');
+                            var ZAOKRUZENO = parseFloat(BROJ).toFixed(2);
+                            BROJ = ZAOKRUZENO.toString();
+                            BROJ = BROJ.replace(/\./g, ',');
+                        };
+                    };
+                    var parts = BROJ.split(',');
+                    var part1 = parts[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1");
+                    var part2 = parts[1];
+
+                    BROJ = part1 + '.' + part2;
+                };
+            };
+            return BROJ;
+        }
+
+        var decimalViseDeformatFunkcija = function (BROJ) {
+            if (!BROJ.match(/[a-zA-ZšđčćžŠĐČĆŽ]/g)) {
+
+                var count = BROJ.split(",").length - 1;
+
+                if (count < 2) {
+                    BROJ = BROJ.replace(/ /g, '');
+                    BROJ = BROJ.replace(/\./g, '');
+
+                    if (count == 0) {
+                        BROJ += '.00';
+                    };
+
+                    if (count == 1) {
+                        var posljeZareza = BROJ.substr(BROJ.indexOf(',') + 1);
+                        if (posljeZareza.length == 0) {
+                            BROJ += '00';
+                        };
+                        if (posljeZareza.length == 1) {
+                            BROJ += '0';
+                        };
+                        if (posljeZareza.length > 2) {
+                            BROJ = BROJ.replace(/\,/g, '.');
+                            var ZAOKRUZENO = parseFloat(BROJ).toFixed(6);
+                            BROJ = ZAOKRUZENO.toString();
+                            BROJ = BROJ.replace(/\./g, ',');
+                        };
+                    };
+                    var parts = BROJ.split(',');
+                    var part1 = parts[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1");
+                    var part2 = parts[1];
+
+                    BROJ = part1 + '.' + part2;
+                };
+            };
+            return BROJ;
+        }
+
+
+        var decimalViseFunkcijaTest = function (BROJ) {
+            if (!BROJ.match(/[a-zA-ZšđčćžŠĐČĆŽ]/g)) {
+
+                var count = BROJ.split(",").length - 1;
+
+                if (count < 2) {
+                    BROJ = BROJ.replace(/ /g, '');
+                    BROJ = BROJ.replace(/\./g, '');
+
+                    if (count == 0) {
+                        BROJ += ',00';
+                    };
+
+                    if (count == 1) {
+                        var posljeZareza = BROJ.substr(BROJ.indexOf(',') + 1);
+                        if (posljeZareza.length == 0) {
+                            BROJ += '00';
+                        };
+                        if (posljeZareza.length == 1) {
+                            BROJ += '0';
+                        };
+                        if (posljeZareza.length > 2) {
+                            BROJ = BROJ.replace(/\,/g, '.');
+
+                            var ZAOKRUZENO = parseFloat(BROJ).toFixed(6);
+                            BROJ = ZAOKRUZENO.toString();
+                            BROJ = BROJ.replace(/\./g, ',');
+                        };
+                    };
+                    var parts = BROJ.split(',');
+                    var part1 = parts[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
+                    var part2 = parts[1];
+
+                    BROJ = part1 + ',' + part2;
+                };
+            };
+            return BROJ;
+        }
+
+          var decimalFunkcijaTest = function (BROJ) {
+            if (!BROJ.match(/[a-zA-ZšđčćžŠĐČĆŽ]/g)) {
+
+                var count = BROJ.split(",").length - 1;
+
+                if (count < 2) {
+                    BROJ = BROJ.replace(/ /g, '');
+                    BROJ = BROJ.replace(/\./g, '');
+
+                    if (count == 0) {
+                        BROJ += ',00';
+                    };
+
+                    if (count == 1) {
+                        var posljeZareza = BROJ.substr(BROJ.indexOf(',') + 1);
+                        if (posljeZareza.length == 0) {
+                            BROJ += '00';
+                        };
+                        if (posljeZareza.length == 1) {
+                            BROJ += '0';
+                        };
+                        if (posljeZareza.length > 2) {
+                            BROJ = BROJ.replace(/\,/g, '.');
+
+                            var ZAOKRUZENO = parseFloat(BROJ).toFixed(2);
+                            BROJ = ZAOKRUZENO.toString();
+                            BROJ = BROJ.replace(/\./g, ',');
+                        };
+                    };
+                    var parts = BROJ.split(',');
+                    var part1 = parts[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
+                    var part2 = parts[1];
+
+                    BROJ = part1 + ',' + part2;
+                };
+            };
+            return BROJ;
+        }
+
+
+
+      $(document).ready(function () {
+
+        var decimalFunkcija = function (BROJ) {
+            if (!BROJ.match(/[a-zA-ZšđčćžŠĐČĆŽ]/g)) {
+
+                var count = BROJ.split(",").length - 1;
+
+                if (count < 2) {
+                    BROJ = BROJ.replace(/ /g, '');
+                    BROJ = BROJ.replace(/\./g, '');
+
+                    if (count == 0) {
+                        BROJ += ',00';
+                    };
+
+                    if (count == 1) {
+                        var posljeZareza = BROJ.substr(BROJ.indexOf(',') + 1);
+                        if (posljeZareza.length == 0) {
+                            BROJ += '00';
+                        };
+                        if (posljeZareza.length == 1) {
+                            BROJ += '0';
+                        };
+                        if (posljeZareza.length > 2) {
+                            BROJ = BROJ.replace(/\,/g, '.');
+                            var ZAOKRUZENO = parseFloat(BROJ).toFixed(2);
+                            BROJ = ZAOKRUZENO.toString();
+                            BROJ = BROJ.replace(/\./g, ',');
+                        };
+                    };
+                    var parts = BROJ.split(',');
+                    var part1 = parts[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
+                    var part2 = parts[1];
+
+                    BROJ = part1 + ',' + part2;
+                };
+            };
+            return BROJ;
+        };
+
+        $(".DecimalNumber").blur(function () {
+            var ULAZ = $(this).val();
+            var IZLAZ = decimalFunkcija(ULAZ);
+            $(this).val(IZLAZ)
+           izracunTecaj();
+        });
+
+        $(".DecimalNumber").keypress(function (e) {
+            if (e.which == 13) {
+                $(".DecimalNumber").blur();
+            }
+        });
+
+        $(".DecimalNumberVise").blur(function () {
+        var ULAZ = $(this).val();
+        var IZLAZ = decimalViseFunkcijaTest(ULAZ);
+        $(this).val(IZLAZ)
+        izracunTecaj();
+    });
+
+        $(".DecimalNumberVise").keypress(function (e) {
+            if (e.which == 13) {
+                $(".DecimalNumberVise").blur();
+            }
+        });
+
+
+        
+      $('@TecajSelector').change(function () {
+            izracunTecaj();
+       });
+
+      
+    });
+
+
+</script>
+
+
+<script type="text/javascript">
+
+     $("#PrikaziKriterije").click(function () {
+
+         if ($('#KriterijOkvir').css('display') == 'none') {
+             $('#KriterijOkvir').show();
+             $('#TemeljnicaStDialog').dialog("option", "height", 700)
+             $('#PrikaziKriterije').attr('value', 'Zatvori formu kriterija');
+         }
+
+         else {
+             $('#KriterijOkvir').hide();
+             $('#TemeljnicaStDialog').dialog("option", "height", 450)
+             $('#PrikaziKriterije').attr('value', 'Otvori formu kriterija');
+         }
+
+     });
+
+
+     // Kriteriji za DropDown
+
+     $(".kriterij select").change(function () {
+
+         var stavka = $(this).attr("id");
+         var kriterij = $(this).attr("value");
+         var myArray = [];
+
+         //         var krtiterijPolje = [];
+         //         var cnt = 0;
+
+         var BrojNeodabranihObaveznih = 0;
+
+         $('#tbl-kriterijkriterijst select').each(function (i, e) {
+
+             var brojDiva = $(this).attr("id");
+
+             if (this.options[e.selectedIndex].text != "--Odaberite--") {
+                 myArray.push($(this).attr("value") + ":" + $(this).attr("id"));
+             }
+
+             else if ((this.options[e.selectedIndex].text == "--Odaberite--") && $("input:radio[name=rb_" + $(this).attr("id") + "][value=1]").is(':checked') == true) {
+
+                 $("#" + brojDiva + "_selectPoruka").show();
+                 BrojNeodabranihObaveznih += 1;
+             }
+
+
+
+             if (BrojNeodabranihObaveznih > 0) {
+                 $('#TemeljnicaStDialogSpremi').prop("disabled", true);
+                 $('#TemeljnicaStDialogSpremiDodaj').prop("disabled", true);
+                 $('#TemeljnicaStDialogSpremiKopiraj').prop("disabled", true);
+             }
+
+             else {
+
+                 $('#TemeljnicaStDialogSpremi').prop("disabled", false);
+                 $('#TemeljnicaStDialogSpremiDodaj').prop("disabled", false);
+                 $('#TemeljnicaStDialogSpremiKopiraj').prop("disabled", false);
+                 $("#" + brojDiva + "_selectPoruka").hide();
+             }
+
+         });
+
+         $("#" + '@KriterijKriterijStList').val(myArray);
+         console.log(myArray);
+
+     });
+
+</script>
+
+<script type="text/javascript">
+
+    $(".selectPoruka").mouseover(function () {
+        var kojiDiv = $(this).attr("id");
+        var kojiDivOpis = "#" + kojiDiv + "Opis";
+        $(kojiDivOpis).text("Parametar glavne knjige je obavezan. Odaberite stavku.");
+    });
+
+    $(".selectPoruka").mouseout(function () {
+        var kojiDiv = $(this).attr("id");
+        var kojiDivOpis = "#" + kojiDiv + "Opis";
+        $(kojiDivOpis).text("");
+    });
+
+</script>
+
+<script type="text/javascript">
+
+//    $("." + '@Autocomplete').each(function(){
+
+//   var widgetAutoComplete = $(this).autocomplete({
+
+//        showHeader: true,
+
+//        source: function (request, response) {
+
+//            var kojePolje = $(this.element).prop("id");
+//            var kojiKriterij = 0;
+//            //var kojaTemeljnica = @Model.ID_Temeljnica;
+//            var kojiKontniPlan = @Model.ID_KontniPlan;
+//            var kojaAnalitika= @Model.AnalitikaOd;
+//            
+
+//            if (kojePolje == "@InLine.Model.Data.FieldString.KontniPlanSt.Konto") {
+//                kojiKriterij = 1;
+//            }
+//            else if (kojePolje == "@InLine.Model.Data.FieldString.KontniPlanSt.Naziv") {
+//                kojiKriterij = 2;
+//            }
+
+//            var url = '@Url.Action("GetKonto", @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo)';
+
+//            $.ajax({
+//                url: url,
+//                data: { query: request.term, kriterij: kojiKriterij, analitikaod: kojaAnalitika, kontniplan: kojiKontniPlan },
+//                dataType: 'json',
+//                type: 'GET',
+//                success: function (data) {
+//                    response($.map(data,
+//                        function (item) {
+
+//                           return {
+
+//                                label: item.Konto.toUpperCase() + " " + item.Naziv.toUpperCase(),
+//                                value1: item.ID_KontniPlanSt,
+//                                value2: item.Konto,
+//                                value3: item.Naziv,
+//                                value4: item.SaldoKonti.toString() == "1" ? "checked" : "",
+//                                value5: item.Subjekt.toString() == "1" ? "checked" : "",
+//                                value6: item.Zapis.toString() == "1" ? "checked" : ""
+//                            }
+
+//                        }));
+//                }
+//            })
+//        },
+//        select:
+//                function (event, ui) {
+//                    $("@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + "@InLine.Model.Data.FieldString.KontniPlanSt.ID_KontniPlanSt").val(ui.item.value1);
+//                    $("@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + '@IDForma' + " " + "@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + "@InLine.Model.Data.FieldString.KontniPlanSt.Konto").val(ui.item.value2);
+//                    $("@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + '@IDForma' + " " + "@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + "@InLine.Model.Data.FieldString.KontniPlanSt.Naziv").val(ui.item.value3.toUpperCase());
+//                    KontniPlanStKriterijiStTemeljnicaSt(ui.item.value1);
+//                    JeSaldoKonti = ui.item.value4;
+//                    JeSubjekt = ui.item.value5;
+//                    JeZapis = ui.item.value6;
+//                    ProvjeraKontrola(ui.item.value1);
+//                    KontoOpis(ui.item.value1);
+//                    return false;
+//                },
+
+//        minLength: 0
+
+//    }).data("autocomplete");
+//  
+//   widgetAutoComplete._renderItem = function (ul, item) {
+
+//        return $("<li><table class='tblAutocomplete'></table></li>").data("item.autocomplete-item", item).append("<a><table width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><td width='70px'>" + item.value2 + "</td><td width='350px'>" + item.value3 + "</td><td width='50px'><input type='checkbox' "  + item.value4.toString() + "></td><td width='50px'><input type='checkbox' " + item.value5 + "></td><td width='50px'><input type='checkbox' "  + item.value6 + "></td></tr></table></a>").appendTo(ul);
+//    }
+
+//    widgetAutoComplete._renderMenu = function (ul, item) {
+
+//        var self = this;
+//        $.each(item, function (index, items) {
+//            if (index == 0)
+//                ul.append("<li><table class='autocompleteHeader'  width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr ><th  width='70px'>" + '@InLine.Model.Data.FieldString.KontniPlanSt.Konto' + "</th><th width='350px'>" +  '@InLine.Model.Data.FieldString.KontniPlanSt.Naziv' + "</th><th width='50px'>" +  '@InLine.Model.Data.FieldString.View.TemeljnicaStKontniPlanSt.SaldoKonti' + "</th><th width='50px'>Unos </br> poslp.</th><th width='50px'>Unos </br> dokumenta</th></tr></table></li>");
+//            self._renderItemData(ul, items);
+//        });
+//    }
+
+    //});
+
+
+// Test Za GetKonto pager
+   $("." + '@Autocomplete').each(function(){
+
+   var widgetAutoComplete = $(this).autocomplete({
+
+        showHeader: true,
+
+        source: function (request, response) {
+
+            var kojePolje = $(this.element).prop("id");
+            var kojiKriterij = 0;
+            //var kojaTemeljnica = @Model.ID_Temeljnica;
+            var kojiKontniPlan = @Model.ID_KontniPlan;
+            var kojaAnalitika= @Model.AnalitikaOd;
+            
+
+            if (kojePolje == "@InLine.Model.Data.FieldString.KontniPlanSt.Konto") {
+                kojiKriterij = 1;
+            }
+            else if (kojePolje == "@InLine.Model.Data.FieldString.KontniPlanSt.Naziv") {
+                kojiKriterij = 2;
+            }
+
+            var kojalista = "@ulKontoStSelector";
+            var url = '@Url.Action("GetKonto", @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo)';
+
+            $.AutocompleteKonto(request, response, kojalista, url, kojiKriterij, kojaAnalitika, kojiKontniPlan, @Start, @Count);
+
+        },
+        select:
+                function (event, ui) {
+                    $("@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + "@InLine.Model.Data.FieldString.KontniPlanSt.ID_KontniPlanSt").val(ui.item.value1);
+                    $("@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + '@IDForma' + " " + "@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + "@InLine.Model.Data.FieldString.KontniPlanSt.Konto").val(ui.item.value2);
+                    $("@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + '@IDForma' + " " + "@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash" + "@InLine.Model.Data.FieldString.KontniPlanSt.Naziv").val(ui.item.value3.toUpperCase());
+                    KontniPlanStKriterijiStTemeljnicaSt(ui.item.value1);
+                    JeSaldoKonti = ui.item.value4;
+                    JeSubjekt = ui.item.value5;
+                    JeZapis = ui.item.value6;
+                    ProvjeraKontrola(ui.item.value1);
+                    KontoOpis(ui.item.value1);
+                    return false;
+                },
+
+        minLength: 0
+
+    }).data("autocomplete");
+  
+   widgetAutoComplete._renderItem = function (ul, item) {
+
+        ul.attr('id', 'ulKontoSt');
+        return $("<li class='tblAutocompleteLi'><table class='tblAutocomplete'></table></li>").data("item.autocomplete-item", item).append("<a><table width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><td width='70px'>" + item.value2 + "</td><td width='350px'>" + item.value3 + "</td><td width='50px'><input type='checkbox' "  + item.value4.toString() + "></td><td width='50px'><input type='checkbox' " + item.value5 + "></td><td width='50px'><input type='checkbox' "  + item.value6 + "></td></tr></table></a>").appendTo("#ulKontoSt");
+    }
+
+    widgetAutoComplete._renderMenu = function (ul, item) {
+
+        var self = this;
+        $.each(item, function (index, items) {
+            if (index == 0)
+                ul.append("<li><table class='autocompleteHeader'  width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr ><th  width='70px'>" + '@InLine.Model.Data.FieldString.KontniPlanSt.Konto' + "</th><th width='350px'>" +  '@InLine.Model.Data.FieldString.KontniPlanSt.Naziv' + "</th><th width='50px'>" +  '@InLine.Model.Data.FieldString.View.TemeljnicaStKontniPlanSt.SaldoKonti' + "</th><th width='50px'>Unos </br> poslp.</th><th width='50px'>Unos </br> dokumenta</th></tr></table></li>");
+            self._renderItemData(ul, items);
+        });
+    }
+
+});
+
+
+    $.AutocompleteKonto = function (request, response, kojalista, url, kojiKriterij, kojaAnalitika, kojiKontniPlan, Start, Count) {
+
+            console.log('ajax prvi');
+            $.ajax({
+                url: url,
+                data: { query: request.term, kriterij: kojiKriterij, analitikaod: kojaAnalitika, kontniplan: kojiKontniPlan, start: Start, count: Count  },
+                dataType: 'json',
+                type: 'GET',
+                success: function (data) {
+                    response($.map(data,
+                        function (item) {
+
+                           return {
+
+                                label: item.Konto.toUpperCase() + " " + item.Naziv.toUpperCase(),
+                                value1: item.ID_KontniPlanSt,
+                                value2: item.Konto,
+                                value3: item.Naziv,
+                                value4: item.SaldoKonti.toString() == "1" ? "checked" : "",
+                                value5: item.Subjekt.toString() == "1" ? "checked" : "",
+                                value6: item.Zapis.toString() == "1" ? "checked" : ""
+                            }
+
+                        }));
+
+
+                        var previousScroll = 0;
+ 
+                        var page = 1;
+
+                        $(kojalista).scroll(function () {
+
+                            var currentScroll = $(this).scrollTop();
+
+                            var x = $(kojalista).prop('scrollHeight');
+                            var y = $(kojalista).prop('offsetHeight');
+
+               
+                             console.log("currentScroll: " + currentScroll);
+                              console.log("previousScroll: " + previousScroll);
+
+                            if (currentScroll > previousScroll) {
+
+                                if(page >=0)
+                                {
+                               
+                                    if (currentScroll >= x - y)
+                                    {
+                            
+                                       page += 1;
+
+                                                    console.log("page :"  + page);
+    
+                                        var countPage = page * Count
+                                            $.ajax({
+                                                url: url,
+                                                data: { query: request.term, kriterij: kojiKriterij, analitikaod: kojaAnalitika, kontniplan: kojiKontniPlan,  start: Start, count: countPage },
+                                                dataType: 'json',
+                                                type: 'GET',
+                                                success: function (data) {
+                                                    response($.map(data,
+                                                        function (item) {
+
+                                                            return {
+                                                                    label: item.Konto.toUpperCase() + " " + item.Naziv.toUpperCase(),
+                                                                    value1: item.ID_KontniPlanSt,
+                                                                    value2: item.Konto,
+                                                                    value3: item.Naziv,
+                                                                    value4: item.SaldoKonti.toString() == "1" ? "checked" : "",
+                                                                    value5: item.Subjekt.toString() == "1" ? "checked" : "",
+                                                                    value6: item.Zapis.toString() == "1" ? "checked" : ""
+                                                                }
+                                                        }));
+                                                    }
+                                            })
+                                    
+                                        }
+
+                                   }
+
+                            }
+                            else {
+                                page -= 1;
+                            }
+
+                            previousScroll = currentScroll;
+
+                        });
+                }
+            })   
+    };
+
+ 
+  $(".btnDropDownSymbol").click(function () {
+       Dialozi.ComboAll();
+    });
+
+
+        function ProvjeraKontrola() {
+
+        var SaldoKonti = JeSaldoKonti;
+        var Subjekt = JeSubjekt;
+        var Zapis = JeZapis;
+
+        if (SaldoKonti == "checked") {
+            $('@PoslovniPartnerInputSelector').attr("disabled", false);
+            $('@PoslovniPartnerInputSelector').css('background-color', '#fff');
+            $('@DokumentInputSelector').attr("disabled", false);
+            $('@DokumentInputSelector').css('background-color', '#fff');
+            $("@IDZapisVrSelector").attr('disabled', false).trigger("liszt:updated");
+            $("@tblDatumDospijecaPomocSelector").show();
+ 
+        }
+
+         else if (Subjekt == "checked" && Zapis == "checked") {
+
+            $('@PoslovniPartnerInputSelector').attr("disabled", false);
+            $('@PoslovniPartnerInputSelector').css('background-color', '#fff');
+
+            $('@DokumentInputSelector').attr("disabled", false);
+            $('@DokumentInputSelector').css('background-color', '#fff');
+            $("@IDZapisVrSelector").attr('disabled', false).trigger("liszt:updated");
+            $("@tblDatumDospijecaPomocSelector").hide();
+
+
+        }
+
+         else if (Subjekt == "checked") {
+            $('@PoslovniPartnerInputSelector').attr("disabled", false);
+            $('@PoslovniPartnerInputSelector').css('background-color', '#fff');
+
+            $('@DokumentInputSelector').attr("disabled", true);
+            $('@DokumentInputSelector').css('background-color', '#E7E7E7');
+            $("@IDZapisVrSelector").attr('disabled', true).trigger("liszt:updated");
+            ClearDokumentInput();
+            $("@tblDatumDospijecaPomocSelector").hide();
+        }
+
+         else if (Zapis == "checked") {
+            $('@DokumentInputSelector').attr("disabled", false);
+            $('@DokumentInputSelector').css('background-color', '#fff');
+            $("@IDZapisVrSelector").attr('disabled', false).trigger("liszt:updated");
+
+            $('@PoslovniPartnerInputSelector').attr("disabled", true);
+            $('@PoslovniPartnerInputSelector').css('background-color', '#E7E7E7');
+            $("@tblDatumDospijecaPomocSelector").hide();
+
+        }
+
+       
+        else {
+
+            $('@PoslovniPartnerInputSelector').attr("disabled", true);
+            $('@DokumentInputSelector').attr("disabled", true);
+            $('@PoslovniPartnerInputSelector').css('background-color', '#E7E7E7');
+            $('@DokumentInputSelector').css('background-color', '#E7E7E7');
+            $("@IDZapisVrSelector").attr('disabled', true).trigger("liszt:updated");
+            ClearDokumentInput();
+            $("@tblDatumDospijecaPomocSelector").hide();
+        }
+
+    };
+
+    function ClearDokumentInput()
+    {
+        $("#ID_Zapis").val(null);
+        $('@DokumentInputSelector').val('');
+          $("@IDZapisVrSelector").val("");
+          $("@IDZapisVrSelector").trigger("liszt:updated");
+    }
+
+
+ </script>
+
+ <script>
+
+     function KontniPlanStKriterijiStTemeljnicaSt(idKontniPlanSt) {
+
+         $.ajax({
+             url: '@Url.Action("KontniPlanStKriterijiStTemeljnicaSt", @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo)',
+             dataType: 'json',
+             type: 'GET',
+             data: { idKontniPlanStPost: idKontniPlanSt },
+             success: function (data)
+             {
+                 if (data.length > 0) 
+                 {
+                     PostaviKriterije(data);
+                 }
+
+             },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(xhr.responseText);
+                alert(xhr.StatusDescription);
+                alert(thrownError);
+                alert(ajaxOptions);
+                
+            }
+        });
+    }
+
+
+
+    function TemeljnicaStKriterij() {
+
+        var idTemeljnicaSt = @Model.ID_TemeljnicaSt;
+
+        $.ajax({
+            url: '@Url.Action("TemeljnicaStKriteriji", @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo)',
+            dataType: 'json',
+            type: 'GET',
+            data: { idTemeljnicaStPost: idTemeljnicaSt },
+            success: function (data) {
+                if (data.length > 0) {
+                    PostaviKriterijeTemeljnicaSt(data);
+                }
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+                alert(ajaxOptions);
+
+            }
+        });
+    }
+
+
+
+
+    function PostaviKriterije(data) {
+
+        $('#tbl-kriterijkriterijst select').each(function (i, e) {
+            $(this).val("");
+            $(this).trigger("liszt:updated");
+        });
+
+
+       var items = [];
+       var itemsAll = [];
+       for (var i = 0; i < data.length; i++) {
+            var item = data[i];
+            var kriterij = item.ID_Kriterij;
+            var kriterijSt = item.ID_KriterijSt;
+            var obavezan = item.Obavezno;
+
+            if (obavezan == true)
+            {
+                obavezan = 1
+            }
+            else{
+                obavezan = 0
+            }
+
+            items.push(kriterij.toString())
+            itemsAll.push(kriterij.toString() + ":" + kriterijSt.toString() + ":" + obavezan)
+        }
+
+
+        var myArray2 = [];
+
+        $('#tbl-kriterijkriterijst select').each(function (i, e)
+         {
+
+            var idKriterij = $(this).attr("id");
+
+            for (i = 0; i < itemsAll.length; i++) {
+                var a = itemsAll[i];
+                var b = a.split(":");
+                var krtiterijsplit = b[0];
+                var kstavkasplit = b[1];
+                var obavezansplit = b[2];
+
+                $("#tbl-kriterijkriterijst select[id=" + krtiterijsplit + "]").val(kstavkasplit);
+                $("#tbl-kriterijkriterijst select[id=" + krtiterijsplit + "]").trigger("liszt:updated");
+                $("input:radio[name=rb_" + krtiterijsplit + "]").attr('disabled', false);
+                $("input:radio[name=rb_" + krtiterijsplit + "][value=" + obavezansplit + "]").click();
+                $("input:radio[name=rb_" + krtiterijsplit + "]").attr('disabled', true);
+
+            }
+
+            if (this.options[e.selectedIndex].text != "--Odaberite--") {
+                myArray2.push($(this).attr("value") + ":" + $(this).attr("id"));
+            }
+
+        });
+
+
+        $("#" + '@KriterijKriterijStList').val(myArray2);
+        console.log(myArray2);
+    }
+
+
+      function PostaviKriterijeTemeljnicaSt(data) {
+
+        $('#tbl-kriterijkriterijst select').each(function (i, e) {
+            $(this).val("");
+            $(this).trigger("liszt:updated");
+        });
+
+
+       var items = [];
+       var itemsAll = [];
+       for (var i = 0; i < data.length; i++) {
+            var item = data[i];
+            var kriterij = item.ID_Kriterij;
+            var kriterijSt = item.ID_KriterijSt;
+            var obavezan = item.Obavezno;
+
+            if (obavezan == true)
+            {
+                obavezan = 1
+            }
+            else{
+                obavezan = 0
+            }
+
+            items.push(kriterij.toString())
+            itemsAll.push(kriterij.toString() + ":" + kriterijSt.toString() + ":" + obavezan)
+        }
+
+
+        var myArray2 = [];
+
+        $('#tbl-kriterijkriterijst select').each(function (i, e)
+         {
+
+            var idKriterij = $(this).attr("id");
+
+            for (i = 0; i < itemsAll.length; i++) {
+                var a = itemsAll[i];
+                var b = a.split(":");
+                var krtiterijsplit = b[0];
+                var kstavkasplit = b[1];
+                var obavezansplit = b[2];
+
+                $("#tbl-kriterijkriterijst select[id=" + krtiterijsplit + "]").val(kstavkasplit);
+                $("#tbl-kriterijkriterijst select[id=" + krtiterijsplit + "]").trigger("liszt:updated");
+
+            }
+
+            if (this.options[e.selectedIndex].text != "--Odaberite--") {
+                myArray2.push($(this).attr("value") + ":" + $(this).attr("id"));
+            }
+
+        });
+
+
+
+        $("#" + '@KriterijKriterijStList').val(myArray2);
+        console.log(myArray2);
+    }
+
+
+
+    $("#radioGumbi input[type='radio']").each(function () {
+        $(this).attr('disabled', true);
+    });
+
+
+
+
+    function KontoOpis(idKontniPlanSt) {
+
+        $.ajax({
+            url: '@Url.Action("KontniPlanStOpis", @InLine.UI.Web.T4.ControllerName.ControllerName.FinancijskoKnjigovodstvo)',
+            dataType: 'json',
+            type: 'GET',
+            data: { id: idKontniPlanSt },
+            success: function (data) {
+                $("#KontoOpis").html(data);
+               
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+                alert(ajaxOptions);
+
+            }
+        });
+    }
+
+
+ </script>
+
+
+
+ <script type="text/javascript">
+     function InsertEditSucces() {
+
+//          var grid = '@InLine.UI.Web.Helper.KeyWord.JQueryRijec.Hash' + '@InLine.Model.Data.FieldString.View.Temeljnica.TemeljnicaEntity';
+//          jQuery(grid).trigger('@InLine.UI.Web.Helper.KeyWord.JqGridAtributi.reloadGrid');
+
+      }
+
+      function InsertEditError() {
+
+      }
+
+
+      function DeleteSucces() {
+
+
+      }
+
+
+      function DeleteError() {
+
+      }
+
+      function ProvjeraKodUnosa() {
+          return true;
+      }
+
+
+    </script>

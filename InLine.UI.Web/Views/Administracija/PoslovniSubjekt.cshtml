@@ -1,0 +1,83 @@
+﻿
+<table>
+
+       @if (ViewBag.PoslovniSubjekt != null)
+            {
+                  <tr> @Html.Label("Poduzeće:")
+                      <td>@Html.DropDownList("ID_PoslovniSubjekt", (SelectList)ViewBag.PoslovniSubjekt)</td>
+                  </tr>
+            }
+
+</table>
+
+
+<script>
+
+
+    $(document).ready(function () {
+
+        var korisnikId = @Model.KorisnikID;
+        var databaseId = $("#ID_Database").val();
+        //var poslovniSubjektId = $("#ID_PoslovniSubjekt").val();
+        var poslovniSubjektId = $("#ID_PoslovniSubjekt option:selected").val();
+
+
+        if (poslovniSubjektId != '') {
+
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("PoslovnaGodina", "Administracija")',
+                data: { idPoslovniSubjekt: poslovniSubjektId  },
+                dataType: "html",
+                success: function (data) {
+                    $('#PoslovnaGodina').html(data);
+                    var kojaGodina = $('#ID_PoslovnaGodina option:selected').text();
+                    $('#Godina').val(kojaGodina);
+                }
+            });
+        }
+
+    });
+
+
+
+
+    $("#ID_PoslovniSubjekt").change(function () {
+
+        var poslovniSubjektId = $(this).val();
+
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("PoslovnaGodina", "Administracija")',
+            data: { idPoslovniSubjekt: poslovniSubjektId },
+            dataType: "html",
+            success: function (data) {
+                $('#PoslovnaGodina').html(data);
+                var kojaGodina = $('#ID_PoslovnaGodina option:selected').text();
+                $('#Godina').val(kojaGodina);
+
+                 ShowHideButtonPrijava();
+            }
+        });
+
+
+    });
+
+
+
+     function ShowHideButtonPrijava()
+      {
+        var kojaGodinaDR = $('#ID_PoslovnaGodina option:selected').val();
+
+        if(kojaGodinaDR == undefined)
+        {
+            $('#btnPrijava').hide();
+        }
+
+        else{
+            $('#btnPrijava').show();
+        }
+      }
+
+
+</script>

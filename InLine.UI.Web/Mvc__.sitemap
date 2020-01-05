@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
+            xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
+
+  <mvcSiteMapNode title="Početna" controller="Pocetna" action="Index">
+    <mvcSiteMapNode title="Financijsko Knjigovodstvo" controller="FinancijskoKnjigovodstvo" action="FinancijskoKnjigovodstvo">
+      <mvcSiteMapNode title="Parametri glavne knjige" controller="FinancijskoKnjigovodstvo" action="Kriterij"/>
+      <mvcSiteMapNode title="Kontni Plan" controller="FinancijskoKnjigovodstvo" action="Kontniplan"/>
+      <mvcSiteMapNode title="Temeljnica" controller="FinancijskoKnjigovodstvo" action="Temeljnica"/>
+      <mvcSiteMapNode title="Ispisi" controller="FinancijskoKnjigovodstvo" action="Ispisi"/>
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="Matični podaci" controller="MaticniPodaci" action="MaticniPodaci">
+      <mvcSiteMapNode title="Poslovna Godina" controller="MaticniPodaci" action="PoslovnaGodina"/>
+      <mvcSiteMapNode title="Osoba" controller="SubjektSvi" action="Osoba"/>
+      <mvcSiteMapNode title="Tecajnica" controller="MaticniPodaci" action="Tecaj"/>
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="Izvodi" controller="Izvodi" action="Izvodi">
+      <mvcSiteMapNode title="Pregled izvoda" controller="Izvodi" action="IzvodiPregled"/>
+      <mvcSiteMapNode title="Pročitaj datoteku" controller="Izvodi" action="Datoteka"/>
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="Otkup Stanova" controller="PregledUgovora" action="PregledUgovoraModul">
+      <mvcSiteMapNode title="Dokumenti" controller="OtkupStanova" action="Dokumenti"/>
+      <mvcSiteMapNode title="Ugovori" controller="OtkupStanova" action="Ugovori"/>
+      <mvcSiteMapNode title="Pregled otkupa" controller="PregledUgovora" action="PregledUgovora"/>
+      <mvcSiteMapNode title="Formiranje obroka" controller="OtkupStanova" action="FormiranjeObroka"/>
+      <mvcSiteMapNode title="Opomene" controller="OtkupStanova" action="Opomene"/>
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="HUB-ovi" controller="HUB2013A" action="HUBKreirajGrad"/>
+  </mvcSiteMapNode>
+
+</mvcSiteMap>

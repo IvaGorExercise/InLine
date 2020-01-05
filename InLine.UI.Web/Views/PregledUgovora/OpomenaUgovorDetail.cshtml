@@ -1,0 +1,137 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.UgovorStanOtkupOpomenaDetaljFormFormatted
+
+ <style type="text/css">
+.text-box[type=text], .text-box[type=number], .text-box[type=date] { width:100px; border:"0";}
+#PozivNaBrojOdobrenja, #PozivNaBrojZaduzenja { width:100%; }
+#opomena-detail #BrojUgovor, #opomena-detail #BrojOpomena { font-weight:bold;}
+
+</style>
+
+ @{
+     string prefixLabela = "labela_opomena_ugovor_detalj_";
+ }
+
+
+  @using (Html.BeginForm("OpomenaUgovorDetailSpremi", "PregledUgovora", FormMethod.Post, new { id = "OpomenaUgovorDetail" }))
+  {
+  
+      @Html.HiddenFor(model => model.ID_UgovorStanOtkupOpomena)
+      @Html.HiddenFor(model => model.ID_UgovorStanOtkup)
+      @Html.HiddenFor(model => model.ID_Opomena)
+      @Html.HiddenFor(model => model.ID_OsobaInsertUSOO)
+      @Html.HiddenFor(model => model.DatumInsertUSOO)
+      @Html.HiddenFor(model => model.OsobaUpdateUSOO)
+      @Html.HiddenFor(model => model.DatumUpdateUSOO)
+
+      
+<table class ="UgovorStanOtkupOpomenaDetail form_background" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+   <tbody>
+
+      <tr id="tr1">
+	    <td style="background-color:#FFF2C2; font-weight:bold">@Html.LabelFor(model => model.BrojUgovor, new { id = @prefixLabela + @Html.NameFor(model => model.BrojUgovor) })</td>
+        <td >@Html.EditorFor(model => model.BrojUgovor)</td>	
+        <td style="background-color:#FFF2C2; font-weight:bold">@Html.LabelFor(model => model.BrojOpomena, new { id = @prefixLabela + @Html.NameFor(model => model.BrojOpomena) })</td>
+        <td>@Html.EditorFor(model => model.BrojOpomena)</td>								                
+    </tr>
+
+       
+     <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+     
+      <tr>
+	    <td>@Html.LabelFor(model => model.BrojNeplaceniObrokMin, new { id = @prefixLabela + @Html.NameFor(model => model.BrojNeplaceniObrokMin) })</td>
+        <td>@Html.EditorFor(model => model.BrojNeplaceniObrokMin)</td>	
+        <td>@Html.LabelFor(model => model.OpomenaIznosMin, new { id = @prefixLabela + @Html.NameFor(model => model.OpomenaIznosMin) })</td>
+        <td>@Html.EditorFor(model => model.OpomenaIznosMin)</td>								                
+    </tr>
+
+      <tr>
+	    <td>@Html.LabelFor(model => model.IznosDug, new { id = @prefixLabela + @Html.NameFor(model => model.IznosDug) })</td>
+        <td>@Html.EditorFor(model => model.IznosDug)</td>	
+        <td></td>
+        <td></td>								                
+    </tr>
+
+       <tr>
+	    <td>@Html.LabelFor(model => model.IznosZateznaKamata, new { id = @prefixLabela + @Html.NameFor(model => model.IznosZateznaKamata) })</td>
+        <td>@Html.EditorFor(model => model.IznosZateznaKamata)</td>	
+        <td>@Html.LabelFor(model => model.IznosZateznaKamataDugOstatak, new { id = @prefixLabela + @Html.NameFor(model => model.IznosZateznaKamataDugOstatak) })</td>
+        <td>@Html.EditorFor(model => model.IznosZateznaKamataDugOstatak)</td>								                
+    </tr>
+
+
+       <tr>
+	    <td>@Html.LabelFor(model => model.Ispis, new { id = @prefixLabela + @Html.NameFor(model => model.Ispis) })</td>
+        <td>
+            @Html.CheckBoxFor(model => model.Ispis.Value) 
+        </td>	
+        <td></td>
+        <td></td>								                
+    </tr>
+
+     <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+
+      <tr>
+        <td>@Html.LabelFor(model => model.OsobaInsertUSOO, new { id = @prefixLabela + @Html.NameFor(model => model.OsobaInsertUSOO) })</td>
+        <td>@Html.EditorFor(model => model.OsobaInsertUSOO)</td>
+        <td>@Html.LabelFor(model => model.DatumInsert, new { id = @prefixLabela + @Html.NameFor(model => model.DatumInsert) })</td>
+        <td>@Html.EditorFor(model => model.DatumInsert)</td>            
+    </tr>
+
+       <tr>
+        <td>@Html.LabelFor(model => model.OsobaUpdateUSOO, new { id = @prefixLabela + @Html.NameFor(model => model.OsobaUpdateUSOO) })</td>
+        <td>@Html.EditorFor(model => model.OsobaUpdateUSOO)</td>
+        <td>@Html.LabelFor(model => model.DatumUpdate, new { id = @prefixLabela + @Html.NameFor(model => model.DatumUpdate) })</td>
+        <td>@Html.EditorFor(model => model.DatumUpdate)</td>            
+    </tr>
+
+    		
+  </tbody>
+</table>
+
+<br />
+@*   <button id="btn-opomena-ugovor-detalj"  name="OpomenaUgovor" value="OpomenaUgovor">Spremi opomena po ugovoru</button> *@
+      
+  }
+
+
+
+    <script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $("#labela_opomena_ugovor_detalj_BrojUgovor").text("Broj ugovora");
+            $("#labela_opomena_ugovor_detalj_BrojOpomena").text("Broj opomene");
+
+            $("#labela_opomena_ugovor_detalj_DatumDospijeceOd").text("Datum dospijeće od");
+            $("#labela_opomena_ugovor_detalj_DatumDospijeceDo").text("Datum dospijeće do");
+            $("#labela_opomena_ugovor_detalj_Datum").text("Datum");
+            $("#labela_opomena_ugovor_detalj_OpomenaIznosMin").text("Opomena iznos min.");
+            $("#labela_opomena_ugovor_detalj_IznosDug").text("Iznos dug");
+            $("#labela_opomena_ugovor_detalj_BrojNeplaceniObrokMin").text("Min. broj neplaćenih obroka");
+            $("#labela_opomena_ugovor_detalj_IznosZateznaKamata").text("Zatezna kamata");
+            $("#labela_opomena_ugovor_detalj_IznosZateznaKamataDugOstatak").text("Zatezna kamata dug ostatak");
+            $("#labela_opomena_ugovor_detalj_Ispis").text("Ispis");
+            $("#labela_opomena_ugovor_detalj_OsobaInsert").text("Kreirao");
+            $("#labela_opomena_ugovor_detalj_OsobaUpdate").text("Promijenio");
+            $("#labela_opomena_ugovor_detalj_DatumInsert").text("Kreirano datum");
+            $("#labela_opomena_ugovor_detalj_DatumUpdate").text("Promjena datuma");
+
+        });
+   
+
+    </script>
+
+
+     <script type="text/javascript">
+        $("#btn-opomena-ugovor-detalj").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("OpomenaUgovorDetailSpremi", "PregledUgovora")",
+                data: $("#OpomenaUgovorDetail").serialize(),
+                success: function (data) {
+                    alert(data); 
+                }
+            });
+
+            return false; 
+        });

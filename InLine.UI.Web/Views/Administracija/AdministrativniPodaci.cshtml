@@ -1,0 +1,201 @@
+﻿@model InLine.Model.Admin.KorisnikData
+
+@{
+    ViewBag.Title = "Prijava";
+    Layout = null;
+}
+<script src="../../Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/Scripts/dPassword.js"></script>
+<style type="text/css">
+  body { background-color:#fbfbfb}  
+#prijavacontainer{ width:960; height:800px; margin:0; padding:0;}
+#prijavaform { width:960px; height:302px; margin-top:50px; margin-left:20px; float:none;}
+#slika { width:330px; height:330px; float:left; background-image: url("../../Content/Design/LogoPlaviWebLogin.png"); background-repeat:no-repeat; }
+#slika:hover { background-image: url("../../Content/Design/LogoMagentaiWebLogin.png"); background-repeat:no-repeat; }
+#rborder{ width:10px; height:180px; border-right: 2px solid #ADABAB; float:left; margin-top:30px;}
+#loginforma { width:350px; height:302px; float:left; margin:15px; padding-left:20px; padding-top:0px; font-family:Segoe UI; font-size:12px;}
+.login { float:left; }
+#Password { width:150px !important; height:21px !important;}
+#loading { width:180px; height:40px; padding-top:30px; display:none;  padding-left:0px; }
+#loadingKoraci { width:180px; height:40px; padding-top:50px; display:none;  padding-left:0px; }
+#loadingPrelaz { width:180px; height:40px; padding-top:50px; display:none;  padding-left:0px; }
+.loadingt { font-family: Microsoft Sans Serif; padding-bottom:5px; font-size:12px; }
+#statuslog {font-family: Microsoft Sans Serif; font-size:13px; color:Red; }
+#statuslogcont { width:auto; height:40px; }
+select{ width:200px; }
+
+</style>
+<div id="statuslogcont">
+<p id="statuslog">@ViewBag.poruka</p>
+</div>
+<div id="prijavacontainer">
+
+    <div id="prijavaform">
+    
+    <div id="slika" onclick="location.href='http://www.fortius-info.hr';" style="cursor:pointer; "></div>
+    <div id="rborder"></div>
+          <div id="loginforma">
+            @using (Html.BeginForm("LogOn", "Administracija"))
+            {   
+                 @Html.HiddenFor(model => model.KorisnikID);
+        
+                 @Html.HiddenFor(model => model.Password);
+                 @Html.HiddenFor(model => model.KorisnikIme);
+                 @Html.HiddenFor(model => model.KorisnikPrezime);
+                 @Html.HiddenFor(model => model.Godina);
+                                                       
+     <h3>Odabir radnog područja, poduzeća i godine </h3>                                             
+                
+        <table>
+
+            <tr>  @Html.Label("Radno područje:")
+                <td>@Html.DropDownList("ID_Database", (SelectList)ViewBag.BazaKorisnik)</td>
+            </tr>
+          
+            <tr>
+            <td>
+            <div id="PoslovniSubjekt">
+            </div>
+            <div id="PoslovnaGodina">
+            </div>
+            </td>
+            </tr>
+       
+        </table>
+            <p>
+            <table>
+            <tr>
+            <td><input type="button" id="back" value="Prethodna" name="Prethodna" /></td>
+            <td><input id="btnPrijava" class="login" type="submit" value="Ulaz u program" /></td>
+            </tr>
+            </table>
+            </p>
+   
+            }
+
+             <div id="loadingPrelaz">
+               <span class="loadingt">Dohvat podataka.....<br /></span><br /><img src="../../Content/design/ajax-loader.gif" /></div>
+
+             <div id="loadingKoraci">
+               <span class="loadingt">Dohvat podataka....<br /></span><br /><img src="../../Content/design/ajax-loader.gif" /></div>
+         
+               <div id="loading">
+               <span class="loadingt">Ulaz u program....<br /></span><br /><img src="../../Content/design/ajax-loader.gif" /></div>
+                </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+
+       $('#btnPrijava').hide();
+
+        var databaseId = $("#ID_Database").val();
+        var korisnikId = @Model.KorisnikID;
+
+
+       if (databaseId != '')
+       {
+           $("#loadingPrelaz").show();
+
+            $.ajax({
+                    type: "GET",
+                    url: '@Url.Action("PoslovniSubjekt", "Administracija")',
+                    data: { idKorisnik: korisnikId, idBaza: databaseId},
+                    dataType: "html",
+                    success : function (data) {
+
+                         $('#PoslovniSubjekt').html(data);
+                         $("#loadingPrelaz").hide();
+
+                            var poslovniSubjektId = $("#ID_PoslovniSubjekt option:selected").val();
+
+                            if (poslovniSubjektId != '')
+                            {
+                                 $.ajax({
+                                    type: "GET",
+                                    url: '@Url.Action("PoslovnaGodina", "Administracija")',
+                                    data: { idPoslovniSubjekt: poslovniSubjektId},
+                                    dataType: "html",
+                                    success : function (data) {
+                                        $('#PoslovnaGodina').html(data);
+                                        var kojaGodina = $('#ID_PoslovnaGodina option:selected').text();
+                                        $('#Godina').val(kojaGodina.toString());
+                                       ShowHideButtonPrijava();
+                                    }
+                                });
+                          }
+                    }
+
+                });
+        }
+
+
+      function ShowHideButtonPrijava()
+      {
+        var kojaGodinaDR = $('#ID_PoslovnaGodina option:selected').val();
+
+            if(kojaGodinaDR == undefined)
+            {
+                $('#btnPrijava').hide();
+            }
+
+            else{
+                $('#btnPrijava').show();
+            }
+      }
+
+   
+        $('#statuslog').delay(7000).fadeOut();
+
+
+    });
+
+
+    $(".login").click(function () {
+
+        $("#loading").show();
+    });
+
+
+     $("#ID_Database").change(function () {
+
+       $("#loadingKoraci").show();
+
+        var databaseId = $(this).val();
+        var korisnikId = @Model.KorisnikID;
+
+       if (databaseId != '')
+       {
+            $.ajax({
+                    type: "GET",
+                    url: '@Url.Action("PoslovniSubjekt", "Administracija")',
+                    data: { idKorisnik: korisnikId, idBaza: databaseId},
+                    dataType: "html",
+                    success : function (data) {
+                            $('#PoslovniSubjekt').html(data);
+                            $("#loadingKoraci").hide();
+                    }
+                });
+        
+            }
+    });
+
+
+
+</script>
+
+
+<script type="text/javascript">
+
+    $('#back').click(function () {
+        window.location = "/Home/LogOnParcijalni"
+    });
+
+
+</script>
+
+
+

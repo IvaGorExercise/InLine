@@ -1,0 +1,527 @@
+﻿<#
+//*********************************************************
+//
+//    Copyright (c) Microsoft. All rights reserved.
+//    This code is licensed under the Microsoft Public License.
+//    THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+//    ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+//    IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+//    PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+#>
+<#@ template language="C#" debug="false" hostspecific="true"#>
+<#@ include file="EF.Utility.CS.ttinclude"#>
+<#@ Assembly Name= "$(SolutionDir)\bin\InLine.Common.dll"#>
+<#@ import namespace="InLine.Common" #>
+<#@ output extension=".cs"#>
+<#
+CodeGenerationTools code = new CodeGenerationTools(this);
+MetadataLoader loader = new MetadataLoader(this);
+CodeRegion region = new CodeRegion(this, 4);
+MetadataTools ef = new MetadataTools(this);
+
+
+string inputFile = @"..\..\InLine.Model.Data\InLineData.edmx";
+EdmItemCollection ItemCollection = loader.CreateEdmItemCollection(inputFile);
+string NameSpace = "InLine.Repository.Data";
+string annotationNamespace = "http://schemas.microsoft.com/ado/2009/02/edm/annotation";
+string EntityName;
+string SchemaName = "";  
+string SchemaView = "";
+string keyParam = "";  
+
+
+StoreItemCollection sic;  
+loader.TryCreateStoreItemCollection(inputFile, out sic);  
+EntityContainer sicEntityContainer = sic.GetItems<EntityContainer>().FirstOrDefault();
+
+
+EntityContainer container = ItemCollection.GetItems<EntityContainer>().FirstOrDefault();
+var storeCRUD = container.FunctionImports;
+
+EntityFrameworkTemplateFileManager fileManager = EntityFrameworkTemplateFileManager.Create(this);
+WriteHeader(fileManager);
+
+foreach (EntityType entity in ItemCollection.GetItems<EntityType>().OrderBy(e => e.Name))
+{
+	EntityName = code.Escape(entity);
+
+	if (T4.ClassName(EntityName) != "Audit")
+	{
+
+	fileManager.StartNewFile(T4.ClassNameFull(EntityName) + ".Partial.cs");
+    BeginNamespace(T4.NameSpace(EntityName,NameSpace), code);
+	
+	string itemType;
+	string retType;
+
+	itemType = "Model.Data.Item." + entity.Name;
+	retType = "Model.Data." + entity.Name;
+
+
+	if (sicEntityContainer != null)  
+	{  
+		EntitySet eset = sicEntityContainer.GetEntitySetByName(EntityName, true);  
+		string type = eset.MetadataProperties["http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator:Type"].Value.ToString();
+
+		if (type == "Tables")
+		{
+			SchemaName = eset.MetadataProperties["Schema"].Value !=  null ? eset.MetadataProperties["Schema"].Value.ToString() : "";
+		}
+		else
+		{
+			SchemaName = eset.MetadataProperties["http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator:Schema"].Value !=  null ? eset.MetadataProperties["http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator:Schema"].Value.ToString() : "";
+		}
+	
+	} 
+
+
+	#>
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Diagnostics;
+using System.Data.Objects;
+using InLine;
+
+public partial class <#=T4.ClassName(EntityName)#> :<#=" CRUD."+T4.ClassNameFull(EntityName)#>, <#=T4.InterfaceNameFull(EntityName)#>
+{
+
+	#region Fields
+     public Model.Data.Context _context;
+    #endregion
+
+    #region Constructor
+
+    public <#=T4.ClassName(EntityName)#>(string connstring)
+            : base(connstring)
+    {
+         _context = new Model.Data.Context(connstring);
+    }
+        #endregion
+
+
+	#region Methods
+   <#
+			foreach (var edmFunction in container.FunctionImports)
+			{
+
+				var namestore = edmFunction.ToString();
+				int prvi = namestore.IndexOf("_")+1;
+				int zadnji = namestore.LastIndexOf("_");
+				string ime = namestore.Substring(prvi,(zadnji-prvi));
+		
+				string type;
+				var parameters = FunctionImportParameter.Create(edmFunction.Parameters, code, ef);
+    			var paramList = String.Join(", ", parameters.Select(p => p.FunctionParameterType + " " + p.EsqlParameterName).ToArray());
+				var paramListName = String.Join(", ", parameters.Select(p => p.EsqlParameterName).ToArray());
+				var paramListItem = "item." + String.Join(", item.", parameters.Select(p => p.EsqlParameterName).ToArray());
+    			var returnType = edmFunction.ReturnParameter == null ? null : ef.GetElementType(edmFunction.ReturnParameter.TypeUsage);
+
+				if (returnType != null)
+				{
+					type = T4.CleanType(code.Escape(returnType));
+				}
+
+				else
+				{
+					type = "long";
+				}
+
+				if (!T4.BasicType(type))
+				{
+					type = "Model.Data." + type;
+				}
+
+				var processedReturn = returnType == null ? "long" : "ObjectResult<" + type + ">";
+		
+if (entity.Name == ime )
+{		
+	if (namestore.Contains("DELETE"))
+	{	  
+		#>		
+			public void Delete(<#=itemType#>Item item)
+        	{
+            	base.Delete(item);
+        	}
+
+		<#
+	}
+
+	else if (namestore.Contains("INSERT"))
+	{
+			
+		#>
+	public void Insert(<#=itemType#>Item item)
+        	{
+            	base.Insert(item);
+        	}
+
+		<#
+	}
+
+	else if (namestore.Contains("UPDATE"))
+	{
+			   
+		#>		
+			public void Update(<#=itemType#>Item item)
+        	{
+            	base.Update(item);
+        	}
+
+		<#
+	}
+
+	else if (namestore.Contains("SELECT"))
+	{
+			   
+		#>		
+			public void Select(<#=paramList#>)
+			{
+				base.Select(<#=paramListName#>);
+			}
+
+		<#
+	}
+
+
+if (processedReturn.ToString().Contains("ObjectResult"))
+	{	
+		if (namestore.Contains("DELETE"))
+		{	  
+			  
+		#>		
+			public <#=processedReturn#> DeleteResult(<#=itemType#>Item item)
+        	{
+            	return base.DeleteResult(item);
+        	}	
+									
+		<#
+		}
+
+		else if (namestore.Contains("INSERT"))
+		{
+			
+		#>
+		public <#=processedReturn#> InsertResult(<#=itemType#>Item item)
+			{
+				return base.InsertResult(item);
+			}	
+									
+		<#
+		}
+
+		else if (namestore.Contains("UPDATE"))
+		{
+			   
+		#>			
+			public <#=processedReturn#> UpdateResult (<#=itemType#>Item item)
+			{
+				return base.UpdateResult(item);
+			}
+										
+		<#
+		}
+
+		else if (namestore.Contains("SELECT"))
+		{
+			   
+		#>			
+			public <#=processedReturn#> SelectResult (<#=paramList#>)
+			{
+				return base.SelectResult(<#=paramListName#>);
+			}
+										
+		<#
+		}
+
+
+
+
+	}
+
+	}
+
+}
+#>
+
+<#
+	if (entity.KeyMembers.Count == 1 && entity.KeyMembers[0].TypeUsage.EdmType.Name == "Int64")
+	{	
+	#>
+	
+		//public Model.Data.<#=T4.ClassNameFull(EntityName)#> FindID(long id)
+       // {
+          //  return <#="_context."+ entity.Name +".SingleOrDefault(p => p."+entity.KeyMembers.ElementAt(0)+" == id);"#>
+        //}
+
+
+		public Model.Data.<#=T4.ClassNameFull(EntityName)#> FindID(long id)
+        {
+			string query = String.Empty;
+            StringBuilder querybilder = new StringBuilder();
+			string filter = Repository.Data.Helper.QueryBulider.CreateWhereKeyValue("<#=entity.KeyMembers.ElementAt(0).Name#>", id.ToString());
+			querybilder.Append("SELECT * FROM " + "<#=SchemaName#>" + "." + "<#=entity.Name#>");
+			querybilder.Append(" WHERE " + filter);
+			query = querybilder.ToString();
+            return _context.Database.SqlQuery<#="<Model.Data."+T4.ClassNameFull(EntityName)+">"#>(query).SingleOrDefault();
+        }
+	<#
+	}
+	else
+	{
+	#>
+		public Model.Data.<#=T4.ClassNameFull(EntityName)#> FindID(long id)
+        {
+            return null;
+        }
+	<#
+	}
+	#>
+	
+
+
+		public IEnumerable <#="<Model.Data."+T4.ClassNameFull(EntityName)+">"#> GetGridDataEF(string filter, string sort, long? start, long? count)
+		{
+		   if (!String.IsNullOrEmpty(filter))
+                return _context.<#=entity.Name#>
+                    .Where(filter)
+                    .OrderBy(sort)
+                    .Skip((int)start)
+                    .Take((int)count);
+            else
+                return _context.<#=entity.Name#>
+                    .OrderBy(sort)
+                    .Skip((int)start)
+                    .Take((int)count);
+		}
+		
+		public long GetCountEF(string filter)
+		{
+			if (!String.IsNullOrEmpty(filter))
+
+                return _context.<#=entity.Name#>.Where(filter).Count();
+
+            else
+                return _context.<#=entity.Name#>.Count();
+		}
+
+
+	
+		public IEnumerable <#="<Model.Data."+T4.ClassNameFull(EntityName)+">"#> GetGridData(string filter, string key, string value, string sort, long? start, long? count, bool customserach = false)
+		{
+		    string query = String.Empty;
+			string entity = "<#=SchemaName#>" + "." + "<#=entity.Name#>";
+			string model = "<#="InLine.Model.Data."+T4.ClassNameFull(EntityName)+""#>";
+
+			if (!String.IsNullOrEmpty(filter) && String.IsNullOrEmpty(key) && String.IsNullOrEmpty(value))
+            {
+                if (customserach == false)
+                {
+                    filter = Repository.Data.Helper.QueryBulider.CreateWhere(model, filter);
+                }
+            }
+
+			else if (String.IsNullOrEmpty(filter) && !String.IsNullOrEmpty(key) && !String.IsNullOrEmpty(value))
+            {
+               
+                  filter = Repository.Data.Helper.QueryBulider.CreateWhereKeyValue(key, value);
+                
+            }
+
+			else if (!String.IsNullOrEmpty(filter) && !String.IsNullOrEmpty(key) && !String.IsNullOrEmpty(value))
+            {
+                string filterF = Repository.Data.Helper.QueryBulider.CreateWhere(model, filter);
+                string filterKV = Repository.Data.Helper.QueryBulider.CreateWhereKeyValue(key, value);
+                filter = filterF + " AND " + filterKV;   
+            }
+
+
+            query = Repository.Data.Helper.QueryBulider.CreateQuerySelect(entity, filter, sort, start, count);
+            return _context.Database.SqlQuery<#="<Model.Data."+T4.ClassNameFull(EntityName)+">"#>(query);
+
+		}
+
+
+		public long GetCount(string filter, string key, string value, bool customserach = false)
+        {
+            string query = String.Empty;
+            StringBuilder querybilder = new StringBuilder();
+			string model = "<#="InLine.Model.Data."+T4.ClassNameFull(EntityName)+""#>";
+
+            if (!String.IsNullOrEmpty(filter) && String.IsNullOrEmpty(key) && String.IsNullOrEmpty(value))
+            {
+                if (customserach == false)
+                {
+                    filter = Repository.Data.Helper.QueryBulider.CreateWhere(model, filter);
+					querybilder.Append("SELECT * FROM " + "<#=SchemaName#>" + "." + "<#=entity.Name#>");
+					querybilder.Append(" WHERE " + filter);
+                }
+
+				else
+				{
+					querybilder.Append("SELECT * FROM " + "<#=SchemaName#>" + "." + "<#=entity.Name#>");
+					querybilder.Append(" WHERE " + filter);
+				}
+            }
+
+			else if (String.IsNullOrEmpty(filter) && !String.IsNullOrEmpty(key) && !String.IsNullOrEmpty(value))
+            {
+               
+                filter = Repository.Data.Helper.QueryBulider.CreateWhereKeyValue(key, value);
+				querybilder.Append("SELECT * FROM " + "<#=SchemaName#>" + "." + "<#=entity.Name#>");
+				querybilder.Append(" WHERE " + filter);
+                
+            }
+
+			else if (!String.IsNullOrEmpty(filter) && !String.IsNullOrEmpty(key) && !String.IsNullOrEmpty(value))
+            {
+                string filterF = Repository.Data.Helper.QueryBulider.CreateWhere(model, filter);
+                string filterKV = Repository.Data.Helper.QueryBulider.CreateWhereKeyValue(key, value);
+                filter = filterF + " AND " + filterKV;
+				querybilder.Append("SELECT * FROM " + "<#=SchemaName#>" + "." + "<#=entity.Name#>");
+				querybilder.Append(" WHERE " + filter);
+                
+            }
+
+            else
+            {
+                querybilder.Append("SELECT * FROM " + "<#=SchemaName#>" + "." + "<#=entity.Name#>");
+
+            }
+
+            query = querybilder.ToString();
+            return _context.Database.SqlQuery<#="<Model.Data."+T4.ClassNameFull(EntityName)+">"#>(query).Count();
+        }
+
+
+
+
+		public IEnumerable <#="<Model.Data."+T4.ClassNameFull(EntityName)+">"#> GetData(<#= "List<Model.Data.Field."+T4.ClassNameFull(EntityName)+">"#> fields, <#= "List<Model.Data.Filter."+T4.ClassNameFull(EntityName)+">"#>  filter, <#= "List<Model.Data.Sort."+T4.ClassNameFull(EntityName)+">"#>  sort, long? start = null, long? count = null)
+		{
+		    string query = String.Empty;
+			string entity = "<#=SchemaName#>" + "." + "<#=entity.Name#>";
+            query = Repository.Data.Helper.QueryBulider.CreateQuery(entity, fields, filter, sort, start, count);
+            return _context.Database.SqlQuery<#="<Model.Data."+T4.ClassNameFull(EntityName)+">"#>(query);
+		}
+		
+		
+
+#endregion
+	
+}
+
+<#
+		EndNamespace(NameSpace);		
+		}
+
+} 
+
+		
+
+
+if (!VerifyTypesAreCaseInsensitiveUnique(ItemCollection))
+{
+    return "";
+}
+
+fileManager.Process();
+#>
+
+<#+
+string GetResourceString(string resourceName)
+{
+	if(_resourceManager == null)
+	{
+		_resourceManager = new System.Resources.ResourceManager("System.Data.Entity.Design", typeof(System.Data.Entity.Design.MetadataItemCollectionFactory).Assembly);
+	}
+	
+    return _resourceManager.GetString(resourceName, null);
+}
+System.Resources.ResourceManager _resourceManager;
+
+void WriteHeader(EntityFrameworkTemplateFileManager fileManager, params string[] extraUsings)
+{
+    fileManager.StartHeader();
+#>
+//------------------------------------------------------------------------------
+// <auto-generated>
+// <#=GetResourceString("Template_GeneratedCodeCommentLine1")#>
+//
+// <#=GetResourceString("Template_GeneratedCodeCommentLine2")#>
+// <#=GetResourceString("Template_GeneratedCodeCommentLine3")#>
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+<#+
+    fileManager.EndBlock();
+}
+
+void BeginNamespace(string NameSpace, CodeGenerationTools code)
+{
+    CodeRegion region = new CodeRegion(this);
+    if (!String.IsNullOrEmpty(NameSpace))
+    {
+#>
+namespace <#=code.EscapeNamespace(NameSpace)#>
+{
+<#+
+        PushIndent(CodeRegion.GetIndent(1));
+    }
+}
+
+
+void EndNamespace(string NameSpace)
+{
+    if (!String.IsNullOrEmpty(NameSpace))
+    {
+        PopIndent();
+#>
+}
+<#+
+    }
+}
+
+bool IsReadWriteAccessibleProperty(EdmMember member)
+{
+    string setter = Accessibility.ForWriteOnlyProperty(member);
+    string getter = Accessibility.ForReadOnlyProperty(member);
+
+    return getter != "private" && getter != "protected" && setter != "private" && setter != "protected";
+}
+
+string PropertyVirtualModifier(string accessibility)
+{
+    return accessibility + (accessibility != "private" ? " virtual" : "");
+}
+
+
+bool VerifyTypesAreCaseInsensitiveUnique(EdmItemCollection itemCollection)
+{
+    Dictionary<string, bool> alreadySeen = new Dictionary<string, bool>(StringComparer.OrdinalIgnoreCase);
+    foreach(StructuralType type in itemCollection.GetItems<StructuralType>())
+    {
+        if (!(type is EntityType || type is ComplexType))
+        {
+            continue;
+        }
+
+        if (alreadySeen.ContainsKey(type.FullName))
+        {
+            Error(String.Format(CultureInfo.CurrentCulture, "This template does not support types that differ only by case, the types {0} are not supported", type.FullName));
+            return false;
+        }
+        else
+        {
+            alreadySeen.Add(type.FullName, true);
+        }
+
+    }
+
+    return true;
+}
+	
+#>

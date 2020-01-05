@@ -1,0 +1,158 @@
+﻿@model InLine.UI.Web.T4.FormFormattedTemplate.View.PoslovnaGodinaDetaljFormFormatted
+
+
+ <style type="text/css">
+</style>
+
+ @{
+    string prefixLabela = "labela_PoslovnaGodina_Detalj_";
+ }
+ 
+ @{
+      string Akcija = @InLine.Model.Data.FieldString.PoslovnaGodina.PoslovnaGodinaEntity + InLine.UI.Web.Helper.KeyWord.TipAkcija.Insert;
+      string IDForma = @InLine.Model.Data.FieldString.PoslovnaGodina.PoslovnaGodinaEntity + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Forma;
+      string IDValutaPomoc = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.ID_ValutaPomoc;
+      string DatumOd = @InLine.Model.Data.FieldString.PoslovnaGodina.DatumOd;
+      string DatumDo = @InLine.Model.Data.FieldString.PoslovnaGodina.DatumDo;
+      string DatumOdPomoc = @InLine.Model.Data.FieldString.PoslovnaGodina.DatumOd + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Pomoc;
+      string DatumDoPomoc = @InLine.Model.Data.FieldString.PoslovnaGodina.DatumDo + InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Pomoc;
+      string Datepicker = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Datepicker;
+ }
+
+ @using (Html.BeginForm(Akcija, @InLine.UI.Web.T4.ControllerName.ControllerName.MaticniPodaci, FormMethod.Post, new { id = IDForma, @class = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormClass}))
+ {
+    @Html.HiddenFor(model => model.ID_PoslovnaGodina)
+    @Html.HiddenFor(model => model.ID_PoslovniSubjekt)
+    @Html.HiddenFor(model => model.IDValuta)
+    @Html.HiddenFor(model => model.DatumOd)
+    @Html.HiddenFor(model => model.DatumDo)
+
+    @Html.ValidationSummary(true)
+
+
+<table class ="PoslovnaGodinaDetail @InLine.UI.Web.Helper.KeyWord.Forma.Rijec.FormBackground" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+   <tbody>
+
+     <tr><td colspan='4'style="height:5px; background-color:#E7E7E7; padding-top: 2px; padding-bottom:2px; "></td></tr>
+     
+     <tr>
+	    <td >@Html.LabelFor(model => model.Godina, new { id = @prefixLabela + @Html.NameFor(model => model.Godina) })</td>
+        <td >@Html.EditorFor(model => model.Godina)
+         @Html.ValidationMessageFor(model => model.Godina) </td>
+        <td>@Html.LabelFor(model => model.IDValuta, new { id = @prefixLabela + @Html.NameFor(model => model.IDValuta) })</td>
+        <td>@Html.DropDownList(IDValutaPomoc, (SelectList)ViewBag.IDValuta)
+        @Html.ValidationMessageFor(model => model.IDValuta)</td>				                
+    </tr>
+
+   
+   <tr>
+	 <td>@Html.LabelFor(model => model.DatumOd, new { id = @prefixLabela + @Html.NameFor(model => model.DatumOd) })</td>
+        <td>@Html.TextBox(@DatumOdPomoc, null, new { @class = Datepicker })
+        @Html.ValidationMessageFor(model => model.DatumOd)</td>	
+        <td>@Html.LabelFor(model => model.DatumDo, new { id = @prefixLabela + @Html.NameFor(model => model.DatumDo) })</td>
+        <td>@Html.TextBox(@DatumDoPomoc, null, new { @class = Datepicker })
+        @Html.ValidationMessageFor(model => model.DatumDo)</td>								                
+    </tr>
+
+
+  </tbody>
+</table>
+<div>
+</div>
+ <div id="poruka_Master" ></div>
+
+ }
+
+  <script src="@Url.Content("~/Scripts/jquery.jqGrid.addons-4.4.1.js")" type="text/javascript"></script>
+   <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+   <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/DecimalValidator.js")" type="text/javascript"></script>
+     <script src="@Url.Content("~/Scripts/chosen.jquery.min.js")" type="text/javascript"></script>
+
+
+   <script type="text/javascript">
+
+       $(function () {
+           $("#labela_PoslovnaGodina_Detalj_Konto").text("Konto:");
+       });
+
+    </script>
+
+    
+    <script type="text/javascript">
+
+//        var kojaforma = "#" + '@IDForma';
+//        var validator = $(kojaforma).data('validator');
+//        validator.settings.ignore = [];
+
+        Dialozi.VaidirajHiddenPolja('@IDForma');
+
+
+        $(document).ready(function () {
+            Dialozi.DatePicker();
+        });
+
+        $(document).ready(function () {
+            var modelvaluta = '@Model.IDValuta';
+            Dialozi.DropDownValuta(modelvaluta);
+            Dialozi.DatePicker();
+        });
+
+
+        $(document).ready(function () {
+            var valueDatumOd = '@Model.DatumOd.Date.ToShortDateString()';
+            Dialozi.PostaviDatumPolje('@DatumOd', valueDatumOd);
+
+            var valueDatumDo = '@Model.DatumDo.Date.ToShortDateString()';
+            Dialozi.PostaviDatumPolje('@DatumDo', valueDatumDo);
+        });
+
+
+        $('#'+ '@DatumOdPomoc').change(function (event) {
+            var dat = $('#'+ '@DatumOdPomoc').val();
+            Dialozi.PostaviDatumPolje('@DatumOd', dat);
+        });
+
+
+        $('#' + '@DatumDoPomoc').change(function (event) {
+            var dat = $('#' + '@DatumDoPomoc').val();
+            Dialozi.PostaviDatumPolje('@DatumDo', dat);
+        });
+
+
+        $(function () {
+            Dialozi.PostaviValuta();
+        });
+
+
+   </script>
+
+
+    <script type="text/javascript">
+        function InsertEditSucces() {
+        }
+
+        function InsertEditError() {
+
+        }
+
+
+        function DeleteSucces() {
+
+
+        }
+
+
+        function DeleteError() {
+
+        }
+
+
+        function ProvjeraKodUnosa() {
+            return true;
+        }
+
+
+
+    </script>
+

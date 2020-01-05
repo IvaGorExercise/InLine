@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Stimulsoft.Report.WebDesign</name>
+    </assembly>
+    <members>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.OnInit(System.EventArgs)">
+            <summary>
+            Обработка запросов, посланных дизайнером на сервер.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.GetZoomValue(System.Int32)">
+            <summary>
+            Вычисление масштаба дизайнера с учётом перечисления StiZoomMode.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.GetDataAdaptersList">
+            <summary>
+            Получение списка зарегистрированных адаптеров данных.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.PrepareConfiguration">
+            <summary>
+            Подготовка конфигурации дизайнера.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.ProcessImageRequest">
+            <summary>
+            Поиск картинки в кэша сервера по запросу клиента (guid кэша передаётся в GET параметре).
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.GetComponentImage">
+            <summary>
+            Преобразование StiChart or StiRichText в StiImage для отображения на странице дизайнера.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.SaveDocumentToFxString(Stimulsoft.Report.StiReport)">
+            <summary>
+            Преобразование StiChart и StiRichText в изображения (StiImage) для правильного отображения на странице Web-дизайнера.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.SaveReportContainerToString">
+            <summary>
+            Подготовка контейнера для вьювера. Контейнер содержит Report, Document and Interaction.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.GetInteraction(Stimulsoft.Report.StiReport)">
+            <summary>
+            Prepare information about Interaction as XML string.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.ProcessPreviewQuery(System.String)">
+            <summary>
+            Предпросмотр отчёта выбранного типа (Document, PDF, HTML).
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.GetErrorHtmlPage(Stimulsoft.Report.StiReport)">
+            <summary>
+            Формирование таблицы ошибок компиляции отчёта.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.GetErrorListXml(Stimulsoft.Report.StiReport)">
+            <summary>
+            Формирование списка ошибок для встроенного предпросмотра отчёта.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.ProcessExportQuery(System.String)">
+            <summary>
+            Экспортирование отчёта.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.GetXmlKeyValue(System.String,System.String)">
+            <summary>
+            Returns the value by the specified xml key.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.GetProductVersion">
+            <summary>
+            Возвращает версию DLL файлов.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.LoadReportFromString(System.String)">
+            <summary>
+            Загрузка отчёта из строки без подключения данных.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.LoadReportFromString(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Загрузка отчёта из строки или упакованной строки, если необходимо - подключаются данные к загруженному отчёту.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.ConvertColumnType(System.Type)">
+            <summary>
+            Конвертирование типа .NET в тип для Flex дизайнера.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.TestConnection(System.String)">
+            <summary>
+            Тестирование соединения с базой данных
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.RetrieveColumns(System.String)">
+            <summary>
+            Получение списка колонок базы данных (на основе XML источника или указанного SQL запроса).
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.RetrieveColumnsFromXmlDatabase(System.String)">
+            <summary>
+            Получение таблиц из указанного XML источника данных.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.GetTableColumns(System.Data.DataTable)">
+            <summary>
+            Получение колонок из указанной таблицы.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.CreateDictionary(System.String)">
+            <summary>
+            Формирование Dictionary на основе указанных данных.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.RetrieveColumnsFromDictionary(Stimulsoft.Report.Dictionary.StiDictionary,System.String)">
+            <summary>
+            Получение списка колонок указанной базы данных.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.GetColumnsFromDictionary(Stimulsoft.Report.Dictionary.StiDictionary)">
+            <summary>
+            Получение колонок из указанного словаря данных. Источник данных берётся первый по списку.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.GetLocalizationsList">
+            <summary>
+            Загрузка списка доступных локализаций, список строится на основе найденных локализационных файлов.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.GetLanguageFile(System.String)">
+            <summary>
+            Load the localization file, if necessary - combine two files into one localization
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.ResponseReportAsFile">
+            <summary>
+            Сохранение отчёта в файл.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.RegisterClientScriptBlockIntoHeader(System.String,System.String)">
+            <summary>
+            Вставка скрипта в header страницы.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.InsertSessionId(System.String,System.String)">
+            <summary>
+            Разбивка url на сегменты и формирование нового url, в состав которого входит идентефикатор сессии.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.RegisterClientScripts">
+            <summary>
+            Регистрация скриптов, необходимых для работы Flash-приложения.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.Design(Stimulsoft.Report.StiReport)">
+            <summary>
+            Start the Report Designer in full screen mode with the specified report.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Web.StiWebDesigner.Design">
+            <summary>
+            Start the Report Designer in full screen mode with the previously specified report.
+            If the report is not specified then a new report will be created.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.Web.StiWebDesigner.AppUrl">
+            <summary>
+            Полный url для Flash-приложения, в зависимости от настроек (абсолютный или относительный)
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.Web.StiWebDesigner.AppKeyUrl">
+            <summary>
+            Полный url со служебным параметром (отформатированный нужным образом)
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.Web.StiWebDesigner.AppCacheUrl">
+            <summary>
+            Получение url на Flash-приложение, так же его кэширование на сервере, если это требуется
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Web.StiWebDesignerOptions">
+            <summary>
+            Class for adjustment all aspects of Stimulsoft Reports.Web.
+            </summary>
+        </member>
+    </members>
+</doc>

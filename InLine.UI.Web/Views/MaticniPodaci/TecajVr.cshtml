@@ -1,0 +1,51 @@
+﻿@model List<InLine.UI.Web.Models.ViewModelCustom.TecajVrViewModelCustom>
+@using InLine.Repository.Data.Helper;
+
+@{
+     
+}
+
+
+<table width="100%">
+<tr width="100%">
+
+<div id="radioTecajVr">
+
+ @foreach (var item in @Model)
+ {
+     string Vrijednost = item.ID_TecajVr.ToString();
+     string Oznaka = item.Oznaka;
+     string Checked = "";
+
+     if (item.Oznaka == "SD")
+     {
+         Checked = "checked";
+     }
+ 
+    <td width="20%">
+
+@*       @item.NazivKr @Html.RadioButton("ID_TecajVr",new { @value = @Vrijednost, @name = @Oznaka },  item.Oznaka == "SD" ? new { @checked = "checked" } : null) *@
+
+        @if (Checked == "")
+        {
+             @item.NazivKr  <input type="radio" id="@Vrijednost" name="Grupa1" value="@Oznaka" />
+        }
+        else
+        {
+            @item.NazivKr  <input type="radio" id="@Vrijednost" name="Grupa1" value="@Oznaka" checked="@Checked"/>
+        }
+
+
+    </td>
+ }
+
+ </div>
+</tr>
+
+</table>
+
+
+<script type="text/javascript">
+
+</script>
+

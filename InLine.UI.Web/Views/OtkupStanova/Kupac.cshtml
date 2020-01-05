@@ -1,0 +1,344 @@
+﻿@using InLine.Repository.Data.Helper;
+
+@{
+    string Autocomplete = InLine.UI.Web.Helper.KeyWord.Forma.Rijec.Autocomplete + "Kupac";
+    string Start = CommonFunctions.PagingVrijednostiDefault.Start;
+    string Count = CommonFunctions.PagingVrijednostiDefault.Count;
+    string ulKupacSelector = "#ulKupac";
+}
+
+
+
+<table width="100%">
+<tr>
+<td width="15%">Izaberi kupca</td>
+    <td width="75%">
+   <input id="KupacInput" class="btnDropDownSymbol autocompleteKupac ui-autocomplete-input" type="text" value="" name="kupac" autocomplete="off"/>
+     
+</td>
+<td width="5%"> <input id="addKupac" class="SpremiDodajClass" type="button" value="" name="adKupac" title="Dodaj kupca"/></td>
+</tr>
+</table>
+
+
+
+<script type="text/javascript">
+
+    $("." + '@Autocomplete').each(function () {
+
+        var widgetAutoComplete = $(this).autocomplete({
+
+            showHeader: true,
+
+            source: function (request, response) {
+
+                var url = '@Url.Action("GetKupac", @InLine.UI.Web.T4.ControllerName.ControllerName.OtkupStanova)';
+                var kojalista = "@ulKupacSelector";
+
+                $.AutocompleteKupac(request, response, kojalista, url, @Start, @Count);
+            },
+
+            select:
+                function (event, ui) {
+                    $("#ID_Kupac").val(ui.item.id);
+                    $("#KupacInput").val(ui.item.value1.toUpperCase() + " " + ui.item.value2.toUpperCase());
+                    $.PostaviKupcanaFormu(ui.item.id);
+
+                    // test za brisanje pp
+//                    $("#ID_Kupac").val("");
+//                    $("#KupacInput").val("");
+                    return false;
+                },
+
+            minLength: 0
+
+        }).data("autocomplete");
+
+        widgetAutoComplete._renderItem = function (ul, item) {
+
+            ul.attr('id', 'ulKupac');
+            return $("<li class='tblAutocompleteLi'><table class='tblAutocomplete'></table></li>").data("item.autocomplete-item", item).append("<a><table width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><td width='70px'>" + item.value1 + "</td><td width='270px'>" + item.value2 + "</td><td width='90px'>" + item.value4 + "</td><td width='90px'>" + item.value5 + "</td><td width='200px'>" + item.value3+ "</td></tr></table></a>").appendTo("#ulKupac");
+        }
+
+        widgetAutoComplete._renderMenu = function (ul, item) {
+
+            var self = this;
+            $.each(item, function (index, items) {
+                if (index == 0)
+                    ul.append("<li><table class='autocompleteHeader' width='100%' class='table table-condensed table-hover' style='margin-bottom:0px;'><tr><th width='70px'>" + '@InLine.Model.Data.FieldString.View.Kupac.Oznaka' + "</th><th width='270px'>" + '@InLine.Model.Data.FieldString.View.Kupac.Naziv' + "</th><th width='90px'>" + '@InLine.Model.Data.FieldString.View.Kupac.OIB' +  "</th><th width='90px'>" + '@InLine.Model.Data.FieldString.View.Kupac.JMBG' +  "</th> <th width='200px'>" + '@InLine.Model.Data.FieldString.View.Kupac.Ulica' +  "</th></tr></table></li>");
+                self._renderItemData(ul, items);
+            });
+        }
+
+    });
+
+
+    $(".btnDropDownSymbol").click(function () {
+        Dialozi.ComboAll();
+    });
+
+
+    $('#KupacInput').change(function () {
+        poslovnipartnerodabran = $('#KupacInput').val();
+
+        if (poslovnipartnerodabran == "") {
+            $("#ID_Kupac").val("");
+        }
+    });
+
+
+      $.AutocompleteKupac = function (request, response, kojalista, url, Start, Count ) {
+
+                console.log('ajax prvi');
+                $.ajax({
+                    url: url,
+                    data: { query: request.term, start: Start, count: Count },
+                    dataType: 'json',
+                    type: 'GET',
+                    success: function (data) {
+                        response($.map(data,
+                        function (item) {
+                            return {
+                                id: item.ID_Kupac,
+                                value1: $.trim(item.Oznaka),
+                                value2: $.trim(item.Naziv),
+                                value3: $.trim(item.Ulica),
+                                value4: $.trim(item.OIB),
+                                value5: $.trim(item.JMBG)
+ 
+                            }
+
+                        }));
+
+                        var previousScroll = 0;
+                        var page = 1;
+
+                        $(kojalista).scroll(function () {
+
+                            var currentScroll = $(this).scrollTop();
+
+                            var x = $(kojalista).prop('scrollHeight');
+                            var y = $(kojalista).prop('offsetHeight');
+
+                            if (currentScroll > previousScroll) {
+
+                                if(page >=0)
+                                {
+                                    if (currentScroll >= x - y)
+                                        {
+                                           page += 1;
+
+                                            var countPage = page * Count
+                                            console.log('ajax ostali');
+                                            $.ajax({
+                                                url: url,
+                                                data: { query: request.term, start: Start, count: countPage },
+                                                dataType: 'json',
+                                                type: 'GET',
+                                                success: function (data) {
+                                                    response($.map(data,
+                                                        function (item) {
+
+                                                                return {
+                                                                            id: item.ID_Kupac,
+                                                                            value1: $.trim(item.Oznaka),
+                                                                            value2: $.trim(item.Naziv),
+                                                                            value3: $.trim(item.Ulica),
+                                                                            value4: $.trim(item.OIB),
+                                                                            value5: $.trim(item.JMBG)
+ 
+                                                                        }
+                                                                }));
+                                                            }
+                                                        })
+                                            }
+                                }
+                                    
+
+                            }
+                            else {
+                                page -= 1;
+                            }
+
+                            previousScroll = currentScroll;
+
+                        });
+                    }
+                })
+    };
+
+ </script>
+
+ <script>
+
+
+     $("#addKupac").click(function () {
+         $.addKupac();
+     });
+
+
+
+
+     $.addKupac = function () {
+
+         var kojidialog = "#" + "Kupac" + "Dialog";
+         var kojidialogButton = "Kupac" + "Dialog";
+         var kojikontroler = "../" + "@InLine.UI.Web.T4.ControllerName.ControllerName.OtkupStanova" + "/";
+         var kojigrid = "#" + "Kupac";
+         var loader = kojikontroler + "Kupac" + "Detalj/";
+         var kojasirina = 650;
+         var kojavisina = 400;
+         var kojaforma = "#" + "Kupac" + "Form";
+         var kojaakcija = "Kupac" + "Insert";
+         var kontrolerakcija = kojikontroler + kojaakcija;
+         var kojitip = "Insert";
+         var kojititle = "KUPAC";
+         var kojaakcijaDelete = "Kupac" + "Delete";
+         var kontrolerakcijaDelete = kojikontroler + kojaakcijaDelete;
+         var kojaPorukaDiv = "Kupac";
+
+
+         if (kojitip == "Insert") {
+             kojititle = kojititle + " UNOS "
+         }
+
+         // Iniciranje Dialoga
+         $(function () {
+             $(kojidialog).dialog({
+                 autoOpen: false,
+                 show: {
+                     effect: "none",
+                     duration: 0
+                 },
+                 hide: {
+                     effect: "none",
+                     duration: 0
+                 },
+                 width: kojasirina,
+                 height: kojavisina,
+                 modal: true,
+                 resizable: true,
+                 position: 'top',
+                 draggable: true,
+                 title: kojititle,
+                 buttons: {
+
+                     Spremi: {
+                         text: "",
+                         title: "Spremi",
+                         id: kojidialogButton + "Spremi",
+                         class: 'SpremiClass',
+                         value: "Spremi",
+                         click: function () {
+                             var frm = kojaforma;
+                             var disabled = $(kojaforma).find(':input:disabled').removeAttr('disabled');
+
+                             var serializeData = $(kojaforma).serialize();
+
+                             var provjera = ProvjeraKodUnosa();
+
+                             if (provjera == false) {
+                                 return false;
+                             }
+                             else {
+                                 if ($(frm).validate().form()) {
+                                     $.ajax({
+                                         url: kontrolerakcija,
+                                         data: serializeData,
+                                         type: 'POST',
+                                         success: function (data) {
+                                             if (data.length > 0) {
+                                                 porukeIzSkripte.VratiPorukuStatus(data, kojaPorukaDiv);
+                                                 InsertEditError();
+                                             }
+                                             else {
+                                                 jQuery(kojigrid).trigger('reloadGrid');
+                                                 InsertEditSucces();
+                                                 $(kojidialog).dialog("close");
+                                                 $(kojidialog).empty();
+                                             }
+
+                                         }
+                                     });
+                                 }
+                             }
+
+
+                         }
+
+                     },
+
+                     Obrisi: {
+                         text: "",
+                         title: "Obriši",
+                         id: kojidialogButton + "Obrisi",
+                         class: 'ObrisiClass',
+                         value: "Obrisi",
+
+                         click: function () {
+                             if (slaveId == null)
+                             { alert('Nije odabrana stavka'); }
+
+                             else {
+                                 if (confirm('Da li sigurno želite obrisati stavku?')) {
+                                     var frm = kojaforma;
+                                     var serializeData = $(kojaforma).serialize();
+                                     $.ajax({
+                                         url: kontrolerakcijaDelete,
+                                         data: serializeData,
+                                         type: 'POST',
+                                         success: function (data) {
+
+                                             if (data.length > 0) {
+                                                 porukeIzSkripte.VratiPorukuStatus(data, kojaPorukaDiv);
+                                                 DeleteError();
+                                             }
+                                             else {
+                                                 jQuery(kojigrid).trigger('reloadGrid');
+                                                 DeleteSucces();
+                                                 $(kojidialog).dialog("close");
+                                                 $(kojidialog).empty();
+                                             }
+
+                                         }
+                                     });
+                                 }
+
+                             }
+
+                         }
+
+                     },
+
+
+                     Zatvori:
+                    {
+                        text: "",
+                        title: "Zatvori",
+                        class: 'ZatvoriClass',
+                        click: function () {
+                            $(this).dialog("close");
+                            $(this).empty();
+                        }
+                    }
+                 }
+             });
+         });
+
+
+
+         if (kojitip == "Insert") {
+             slaveId = null
+             $(kojidialog).dialog("open").load(loader, { Id: null, IdMaster: null })
+
+         }
+
+
+     };
+ 
+ 
+ </script>
+
+
+
+

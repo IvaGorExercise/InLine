@@ -1,0 +1,463 @@
+﻿<#@ template language="C#" debug="false" hostspecific="true"#>
+<#@ include file="EF.Utility.CS.ttinclude"#>
+<#@ Assembly Name= "$(SolutionDir)\bin\InLine.Common.dll"#>
+<#@ import namespace="InLine.Common" #>
+<#@ output extension=".cs"#>
+<#
+
+CodeGenerationTools code = new CodeGenerationTools(this);
+MetadataLoader loader = new MetadataLoader(this);
+CodeRegion region = new CodeRegion(this, 1);
+MetadataTools ef = new MetadataTools(this);
+
+string inputFile = @"..\..\..\InLine.Model.Data\InLineData.edmx";
+//string inputFile = VS.SolutionPath() + @"\InLine.Model.Admin\InLineAdmin.edmx";
+EdmItemCollection ItemCollection = loader.CreateEdmItemCollection(inputFile);
+string NameSpace = "InLine.UI.Web.Controllers";
+string EntityName;
+string keyParam = "";
+
+
+EntityFrameworkTemplateFileManager fileManager = EntityFrameworkTemplateFileManager.Create(this);
+WriteHeader(fileManager);
+
+StoreItemCollection sic;
+loader.TryCreateStoreItemCollection(inputFile, out sic);
+EntityContainer sicEntityContainer = sic.GetItems<EntityContainer>().First();
+
+
+foreach (var entity in ItemCollection.GetItems<EntityType>().OrderBy(e => e.Name))
+{
+	var propertiesLong = entity.Properties.Where(p => p.TypeUsage.EdmType is PrimitiveType && p.DeclaringType == entity && code.Escape(p.TypeUsage) == "long" && p.Name.Contains("ID_"));
+	var propertiesString = entity.Properties.Where(p => p.TypeUsage.EdmType is PrimitiveType && p.DeclaringType == entity && code.Escape(p.TypeUsage) == "string");
+	var propertiesBool= entity.Properties.Where(p => p.DeclaringType == entity && code.Escape(p.TypeUsage) == "Boolean");
+
+	EntitySet eset = sicEntityContainer.GetEntitySetByName(code.Escape(entity), true);
+	var esetshema = eset.MetadataProperties["Name"].Value.ToString();
+
+    EntityName = code.Escape(entity);
+
+
+	if (T4.ClassName(EntityName) != "Audit")
+	{
+
+	fileManager.StartNewFile(T4.ClassNameFull(EntityName) + "Controller.Partial.cs");
+    BeginNamespace(T4.NameSpace(EntityName,NameSpace), code);
+#>
+
+public partial class <#=T4.ClassName(EntityName)#><#=T4.IsView(EntityName) == true ? "View" : "" #>Controller : Controller
+{
+	<#
+	foreach (var keyMember in entity.KeyMembers)
+	{
+		keyParam = entity.KeyMembers.ElementAt(0).Name;
+	}
+	#>
+
+	#region Fields
+
+	 Service.Data.<#=T4.InterfaceNameFull(EntityName)#> _service;
+     Repository.Admin.IKorisnikDataFromSession _korisnikDataFromSession = new Repository.Admin.KorisnikDataFromSession();
+     InLine.Model.Admin.KorisnikData korisnik_data = new InLine.Model.Admin.KorisnikData();
+     long KorisnikID;
+	 string _serviceList = String.Empty;
+	 string gridModelNamespace =  "<#=T4.IsView(EntityName) == true ? "InLine.UI.Web.T4.GridFormattedTemplate.View." : "InLine.UI.Web.T4.GridFormattedTemplate." #>";
+
+    #endregion
+
+		
+    #region Constructors
+    #endregion
+
+
+	#region Methods
+
+	<# 
+	if (T4.IsView(EntityName) == false)
+	{
+	 #>
+
+	 <# 
+	if (entity.Properties[0].ToString().Contains("_"))
+	{
+	#>
+			
+	public ActionResult Insert(InLine.Model.Data.Item.<#=T4.ClassNameFull(EntityName)#>Item item)
+	{
+		
+		if (item.<#=entity.Properties[0]#> == -1)
+		{
+			IList<InLine.Model.Admin.StatusPoruka> status = _service.Insert(item);
+			return Json(status, JsonRequestBehavior.AllowGet);
+		}
+		else
+		{
+			IList<InLine.Model.Admin.StatusPoruka> status = _service.Update(item);
+			return Json(status, JsonRequestBehavior.AllowGet);
+		}
+          
+	}
+
+	public ActionResult Delete(InLine.Model.Data.Item.<#=T4.ClassNameFull(EntityName)#>Item item)
+	{
+		IList<InLine.Model.Admin.StatusPoruka> status = _service.Delete(item);
+		return Json(status, JsonRequestBehavior.AllowGet);
+           
+	}
+<# 
+}
+			#>
+
+		<# 
+
+		}
+
+	#>
+	
+    public InLine.Model.Data.<#=T4.ClassNameFull(EntityName)#> FindID(long id)
+    {
+		InLine.Model.Data.<#=T4.ClassNameFull(EntityName)#> rezultat;
+        rezultat = _service.FindID(id);
+        return rezultat;  
+    }
+	
+	
+    //public IEnumerable<InLine.Model.Data.<#=T4.ClassNameFull(EntityName)#>> GetGridData(string filter, string sort, long? start, long? count, bool customsearch = false)
+    //{
+    //    IEnumerable<InLine.Model.Data.<#=T4.ClassNameFull(EntityName)#>> rezultat;
+     //   rezultat = _service.GetGridData(filter, sort, start, count, customsearch);
+     //   return rezultat;  
+    //}
+
+	public IEnumerable<InLine.Model.Data.<#=T4.ClassNameFull(EntityName)#>> GetGridData(string filter, string key, string value, string sort, long? start, long? count, bool customsearch = false)
+    {
+        IEnumerable<InLine.Model.Data.<#=T4.ClassNameFull(EntityName)#>> rezultat;
+        rezultat = _service.GetGridData(filter, key, value, sort, start, count, customsearch);
+        return rezultat;  
+    }
+		
+
+    public long GetCount(string filter, string key, string value, bool customsearch = false)
+    {
+        long rezultat;
+        rezultat = _service.GetCount(filter, key, value, customsearch );
+        return rezultat;  
+    }
+
+
+
+
+	public ActionResult GetGrid(JqGridRequest request, string key, string value, string viewModel, string field, long? id_master)
+    {
+
+        string fieldMain = String.Empty;
+        long ID_master;
+        bool result = Int64.TryParse(id_master.ToString(), out ID_master);
+
+
+        if (String.IsNullOrEmpty(field))
+        {
+            fieldMain = "<#=keyParam#>";
+        }
+
+        else
+        {
+            fieldMain = field;
+        }
+
+		viewModel = gridModelNamespace + viewModel;
+
+        string filterExpression = String.Empty;
+        if (request.Searching)
+        {
+            if (request.SearchingFilter != null)
+                filterExpression = GetFilter(request.SearchingFilter.SearchingName, request.SearchingFilter.SearchingOperator, request.SearchingFilter.SearchingValue);
+            else if (request.SearchingFilters != null)
+            {
+                StringBuilder filterExpressionBuilder = new StringBuilder();
+                string groupingOperatorToString = request.SearchingFilters.GroupingOperator.ToString();
+                foreach (JqGridRequestSearchingFilter searchingFilter in request.SearchingFilters.Filters)
+                {
+                    filterExpressionBuilder.Append(GetFilter(searchingFilter.SearchingName, searchingFilter.SearchingOperator, searchingFilter.SearchingValue));
+                    filterExpressionBuilder.Append(String.Format(" {0} ", groupingOperatorToString));
+                }
+                if (filterExpressionBuilder.Length > 0)
+                    filterExpressionBuilder.Remove(filterExpressionBuilder.Length - groupingOperatorToString.Length - 2, groupingOperatorToString.Length + 2);
+                filterExpression = filterExpressionBuilder.ToString();
+            }
+
+        }
+        string sortingName = request.SortingName;
+        long totalRecordsCount = GetCount(filterExpression, key, value);
+
+
+        JqGridResponse response = new JqGridResponse()
+        {
+            TotalPagesCount = (int)Math.Ceiling((float)totalRecordsCount / (float)request.RecordsCount),
+            PageIndex = request.PageIndex,
+            TotalRecordsCount = totalRecordsCount,
+        };
+
+
+        response.Records.AddRange
+            (
+            from item in GetGridData(filterExpression, key, value, String.Format("{0} {1}", sortingName, request.SortingOrder), request.PageIndex * request.RecordsCount, (request.PagesCount.HasValue ? request.PagesCount.Value : 1) * request.RecordsCount)
+            select new JqGridRecord(Convert.ToString(item.GetType().GetProperty(fieldMain).GetValue(item, null)), Activator.CreateInstance(Type.GetType(viewModel), new[] { item }))
+            );
+
+
+        return new JqGridJsonResult() { Data = response };
+    }
+
+
+
+
+		public string GetFilter(string searchingName, JqGridSearchOperators searchingOperator, string searchingValue)
+		{
+
+			 string searchingOperatorString = String.Empty;
+
+			switch (searchingOperator)
+			{
+				case JqGridSearchOperators.Eq:
+					searchingOperatorString = "=";
+					break;
+				case JqGridSearchOperators.Ne:
+					searchingOperatorString = "!=";
+					break;
+				case JqGridSearchOperators.Lt:
+					searchingOperatorString = "<";
+					break;
+				case JqGridSearchOperators.Le:
+					searchingOperatorString = "<=";
+					break;
+				case JqGridSearchOperators.Gt:
+					searchingOperatorString = ">";
+					break;
+				case JqGridSearchOperators.Ge:
+					searchingOperatorString = ">=";
+					break;
+			}
+
+		<#
+			foreach (var polje in propertiesLong)
+			{
+		#>
+		if (searchingName == "<#=polje#>")
+				{
+					return String.Format("{0} {1} {2}", searchingName, searchingOperatorString, searchingValue);
+				}
+		<#
+			}
+		#>
+
+
+		<#
+			foreach (var polje in propertiesString)
+			{
+		#>
+		if (searchingName == "<#=polje#>")
+			{
+
+				switch (searchingOperator)
+                {
+                    case JqGridSearchOperators.Bw:
+                        return String.Format("{0}.StartsWith(\"{1}\")", searchingName, searchingValue);
+                    case JqGridSearchOperators.Bn:
+                        return String.Format("!{0}.StartsWith(\"{1}\")", searchingName, searchingValue);
+                    case JqGridSearchOperators.Ew:
+                        return String.Format("{0}.EndsWith(\"{1}\")", searchingName, searchingValue);
+                    case JqGridSearchOperators.En:
+                        return String.Format("!{0}.EndsWith(\"{1}\")", searchingName, searchingValue);
+                    case JqGridSearchOperators.Cn:
+                        return String.Format("{0}.Contains(\"{1}\")", searchingName, searchingValue);
+                    case JqGridSearchOperators.Nc:
+                        return String.Format("!{0}.Contains(\"{1}\")", searchingName, searchingValue);
+                    default:
+                        return String.Format("{0} {1} \"{2}\"", searchingName, searchingOperatorString, searchingValue);
+                }
+			}
+		<#
+
+			}
+
+		#>
+
+				return String.Empty;
+		}
+
+	#endregion
+
+
+
+	#region Akcije
+
+	    protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            korisnik_data = _korisnikDataFromSession.GetKorisnikDataFromSession();
+            if (korisnik_data != null)
+            {
+               KorisnikID = korisnik_data.KorisnikID;
+               _service = new Service.Data.<#=T4.ClassNameFull(EntityName)#>(korisnik_data);
+            }
+			else
+            {
+               RedirectToAction("LogOn", "Home");
+            }
+        }
+
+	#endregion 
+}
+
+
+
+<#
+    EndNamespace(T4.NameSpace(EntityName,NameSpace));
+}
+}
+
+if (!VerifyTypesAreCaseInsensitiveUnique(ItemCollection))
+{
+    return "";
+}
+
+fileManager.Process();
+
+#>
+<#+
+string GetResourceString(string resourceName)
+{
+	if(_resourceManager == null)
+	{
+		_resourceManager = new System.Resources.ResourceManager("System.Data.Entity.Design", typeof(System.Data.Entity.Design.MetadataItemCollectionFactory).Assembly);
+	}
+	
+    return _resourceManager.GetString(resourceName, null);
+}
+System.Resources.ResourceManager _resourceManager;
+
+void WriteHeader(EntityFrameworkTemplateFileManager fileManager)
+{
+    fileManager.StartHeader();
+#>
+//------------------------------------------------------------------------------
+// <auto-generated>
+// <#=GetResourceString("Template_GeneratedCodeCommentLine1")#>
+//
+// <#=GetResourceString("Template_GeneratedCodeCommentLine2")#>
+// <#=GetResourceString("Template_GeneratedCodeCommentLine3")#>
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+<#+
+    fileManager.EndBlock();
+}
+
+void BeginNamespace(string namespaceName, CodeGenerationTools code)
+{
+    CodeRegion region = new CodeRegion(this);
+    if (!String.IsNullOrEmpty(namespaceName))
+    {
+#>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Web.Mvc;
+using InLine;
+using InLine.UI.Web.Helper;
+using Lib.Web.Mvc.JQuery.JqGrid;
+
+namespace <#=code.EscapeNamespace(namespaceName)#>
+{
+<#+
+        PushIndent(CodeRegion.GetIndent(1));
+    }
+}
+
+
+void EndNamespace(string namespaceName)
+{
+    if (!String.IsNullOrEmpty(namespaceName))
+    {
+        PopIndent();
+#>
+}
+<#+
+    }
+}
+
+void WriteProperty(CodeGenerationTools code, EdmProperty edmProperty)
+{
+    string accessibility = Accessibility.ForProperty(edmProperty);
+	string type = code.Escape(edmProperty.TypeUsage);
+	bool nullableType = code.Escape(edmProperty.TypeUsage).Contains("Nullable<");
+	string name = code.Escape(edmProperty);
+	string getterAccessibility = code.SpaceAfter(Accessibility.ForGetter(edmProperty));
+	string setterAccessibility = code.SpaceAfter(Accessibility.ForSetter(edmProperty));
+	string declaringType = code.Escape(edmProperty.DeclaringType);
+
+	type = T4.CleanType(type);
+
+	if (name == "ID_" + declaringType) WritePropertyID(accessibility, type, name, getterAccessibility, setterAccessibility);
+
+	WriteProperty(accessibility, type, name, getterAccessibility, setterAccessibility);
+}
+
+void WriteNavigationProperty(CodeGenerationTools code, NavigationProperty navigationProperty)
+{
+    var endType = code.Escape(navigationProperty.ToEndMember.GetEntityType());
+    WriteProperty(PropertyVirtualModifier(Accessibility.ForProperty(navigationProperty)),
+                  navigationProperty.ToEndMember.RelationshipMultiplicity == RelationshipMultiplicity.Many ? ("ICollection<" + endType + ">") : endType,
+                  code.Escape(navigationProperty),
+                  code.SpaceAfter(Accessibility.ForGetter(navigationProperty)),
+                  code.SpaceAfter(Accessibility.ForSetter(navigationProperty)));
+}
+
+void WriteProperty(string accessibility, string type, string name, string getterAccessibility, string setterAccessibility)
+{
+#>
+    <#=accessibility#> <#=type#> <#=name#> { <#=getterAccessibility#>get; <#=setterAccessibility#>set; }
+<#+
+}
+
+void WritePropertyID(string accessibility, string type, string name, string getterAccessibility, string setterAccessibility)
+{
+#>
+    <#=accessibility#> <#=type#> ID
+	{
+		<#=getterAccessibility#>get { return this.<#=name#>; }
+		<#=setterAccessibility#>set { this.<#=name#> = value; }
+	}
+<#+
+}
+
+string PropertyVirtualModifier(string accessibility)
+{
+    return accessibility + (accessibility != "private" ? " virtual" : "");
+}
+
+bool VerifyTypesAreCaseInsensitiveUnique(EdmItemCollection itemCollection)
+{
+    var alreadySeen = new Dictionary<string, bool>(StringComparer.OrdinalIgnoreCase);
+    foreach(var type in itemCollection.GetItems<StructuralType>())
+    {
+        if (!(type is EntityType || type is ComplexType))
+        {
+            continue;
+        }
+
+        if (alreadySeen.ContainsKey(type.FullName))
+        {
+            Error(String.Format(CultureInfo.CurrentCulture, "This template does not support types that differ only by case, the types {0} are not supported", type.FullName));
+            return false;
+        }
+        else
+        {
+            alreadySeen.Add(type.FullName, true);
+        }
+    }
+
+    return true;
+}
+#>

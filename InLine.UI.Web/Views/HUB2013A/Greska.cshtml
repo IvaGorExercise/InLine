@@ -1,0 +1,160 @@
+﻿@model InLine.Model.Admin.StatusPoruka
+
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style type="text/css">
+    
+ #userinterface { float:right; padding-top:20px; padding-right:5px; font-family: Microsoft Sans Serif;}
+ #userinterface a:link { color:White; text-decoration:none;}
+ #userinterface a:hover { color:#ccc; text-decoration:underline;}
+ #status-poruka { width:600px; height:70px; font-size:medium}
+ 
+/* .red
+
+{
+    color: #DB0421;
+}
+
+
+.blue
+{
+    color: #096CED;
+}
+
+.green
+{
+    color: #178703;
+}
+
+.yellow
+{
+    color: #178703;
+}
+
+ */
+ 
+ 
+ .red { color: Red }
+ .green { color: Green }
+ .blue { color: Blue }
+ .yellow { color: Orange}
+
+
+
+</style>
+
+
+<div class="content-inner">
+   <div class="breadCrumbHolder module">
+                <div id="breadCrumb3" class="breadCrumb module">
+                    <ul>
+                        <li>
+                            <a href="/Pocetna/Index">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">HUB</a>
+                        </li>
+                        <li>
+                            <a href="/HUB2013A/HUBKreirajGrad">Kreiranje HUB</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+<div id="status-poruka"></div>
+
+<div>
+  <input type="button" id="ponovo" value="Ponoviti generiranje HUB-ova" name="Ponovo" style='display: none;'/>
+</div>
+
+</div>
+
+
+
+<script>
+
+
+
+    $(document).ready(function () {
+        VratiPorukuStatus();
+    });
+
+
+ function VratiPorukuStatus()
+   {
+       var kojdiv = "#status-poruka";
+        jQuery(kojdiv).show();
+        $(kojdiv).text("");
+
+//        if(@Model !=null)
+//        {
+//          poruka = "@Model.PorukaTekst";
+//          status = "@Model.StatusTekst";
+//        }
+//        else
+//        {
+//          poruka = "";
+//          status = "";
+//        }
+        
+          poruka = "@Model.PorukaTekst";
+          status = "@Model.StatusTekst";
+    
+            if (status == "1")
+                {
+
+                $(kojdiv).append('<span class="red">' + poruka);
+                $(kojdiv).append("<br />");
+
+            }
+
+            // status 2 = Upozorenje
+            else if (status == "2")
+                {
+                $(kojdiv).append('<span class="yellow">' + poruka);
+                $(kojdiv).append("<br />");
+
+            }
+
+            // status 3 = Informacija
+            else if (status == "3") 
+            {
+                $(kojdiv).append('<span class="blue">' + poruka);
+                $(kojdiv).append("<br />");
+
+            }
+
+
+            else if (status == "") {
+                //  var porukabezstatusa = str.substring(duzinaporuke, 1);
+                $(kojdiv).append('<span class="blue">' + poruka);
+                $(kojdiv).append("<br />");
+
+
+            }
+
+            else if (status == null) 
+            {
+                //  var porukabezstatusa = str.substring(duzinaporuke, 1);
+                $(kojdiv).append('<span class="blue">' + poruka);
+            }
+        
+  }
+
+</script>
+
+
+<script type="text/javascript">
+
+    $('#ponovo').click(function () {
+        window.location = "/HUB2013A/HUBKreirajGrad?ponovo=true"
+
+    });
+
+
+</script>

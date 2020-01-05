@@ -1,0 +1,60 @@
+﻿@using InLine.UI.Web.Helper
+
+@{
+    string podaci = LogiraniKorisnikData.ShowLoiraniKorisnik();
+    string[] obrada = podaci.Split('X');
+    
+
+ }
+
+@*<div id="logiranikorisniknaslov">
+Korisnički podaci:
+</div>*@
+@*<div id="logiranikorisnikcrta">
+</div>*@
+<p></p>
+
+<div id="logiranikorisnik">
+<div id="logiranikorisniknaslov">
+Korisnički podaci
+</div>
+<b>Korisnik:</b><br /> @obrada[0]<br /><br />
+@*<div id="tockastapodcrtana"></div>*@
+
+<b>Server:</b><br /> @obrada[1]<br /><br />
+@*<div id="tockastapodcrtana"></div>*@
+
+<b>Baza:</b><br /> @obrada[2]<br /><br />
+@*<div id="tockastapodcrtana"></div>*@
+
+@*Connection String:<text>@obrada[3].ToString()</text><br />
+<div id="tockastapodcrtana"></div>
+<p></p>*@
+<b>Korisnik ime:</b><br /> @obrada[4]<br /><br />
+<b>Korisnik prezime:</b><br /> @obrada[5]<br /><br />
+@*<div id="tockastapodcrtana"></div>*@
+</div>
+
+@*<br />
+<div id="logiranikorisnik">
+<div id="logiranikorisniknaslov">
+Pomoć
+</div>
+slovoslagarskoj industriji. Lorem Ipsum postoji kao industrijski standard još od 16-og stoljeća, kada je nepoznati tiskar
+ uzeo tiskarskust ne samo preživio pet stolj slovoslagarstva, ostajući u suštini nepromijenjen. Postao je 
+ popularan tijekom 1960-ih s pojavom Letra <br /><br />
+tolj slovoslagarstva, ostajući u suštini nepromijenjen. Postao je popularan tijekom 1960-ihtolj slovoslagarstva, ostajući u 
+suštini nepromijenjen. Postao je popularan tijekom 1960-ih s pojavom Letra <br /><br />
+
+</div>
+<br />
+
+<div id="logiranikorisnik">
+<div id="logiranikorisniknaslov">
+Korisni linkovi
+</div>
+<span class= "desnilinkovi">Zakoni</span><br />
+<span class= "desnilinkovi">Pravilnici</span><br />
+<span class= "desnilinkovi">Povijest</span><br />
+</div>
+<br />*@
